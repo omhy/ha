@@ -1,6 +1,6 @@
 #GATEWAY
 light.gateway_light_7811dcb36cee:
-  friendly_name: Gateway light
+  friendly_name: livingroom_gateway
 
 #WAZE
 sensor.waze_current_home:

@@ -14,4 +14,9 @@
   entities:
   - light.livingroom_torch
   - light.livingroom_corner
-#  - light.gateway_light_7811dcb36cee
+
+- platform: group
+  name: livingroom
+  entities:
+  - light.livingroom_ambient
+  - light.gateway_light_7811dcb36cee

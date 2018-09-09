@@ -3,9 +3,9 @@
 # https://github.com/dale3h/python-lovelace
 
 resources:
-  - url: /local/monster-card.js
+  - url: /local/monster-card.js?v=0
     type: js
-  - url: /local/tracker-card.js
+  - url: /local/tracker-card.js?v=0
     type: js
 
 title: Home
@@ -14,11 +14,6 @@ views:
   - title: Rooms
     icon: mdi:floor-plan
     cards:
-#    - type: "custom:tracker-card"
-#      title:
-#      trackers:
-#        - sensor.custom_card_tracker
-#        - sensor.custom_component_tracker
     - type: glance
       title: Living room
       show_header_toggle: false
@@ -64,9 +59,10 @@ views:
       show_header_toggle: false
       entities:
       - type: weblink
-        name: Home Assistant
-        url: https://www.home-assistant.io/
-        icon: mdi:home-assistant
+        name: Router
+        url: http://192.168.1.1/
+        icon: mdi:router-wireless
+      - type: divider
       - type: weblink
         name: Lovelace
         url: https://www.home-assistant.io/lovelace
@@ -598,3 +594,8 @@ views:
         entities:
           - script.sys_sleep_computer
           - script.sys_sleep_laptop
+      - type: custom:tracker-card
+        title:
+        trackers:
+        - sensor.custom_card_tracker
+        - sensor.custom_component_tracker
