@@ -1,0 +1,16 @@
+- platform: xiaomi_miio
+  name: power_strip_1
+  host: !secret power_strip_1_ip
+  token: !secret power_strip_1_token
+- platform: xiaomi_miio
+  name: power_strip_2
+  host: !secret power_strip_2_ip
+  token: !secret power_strip_2_token
+- platform: xiaomi_miio
+  name: power_strip_3
+  host: !secret power_strip_3_ip
+  token: !secret power_strip_3_token
+- platform: xiaomi_miio
+  name: power_strip_4
+  host: !secret power_strip_4_ip
+  token: !secret power_strip_4_token

@@ -1,0 +1,51 @@
+sys_recorder_purge:
+  sequence:
+    - service: recorder.purge
+
+sys_recorder_purge_repack:
+  sequence:
+    - service: recorder.purge
+      data:
+        repack: yes
+
+sys_homeassistant_restart:
+  sequence:
+    - service: homeassistant.restart
+
+sys_logic_reload:
+  sequence:
+    - service: homeassistant.reload_core_config
+    - service: automation.reload
+    - service: script.reload
+    - service: telegram_bot.send_message
+      data_template:
+        target: !secret tg_chat_dima
+        message: "{{ now().strftime('%H:%M') }} \U00002699 Logic reloaded"
+        inline_keyboard: "\U0001F504 Restart:/restart, \U0000267B Dismiss:/dismiss"
+
+sys_sleep_computer:
+  sequence:
+    - service: shell_command.sleep_computer
+sys_sleep_laptop:
+  sequence:
+    - service: shell_command.sleep_laptop
+
+aqara_stop_ringtone:
+  sequence:
+    - service: xiaomi_aqara.stop_ringtone
+      data_template:
+        gw_mac: !secret gw_mac
+
+alarm_door:
+  sequence:
+    - service: xiaomi_aqara.play_ringtone
+      data_template:
+        gw_mac: !secret gw_mac
+        ringtone_id: "8"
+        ringtone_vol: "10"
+    - service: telegram_bot.send_message
+      data_template:
+        target:
+        - !secret tg_chat_dima
+        - !secret tg_chat_alyona
+        message: "{{ now().strftime('%H:%M') }} \U0001F6A8 Door opened for a while"

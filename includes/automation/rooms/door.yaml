@@ -1,0 +1,50 @@
+- alias: "entrance_door_opened_too_long_monitor"
+  initial_state: "on"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.door_window_sensor_158d00024367c8
+    to: "on"
+    for:
+      minutes: 2
+  action:
+  - service: script.alarm_door
+  - service: automation.turn_on
+    entity_id:
+    - automation.entrance_door_opened_too_long_alarm
+
+- alias: "entrance_door_opened"
+  initial_state: "on"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.door_window_sensor_158d00024367c8
+    to: "on"
+  action:
+    service: telegram_bot.send_message
+    data_template:
+      target: !secret tg_chat_dima
+      message: "{{ now().strftime('%H:%M') }} \U0001F513 Door opened"
+
+- alias: "entrance_door_closed"
+  initial_state: "on"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.door_window_sensor_158d00024367c8
+    to: "off"
+  action:
+  - service: script.aqara_stop_ringtone
+  - service: automation.turn_off
+    entity_id:
+    - automation.entrance_door_opened_too_long_alarm
+  - service: telegram_bot.send_message
+    data_template:
+      target: !secret tg_chat_dima
+      message: "{{ now().strftime('%H:%M') }} \U0001F512 Door closed"
+
+- alias: "entrance_door_opened_too_long_alarm"
+  initial_state: "off"
+  trigger:
+    platform: time
+    minutes: "/1"
+    seconds: 00
+  action:
+    - service: script.alarm_door

@@ -1,0 +1,113 @@
+homeassistant:
+  name: Home
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: 5
+  unit_system: metric
+  time_zone: !secret timezone
+  customize: !include customize.yaml
+  customize_glob: !include customize_glob.yaml
+  whitelist_external_dirs:
+  - /config
+
+hassio:
+#cloud:
+updater:
+  include_used_components: true
+custom_updater:
+config:
+http:
+frontend:
+history:
+#logbook:
+map:
+sun:
+ffmpeg:
+logger:
+  default: warn
+openuv:
+  api_key: !secret open_uv_api_key
+
+system_log:
+  max_entries: 50
+
+mqtt:
+  broker: core-mosquitto
+
+influxdb:
+  host: 192.168.1.10
+  port: 8086
+  database: home_assistant
+  username: !secret influxdb_username
+  password: !secret influxdb_password
+
+panel_iframe:
+  grafana:
+    title: Grafana
+    icon: mdi:graphql
+    url: http://192.168.1.10:3000
+
+recorder:
+  purge_keep_days: 1
+
+xiaomi_aqara:
+  discovery_retry: 5
+  gateways:
+    key: !secret gw_key
+
+telegram_bot:
+  platform: polling
+  api_key: !secret tg_api_bot_key
+  allowed_chat_ids:
+  - !secret tg_chat_dima
+  - !secret tg_chat_yury
+  - !secret tg_chat_alyona
+
+shell_command:
+  sleep_computer: "/usr/bin/curl -X GET http://192.168.1.101:8585/?cmd=sleep"
+  sleep_laptop: "/usr/bin/curl -X GET http://192.168.1.102:8585/?cmd=sleep"
+
+notify:
+- name: telegram_dima
+  platform: telegram
+  chat_id: !secret tg_chat_dima
+- name: telegram_yury
+  platform: telegram
+  chat_id: !secret tg_chat_yury
+- name: telegram_alyona
+  platform: telegram
+  chat_id: !secret tg_chat_alyona
+
+device_tracker:
+  platform: google_maps
+  username: !secret bot_gmail_user
+  password: !secret bot_gmail_pass
+  interval_seconds: 850
+
+zone: !include includes/zone.yaml
+#counter: !include includes/counter.yaml
+input_number: !include includes/input_number.yaml
+#input_text: !include includes/input_text.yaml
+input_boolean: !include includes/input_boolean.yaml
+input_select: !include includes/input_select.yaml
+camera: !include includes/camera.yaml
+light: !include includes/light.yaml
+
+sensor: !include_dir_merge_list includes/sensors
+switch: !include_dir_merge_list includes/switches
+automation: !include_dir_merge_list includes/automation
+
+script: !include_dir_merge_named includes/scripts
+history_graph: !include_dir_merge_named includes/historygraph
+
+  #  api_password: !secret http_password
+
+
+  # base_url: example.duckdns.org:8123
+#discovery: # Discover some devices automatically
+#conversation:
+#battery_state:
+#tts:
+#  - platform: google
+# Cloud
+

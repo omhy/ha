@@ -1,0 +1,17 @@
+- platform: yeelight
+  devices:
+    192.168.1.131:
+      name: livingroom_torch
+      transition: 1000
+      use_music_mode: True
+    192.168.1.132:
+      name: livingroom_corner
+      transition: 1000
+      use_music_mode: True
+
+- platform: group
+  name: livingroom_ambient
+  entities:
+  - light.livingroom_torch
+  - light.livingroom_corner
+#  - light.gateway_light_7811dcb36cee

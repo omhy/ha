@@ -1,0 +1,84 @@
+"*.telegram_*":
+  icon: mdi:telegram
+"*.mqtt_*":
+  icon: mdi:chip
+"*.light_*":
+  icon: mdi:ceiling-light
+"*idx*":
+  icon: mdi:counter
+
+"*brightness*":
+  icon: mdi:brightness-5
+"*kelvin*":
+  icon: mdi:temperature-kelvin
+
+"automation.zone_*":
+  icon: mdi:map-marker
+"automation.light_*":
+  icon: mdi:telegram
+"automation.debug_*":
+  icon: mdi:bug
+"automation.ha_*":
+  icon: mdi:home-assistant
+"automation.doorbell_*":
+  icon: mdi:bell-ring
+
+"binary_sensor.motion_sensor*":
+  friendly_name: motion
+
+"input_number.*hue*":
+  icon: mdi:format-color-fill
+"input_number.*saturation*":
+  icon: mdi:invert-colors
+"input_number.*transition*":
+  icon: mdi:timer
+
+"sensor.*_motions":
+  friendly_name: motions
+"sensor.illumination*":
+  friendly_name: Illumination
+"sensor.*_battery_level":
+  icon: mdi:battery
+"sensor.*_temperature":
+  icon: mdi:thermometer
+"sensor.*_humidity":
+  icon: mdi:water-percent
+"sensor.*_precipitation":
+  icon: mdi:weather-rainy
+"sensor.*_wind_speed":
+  icon: mdi:weather-windy
+"sensor.*_pressure":
+  icon: mdi:gauge
+
+"sensor.power_strip_*_load_power":
+  icon: mdi:power-socket-eu
+  friendly_name: Current
+"sensor.power_*_day":
+  friendly_name: Day
+"sensor.power_*_week":
+  friendly_name: Week
+"sensor.power_*_month":
+  friendly_name: Month
+
+"sensor.wt00*":
+  friendly_name: Now
+"sensor.wt01*":
+  friendly_name: 1h
+"sensor.wt02*":
+  friendly_name: 2h
+"sensor.wt03*":
+  friendly_name: 3h
+"sensor.wt06*":
+  friendly_name: 6h
+"sensor.wt09*":
+  friendly_name: 9h
+"sensor.wt12*":
+  friendly_name: 12h
+"sensor.wt24*":
+  friendly_name: 1d
+"sensor.wt48*":
+  friendly_name: 2d
+"sensor.wt72*":
+  friendly_name: 3d
+"sensor.wt96*":
+  friendly_name: 4d

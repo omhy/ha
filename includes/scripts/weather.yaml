@@ -1,0 +1,200 @@
+telegram_send_weather:
+  sequence:
+  - service: telegram_bot.send_message
+    data_template:
+      target: "{{target}}"
+      message: >
+        {% set icons = {
+        '1' : '\U00002600',
+        '2' : '\U0001F324',
+        '3' : '\U0001F325',
+        '4' : '\U00002601',
+        '5' : '\U0001F326',
+        '6' : '\U000026C8',
+        '7' : '\U0001F328',
+        '8' : '\U0001F328',
+        '9' : '\U0001F327',
+        '10' : '\U0001F327',
+        '11' : '\U0001F327',
+        '12' : '\U0001F327',
+        '13' : '\U0001F328',
+        '14' : '\U0001F328',
+        '15' : '\U0001F32B',
+        '20' : '\U000026C8',
+        '21' : '\U000026C8',
+        '22' : '\U000026C8',
+        '23' : '\U000026C8',
+        '24' : '\U000026C8',
+        '25' : '\U000026C8',
+        '26' : '\U000026C8',
+        '27' : '\U000026C8',
+        '28' : '\U000026C8',
+        '29' : '\U000026C8',
+        '30' : '\U000026C8',
+        '31' : '\U000026C8',
+        '32' : '\U000026C8',
+        '33' : '\U000026C8',
+        '34' : '\U000026C8',
+        '40' : '\U0001F326',
+        '41' : '\U0001F326',
+        '42' : '\U0001F326',
+        '43' : '\U0001F326',
+        '44' : '\U0001F326',
+        '45' : '\U0001F326',
+        '46' : '\U0001F327',
+        '47' : '\U0001F328',
+        '48' : '\U0001F328',
+        '49' : '\U0001F328',
+        '50' : '\U0001F328'
+        } %}
+        {{icons[symb]}}
+        {{when}}:
+        {{tmpr}},
+        {{prcp}},
+        {{wind}}
+telegram_send_weather_forecast:
+  sequence:
+  - service: telegram_bot.send_message
+    data_template:
+      target: "{{target}}"
+      message: >
+        {% set icons = {
+        '1' : '\U00002600',
+        '2' : '\U0001F324',
+        '3' : '\U0001F325',
+        '4' : '\U00002601',
+        '5' : '\U0001F326',
+        '6' : '\U000026C8',
+        '7' : '\U0001F328',
+        '8' : '\U0001F328',
+        '9' : '\U0001F327',
+        '10' : '\U0001F327',
+        '11' : '\U0001F327',
+        '12' : '\U0001F327',
+        '13' : '\U0001F328',
+        '14' : '\U0001F328',
+        '15' : '\U0001F32B',
+        '20' : '\U000026C8',
+        '21' : '\U000026C8',
+        '22' : '\U000026C8',
+        '23' : '\U000026C8',
+        '24' : '\U000026C8',
+        '25' : '\U000026C8',
+        '26' : '\U000026C8',
+        '27' : '\U000026C8',
+        '28' : '\U000026C8',
+        '29' : '\U000026C8',
+        '30' : '\U000026C8',
+        '31' : '\U000026C8',
+        '32' : '\U000026C8',
+        '33' : '\U000026C8',
+        '34' : '\U000026C8',
+        '40' : '\U0001F326',
+        '41' : '\U0001F326',
+        '42' : '\U0001F326',
+        '43' : '\U0001F326',
+        '44' : '\U0001F326',
+        '45' : '\U0001F326',
+        '46' : '\U0001F327',
+        '47' : '\U0001F328',
+        '48' : '\U0001F328',
+        '49' : '\U0001F328',
+        '50' : '\U0001F328'
+        } %}
+        {% set frm = "%-4s|%-9s|%-8s|%-8s|%-8s|%-8s" %}
+        ```
+        {{ ('   ' + frm) | replace('|', ' ') | format("", "Temp", "Prcp", "Hmdt", "Wind", "Prss")}}
+
+        {{icons[states.sensor.wt00_symbol.state]}}
+        {{frm | format(
+        "Now",
+        states.sensor.wt00_temperature.state_with_unit,
+        states.sensor.wt00_precipitation.state_with_unit,
+        states.sensor.wt00_humidity.state_with_unit,
+        states.sensor.wt00_wind_speed.state_with_unit,
+        states.sensor.wt00_pressure.state_with_unit)
+        }}
+
+        {{icons[states.sensor.wt01_symbol.state]}}
+        {{frm | format("1h",
+        states.sensor.wt01_temperature.state_with_unit,
+        states.sensor.wt01_precipitation.state_with_unit,
+        states.sensor.wt01_humidity.state_with_unit,
+        states.sensor.wt01_wind_speed.state_with_unit,
+        states.sensor.wt01_pressure.state_with_unit)
+        }}
+
+        {{icons[states.sensor.wt02_symbol.state]}}
+        {{frm | format("2h",
+        states.sensor.wt02_temperature.state_with_unit,
+        states.sensor.wt02_precipitation.state_with_unit,
+        states.sensor.wt02_humidity.state_with_unit,
+        states.sensor.wt02_wind_speed.state_with_unit,
+        states.sensor.wt02_pressure.state_with_unit)
+        }}
+
+        {{icons[states.sensor.wt03_symbol.state]}}
+        {{frm | format("3h",
+        states.sensor.wt03_temperature.state_with_unit,
+        states.sensor.wt03_precipitation.state_with_unit,
+        states.sensor.wt03_humidity.state_with_unit,
+        states.sensor.wt03_wind_speed.state_with_unit,
+        states.sensor.wt03_pressure.state_with_unit)
+        }}
+
+        {{icons[states.sensor.wt06_symbol.state]}}
+        {{frm | format("6h",
+        states.sensor.wt06_temperature.state_with_unit,
+        states.sensor.wt06_precipitation.state_with_unit,
+        states.sensor.wt06_humidity.state_with_unit,
+        states.sensor.wt06_wind_speed.state_with_unit,
+        states.sensor.wt06_pressure.state_with_unit)
+        }}
+
+        {{icons[states.sensor.wt09_symbol.state]}}
+        {{frm | format("9h",
+        states.sensor.wt09_temperature.state_with_unit,
+        states.sensor.wt09_precipitation.state_with_unit,
+        states.sensor.wt09_humidity.state_with_unit,
+        states.sensor.wt09_wind_speed.state_with_unit,
+        states.sensor.wt09_pressure.state_with_unit)
+        }}
+
+        {{icons[states.sensor.wt12_symbol.state]}}
+        {{frm | format("12h",
+        states.sensor.wt12_temperature.state_with_unit,
+        states.sensor.wt12_precipitation.state_with_unit,
+        states.sensor.wt12_humidity.state_with_unit,
+        states.sensor.wt12_wind_speed.state_with_unit,
+        states.sensor.wt12_pressure.state_with_unit)
+        }}
+
+        {{icons[states.sensor.wt24_symbol.state]}}
+        {{frm | format("1d",
+        states.sensor.wt24_temperature.state_with_unit,
+        states.sensor.wt24_precipitation.state_with_unit,
+        states.sensor.wt24_humidity.state_with_unit,
+        states.sensor.wt24_wind_speed.state_with_unit,
+        states.sensor.wt24_pressure.state_with_unit)
+        }}
+
+        {{icons[states.sensor.wt48_symbol.state]}}
+        {{frm | format("2d",
+        states.sensor.wt48_temperature.state_with_unit,
+        states.sensor.wt48_precipitation.state_with_unit,
+        states.sensor.wt48_humidity.state_with_unit,
+        states.sensor.wt48_wind_speed.state_with_unit,
+        states.sensor.wt48_pressure.state_with_unit)
+        }}
+
+        {{icons[states.sensor.wt72_symbol.state]}}
+        {{frm | format("3d",
+        states.sensor.wt72_temperature.state_with_unit,
+        states.sensor.wt72_precipitation.state_with_unit,
+        states.sensor.wt72_humidity.state_with_unit,
+        states.sensor.wt72_wind_speed.state_with_unit,
+        states.sensor.wt72_pressure.state_with_unit)
+        }}
+
+        {{states.sensor.wt00_temperature.last_updated.astimezone().strftime('%Y-%m-%d %H:%M')}}
+        ```

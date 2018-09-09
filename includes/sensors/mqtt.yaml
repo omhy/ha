@@ -1,0 +1,80 @@
+- platform: mqtt
+  state_topic: "power/computer/day"
+  name: 'power_computer_day'
+  unit_of_measurement: 'kW'
+- platform: mqtt
+  state_topic: "power/computer/week"
+  name: 'power_computer_week'
+  unit_of_measurement: 'kW'
+- platform: mqtt
+  state_topic: "power/computer/month"
+  name: 'power_computer_month'
+  unit_of_measurement: 'kW'
+
+- platform: mqtt
+  state_topic: "power/kitchen/day"
+  name: 'power_kitchen_day'
+  unit_of_measurement: 'kW'
+- platform: mqtt
+  state_topic: "power/kitchen/week"
+  name: 'power_kitchen_week'
+  unit_of_measurement: 'kW'
+- platform: mqtt
+  state_topic: "power/kitchen/month"
+  name: 'power_kitchen_month'
+  unit_of_measurement: 'kW'
+
+- platform: mqtt
+  state_topic: "power/router/day"
+  name: 'power_router_day'
+  unit_of_measurement: 'kW'
+- platform: mqtt
+  state_topic: "power/router/week"
+  name: 'power_router_week'
+  unit_of_measurement: 'kW'
+- platform: mqtt
+  state_topic: "power/router/month"
+  name: 'power_router_month'
+  unit_of_measurement: 'kW'
+
+- platform: mqtt
+  state_topic: "power/tv/day"
+  name: 'power_tv_day'
+  unit_of_measurement: 'kW'
+- platform: mqtt
+  state_topic: "power/tv/week"
+  name: 'power_tv_week'
+  unit_of_measurement: 'kW'
+- platform: mqtt
+  state_topic: "power/tv/month"
+  name: 'power_tv_month'
+  unit_of_measurement: 'kW'
+  
+- platform: mqtt
+  state_topic: "livingroom/motions"
+  name: 'livingroom_motions'
+- platform: mqtt
+  state_topic: "bathroom/motions"
+  name: 'bathroom_motions'
+
+- platform: mqtt
+  state_topic: "bathroom/motion"
+  name: 'bathroom_motion'
+- platform: mqtt
+  state_topic: "bathroom/switch"
+  name: 'bathroom_switch'
+- platform: mqtt
+  state_topic: "corridor/switch"
+  name: 'corridor_switch'
+- platform: mqtt
+  state_topic: "door/state"
+  name: 'door_state'
+- platform: mqtt
+  state_topic: "doorbell/state"
+  name: 'doorbell_state'
+- platform: mqtt
+  state_topic: "livingroom/motion"
+  name: 'livingroom_motion'
+
+
+

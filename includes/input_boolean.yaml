@@ -1,0 +1,6 @@
+livingroom_torch_use:
+  icon: mdi:lighthouse
+  initial: off
+livingroom_corner_use:
+  icon: mdi:lighthouse
+  initial: off

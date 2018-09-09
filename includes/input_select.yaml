@@ -1,0 +1,9 @@
+living_room_flow:
+  icon: mdi:palette
+  options:
+  - custom
+  - purple
+  - red
+  - yellow
+  - green
+  - blue

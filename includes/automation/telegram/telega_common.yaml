@@ -1,0 +1,102 @@
+- alias: "telegram_handle_command_menu"
+  initial_state: "on"
+  trigger:
+  - platform: event
+    event_type: telegram_command
+    event_data:
+      command: "/menu"
+  - platform: event
+    event_type: telegram_text
+    event_data:
+      text: "m"
+  - platform: event
+    event_type: telegram_text
+    event_data:
+      text: "M"
+  action:
+  - service: telegram_bot.send_message
+    data_template:
+      target: "{{trigger.event.data.user_id}}"
+      message: "Main menu"
+      inline_keyboard:
+      - "\U00002601 Weather:/weather, \U0001F308 Forecast:/forecast"
+      - "\U0001F5A5 Computer:/computer, \U0001F4BB Laptop:/laptop"
+      - "\U0001F4F7 Camera 1:/snap cam1, \U0001F4F7 Camera 2:/snap cam2"
+      - "\U0001F30D People:/people"
+      - "\U0001F504 Restart:/restart, \U0000267B Dismiss:/dismiss"
+
+- alias: "telegram_handle_callback_menu"
+  initial_state: "on"
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: "/menu"
+  action:
+  - service: telegram_bot.answer_callback_query
+    data_template:
+      callback_query_id: "{{ trigger.event.data.id }}"
+      message: "Roger {{ trigger.event.data.data }}"
+  - service: telegram_bot.send_message
+    data_template:
+      target: "{{trigger.event.data.user_id}}"
+      message: "Main menu"
+      inline_keyboard:
+      - "\U00002601 Weather:/weather, \U0001F308 Forecast:/forecast"
+      - "\U0001F5A5 Computer:/computer, \U0001F4BB Laptop:/laptop"
+      - "\U0001F4F7 Camera 1:/snap cam1, \U0001F4F7 Camera 2:/snap cam2"
+      - "\U0001F30D People:/people"
+      - "\U0001F504 Restart:/restart, \U0000267B Dismiss:/dismiss"
+
+- alias: "telegram_handle_callback_menurestore"
+  initial_state: "on"
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: "/menurestore"
+  action:
+  - service: telegram_bot.answer_callback_query
+    data_template:
+      callback_query_id: "{{ trigger.event.data.id }}"
+      message: "Roger {{ trigger.event.data.data }}"
+  - service: telegram_bot.edit_replymarkup
+    data_template:
+      chat_id: "{{ trigger.event.data.chat_id }}"
+      message_id: "{{ trigger.event.data.message.message_id }}"
+      inline_keyboard:
+      - "\U00002601 Weather:/weather, \U0001F308 Forecast:/forecast"
+      - "\U0001F5A5 Computer:/computer, \U0001F4BB Laptop:/laptop"
+      - "\U0001F4F7 Camera 1:/snap cam1, \U0001F4F7 Camera 2:/snap cam2"
+      - "\U0001F30D People:/people, \U0000267B Dismiss:/dismiss"
+
+- alias: "telegram_handle_callback_dismiss"
+  initial_state: "on"
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: "/dismiss"
+  action:
+  - service: telegram_bot.answer_callback_query
+    data_template:
+      callback_query_id: "{{ trigger.event.data.id }}"
+      message: "Roger {{ trigger.event.data.data }}"
+  - service: telegram_bot.delete_message
+    data_template:
+      chat_id: "{{ trigger.event.data.chat_id }}"
+      message_id: "{{ trigger.event.data.message.message_id }}"
+
+- alias: "telegram_handle_callback_restart"
+  initial_state: "on"
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: "/restart"
+  action:
+  - service: telegram_bot.answer_callback_query
+    data_template:
+      callback_query_id: "{{ trigger.event.data.id }}"
+      message: "Roger {{ trigger.event.data.data }}"
+  - service: homeassistant.restart

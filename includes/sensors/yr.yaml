@@ -1,0 +1,109 @@
+- platform: yr
+  name: wt00
+  monitored_conditions:
+    - temperature
+    - symbol
+    - precipitation
+    - windSpeed
+    - pressure
+    - humidity
+- platform: yr
+  name: wt01
+  forecast: 1
+  monitored_conditions:
+    - temperature
+    - symbol
+    - precipitation
+    - windSpeed
+    - pressure
+    - humidity
+- platform: yr
+  name: wt02
+  forecast: 2
+  monitored_conditions:
+    - temperature
+    - symbol
+    - precipitation
+    - windSpeed
+    - pressure
+    - humidity
+- platform: yr
+  name: wt03
+  forecast: 3
+  monitored_conditions:
+    - temperature
+    - symbol
+    - precipitation
+    - windSpeed
+    - pressure
+    - humidity
+- platform: yr
+  name: wt06
+  forecast: 6
+  monitored_conditions:
+    - temperature
+    - symbol
+    - precipitation
+    - windSpeed
+    - pressure
+    - humidity
+- platform: yr
+  name: wt09
+  forecast: 9
+  monitored_conditions:
+    - temperature
+    - symbol
+    - precipitation
+    - windSpeed
+    - pressure
+    - humidity
+- platform: yr
+  name: wt12
+  forecast: 12
+  monitored_conditions:
+    - temperature
+    - symbol
+    - precipitation
+    - windSpeed
+    - pressure
+    - humidity
+- platform: yr
+  name: wt24
+  forecast: 24
+  monitored_conditions:
+    - temperature
+    - symbol
+    - precipitation
+    - windSpeed
+    - pressure
+    - humidity
+- platform: yr
+  name: wt48
+  forecast: 48
+  monitored_conditions:
+    - temperature
+    - symbol
+    - precipitation
+    - windSpeed
+    - pressure
+    - humidity
+- platform: yr
+  name: wt72
+  forecast: 72
+  monitored_conditions:
+    - temperature
+    - symbol
+    - precipitation
+    - windSpeed
+    - pressure
+    - humidity
+- platform: yr
+  name: wt96
+  forecast: 96
+  monitored_conditions:
+    - temperature
+    - symbol
+    - precipitation
+    - windSpeed
+    - pressure
+    - humidity

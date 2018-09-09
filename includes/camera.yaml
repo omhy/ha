@@ -1,0 +1,10 @@
+- platform: ffmpeg
+  name: cam1
+  input: -rtsp_transport tcp -i rtsp://admin:@192.168.1.220:554/onvif1
+- platform: ffmpeg
+  name: cam2
+  input: -rtsp_transport tcp -i rtsp://admin:dg20160404@192.168.1.221:554/onvif1
+#binary_sensor:
+#  - platform: ffmpeg_motion
+#    name: cam1_motion
+#    input: -rtsp_transport tcp -i rtsp://admin:@192.168.1.220:554/onvif1

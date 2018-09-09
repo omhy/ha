@@ -1,0 +1,58 @@
+doorbell_volume:
+  min: 1
+  max: 30
+doorbell_melody:
+  min: 10
+  max: 13
+
+livingroom_torch_kelvin:
+  min: 1700
+  max: 6500
+livingroom_torch_brightness_pct:
+  min: 1
+  max: 100
+livingroom_corner_kelvin:
+  min: 1700
+  max: 6500
+livingroom_corner_brightness_pct:
+  min: 1
+  max: 100
+
+flow_idx:
+  min: 1
+  max: 4
+flow_transition:
+  min: 1
+  max: 5
+flow_brightness:
+  min: 0
+  max: 255
+flow_saturation:
+  min: 0
+  max: 100
+
+flow_custom_hue1:
+  min: 1
+  max: 360
+flow_custom_hue2:
+  min: 1
+  max: 360
+flow_custom_hue3:
+  min: 1
+  max: 360
+flow_custom_hue4:
+  min: 1
+  max: 360
+
+flow_hue1:
+  min: 1
+  max: 360
+flow_hue2:
+  min: 1
+  max: 360
+flow_hue3:
+  min: 1
+  max: 360
+flow_hue4:
+  min: 1
+  max: 360

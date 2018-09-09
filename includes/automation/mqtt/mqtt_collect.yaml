@@ -1,0 +1,99 @@
+- alias: "mqtt_publish_states"
+  initial_state: "on"
+  trigger:
+    platform: state
+    entity_id:
+      - sensor.temperature_158d0001f23cbe
+      - sensor.temperature_158d0002271609
+      - sensor.temperature_158d00022c7cf2
+      - sensor.temperature_158d000234816a
+      - binary_sensor.switch_158d00021350ee
+      - binary_sensor.motion_sensor_158d0001e52779
+      - binary_sensor.motion_sensor_158d0001fa3dc0
+      - binary_sensor.door_window_sensor_158d00024367c8
+      - switch.wall_switch_left_158d00022391ec
+      - switch.wall_switch_right_158d00022391ec
+      - sensor.power_strip_1_load_power
+      - sensor.power_strip_2_load_power
+      - sensor.power_strip_3_load_power
+      - sensor.power_strip_4_load_power
+      - device_tracker.google_maps_111683533988744565132
+      - device_tracker.google_maps_117454969161947422882
+      - device_tracker.google_maps_115914092349482836896
+      - sensor.waze_current_home
+      - sensor.waze_home_work
+      - sensor.waze_work_home
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "{{ trigger.from_state.attributes.friendly_name }}"
+        payload: "{{ trigger.to_state.state }}"
+        retain: true
+
+- alias: "mqtt_power_collect_electricity"
+  initial_state: "on"
+  trigger:
+    - platform: time
+      seconds: '/30'
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "power/computer/day"
+        payload: "{{(states.sensor.power_computer_day.state | float + (states.sensor.power_strip_1_load_power.state | float /120000))|round(5)}}"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "power/computer/week"
+        payload: "{{(states.sensor.power_computer_week.state | float + (states.sensor.power_strip_1_load_power.state | float /120000))|round(5)}}"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "power/computer/month"
+        payload: "{{(states.sensor.power_computer_month.state | float + (states.sensor.power_strip_1_load_power.state | float /120000))|round(5)}}"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "power/kitchen/day"
+        payload: "{{(states.sensor.power_kitchen_day.state | float + (states.sensor.power_strip_2_load_power.state | float /120000))|round(5)}}"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "power/kitchen/week"
+        payload: "{{(states.sensor.power_kitchen_week.state | float + (states.sensor.power_strip_2_load_power.state | float /120000))|round(5)}}"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "power/kitchen/month"
+        payload: "{{(states.sensor.power_kitchen_month.state | float + (states.sensor.power_strip_2_load_power.state | float /120000))|round(5)}}"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "power/router/day"
+        payload: "{{(states.sensor.power_router_day.state | float + (states.sensor.power_strip_3_load_power.state | float /120000))|round(5)}}"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "power/router/week"
+        payload: "{{(states.sensor.power_router_week.state | float + (states.sensor.power_strip_3_load_power.state | float /120000))|round(5)}}"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "power/router/month"
+        payload: "{{(states.sensor.power_router_month.state | float + (states.sensor.power_strip_3_load_power.state | float /120000))|round(5)}}"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "power/tv/day"
+        payload: "{{(states.sensor.power_tv_day.state | float + (states.sensor.power_strip_4_load_power.state | float /120000))|round(5)}}"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "power/tv/week"
+        payload: "{{(states.sensor.power_tv_week.state | float + (states.sensor.power_strip_4_load_power.state | float /120000))|round(5)}}"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "power/tv/month"
+        payload: "{{(states.sensor.power_tv_month.state | float + (states.sensor.power_strip_4_load_power.state | float /120000))|round(5)}}"
+        retain: true
+        

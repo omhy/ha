@@ -1,0 +1,23 @@
+#- platform: gearbest
+#  currency: EUR
+#  items:
+#  - id: 596249
+#    name: GB_Xiaomi_Ceiling_Light
+#  - id: 310701
+#    name: GB_Smart_Power_Outlet
+#  - id: 699179
+#    name: GB_Night_Light_USB
+#  - id: 672506
+#    name: GB_Night_Light_Batt
+#  - id: 626695
+#    name: GB_Aqara_Wifi_Wireless_Switch
+#  - id: 626703
+#    name: GB_Aqara_Window_Door_Sensor
+#  - id: 626702
+#    name: GB_Aqara_Weather_Sensor
+#  - id: 659226
+#    name: GB_Aqara_Motion_Sensor
+#  - id: 1306907
+#    name: GB_Mitu_Cube
+#  - id: 1664464
+#    name: GB_Yeelight_Color_Bulb

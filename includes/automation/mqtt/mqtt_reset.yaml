@@ -1,0 +1,68 @@
+- alias: "mqtt_power_reset_day"
+  initial_state: "on"
+  trigger:
+    platform: time
+    at: "00:00:05"
+  action:
+  - service: script.mqtt_publish_zero
+    data_template:
+      topic: "power/computer/day"
+  - service: script.mqtt_publish_zero
+    data_template:
+      topic: "power/kitchen/day"
+  - service: script.mqtt_publish_zero
+    data_template:
+      topic: "power/router/day"
+  - service: script.mqtt_publish_zero
+    data_template:
+      topic: "power/tv/day"
+  - service: script.mqtt_publish_zero
+    data_template:
+      topic: "bathroom/motions"
+  - service: script.mqtt_publish_zero
+    data_template:
+      topic: "livingroom/motions"
+
+- alias: "mqtt_power_reset_week"
+  initial_state: "on"
+  trigger:
+    platform: time
+    at: "00:00:15"
+  condition:
+    condition: template
+    value_template: "{{ now().isoweekday() == 1 }}"
+  action:
+  - service: script.mqtt_publish_zero
+    data_template:
+      topic: "power/computer/week"
+  - service: script.mqtt_publish_zero
+    data_template:
+      topic: "power/kitchen/week"
+  - service: script.mqtt_publish_zero
+    data_template:
+      topic: "power/router/week"
+  - service: script.mqtt_publish_zero
+    data_template:
+      topic: "power/tv/week"
+
+- alias: "mqtt_power_reset_month"
+  initial_state: "on"
+  trigger:
+    platform: time
+    at: "00:00:25"
+  condition:
+    condition: template
+    value_template: "{{ now().day == 1 }}"
+  action:
+  - service: script.mqtt_publish_zero
+    data_template:
+      topic: "power/computer/month"
+  - service: script.mqtt_publish_zero
+    data_template:
+      topic: "power/kitchen/month"
+  - service: script.mqtt_publish_zero
+    data_template:
+      topic: "power/router/month"
+  - service: script.mqtt_publish_zero
+    data_template:
+      topic: "power/tv/month"

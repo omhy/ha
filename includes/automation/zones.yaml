@@ -1,0 +1,98 @@
+################## DIMA
+- alias: "dima_enters_work"
+  initial_state: "on"
+  trigger:
+    platform: zone
+    entity_id: device_tracker.google_maps_111683533988744565132
+    zone: zone.work
+    event: enter
+  action:
+    service: telegram_bot.send_message
+    data_template:
+      target: !secret tg_chat_dima
+      message: "{{ now().strftime('%H:%M') }} Dima enters \U0001F4BC"
+- alias: "dima_leaves_work"
+  initial_state: "on"
+  trigger:
+    platform: zone
+    entity_id: device_tracker.google_maps_111683533988744565132
+    zone: zone.work
+    event: leave
+  action:
+    service: telegram_bot.send_message
+    data_template:
+      target: !secret tg_chat_dima
+      message: "{{ now().strftime('%H:%M') }} Dima leaves \U0001F4BC"
+- alias: "dima_enters_home"
+  initial_state: "on"
+  trigger:
+    platform: zone
+    entity_id: device_tracker.google_maps_111683533988744565132
+    zone: zone.home
+    event: enter
+  action:
+    service: telegram_bot.send_message
+    data_template:
+      target: !secret tg_chat_dima
+      message: "{{ now().strftime('%H:%M') }} Dima enters \U0001F3E0"
+- alias: "dima_leaves_home"
+  initial_state: "on"
+  trigger:
+    platform: zone
+    entity_id: device_tracker.google_maps_111683533988744565132
+    zone: zone.home
+    event: leave
+  action:
+    service: telegram_bot.send_message
+    data_template:
+      target: !secret tg_chat_dima
+      message: "{{ now().strftime('%H:%M') }} Dima leaves \U0001F3E0"
+- alias: "dima_enters_school"
+  initial_state: "on"
+  trigger:
+    platform: zone
+    entity_id: device_tracker.google_maps_111683533988744565132
+    zone: zone.school
+    event: enter
+  action:
+    service: telegram_bot.send_message
+    data_template:
+      target: !secret tg_chat_dima
+      message: "{{ now().strftime('%H:%M') }} Dima enters \U0001F3EB"
+- alias: "dima_leaves_school"
+  initial_state: "on"
+  trigger:
+    platform: zone
+    entity_id: device_tracker.google_maps_111683533988744565132
+    zone: zone.school
+    event: leave
+  action:
+    service: telegram_bot.send_message
+    data_template:
+      target: !secret tg_chat_dima
+      message: "{{ now().strftime('%H:%M') }} Dima leaves \U0001F3EB"
+################## ALYONA
+- alias: "alyona_enters_school"
+  initial_state: "on"
+  trigger:
+    platform: zone
+    entity_id: device_tracker.google_maps_115914092349482836896
+    zone: zone.school
+    event: enter
+  action:
+    service: telegram_bot.send_message
+    data_template:
+      target: !secret tg_chat_dima
+      message: "{{ now().strftime('%H:%M') }} Alyona enters \U0001F3EB"
+- alias: "alyona_leaves_school"
+  initial_state: "on"
+  trigger:
+    platform: zone
+    entity_id: device_tracker.google_maps_115914092349482836896
+    zone: zone.school
+    event: leave
+  action:
+    service: telegram_bot.send_message
+    data_template:
+      target: !secret tg_chat_dima
+      message: "{{ now().strftime('%H:%M') }} Alyona leaves \U0001F3EB"

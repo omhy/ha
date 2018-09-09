@@ -1,0 +1,186 @@
+#GATEWAY
+light.gateway_light_7811dcb36cee:
+  friendly_name: Gateway light
+
+#WAZE
+sensor.waze_current_home:
+  friendly_name: waze/current/home
+sensor.waze_home_work:
+  friendly_name: waze/home/work
+sensor.waze_work_home:
+  friendly_name: waze/work/home
+
+#MQTT
+sensor.power_computer_day:
+  friendly_name: power/computer/day
+  icon: mdi:chip
+sensor.power_computer_week:
+  friendly_name: power/computer/week
+  icon: mdi:chip
+sensor.power_computer_month:
+  friendly_name: power/computer/month
+  icon: mdi:chip
+sensor.power_kitchen_day:
+  friendly_name: power/kitchen/day
+  icon: mdi:chip
+sensor.power_kitchen_week:
+  friendly_name: power/kitchen/week
+  icon: mdi:chip
+sensor.power_kitchen_month:
+  friendly_name: power/kitchen/month
+  icon: mdi:chip
+sensor.power_router_day:
+  friendly_name: power/router/day
+  icon: mdi:chip
+sensor.power_router_week:
+  friendly_name: power/router/week
+  icon: mdi:chip
+sensor.power_router_month:
+  friendly_name: power/router/month
+  icon: mdi:chip
+sensor.power_tv_day:
+  friendly_name: power/tv/day
+  icon: mdi:chip
+sensor.power_tv_week:
+  friendly_name: power/tv/week
+  icon: mdi:chip
+sensor.power_tv_month:
+  friendly_name: power/tv/month
+  icon: mdi:chip
+sensor.livingroom_motions:
+  friendly_name: livingroom/motions
+  icon: mdi:chip
+sensor.bathroom_motions:
+  friendly_name: bathroom/motions
+  icon: mdi:chip
+
+#DEVICES
+device_tracker.google_maps_111683533988744565132:
+  friendly_name: location/dima
+device_tracker.google_maps_117454969161947422882:
+  friendly_name: location/yury
+device_tracker.google_maps_115914092349482836896:
+  friendly_name: location/alyona
+
+#SCRIPTS
+script.sys_logic_reload:
+  icon: mdi:settings
+script.sys_homeassistant_restart:
+  icon: mdi:restart
+script.sys_recorder_purge:
+  icon: mdi:delete
+script.sys_recorder_purge_repack:
+  icon: mdi:delete-empty
+script.sys_sleep_computer:
+  icon: mdi:desktop-classic
+script.sys_sleep_laptop:
+  icon: mdi:laptop
+
+#SENSORS
+sensor.humidity_158d0002271609:
+  friendly_name: chdroom/humidity
+sensor.pressure_158d0002271609:
+  friendly_name: chdroom/pressure
+sensor.temperature_158d0002271609:
+  friendly_name: chdroom/temperature
+sensor.humidity_158d0001f23cbe:
+  friendly_name: bedroom/humidity
+sensor.temperature_158d0001f23cbe:
+  friendly_name: bedroom/temperature
+sensor.pressure_158d0001f23cbe:
+  friendly_name: bedroom/pressure
+sensor.humidity_158d00022c7cf2:
+  friendly_name: outside/humidity
+sensor.temperature_158d00022c7cf2:
+  friendly_name: outside/temperature
+sensor.pressure_158d00022c7cf2:
+  friendly_name: outside/pressure
+sensor.humidity_158d000234816a:
+  friendly_name: livingroom/humidity
+sensor.temperature_158d000234816a:
+  friendly_name: livingroom/temperature
+sensor.pressure_158d000234816a:
+  friendly_name: livingroom/pressure
+
+sensor.days_in_month:
+  friendly_name: Days in month
+  icon: mdi:calendar-search
+
+#INPUT
+input_number.doorbell_volume:
+  friendly_name: Volume
+  icon: mdi:volume-high
+input_number.doorbell_melody:
+  friendly_name: Melody
+  icon: mdi:music-box
+
+#BINARY SENSORS
+
+binary_sensor.switch_158d0002136276:
+  friendly_name: livingroom/light/state
+binary_sensor.switch_158d00021350ee:
+  friendly_name: doorbell/state
+binary_sensor.motion_sensor_158d0001e52779:
+  friendly_name: bathroom/motion
+binary_sensor.motion_sensor_158d0001fa3dc0:
+  friendly_name: livingroom/motion
+binary_sensor.door_window_sensor_158d00024367c8:
+  friendly_name: door/state
+switch.wall_switch_left_158d00022391ec:
+  friendly_name: corridor/switch
+  icon: mdi:lightbulb-on-outline
+switch.wall_switch_right_158d00022391ec:
+  friendly_name: bathroom/switch
+  icon: mdi:lightbulb-on-outline
+
+
+#ILLUMINATION
+sensor.illumination_158d0001e52779:
+  friendly_name: bathroom/illumination
+sensor.illumination_158d0001fa3dc0:
+  friendly_name: livingroom/illumination
+sensor.illumination_7811dcb36cee:
+  friendly_name: gateway/illumination
+
+#SWITCHES
+switch.power_strip_1:
+  friendly_name: Computer cord
+switch.power_strip_2:
+  friendly_name: Kitchen cord
+switch.power_strip_3:
+  friendly_name: Router cord
+switch.power_strip_4:
+  friendly_name: Tv cord
+
+sensor.power_strip_1_load_power:
+  friendly_name: power/computer/current
+sensor.power_strip_2_load_power:
+  friendly_name: power/kitchen/current
+sensor.power_strip_3_load_power:
+  friendly_name: power/router/current
+sensor.power_strip_4_load_power:
+  friendly_name: power/tv/current
+
+switch.turn_off_bb:
+  assumed_state: false
+  icon: mdi:computer
+
+#BATTERIES
+sensor.t1_battery_level:
+  friendly_name: Chdroom climate sensor
+sensor.t2_battery_level:
+  friendly_name: Bedroom climate sensor
+sensor.t3_battery_level:
+  friendly_name: Outside climate sensor
+sensor.t4_battery_level:
+  friendly_name: Living room climate sensor
+sensor.livingroom_light_switch_battery_level:
+  friendly_name: Living room light button
+sensor.doorbell_switch_battery_level:
+  friendly_name: Doorbell
+sensor.motion1_battery_level:
+  friendly_name: Bathroom motion sensor
+sensor.motion2_battery_level:
+  friendly_name: Living room motion sensor
+sensor.door_sensor_battery_level:
+  friendly_name: Entrance door sensor

@@ -1,0 +1,21 @@
+- platform: season
+- platform: moon
+- platform: uptime
+- platform: version
+
+- platform: filesize
+  file_paths:
+  - /config/home-assistant_v2.db
+  type: astronomical
+
+- platform: systemmonitor
+  resources:
+  - type: processor_use
+  - type: memory_use_percent
+  - type: memory_use
+  - type: memory_free
+
+- platform: time_date
+  display_options:
+    - 'time'
+    - 'date'
