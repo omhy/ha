@@ -20,3 +20,15 @@
   entities:
   - light.livingroom_ambient
   - light.gateway_light_7811dcb36cee
+
+- platform: mqtt
+  name: entrance_garland
+  state_topic: "stat/sonoff1/POWER"
+  command_topic: "cmnd/sonoff1/POWER"
+  availability_topic: "tele/sonoff1/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false

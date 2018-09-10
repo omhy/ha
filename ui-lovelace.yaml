@@ -10,8 +10,9 @@ resources:
 
 title: Home
 views:
-##################   ROOMS
-  - title: Rooms
+##################   MAIN
+  - title: Main
+    id: main
     icon: mdi:floor-plan
     cards:
     - type: glance
@@ -48,6 +49,9 @@ views:
       title: Entrance
       show_header_toggle: false
       entities:
+        - entity: light.entrance_garland
+          name: Garland
+          tap_action: toggle
         - entity: binary_sensor.door_window_sensor_158d00024367c8
           name: Door
           icon: mdi:door
@@ -69,6 +73,10 @@ views:
         name: Router
         url: http://192.168.1.1/
         icon: mdi:router-wireless
+      - type: weblink
+        name: Sonoff 1
+        url: http://192.168.1.40/
+        icon: mdi:switch
       - type: divider
       - type: weblink
         name: Lovelace
@@ -140,8 +148,10 @@ views:
           name: Corridor
           icon: mdi:lightbulb-on-outline
           secondary_info: last-changed
+
 ##################   ENV
   - title: Environment
+    id: env
     icon: mdi:nature
     cards:
     - type: glance
@@ -188,8 +198,10 @@ views:
         name: Humidity
       - entity: sensor.pressure_158d0001f23cbe
         name: Pressure
+
 ##################   ALARMS
   - title: Alarms
+    id: alarms
     icon: mdi:alarm-light
     cards:
       - type: entities
@@ -210,8 +222,10 @@ views:
             icon: mdi:alarm-snooze
           - entity: script.alarm_door
             icon: mdi:alarm-bell
+
 ##################   LIGHTS
   - title: Lights
+    id: lights
     icon: mdi:ceiling-light
     cards:
       - type: picture
@@ -240,6 +254,7 @@ views:
 
 ##################   LIGHTS FLOW
   - title: Lights flow
+    id: lights_flow
     icon: mdi:palette
     cards:
       - type: glance
@@ -298,9 +313,9 @@ views:
         - type: picture
           image: /local/hue.png
 
-
 ##################   ELECTRO
   - title: Electricity
+    id: electro
     icon: mdi:power-plug
     cards:
       - type: glance
@@ -365,6 +380,7 @@ views:
 
 ##################   CAMERAS
   - title: Cameras
+    id: cameras
     icon: mdi:cctv
     cards:
       - type: picture-entity
@@ -382,6 +398,7 @@ views:
 
 ##################   INFO
   - title: Information
+    id: info
     icon: mdi:information
     cards:
       - type: entities
@@ -419,6 +436,7 @@ views:
 
 ##################   FORECAST
   - title: Forecast
+    id: forecast
     icon: mdi:looks
     cards:
       - type: glance
@@ -510,7 +528,8 @@ views:
         image: https://www.yr.no/place/Latvia/Riga/Riga/meteogram.png
 
 ##################   SUM
-  - title: Monster
+  - title: Simmary
+    id: sum
     icon: mdi:elephant
     cards:
     - type: custom:monster-card
@@ -567,16 +586,10 @@ views:
       filter:
         include:
         - domain: switch
-    - type: custom:monster-card
-      card:
-        type: glance
-        title: Media players
-      filter:
-        include:
-        - domain: media_player
 
 ##################   SYSTEM
   - title: System
+    id: sys
     icon: mdi:desktop-tower
     cards:
       - type: entities
