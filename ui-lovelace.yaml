@@ -15,56 +15,105 @@ views:
     id: main
     icon: mdi:floor-plan
     cards:
-    - type: glance
-      title: Living room
-      show_header_toggle: false
-      entities:
-        - entity: binary_sensor.motion_sensor_158d0001fa3dc0
-          name: Motion
-        - entity: sensor.livingroom_motions
-          name: Motions
-        - entity: sensor.illumination_158d0001fa3dc0
-          name: Illumination
-    - type: glance
-      title: Bathroom
-      show_header_toggle: false
-      entities:
-        - entity: binary_sensor.motion_sensor_158d0001e52779
-          name: Motion
-        - entity: sensor.bathroom_motions
-          name: Motions
-        - entity: sensor.illumination_158d0001e52779
-          name: Illumination
-        - entity: switch.wall_switch_right_158d00022391ec
-          name: Light
-          tap_action: toggle
-    - type: glance
-      title: Small corridor
-      show_header_toggle: false
-      entities:
-        - entity: switch.wall_switch_left_158d00022391ec
-          name: Light
-          tap_action: toggle
-    - type: glance
-      title: Entrance
-      show_header_toggle: false
-      entities:
-        - entity: light.entrance_garland
-          name: Garland
-          tap_action: toggle
-        - entity: binary_sensor.door_window_sensor_158d00024367c8
-          name: Door
-          icon: mdi:door
-        - entity: binary_sensor.switch_158d00021350ee
-          name: Doorbell
-          icon: mdi:bell
-    - type: entities
-      title: Media
-      show_header_toggle: false
-      entities:
-      - entity: media_player.spotify
-        name: Spotify
-        icon: mdi:spotify
+    - type: vertical-stack
+      cards:
+      - type: glance
+        title: Living room
+        show_header_toggle: false
+        entities:
+          - entity: binary_sensor.motion_sensor_158d0001fa3dc0
+            name: Motion
+          - entity: sensor.livingroom_motions
+            name: Motions
+          - entity: sensor.illumination_158d0001fa3dc0
+            name: Illumination
+      - type: glance
+        title: Bathroom
+        show_header_toggle: false
+        entities:
+          - entity: binary_sensor.motion_sensor_158d0001e52779
+            name: Motion
+          - entity: sensor.bathroom_motions
+            name: Motions
+          - entity: sensor.illumination_158d0001e52779
+            name: Illumination
+          - entity: switch.wall_switch_right_158d00022391ec
+            name: Light
+            tap_action: toggle
+      - type: glance
+        title: Small corridor
+        show_header_toggle: false
+        entities:
+          - entity: switch.wall_switch_left_158d00022391ec
+            name: Light
+            tap_action: toggle
+      - type: glance
+        title: Entrance
+        show_header_toggle: false
+        entities:
+          - entity: light.entrance_garland
+            name: Garland
+            tap_action: toggle
+          - entity: binary_sensor.door_window_sensor_158d00024367c8
+            name: Door
+            icon: mdi:door
+          - entity: binary_sensor.switch_158d00021350ee
+            name: Doorbell
+            icon: mdi:bell
+    - type: vertical-stack
+      cards:
+      - type: glance
+        title: Outside
+        show_header_toggle: false
+        entities:
+        - entity: sensor.temperature_158d00022c7cf2
+          name: Temperature
+        - entity: sensor.humidity_158d00022c7cf2
+          name: Humidity
+        - entity: sensor.pressure_158d00022c7cf2
+          name: Pressure
+        - entity: sensor.current_uv_index
+          name: Current UV
+        - entity: sensor.current_ozone_level
+          name: Ozone level
+      - type: glance
+        title: Living room
+        show_header_toggle: false
+        entities:
+        - entity: sensor.temperature_158d000234816a
+          name: Temperature
+        - entity: sensor.humidity_158d000234816a
+          name: Humidity
+        - entity: sensor.pressure_158d000234816a
+          name: Pressure
+      - type: glance
+        title: Child room
+        show_header_toggle: false
+        entities:
+        - entity: sensor.temperature_158d0002271609
+          name: Temperature
+        - entity: sensor.humidity_158d0002271609
+          name: Humidity
+        - entity: sensor.pressure_158d0002271609
+          name: Pressure
+      - type: glance
+        title: Bedroom
+        show_header_toggle: false
+        entities:
+        - entity: sensor.temperature_158d0001f23cbe
+          name: Temperature
+        - entity: sensor.humidity_158d0001f23cbe
+          name: Humidity
+        - entity: sensor.pressure_158d0001f23cbe
+          name: Pressure
+    - type: media-control
+      entity: media_player.spotify
+
+##################   SECONDARY
+  - title: Secondary
+    id: sec
+    icon: mdi:blur
+    cards:
     - type: entities
       title: Links
       show_header_toggle: false
@@ -121,83 +170,33 @@ views:
       title: Last changed
       show_header_toggle: false
       entities:
-        - entity: sensor.door_state
-          name: Door
-          icon: mdi:door
-          secondary_info: last-changed
-        - entity: sensor.doorbell_state
-          name: Doorbell
-          icon: mdi:bell
-          secondary_info: last-changed
-        - type: divider
-        - entity: sensor.livingroom_motion
-          name: Living room
-          icon: mdi:walk
-          secondary_info: last-changed
-        - type: divider
-        - entity: sensor.bathroom_motion
-          name: Bathroom
-          icon: mdi:walk
-          secondary_info: last-changed
-        - entity: sensor.bathroom_switch
-          name: Bathroom
-          icon: mdi:lightbulb-on-outline
-          secondary_info: last-changed
-        - type: divider
-        - entity: sensor.corridor_switch
-          name: Corridor
-          icon: mdi:lightbulb-on-outline
-          secondary_info: last-changed
-
-##################   ENV
-  - title: Environment
-    id: env
-    icon: mdi:nature
-    cards:
-    - type: glance
-      title: Outside
-      show_header_toggle: false
-      entities:
-      - entity: sensor.temperature_158d00022c7cf2
-        name: Temperature
-      - entity: sensor.humidity_158d00022c7cf2
-        name: Humidity
-      - entity: sensor.pressure_158d00022c7cf2
-        name: Pressure
-      - entity: sensor.current_uv_index
-        name: Current UV
-      - entity: sensor.current_ozone_level
-        name: Ozone level
-    - type: glance
-      title: Living room
-      show_header_toggle: false
-      entities:
-      - entity: sensor.temperature_158d000234816a
-        name: Temperature
-      - entity: sensor.humidity_158d000234816a
-        name: Humidity
-      - entity: sensor.pressure_158d000234816a
-        name: Pressure
-    - type: glance
-      title: Child room
-      show_header_toggle: false
-      entities:
-      - entity: sensor.temperature_158d0002271609
-        name: Temperature
-      - entity: sensor.humidity_158d0002271609
-        name: Humidity
-      - entity: sensor.pressure_158d0002271609
-        name: Pressure
-    - type: glance
-      title: Bedroom
-      show_header_toggle: false
-      entities:
-      - entity: sensor.temperature_158d0001f23cbe
-        name: Temperature
-      - entity: sensor.humidity_158d0001f23cbe
-        name: Humidity
-      - entity: sensor.pressure_158d0001f23cbe
-        name: Pressure
+      - entity: sensor.door_state
+        name: Door
+        icon: mdi:door
+        secondary_info: last-changed
+      - entity: sensor.doorbell_state
+        name: Doorbell
+        icon: mdi:bell
+        secondary_info: last-changed
+      - type: divider
+      - entity: sensor.livingroom_motion
+        name: Living room
+        icon: mdi:walk
+        secondary_info: last-changed
+      - type: divider
+      - entity: sensor.bathroom_motion
+        name: Bathroom
+        icon: mdi:walk
+        secondary_info: last-changed
+      - entity: sensor.bathroom_switch
+        name: Bathroom
+        icon: mdi:lightbulb-on-outline
+        secondary_info: last-changed
+      - type: divider
+      - entity: sensor.corridor_switch
+        name: Corridor
+        icon: mdi:lightbulb-on-outline
+        secondary_info: last-changed
 
 ##################   ALARMS
   - title: Alarms
