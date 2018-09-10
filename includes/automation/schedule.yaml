@@ -1,0 +1,50 @@
+- alias: "power_strip_computer_off"
+  initial_state: "on"
+  trigger:
+    platform: time
+    at: "02:25:00"
+  action:
+    service: switch.turn_off
+    entity_id: switch.power_strip_1
+
+- alias: "power_strip_computer_on"
+  initial_state: "on"
+  trigger:
+    platform: time
+    at: "07:00:00"
+  action:
+    service: switch.turn_on
+    entity_id: switch.power_strip_1
+
+- alias: "livingroom_light_on_at_the_morning"
+  initial_state: "on"
+  trigger:
+    platform: time
+    at: "06:50:00"
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+    - service: script.light_turn_on_livingroom_torch_by_params
+    - service: script.light_turn_on_livingroom_corner_by_params
+
+- alias: "livingroom_light_off_at_the_morning"
+  initial_state: "on"
+  trigger:
+    platform: time
+    at: "07:35:00"
+  condition:
+    condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  action:
+    - service: script.light_turn_off_livingroom

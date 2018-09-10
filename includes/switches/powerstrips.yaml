@@ -14,3 +14,14 @@
   name: power_strip_4
   host: !secret power_strip_4_ip
   token: !secret power_strip_4_token
+- platform: mqtt
+  name: "Sonoff power"
+  state_topic: "stat/sonoff/POWER"
+  command_topic: "cmnd/sonoff/POWER"
+  availability_topic: "tele/sonoff/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false

@@ -43,8 +43,8 @@ light_turn_off_flow:
 
 light_turn_off_livingroom:
   sequence:
-    - service: light.turn_on
-      entity_id: light.livingroom
+  - service: light.turn_off
+    entity_id: light.livingroom
 
 light_turn_on_livingroom_torch_by_params:
   sequence:
@@ -65,4 +65,3 @@ light_turn_on_livingroom_corner_by_params:
         brightness_pct: "{{ states.input_number.livingroom_corner_brightness_pct.state | int }}"
         kelvin: "{{ states.input_number.livingroom_corner_kelvin.state | int }}"
         transition: 1
-

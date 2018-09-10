@@ -55,6 +55,13 @@ views:
           name: Doorbell
           icon: mdi:bell
     - type: entities
+      title: Media
+      show_header_toggle: false
+      entities:
+      - entity: media_player.spotify
+        name: Spotify
+        icon: mdi:spotify
+    - type: entities
       title: Links
       show_header_toggle: false
       entities:
@@ -84,6 +91,10 @@ views:
         name: Emoji list
         url: http://unicode.org/emoji/charts/full-emoji-list.html
         icon: mdi:sticker-emoji
+      - type: weblink
+        name: Github repo
+        url: https://github.com/omhy/ha
+        icon: mdi:github-circle
       - type: divider
       - type: weblink
         name: Influx DB
@@ -549,6 +560,20 @@ views:
       filter:
         include:
         - domain: script
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: Switches
+      filter:
+        include:
+        - domain: switch
+    - type: custom:monster-card
+      card:
+        type: glance
+        title: Media players
+      filter:
+        include:
+        - domain: media_player
 
 ##################   SYSTEM
   - title: System
