@@ -161,10 +161,6 @@ views:
         name: Grafana
         url: http://192.168.1.10:3000
         icon: mdi:graphql
-      - type: weblink
-        name: Log viewer
-        url: http://192.168.1.10:8123/logviewer
-        icon: mdi:format-list-bulleted
 
     - type: entities
       title: Last changed

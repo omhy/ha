@@ -128,11 +128,10 @@ binary_sensor.door_window_sensor_158d00024367c8:
   friendly_name: door/state
 switch.wall_switch_left_158d00022391ec:
   friendly_name: corridor/switch
-  icon: mdi:lightbulb-on-outline
+  icon: mdi:lightbulb
 switch.wall_switch_right_158d00022391ec:
   friendly_name: bathroom/switch
-  icon: mdi:lightbulb-on-outline
-
+  icon: mdi:lightbulb
 
 #ILLUMINATION
 sensor.illumination_158d0001e52779:

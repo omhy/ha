@@ -9,6 +9,7 @@ flow_idx_update:
         {% else %}
           {{states.input_number.flow_idx.state | int + 1}}
         {% endif %}
+
 light_flow_next:
   sequence:
   - service: input_select.select_option
@@ -27,19 +28,30 @@ light_flow_next:
 
 light_turn_on_hs:
   sequence:
-    - service: light.turn_on
-      data_template:
-        entity_id: "{{ id }}"
-        hs_color: [ "{{ hue|int }}", "{{ sat|int }}" ]
-        brightness: "{{ brightness | int }}"
-        transition: "{{ transition | int }}"
+  - service: light.turn_on
+    data_template:
+      entity_id: "{{ id }}"
+      hs_color: [ "{{ hue|int }}", "{{ sat|int }}" ]
+      brightness: "{{ brightness | int }}"
+      transition: "{{ transition | int }}"
 
 light_turn_off_flow:
   sequence:
-    - service: input_boolean.turn_off
-      entity_id:
-      - input_boolean.livingroom_torch_use
-      - input_boolean.livingroom_corner_use
+  - service: input_boolean.turn_off
+    entity_id:
+    - input_boolean.livingroom_torch_use
+    - input_boolean.livingroom_corner_use
+
+light_turn_off_entrance_garland:
+  sequence:
+  - service: light.turn_off
+    entity_id: light.entrance_garland
+
+light_turn_on_entrance_garland:
+  sequence:
+  - service: light.turn_on
+    data:
+      entity_id: light.entrance_garland
 
 light_turn_off_livingroom:
   sequence:
@@ -48,20 +60,20 @@ light_turn_off_livingroom:
 
 light_turn_on_livingroom_torch_by_params:
   sequence:
-    - service: script.light_turn_off_flow
-    - service: light.turn_on
-      data_template:
-        entity_id: light.livingroom_torch
-        brightness_pct: "{{ states.input_number.livingroom_torch_brightness_pct.state | int }}"
-        kelvin: "{{ states.input_number.livingroom_torch_kelvin.state | int }}"
-        transition: 1
+  - service: script.light_turn_off_flow
+  - service: light.turn_on
+    data_template:
+      entity_id: light.livingroom_torch
+      brightness_pct: "{{ states.input_number.livingroom_torch_brightness_pct.state | int }}"
+      kelvin: "{{ states.input_number.livingroom_torch_kelvin.state | int }}"
+      transition: 1
 
 light_turn_on_livingroom_corner_by_params:
   sequence:
-    - service: script.light_turn_off_flow
-    - service: light.turn_on
-      data_template:
-        entity_id: light.livingroom_corner
-        brightness_pct: "{{ states.input_number.livingroom_corner_brightness_pct.state | int }}"
-        kelvin: "{{ states.input_number.livingroom_corner_kelvin.state | int }}"
-        transition: 1
+  - service: script.light_turn_off_flow
+  - service: light.turn_on
+    data_template:
+      entity_id: light.livingroom_corner
+      brightness_pct: "{{ states.input_number.livingroom_corner_brightness_pct.state | int }}"
+      kelvin: "{{ states.input_number.livingroom_corner_kelvin.state | int }}"
+      transition: 1

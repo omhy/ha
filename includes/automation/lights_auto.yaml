@@ -31,6 +31,49 @@
   - service: script.light_turn_on_livingroom_torch_by_params
   - service: script.light_turn_on_livingroom_corner_by_params
 
+- alias: "light_button_double_when_flow_is_off"
+  initial_state: "on"
+  trigger:
+  - platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0002136276
+      click_type: double
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: input_boolean.livingroom_torch_use
+      state: "off"
+    - condition: state
+      entity_id: input_boolean.livingroom_corner_use
+      state: "off"
+  action:
+  - service: input_boolean.turn_on
+    entity_id:
+    - input_boolean.livingroom_torch_use
+    - input_boolean.livingroom_corner_use
+
+- alias: "light_button_double_when_flow_is_on"
+  initial_state: "on"
+  trigger:
+  - platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0002136276
+      click_type: double
+  condition:
+    condition: or
+    conditions:
+    - condition: state
+      entity_id: input_boolean.livingroom_torch_use
+      state: "on"
+    - condition: state
+      entity_id: input_boolean.livingroom_corner_use
+      state: "on"
+  action:
+  - service: script.light_flow_next
+
 - alias: "light_livingroom_flow"
   initial_state: "on"
   trigger:
