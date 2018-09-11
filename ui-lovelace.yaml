@@ -112,7 +112,7 @@ views:
 ##################   SECONDARY
   - title: Secondary
     id: sec
-    icon: mdi:blur
+    icon: mdi:link
     cards:
     - type: entities
       title: Links

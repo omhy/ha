@@ -14,14 +14,22 @@
 
 "automation.zone_*":
   icon: mdi:map-marker
-"automation.light_*":
-  icon: mdi:telegram
-"automation.debug_*":
-  icon: mdi:bug
 "automation.ha_*":
   icon: mdi:home-assistant
-"automation.doorbell_*":
+"automation.doorbell*":
   icon: mdi:bell-ring
+"automation.notification*":
+  icon: mdi:message
+"automation.*light*":
+  icon: mdi:lightbulb
+"automation.*door*":
+  icon: mdi:door
+"automation.*debug*":
+  icon: mdi:bug
+"automation.*dima*":
+  icon: mdi:human-male
+"automation.*alyona*":
+  icon: mdi:human-female
 
 "binary_sensor.motion_sensor*":
   friendly_name: motion

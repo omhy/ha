@@ -51,6 +51,17 @@
     - service: script.light_turn_off_livingroom
     - service: script.light_turn_off_entrance_garland
 
+- alias: "light_off_after_sunset"
+  initial_state: "on"
+  trigger:
+  - platform: time
+    at: "23:00:00"
+  - platform: sun
+    event: sunset
+    offset: '03:00:00'
+  action:
+    - service: script.light_turn_off_entrance_garland
+
 - alias: "light_on_at_the_sunset"
   initial_state: "on"
   trigger:
