@@ -1,12 +1,17 @@
-"*.telegram_*":
+"*door*":
+  icon: mdi:door
+"*doorbell*":
+  icon: mdi:bell-ring
+"*telegram*":
   icon: mdi:telegram
-"*.mqtt_*":
+"*mqtt*":
   icon: mdi:chip
-"*.light_*":
+"*light*":
   icon: mdi:ceiling-light
 "*idx*":
   icon: mdi:counter
-
+"*debug*":
+  icon: mdi:bug
 "*brightness*":
   icon: mdi:brightness-5
 "*kelvin*":
@@ -16,16 +21,8 @@
   icon: mdi:map-marker
 "automation.ha_*":
   icon: mdi:home-assistant
-"automation.doorbell*":
-  icon: mdi:bell-ring
 "automation.notification*":
   icon: mdi:message
-"automation.*light*":
-  icon: mdi:lightbulb
-"automation.*door*":
-  icon: mdi:door
-"automation.*debug*":
-  icon: mdi:bug
 "automation.*dima*":
   icon: mdi:human-male
 "automation.*alyona*":

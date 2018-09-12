@@ -5,6 +5,8 @@ light.gateway_light_7811dcb36cee:
 #WAZE
 sensor.waze_current_home:
   friendly_name: waze/current/home
+sensor.waze_current_work:
+  friendly_name: waze/current/work
 sensor.waze_home_work:
   friendly_name: waze/home/work
 sensor.waze_work_home:

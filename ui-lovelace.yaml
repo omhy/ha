@@ -428,8 +428,13 @@ views:
           name: Alyona
         - entity: device_tracker.google_maps_117454969161947422882
           name: Yury
+      - type: map
+        entities:
+        - device_tracker.google_maps_111683533988744565132
+        - device_tracker.google_maps_115914092349482836896
+        - device_tracker.google_maps_117454969161947422882
 
-##################   FORECAST
+    ##################   FORECAST
   - title: Forecast
     id: forecast
     icon: mdi:looks
