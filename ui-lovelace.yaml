@@ -60,6 +60,7 @@ views:
           - entity: binary_sensor.switch_158d00021350ee
             name: Doorbell
             icon: mdi:bell
+          - alert.entrance_door
     - type: vertical-stack
       cards:
       - type: glance
@@ -127,9 +128,14 @@ views:
         url: http://192.168.1.40/
         icon: mdi:switch
       - type: divider
+
       - type: weblink
         name: Lovelace
         url: https://www.home-assistant.io/lovelace
+        icon: mdi:home-assistant
+      - type: weblink
+        name: Lovelace custom cards
+        url: https://github.com/ciotlosm/custom-lovelace
         icon: mdi:home-assistant
       - type: weblink
         name: Light component
@@ -140,6 +146,7 @@ views:
         url: https://www.home-assistant.io/docs/automation/trigger/
         icon: mdi:home-assistant
       - type: divider
+
       - type: weblink
         name: MDI icons
         url: https://materialdesignicons.com
@@ -153,14 +160,11 @@ views:
         url: https://github.com/omhy/ha
         icon: mdi:github-circle
       - type: divider
+
       - type: weblink
         name: Influx DB
         url: http://192.168.1.10:8888
         icon: mdi:database
-      - type: weblink
-        name: Grafana
-        url: http://192.168.1.10:3000
-        icon: mdi:graphql
 
     - type: entities
       title: Last changed
@@ -193,30 +197,6 @@ views:
         name: Corridor
         icon: mdi:lightbulb-on-outline
         secondary_info: last-changed
-
-##################   ALARMS
-  - title: Alarms
-    id: alarms
-    icon: mdi:alarm-light
-    cards:
-      - type: entities
-        title: Automations
-        show_header_toggle: false
-        entities:
-          - entity: automation.entrance_door_opened_too_long_monitor
-            name: Is entrance door opened too long?
-            icon: mdi:radar
-          - entity: automation.entrance_door_opened_too_long_alarm
-            name: Entrance door is opened too long!
-            icon: mdi:alarm-light
-      - type: entities
-        title: Scripts
-        show_header_toggle: false
-        entities:
-          - entity: script.aqara_stop_ringtone
-            icon: mdi:alarm-snooze
-          - entity: script.alarm_door
-            icon: mdi:alarm-bell
 
 ##################   LIGHTS
   - title: Lights
@@ -429,6 +409,7 @@ views:
         - entity: device_tracker.google_maps_117454969161947422882
           name: Yury
       - type: map
+        default_zoom: 15
         entities:
         - device_tracker.google_maps_111683533988744565132
         - device_tracker.google_maps_115914092349482836896

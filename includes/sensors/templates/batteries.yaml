@@ -27,3 +27,6 @@
     door_sensor_battery_level:
       unit_of_measurement: "%"
       value_template: "{{states.binary_sensor.door_window_sensor_158d00024367c8.attributes.battery_level | float}}"
+    sw1_standalone_battery_level:
+      unit_of_measurement: "%"
+      value_template: "{{states.binary_sensor.wall_switch_both_158d00026b96c1.attributes.battery_level | float}}"

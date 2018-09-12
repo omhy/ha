@@ -17,6 +17,11 @@
 "*kelvin*":
   icon: mdi:temperature-kelvin
 
+"light.*":
+  icon: mdi:lightbulb
+"alert.*":
+  icon: mdi:lightbulb
+
 "automation.zone_*":
   icon: mdi:map-marker
 "automation.ha_*":
