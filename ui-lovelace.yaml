@@ -127,6 +127,10 @@ views:
         name: Sonoff 1
         url: http://192.168.1.40/
         icon: mdi:switch
+      - type: weblink
+        name: Influx DB
+        url: http://192.168.1.10:8888
+        icon: mdi:database
       - type: divider
 
       - type: weblink
@@ -159,12 +163,6 @@ views:
         name: Github repo
         url: https://github.com/omhy/ha
         icon: mdi:github-circle
-      - type: divider
-
-      - type: weblink
-        name: Influx DB
-        url: http://192.168.1.10:8888
-        icon: mdi:database
 
     - type: entities
       title: Last changed

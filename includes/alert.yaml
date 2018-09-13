@@ -1,9 +1,9 @@
 entrance_door:
   name: entrance_door
-  done_message: Entrance door is closed
+  done_message: "\U0001F512 Door is closed"
   entity_id: binary_sensor.door_window_sensor_158d00024367c8
   state: 'on'
-  repeat: 1
+  repeat: 2
   skip_first: True
   notifiers:
   - telegram_all_grp

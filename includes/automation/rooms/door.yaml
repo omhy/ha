@@ -19,7 +19,7 @@
     service: telegram_bot.send_message
     data_template:
       target: !secret tg_chat_dima
-      message: "{{ now().strftime('%H:%M') }} \U0001F513 Door opened"
+      message: "{{ now().strftime('%H:%M') }} \U0001F513 Door is opened"
 
 - alias: "entrance_door_closed"
   initial_state: "on"
@@ -35,4 +35,4 @@
   - service: telegram_bot.send_message
     data_template:
       target: !secret tg_chat_dima
-      message: "{{ now().strftime('%H:%M') }} \U0001F512 Door closed"
+      message: "{{ now().strftime('%H:%M') }} \U0001F512 Door is closed"
