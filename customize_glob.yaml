@@ -49,15 +49,15 @@
   friendly_name: Illumination
 "sensor.*_battery_level":
   icon: mdi:battery
-"sensor.*_temperature":
+"sensor.*_temperature*":
   icon: mdi:thermometer
-"sensor.*_humidity":
+"sensor.*_humidity*":
   icon: mdi:water-percent
-"sensor.*_precipitation":
+"sensor.*_precipitation*":
   icon: mdi:weather-rainy
-"sensor.*_wind_speed":
+"sensor.*_wind_speed*":
   icon: mdi:weather-windy
-"sensor.*_pressure":
+"sensor.*_pressure*":
   icon: mdi:gauge
 
 "sensor.power_strip_*_load_power":

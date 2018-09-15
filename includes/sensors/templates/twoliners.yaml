@@ -30,3 +30,23 @@
     sw1_standalone_battery_level:
       unit_of_measurement: "%"
       value_template: "{{states.binary_sensor.wall_switch_both_158d00026b96c1.attributes.battery_level | float}}"
+    power_strip_1_load_power:
+      unit_of_measurement: "Wh"
+      value_template: "{{ states.switch.power_strip_1.attributes.load_power | float }}"
+    power_strip_2_load_power:
+      unit_of_measurement: "Wh"
+      value_template: "{{ states.switch.power_strip_2.attributes.load_power | float }}"
+    power_strip_3_load_power:
+      unit_of_measurement: "Wh"
+      value_template: "{{ states.switch.power_strip_3.attributes.load_power | float }}"
+    power_strip_4_load_power:
+      unit_of_measurement: "Wh"
+      value_template: "{{ states.switch.power_strip_4.attributes.load_power | float }}"
+    outside_temperature_min:
+      unit_of_measurement: "°C"
+      value_template: "{{ states.sensor.outside_temperature_mean.attributes.min_value | float }}"
+    outside_temperature_max:
+      unit_of_measurement: "°C"
+      value_template: "{{ states.sensor.outside_temperature_mean.attributes.max_value | float }}"
+
+
