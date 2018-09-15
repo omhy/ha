@@ -16,13 +16,13 @@
     data_template:
       target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F514 Doorbell single click"
-  - service: telegram_bot.send_photo
-    data_template:
-      target: !secret tg_chat_dima
-      url: "http://localhost:8123{{states.camera.cam2.attributes.entity_picture}}"
-      caption: "Doorbell camera"
-      inline_keyboard:
-      - "\U0001F504 Refresh:/snap cam1, \U0000267B Dismiss:/dismiss"
+#  - service: telegram_bot.send_photo
+#    data_template:
+#      target: !secret tg_chat_dima
+#      url: "http://localhost:8123{{states.camera.cam2.attributes.entity_picture}}"
+#      caption: "Doorbell camera"
+#      inline_keyboard:
+#      - "\U0001F504 Refresh:/snap cam1, \U0000267B Dismiss:/dismiss"
 
 - alias: "doorbell_double_click"
   initial_state: "on"
@@ -42,12 +42,12 @@
     data_template:
       target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F514 Doorbell double click"
-  - service: telegram_bot.send_photo
-    data_template:
-      target: !secret tg_chat_dima
-      url: "http://localhost:8123{{states.camera.cam2.attributes.entity_picture}}"
-      caption: "Doorbell camera"
-      inline_keyboard:
-      - "\U0001F504 Refresh:/snap cam1, \U0000267B Dismiss:/dismiss"
+#  - service: telegram_bot.send_photo
+#    data_template:
+#      target: !secret tg_chat_dima
+#      url: "http://localhost:8123{{states.camera.cam2.attributes.entity_picture}}"
+#      caption: "Doorbell camera"
+#      inline_keyboard:
+#      - "\U0001F504 Refresh:/snap cam1, \U0000267B Dismiss:/dismiss"
 
 

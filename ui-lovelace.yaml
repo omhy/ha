@@ -60,7 +60,6 @@ views:
           - entity: binary_sensor.switch_158d00021350ee
             name: Doorbell
             icon: mdi:bell
-          - alert.entrance_door
     - type: vertical-stack
       cards:
       - type: glance

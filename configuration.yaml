@@ -11,12 +11,11 @@ homeassistant:
   - /config
 
 hassio:
-cloud:
+#cloud:
 updater:
   include_used_components: true
 custom_updater:
 config:
-http:
 frontend:
 history:
 #logbook:
@@ -27,6 +26,11 @@ logger:
   default: warn
 openuv:
   api_key: !secret open_uv_api_key
+
+http:
+#  base_url: !secret http_base_url
+#  ssl_certificate: /ssl/fullchain.pem
+#  ssl_key: /ssl/privkey.pem
 
 system_log:
   max_entries: 50
@@ -79,7 +83,7 @@ device_tracker:
   interval_seconds: 850
 
 zone: !include includes/zone.yaml
-alert: !include includes/alert.yaml
+#alert: !include includes/alert.yaml
 #counter: !include includes/counter.yaml
 input_number: !include includes/input_number.yaml
 #input_text: !include includes/input_text.yaml

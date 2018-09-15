@@ -20,7 +20,7 @@
 "light.*":
   icon: mdi:lightbulb
 "alert.*":
-  icon: mdi:lightbulb
+  icon: mdi:alarm-light
 
 "automation.zone_*":
   icon: mdi:map-marker
