@@ -390,16 +390,16 @@ views:
         title: Doorbell settings
         show_header_toggle: false
         entities:
-          - input_number.doorbell_volume
-          - input_number.doorbell_melody
+        - input_number.doorbell_volume
+        - input_number.doorbell_melody
       - type: entities
         title: Waze
         show_header_toggle: true
         entities:
-          - sensor.waze_current_home
-          - sensor.waze_current_work
-          - sensor.waze_home_work
-          - sensor.waze_work_home
+        - sensor.waze_current_home
+        - sensor.waze_current_work
+        - sensor.waze_home_work
+        - sensor.waze_work_home
       - type: glance
         title: People
         entities:
@@ -518,8 +518,23 @@ views:
       - type: picture
         image: https://www.yr.no/place/Latvia/Riga/Riga/meteogram.png
 
+##################   DARKSKY
+  - title: Darksy
+    id: darksy
+    icon: mdi:weather-night
+    cards:
+    - type: entities
+      title: In short...
+      entities:
+      - entity: sensor.dark_sky_summary
+        name: Now
+      - entity: sensor.dark_sky_hourly_summary
+        name: Next 24h
+      - entity: sensor.dark_sky_daily_summary
+        name: Next 7d
+
 ##################   SUM
-  - title: Simmary
+  - title: Summary
     id: sum
     icon: mdi:elephant
     cards:
@@ -587,29 +602,29 @@ views:
         title: Date and time
         show_header_toggle: true
         entities:
-          - sensor.date
-          - sensor.time
-          - sensor.days_in_month
+        - sensor.date
+        - sensor.time
+        - sensor.days_in_month
       - type: entities
         title: System state
         show_header_toggle: true
         entities:
-          - sensor.uptime
-          - sensor.processor_use
-          - sensor.memory_use_percent
-          - sensor.memory_use
-          - sensor.memory_free
-          - sensor.homeassistant_v2db
-          - counter.syslog_warning
-          - counter.syslog_error
+        - sensor.uptime
+        - sensor.processor_use
+        - sensor.memory_use_percent
+        - sensor.memory_use
+        - sensor.memory_free
+        - sensor.homeassistant_v2db
+        - counter.syslog_warning
+        - counter.syslog_error
       - type: entities
         title: System scripts
         show_header_toggle: false
         entities:
-          - script.sys_recorder_purge
-          - script.sys_recorder_purge_repack
-          - script.sys_homeassistant_restart
-          - script.sys_logic_reload
+        - script.sys_recorder_purge
+        - script.sys_recorder_purge_repack
+        - script.sys_homeassistant_restart
+        - script.sys_logic_reload
       - type: custom:monster-card
         card:
           type: entities
@@ -621,8 +636,8 @@ views:
         title: Remote
         show_header_toggle: true
         entities:
-          - script.sys_sleep_computer
-          - script.sys_sleep_laptop
+        - script.sys_sleep_computer
+        - script.sys_sleep_laptop
       - type: custom:tracker-card
         title:
         trackers:
