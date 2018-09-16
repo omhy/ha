@@ -77,18 +77,18 @@ views:
         - entity: sensor.current_ozone_level
           name: Ozone level
       - type: glance
-        title: Temperature in last 24h
+        title: Temperature Today
         show_header_toggle: false
         entities:
         - entity: sensor.outside_temperature_min
           name: Minimal
           icon: mdi:minus-box
-        - entity: sensor.outside_temperature_mean
-          name: Mean
-          icon: mdi:equal-box
         - entity: sensor.outside_temperature_max
           name: Maximal
           icon: mdi:plus-box
+        - entity: sensor.outside_temperature_diff
+          name: Difference
+          icon: mdi:poll-box
       - type: glance
         title: Living room
         show_header_toggle: false
