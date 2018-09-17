@@ -45,6 +45,11 @@
       topic: "{{ trigger.from_state.attributes.friendly_name }}/min"
       payload: "{{ trigger.to_state.state }}"
       retain: true
+  - service: mqtt.publish
+    data_template:
+      topic: "{{ trigger.from_state.attributes.friendly_name }}/min/at"
+      payload: "{{ now().strftime('%H:%M') }}"
+      retain: true
 
 - alias: "mqtt_publish_outside_temperature_max"
   initial_state: "on"
@@ -61,6 +66,12 @@
       topic: "{{ trigger.from_state.attributes.friendly_name }}/max"
       payload: "{{ trigger.to_state.state }}"
       retain: true
+  - service: mqtt.publish
+    data_template:
+      topic: "{{ trigger.from_state.attributes.friendly_name }}/max/at"
+      payload: "{{ now().strftime('%H:%M') }}"
+      retain: true
+
 
 - alias: "mqtt_power_collect_electricity"
   initial_state: "on"

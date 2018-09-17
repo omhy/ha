@@ -16,6 +16,18 @@
     service: switch.turn_on
     entity_id: switch.power_strip_1
 
+- alias: "weather_summary"
+  initial_state: "on"
+  trigger:
+  - platform: time
+    at: "06:55:00"
+  - platform: time
+    at: "23:55:00"
+  action:
+  - service: script.telegram_send_weather
+    data_template:
+      target: !secret tg_chat_dima
+
 - alias: "light_on_at_the_morning"
   initial_state: "on"
   trigger:

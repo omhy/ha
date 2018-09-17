@@ -24,48 +24,7 @@
     - service: telegram_bot.answer_callback_query
       data_template:
         callback_query_id: "{{ trigger.event.data.id }}"
-        message: "{{states.sensor.wt00_temperature.last_updated.astimezone().strftime('%Y-%m-%d %H:%M')}}"
+        message: "Roger {{ trigger.event.data.data }}"
     - service: script.telegram_send_weather
       data_template:
         target: "{{trigger.event.data.user_id}}"
-        when: "Now"
-        symb: "{{states.sensor.wt00_symbol.state}}"
-        tmpr: "{{states.sensor.wt00_temperature.state_with_unit}}"
-        prcp: "{{states.sensor.wt00_precipitation.state_with_unit}}"
-        wind: "{{states.sensor.wt00_wind_speed.state_with_unit}}"
-    - service: script.telegram_send_weather
-      data_template:
-        target: "{{trigger.event.data.user_id}}"
-        when: "1h"
-        symb: "{{states.sensor.wt01_symbol.state}}"
-        tmpr: "{{states.sensor.wt01_temperature.state_with_unit}}"
-        prcp: "{{states.sensor.wt01_precipitation.state_with_unit}}"
-        wind: "{{states.sensor.wt01_wind_speed.state_with_unit}}"
-    - service: script.telegram_send_weather
-      data_template:
-        target: "{{trigger.event.data.user_id}}"
-        when: "2h"
-        symb: "{{states.sensor.wt02_symbol.state}}"
-        tmpr: "{{states.sensor.wt02_temperature.state_with_unit}}"
-        prcp: "{{states.sensor.wt02_precipitation.state_with_unit}}"
-        wind: "{{states.sensor.wt02_wind_speed.state_with_unit}}"
-    - service: script.telegram_send_weather
-      data_template:
-        target: "{{trigger.event.data.user_id}}"
-        when: "3h"
-        symb: "{{states.sensor.wt03_symbol.state}}"
-        tmpr: "{{states.sensor.wt03_temperature.state_with_unit}}"
-        prcp: "{{states.sensor.wt03_precipitation.state_with_unit}}"
-        wind: "{{states.sensor.wt03_wind_speed.state_with_unit}}"
-    - service: script.telegram_send_weather
-      data_template:
-        target: "{{trigger.event.data.user_id}}"
-        when: "6h"
-        symb: "{{states.sensor.wt06_symbol.state}}"
-        tmpr: "{{states.sensor.wt06_temperature.state_with_unit}}"
-        prcp: "{{states.sensor.wt06_precipitation.state_with_unit}}"
-        wind: "{{states.sensor.wt06_wind_speed.state_with_unit}}"
-    - service: script.telegram_response_updated
-      data_template:
-        target: "{{trigger.event.data.user_id}}"
-        updt: "{{states.sensor.wt00_temperature.last_updated.astimezone().strftime('%Y-%m-%d %H:%M')}}"

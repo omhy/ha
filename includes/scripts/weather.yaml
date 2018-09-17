@@ -4,54 +4,18 @@ telegram_send_weather:
     data_template:
       target: "{{target}}"
       message: >
-        {% set icons = {
-        '1' : '\U00002600',
-        '2' : '\U0001F324',
-        '3' : '\U0001F325',
-        '4' : '\U00002601',
-        '5' : '\U0001F326',
-        '6' : '\U000026C8',
-        '7' : '\U0001F328',
-        '8' : '\U0001F328',
-        '9' : '\U0001F327',
-        '10' : '\U0001F327',
-        '11' : '\U0001F327',
-        '12' : '\U0001F327',
-        '13' : '\U0001F328',
-        '14' : '\U0001F328',
-        '15' : '\U0001F32B',
-        '20' : '\U000026C8',
-        '21' : '\U000026C8',
-        '22' : '\U000026C8',
-        '23' : '\U000026C8',
-        '24' : '\U000026C8',
-        '25' : '\U000026C8',
-        '26' : '\U000026C8',
-        '27' : '\U000026C8',
-        '28' : '\U000026C8',
-        '29' : '\U000026C8',
-        '30' : '\U000026C8',
-        '31' : '\U000026C8',
-        '32' : '\U000026C8',
-        '33' : '\U000026C8',
-        '34' : '\U000026C8',
-        '40' : '\U0001F326',
-        '41' : '\U0001F326',
-        '42' : '\U0001F326',
-        '43' : '\U0001F326',
-        '44' : '\U0001F326',
-        '45' : '\U0001F326',
-        '46' : '\U0001F327',
-        '47' : '\U0001F328',
-        '48' : '\U0001F328',
-        '49' : '\U0001F328',
-        '50' : '\U0001F328'
-        } %}
-        {{icons[symb]}}
-        {{when}}:
-        {{tmpr}},
-        {{prcp}},
-        {{wind}}
+        Today is {{ now().strftime('%Y-%m-%d') }}
+
+        {{ '\U0001F535' }} `min `{{ states.sensor.outside_temperature_min.state_with_unit }} @ {{ states.sensor.outside_temperature_min_at.state|default('-') }}
+
+        {{ '\U0001F534' }} `max `{{ states.sensor.outside_temperature_max.state_with_unit }} @ {{ states.sensor.outside_temperature_max_at.state|default('-') }}
+
+        {{ '\U000026AA' }} `now `{{ states.sensor.temperature_158d00022c7cf2.state_with_unit }}
+
+        {{ '\U000026AB' }} `dif `{{ states.sensor.outside_temperature_diff.state_with_unit }}
+      inline_keyboard:
+      - "\U0001F504 Refresh:/weather, \U0000267B Dismiss:/dismiss"
+
 telegram_send_weather_forecast:
   sequence:
   - service: telegram_bot.send_message
