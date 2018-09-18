@@ -11,8 +11,18 @@
       retain: true
   - service: mqtt.publish
     data_template:
+      topic: "outside/temperature/min/at"
+      payload: "-"
+      retain: true
+  - service: mqtt.publish
+    data_template:
       topic: "outside/temperature/max"
       payload: "{{ states.sensor.temperature_158d00022c7cf2.state }}"
+      retain: true
+  - service: mqtt.publish
+    data_template:
+      topic: "outside/temperature/max/at"
+      payload: "-"
       retain: true
 
 - alias: "mqtt_power_reset_day"
