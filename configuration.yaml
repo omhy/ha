@@ -10,20 +10,23 @@ homeassistant:
   whitelist_external_dirs:
   - /config
 
-hassio:
-#cloud:
-updater:
-  include_used_components: true
-custom_updater:
-config:
-frontend:
-history:
-#logbook:
 map:
 sun:
 ffmpeg:
+custom_updater:
+
+hassio:
+config:
+frontend:
+  themes: !include_dir_merge_named includes/themes
+
+updater:
+  include_used_components: true
+
+history:
 logger:
   default: warn
+
 openuv:
   api_key: !secret open_uv_api_key
 
