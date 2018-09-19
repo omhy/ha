@@ -30,6 +30,11 @@ logger:
 openuv:
   api_key: !secret open_uv_api_key
 
+#weather:
+#- platform: darksky
+#  api_key: !secret darksky_api_key
+#- platform: yweather
+
 http:
 #  base_url: !secret http_base_url
 #  ssl_certificate: /ssl/fullchain.pem

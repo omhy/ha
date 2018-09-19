@@ -159,6 +159,6 @@ telegram_send_weather_forecast:
         states.sensor.wt72_wind_speed.state_with_unit,
         states.sensor.wt72_pressure.state_with_unit)
         }}
-
-        {{states.sensor.wt00_temperature.last_updated.astimezone().strftime('%Y-%m-%d %H:%M')}}
         ```
+      inline_keyboard:
+      - "\U0001F504 Refresh:/forecast, \U0000267B Dismiss:/dismiss"
