@@ -1,0 +1,11 @@
+- alias: "weather_summary"
+  initial_state: "on"
+  trigger:
+  - platform: time
+    at: "06:55:00"
+  - platform: time
+    at: "23:55:00"
+  action:
+  - service: script.telegram_send_weather
+    data_template:
+      target: !secret tg_chat_dima

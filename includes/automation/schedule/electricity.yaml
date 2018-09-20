@@ -1,0 +1,17 @@
+- alias: "power_strip_computer_off"
+  initial_state: "on"
+  trigger:
+    platform: time
+    at: "02:00:00"
+  action:
+    service: switch.turn_off
+    entity_id: switch.power_strip_1
+
+- alias: "power_strip_computer_on"
+  initial_state: "on"
+  trigger:
+    platform: time
+    at: "06:50:00"
+  action:
+    service: switch.turn_on
+    entity_id: switch.power_strip_1

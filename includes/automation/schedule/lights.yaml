@@ -1,0 +1,101 @@
+######################## GARLAND
+- alias: "light_off_after_sunset"
+  initial_state: "on"
+  trigger:
+  - platform: time
+    at: "23:00:00"
+  - platform: sun
+    event: sunset
+    offset: '03:00:00'
+  action:
+  - service: script.light_turn_off_entrance_garland
+
+- alias: "light_on_at_the_sunset"
+  initial_state: "on"
+  trigger:
+    platform: sun
+    event: sunset
+  action:
+  - service: script.light_turn_on_entrance_garland
+
+######################## LIVING ROOM @ WORKING DAYS
+- alias: "light_on_at_working_day"
+  initial_state: "on"
+  trigger:
+    platform: time
+    at: "06:55:00"
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+    - service: script.light_turn_on_livingroom_torch_by_params
+    - service: script.light_turn_on_livingroom_corner_by_params
+    - service: script.light_turn_on_entrance_garland
+
+- alias: "light_off_at_working_day"
+  initial_state: "on"
+  trigger:
+    platform: time
+    at: "07:35:00"
+  condition:
+    condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  action:
+    - service: script.light_turn_off_livingroom
+    - service: script.light_turn_off_entrance_garland
+
+- alias: "light_warning_at_working_day"
+  initial_state: "on"
+  trigger:
+    platform: time
+    at: "07:25:00"
+  condition:
+    condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  action:
+  - service: light.turn_on
+    data_template:
+      entity_id: light.livingroom_torch
+      hs_color: [ 30, 80 ]
+  - service: light.turn_on
+    data_template:
+      entity_id: light.livingroom_corner
+      hs_color: [ 30, 80 ]
+
+- alias: "light_run_at_working_day"
+  initial_state: "on"
+  trigger:
+    platform: time
+    at: "07:29:00"
+  condition:
+    condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  action:
+  - service: light.turn_on
+    data_template:
+      entity_id: light.livingroom_torch
+      hs_color: [ 5, 80 ]
+  - service: light.turn_on
+    data_template:
+      entity_id: light.livingroom_corner
+      hs_color: [ 5, 80 ]
