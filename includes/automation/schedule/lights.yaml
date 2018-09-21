@@ -6,7 +6,7 @@
     at: "23:00:00"
   - platform: sun
     event: sunset
-    offset: '03:00:00'
+    offset: '04:00:00'
   action:
   - service: script.light_turn_off_entrance_garland
 

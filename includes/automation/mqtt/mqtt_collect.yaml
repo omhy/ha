@@ -20,9 +20,10 @@
     - device_tracker.google_maps_111683533988744565132
     - device_tracker.google_maps_117454969161947422882
     - device_tracker.google_maps_115914092349482836896
-    - sensor.waze_current_home
     - sensor.waze_home_work
     - sensor.waze_work_home
+    - sensor.waze_current_home
+    - sensor.waze_current_work
   action:
   - service: mqtt.publish
     data_template:

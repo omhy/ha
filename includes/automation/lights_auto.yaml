@@ -101,12 +101,28 @@
           light.livingroom_corner
         {% endif %}
       hue: >
-        {% set hue = {
-          1 : states.input_number.flow_hue1.state | int,
-          2 : states.input_number.flow_hue2.state | int,
-          3 : states.input_number.flow_hue3.state | int,
-          4 : states.input_number.flow_hue4.state | int
-        } %}
+        {% if is_state('input_select.living_room_flow', 'custom') %}
+          {% set hue = {
+            1 : states.input_number.flow_custom_hue1.state | int,
+            2 : states.input_number.flow_custom_hue2.state | int,
+            3 : states.input_number.flow_custom_hue3.state | int,
+            4 : states.input_number.flow_custom_hue4.state | int
+          } %}
+        {% elif is_state('input_select.living_room_flow', 'random') %}
+          {% set hue = {
+            1 : states.input_number.flow_random_hue.state | int,
+            2 : states.input_number.flow_random_hue.state | int,
+            3 : states.input_number.flow_random_hue.state | int,
+            4 : states.input_number.flow_random_hue.state | int
+          } %}
+        {% else %}
+          {% set hue = {
+            1 : states.input_number.flow_hue1.state | int,
+            2 : states.input_number.flow_hue2.state | int,
+            3 : states.input_number.flow_hue3.state | int,
+            4 : states.input_number.flow_hue4.state | int
+          } %}
+        {% endif %}
         {{hue[states.input_number.flow_idx.state|int]}}
       sat: "{{ states.input_number.flow_saturation.state }}"
       brightness: "{{ states.input_number.flow_brightness.state }}"
@@ -123,7 +139,6 @@
     data_template:
       value: >
         {% set hue = {
-          'custom' : states.input_number.flow_custom_hue1.state,
           'purple' : 260,
           'red' : 340,
           'yellow' : 40,
@@ -136,7 +151,6 @@
     data_template:
       value: >
         {% set hue = {
-          'custom' : states.input_number.flow_custom_hue2.state,
           'purple' : 280,
           'red' : 360,
           'yellow' : 60,
@@ -149,7 +163,6 @@
     data_template:
       value: >
         {% set hue = {
-          'custom' : states.input_number.flow_custom_hue3.state,
           'purple' : 300,
           'red' : 20,
           'yellow' : 80,
@@ -162,7 +175,6 @@
     data_template:
       value: >
         {% set hue = {
-          'custom' : states.input_number.flow_custom_hue4.state,
           'purple' : 320,
           'red' : 40,
           'yellow' : 100,

@@ -1,12 +1,13 @@
-- platform: season
 - platform: moon
 - platform: uptime
 - platform: version
 
+- platform: season
+  type: astronomical
+
 - platform: filesize
   file_paths:
   - /config/home-assistant_v2.db
-  type: astronomical
 
 - platform: systemmonitor
   resources:
@@ -17,12 +18,10 @@
 
 - platform: time_date
   display_options:
-    - 'time'
-    - 'date'
-#
-#- platform: statistics
-#  name: "outside_temperature"
-#  entity_id: sensor.temperature_158d00022c7cf2
-#  sampling_size: 86400
-#  max_age:
-#    hours: 24
+  - "time"
+  - "date"
+
+- platform: random
+  name: "flow_random_hue"
+  minimum: 1
+  maximum: 360

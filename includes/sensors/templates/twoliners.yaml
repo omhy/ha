@@ -30,6 +30,9 @@
     sw1_standalone_battery_level:
       unit_of_measurement: "%"
       value_template: "{{states.binary_sensor.wall_switch_both_158d00026b96c1.attributes.battery_level | float}}"
+    cube_battery_level:
+      unit_of_measurement: "%"
+      value_template: "{{states.binary_sensor.cube_158d00028776ae.attributes.battery_level | float}}"
     power_strip_1_load_power:
       unit_of_measurement: "Wh"
       value_template: "{{ states.switch.power_strip_1.attributes.load_power | float }}"
