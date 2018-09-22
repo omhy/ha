@@ -110,10 +110,10 @@
           } %}
         {% elif is_state('input_select.living_room_flow', 'random') %}
           {% set hue = {
-            1 : states.input_number.flow_random_hue.state | int,
-            2 : states.input_number.flow_random_hue.state | int,
-            3 : states.input_number.flow_random_hue.state | int,
-            4 : states.input_number.flow_random_hue.state | int
+            1 : states.sensor.flow_random_hue.state | int,
+            2 : states.sensor.flow_random_hue.state | int,
+            3 : states.sensor.flow_random_hue.state | int,
+            4 : states.sensor.flow_random_hue.state | int
           } %}
         {% else %}
           {% set hue = {

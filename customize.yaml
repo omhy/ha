@@ -117,6 +117,9 @@ input_number.doorbell_melody:
   icon: mdi:music-box
 
 #BINARY SENSORS
+binary_sensor.cube_158d00028776ae:
+  friendly_name: cube
+  icon: mdi:cube-outline
 binary_sensor.wall_switch_left_158d00026b96c1:
   friendly_name: standalone/one/left
 binary_sensor.wall_switch_right_158d00026b96c1:
@@ -192,3 +195,5 @@ sensor.door_sensor_battery_level:
   friendly_name: Entrance door sensor
 sensor.sw1_standalone_battery_level:
   friendly_name: Standalone switch 1
+sensor.cube_battery_level:
+  friendly_name: Cube
