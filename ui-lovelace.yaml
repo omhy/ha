@@ -249,75 +249,75 @@ views:
     id: lights_flow
     icon: mdi:palette
     cards:
-      - type: glance
-        title: Flow
-        show_header_toggle: false
-        entities:
-        - entity: input_boolean.livingroom_torch_use
-          name: Use torch
-          icon: mdi:light-switch
-          tap_action: call-service
-          service: input_boolean.toggle
-        - entity: input_boolean.livingroom_corner_use
-          name: Use corner
-          icon: mdi:light-switch
-          tap_action: call-service
-          service: input_boolean.toggle
-        - entity: input_select.living_room_flow
-          name: Flow type
-      - type: custom:monster-card
-        card:
-          type: entities
-          title: Light scripts
-        filter:
-          include:
-          - entity_id: "script.light*"
-      - type: entities
-        title: Common settings
-        show_header_toggle: true
-        entities:
-        - input_number.flow_transition
-        - input_number.flow_brightness
-        - input_number.flow_saturation
       - type: vertical-stack
         cards:
-        - type: conditional
-          conditions:
+        - type: glance
+          title: Flow
+          show_header_toggle: false
+          entities:
+          - entity: input_boolean.livingroom_torch_use
+            name: Use torch
+            icon: mdi:light-switch
+            tap_action: call-service
+            service: input_boolean.toggle
+          - entity: input_boolean.livingroom_corner_use
+            name: Use corner
+            icon: mdi:light-switch
+            tap_action: call-service
+            service: input_boolean.toggle
           - entity: input_select.living_room_flow
-            state_not: "custom"
-          - entity: input_select.living_room_flow
-            state_not: "random"
-          card:
-            type: entities
-            title: Current flow settings
-            entities:
-            - input_number.flow_hue1
-            - input_number.flow_hue2
-            - input_number.flow_hue3
-            - input_number.flow_hue4
-        - type: conditional
-          conditions:
-            - entity: input_select.living_room_flow
-              state: "custom"
-          card:
-            type: entities
-            title: Custom flow settings
-            entities:
-            - input_number.flow_custom_hue1
-            - input_number.flow_custom_hue2
-            - input_number.flow_custom_hue3
-            - input_number.flow_custom_hue4
-        - type: conditional
-          conditions:
-          - entity: input_select.living_room_flow
-            state: "random"
-          card:
-            type: entities
-            title: Randomiztor
-            entities:
-            - sensor.flow_random_hue
+            name: Flow type
+        - type: entities
+          title: Common settings
+          show_header_toggle: true
+          entities:
+          - input_number.flow_transition
+          - input_number.flow_brightness
+          - input_number.flow_saturation
         - type: picture
           image: /local/hue.png
+#      - type: custom:monster-card
+#        card:
+#          type: entities
+#          title: Light scripts
+#        filter:
+#          include:
+#          - entity_id: "script.light*"
+      - type: conditional
+        conditions:
+        - entity: input_select.living_room_flow
+          state_not: "custom"
+        - entity: input_select.living_room_flow
+          state_not: "random"
+        card:
+          type: entities
+          title: Current flow settings
+          entities:
+          - input_number.flow_hue1
+          - input_number.flow_hue2
+          - input_number.flow_hue3
+          - input_number.flow_hue4
+      - type: conditional
+        conditions:
+          - entity: input_select.living_room_flow
+            state: "custom"
+        card:
+          type: entities
+          title: Custom flow settings
+          entities:
+          - input_number.flow_custom_hue1
+          - input_number.flow_custom_hue2
+          - input_number.flow_custom_hue3
+          - input_number.flow_custom_hue4
+#      - type: conditional
+#        conditions:
+#        - entity: input_select.living_room_flow
+#          state: "random"
+#        card:
+#          type: entities
+#          title: Randomiztor
+#          entities:
+#          - sensor.flow_random_hue
 
 ##################   ELECTRO
   - title: Electricity
