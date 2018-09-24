@@ -123,6 +123,8 @@ views:
           name: Pressure
     - type: media-control
       entity: media_player.spotify
+    - type: media-control
+      entity: media_player.kodi
 
 ##################   SECONDARY
   - title: Secondary
@@ -145,6 +147,10 @@ views:
         name: Influx DB
         url: http://192.168.1.10:8888
         icon: mdi:database
+      - type: weblink
+        name: Kodi
+        url: http://192.168.1.20:8080
+        icon: mdi:kodi
       - type: divider
 
       - type: weblink

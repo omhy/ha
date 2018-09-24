@@ -30,10 +30,7 @@ logger:
 openuv:
   api_key: !secret open_uv_api_key
 
-#weather:
-#- platform: darksky
-#  api_key: !secret darksky_api_key
-#- platform: yweather
+media_extractor:
 
 http:
 #  base_url: !secret http_base_url
@@ -57,6 +54,8 @@ media_player:
 - platform: spotify
   client_id: !secret spotify_client_id
   client_secret: !secret spotify_client_secret
+- platform: kodi
+  host: 192.168.1.20
 
 panel_iframe:
   grafana:
@@ -83,6 +82,7 @@ recorder:
     - sensor.flow_random_hue
     - input_number.flow_idx
     - sensor.current_version
+    - sensor.cube_action
 
 xiaomi_aqara:
   discovery_retry: 5

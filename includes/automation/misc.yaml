@@ -17,10 +17,88 @@
 #  trigger:
 #    platform: state
 #    entity_id:
-#    - binary_sensor.cube_158d00028776ae
+#    - sensor.cube_action
 #  action:
-#  - service: mqtt.publish
+#  - service: telegram_bot.send_message
 #    data_template:
-#      topic: "{{ trigger.from_state.attributes.friendly_name }}"
-#      payload: "{{ trigger.to_state.state }}"
-#      retain: true
+#      target: !secret tg_chat_dima
+#      message: "Cube is {{ trigger.to_state.state }}"
+
+- alias: "cube_action_v2"
+  initial_state: 'on'
+  trigger:
+  - platform: event
+    event_type: cube_action
+    event_data:
+      entity_id: binary_sensor.cube_158d00028776ae
+      action_type: flip90
+  - platform: event
+    event_type: cube_action
+    event_data:
+      entity_id: binary_sensor.cube_158d00028776ae
+      action_type: free_fall
+  - platform: event
+    event_type: cube_action
+    event_data:
+      entity_id: binary_sensor.cube_158d00028776ae
+      action_type: move
+#  - platform: event
+#    event_type: cube_action
+#    event_data:
+#      entity_id: binary_sensor.cube_158d00028776ae
+#      action_type: rotate
+  - platform: event
+    event_type: cube_action
+    event_data:
+      entity_id: binary_sensor.cube_158d00028776ae
+      action_type: shake_air
+  - platform: event
+    event_type: cube_action
+    event_data:
+      entity_id: binary_sensor.cube_158d00028776ae
+      action_type: tap_twice
+  - platform: event
+    event_type: cube_action
+    event_data:
+      entity_id: binary_sensor.cube_158d00028776ae
+      action_type: flip180
+  - platform: event
+    event_type: cube_action
+    event_data:
+      entity_id: binary_sensor.cube_158d00028776ae
+      action_type: swing
+  - platform: event
+    event_type: cube_action
+    event_data:
+      entity_id: binary_sensor.cube_158d00028776ae
+      action_type: iam
+  - platform: event
+    event_type: cube_action
+    event_data:
+      entity_id: binary_sensor.cube_158d00028776ae
+      action_type: alert
+  action:
+  - service: telegram_bot.send_message
+    data_template:
+      target: !secret tg_chat_dima
+      message: "\U0001F3B2 Cube is `{{ trigger.event.data.action_type }}  {{ trigger.event.data.action_value | default('0') }}`"
+
+- alias: "cube_action_v2"
+  initial_state: 'on'
+  trigger:
+  - platform: event
+    event_type: cube_action
+    event_data:
+      entity_id: binary_sensor.cube_158d00028776ae
+      action_type: rotate
+  action:
+  - service: telegram_bot.send_message
+    data_template:
+      target: !secret tg_chat_dima
+      message: >
+        Cube rotate
+        {% if trigger.event.data.action_value | default('0') | float > 0 %}
+          > 0
+        {% else %}
+          < 0
+        {% endif %}
