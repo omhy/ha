@@ -235,14 +235,18 @@ views:
         title: Torch
         show_header_toggle: true
         entities:
-        - input_number.livingroom_torch_brightness_pct
-        - input_number.livingroom_torch_kelvin
+        - entity: input_number.livingroom_torch_brightness_pct
+          name: Brightness %
+        - entity: input_number.livingroom_torch_kelvin
+          name: Kelvin t
       - type: entities
         title: Corner
         show_header_toggle: true
         entities:
-        - input_number.livingroom_corner_brightness_pct
-        - input_number.livingroom_corner_kelvin
+        - entity: input_number.livingroom_corner_brightness_pct
+          name: Brightness %
+        - entity: input_number.livingroom_corner_kelvin
+          name: Kelvin t
 
 ##################   LIGHTS FLOW
   - title: Lights flow
@@ -644,8 +648,8 @@ views:
         entities:
         - script.sys_sleep_computer
         - script.sys_sleep_laptop
-      - type: custom:tracker-card
-        title:
-        trackers:
-        - sensor.custom_card_tracker
-        - sensor.custom_component_tracker
+#      - type: custom:tracker-card
+#        title:
+#        trackers:
+#        - sensor.custom_card_tracker
+#        - sensor.custom_component_tracker

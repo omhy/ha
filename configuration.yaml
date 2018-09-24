@@ -13,7 +13,7 @@ homeassistant:
 map:
 sun:
 ffmpeg:
-custom_updater:
+#custom_updater:
 
 hassio:
 config:
@@ -66,6 +66,23 @@ panel_iframe:
 
 recorder:
   purge_keep_days: 1
+  exclude:
+    domains:
+    - automation
+    - script
+    - updater
+    - group
+    - light
+    - zone
+    entities:
+    - sensor.season
+    - sensor.days_in_month
+    - sensor.date
+    - sensor.time
+    - sensor.days_in_month
+    - sensor.flow_random_hue
+    - input_number.flow_idx
+    - sensor.current_version
 
 xiaomi_aqara:
   discovery_retry: 5
