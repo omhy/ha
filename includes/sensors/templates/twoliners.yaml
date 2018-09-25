@@ -45,5 +45,3 @@
     power_strip_4_load_power:
       unit_of_measurement: "Wh"
       value_template: "{{ states.switch.power_strip_4.attributes.load_power | float }}"
-    cube_action:
-      value_template: "{{ states.binary_sensor.cube_158d00028776ae.attributes.last_action }}"

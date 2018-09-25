@@ -12,18 +12,6 @@
       payload: "{{ (states.sensor.outside_temperature_max.state | float - states.sensor.outside_temperature_min.state | float) | round(1)}}"
       retain: true
 
-#- alias: "cube_action"
-#  initial_state: "on"
-#  trigger:
-#    platform: state
-#    entity_id:
-#    - sensor.cube_action
-#  action:
-#  - service: telegram_bot.send_message
-#    data_template:
-#      target: !secret tg_chat_dima
-#      message: "Cube is {{ trigger.to_state.state }}"
-
 - alias: "cube_action_v2"
   initial_state: 'on'
   trigger:
@@ -36,17 +24,17 @@
     event_type: cube_action
     event_data:
       entity_id: binary_sensor.cube_158d00028776ae
-      action_type: free_fall
+      action_type: flip180
   - platform: event
     event_type: cube_action
     event_data:
       entity_id: binary_sensor.cube_158d00028776ae
       action_type: move
-#  - platform: event
-#    event_type: cube_action
-#    event_data:
-#      entity_id: binary_sensor.cube_158d00028776ae
-#      action_type: rotate
+  - platform: event
+    event_type: cube_action
+    event_data:
+      entity_id: binary_sensor.cube_158d00028776ae
+      action_type: free_fall
   - platform: event
     event_type: cube_action
     event_data:
@@ -61,22 +49,22 @@
     event_type: cube_action
     event_data:
       entity_id: binary_sensor.cube_158d00028776ae
-      action_type: flip180
-  - platform: event
-    event_type: cube_action
-    event_data:
-      entity_id: binary_sensor.cube_158d00028776ae
       action_type: swing
   - platform: event
     event_type: cube_action
     event_data:
       entity_id: binary_sensor.cube_158d00028776ae
       action_type: iam
-  - platform: event
-    event_type: cube_action
-    event_data:
-      entity_id: binary_sensor.cube_158d00028776ae
-      action_type: alert
+#  - platform: event
+#    event_type: cube_action
+#    event_data:
+#      entity_id: binary_sensor.cube_158d00028776ae
+#      action_type: alert
+#  - platform: event
+#    event_type: cube_action
+#    event_data:
+#      entity_id: binary_sensor.cube_158d00028776ae
+#      action_type: rotate
   action:
   - service: telegram_bot.send_message
     data_template:

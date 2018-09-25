@@ -33,6 +33,7 @@ openuv:
 media_extractor:
 
 http:
+  ip_ban_enabled: true
 #  base_url: !secret http_base_url
 #  ssl_certificate: /ssl/fullchain.pem
 #  ssl_key: /ssl/privkey.pem
