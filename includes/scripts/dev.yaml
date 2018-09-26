@@ -1,0 +1,7 @@
+media_extractor_test:
+  sequence:
+  - service: media_extractor.play_media
+    entity_id: media_player.kodi
+    data:
+      media_content_id: "https://www.youtube.com/watch?v=w4LkSRXrK34"
+      media_content_type: VIDEO

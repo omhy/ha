@@ -71,7 +71,7 @@
       target: !secret tg_chat_dima
       message: "\U0001F3B2 Cube is `{{ trigger.event.data.action_type }}  {{ trigger.event.data.action_value | default('0') }}`"
 
-- alias: "cube_action_v2"
+- alias: "cube_action_rotate"
   initial_state: 'on'
   trigger:
   - platform: event
@@ -80,13 +80,25 @@
       entity_id: binary_sensor.cube_158d00028776ae
       action_type: rotate
   action:
-  - service: telegram_bot.send_message
+  - service: light.turn_on
+    entity_id: light.livingroom_ambient
     data_template:
-      target: !secret tg_chat_dima
-      message: >
-        Cube rotate
-        {% if trigger.event.data.action_value | default('0') | float > 0 %}
-          > 0
+      brightness: >
+        {% set br = states.light.livingroom_ambient.attributes.brightness | int %}
+        {% set br_min = 1 | int %}
+        {% set br_max = 255 | int %}
+        {% set step = 50 | int %}
+        {% if trigger.event.data.action_value | default('0') | float < 0 %}
+          {% if br > br_min + step %}
+            {% set br = br - step %}
+          {% else %}
+            {% set br = br_min %}
+          {% endif %}
         {% else %}
-          < 0
+          {% if br < br_max - step %}
+            {% set br = br + step %}
+          {% else %}
+            {% set br = br_max %}
+          {% endif %}
         {% endif %}
+        {{ br }}
