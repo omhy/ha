@@ -8,15 +8,15 @@ doorbell_melody:
 livingroom_torch_kelvin:
   min: 1700
   max: 6500
-livingroom_torch_brightness_pct:
+livingroom_torch_brightness:
   min: 1
-  max: 100
+  max: 255
 livingroom_corner_kelvin:
   min: 1700
   max: 6500
-livingroom_corner_brightness_pct:
+livingroom_corner_brightness:
   min: 1
-  max: 100
+  max: 255
 
 flow_idx:
   min: 1

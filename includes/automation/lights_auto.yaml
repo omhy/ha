@@ -40,14 +40,9 @@
       entity_id: binary_sensor.switch_158d0002136276
       click_type: double
   condition:
-    condition: and
-    conditions:
-    - condition: state
-      entity_id: input_boolean.livingroom_torch_use
-      state: "off"
-    - condition: state
-      entity_id: input_boolean.livingroom_corner_use
-      state: "off"
+  - condition: state
+    entity_id: sensor.livingroom_ambient_flow_is_on
+    state: "False"
   action:
   - service: input_boolean.turn_on
     entity_id:
@@ -63,14 +58,9 @@
       entity_id: binary_sensor.switch_158d0002136276
       click_type: double
   condition:
-    condition: or
-    conditions:
-    - condition: state
-      entity_id: input_boolean.livingroom_torch_use
-      state: "on"
-    - condition: state
-      entity_id: input_boolean.livingroom_corner_use
-      state: "on"
+  - condition: state
+    entity_id: sensor.livingroom_ambient_flow_is_on
+    state: "True"
   action:
   - service: script.light_flow_next
 

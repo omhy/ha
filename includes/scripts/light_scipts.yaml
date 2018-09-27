@@ -65,7 +65,7 @@ light_turn_on_livingroom_torch_by_params:
   - service: light.turn_on
     data_template:
       entity_id: light.livingroom_torch
-      brightness_pct: "{{ states.input_number.livingroom_torch_brightness_pct.state | int }}"
+      brightness: "{{ states.input_number.livingroom_torch_brightness.state | int }}"
       kelvin: "{{ states.input_number.livingroom_torch_kelvin.state | int }}"
       transition: 1
 
@@ -75,6 +75,6 @@ light_turn_on_livingroom_corner_by_params:
   - service: light.turn_on
     data_template:
       entity_id: light.livingroom_corner
-      brightness_pct: "{{ states.input_number.livingroom_corner_brightness_pct.state | int }}"
+      brightness: "{{ states.input_number.livingroom_corner_brightness.state | int }}"
       kelvin: "{{ states.input_number.livingroom_corner_kelvin.state | int }}"
       transition: 1

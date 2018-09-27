@@ -231,26 +231,23 @@ views:
         image: /local/colourtemp.jpg
       - type: entities
         title: Light sources
-        show_header_toggle: false
         entities:
         - entity: light.livingroom_torch
           name: Torch
         - entity: light.livingroom_corner
           name: Corner
       - type: entities
-        title: Torch
-        show_header_toggle: true
+        title: Torch defaults
         entities:
-        - entity: input_number.livingroom_torch_brightness_pct
-          name: Brightness %
+        - entity: input_number.livingroom_torch_brightness
+          name: Brightness
         - entity: input_number.livingroom_torch_kelvin
           name: Kelvin t
       - type: entities
-        title: Corner
-        show_header_toggle: true
+        title: Corner defaults
         entities:
-        - entity: input_number.livingroom_corner_brightness_pct
-          name: Brightness %
+        - entity: input_number.livingroom_corner_brightness
+          name: Brightness
         - entity: input_number.livingroom_corner_kelvin
           name: Kelvin t
 
