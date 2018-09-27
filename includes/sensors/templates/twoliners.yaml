@@ -2,37 +2,37 @@
   sensors:
     t1_battery_level:
       unit_of_measurement: "%"
-      value_template: "{{states.sensor.temperature_158d0002271609.attributes.battery_level | float}}"
+      value_template: "{{ states.sensor.temperature_158d0002271609.attributes.battery_level | float }}"
     t2_battery_level:
       unit_of_measurement: "%"
-      value_template: "{{states.sensor.temperature_158d0001f23cbe.attributes.battery_level | float}}"
+      value_template: "{{ states.sensor.temperature_158d0001f23cbe.attributes.battery_level | float }}"
     t3_battery_level:
       unit_of_measurement: "%"
-      value_template: "{{states.sensor.temperature_158d00022c7cf2.attributes.battery_level | float}}"
+      value_template: "{{ states.sensor.temperature_158d00022c7cf2.attributes.battery_level | float }}"
     t4_battery_level:
       unit_of_measurement: "%"
-      value_template: "{{states.sensor.temperature_158d000234816a.attributes.battery_level | float}}"
+      value_template: "{{ states.sensor.temperature_158d000234816a.attributes.battery_level | float }}"
     doorbell_switch_battery_level:
       unit_of_measurement: "%"
-      value_template: "{{states.binary_sensor.switch_158d00021350ee.attributes.battery_level | float}}"
+      value_template: "{{ states.binary_sensor.switch_158d00021350ee.attributes.battery_level | float }}"
     livingroom_light_switch_battery_level:
       unit_of_measurement: "%"
-      value_template: "{{states.binary_sensor.switch_158d0002136276.attributes.battery_level | float}}"
+      value_template: "{{ states.binary_sensor.switch_158d0002136276.attributes.battery_level | float }}"
     motion1_battery_level:
       unit_of_measurement: "%"
-      value_template: "{{states.binary_sensor.motion_sensor_158d0001e52779.attributes.battery_level | float}}"
+      value_template: "{{ states.binary_sensor.motion_sensor_158d0001e52779.attributes.battery_level | float }}"
     motion2_battery_level:
       unit_of_measurement: "%"
-      value_template: "{{states.binary_sensor.motion_sensor_158d0001fa3dc0.attributes.battery_level | float}}"
+      value_template: "{{ states.binary_sensor.motion_sensor_158d0001fa3dc0.attributes.battery_level | float }}"
     door_sensor_battery_level:
       unit_of_measurement: "%"
-      value_template: "{{states.binary_sensor.door_window_sensor_158d00024367c8.attributes.battery_level | float}}"
+      value_template: "{{ states.binary_sensor.door_window_sensor_158d00024367c8.attributes.battery_level | float }}"
     sw1_standalone_battery_level:
       unit_of_measurement: "%"
-      value_template: "{{states.binary_sensor.wall_switch_both_158d00026b96c1.attributes.battery_level | float}}"
+      value_template: "{{ states.binary_sensor.wall_switch_both_158d00026b96c1.attributes.battery_level | float }}"
     cube_battery_level:
       unit_of_measurement: "%"
-      value_template: "{{states.binary_sensor.cube_158d00028776ae.attributes.battery_level | float}}"
+      value_template: "{{ states.binary_sensor.cube_158d00028776ae.attributes.battery_level | float }}"
     power_strip_1_load_power:
       unit_of_measurement: "Wh"
       value_template: "{{ states.switch.power_strip_1.attributes.load_power | float }}"
@@ -45,3 +45,14 @@
     power_strip_4_load_power:
       unit_of_measurement: "Wh"
       value_template: "{{ states.switch.power_strip_4.attributes.load_power | float }}"
+    dima_is_home:
+      value_template: "{{ is_state('device_tracker.google_maps_111683533988744565132', 'home') }}"
+    alyona_is_home:
+      value_template: "{{ is_state('device_tracker.google_maps_115914092349482836896', 'home') }}"
+    yury_is_home:
+      value_template: "{{ is_state('device_tracker.google_maps_117454969161947422882', 'home') }}"
+    parents_are_home:
+      value_template: "{{ is_state('dima_is_home', 'true') or is_state('alyona_is_home', 'true') }}"
+    livingroom_ambient_flow_is_on:
+      value_template: "{{ is_state('input_boolean.livingroom_torch_use', 'on') or is_state('input_boolean.livingroom_corner_use', 'on') }}"
+
