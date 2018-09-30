@@ -13,18 +13,35 @@
     - service: script.telegram_send_weather_forecast
       data_template:
         target: "{{trigger.event.data.user_id}}"
-- alias: "telegram_handle_callback_weather"
+
+- alias: "telegram_handle_callback_outside"
   initial_state: "on"
   trigger:
   - platform: event
     event_type: telegram_callback
     event_data:
-      data: "/weather"
+      data: "/outside"
   action:
     - service: telegram_bot.answer_callback_query
       data_template:
         callback_query_id: "{{ trigger.event.data.id }}"
         message: "Roger {{ trigger.event.data.data }}"
-    - service: script.telegram_send_weather
+    - service: script.telegram_send_outside
       data_template:
         target: "{{trigger.event.data.user_id}}"
+
+- alias: "telegram_handle_callback_rooms"
+  initial_state: "on"
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: "/rooms"
+  action:
+  - service: telegram_bot.answer_callback_query
+    data_template:
+      callback_query_id: "{{ trigger.event.data.id }}"
+      message: "Roger {{ trigger.event.data.data }}"
+  - service: script.telegram_send_rooms
+    data_template:
+      target: "{{trigger.event.data.user_id}}"

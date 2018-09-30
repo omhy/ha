@@ -6,6 +6,6 @@
   - platform: time
     at: "23:55:00"
   action:
-  - service: script.telegram_send_weather
+  - service: script.telegram_send_outside
     data_template:
       target: !secret tg_chat_dima

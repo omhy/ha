@@ -1,10 +1,10 @@
-telegram_send_weather:
+telegram_send_outside:
   sequence:
   - service: telegram_bot.send_message
     data_template:
       target: "{{target}}"
       message: >
-        Today is {{ now().strftime('%Y-%m-%d') }}
+        {{ now().strftime('%Y-%m-%d') }}
 
         {{ '\U0001F535' }} `min `{{ states.sensor.outside_temperature_min.state_with_unit }} @ {{ states.sensor.outside_temperature_min_at.state|default('-') }}
 
@@ -14,7 +14,23 @@ telegram_send_weather:
 
         {{ '\U000026AB' }} `dif `{{ states.sensor.outside_temperature_diff.state_with_unit }}
       inline_keyboard:
-      - "\U0001F504 Refresh:/weather, \U0000267B Dismiss:/dismiss"
+      - "\U0001F504 Refresh:/outside, \U0000267B Dismiss:/dismiss"
+
+telegram_send_rooms:
+  sequence:
+  - service: telegram_bot.send_message
+    data_template:
+      target: "{{target}}"
+      message: >
+        {{ '\U00002601' }} `outside    `{{ states.sensor.temperature_158d00022c7cf2.state_with_unit }} | {{ states.sensor.humidity_158d00022c7cf2.state_with_unit }}
+
+        {{ '\U0001F6CB' }} `living     `{{ states.sensor.temperature_158d000234816a.state_with_unit }} | {{ states.sensor.humidity_158d000234816a.state_with_unit }}
+
+        {{ '\U0001F4D0' }} `children's `{{ states.sensor.temperature_158d0002271609.state_with_unit }} | {{ states.sensor.humidity_158d0002271609.state_with_unit }}
+
+        {{ '\U0001F6CF' }} `bedroom    `{{ states.sensor.temperature_158d0001f23cbe.state_with_unit }} | {{ states.sensor.humidity_158d0001f23cbe.state_with_unit }}
+      inline_keyboard:
+      - "\U0001F504 Refresh:/rooms, \U0000267B Dismiss:/dismiss"
 
 telegram_send_weather_forecast:
   sequence:
