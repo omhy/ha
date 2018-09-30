@@ -5,15 +5,15 @@ doorbell_melody:
   min: 10
   max: 13
 
-livingroom_torch_kelvin:
-  min: 1700
-  max: 6500
+livingroom_torch_mired:
+  min: 153
+  max: 588
 livingroom_torch_brightness:
   min: 1
   max: 255
-livingroom_corner_kelvin:
-  min: 1700
-  max: 6500
+livingroom_corner_mired:
+  min: 153
+  max: 588
 livingroom_corner_brightness:
   min: 1
   max: 255

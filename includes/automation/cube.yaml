@@ -15,24 +15,80 @@
     entity_id: light.livingroom_ambient
     data_template:
       brightness: >
-        {% set br = states.light.livingroom_ambient.attributes.brightness | int %}
-        {% set br_min = 1 | int %}
-        {% set br_max = 255 | int %}
+        {% set current = states.light.livingroom_ambient.attributes.brightness | int %}
+        {% set min = 1 | int %}
+        {% set max = 255 | int %}
         {% set step = 50 | int %}
         {% if trigger.event.data.action_value | default('0') | float < 0 %}
-          {% if br > br_min + step %}
-            {% set br = br - step %}
+          {% if current > min + step %}
+            {% set current = current - step %}
           {% else %}
-            {% set br = br_min %}
+            {% set current = min %}
           {% endif %}
         {% else %}
-          {% if br < br_max - step %}
-            {% set br = br + step %}
+          {% if current < max - step %}
+            {% set current = current + step %}
           {% else %}
-            {% set br = br_max %}
+            {% set current = max %}
           {% endif %}
         {% endif %}
-        {{ br }}
+        {{ current }}
+
+- alias: "cube_action_flip90_when_flow_is_off"
+  initial_state: 'on'
+  trigger:
+  - platform: event
+    event_type: cube_action
+    event_data:
+      entity_id: binary_sensor.cube_158d00028776ae
+      action_type: flip90
+  condition:
+  - condition: state
+    entity_id: sensor.livingroom_ambient_flow_is_on
+    state: "False"
+  action:
+  - service: light.turn_on
+    entity_id: light.livingroom_ambient
+    data_template:
+      color_temp: >
+        {% set current = states.light.livingroom_ambient.attributes.color_temp | int %}
+        {% set min = 153 | int %}
+        {% set max = 588 | int %}
+        {% set step = 80 | int %}
+        {% if current < max - step %}
+          {% set current = current + step %}
+        {% else %}
+          {% set current = max %}
+        {% endif %}
+        {{ current }}
+
+- alias: "cube_action_flip180_when_flow_is_off"
+  initial_state: 'on'
+  trigger:
+  - platform: event
+    event_type: cube_action
+    event_data:
+      entity_id: binary_sensor.cube_158d00028776ae
+      action_type: flip180
+  condition:
+  - condition: state
+    entity_id: sensor.livingroom_ambient_flow_is_on
+    state: "False"
+  action:
+  - service: light.turn_on
+    entity_id: light.livingroom_ambient
+    data_template:
+      color_temp: >
+        {% set current = states.light.livingroom_ambient.attributes.color_temp | int %}
+        {% set min = 153 | int %}
+        {% set max = 588 | int %}
+        {% set step = 80 | int %}
+        {% if current > min + step %}
+          {% set current = current - step %}
+        {% else %}
+          {% set current = min %}
+        {% endif %}
+        {{ current }}
 
 - alias: "cube_action_rotate_when_flow_is_on"
   initial_state: 'on'
@@ -51,24 +107,24 @@
     entity_id: input_number.flow_brightness
     data_template:
       value: >
-        {% set br = states.input_number.flow_brightness.state | int %}
-        {% set br_min = 1 | int %}
-        {% set br_max = 255 | int %}
+        {% set current = states.input_number.flow_brightness.state | int %}
+        {% set min = 1 | int %}
+        {% set max = 255 | int %}
         {% set step = 50 | int %}
         {% if trigger.event.data.action_value | default('0') | float < 0 %}
-          {% if br > br_min + step %}
-            {% set br = br - step %}
+          {% if current > min + step %}
+            {% set current = current - step %}
           {% else %}
-            {% set br = br_min %}
+            {% set current = min %}
           {% endif %}
         {% else %}
-          {% if br < br_max - step %}
-            {% set br = br + step %}
+          {% if current < max - step %}
+            {% set current = current + step %}
           {% else %}
-            {% set br = br_max %}
+            {% set current = max %}
           {% endif %}
         {% endif %}
-        {{ br }}
+        {{ current }}
 
 #- alias: "cube_action_v2"
 #  initial_state: 'on'

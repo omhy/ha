@@ -102,7 +102,7 @@ views:
         - entity: sensor.pressure_158d000234816a
           name: Pressure
       - type: glance
-        title: Child room
+        title: Children's room
         show_header_toggle: false
         entities:
         - entity: sensor.temperature_158d0002271609
@@ -228,7 +228,7 @@ views:
     icon: mdi:ceiling-light
     cards:
       - type: picture
-        image: /local/colourtemp.jpg
+        image: /local/mireds.png
       - type: entities
         title: Light sources
         entities:
@@ -241,15 +241,15 @@ views:
         entities:
         - entity: input_number.livingroom_torch_brightness
           name: Brightness
-        - entity: input_number.livingroom_torch_kelvin
-          name: Kelvin t
+        - entity: input_number.livingroom_torch_mired
+          name: Mireds
       - type: entities
         title: Corner defaults
         entities:
         - entity: input_number.livingroom_corner_brightness
           name: Brightness
-        - entity: input_number.livingroom_corner_kelvin
-          name: Kelvin t
+        - entity: input_number.livingroom_corner_mired
+          name: Mireds
 
 ##################   LIGHTS FLOW
   - title: Lights flow

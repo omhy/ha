@@ -14,8 +14,8 @@
   icon: mdi:bug
 "*brightness*":
   icon: mdi:brightness-5
-"*kelvin*":
-  icon: mdi:temperature-kelvin
+"*mired*":
+  icon: mdi:thermometer
 
 "light.*":
   icon: mdi:lightbulb
