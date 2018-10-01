@@ -39,7 +39,7 @@ http:
 #  ssl_key: /ssl/privkey.pem
 
 system_log:
-  max_entries: 50
+  max_entries: 20
 
 mqtt:
   broker: core-mosquitto
