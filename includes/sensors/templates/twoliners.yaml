@@ -55,4 +55,5 @@
       value_template: "{{ is_state('dima_is_home', 'true') or is_state('alyona_is_home', 'true') }}"
     livingroom_ambient_flow_is_on:
       value_template: "{{ is_state('input_boolean.livingroom_torch_use', 'on') or is_state('input_boolean.livingroom_corner_use', 'on') }}"
-
+    is_workday:
+      value_template: "{{ now().weekday() >= 0 and now().weekday() <= 5 }}"
