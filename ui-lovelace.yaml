@@ -666,18 +666,3 @@ views:
 #      trackers:
 #      - sensor.custom_card_tracker
 #      - sensor.custom_component_tracker
-
-##################   GRAPHS
-  - title: Graphs
-    id: graphs
-    icon: mdi:chart-bar
-    cards:
-    - type: iframe
-      url: http://192.168.1.10:3000/d-solo/K16cgeigk/00-main?refresh=30s&orgId=1&panelId=20
-      aspect_ratio: 75%
-    - type: iframe
-      url: http://192.168.1.10:3000/d-solo/K16cgeigk/00-main?refresh=30s&orgId=1&panelId=20
-      aspect_ratio: 100%
-    - type: iframe
-      url: http://192.168.1.10:3000/d-solo/K16cgeigk/00-main?refresh=30s&orgId=1&panelId=11
-      aspect_ratio: 20%

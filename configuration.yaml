@@ -118,6 +118,7 @@ input_select: !include includes/input_select.yaml
 camera: !include includes/camera.yaml
 light: !include includes/light.yaml
 notify: !include includes/notify.yaml
+binary_sensor: !include includes/binary_sensor.yaml
 
 sensor: !include_dir_merge_list includes/sensors
 switch: !include_dir_merge_list includes/switches

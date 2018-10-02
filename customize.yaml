@@ -8,6 +8,10 @@ light.livingroom_corner:
   friendly_name: Corner
   icon: mdi:lamp
 
+#MISC
+sensor.is_workday:
+  icon: mdi:briefcase
+
 #WAZE
 sensor.waze_current_home:
   friendly_name: waze/current/home

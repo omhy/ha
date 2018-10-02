@@ -18,20 +18,16 @@
   action:
   - service: script.light_turn_on_entrance_garland
 
-######################## LIVING ROOM @ WORKING DAYS
+######################## LIVING ROOM @ WORKDAY
 - alias: "light_at_working_day_on"
   initial_state: "on"
   trigger:
     platform: time
     at: "06:55:00"
   condition:
-    condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
+  - condition: state
+    entity_id: sensor.is_workday
+    state: "True"
   action:
     - service: script.light_turn_on_livingroom_torch_by_params
     - service: script.light_turn_on_livingroom_corner_by_params
@@ -43,18 +39,14 @@
     platform: time
     at: "07:45:00"
   condition:
-    condition: time
-    weekday:
-    - mon
-    - tue
-    - wed
-    - thu
-    - fri
+  - condition: state
+    entity_id: sensor.is_workday
+    state: "True"
   action:
     - service: script.light_turn_off_livingroom
     - service: script.light_turn_off_entrance_garland
 
-######################## LIVING ROOM @ BEFORE SCHOOL (GREEN->ORANGE->RED)
+######################## LIVING ROOM @ WORKDAY (GREEN->ORANGE->RED)
 
 - alias: "light_at_working_day_ready"
   initial_state: "on"
@@ -62,13 +54,9 @@
     platform: time
     at: "07:25:00"
   condition:
-    condition: time
-    weekday:
-    - mon
-    - tue
-    - wed
-    - thu
-    - fri
+  - condition: state
+    entity_id: sensor.is_workday
+    state: "True"
   action:
   - service: light.turn_on
     data_template:
@@ -81,18 +69,15 @@
     platform: time
     at: "07:30:00"
   condition:
-    condition: time
-    weekday:
-    - mon
-    - tue
-    - wed
-    - thu
-    - fri
+  - condition: state
+    entity_id: sensor.is_workday
+    state: "True"
   action:
   - service: light.turn_on
     data_template:
       entity_id: light.livingroom_ambient
       hs_color: [ 20, 80 ]
+  - service: script.sys_sleep_computer
 
 - alias: "light_at_working_day_go"
   initial_state: "on"
@@ -100,13 +85,9 @@
     platform: time
     at: "07:35:00"
   condition:
-    condition: time
-    weekday:
-    - mon
-    - tue
-    - wed
-    - thu
-    - fri
+  - condition: state
+    entity_id: sensor.is_workday
+    state: "True"
   action:
   - service: light.turn_on
     data_template:
