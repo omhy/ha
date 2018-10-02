@@ -1,6 +1,12 @@
-#GATEWAY
+#LIGHTS
 light.gateway_light_7811dcb36cee:
   friendly_name: livingroom_gateway
+light.livingroom_torch:
+  friendly_name: Torch
+  icon: mdi:floor-lamp
+light.livingroom_corner:
+  friendly_name: Corner
+  icon: mdi:lamp
 
 #WAZE
 sensor.waze_current_home:
