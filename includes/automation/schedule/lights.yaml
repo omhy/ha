@@ -23,7 +23,7 @@
   initial_state: "on"
   trigger:
     platform: time
-    at: "06:55:00"
+    at: "06:50:00"
   condition:
   - condition: state
     entity_id: sensor.is_workday
@@ -48,7 +48,7 @@
 
 ######################## LIVING ROOM @ WORKDAY (GREEN->ORANGE->RED)
 
-- alias: "light_at_working_day_ready"
+- alias: "light_at_working_day_ready_1"
   initial_state: "on"
   trigger:
     platform: time
@@ -61,7 +61,22 @@
   - service: light.turn_on
     data_template:
       entity_id: light.livingroom_ambient
-      hs_color: [ 120, 80 ]
+      hs_color: [ 130, 100 ]
+
+- alias: "light_at_working_day_ready_2"
+  initial_state: "on"
+  trigger:
+    platform: time
+    at: "07:27:30"
+  condition:
+  - condition: state
+    entity_id: sensor.is_workday
+    state: "True"
+  action:
+  - service: light.turn_on
+    data_template:
+      entity_id: light.livingroom_ambient
+      hs_color: [ 130, 100 ]
 
 - alias: "light_at_working_day_steady"
   initial_state: "on"
@@ -76,7 +91,7 @@
   - service: light.turn_on
     data_template:
       entity_id: light.livingroom_ambient
-      hs_color: [ 20, 80 ]
+      hs_color: [ 30, 100 ]
   - service: script.sys_sleep_computer
 
 - alias: "light_at_working_day_go"
@@ -92,4 +107,4 @@
   - service: light.turn_on
     data_template:
       entity_id: light.livingroom_ambient
-      hs_color: [ 1, 100 ]
+      hs_color: [ 350, 100 ]
