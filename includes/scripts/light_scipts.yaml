@@ -67,7 +67,15 @@ light_turn_on_livingroom_torch_by_params:
       entity_id: light.livingroom_torch
       brightness: "{{ states.input_number.livingroom_torch_brightness.state | int }}"
       color_temp: "{{ states.input_number.livingroom_torch_mired.state | int }}"
-      transition: 1
+      transition: "{{ states.input_number.livingroom_torch_transition.state | int }}"
+
+light_turn_off_livingroom_torch_by_params:
+  sequence:
+  - service: script.light_turn_off_flow
+  - service: light.turn_off
+    data_template:
+      entity_id: light.livingroom_torch
+      transition: "{{ states.input_number.livingroom_torch_transition.state | int }}"
 
 light_turn_on_livingroom_corner_by_params:
   sequence:
@@ -77,4 +85,12 @@ light_turn_on_livingroom_corner_by_params:
       entity_id: light.livingroom_corner
       brightness: "{{ states.input_number.livingroom_corner_brightness.state | int }}"
       color_temp: "{{ states.input_number.livingroom_corner_mired.state | int }}"
-      transition: 1
+      transition: "{{ states.input_number.livingroom_corner_transition.state | int }}"
+
+light_turn_off_livingroom_corner_by_params:
+  sequence:
+  - service: script.light_turn_off_flow
+  - service: light.turn_off
+    data_template:
+      entity_id: light.livingroom_corner
+      transition: "{{ states.input_number.livingroom_corner_transition.state | int }}"
