@@ -16,6 +16,8 @@
   icon: mdi:brightness-5
 "*mired*":
   icon: mdi:thermometer
+"*transition*":
+  icon: mdi:av-timer
 
 "light.*":
   icon: mdi:lightbulb

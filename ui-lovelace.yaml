@@ -246,6 +246,8 @@ views:
           name: Brightness
         - entity: input_number.livingroom_torch_mired
           name: Mireds
+        - entity: input_number.livingroom_torch_transition
+          name: Transition
       - type: entities
         title: Corner defaults
         entities:
@@ -253,6 +255,8 @@ views:
           name: Brightness
         - entity: input_number.livingroom_corner_mired
           name: Mireds
+        - entity: input_number.livingroom_corner_transition
+          name: Transition
 
 ##################   LIGHTS FLOW
   - title: Lights flow
