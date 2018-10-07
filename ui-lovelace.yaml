@@ -24,38 +24,95 @@ views:
           - entity: sensor.illumination_158d0001fa3dc0
             name: Illumination
       - type: glance
-        title: Bathroom
+        title: Children's room
         show_header_toggle: false
         entities:
-          - entity: binary_sensor.motion_sensor_158d0001e52779
-            name: Motion
-          - entity: sensor.bathroom_motions
-            name: Motions
-          - entity: sensor.illumination_158d0001e52779
-            name: Illumination
-          - entity: switch.wall_switch_right_158d00022391ec
-            name: Light
-            tap_action: toggle
-      - type: glance
-        title: Small corridor
-        show_header_toggle: false
-        entities:
-          - entity: switch.wall_switch_left_158d00022391ec
-            name: Light
-            tap_action: toggle
+        - entity: switch.wall_plug_158d0002013f1e
+          name: Star
+          icon: mdi:star-outline
+          tap_action: toggle
       - type: glance
         title: Entrance
         show_header_toggle: false
         entities:
-          - entity: light.entrance_garland
-            name: Garland
-            tap_action: toggle
-          - entity: binary_sensor.door_window_sensor_158d00024367c8
-            name: Door
-            icon: mdi:door
-          - entity: binary_sensor.switch_158d00021350ee
-            name: Doorbell
-            icon: mdi:bell
+        - entity: light.entrance_garland
+          name: Garland
+          tap_action: toggle
+        - entity: binary_sensor.door_window_sensor_158d00024367c8
+          name: Door
+          icon: mdi:door
+        - entity: binary_sensor.switch_158d00021350ee
+          name: Doorbell
+          icon: mdi:bell
+
+    - type: vertical-stack
+      cards:
+      - type: glance
+        title: Small corridor
+        show_header_toggle: false
+        entities:
+        - entity: switch.wall_switch_left_158d00022391ec
+          name: Light
+          tap_action: toggle
+      - type: glance
+        title: Bathroom
+        show_header_toggle: false
+        entities:
+        - entity: binary_sensor.motion_sensor_158d0001e52779
+          name: Motion
+        - entity: sensor.bathroom_motions
+          name: Motions
+        - entity: sensor.illumination_158d0001e52779
+          name: Illumination
+        - entity: switch.wall_switch_right_158d00022391ec
+          name: Light
+          tap_action: toggle
+
+    - type: vertical-stack
+      cards:
+      - type: media-control
+        entity: media_player.spotify
+      - type: media-control
+        entity: media_player.kodi
+
+##################   CLIMATE
+  - title: Climate
+    id: climate
+    icon: mdi:gauge
+    cards:
+    - type: vertical-stack
+      cards:
+      - type: glance
+        title: Living room
+        show_header_toggle: false
+        entities:
+        - entity: sensor.temperature_158d000234816a
+          name: Temperature
+        - entity: sensor.humidity_158d000234816a
+          name: Humidity
+        - entity: sensor.pressure_158d000234816a
+          name: Pressure
+      - type: glance
+        title: Children's room
+        show_header_toggle: false
+        entities:
+        - entity: sensor.temperature_158d0002271609
+          name: Temperature
+        - entity: sensor.humidity_158d0002271609
+          name: Humidity
+        - entity: sensor.pressure_158d0002271609
+          name: Pressure
+      - type: glance
+        title: Bedroom
+        show_header_toggle: false
+        entities:
+        - entity: sensor.temperature_158d0001f23cbe
+          name: Temperature
+        - entity: sensor.humidity_158d0001f23cbe
+          name: Humidity
+        - entity: sensor.pressure_158d0001f23cbe
+          name: Pressure
+
     - type: vertical-stack
       cards:
       - type: glance
@@ -91,136 +148,12 @@ views:
         - entity: sensor.outside_temperature_max_at
           name: Maximal @
           icon: mdi:clock
-      - type: glance
-        title: Living room
-        show_header_toggle: false
-        entities:
-        - entity: sensor.temperature_158d000234816a
-          name: Temperature
-        - entity: sensor.humidity_158d000234816a
-          name: Humidity
-        - entity: sensor.pressure_158d000234816a
-          name: Pressure
-      - type: glance
-        title: Children's room
-        show_header_toggle: false
-        entities:
-        - entity: sensor.temperature_158d0002271609
-          name: Temperature
-        - entity: sensor.humidity_158d0002271609
-          name: Humidity
-        - entity: sensor.pressure_158d0002271609
-          name: Pressure
-      - type: glance
-        title: Bedroom
-        show_header_toggle: false
-        entities:
-        - entity: sensor.temperature_158d0001f23cbe
-          name: Temperature
-        - entity: sensor.humidity_158d0001f23cbe
-          name: Humidity
-        - entity: sensor.pressure_158d0001f23cbe
-          name: Pressure
-    - type: media-control
-      entity: media_player.spotify
-    - type: media-control
-      entity: media_player.kodi
 
-##################   SECONDARY
-  - title: Secondary
-    id: sec
-    icon: mdi:link
-    cards:
-    - type: entities
-      title: Links
-      show_header_toggle: false
-      entities:
-      - type: weblink
-        name: Router
-        url: http://192.168.1.1/
-        icon: mdi:router-wireless
-      - type: weblink
-        name: Sonoff 1
-        url: http://192.168.1.40/
-        icon: mdi:switch
-      - type: weblink
-        name: Influx DB
-        url: http://192.168.1.10:8888
-        icon: mdi:database
-      - type: weblink
-        name: Kodi
-        url: http://192.168.1.20:8080
-        icon: mdi:kodi
-      - type: divider
-
-      - type: weblink
-        name: Lovelace
-        url: https://www.home-assistant.io/lovelace
-        icon: mdi:home-assistant
-      - type: weblink
-        name: Lovelace custom cards
-        url: https://github.com/ciotlosm/custom-lovelace
-        icon: mdi:home-assistant
-      - type: weblink
-        name: Light component
-        url: https://www.home-assistant.io/components/light/
-        icon: mdi:home-assistant
-      - type: divider
-
-      - type: weblink
-        name: Automation conditions
-        url: https://www.home-assistant.io/docs/automation/condition/
-        icon: mdi:script
-      - type: weblink
-        name: Automation trigger
-        url: https://www.home-assistant.io/docs/automation/trigger/
-        icon: mdi:script
-      - type: divider
-
-      - type: weblink
-        name: MDI icons
-        url: https://materialdesignicons.com
-        icon: mdi:sticker
-      - type: weblink
-        name: Emoji list
-        url: http://unicode.org/emoji/charts/full-emoji-list.html
-        icon: mdi:sticker-emoji
-      - type: weblink
-        name: Github repo
-        url: https://github.com/omhy/ha
-        icon: mdi:github-circle
-
-    - type: entities
-      title: Last changed
-      show_header_toggle: false
-      entities:
-      - entity: sensor.door_state
-        name: Door
-        icon: mdi:door
-        secondary_info: last-changed
-      - entity: sensor.doorbell_state
-        name: Doorbell
-        icon: mdi:bell
-        secondary_info: last-changed
-      - type: divider
-      - entity: sensor.livingroom_motion
-        name: Living room
-        icon: mdi:walk
-        secondary_info: last-changed
-      - type: divider
-      - entity: sensor.bathroom_motion
-        name: Bathroom
-        icon: mdi:walk
-        secondary_info: last-changed
-      - entity: sensor.bathroom_switch
-        name: Bathroom
-        icon: mdi:lightbulb-on-outline
-        secondary_info: last-changed
-      - type: divider
-      - entity: sensor.corridor_switch
-        name: Corridor
-        icon: mdi:lightbulb-on-outline
-        secondary_info: last-changed
+    - type: vertical-stack
+      cards:
+      - type: iframe
+        url: http://192.168.1.10:3000/d-solo/b7wAbpmgz/01-rooms?refresh=1m&orgId=1&panelId=2
+        aspect_ratio: 80%
 
 ##################   LIGHTS
   - title: Lights
@@ -271,12 +204,10 @@ views:
           entities:
           - entity: input_boolean.livingroom_torch_use
             name: Use torch
-            icon: mdi:light-switch
             tap_action: call-service
             service: input_boolean.toggle
           - entity: input_boolean.livingroom_corner_use
             name: Use corner
-            icon: mdi:light-switch
             tap_action: call-service
             service: input_boolean.toggle
           - entity: input_select.living_room_flow
@@ -619,6 +550,70 @@ views:
       filter:
         include:
         - domain: switch
+
+##################   LINKS
+  - title: Links
+    id: links
+    icon: mdi:link
+    cards:
+    - type: entities
+      title: Links
+      show_header_toggle: false
+      entities:
+      - type: weblink
+        name: Router
+        url: http://192.168.1.1/
+        icon: mdi:router-wireless
+      - type: weblink
+        name: Sonoff 1
+        url: http://192.168.1.40/
+        icon: mdi:switch
+      - type: weblink
+        name: Influx DB
+        url: http://192.168.1.10:8888
+        icon: mdi:database
+      - type: weblink
+        name: Kodi
+        url: http://192.168.1.20:8080
+        icon: mdi:kodi
+      - type: divider
+
+      - type: weblink
+        name: Lovelace
+        url: https://www.home-assistant.io/lovelace
+        icon: mdi:home-assistant
+      - type: weblink
+        name: Lovelace custom cards
+        url: https://github.com/ciotlosm/custom-lovelace
+        icon: mdi:home-assistant
+      - type: weblink
+        name: Light component
+        url: https://www.home-assistant.io/components/light/
+        icon: mdi:home-assistant
+      - type: divider
+
+      - type: weblink
+        name: Automation conditions
+        url: https://www.home-assistant.io/docs/automation/condition/
+        icon: mdi:script
+      - type: weblink
+        name: Automation trigger
+        url: https://www.home-assistant.io/docs/automation/trigger/
+        icon: mdi:script
+      - type: divider
+
+      - type: weblink
+        name: MDI icons
+        url: https://materialdesignicons.com
+        icon: mdi:sticker
+      - type: weblink
+        name: Emoji list
+        url: http://unicode.org/emoji/charts/full-emoji-list.html
+        icon: mdi:sticker-emoji
+      - type: weblink
+        name: Github repo
+        url: https://github.com/omhy/ha
+        icon: mdi:github-circle
 
 ##################   SYSTEM
   - title: System
