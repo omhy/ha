@@ -160,109 +160,91 @@ views:
     id: lights
     icon: mdi:ceiling-light
     cards:
-      - type: picture
-        image: /local/mireds.png
-      - type: entities
-        show_header_toggle: false
-        title: Light sources
-        entities:
-        - entity: light.livingroom_ambient
-          name: Torch + corner
-        - entity: light.livingroom_torch
-          name: Torch
-        - entity: light.livingroom_corner
-          name: Corner
-      - type: entities
-        title: Torch defaults
-        entities:
-        - entity: input_number.livingroom_torch_brightness
-          name: Brightness
-        - entity: input_number.livingroom_torch_mired
-          name: Mireds
-        - entity: input_number.livingroom_torch_transition
-          name: Transition
-      - type: entities
-        title: Corner defaults
-        entities:
-        - entity: input_number.livingroom_corner_brightness
-          name: Brightness
-        - entity: input_number.livingroom_corner_mired
-          name: Mireds
-        - entity: input_number.livingroom_corner_transition
-          name: Transition
+    - type: picture
+      image: /local/mireds.png
+    - type: entities
+      show_header_toggle: false
+      title: Light sources
+      entities:
+      - entity: light.livingroom_ambient
+        name: Torch + corner
+      - entity: light.livingroom_torch
+        name: Torch
+      - entity: light.livingroom_corner
+        name: Corner
+    - type: entities
+      title: Torch defaults
+      entities:
+      - entity: input_number.livingroom_torch_brightness
+        name: Brightness
+      - entity: input_number.livingroom_torch_mired
+        name: Mireds
+      - entity: input_number.livingroom_torch_transition
+        name: Transition
+    - type: entities
+      title: Corner defaults
+      entities:
+      - entity: input_number.livingroom_corner_brightness
+        name: Brightness
+      - entity: input_number.livingroom_corner_mired
+        name: Mireds
+      - entity: input_number.livingroom_corner_transition
+        name: Transition
 
 ##################   LIGHTS FLOW
   - title: Lights flow
     id: lights_flow
     icon: mdi:palette
     cards:
-      - type: vertical-stack
-        cards:
-        - type: glance
-          title: Flow
-          show_header_toggle: false
-          entities:
-          - entity: input_boolean.livingroom_torch_use
-            name: Use torch
-            tap_action: call-service
-            service: input_boolean.toggle
-          - entity: input_boolean.livingroom_corner_use
-            name: Use corner
-            tap_action: call-service
-            service: input_boolean.toggle
-          - entity: input_select.living_room_flow
-            name: Flow type
-        - type: entities
-          title: Common settings
-          show_header_toggle: true
-          entities:
-          - input_number.flow_transition
-          - input_number.flow_brightness
-          - input_number.flow_saturation
-        - type: picture
-          image: /local/hue.png
-#      - type: custom:monster-card
-#        card:
-#          type: entities
-#          title: Light scripts
-#        filter:
-#          include:
-#          - entity_id: "script.light*"
-      - type: conditional
-        conditions:
+    - type: picture
+      image: /local/hue.png
+    - type: glance
+      title: Flow
+      show_header_toggle: false
+      entities:
+      - entity: input_boolean.livingroom_torch_use
+        name: Use torch
+        tap_action: call-service
+        service: input_boolean.toggle
+      - entity: input_boolean.livingroom_corner_use
+        name: Use corner
+        tap_action: call-service
+        service: input_boolean.toggle
+      - entity: input_select.living_room_flow
+        name: Flow type
+    - type: entities
+      title: Common settings
+      show_header_toggle: true
+      entities:
+      - input_number.flow_transition
+      - input_number.flow_brightness
+      - input_number.flow_saturation
+    - type: conditional
+      conditions:
+      - entity: input_select.living_room_flow
+        state_not: "custom"
+      - entity: input_select.living_room_flow
+        state_not: "random"
+      card:
+        type: entities
+        title: Current flow settings
+        entities:
+        - input_number.flow_hue1
+        - input_number.flow_hue2
+        - input_number.flow_hue3
+        - input_number.flow_hue4
+    - type: conditional
+      conditions:
         - entity: input_select.living_room_flow
-          state_not: "custom"
-        - entity: input_select.living_room_flow
-          state_not: "random"
-        card:
-          type: entities
-          title: Current flow settings
-          entities:
-          - input_number.flow_hue1
-          - input_number.flow_hue2
-          - input_number.flow_hue3
-          - input_number.flow_hue4
-      - type: conditional
-        conditions:
-          - entity: input_select.living_room_flow
-            state: "custom"
-        card:
-          type: entities
-          title: Custom flow settings
-          entities:
-          - input_number.flow_custom_hue1
-          - input_number.flow_custom_hue2
-          - input_number.flow_custom_hue3
-          - input_number.flow_custom_hue4
-#      - type: conditional
-#        conditions:
-#        - entity: input_select.living_room_flow
-#          state: "random"
-#        card:
-#          type: entities
-#          title: Randomiztor
-#          entities:
-#          - sensor.flow_random_hue
+          state: "custom"
+      card:
+        type: entities
+        title: Custom flow settings
+        entities:
+        - input_number.flow_custom_hue1
+        - input_number.flow_custom_hue2
+        - input_number.flow_custom_hue3
+        - input_number.flow_custom_hue4
 
 ##################   ELECTRO
   - title: Electricity
