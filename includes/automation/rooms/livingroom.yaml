@@ -10,6 +10,7 @@
       topic: "livingroom/motions"
       payload: "{{states.sensor.livingroom_motions.state | int + 1}}"
       retain: true
+
 - alias: "livingroom_light_turn_off"
   initial_state: "on"
   trigger:
