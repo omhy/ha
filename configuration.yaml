@@ -13,7 +13,12 @@ homeassistant:
 map:
 sun:
 ffmpeg:
+
 #custom_updater:
+#  hide_sensor: false
+#  show_installable: true
+#  card_urls:
+#  - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
 
 hassio:
 config:
@@ -34,7 +39,8 @@ media_extractor:
 
 http:
   ip_ban_enabled: true
-#  base_url: !secret http_base_url
+  login_attempts_threshold: 3
+  base_url: !secret http_base_url_no_port
 #  ssl_certificate: /ssl/fullchain.pem
 #  ssl_key: /ssl/privkey.pem
 
@@ -58,11 +64,11 @@ media_player:
 - platform: kodi
   host: 192.168.1.20
 
-panel_iframe:
-  grafana:
-    title: Grafana
-    icon: mdi:graphql
-    url: http://192.168.1.10:3000
+#panel_iframe:
+#  grafana:
+#    title: Grafana
+#    icon: mdi:graphql
+#    url: http://192.168.1.10:8888
 
 recorder:
   purge_keep_days: 1
