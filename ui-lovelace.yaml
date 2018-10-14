@@ -1,8 +1,10 @@
 resources:
-  - url: /local/monster-card.js?v=0.2.3
-    type: js
-  - url: /local/tracker-card.js?v=0.1.4
-    type: js
+- url: /local/monster-card.js?v=0.2.3
+  type: js
+- url: /local/tracker-card.js?v=0.1.4
+  type: js
+- url: /local/mini-media-player.js?v=0.8.5
+  type: module
 
 title: Home
 views:
@@ -70,10 +72,23 @@ views:
 
     - type: vertical-stack
       cards:
-      - type: media-control
+      - type: custom:mini-media-player
+        entity: media_player.kitchen_speaker
+        icon: mdi:google-home
+        artwork: cover
+        short_info: true
+      - type: custom:mini-media-player
         entity: media_player.spotify
-      - type: media-control
+        artwork: cover
+        hide_power: true
+        hide_mute: true
+        short_info: true
+      - type: custom:mini-media-player
         entity: media_player.kodi
+        icon: mdi:kodi
+        artwork: cover
+        hide_power: true
+        short_info: true
 
 ##################   CLIMATE
   - title: Climate
@@ -84,7 +99,6 @@ views:
       cards:
       - type: glance
         title: Living room
-        show_header_toggle: false
         entities:
         - entity: sensor.temperature_158d000234816a
           name: Temperature
@@ -94,7 +108,6 @@ views:
           name: Pressure
       - type: glance
         title: Children's room
-        show_header_toggle: false
         entities:
         - entity: sensor.temperature_158d0002271609
           name: Temperature
@@ -104,7 +117,6 @@ views:
           name: Pressure
       - type: glance
         title: Bedroom
-        show_header_toggle: false
         entities:
         - entity: sensor.temperature_158d0001f23cbe
           name: Temperature
@@ -117,7 +129,6 @@ views:
       cards:
       - type: glance
         title: Outside
-        show_header_toggle: false
         entities:
         - entity: sensor.temperature_158d00022c7cf2
           name: Temperature
@@ -131,7 +142,6 @@ views:
           name: Ozone level
       - type: glance
         title: Temperature Today
-        show_header_toggle: false
         entities:
         - entity: sensor.outside_temperature_min
           name: Minimal
@@ -149,11 +159,46 @@ views:
           name: Maximal @
           icon: mdi:clock
 
-    - type: vertical-stack
-      cards:
-      - type: iframe
-        url: http://192.168.1.10:3000/d-solo/b7wAbpmgz/01-rooms?refresh=1m&orgId=1&panelId=2
-        aspect_ratio: 80%
+      - type: horizontal-stack
+        cards:
+        - type: gauge
+          entity: sensor.temperature_158d000234816a
+          title: Living room
+          min: 10
+          max: 30
+          severity:
+            green: 10
+            yellow: 20
+            red: 25
+        - type: gauge
+          entity: sensor.temperature_158d0001f23cbe
+          title: Bedroom
+          min: 10
+          max: 30
+          severity:
+            green: 10
+            yellow: 20
+            red: 25
+      - type: horizontal-stack
+        cards:
+        - type: gauge
+          entity: sensor.temperature_158d0002271609
+          title: Children's room
+          min: 10
+          max: 30
+          severity:
+            green: 10
+            yellow: 20
+            red: 25
+        - type: gauge
+          entity: sensor.temperature_158d00022c7cf2
+          title: Outside
+          min: -30
+          max: 30
+          severity:
+            green: -10
+            yellow: 0
+            red: 10
 
 ##################   LIGHTS
   - title: Lights
@@ -312,22 +357,22 @@ views:
           name: Kitchen
 
 ##################   CAMERAS
-  - title: Cameras
-    id: cameras
-    icon: mdi:cctv
-    cards:
-    - type: picture-entity
-      title: cam1
-      entity: camera.cam1
-      camera_image: camera.cam1
-      show_info: true
-      tap_action: dialog
-    - type: picture-entity
-      title: cam2
-      entity: camera.cam2
-      camera_image: camera.cam2
-      show_info: true
-      tap_action: dialog
+#  - title: Cameras
+#    id: cameras
+#    icon: mdi:cctv
+#    cards:
+#    - type: picture-entity
+#      title: cam1
+#      entity: camera.cam1
+#      camera_image: camera.cam1
+#      show_info: true
+#      tap_action: dialog
+#    - type: picture-entity
+#      title: cam2
+#      entity: camera.cam2
+#      camera_image: camera.cam2
+#      show_info: true
+#      tap_action: dialog
 
     ##################   INFO
   - title: Information
@@ -352,9 +397,9 @@ views:
         name: Home - work
       - entity: sensor.waze_work_home
         name: Work - home
-    - type: iframe
-      url: http://192.168.1.10:3000/d-solo/K16cgeigk/00-main?refresh=30s&orgId=1&panelId=20
-      aspect_ratio: 55%
+#    - type: iframe
+#      url: !secret grafana_waze
+#      aspect_ratio: 55%
     - type: glance
       title: People
       entities:
@@ -539,15 +584,14 @@ views:
     icon: mdi:link
     cards:
     - type: entities
-      title: Links
-      show_header_toggle: false
+      title: Internal
       entities:
       - type: weblink
         name: Router
         url: http://192.168.1.1/
         icon: mdi:router-wireless
       - type: weblink
-        name: Sonoff 1
+        name: Sonoff garland
         url: http://192.168.1.40/
         icon: mdi:switch
       - type: weblink
@@ -555,25 +599,25 @@ views:
         url: http://192.168.1.10:8888
         icon: mdi:database
       - type: weblink
+        name: Grafana
+        url: http://192.168.1.10:3000
+        icon: mdi:graphql
+      - type: weblink
         name: Kodi
         url: http://192.168.1.20:8080
         icon: mdi:kodi
-      - type: divider
+      - type: weblink
+        name: Github repo
+        url: https://github.com/omhy/ha
+        icon: mdi:github-circle
 
-      - type: weblink
-        name: Lovelace
-        url: https://www.home-assistant.io/lovelace
-        icon: mdi:home-assistant
-      - type: weblink
-        name: Lovelace custom cards
-        url: https://github.com/ciotlosm/custom-lovelace
-        icon: mdi:home-assistant
+    - type: entities
+      title: Home Assistant
+      entities:
       - type: weblink
         name: Light component
         url: https://www.home-assistant.io/components/light/
         icon: mdi:home-assistant
-      - type: divider
-
       - type: weblink
         name: Automation conditions
         url: https://www.home-assistant.io/docs/automation/condition/
@@ -582,8 +626,34 @@ views:
         name: Automation trigger
         url: https://www.home-assistant.io/docs/automation/trigger/
         icon: mdi:script
-      - type: divider
 
+    - type: entities
+      title: Lovelace
+      entities:
+      - type: weblink
+        name: Lovelace
+        url: https://www.home-assistant.io/lovelace
+        icon: mdi:home-assistant
+      - type: weblink
+        name: Lovelace custom cards
+        url: https://github.com/ciotlosm/custom-lovelace
+        icon: mdi:application
+      - type: weblink
+        name: Tracker card
+        url: https://github.com/custom-cards/tracker-card
+        icon: mdi:application
+      - type: weblink
+        name: Monster card
+        url: https://github.com/ciotlosm/custom-lovelace/tree/master/monster-card
+        icon: mdi:application
+      - type: weblink
+        name: Mini-media-player card
+        url: https://github.com/kalkih/mini-media-player
+        icon: mdi:application
+
+    - type: entities
+      title: User interface
+      entities:
       - type: weblink
         name: MDI icons
         url: https://materialdesignicons.com
@@ -592,10 +662,6 @@ views:
         name: Emoji list
         url: http://unicode.org/emoji/charts/full-emoji-list.html
         icon: mdi:sticker-emoji
-      - type: weblink
-        name: Github repo
-        url: https://github.com/omhy/ha
-        icon: mdi:github-circle
 
 ##################   SYSTEM
   - title: System
@@ -619,8 +685,6 @@ views:
       - sensor.memory_use
       - sensor.memory_free
       - sensor.homeassistant_v2db
-      - counter.syslog_warning
-      - counter.syslog_error
     - type: entities
       title: System scripts
       show_header_toggle: false
