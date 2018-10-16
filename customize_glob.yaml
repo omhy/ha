@@ -61,6 +61,8 @@
   icon: mdi:weather-windy
 "sensor.*_pressure*":
   icon: mdi:gauge
+"sensor.version_ha_*":
+  icon: mdi:home-assistant
 
 "sensor.power_strip_*_load_power":
   icon: mdi:power-socket-eu

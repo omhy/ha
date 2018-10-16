@@ -668,16 +668,20 @@ views:
     id: sys
     icon: mdi:desktop-tower
     cards:
-    - type: entities
+    - type: glance
+      title: Versions
+      entities:
+      - sensor.version_ha_current
+      - sensor.version_ha_beta
+      - sensor.version_ha_stable
+    - type: glance
       title: Date and time
-      show_header_toggle: true
       entities:
       - sensor.date
       - sensor.time
       - sensor.days_in_month
     - type: entities
       title: System state
-      show_header_toggle: true
       entities:
       - sensor.uptime
       - sensor.processor_use

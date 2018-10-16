@@ -44,6 +44,10 @@ http:
 #  ssl_certificate: /ssl/fullchain.pem
 #  ssl_key: /ssl/privkey.pem
 
+tts:
+- platform: google
+  language: 'ru'
+
 system_log:
   max_entries: 20
 

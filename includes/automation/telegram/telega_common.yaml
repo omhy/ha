@@ -23,6 +23,7 @@
       - "\U0001F5A5 Computer:/computer, \U0001F4BB Laptop:/laptop"
       - "\U0001F4F7 Camera 1:/snap cam1, \U0001F4F7 Camera 2:/snap cam2"
       - "\U0001F3D8 Rooms:/rooms, \U0001F30D People:/people"
+      - "Debug:/debug"
       - "\U0001F504 Restart:/restart, \U0000267B Dismiss:/dismiss"
 
 - alias: "telegram_handle_callback_menu"
@@ -100,3 +101,17 @@
       callback_query_id: "{{ trigger.event.data.id }}"
       message: "Roger {{ trigger.event.data.data }}"
   - service: homeassistant.restart
+
+- alias: "telegram_handle_callback_debug"
+  initial_state: "on"
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: "/debug"
+  action:
+  - service: telegram_bot.answer_callback_query
+    data_template:
+      callback_query_id: "{{ trigger.event.data.id }}"
+      message: "Roger {{ trigger.event.data.data }}"
+  - service: script.tts_morning_summary

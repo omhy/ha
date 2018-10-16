@@ -1,5 +1,5 @@
 - alias: "cube_action_rotate_when_flow_is_off"
-  initial_state: 'on'
+  initial_state: "on"
   trigger:
   - platform: event
     event_type: cube_action
@@ -35,7 +35,7 @@
         {{ current }}
 
 - alias: "cube_action_flip90_when_flow_is_off"
-  initial_state: 'on'
+  initial_state: "on"
   trigger:
   - platform: event
     event_type: cube_action
@@ -63,7 +63,7 @@
         {{ current }}
 
 - alias: "cube_action_flip180_when_flow_is_off"
-  initial_state: 'on'
+  initial_state: "on"
   trigger:
   - platform: event
     event_type: cube_action
@@ -91,7 +91,7 @@
         {{ current }}
 
 - alias: "cube_action_rotate_when_flow_is_on"
-  initial_state: 'on'
+  initial_state: "on"
   trigger:
   - platform: event
     event_type: cube_action
@@ -127,7 +127,7 @@
         {{ current }}
 
 #- alias: "cube_action_v2"
-#  initial_state: 'on'
+#  initial_state: "on"
 #  trigger:
 #  - platform: event
 #    event_type: cube_action

@@ -182,6 +182,13 @@ sensor.power_strip_3_load_power:
 sensor.power_strip_4_load_power:
   friendly_name: power/tv/current
 
+sensor.version_ha_current:
+  friendly_name: Installed
+sensor.version_ha_stable:
+  friendly_name: Stable
+sensor.version_ha_beta:
+  friendly_name: Beta
+
 switch.turn_off_bb:
   assumed_state: false
   icon: mdi:computer

@@ -78,7 +78,7 @@
   initial_state: "on"
   trigger:
   - platform: time
-    seconds: '/30'
+    seconds: "/30"
   action:
   - service: mqtt.publish
     data_template:
