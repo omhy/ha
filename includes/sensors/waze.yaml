@@ -1,23 +1,23 @@
 - platform: waze_travel_time
-  name: 'waze_home_work'
+  name: "waze_home_work"
   origin: zone.home
   destination: zone.work
-  region: 'EU'
+  region: "EU"
 
 - platform: waze_travel_time
-  name: 'waze_work_home'
+  name: "waze_work_home"
   origin: zone.work
   destination: zone.home
-  region: 'EU'
+  region: "EU"
 
 - platform: waze_travel_time
-  name: 'waze_current_home'
+  name: "waze_current_home"
   origin: device_tracker.google_maps_111683533988744565132
   destination: zone.home
-  region: 'EU'
+  region: "EU"
 
 - platform: waze_travel_time
-  name: 'waze_current_work'
+  name: "waze_current_work"
   origin: device_tracker.google_maps_111683533988744565132
   destination: zone.work
-  region: 'EU'
+  region: "EU"
