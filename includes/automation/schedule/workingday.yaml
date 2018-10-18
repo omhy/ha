@@ -1,7 +1,7 @@
 - alias: "light_at_working_day_on"
   initial_state: "on"
   trigger:
-    platform: time
+  - platform: time
     at: "06:50:00"
   condition:
   - condition: state
@@ -15,7 +15,7 @@
 - alias: "light_at_working_day_off"
   initial_state: "on"
   trigger:
-    platform: time
+  - platform: time
     at: "07:45:00"
   condition:
   - condition: state
@@ -30,7 +30,7 @@
 - alias: "light_at_working_day_ready_1"
   initial_state: "on"
   trigger:
-    platform: time
+  - platform: time
     at: "07:25:00"
   condition:
   - condition: state
@@ -46,7 +46,7 @@
 - alias: "light_at_working_day_ready_2"
   initial_state: "on"
   trigger:
-    platform: time
+  - platform: time
     at: "07:27:30"
   condition:
   - condition: state
@@ -61,7 +61,7 @@
 - alias: "light_at_working_day_steady"
   initial_state: "on"
   trigger:
-    platform: time
+  - platform: time
     at: "07:30:00"
   condition:
   - condition: state
@@ -77,7 +77,7 @@
 - alias: "light_at_working_day_go"
   initial_state: "on"
   trigger:
-    platform: time
+  - platform: time
     at: "07:35:00"
   condition:
   - condition: state

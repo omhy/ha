@@ -1,7 +1,7 @@
 - alias: "outside_temperature_calc_diff"
   initial_state: "on"
   trigger:
-    platform: state
+  - platform: state
     entity_id:
     - sensor.outside_temperature_min
     - sensor.outside_temperature_max

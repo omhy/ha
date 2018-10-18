@@ -25,10 +25,10 @@
 - alias: "ha_bad_login"
   initial_state: "on"
   trigger:
-    platform: state
+  - platform: state
     entity_id: persistent_notification.httplogin
   condition:
-    condition: template
+  - condition: template
     value_template: "{{ trigger.to_state.state == 'notifying' }}"
   action:
   - service: notify.telegram_dima

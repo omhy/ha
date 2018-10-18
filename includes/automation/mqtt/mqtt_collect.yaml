@@ -1,7 +1,7 @@
 - alias: "mqtt_publish_states"
   initial_state: "on"
   trigger:
-    platform: state
+  - platform: state
     entity_id:
     - sensor.temperature_158d0001f23cbe
     - sensor.temperature_158d0002271609
@@ -34,11 +34,11 @@
 - alias: "mqtt_publish_outside_temperature_min"
   initial_state: "on"
   trigger:
-    platform: state
+  - platform: state
     entity_id:
     - sensor.temperature_158d00022c7cf2
   condition:
-    condition: template
+  - condition: template
     value_template: "{{ (trigger.to_state.state | float) < (states.sensor.outside_temperature_min.state | float) }}"
   action:
   - service: mqtt.publish
@@ -55,11 +55,11 @@
 - alias: "mqtt_publish_outside_temperature_max"
   initial_state: "on"
   trigger:
-    platform: state
+  - platform: state
     entity_id:
     - sensor.temperature_158d00022c7cf2
   condition:
-    condition: template
+  - condition: template
     value_template: "{{ (trigger.to_state.state | float) > (states.sensor.outside_temperature_max.state | float) }}"
   action:
   - service: mqtt.publish

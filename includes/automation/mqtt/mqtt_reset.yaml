@@ -1,7 +1,7 @@
 - alias: "mqtt_reset_max_and_min"
   initial_state: "on"
   trigger:
-    platform: time
+  - platform: time
     at: "00:00:05"
   action:
   - service: mqtt.publish
@@ -28,7 +28,7 @@
 - alias: "mqtt_power_reset_day"
   initial_state: "on"
   trigger:
-    platform: time
+  - platform: time
     at: "00:00:05"
   action:
   - service: script.mqtt_publish_zero
@@ -53,10 +53,10 @@
 - alias: "mqtt_power_reset_week"
   initial_state: "on"
   trigger:
-    platform: time
+  - platform: time
     at: "00:00:15"
   condition:
-    condition: template
+  - condition: template
     value_template: "{{ now().isoweekday() == 1 }}"
   action:
   - service: script.mqtt_publish_zero
@@ -75,10 +75,10 @@
 - alias: "mqtt_power_reset_month"
   initial_state: "on"
   trigger:
-    platform: time
+  - platform: time
     at: "00:00:25"
   condition:
-    condition: template
+  - condition: template
     value_template: "{{ now().day == 1 }}"
   action:
   - service: script.mqtt_publish_zero

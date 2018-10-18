@@ -1,7 +1,7 @@
 - alias: "entrance_door_opened_too_long"
   initial_state: "on"
   trigger:
-    platform: state
+  - platform: state
     entity_id: binary_sensor.door_window_sensor_158d00024367c8
     to: "on"
     for:
@@ -12,18 +12,18 @@
 - alias: "entrance_door_opened"
   initial_state: "on"
   trigger:
-    platform: state
+  - platform: state
     entity_id: binary_sensor.door_window_sensor_158d00024367c8
     to: "on"
   action:
-    service: notify.telegram_dima
+  - service: notify.telegram_dima
     data_template:
       message: "{{ now().strftime('%H:%M') }} \U0001F513 Door is opened"
 
 - alias: "entrance_door_closed"
   initial_state: "on"
   trigger:
-    platform: state
+  - platform: state
     entity_id: binary_sensor.door_window_sensor_158d00024367c8
     to: "off"
   action:
