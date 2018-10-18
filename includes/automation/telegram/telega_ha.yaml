@@ -25,10 +25,10 @@
 - alias: "ha_bad_login"
   initial_state: "on"
   trigger:
-  - platform: state
+    platform: state
     entity_id: persistent_notification.httplogin
   condition:
-  - condition: template
+    condition: template
     value_template: "{{ trigger.to_state.state == 'notifying' }}"
   action:
   - service: notify.telegram_dima
@@ -40,22 +40,16 @@
     data:
       notification_id: "httplogin"
 
-- alias: "notification_low_battery"
+- alias: "ha_update_available"
   initial_state: "on"
   trigger:
-    platform: numeric_state
-    below: 15
+  - platform: state
     entity_id:
-      - sensor.doorbell_switch_battery_level
-      - sensor.door_sensor_battery_level
-      - sensor.livingroom_light_switch_battery_level
-      - sensor.motion1_battery_level
-      - sensor.motion2_battery_level
-      - sensor.t1_battery_level
-      - sensor.t2_battery_level
-      - sensor.t3_battery_level
-      - sensor.t4_battery_level
+    - sensor.version_ha_stable
+    - sensor.version_ha_beta
   action:
-    service: notify.telegram_dima
+  - service: notify.telegram_dima
     data_template:
-      message: "\U0001F50B {{ trigger.from_state.name }} battery level drops to {{ trigger.to_state.state }}%"
+      message: "{{ now().strftime('%H:%M') }} \U00002757 {{ trigger.from_state.attributes.friendly_name }} version {{ trigger.to_state.state }} available!"
+      inline_keyboard:
+      - "\U0000267B Dismiss:/dismiss"

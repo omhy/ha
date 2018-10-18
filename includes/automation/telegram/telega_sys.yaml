@@ -1,0 +1,21 @@
+- alias: "notification_low_battery"
+  initial_state: "on"
+  trigger:
+    platform: numeric_state
+    below: 15
+    entity_id:
+    - sensor.cube_battery_level
+    - sensor.door_sensor_battery_level
+    - sensor.doorbell_switch_battery_level
+    - sensor.livingroom_light_switch_battery_level
+    - sensor.motion1_battery_level
+    - sensor.motion2_battery_level
+    - sensor.sw1_standalone_battery_level
+    - sensor.t1_battery_level
+    - sensor.t2_battery_level
+    - sensor.t3_battery_level
+    - sensor.t4_battery_level
+  action:
+    service: notify.telegram_dima
+    data_template:
+      message: "\U0001F50B {{ trigger.from_state.name }} battery level drops to {{ trigger.to_state.state }}%"
