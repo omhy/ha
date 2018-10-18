@@ -7,8 +7,9 @@
     zone: zone.work
     event: enter
   action:
-  - service: notify.telegram_dima
+  - service: telegram_bot.send_message
     data_template:
+      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F4BC Dima enters"
 
 - alias: "dima_leaves_work"
@@ -30,7 +31,7 @@
     entity_id: device_tracker.google_maps_111683533988744565132
     zone: zone.work
     event: leave
-  condtion:
+  condition:
   - condition: time
     after: '15:00:00'
   - condition: state
@@ -47,8 +48,9 @@
     zone: zone.home
     event: enter
   action:
-  - service: notify.telegram_dima
+  - service: telegram_bot.send_message
     data_template:
+      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F3E0 Dima enters"
 
 - alias: "dima_leaves_home"
@@ -71,8 +73,9 @@
     zone: zone.school
     event: enter
   action:
-  - service: notify.telegram_dima
+  - service: telegram_bot.send_message
     data_template:
+      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F3EB Dima enters"
 
 - alias: "dima_leaves_school"
@@ -96,8 +99,9 @@
     zone: zone.school
     event: enter
   action:
-  - service: notify.telegram_dima
+  - service: telegram_bot.send_message
     data_template:
+      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F3EB Alyona enters"
 
 - alias: "alyona_leaves_school"

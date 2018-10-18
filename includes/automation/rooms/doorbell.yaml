@@ -12,8 +12,9 @@
       gw_mac: !secret gw_mac
       ringtone_id: "{{states.input_number.doorbell_melody.state|int}}"
       ringtone_vol: "{{states.input_number.doorbell_volume.state|int}}"
-  - service: notify.telegram_dima
+  - service: telegram_bot.send_message
     data_template:
+      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F514 Doorbell single click"
 #  - service: telegram_bot.send_photo
 #    data_template:

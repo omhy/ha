@@ -4,8 +4,9 @@
   - platform: homeassistant
     event: start
   action:
-  - service: notify.telegram_dima
+  - service: telegram_bot.send_message
     data_template:
+      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F916 {{ states.sensor.version_ha_current.state }} HA back online!"
       inline_keyboard:
       - "\U0001F532 Menu:/menu, \U0000267B Dismiss:/dismiss"
@@ -31,8 +32,9 @@
   - condition: template
     value_template: "{{ trigger.to_state.state == 'notifying' }}"
   action:
-  - service: notify.telegram_dima
+  - service: telegram_bot.send_message
     data_template:
+      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U00002620 {{ states.persistent_notification.httplogin.attributes.message }}"
       inline_keyboard:
       - "\U0000267B Dismiss:/dismiss"
