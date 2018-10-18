@@ -17,9 +17,8 @@ sys_logic_reload:
     - service: homeassistant.reload_core_config
     - service: automation.reload
     - service: script.reload
-    - service: telegram_bot.send_message
+    - service: notify.telegram_dima
       data_template:
-        target: !secret tg_chat_dima
         message: "{{ now().strftime('%H:%M') }} \U00002699 Logic reloaded"
         inline_keyboard: "\U0001F504 Restart:/restart, \U0000267B Dismiss:/dismiss"
 
@@ -43,9 +42,6 @@ alarm_door:
         gw_mac: !secret gw_mac
         ringtone_id: "8"
         ringtone_vol: "10"
-    - service: telegram_bot.send_message
+    - service: notify.telegram_parents
       data_template:
         message: "{{ now().strftime('%H:%M') }} \U0001F6A8 Door opened for a while"
-        target:
-        - !secret tg_chat_dima
-        - !secret tg_chat_alyona

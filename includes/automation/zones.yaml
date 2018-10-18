@@ -7,10 +7,10 @@
     zone: zone.work
     event: enter
   action:
-    service: telegram_bot.send_message
+    service: notify.telegram_dima
     data_template:
-      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F4BC Dima enters"
+
 - alias: "dima_leaves_work"
   initial_state: "on"
   trigger:
@@ -19,10 +19,26 @@
     zone: zone.work
     event: leave
   action:
-    service: telegram_bot.send_message
+    service: notify.telegram_dima
     data_template:
-      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F4BC Dima leaves"
+
+- alias: "dima_leaves_work_tts"
+  initial_state: "on"
+  trigger:
+    platform: zone
+    entity_id: device_tracker.google_maps_111683533988744565132
+    zone: zone.work
+    event: leave
+  condtion:
+  - condition: time
+    after: '15:00:00'
+  - condition: state
+    entity_id: sensor.is_workday
+    state: "True"
+  action:
+    service: script.tts_dima_leaves_work
+
 - alias: "dima_enters_home"
   initial_state: "on"
   trigger:
@@ -31,10 +47,10 @@
     zone: zone.home
     event: enter
   action:
-    service: telegram_bot.send_message
+    service: notify.telegram_dima
     data_template:
-      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F3E0 Dima enters"
+
 - alias: "dima_leaves_home"
   initial_state: "on"
   trigger:
@@ -43,10 +59,10 @@
     zone: zone.home
     event: leave
   action:
-    service: telegram_bot.send_message
+    service: notify.telegram_dima
     data_template:
-      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F3E0 Dima leaves"
+
 - alias: "dima_enters_school"
   initial_state: "on"
   trigger:
@@ -55,10 +71,10 @@
     zone: zone.school
     event: enter
   action:
-    service: telegram_bot.send_message
+    service: notify.telegram_dima
     data_template:
-      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F3EB Dima enters"
+
 - alias: "dima_leaves_school"
   initial_state: "on"
   trigger:
@@ -67,10 +83,10 @@
     zone: zone.school
     event: leave
   action:
-    service: telegram_bot.send_message
+    service: notify.telegram_dima
     data_template:
-      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F3EB Dima leaves"
+
 ################## ALYONA
 - alias: "alyona_enters_school"
   initial_state: "on"
@@ -80,10 +96,10 @@
     zone: zone.school
     event: enter
   action:
-    service: telegram_bot.send_message
+    service: notify.telegram_dima
     data_template:
-      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F3EB Alyona enters"
+
 - alias: "alyona_leaves_school"
   initial_state: "on"
   trigger:
@@ -92,7 +108,6 @@
     zone: zone.school
     event: leave
   action:
-    service: telegram_bot.send_message
+    service: notify.telegram_dima
     data_template:
-      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F3EB Alyona leaves"

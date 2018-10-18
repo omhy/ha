@@ -16,9 +16,8 @@
     entity_id: binary_sensor.door_window_sensor_158d00024367c8
     to: "on"
   action:
-    service: telegram_bot.send_message
+    service: notify.telegram_dima
     data_template:
-      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F513 Door is opened"
 
 - alias: "entrance_door_closed"
@@ -32,7 +31,6 @@
   - service: automation.turn_off
     entity_id:
     - automation.entrance_door_opened_too_long_alarm
-  - service: telegram_bot.send_message
+  - service: notify.telegram_dima
     data_template:
-      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F512 Door is closed"

@@ -14,3 +14,9 @@
   - service: telegram_dima
   - service: telegram_alyona
   - service: telegram_yury
+
+- name: telegram_parents
+  platform: group
+  services:
+  - service: telegram_dima
+  - service: telegram_alyona

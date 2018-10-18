@@ -11,12 +11,18 @@ tts_morning_summary:
         Минимальная температура была в {{ states.sensor.outside_temperature_min_at.state }}, а именно - {{ states.sensor.outside_temperature_min.state_with_unit }}.
         Удачи вам, ребята!!!
 
+tts_dima_leaves_work:
+  sequence:
+  - service: script.tts_say_kitchen
+    data_template:
+      message: "Дима ушёл с работы в {{ states.sensor.time.state }}."
+
 tts_say_kitchen:
   sequence:
   - service: media_player.volume_set
     data_template:
       entity_id: media_player.kitchen_speaker
-      volume_level: "0.3"
+      volume_level: "0.2"
   - service: tts.google_say
     entity_id: media_player.kitchen_speaker
     data_template:
