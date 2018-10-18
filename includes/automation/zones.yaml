@@ -20,8 +20,9 @@
     zone: zone.work
     event: leave
   action:
-  - service: notify.telegram_dima
+  - service: telegram_bot.send_message
     data_template:
+      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F4BC Dima leaves"
 
 - alias: "dima_leaves_work_tts"
@@ -86,8 +87,9 @@
     zone: zone.school
     event: leave
   action:
-  - service: notify.telegram_dima
+  - service: telegram_bot.send_message
     data_template:
+      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F3EB Dima leaves"
 
 ################## ALYONA

@@ -17,8 +17,9 @@
   - platform: homeassistant
     event: shutdown
   action:
-  - service: notify.telegram_dima
+  - service: telegram_bot.send_message
     data_template:
+      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F6D1 {{ states.sensor.version_ha_current.state }} HA goes offline!"
       inline_keyboard:
       - "\U0000267B Dismiss:/dismiss"
@@ -50,8 +51,9 @@
     - sensor.version_ha_stable
     - sensor.version_ha_beta
   action:
-  - service: notify.telegram_dima
+  - service: telegram_bot.send_message
     data_template:
+      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U00002757 {{ trigger.from_state.attributes.friendly_name }} version {{ trigger.to_state.state }} available!"
       inline_keyboard:
       - "\U0000267B Dismiss:/dismiss"
