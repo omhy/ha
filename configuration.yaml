@@ -22,6 +22,8 @@ ffmpeg:
 
 hassio:
 google_assistant:
+  project_id: omhhav2
+  api_key: !secret google_cloud_api_key
 
 config:
 frontend:
