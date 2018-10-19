@@ -7,26 +7,16 @@ homeassistant:
   time_zone: !secret timezone
   customize: !include customize.yaml
   customize_glob: !include customize_glob.yaml
+
   whitelist_external_dirs:
   - /config
+  - /tmp
 
 map:
 sun:
 ffmpeg:
 
-#custom_updater:
-#  hide_sensor: false
-#  show_installable: true
-#  card_urls:
-#  - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
-
 hassio:
-google_assistant:
-  project_id: omhhav2
-  api_key: !secret google_cloud_api_key
-  expose_by_default: false
-#  exposed_domains:
-#  - light
 
 config:
 frontend:
@@ -85,12 +75,6 @@ media_player:
 - platform: kodi
   host: 192.168.1.20
 
-#panel_iframe:
-#  grafana:
-#    title: Grafana
-#    icon: mdi:graphql
-#    url: http://192.168.1.10:8888
-
 recorder:
   purge_keep_days: 1
   exclude:
@@ -135,6 +119,7 @@ device_tracker:
   password: !secret bot_gmail_pass
   interval_seconds: 850
 
+google_assistant: !include includes/googleassistant.yaml
 zone: !include includes/zone.yaml
 #alert: !include includes/alert.yaml
 #counter: !include includes/counter.yaml
