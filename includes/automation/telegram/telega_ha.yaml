@@ -55,5 +55,5 @@
     data_template:
       target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U00002757 {{ trigger.from_state.attributes.friendly_name }} version {{ trigger.to_state.state }} available!"
-      inline_keyboard:
-      - "\U0000267B Dismiss:/dismiss"
+#      inline_keyboard:
+#      - "\U0000267B Dismiss:/dismiss"
