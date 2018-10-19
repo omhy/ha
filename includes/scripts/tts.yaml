@@ -1,14 +1,14 @@
-tts_morning_summary:
+tts_summary:
   sequence:
   - service: script.tts_say_kitchen
     data_template:
       message: >
-        Доброе утро!
+        Привет!
         До работы ехать {{ states.sensor.waze_home_work.state }} минут.
-        За окном температура - {{ states.sensor.temperature_158d00022c7cf2.state_with_unit }},
-        ветер - {{ states.sensor.wt00_wind_speed.state_with_unit }},
-        осадки - {{ states.sensor.wt00_precipitation.state_with_unit }}.
-        Минимальная температура была в {{ states.sensor.outside_temperature_min_at.state }}, а именно - {{ states.sensor.outside_temperature_min.state_with_unit }}.
+        За окном температура - {{ states.sensor.temperature_158d00022c7cf2.state | int }} градусов,
+        ветер - {{ states.sensor.wt00_wind_speed.state | int }} метров в секунду,
+        осадки - {{ states.sensor.wt00_precipitation.state | int}} миллиметров.
+        Минимальная температура была в {{ states.sensor.outside_temperature_min_at.state }}, а именно - {{ states.sensor.outside_temperature_min.state | int }} градусов.
         Удачи вам, ребята!!!
 
 tts_dima_leaves_work:

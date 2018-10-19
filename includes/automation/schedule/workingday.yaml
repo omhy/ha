@@ -41,7 +41,7 @@
     data_template:
       entity_id: light.livingroom_ambient
       hs_color: [ 100, 100 ]
-  - service: script.tts_morning_summary
+  - service: script.tts_summary
 
 - alias: "working_day_light_ready_2"
 #  initial_state: "on"

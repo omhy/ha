@@ -114,4 +114,4 @@
     data_template:
       callback_query_id: "{{ trigger.event.data.id }}"
       message: "Roger {{ trigger.event.data.data }}"
-  - service: script.tts_morning_summary
+  - service: script.tts_summary
