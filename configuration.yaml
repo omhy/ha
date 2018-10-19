@@ -21,6 +21,8 @@ ffmpeg:
 #  - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
 
 hassio:
+google_assistant:
+
 config:
 frontend:
   themes: !include_dir_merge_named includes/themes
@@ -30,11 +32,19 @@ updater:
   include_used_components: true
 
 history:
+logbook:
 logger:
   default: warn
 
 openuv:
   api_key: !secret open_uv_api_key
+#  binary_sensors:
+#  sensors:
+#  - current_ozone_level
+#  - current_uv_index
+#  - current_uv_level
+#  - max_uv_index
+
 
 media_extractor:
 
