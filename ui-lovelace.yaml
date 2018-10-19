@@ -562,21 +562,29 @@ views:
     - type: custom:monster-card
       card:
         type: entities
-        title: Working day automations
+        title: Automations (working days)
       filter:
         include:
-        - domain: automation
-        - entity_id: "*.working_day*"
+        - entity_id: "automation.working_day*"
 
     - type: custom:monster-card
       card:
         type: entities
-        title: Automations
+        title: Automations (telegram)
+      filter:
+        include:
+        - entity_id: "automation.telegram*"
+
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: Automations (other)
       filter:
         include:
         - domain: automation
         exclude:
-        - entity_id: "*.working_day*"
+        - entity_id: "automation.working_day*"
+        - entity_id: "automation.telegram*"
 
     - type: custom:monster-card
       card:
