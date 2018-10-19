@@ -530,6 +530,7 @@ views:
       filter:
         include:
         - domain: binary_sensor
+
     - type: custom:monster-card
       card:
         type: entities
@@ -537,6 +538,7 @@ views:
       filter:
         include:
         - domain: light
+
     - type: custom:monster-card
       card:
         type: entities
@@ -552,10 +554,20 @@ views:
         type: entities
         title: Sensors
       filter:
-        exclude:
-        - entity_id: "sensor.wt*"
         include:
         - domain: sensor
+        exclude:
+        - entity_id: "sensor.wt*"
+
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: Working day automations
+      filter:
+        include:
+        - domain: automation
+        - entity_id: "*.working_day*"
+
     - type: custom:monster-card
       card:
         type: entities
@@ -563,6 +575,9 @@ views:
       filter:
         include:
         - domain: automation
+        exclude:
+        - entity_id: "*.working_day*"
+
     - type: custom:monster-card
       card:
         type: entities
@@ -570,6 +585,7 @@ views:
       filter:
         include:
         - domain: script
+
     - type: custom:monster-card
       card:
         type: entities
