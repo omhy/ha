@@ -98,44 +98,50 @@ views:
     - type: vertical-stack
       cards:
       - type: glance
-        title: Living room
+        title: Temperature
         entities:
+        - entity: sensor.temperature_158d00022c7cf2
+          name: Outside
+        - entity: sensor.temperature_158d0002323783
+          name: Kitchen
         - entity: sensor.temperature_158d000234816a
-          name: Temperature
-        - entity: sensor.humidity_158d000234816a
-          name: Humidity
-        - entity: sensor.pressure_158d000234816a
-          name: Pressure
-      - type: glance
-        title: Children's room
-        entities:
-        - entity: sensor.temperature_158d0002271609
-          name: Temperature
-        - entity: sensor.humidity_158d0002271609
-          name: Humidity
-        - entity: sensor.pressure_158d0002271609
-          name: Pressure
-      - type: glance
-        title: Bedroom
-        entities:
+          name: Living
         - entity: sensor.temperature_158d0001f23cbe
-          name: Temperature
+          name: Bedroom
+        - entity: sensor.temperature_158d0002271609
+          name: Children
+      - type: glance
+        title: Humidity
+        entities:
+        - entity: sensor.humidity_158d00022c7cf2
+          name: Outside
+        - entity: sensor.humidity_158d0002323783
+          name: Kitchen
+        - entity: sensor.humidity_158d000234816a
+          name: Living
         - entity: sensor.humidity_158d0001f23cbe
-          name: Humidity
+          name: Bedroom
+        - entity: sensor.humidity_158d0002271609
+          name: Children
+      - type: glance
+        title: Pressure
+        entities:
+        - entity: sensor.pressure_158d00022c7cf2
+          name: Outside
+        - entity: sensor.pressure_158d0002323783
+          name: Kitchen
+        - entity: sensor.pressure_158d000234816a
+          name: Living
         - entity: sensor.pressure_158d0001f23cbe
-          name: Pressure
+          name: Bedroom
+        - entity: sensor.pressure_158d0002271609
+          name: Children
 
     - type: vertical-stack
       cards:
       - type: glance
         title: Outside
         entities:
-        - entity: sensor.temperature_158d00022c7cf2
-          name: Temperature
-        - entity: sensor.humidity_158d00022c7cf2
-          name: Humidity
-        - entity: sensor.pressure_158d00022c7cf2
-          name: Pressure
         - entity: sensor.current_uv_index
           name: Current UV
         - entity: sensor.current_ozone_level
@@ -159,8 +165,28 @@ views:
           name: Maximal @
           icon: mdi:clock
 
+    - type: vertical-stack
+      cards:
+      - type: gauge
+        entity: sensor.temperature_158d00022c7cf2
+        title: Outside
+        min: -30
+        max: 30
+        severity:
+          green: 10
+          yellow: 15
+          red: 20
       - type: horizontal-stack
         cards:
+        - type: gauge
+          entity: sensor.temperature_158d0002323783
+          title: Kitchen
+          min: 10
+          max: 30
+          severity:
+            green: 10
+            yellow: 15
+            red: 20
         - type: gauge
           entity: sensor.temperature_158d000234816a
           title: Living room
@@ -168,17 +194,8 @@ views:
           max: 30
           severity:
             green: 10
-            yellow: 20
-            red: 25
-        - type: gauge
-          entity: sensor.temperature_158d0001f23cbe
-          title: Bedroom
-          min: 10
-          max: 30
-          severity:
-            green: 10
-            yellow: 20
-            red: 25
+            yellow: 15
+            red: 20
       - type: horizontal-stack
         cards:
         - type: gauge
@@ -188,17 +205,17 @@ views:
           max: 30
           severity:
             green: 10
-            yellow: 20
-            red: 25
+            yellow: 15
+            red: 20
         - type: gauge
-          entity: sensor.temperature_158d00022c7cf2
-          title: Outside
-          min: -30
+          entity: sensor.temperature_158d0001f23cbe
+          title: Bedroom
+          min: 10
           max: 30
           severity:
-            green: -10
-            yellow: 0
-            red: 10
+            green: 10
+            yellow: 15
+            red: 20
 
 ##################   LIGHTS
   - title: Lights
@@ -385,6 +402,15 @@ views:
       entities:
       - input_number.doorbell_volume
       - input_number.doorbell_melody
+
+    - type: entities
+      title: TTS settings
+      show_header_toggle: false
+      entities:
+      - input_number.tts_volume
+      - input_text.tts_msg
+      - script.tts_say_kitchen
+
     - type: glance
       title: Waze
       show_header_toggle: true
@@ -548,6 +574,7 @@ views:
         - domain: input_number
         - domain: input_select
         - domain: input_boolean
+        - domain: input_text
 
     - type: custom:monster-card
       card:
@@ -574,6 +601,14 @@ views:
       filter:
         include:
         - entity_id: "automation.telegram*"
+
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: TTS
+      filter:
+        include:
+        - entity_id: "*tts*"
 
     - type: custom:monster-card
       card:

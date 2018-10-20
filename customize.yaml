@@ -131,6 +131,9 @@ input_number.doorbell_volume:
 input_number.doorbell_melody:
   friendly_name: Melody
   icon: mdi:music-box
+input_number.tts_volume:
+  friendly_name: Volume
+  icon: mdi:volume-high
 
 #BINARY SENSORS
 binary_sensor.cube_158d00028776ae:

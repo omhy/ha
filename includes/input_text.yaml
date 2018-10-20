@@ -1,2 +1,2 @@
-#light_transaction:
-#  initial: 0
+tts_msg:
+  name: tts_msg

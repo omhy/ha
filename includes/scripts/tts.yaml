@@ -11,21 +11,47 @@ tts_summary:
         Минимальная температура была в {{ states.sensor.outside_temperature_min_at.state }}, а именно - {{ states.sensor.outside_temperature_min.state | int }} градусов.
         Удачи вам, ребята!!!
 
+tts_rooms:
+  sequence:
+  - service: script.tts_say_kitchen
+    data_template:
+      message: >
+        Температура:
+        на улице {{ states.sensor.temperature_158d00022c7cf2.state | int }},
+        на кухне {{ states.sensor.temperature_158d0002323783.state | int }},
+        в гостинной {{ states.sensor.temperature_158d000234816a.state | int }},
+        в детской {{ states.sensor.temperature_158d0002271609.state | int }},
+        в спальне {{ states.sensor.temperature_158d0001f23cbe.state | int }}.
+        Влажность:
+        на улице {{ states.sensor.humidity_158d00022c7cf2.state | int }},
+        на кухне {{ states.sensor.humidity_158d0002323783.state | int }},
+        в гостинной {{ states.sensor.humidity_158d000234816a.state | int }},
+        в детской {{ states.sensor.humidity_158d0002271609.state | int }},
+        в спальне {{ states.sensor.humidity_158d0001f23cbe.state | int }}.
+
 tts_dima_leaves_work:
   sequence:
   - service: script.tts_say_kitchen
     data_template:
       message: "Дима ушёл с работы в {{ states.sensor.time.state }}."
 
+tts_message:
+  sequence:
+  - service: script.tts_say_kitchen
+    data_template:
+      message: "{{ states.input_text.tts_msg.state }}"
+
 tts_say_kitchen:
   sequence:
+#  - service: media_player.media_pause
   - service: media_player.volume_set
     data_template:
       entity_id: media_player.kitchen_speaker
-      volume_level: "0.2"
+      volume_level: "{{ (states.input_number.tts_volume.state | float) / 10 }}"
   - service: tts.google_say
     entity_id: media_player.kitchen_speaker
     data_template:
       message:  "{{message}}"
       language: "ru"
       cache: false
+#  - service: media_player.media_play

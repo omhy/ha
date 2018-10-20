@@ -5,15 +5,19 @@ entity_config:
   light.entrance_garland:
     name: Garland
     expose: true
+    room: Entrance
   light.livingroom_ambient:
     name: Ambient
     expose: true
+    room: Living Room
   light.livingroom_torch:
     name: Torch
     expose: true
+    room: Living Room
   light.livingroom_corner:
     name: Corner
     expose: true
+    room: Living Room
 
   script.sys_sleep_computer:
     name: Computer sleep
@@ -23,4 +27,7 @@ entity_config:
     expose: true
   script.tts_summary:
     name: Say summary
+    expose: true
+  script.tts_rooms:
+    name: Say rooms
     expose: true
