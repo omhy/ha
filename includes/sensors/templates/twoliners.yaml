@@ -12,6 +12,9 @@
     t4_battery_level:
       unit_of_measurement: "%"
       value_template: "{{ states.sensor.temperature_158d000234816a.attributes.battery_level | float }}"
+    t5_battery_level:
+      unit_of_measurement: "%"
+      value_template: "{{ states.sensor.temperature_158d0002323783.attributes.battery_level | float }}"
     doorbell_switch_battery_level:
       unit_of_measurement: "%"
       value_template: "{{ states.binary_sensor.switch_158d00021350ee.attributes.battery_level | float }}"

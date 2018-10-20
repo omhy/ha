@@ -113,6 +113,12 @@ sensor.temperature_158d000234816a:
   friendly_name: livingroom/temperature
 sensor.pressure_158d000234816a:
   friendly_name: livingroom/pressure
+sensor.humidity_158d0002323783:
+  friendly_name: kitchen/humidity
+sensor.temperature_158d0002323783:
+  friendly_name: kitchen/temperature
+sensor.pressure_158d0002323783:
+  friendly_name: kitchen/pressure
 
 sensor.days_in_month:
   friendly_name: Days in month
@@ -202,6 +208,8 @@ sensor.t3_battery_level:
   friendly_name: Outside climate sensor
 sensor.t4_battery_level:
   friendly_name: Living room climate sensor
+sensor.t5_battery_level:
+  friendly_name: Kitchen climate sensor
 sensor.livingroom_light_switch_battery_level:
   friendly_name: Living room light button
 sensor.doorbell_switch_battery_level:
