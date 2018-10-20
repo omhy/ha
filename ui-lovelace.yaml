@@ -408,8 +408,6 @@ views:
       show_header_toggle: false
       entities:
       - input_number.tts_volume
-      - input_text.tts_msg
-      - script.tts_say_kitchen
 
     - type: glance
       title: Waze

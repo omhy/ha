@@ -5,10 +5,10 @@ tts_summary:
       message: >
         Привет!
         До работы ехать {{ states.sensor.waze_home_work.state }} минут.
-        За окном температура - {{ states.sensor.temperature_158d00022c7cf2.state | int }} градусов,
-        ветер - {{ states.sensor.wt00_wind_speed.state | int }} метров в секунду,
+        За окном температура - {{ states.sensor.temperature_158d00022c7cf2.state | int }} градусов.
+        ветер - {{ states.sensor.wt00_wind_speed.state | int }} метров в секунду.
         осадки - {{ states.sensor.wt00_precipitation.state | int}} миллиметров.
-        Минимальная температура была в {{ states.sensor.outside_temperature_min_at.state }}, а именно - {{ states.sensor.outside_temperature_min.state | int }} градусов.
+        Минимальная температура {{ states.sensor.outside_temperature_min.state | int }} была в {{ states.sensor.outside_temperature_min_at.state }}.
         Удачи вам, ребята!!!
 
 tts_rooms:
@@ -16,17 +16,17 @@ tts_rooms:
   - service: script.tts_say_kitchen
     data_template:
       message: >
-        Температура:
-        на улице {{ states.sensor.temperature_158d00022c7cf2.state | int }},
-        на кухне {{ states.sensor.temperature_158d0002323783.state | int }},
-        в гостинной {{ states.sensor.temperature_158d000234816a.state | int }},
-        в детской {{ states.sensor.temperature_158d0002271609.state | int }},
+        Температура.
+        на улице {{ states.sensor.temperature_158d00022c7cf2.state | int }}.
+        на кухне {{ states.sensor.temperature_158d0002323783.state | int }}.
+        в гостинной {{ states.sensor.temperature_158d000234816a.state | int }}.
+        в детской {{ states.sensor.temperature_158d0002271609.state | int }}.
         в спальне {{ states.sensor.temperature_158d0001f23cbe.state | int }}.
-        Влажность:
-        на улице {{ states.sensor.humidity_158d00022c7cf2.state | int }},
-        на кухне {{ states.sensor.humidity_158d0002323783.state | int }},
-        в гостинной {{ states.sensor.humidity_158d000234816a.state | int }},
-        в детской {{ states.sensor.humidity_158d0002271609.state | int }},
+        Влажность.
+        на улице {{ states.sensor.humidity_158d00022c7cf2.state | int }}.
+        на кухне {{ states.sensor.humidity_158d0002323783.state | int }}.
+        в гостинной {{ states.sensor.humidity_158d000234816a.state | int }}.
+        в детской {{ states.sensor.humidity_158d0002271609.state | int }}.
         в спальне {{ states.sensor.humidity_158d0001f23cbe.state | int }}.
 
 tts_dima_leaves_work:
