@@ -63,5 +63,5 @@
       inline_keyboard:
       - "\U0001F5A5 Computer:/computer, \U0001F4BB Laptop:/laptop"
       - "\U0001F4F7 Camera 1:/snap cam1, \U0001F4F7 Camera 2:/snap cam2"
-      - "\U0001F50C Electro:/electro, \U0001F504 Restart HA:/restart"
+      - "\U0001F50C Consumption:/electro, \U0001F504 Restart HA:/restart"
       - "\U0000267B Dismiss:/dismiss"

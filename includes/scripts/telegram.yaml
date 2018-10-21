@@ -23,18 +23,21 @@ telegram_send_rooms:
   - service: telegram_bot.send_message
     data_template:
       target: "{{target}}"
+      title: "Rooms climate"
       message: >
-        {% set frm = "%-7s | %-7s" %}
+        {% set frm = "%-8s| %-8s" %}
 
-        {{ '\U00002601' }}` outside   {{ frm | format(states.sensor.temperature_158d00022c7cf2.state_with_unit, states.sensor.humidity_158d00022c7cf2.state_with_unit) }}`
+        {{ '\U0001F3D8' }}`      {{ frm | format("temp", "hmdt") }}`
 
-        {{ '\U0001F37D' }}` kitchen   {{ frm | format(states.sensor.temperature_158d0002323783.state_with_unit, states.sensor.humidity_158d0002323783.state_with_unit) }}`
+        {{ '\U00002601' }}` out  {{ frm | format(states.sensor.temperature_158d00022c7cf2.state_with_unit, states.sensor.humidity_158d00022c7cf2.state_with_unit) }}`
 
-        {{ '\U0001F6CB' }}` living    {{ frm | format(states.sensor.temperature_158d000234816a.state_with_unit, states.sensor.humidity_158d000234816a.state_with_unit) }}`
+        {{ '\U0001F37D' }}` ktc  {{ frm | format(states.sensor.temperature_158d0002323783.state_with_unit, states.sensor.humidity_158d0002323783.state_with_unit) }}`
 
-        {{ '\U0001F4D0' }}` children  {{ frm | format(states.sensor.temperature_158d0002271609.state_with_unit, states.sensor.humidity_158d0002271609.state_with_unit) }}`
+        {{ '\U0001F6CB' }}` lvg  {{ frm | format(states.sensor.temperature_158d000234816a.state_with_unit, states.sensor.humidity_158d000234816a.state_with_unit) }}`
 
-        {{ '\U0001F6CF' }}` bedroom   {{ frm | format(states.sensor.temperature_158d0001f23cbe.state_with_unit, states.sensor.humidity_158d0001f23cbe.state_with_unit) }}`
+        {{ '\U0001F4D0' }}` chd  {{ frm | format(states.sensor.temperature_158d0002271609.state_with_unit, states.sensor.humidity_158d0002271609.state_with_unit) }}`
+
+        {{ '\U0001F6CF' }}` bdr  {{ frm | format(states.sensor.temperature_158d0001f23cbe.state_with_unit, states.sensor.humidity_158d0001f23cbe.state_with_unit) }}`
       inline_keyboard:
       - "\U0001F504 Refresh:/rooms, \U0000267B Dismiss:/dismiss"
 
@@ -43,21 +46,22 @@ telegram_send_electro:
   - service: telegram_bot.send_message
     data_template:
       target: "{{target}}"
+      title: "Power consumption"
       message: >
-        {% set frm = "%-8s | %-8s | %-9s" %}
+        {% set frm = "%-5s| %-5s| %-5s" %}
 
-        {{ '\U0001F50C' }}`           {{ frm | format("day", "week", "month") }}`
+        {{ '\U0001F50C' }}` kW   {{ frm | format("day", "week", "month") }}`
 
-        {{ '\U0001F5A5' }}` computer  {{ frm | format(states.sensor.power_computer_day.state, states.sensor.power_computer_week.state, states.sensor.power_computer_month.state) }} kW`
+        {{ '\U0001F5A5' }}` cmp  {{ frm | format(states.sensor.power_computer_day.state | round(2), states.sensor.power_computer_week.state | round(2), states.sensor.power_computer_month.state | round(2)) }}`
 
-        {{ '\U0001F4FA' }}` tv        {{ frm | format(states.sensor.power_tv_day.state, states.sensor.power_tv_week.state, states.sensor.power_tv_month.state) }} kW`
+        {{ '\U0001F4FA' }}` tv   {{ frm | format(states.sensor.power_tv_day.state | round(2), states.sensor.power_tv_week.state | round(2), states.sensor.power_tv_month.state | round(2)) }}`
 
-        {{ '\U0001F4BE' }}` router    {{ frm | format(states.sensor.power_router_day.state, states.sensor.power_router_week.state, states.sensor.power_router_month.state) }} kW`
+        {{ '\U0001F4BE' }}` ntw  {{ frm | format(states.sensor.power_router_day.state | round(2), states.sensor.power_router_week.state | round(2), states.sensor.power_router_month.state | round(2)) }}`
 
-        {{ '\U0001F37D' }}` kitchen   {{ frm | format(states.sensor.power_kitchen_day.state, states.sensor.power_kitchen_week.state, states.sensor.power_kitchen_month.state) }} kW`
+        {{ '\U0001F37D' }}` ktc  {{ frm | format(states.sensor.power_kitchen_day.state | round(2), states.sensor.power_kitchen_week.state | round(2), states.sensor.power_kitchen_month.state | round(2)) }}`
 
       inline_keyboard:
-      - "\U0000267B Dismiss:/dismiss"
+      - "\U0001F504 Refresh:/electro, \U0000267B Dismiss:/dismiss"
 
 telegram_send_weather_forecast:
   sequence:
