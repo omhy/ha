@@ -15,6 +15,7 @@
     - sensor.t2_battery_level
     - sensor.t3_battery_level
     - sensor.t4_battery_level
+    - sensor.t5_battery_level
   action:
   - service: telegram_bot.send_message
     data_template:

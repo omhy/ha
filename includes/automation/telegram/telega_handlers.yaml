@@ -1,0 +1,175 @@
+- alias: "telegram_handle_callback_dismiss"
+  initial_state: "on"
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: "/dismiss"
+  action:
+  - service: telegram_bot.answer_callback_query
+    data_template:
+      callback_query_id: "{{ trigger.event.data.id }}"
+      message: "Roger {{ trigger.event.data.data }}"
+  - service: telegram_bot.delete_message
+    data_template:
+      chat_id: "{{ trigger.event.data.chat_id }}"
+      message_id: "{{ trigger.event.data.message.message_id }}"
+
+- alias: "telegram_handle_callback_restart"
+  initial_state: "on"
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: "/restart"
+  action:
+  - service: telegram_bot.answer_callback_query
+    data_template:
+      callback_query_id: "{{ trigger.event.data.id }}"
+      message: "Roger {{ trigger.event.data.data }}"
+  - service: homeassistant.restart
+
+- alias: "telegram_handle_callback_forecast"
+  initial_state: "on"
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: "/forecast"
+  action:
+  - service: telegram_bot.answer_callback_query
+    data_template:
+      callback_query_id: "{{ trigger.event.data.id }}"
+      message: "Roger {{ trigger.event.data.data }}"
+  - service: script.telegram_send_weather_forecast
+    data_template:
+      target: "{{trigger.event.data.user_id}}"
+
+- alias: "telegram_handle_callback_outside"
+  initial_state: "on"
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: "/outside"
+  action:
+  - service: telegram_bot.answer_callback_query
+    data_template:
+      callback_query_id: "{{ trigger.event.data.id }}"
+      message: "Roger {{ trigger.event.data.data }}"
+  - service: script.telegram_send_outside
+    data_template:
+      target: "{{trigger.event.data.user_id}}"
+
+- alias: "telegram_handle_callback_rooms"
+  initial_state: "on"
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: "/rooms"
+  action:
+  - service: telegram_bot.answer_callback_query
+    data_template:
+      callback_query_id: "{{ trigger.event.data.id }}"
+      message: "Roger {{ trigger.event.data.data }}"
+  - service: script.telegram_send_rooms
+    data_template:
+      target: "{{trigger.event.data.user_id}}"
+
+- alias: "telegram_handle_callback_electro"
+  initial_state: "on"
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: "/electro"
+  action:
+  - service: telegram_bot.answer_callback_query
+    data_template:
+      callback_query_id: "{{ trigger.event.data.id }}"
+      message: "Roger {{ trigger.event.data.data }}"
+  - service: script.telegram_send_electro
+    data_template:
+      target: "{{trigger.event.data.user_id}}"
+
+- alias: "telegram_handle_prefix_snap"
+  initial_state: "on"
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+  condition:
+  - condition: template
+    value_template: "{{ trigger.event.data.data.startswith('/snap ') }}"
+  action:
+  - service: telegram_bot.answer_callback_query
+    data_template:
+      callback_query_id: "{{ trigger.event.data.id }}"
+      message: "Roger {{ trigger.event.data.data }}"
+  - service: telegram_bot.send_photo
+    data_template:
+      target: "{{ trigger.event.data.user_id }}"
+      url: "http://localhost:8123{{ states.camera[trigger.event.data.data.split(' ', 1)[1]].attributes.entity_picture }}"
+      caption: "{{ states.camera[trigger.event.data.data.split(' ', 1)[1]].name }}"
+      inline_keyboard:
+      - "\U0001F504 Refresh:{{ trigger.event.data.data }}, \U0000267B Dismiss:/dismiss"
+
+- alias: "telegram_handle_callback_computer"
+  initial_state: "on"
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: "/computer"
+  action:
+  - service: telegram_bot.answer_callback_query
+    data_template:
+      callback_query_id: "{{ trigger.event.data.id }}"
+      message: "Roger {{ trigger.event.data.data }}"
+  - service: telegram_bot.send_message
+    data_template:
+      target: "{{trigger.event.data.user_id}}"
+      message: "Computer"
+      inline_keyboard:
+      - "\U0001F5A5 \U0001F4A4 Sleep:/computer_sleep"
+      - "\U0000267B Dismiss:/dismiss"
+
+- alias: "telegram_handle_callback_laptop"
+  initial_state: "on"
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: "/laptop"
+  action:
+  - service: telegram_bot.answer_callback_query
+    data_template:
+      callback_query_id: "{{ trigger.event.data.id }}"
+      message: "Roger {{ trigger.event.data.data }}"
+  - service: telegram_bot.send_message
+    data_template:
+      target: "{{trigger.event.data.user_id}}"
+      message: "Laptop"
+      inline_keyboard:
+      - "\U0001F4BB \U0001F4A4 Sleep:/laptop_sleep"
+      - "\U0000267B Dismiss:/dismiss"
+
+- alias: "telegram_handle_callback_computer_sleep"
+  initial_state: "on"
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: "/computer_sleep"
+  action:
+  - service: script.sys_sleep_computer
+
+- alias: "telegram_handle_callback_laptop_sleep"
+  initial_state: "on"
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: "/laptop_sleep"
+  action:
+  - service: script.sys_sleep_laptop

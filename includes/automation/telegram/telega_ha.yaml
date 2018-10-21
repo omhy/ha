@@ -50,6 +50,9 @@
     entity_id:
     - sensor.version_ha_stable
     - sensor.version_ha_beta
+  condition:
+  - condition: template
+    value_template: "{{ trigger.to_state.state != 'unavailable' and trigger.to_state.state != states.sensor.version_ha_current.state }}"
   action:
   - service: telegram_bot.send_message
     data_template:
