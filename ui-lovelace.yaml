@@ -660,6 +660,10 @@ views:
         url: http://192.168.1.10:3000
         icon: mdi:graphql
       - type: weblink
+        name: MotionEye
+        url: https://192.168.1.10:8765
+        icon: mdi:eye
+      - type: weblink
         name: Kodi
         url: http://192.168.1.20:8080
         icon: mdi:kodi
@@ -726,12 +730,6 @@ views:
     icon: mdi:desktop-tower
     cards:
     - type: glance
-      title: Versions
-      entities:
-      - sensor.version_ha_current
-      - sensor.version_ha_beta
-      - sensor.version_ha_stable
-    - type: glance
       title: Date and time
       entities:
       - sensor.date
@@ -767,8 +765,3 @@ views:
       entities:
       - script.sys_sleep_computer
       - script.sys_sleep_laptop
-#    - type: custom:tracker-card
-#      title:
-#      trackers:
-#      - sensor.custom_card_tracker
-#      - sensor.custom_component_tracker

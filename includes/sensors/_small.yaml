@@ -29,11 +29,17 @@
   name: "version_ha_current"
 
 - platform: rest
-  resource: "https://s3.amazonaws.com/hassio-version/stable.json"
-  name: "version_ha_stable"
-  value_template: "{{value_json['homeassistant']['default']}}"
+  resource: "http://192.168.1.101:8585"
+  name: "bb_is_on"
+  value_template: "{{value == ''}}"
 
-- platform: rest
-  resource: "https://s3.amazonaws.com/hassio-version/beta.json"
-  name: "version_ha_beta"
-  value_template: "{{value_json['homeassistant']['default']}}"
+
+#- platform: rest
+#  resource: "https://s3.amazonaws.com/hassio-version/stable.json"
+#  name: "version_ha_stable"
+#  value_template: "{{value_json['homeassistant']['default']}}"
+#
+#- platform: rest
+#  resource: "https://s3.amazonaws.com/hassio-version/beta.json"
+#  name: "version_ha_beta"
+#  value_template: "{{value_json['homeassistant']['default']}}"

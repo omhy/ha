@@ -11,6 +11,7 @@ homeassistant:
   whitelist_external_dirs:
   - /config
   - /tmp
+  - /share
 
 map:
 sun:
@@ -112,6 +113,9 @@ telegram_bot:
 shell_command:
   sleep_computer: "/usr/bin/curl -X GET http://192.168.1.101:8585/?cmd=sleep"
   sleep_laptop: "/usr/bin/curl -X GET http://192.168.1.102:8585/?cmd=sleep"
+  cam1_snp: "ffmpeg -rtsp_transport udp -i rtsp://admin:@192.168.1.220:554/onvif1 -vf fps=1/3 -pix_fmt yuvj420p -s 656x416 -nostdin /share/snp.jpg -y -loglevel 0"
+  cam1_vid: "ffmpeg -rtsp_transport udp -i rtsp://admin:@192.168.1.220:554/onvif1 -an -t 10 -c copy -map 0 -y -update 1 /share/vid.mp4"
+  cam1_snp_1: "ffmpeg -rtsp_transport udp -i rtsp://admin:@192.168.1.220:554/onvif1 -vframes 1 -q:v 2 -y -update 1 /share/snp.jpg -y -loglevel 0"
 
 device_tracker:
   platform: google_maps
