@@ -1,21 +1,3 @@
-#- platform: ping
-#  name: BigBrother
-#  host: 192.168.0.101
-#  count: 2
-#  scan_interval: 60
-#- platform: ping
-#  name: Notebook
-#  host: 192.168.0.102
-#  count: 2
-#  scan_interval: 60
-#- platform: ping
-#  name: AndroidBox
-#  host: 192.168.0.20
-#  count: 2
-#- platform: ping
-#  name: GoogleHomeMini
-#  host: 192.168.1.30
-#  count: 2
-#
-#- platform: rest
-#  resource: http://192.168.1.101:8585
+- platform: template
+  name: "bb_is_on"
+  value_template: "{{states.sensor.bb_probe.state == 'True'}}"
