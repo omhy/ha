@@ -4,17 +4,18 @@ telegram_send_outside:
     data_template:
       target: "{{target}}"
       message: >
-        {% set frm = "%-7s @ %-7s" %}
+        {% set frm1 = "%7s @ %5s" %}
+        {% set frm2 = "%7s" %}
 
         {{ now().strftime('%Y-%m-%d') }}
 
-        {{ '\U0001F535' }} `min `{{ frm | format(states.sensor.outside_temperature_min.state_with_unit, states.sensor.outside_temperature_min_at.state|default('-')) }}
+        {{ '\U0001F535' }} `min {{ frm1 | format(states.sensor.outside_temperature_min.state_with_unit, states.sensor.outside_temperature_min_at.state|default('-')) }}`
 
-        {{ '\U0001F534' }} `max `{{ frm | format(states.sensor.outside_temperature_max.state_with_unit, states.sensor.outside_temperature_max_at.state|default('-')) }}
+        {{ '\U0001F534' }} `max {{ frm1 | format(states.sensor.outside_temperature_max.state_with_unit, states.sensor.outside_temperature_max_at.state|default('-')) }}`
 
-        {{ '\U000026AA' }} `now `{{ states.sensor.temperature_158d00022c7cf2.state_with_unit }}
+        {{ '\U000026AA' }} `now {{ frm2 | format(states.sensor.temperature_158d00022c7cf2.state_with_unit) }}`
 
-        {{ '\U000026AB' }} `dif `{{ states.sensor.outside_temperature_diff.state_with_unit }}
+        {{ '\U000026AB' }} `dif {{ frm2 | format(states.sensor.outside_temperature_diff.state_with_unit) }}`
       inline_keyboard:
       - "\U0001F504 Refresh:/outside, \U0000267B Dismiss:/dismiss"
 

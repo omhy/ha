@@ -1,6 +1,6 @@
 - platform: template
-  name: "computer_is_on"
-  value_template: "{{states.sensor.computer_probe.state == 'True'}}"
-- platform: template
-  name: "laptop_is_on"
-  value_template: "{{states.sensor.laptop_probe.state == 'True'}}"
+  sensors:
+    computer_is_on:
+      value_template: "{{states.sensor.computer_probe.state == 'True'}}"
+    laptop_is_on:
+      value_template: "{{states.sensor.laptop_probe.state == 'True'}}"

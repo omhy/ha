@@ -32,7 +32,9 @@
   name: "computer_probe"
   resource: "http://192.168.1.101:8585"
   value_template: "{{value == ''}}"
+  scan_interval: 300
 - platform: rest
   name: "laptop_probe"
   resource: "http://192.168.1.102:8585"
   value_template: "{{value == ''}}"
+  scan_interval: 300
