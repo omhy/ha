@@ -183,7 +183,7 @@
     event_data:
       data: "/computer_sleep"
   action:
-  - service: script.sys_sleep_computer
+  - service: script.computer_sleep
 
 - alias: "telegram_handle_callback_laptop_sleep"
   initial_state: "on"
@@ -193,4 +193,4 @@
     event_data:
       data: "/laptop_sleep"
   action:
-  - service: script.sys_sleep_laptop
+  - service: script.laptop_sleep

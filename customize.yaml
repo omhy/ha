@@ -83,9 +83,9 @@ script.sys_recorder_purge:
   icon: mdi:delete
 script.sys_recorder_purge_repack:
   icon: mdi:delete-empty
-script.sys_sleep_computer:
+script.computer_sleep:
   icon: mdi:desktop-classic
-script.sys_sleep_laptop:
+script.laptop_sleep:
   icon: mdi:laptop
 
 #SENSORS

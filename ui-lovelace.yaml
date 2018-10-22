@@ -763,5 +763,5 @@ views:
       title: Remote
       show_header_toggle: true
       entities:
-      - script.sys_sleep_computer
-      - script.sys_sleep_laptop
+      - script.computer_sleep
+      - script.laptop_sleep

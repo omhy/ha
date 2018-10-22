@@ -22,10 +22,10 @@ sys_logic_reload:
         message: "{{ now().strftime('%H:%M') }} \U00002699 Logic reloaded"
         inline_keyboard: "\U0001F504 Restart:/restart, \U0000267B Dismiss:/dismiss"
 
-sys_sleep_computer:
+computer_sleep:
   sequence:
     - service: shell_command.sleep_computer
-sys_sleep_laptop:
+laptop_sleep:
   sequence:
     - service: shell_command.sleep_laptop
 

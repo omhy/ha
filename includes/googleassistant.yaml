@@ -19,10 +19,10 @@ entity_config:
     expose: true
     room: Living Room
 
-  script.sys_sleep_computer:
+  script.computer_sleep:
     name: Computer sleep
     expose: true
-  script.sys_sleep_laptop:
+  script.laptop_sleep:
     name: Laptop sleep
     expose: true
   script.tts_summary:

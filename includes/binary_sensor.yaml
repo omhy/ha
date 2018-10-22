@@ -1,3 +1,6 @@
 - platform: template
-  name: "bb_is_on"
-  value_template: "{{states.sensor.bb_probe.state == 'True'}}"
+  name: "computer_is_on"
+  value_template: "{{states.sensor.computer_probe.state == 'True'}}"
+- platform: template
+  name: "laptop_is_on"
+  value_template: "{{states.sensor.laptop_probe.state == 'True'}}"

@@ -72,7 +72,7 @@
     data_template:
       entity_id: light.livingroom_ambient
       hs_color: [ 30, 100 ]
-  - service: script.sys_sleep_computer
+  - service: script.computer_sleep
 
 - alias: "working_day_light_go"
 #  initial_state: "on"
