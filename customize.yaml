@@ -75,13 +75,13 @@ device_tracker.google_maps_115914092349482836896:
   friendly_name: location/alyona
 
 #SCRIPTS
-script.sys_logic_reload:
+script.homeassistant_reread:
   icon: mdi:settings
-script.sys_homeassistant_restart:
+script.homeassistant_restart:
   icon: mdi:restart
-script.sys_recorder_purge:
+script.homeassistant_purge:
   icon: mdi:delete
-script.sys_recorder_purge_repack:
+script.homeassistant_purge_repack:
   icon: mdi:delete-empty
 script.computer_sleep:
   icon: mdi:desktop-classic
@@ -193,10 +193,6 @@ sensor.power_strip_4_load_power:
 
 sensor.version_ha_current:
   friendly_name: Installed
-sensor.version_ha_stable:
-  friendly_name: Stable
-sensor.version_ha_beta:
-  friendly_name: Beta
 
 switch.turn_off_bb:
   assumed_state: false

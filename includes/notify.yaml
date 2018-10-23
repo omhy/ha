@@ -8,7 +8,7 @@
   platform: telegram
   chat_id: !secret tg_chat_alyona
 
-- name: telegram_all_grp
+- name: telegram_all
   platform: group
   services:
   - service: telegram_dima

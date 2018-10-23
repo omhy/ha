@@ -7,9 +7,8 @@
     zone: zone.work
     event: enter
   action:
-  - service: telegram_bot.send_message
+  - service: notify.telegram_dima
     data_template:
-      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F4BC Dima enters"
 
 - alias: "dima_leaves_work"
@@ -20,9 +19,8 @@
     zone: zone.work
     event: leave
   action:
-  - service: telegram_bot.send_message
+  - service: notify.telegram_dima
     data_template:
-      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F4BC Dima leaves"
 
 - alias: "dima_leaves_work_tts"
@@ -49,9 +47,8 @@
     zone: zone.home
     event: enter
   action:
-  - service: telegram_bot.send_message
+  - service: notify.telegram_dima
     data_template:
-      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F3E0 Dima enters"
 
 - alias: "dima_leaves_home"
@@ -74,9 +71,8 @@
     zone: zone.school
     event: enter
   action:
-  - service: telegram_bot.send_message
+  - service: notify.telegram_dima
     data_template:
-      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F3EB Dima enters"
 
 - alias: "dima_leaves_school"
@@ -87,9 +83,8 @@
     zone: zone.school
     event: leave
   action:
-  - service: telegram_bot.send_message
+  - service: notify.telegram_dima
     data_template:
-      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F3EB Dima leaves"
 
 ################## ALYONA
@@ -101,9 +96,8 @@
     zone: zone.school
     event: enter
   action:
-  - service: telegram_bot.send_message
+  - service: notify.telegram_dima
     data_template:
-      target: !secret tg_chat_dima
       message: "{{ now().strftime('%H:%M') }} \U0001F3EB Alyona enters"
 
 - alias: "alyona_leaves_school"

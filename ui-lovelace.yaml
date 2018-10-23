@@ -744,14 +744,15 @@ views:
       - sensor.memory_use
       - sensor.memory_free
       - sensor.homeassistant_v2db
-    - type: entities
-      title: System scripts
-      show_header_toggle: false
-      entities:
-      - script.sys_recorder_purge
-      - script.sys_recorder_purge_repack
-      - script.sys_homeassistant_restart
-      - script.sys_logic_reload
+    - type: custom:monster-card
+        card:
+          type: entities
+          title: System scripts
+        filter:
+          include:
+          - domain: automation
+          exclude:
+          - entity_id: "script.homeassistant*"
     - type: custom:monster-card
       card:
         type: entities

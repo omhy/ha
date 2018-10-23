@@ -1,3 +1,4 @@
+### COMMON
 "*door*":
   icon: mdi:door
 "*doorbell*":
@@ -19,11 +20,17 @@
 "*transition*":
   icon: mdi:av-timer
 
+### SPECIFIC
 "light.*":
   icon: mdi:lightbulb
 "alert.*":
   icon: mdi:alarm-light
 
+### SCRIPTS
+"script.aqara*":
+  icon: mdi:chemical-weapon
+
+### AUTOMATIONS
 "automation.zone_*":
   icon: mdi:map-marker
 "automation.ha_*":
@@ -35,9 +42,7 @@
 "automation.*alyona*":
   icon: mdi:human-female
 
-"binary_sensor.motion_sensor*":
-  friendly_name: motion
-
+### INPUTS
 "input_number.*hue*":
   icon: mdi:format-color-fill
 "input_number.*saturation*":
@@ -45,6 +50,9 @@
 "input_number.*transition*":
   icon: mdi:timer
 
+### SENSORS
+"binary_sensor.motion_sensor*":
+  friendly_name: motion
 "sensor.*_motions":
   friendly_name: motions
 "sensor.illumination*":
