@@ -1,29 +1,55 @@
+homeassistant_dev_send_snp:
+  sequence:
+  - service: telegram_bot.send_photo
+    data_template:
+      target: !secret tg_chat_dima
+      caption: "Test"
+      file: "/share/snp.jpg"
+      inline_keyboard:
+      - "\U0000267B Dismiss:/dismiss"
+
+homeassistant_dev_send_vid:
+  sequence:
+  - service: telegram_bot.send_video
+    data_template:
+      target: !secret tg_chat_dima
+      caption: "Test"
+      file: "/share/vid.mp4"
+      inline_keyboard:
+      - "\U0000267B Dismiss:/dismiss"
+
 homeassistant_purge:
   sequence:
-    - service: recorder.purge
+  - service: recorder.purge
+  - service: notify.telegram_dima
+    data_template:
+      message: "{{ now().strftime('%H:%M') }} \U0001F5D1 Purge - done"
 
 homeassistant_purge_repack:
   sequence:
-    - service: recorder.purge
-      data:
-        repack: yes
+  - service: recorder.purge
+    data:
+      repack: yes
+  - service: notify.telegram_dima
+    data_template:
+      message: "{{ now().strftime('%H:%M') }} \U00002702 Purge and repack - done"
 
 homeassistant_restart:
   sequence:
-    - service: homeassistant.restart
+  - service: homeassistant.restart
+  - service: notify.telegram_dima
+    data_template:
+      message: "{{ now().strftime('%H:%M') }} \U0001F504 Restart requested"
 
 homeassistant_reread:
   sequence:
-    - service: homeassistant.reload_core_config
-    - service: automation.reload
-    - service: script.reload
-    - service: telegram_bot.send_message
-      data_template:
-        target: !secret tg_chat_dima
-        message: "{{ now().strftime('%H:%M') }} \U00002699 Logic reloaded"
-        inline_keyboard: "\U0001F504 Restart:/restart, \U0000267B Dismiss:/dismiss"
+  - service: automation.reload
+  - service: script.reload
+  - service: notify.telegram_dima
+    data_template:
+      message: "{{ now().strftime('%H:%M') }} \U00002699 Refresh - done"
 
-homeassistant_aqara_stop_ringtone:
+aqara_stop_ringtone:
   sequence:
   - service: xiaomi_aqara.stop_ringtone
     data_template:
@@ -33,24 +59,24 @@ homeassistant_aqara_stop_ringtone:
 
 computer_sleep:
   sequence:
-    - service: shell_command.sleep_computer
+  - service: shell_command.sleep_computer
 laptop_sleep:
   sequence:
-    - service: shell_command.sleep_laptop
+  - service: shell_command.sleep_laptop
 
 aqara_add_device:
   sequence:
-    - service: xiaomi_aqara.add_device
-      data_template:
-        gw_mac: !secret gw_mac
+  - service: xiaomi_aqara.add_device
+    data_template:
+      gw_mac: !secret gw_mac
 
 alarm_door:
   sequence:
-    - service: xiaomi_aqara.play_ringtone
-      data_template:
-        gw_mac: !secret gw_mac
-        ringtone_id: "8"
-        ringtone_vol: "10"
-    - service: notify.telegram_all
-      data_template:
-        message: "{{ now().strftime('%H:%M') }} \U0001F6A8 Door opened for a while"
+  - service: xiaomi_aqara.play_ringtone
+    data_template:
+      gw_mac: !secret gw_mac
+      ringtone_id: "8"
+      ringtone_vol: "10"
+  - service: notify.telegram_all
+    data_template:
+      message: "{{ now().strftime('%H:%M') }} \U0001F6A8 Door opened for a while"

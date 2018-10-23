@@ -27,7 +27,7 @@
     entity_id: binary_sensor.door_window_sensor_158d00024367c8
     to: "off"
   action:
-  - service: script.homeassistant_aqara_stop_ringtone
+  - service: script.aqara_stop_ringtone
   - service: automation.turn_off
     entity_id:
     - automation.entrance_door_opened_too_long_alarm

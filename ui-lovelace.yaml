@@ -3,7 +3,7 @@ resources:
   type: js
 - url: /local/tracker-card.js?v=0.1.4
   type: js
-- url: /local/mini-media-player.js?v=0.8.5
+- url: /local/mini-media-player.js?v=0.8.7
   type: module
 
 title: Home
@@ -17,7 +17,6 @@ views:
       cards:
       - type: glance
         title: Living room
-        show_header_toggle: false
         entities:
           - entity: binary_sensor.motion_sensor_158d0001fa3dc0
             name: Motion
@@ -27,7 +26,6 @@ views:
             name: Illumination
       - type: glance
         title: Children's room
-        show_header_toggle: false
         entities:
         - entity: switch.wall_plug_158d0002013f1e
           name: Star
@@ -35,7 +33,6 @@ views:
           tap_action: toggle
       - type: glance
         title: Entrance
-        show_header_toggle: false
         entities:
         - entity: light.entrance_garland
           name: Garland
@@ -51,14 +48,12 @@ views:
       cards:
       - type: glance
         title: Small corridor
-        show_header_toggle: false
         entities:
         - entity: switch.wall_switch_left_158d00022391ec
           name: Light
           tap_action: toggle
       - type: glance
         title: Bathroom
-        show_header_toggle: false
         entities:
         - entity: binary_sensor.motion_sensor_158d0001e52779
           name: Motion
@@ -69,6 +64,17 @@ views:
         - entity: switch.wall_switch_right_158d00022391ec
           name: Light
           tap_action: toggle
+      - type: entities
+        title: Last changed
+        entities:
+        - entity: sensor.livingroom_motions
+          name: Living room
+          icon: mdi:run-fast
+          secondary_info: last-changed
+        - entity: sensor.bathroom_motions
+          icon: mdi:run-fast
+          name: Bathroom
+          secondary_info: last-changed
 
     - type: vertical-stack
       cards:
@@ -89,6 +95,10 @@ views:
         artwork: cover
         hide_power: true
         short_info: true
+
+      - type: picture
+        image: https://www.yr.no/place/Latvia/Riga/Riga/meteogram.png
+        navigation_path: /lovelace/forecast
 
 ##################   CLIMATE
   - title: Climate
@@ -373,24 +383,6 @@ views:
         - entity: switch.power_strip_2
           name: Kitchen
 
-##################   CAMERAS
-#  - title: Cameras
-#    id: cameras
-#    icon: mdi:cctv
-#    cards:
-#    - type: picture-entity
-#      title: cam1
-#      entity: camera.cam1
-#      camera_image: camera.cam1
-#      show_info: true
-#      tap_action: dialog
-#    - type: picture-entity
-#      title: cam2
-#      entity: camera.cam2
-#      camera_image: camera.cam2
-#      show_info: true
-#      tap_action: dialog
-
     ##################   INFO
   - title: Information
     id: info
@@ -421,9 +413,6 @@ views:
         name: Home - work
       - entity: sensor.waze_work_home
         name: Work - home
-#    - type: iframe
-#      url: !secret grafana_waze
-#      aspect_ratio: 55%
     - type: glance
       title: People
       entities:
@@ -539,8 +528,6 @@ views:
       - sensor.wt24_symbol
       - sensor.wt48_symbol
       - sensor.wt72_symbol
-    - type: picture
-      image: https://www.yr.no/place/Latvia/Riga/Riga/meteogram.svg
 
 ##################   SUM
   - title: Summary
@@ -745,14 +732,19 @@ views:
       - sensor.memory_free
       - sensor.homeassistant_v2db
     - type: custom:monster-card
-        card:
-          type: entities
-          title: System scripts
-        filter:
-          include:
-          - domain: automation
-          exclude:
-          - entity_id: "script.homeassistant*"
+      card:
+        type: entities
+        title: System scripts
+      filter:
+        include:
+        - entity_id: "script.homeassistant*"
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: Aqara scripts
+      filter:
+        include:
+        - entity_id: "script.aqara*"
     - type: custom:monster-card
       card:
         type: entities
