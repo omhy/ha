@@ -126,61 +126,24 @@
         {% endif %}
         {{ current }}
 
-#- alias: "cube_action_v2"
-#  initial_state: "on"
-#  trigger:
-#  - platform: event
-#    event_type: cube_action
-#    event_data:
-#      entity_id: binary_sensor.cube_158d00028776ae
-#      action_type: flip90
-#  - platform: event
-#    event_type: cube_action
-#    event_data:
-#      entity_id: binary_sensor.cube_158d00028776ae
-#      action_type: flip180
-#  - platform: event
-#    event_type: cube_action
-#    event_data:
-#      entity_id: binary_sensor.cube_158d00028776ae
-#      action_type: move
-#  - platform: event
-#    event_type: cube_action
-#    event_data:
-#      entity_id: binary_sensor.cube_158d00028776ae
-#      action_type: free_fall
-#  - platform: event
-#    event_type: cube_action
-#    event_data:
-#      entity_id: binary_sensor.cube_158d00028776ae
-#      action_type: shake_air
-#  - platform: event
-#    event_type: cube_action
-#    event_data:
-#      entity_id: binary_sensor.cube_158d00028776ae
-#      action_type: tap_twice
-#  - platform: event
-#    event_type: cube_action
-#    event_data:
-#      entity_id: binary_sensor.cube_158d00028776ae
-#      action_type: swing
-#  - platform: event
-#    event_type: cube_action
-#    event_data:
-#      entity_id: binary_sensor.cube_158d00028776ae
-#      action_type: iam
-##  - platform: event
-##    event_type: cube_action
-##    event_data:
-##      entity_id: binary_sensor.cube_158d00028776ae
-##      action_type: alert
-##  - platform: event
-##    event_type: cube_action
-##    event_data:
-##      entity_id: binary_sensor.cube_158d00028776ae
-##      action_type: rotate
-#  action:
-#  - service: telegram_bot.send_message
-#    data_template:
-#      target: !secret tg_chat_dima
-#      message: "\U0001F3B2 Cube is `{{ trigger.event.data.action_type }}  {{ trigger.event.data.action_value | default('0') }}`"
+- alias: "cube_action_free_fall"
+  initial_state: "on"
+  trigger:
+  - platform: event
+    event_type: cube_action
+    event_data:
+      entity_id: binary_sensor.cube_158d00028776ae
+      action_type: free_fall
+  action:
+  - service: script.light_turn_off_livingroom_torch_by_params
+  - service: script.light_turn_off_livingroom_corner_by_params
+  - service: script.computer_sleep
+
+
+
+#   action_type: move
+#   action_type: shake_air
+#   action_type: tap_twice
+#   action_type: swing
+#   action_type: iam
+#   action_type: alert
