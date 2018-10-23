@@ -540,7 +540,7 @@ views:
       - sensor.wt48_symbol
       - sensor.wt72_symbol
     - type: picture
-      image: https://www.yr.no/place/Latvia/Riga/Riga/meteogram.png
+      image: https://www.yr.no/place/Latvia/Riga/Riga/meteogram.svg
 
 ##################   SUM
   - title: Summary
