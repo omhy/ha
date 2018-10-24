@@ -1,0 +1,27 @@
+cam1_snp:
+  sequence:
+  - service: shell_command.cam_snp
+    data:
+      rtsp: !secret cam1_rtsp
+      filename: "/share/cam1.jpg"
+cam1_vid:
+  sequence:
+  - service: shell_command.cam_vid
+    data:
+      rtsp: !secret cam1_rtsp
+      filename: "/share/cam1.mp4"
+      duration: "10"
+
+cam2_snp:
+  sequence:
+  - service: shell_command.cam_snp
+    data:
+      rtsp: !secret cam2_rtsp
+      filename: "/share/cam2.jpg"
+cam2_vid:
+  sequence:
+  - service: shell_command.cam_vid
+    data:
+      rtsp: !secret cam2_rtsp
+      filename: "/share/cam2.mp4"
+      duration: "10"

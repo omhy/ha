@@ -135,11 +135,13 @@
       entity_id: binary_sensor.cube_158d00028776ae
       action_type: free_fall
   action:
-  - service: script.light_turn_off_livingroom_torch_by_params
-  - service: script.light_turn_off_livingroom_corner_by_params
+  - service: light.turn_off
+    data_template:
+      entity_id:
+      - light.livingroom_corner
+      - light.livingroom_torch
+      - light.entrance_garland
   - service: script.computer_sleep
-
-
 
 #   action_type: move
 #   action_type: shake_air
