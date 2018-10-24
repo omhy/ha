@@ -44,7 +44,7 @@
 "automation.cube*":
   icon: mdi:cube
 "automation.light*":
-  icon: mdi:bulb
+  icon: mdi:lightbulb
 "automation.motion*":
   icon: mdi:motion
 "automation.schedule*":
