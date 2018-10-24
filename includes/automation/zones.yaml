@@ -1,5 +1,5 @@
 ################## DIMA
-- alias: "dima_enters_work"
+- alias: "zone_dima_enters_work"
   initial_state: "on"
   trigger:
   - platform: zone
@@ -11,7 +11,7 @@
     data_template:
       message: "{{ now().strftime('%H:%M') }} \U0001F4BC Dima enters"
 
-- alias: "dima_leaves_work"
+- alias: "zone_dima_leaves_work"
   initial_state: "on"
   trigger:
   - platform: zone
@@ -23,7 +23,7 @@
     data_template:
       message: "{{ now().strftime('%H:%M') }} \U0001F4BC Dima leaves"
 
-- alias: "dima_leaves_work_tts"
+- alias: "zone_dima_leaves_work_tts"
   initial_state: "on"
   trigger:
   - platform: zone
@@ -39,7 +39,7 @@
   action:
   - service: script.tts_dima_leaves_work
 
-- alias: "dima_enters_home"
+- alias: "zone_dima_enters_home"
   initial_state: "on"
   trigger:
   - platform: zone
@@ -51,7 +51,7 @@
     data_template:
       message: "{{ now().strftime('%H:%M') }} \U0001F3E0 Dima enters"
 
-- alias: "dima_leaves_home"
+- alias: "zone_dima_leaves_home"
   initial_state: "on"
   trigger:
   - platform: zone
@@ -63,7 +63,7 @@
     data_template:
       message: "{{ now().strftime('%H:%M') }} \U0001F3E0 Dima leaves"
 
-- alias: "dima_enters_school"
+- alias: "zone_dima_enters_school"
   initial_state: "on"
   trigger:
   - platform: zone
@@ -75,7 +75,7 @@
     data_template:
       message: "{{ now().strftime('%H:%M') }} \U0001F3EB Dima enters"
 
-- alias: "dima_leaves_school"
+- alias: "zone_dima_leaves_school"
   initial_state: "on"
   trigger:
   - platform: zone
@@ -88,7 +88,7 @@
       message: "{{ now().strftime('%H:%M') }} \U0001F3EB Dima leaves"
 
 ################## ALYONA
-- alias: "alyona_enters_school"
+- alias: "zone_alyona_enters_school"
   initial_state: "on"
   trigger:
   - platform: zone
@@ -100,7 +100,7 @@
     data_template:
       message: "{{ now().strftime('%H:%M') }} \U0001F3EB Alyona enters"
 
-- alias: "alyona_leaves_school"
+- alias: "zone_alyona_leaves_school"
   initial_state: "on"
   trigger:
   - platform: zone

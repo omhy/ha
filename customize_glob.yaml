@@ -1,10 +1,10 @@
 ### COMMON
+"*telegram*":
+  icon: mdi:telegram
 "*door*":
   icon: mdi:door
 "*doorbell*":
   icon: mdi:bell-ring
-"*telegram*":
-  icon: mdi:telegram
 "*mqtt*":
   icon: mdi:chip
 "*light*":
@@ -15,8 +15,12 @@
   icon: mdi:bug
 "*brightness*":
   icon: mdi:brightness-5
+"*saturation*":
+  icon: mdi:invert-colors
 "*mired*":
   icon: mdi:thermometer
+"*hue*":
+  icon: mdi:format-color-fill
 "*transition*":
   icon: mdi:av-timer
 
@@ -31,24 +35,20 @@
   icon: mdi:chemical-weapon
 
 ### AUTOMATIONS
-"automation.zone_*":
+"automation.zone*":
   icon: mdi:map-marker
-"automation.ha_*":
+"automation.ha*":
   icon: mdi:home-assistant
-"automation.notification*":
-  icon: mdi:message
-"automation.*dima*":
-  icon: mdi:human-male
-"automation.*alyona*":
-  icon: mdi:human-female
-
-### INPUTS
-"input_number.*hue*":
-  icon: mdi:format-color-fill
-"input_number.*saturation*":
-  icon: mdi:invert-colors
-"input_number.*transition*":
-  icon: mdi:timer
+"automation.working_day*":
+  icon: mdi:worker
+"automation.cube*":
+  icon: mdi:cube
+"automation.light*":
+  icon: mdi:bulb
+"automation.motion*":
+  icon: mdi:motion
+"automation.schedule*":
+  icon: mdi:clock-outline
 
 ### SENSORS
 "binary_sensor.motion_sensor*":

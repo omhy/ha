@@ -1,4 +1,4 @@
-- alias: "bathroom_light_turn_on"
+- alias: "light_bathroom_turn_on"
   initial_state: "on"
   trigger:
   - platform: state
@@ -8,7 +8,7 @@
   - service: switch.turn_on
     entity_id: switch.wall_switch_right_158d00022391ec
 
-- alias: "bathroom_light_turn_off"
+- alias: "light_bathroom_turn_off"
   initial_state: "on"
   trigger:
   - platform: state
@@ -20,7 +20,7 @@
   - service: switch.turn_off
     entity_id: switch.wall_switch_right_158d00022391ec
 
-- alias: "bathroom_motion_detected"
+- alias: "motion_bathroom_detected"
   initial_state: "on"
   trigger:
   - platform: state

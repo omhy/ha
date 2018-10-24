@@ -1,4 +1,4 @@
-- alias: "power_strip_computer_off"
+- alias: "schedule_power_strip_computer_off"
   initial_state: "on"
   trigger:
   - platform: time
@@ -7,7 +7,7 @@
   - service: switch.turn_off
     entity_id: switch.power_strip_1
 
-- alias: "power_strip_computer_on"
+- alias: "schedule_power_strip_computer_on"
   initial_state: "on"
   trigger:
   - platform: time

@@ -529,6 +529,122 @@ views:
       - sensor.wt48_symbol
       - sensor.wt72_symbol
 
+##################   AUTOMATIONS
+  - title: Automations
+    id: automations
+    icon: mdi:creation
+    cards:
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: Automations (working days)
+      filter:
+        include:
+        - entity_id: "automation.working_day*"
+#    - type: custom:monster-card
+#      card:
+#        type: entities
+#        title: Automations (telegram)
+#      filter:
+#        include:
+#        - entity_id: "automation.telegram*"
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: Automations (zones)
+      filter:
+        include:
+        - entity_id: "automation.zone*"
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: Automations (cube)
+      filter:
+        include:
+        - entity_id: "automation.cube*"
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: Automations (mqtt)
+      filter:
+        include:
+        - entity_id: "automation.mqtt*"
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: Automations (HA)
+      filter:
+        include:
+        - entity_id: "automation.ha*"
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: Automations (light)
+      filter:
+        include:
+        - entity_id: "automation.light*"
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: Automations (motion)
+      filter:
+        include:
+        - entity_id: "automation.motion*"
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: Automations (doorbell)
+      filter:
+        include:
+        - entity_id: "automation.doorbell*"
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: Automations (entrance door)
+      filter:
+        include:
+        - entity_id: "automation.entrance_door*"
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: Automations (scheduled)
+      filter:
+        include:
+        - entity_id: "automation.scheduled*"
+
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: Automations (other)
+      filter:
+        include:
+        - domain: automation
+        exclude:
+        - entity_id: "automation.working_day*"
+        - entity_id: "automation.telegram*"
+        - entity_id: "automation.zone*"
+        - entity_id: "automation.cube*"
+        - entity_id: "automation.mqtt*"
+        - entity_id: "automation.ha*"
+        - entity_id: "automation.light*"
+        - entity_id: "automation.motion*"
+        - entity_id: "automation.doorbell*"
+        - entity_id: "automation.entrance_door*"
+        - entity_id: "automation.schedule*"
+
+##################   SCRIPTS
+  - title: Scripts
+    id: scripts
+    icon: mdi:script
+    cards:
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: Scripts
+      filter:
+        include:
+        - domain: script
+
 ##################   SUM
   - title: Summary
     id: sum
@@ -553,39 +669,13 @@ views:
     - type: custom:monster-card
       card:
         type: entities
-        title: Input numbers
+        title: Inputs
       filter:
         include:
         - domain: input_number
         - domain: input_select
         - domain: input_boolean
         - domain: input_text
-
-    - type: custom:monster-card
-      card:
-        type: entities
-        title: Sensors
-      filter:
-        include:
-        - domain: sensor
-        exclude:
-        - entity_id: "sensor.wt*"
-
-    - type: custom:monster-card
-      card:
-        type: entities
-        title: Automations (working days)
-      filter:
-        include:
-        - entity_id: "automation.working_day*"
-
-    - type: custom:monster-card
-      card:
-        type: entities
-        title: Automations (telegram)
-      filter:
-        include:
-        - entity_id: "automation.telegram*"
 
     - type: custom:monster-card
       card:
@@ -598,21 +688,12 @@ views:
     - type: custom:monster-card
       card:
         type: entities
-        title: Automations (other)
+        title: Sensors
       filter:
         include:
-        - domain: automation
+        - domain: sensor
         exclude:
-        - entity_id: "automation.working_day*"
-        - entity_id: "automation.telegram*"
-
-    - type: custom:monster-card
-      card:
-        type: entities
-        title: Scripts
-      filter:
-        include:
-        - domain: script
+        - entity_id: "sensor.wt*"
 
     - type: custom:monster-card
       card:
