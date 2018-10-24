@@ -610,7 +610,7 @@ views:
         title: Automations (scheduled)
       filter:
         include:
-        - entity_id: "automation.scheduled*"
+        - entity_id: "automation.schedule*"
 
     - type: custom:monster-card
       card:
@@ -640,10 +640,68 @@ views:
     - type: custom:monster-card
       card:
         type: entities
-        title: Scripts
+        title: Scripts (HA)
+      filter:
+        include:
+        - entity_id: "script.ha*"
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: Scripts (aqara)
+      filter:
+        include:
+        - entity_id: "script.aqara*"
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: Scripts (remote)
+      filter:
+        include:
+        - entity_id: "script.rmt*"
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: Scripts (light)
+      filter:
+        include:
+        - entity_id: "script.light*"
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: Scripts (cameras)
+      filter:
+        include:
+        - entity_id: "script.cam*"
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: Scripts (TTS)
+      filter:
+        include:
+        - entity_id: "script.tts*"
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: Scripts (telegram)
+      filter:
+        include:
+        - entity_id: "script.telegram*"
+
+    - type: custom:monster-card
+      card:
+        type: entities
+        title: Scripts (other)
       filter:
         include:
         - domain: script
+        exclude:
+        - entity_id: "script.ha*"
+        - entity_id: "script.rmt*"
+        - entity_id: "script.aqara*"
+        - entity_id: "script.light*"
+        - entity_id: "script.cam*"
+        - entity_id: "script.tts*"
+        - entity_id: "script.telegram*"
 
 ##################   SUM
   - title: Summary
@@ -729,8 +787,8 @@ views:
         icon: mdi:graphql
       - type: weblink
         name: MotionEye
-        url: https://192.168.1.10:8765
-        icon: mdi:eye
+        url: http://192.168.1.10:8765
+        icon: mdi:cctv
       - type: weblink
         name: Kodi
         url: http://192.168.1.20:8080
@@ -815,27 +873,7 @@ views:
     - type: custom:monster-card
       card:
         type: entities
-        title: System scripts
-      filter:
-        include:
-        - entity_id: "script.homeassistant*"
-    - type: custom:monster-card
-      card:
-        type: entities
-        title: Aqara scripts
-      filter:
-        include:
-        - entity_id: "script.aqara*"
-    - type: custom:monster-card
-      card:
-        type: entities
         title: Batteries
       filter:
         include:
         - entity_id: "sensor.*_battery_level"
-    - type: entities
-      title: Remote
-      show_header_toggle: true
-      entities:
-      - script.computer_sleep
-      - script.laptop_sleep

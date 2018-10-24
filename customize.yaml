@@ -75,17 +75,17 @@ device_tracker.google_maps_115914092349482836896:
   friendly_name: location/alyona
 
 #SCRIPTS
-script.homeassistant_reread:
+script.ha_refresh:
   icon: mdi:settings
-script.homeassistant_restart:
+script.ha_restart:
   icon: mdi:restart
-script.homeassistant_purge:
+script.ha_purge:
   icon: mdi:delete
-script.homeassistant_purge_repack:
+script.ha_purge_repack:
   icon: mdi:delete-empty
-script.computer_sleep:
+script.rmt_computer_sleep:
   icon: mdi:desktop-classic
-script.laptop_sleep:
+script.rmt_laptop_sleep:
   icon: mdi:laptop
 
 #SENSORS

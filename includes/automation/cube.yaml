@@ -141,7 +141,7 @@
       - light.livingroom_corner
       - light.livingroom_torch
       - light.entrance_garland
-  - service: script.computer_sleep
+  - service: script.rmt_computer_sleep
 
 #   action_type: move
 #   action_type: shake_air

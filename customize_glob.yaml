@@ -37,8 +37,6 @@
 ### AUTOMATIONS
 "automation.zone*":
   icon: mdi:map-marker
-"automation.ha*":
-  icon: mdi:home-assistant
 "automation.working_day*":
   icon: mdi:worker
 "automation.cube*":
@@ -46,9 +44,13 @@
 "automation.light*":
   icon: mdi:lightbulb
 "automation.motion*":
-  icon: mdi:motion
+  icon: mdi:run-fast
 "automation.schedule*":
   icon: mdi:clock-outline
+
+### HA
+"*.ha*":
+  icon: mdi:home-assistant
 
 ### SENSORS
 "binary_sensor.motion_sensor*":

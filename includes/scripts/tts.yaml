@@ -35,15 +35,9 @@ tts_dima_leaves_work:
     data_template:
       message: "Дима ушёл с работы в {{ states.sensor.time.state }}."
 
-tts_message:
-  sequence:
-  - service: script.tts_say_kitchen
-    data_template:
-      message: "{{ states.input_text.tts_msg.state }}"
-
 tts_say_kitchen:
   sequence:
-#  - service: media_player.media_pause
+  - service: media_player.media_pause
   - service: media_player.volume_set
     data_template:
       entity_id: media_player.kitchen_speaker
@@ -54,4 +48,4 @@ tts_say_kitchen:
       message:  "{{message}}"
       language: "ru"
       cache: false
-#  - service: media_player.media_play
+  - service: media_player.media_play

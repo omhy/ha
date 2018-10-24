@@ -4,6 +4,8 @@ cam1_snp:
     data:
       rtsp: !secret cam1_rtsp
       filename: "/share/cam1.jpg"
+  - delay:
+      seconds: 2
 cam1_vid:
   sequence:
   - service: shell_command.cam_vid

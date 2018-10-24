@@ -1,11 +1,11 @@
-homeassistant_purge:
+ha_purge:
   sequence:
   - service: recorder.purge
   - service: notify.telegram_dima
     data_template:
       message: "{{ now().strftime('%H:%M') }} \U0001F5D1 Purge - done"
 
-homeassistant_purge_repack:
+ha_purge_repack:
   sequence:
   - service: recorder.purge
     data:
@@ -14,14 +14,14 @@ homeassistant_purge_repack:
     data_template:
       message: "{{ now().strftime('%H:%M') }} \U00002702 Purge and repack - done"
 
-homeassistant_restart:
+ha_restart:
   sequence:
   - service: homeassistant.restart
   - service: notify.telegram_dima
     data_template:
       message: "{{ now().strftime('%H:%M') }} \U0001F504 Restart requested"
 
-homeassistant_reread:
+ha_refresh:
   sequence:
   - service: automation.reload
   - service: script.reload
@@ -37,10 +37,10 @@ aqara_stop_ringtone:
 
 ##################################################################################
 
-computer_sleep:
+rmt_computer_sleep:
   sequence:
   - service: shell_command.sleep_computer
-laptop_sleep:
+rmt_laptop_sleep:
   sequence:
   - service: shell_command.sleep_laptop
 

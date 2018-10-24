@@ -15,19 +15,33 @@
       chat_id: "{{ trigger.event.data.chat_id }}"
       message_id: "{{ trigger.event.data.message.message_id }}"
 
-- alias: "telegram_handle_callback_restart"
+- alias: "telegram_handle_callback_restart_ha"
   initial_state: "on"
   trigger:
   - platform: event
     event_type: telegram_callback
     event_data:
-      data: "/restart"
+      data: "/ha_restart"
   action:
   - service: telegram_bot.answer_callback_query
     data_template:
       callback_query_id: "{{ trigger.event.data.id }}"
       message: "Roger {{ trigger.event.data.data }}"
   - service: homeassistant.restart
+
+- alias: "telegram_handle_callback_refresh_ha"
+  initial_state: "on"
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: "/ha_refresh"
+  action:
+  - service: telegram_bot.answer_callback_query
+    data_template:
+      callback_query_id: "{{ trigger.event.data.id }}"
+      message: "Roger {{ trigger.event.data.data }}"
+  - service: script.ha_refresh
 
 - alias: "telegram_handle_callback_forecast"
   initial_state: "on"
@@ -93,6 +107,18 @@
     data_template:
       target: "{{trigger.event.data.user_id}}"
 
+- alias: "telegram_handle_command_say"
+  initial_state: "on"
+  trigger:
+  - platform: event
+    event_type: telegram_command
+    event_data:
+      command: "/say"
+  action:
+  - service: script.tts_say_kitchen
+    data_template:
+      message: "{{trigger.event.data.args}}"
+
 #- alias: "telegram_handle_prefix_snap"
 #  initial_state: "on"
 #  trigger:
@@ -106,6 +132,8 @@
 #    data_template:
 #      callback_query_id: "{{ trigger.event.data.id }}"
 #      message: "Roger {{ trigger.event.data.data }}"
+#  - service_template: >
+#      script.[trigger.event.data.data.split(' ', 1)[1]]_snp
 #  - service: telegram_bot.send_photo
 #    data_template:
 #      target: "{{ trigger.event.data.user_id }}"
@@ -127,13 +155,13 @@
     data_template:
       callback_query_id: "{{ trigger.event.data.id }}"
       message: "Roger {{ trigger.event.data.data }}"
+  - service: script.cam1_snp
   - service: telegram_bot.send_photo
     data_template:
       target: "{{ trigger.event.data.user_id }}"
-      url: "https://192.168.1.10:8765/picture/1/current/?_username=admin&_signature=08aeaf6ba51d1bb5d30e7b05f0f80c305d54b690"
+      file: "/share/cam1.jpg"
       inline_keyboard:
       - "\U0001F504 Refresh:{{ trigger.event.data.data }}, \U0000267B Dismiss:/dismiss"
-
 
 - alias: "telegram_handle_callback_computer"
   initial_state: "on"
@@ -152,7 +180,7 @@
       target: "{{trigger.event.data.user_id}}"
       message: "Computer"
       inline_keyboard:
-      - "\U0001F5A5 \U0001F4A4 Sleep:/computer_sleep"
+      - "\U0001F5A5 \U0001F4A4 Sleep:/rmt_computer_sleep"
       - "\U0000267B Dismiss:/dismiss"
 
 - alias: "telegram_handle_callback_laptop"
@@ -172,7 +200,7 @@
       target: "{{trigger.event.data.user_id}}"
       message: "Laptop"
       inline_keyboard:
-      - "\U0001F4BB \U0001F4A4 Sleep:/laptop_sleep"
+      - "\U0001F4BB \U0001F4A4 Sleep:/rmt_laptop_sleep"
       - "\U0000267B Dismiss:/dismiss"
 
 - alias: "telegram_handle_callback_computer_sleep"
@@ -181,9 +209,9 @@
   - platform: event
     event_type: telegram_callback
     event_data:
-      data: "/computer_sleep"
+      data: "/rmt_computer_sleep"
   action:
-  - service: script.computer_sleep
+  - service: script.rmt_computer_sleep
 
 - alias: "telegram_handle_callback_laptop_sleep"
   initial_state: "on"
@@ -191,6 +219,6 @@
   - platform: event
     event_type: telegram_callback
     event_data:
-      data: "/laptop_sleep"
+      data: "/rmt_laptop_sleep"
   action:
-  - service: script.laptop_sleep
+  - service: script.rmt_laptop_sleep

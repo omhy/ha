@@ -44,7 +44,7 @@
       - "\U0001F3D8 Rooms:/rooms, \U0001F30D People:/people"
       - "\U0001F6A7 Tech:/tech, \U0000267B Dismiss:/dismiss"
 
-- alias: "telegram_handle_tech"
+- alias: "telegram_handle_callback_tech"
   initial_state: "on"
   trigger:
   - platform: event
@@ -63,5 +63,6 @@
       inline_keyboard:
       - "\U0001F5A5 Computer:/computer, \U0001F4BB Laptop:/laptop"
       - "\U0001F4F7 Camera 1:/snap cam1, \U0001F4F7 Camera 2:/snap cam2"
-      - "\U0001F50C Consumed:/electro, \U0001F504 Restart HA:/restart"
+      - "\U0001F50C Consumed:/electro"
+      - "\U0001F527 Refresh HA:/ha_refresh, \U0001F528 Restart HA:/ha_restart"
       - "\U0000267B Dismiss:/dismiss"
