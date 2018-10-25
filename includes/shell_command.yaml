@@ -1,10 +1,5 @@
 sleep_computer: "/usr/bin/curl -X GET http://192.168.1.101:8585/?cmd=sleep"
 sleep_laptop: "/usr/bin/curl -X GET http://192.168.1.102:8585/?cmd=sleep"
-cam_snp: !secret cam_snp
-cam_vid: !secret cam_vid
-#cam1_snp_udp: "ffmpeg -rtsp_transport udp -i rtsp://admin:@192.168.1.220:554/onvif1 -vf fps=1/3 -pix_fmt yuvj420p -s 656x416 -nostdin /share/snp_udp.jpg -y -loglevel 0"
-#cam1_vid_udp: "ffmpeg -rtsp_transport udp -i rtsp://admin:@192.168.1.220:554/onvif1 -an -t 10 -c copy -map 0 -y -update 1 /share/vid_udp.mp4"
-#cam1_snp_tcp: "ffmpeg -rtsp_transport tcp -i rtsp://admin:@192.168.1.220:554/onvif1 -vf fps=1/3 -pix_fmt yuvj420p -s 656x416 -nostdin /share/snp_tcp.jpg -y -loglevel 0"
-#cam1_vid_tcp: "ffmpeg -rtsp_transport tcp -i rtsp://admin:@192.168.1.220:554/onvif1 -an -t 10 -c copy -map 0 -y -update 1 /share/vid_tcp.mp4"
-#cam1_vid_dev: "ffmpeg -rtsp_transport udp -i rtsp://admin:@192.168.1.220:554/onvif1 -y -nostdin -t 10 -c copy -map 0 -update 1 /share/vid.mp4"
-#cam1_snp_dev: "ffmpeg -rtsp_transport udp -i rtsp://admin:@192.168.1.220:554/onvif1 -y -nostdin -vf fps=1/3 -pix_fmt yuvj420p -s 1920x1080 /share/snp_dev.jpg"
+cam_snp: "ffmpeg -rtsp_transport udp -i {{ rtsp }} -y -nostdin -vf fps=1/3 -pix_fmt yuvj420p -s 1920x1080 {{ file }}"
+cam_vid: "ffmpeg -rtsp_transport udp -i {{ rtsp }} -y -nostdin -t {{ duration }} -c copy -map 0 -update 1 {{ file }}"
+remove_file: "rm -f {{ file }}"

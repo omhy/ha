@@ -119,50 +119,6 @@
     data_template:
       message: "{{trigger.event.data.args}}"
 
-#- alias: "telegram_handle_prefix_snap"
-#  initial_state: "on"
-#  trigger:
-#  - platform: event
-#    event_type: telegram_callback
-#  condition:
-#  - condition: template
-#    value_template: "{{ trigger.event.data.data.startswith('/snap ') }}"
-#  action:
-#  - service: telegram_bot.answer_callback_query
-#    data_template:
-#      callback_query_id: "{{ trigger.event.data.id }}"
-#      message: "Roger {{ trigger.event.data.data }}"
-#  - service_template: >
-#      script.[trigger.event.data.data.split(' ', 1)[1]]_snp
-#  - service: telegram_bot.send_photo
-#    data_template:
-#      target: "{{ trigger.event.data.user_id }}"
-#      url: "http://localhost:8123{{ states.camera[trigger.event.data.data.split(' ', 1)[1]].attributes.entity_picture }}"
-#      caption: "{{ states.camera[trigger.event.data.data.split(' ', 1)[1]].name }}"
-#      inline_keyboard:
-#      - "\U0001F504 Refresh:{{ trigger.event.data.data }}, \U0000267B Dismiss:/dismiss"
-
-
-- alias: "telegram_handle_prefix_snap_cam1"
-  initial_state: "on"
-  trigger:
-  - platform: event
-    event_type: telegram_callback
-    event_data:
-      data: "/snap cam1"
-  action:
-  - service: telegram_bot.answer_callback_query
-    data_template:
-      callback_query_id: "{{ trigger.event.data.id }}"
-      message: "Roger {{ trigger.event.data.data }}"
-  - service: script.cam1_snp
-  - service: telegram_bot.send_photo
-    data_template:
-      target: "{{ trigger.event.data.user_id }}"
-      file: "/share/cam1.jpg"
-      inline_keyboard:
-      - "\U0001F504 Refresh:{{ trigger.event.data.data }}, \U0000267B Dismiss:/dismiss"
-
 - alias: "telegram_handle_callback_computer"
   initial_state: "on"
   trigger:
