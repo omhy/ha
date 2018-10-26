@@ -1,0 +1,7 @@
+###### NOT USED
+- platform: ffmpeg
+  name: cam1
+  input: -rtsp_transport tcp -i !secret cam1_rtsp
+- platform: ffmpeg
+  name: cam2
+  input: -rtsp_transport tcp -i !secret cam2_rtsp

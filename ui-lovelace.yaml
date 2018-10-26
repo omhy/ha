@@ -3,7 +3,7 @@ resources:
   type: js
 - url: /local/tracker-card.js?v=0.1.4
   type: js
-- url: /local/mini-media-player.js?v=0.8.7
+- url: /local/mini-media-player.js?v=0.8.8
   type: module
 
 title: Home
