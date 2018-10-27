@@ -15,7 +15,7 @@ homeassistant:
 
 map:
 sun:
-ffmpeg:
+#ffmpeg:
 
 hassio:
 
@@ -34,16 +34,16 @@ logger:
   logs:
     homeassistant.components.sensor.rest: critical
 
-openuv:
-  api_key: !secret open_uv_api_key
-  binary_sensors:
-    monitored_conditions:
-  sensors:
-    monitored_conditions:
-    - current_ozone_level
-    - current_uv_index
-    - current_uv_level
-    - max_uv_index
+#openuv:
+#  api_key: !secret open_uv_api_key
+#  binary_sensors:
+#    monitored_conditions:
+#  sensors:
+#    monitored_conditions:
+#    - current_ozone_level
+#    - current_uv_index
+#    - current_uv_level
+#    - max_uv_index
 
 media_extractor:
 

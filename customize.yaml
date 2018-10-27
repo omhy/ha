@@ -83,6 +83,8 @@ script.ha_purge:
   icon: mdi:delete
 script.ha_purge_repack:
   icon: mdi:delete-empty
+script.ha_set_defaults:
+  icon: mdi:refresh
 script.rmt_computer_sleep:
   icon: mdi:desktop-classic
 script.rmt_laptop_sleep:

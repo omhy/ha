@@ -1,8 +1,5 @@
 camera_snap_to_telegram:
   sequence:
-  - service: notify.telegram_dima
-    data_template:
-      message: "{{ rtsp }}"
   - service: shell_command.cam_snp
     data_template:
       rtsp: "{{ rtsp }}"

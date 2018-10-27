@@ -17,17 +17,17 @@ tts_rooms:
     data_template:
       message: >
         Температура.
-        на улице {{ states.sensor.temperature_158d00022c7cf2.state | int }}.
-        на кухне {{ states.sensor.temperature_158d0002323783.state | int }}.
-        в гостинной {{ states.sensor.temperature_158d000234816a.state | int }}.
-        в детской {{ states.sensor.temperature_158d0002271609.state | int }}.
-        в спальне {{ states.sensor.temperature_158d0001f23cbe.state | int }}.
+        Улица - {{ states.sensor.temperature_158d00022c7cf2.state | int }}.
+        Кухня - {{ states.sensor.temperature_158d0002323783.state | int }}.
+        Гостинная - {{ states.sensor.temperature_158d000234816a.state | int }}.
+        Детская - {{ states.sensor.temperature_158d0002271609.state | int }}.
+        Спальня - {{ states.sensor.temperature_158d0001f23cbe.state | int }}.
         Влажность.
-        на улице {{ states.sensor.humidity_158d00022c7cf2.state | int }}.
-        на кухне {{ states.sensor.humidity_158d0002323783.state | int }}.
-        в гостинной {{ states.sensor.humidity_158d000234816a.state | int }}.
-        в детской {{ states.sensor.humidity_158d0002271609.state | int }}.
-        в спальне {{ states.sensor.humidity_158d0001f23cbe.state | int }}.
+        Улица - {{ states.sensor.humidity_158d00022c7cf2.state | int }}.
+        Кухня - {{ states.sensor.humidity_158d0002323783.state | int }}.
+        Гостинная - {{ states.sensor.humidity_158d000234816a.state | int }}.
+        Детская - {{ states.sensor.humidity_158d0002271609.state | int }}.
+        Спальня - {{ states.sensor.humidity_158d0001f23cbe.state | int }}.
 
 tts_dima_leaves_work:
   sequence:
@@ -37,7 +37,7 @@ tts_dima_leaves_work:
 
 tts_say_kitchen:
   sequence:
-  - service: media_player.media_pause
+#  - service: media_player.media_pause
   - service: media_player.volume_set
     data_template:
       entity_id: media_player.kitchen_speaker
@@ -48,4 +48,4 @@ tts_say_kitchen:
       message:  "{{message}}"
       language: "ru"
       cache: false
-  - service: media_player.media_play
+#  - service: media_player.media_play
