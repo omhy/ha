@@ -5,7 +5,7 @@ tts_summary:
       message: >
         Привет!
         До работы ехать {{ states.sensor.waze_home_work.state }} минут.
-        За окном температура - {{ states.sensor.temperature_158d00022c7cf2.state | round(0) градусов.
+        За окном температура - {{ states.sensor.temperature_158d00022c7cf2.state | round(0) }} градусов.
         ветер - {{ states.sensor.wt00_wind_speed.state | round(0) }} метров в секунду.
         осадки - {{ states.sensor.wt00_precipitation.state | round(0)}} миллиметров.
         Минимальная температура {{ states.sensor.outside_temperature_min.state | round(0) }} была в {{ states.sensor.outside_temperature_min_at.state }}.
