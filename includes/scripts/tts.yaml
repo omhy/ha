@@ -17,17 +17,17 @@ tts_rooms:
     data_template:
       message: >
         Температура.
-        Улица - {{ states.sensor.temperature_158d00022c7cf2.state | int }}.
-        Кухня - {{ states.sensor.temperature_158d0002323783.state | int }}.
-        Гостинная - {{ states.sensor.temperature_158d000234816a.state | int }}.
-        Детская - {{ states.sensor.temperature_158d0002271609.state | int }}.
-        Спальня - {{ states.sensor.temperature_158d0001f23cbe.state | int }}.
+        Улица - {{ states.sensor.temperature_158d00022c7cf2.state | round(0) }}.
+        Кухня - {{ states.sensor.temperature_158d0002323783.state | round(0) }}.
+        Гостинная - {{ states.sensor.temperature_158d000234816a.state | round(0) }}.
+        Детская - {{ states.sensor.temperature_158d0002271609.state | round(0) }}.
+        Спальня - {{ states.sensor.temperature_158d0001f23cbe.state | round(0) }}.
         Влажность.
-        Улица - {{ states.sensor.humidity_158d00022c7cf2.state | int }}.
-        Кухня - {{ states.sensor.humidity_158d0002323783.state | int }}.
-        Гостинная - {{ states.sensor.humidity_158d000234816a.state | int }}.
-        Детская - {{ states.sensor.humidity_158d0002271609.state | int }}.
-        Спальня - {{ states.sensor.humidity_158d0001f23cbe.state | int }}.
+        Улица - {{ states.sensor.humidity_158d00022c7cf2.state | round(0) }}.
+        Кухня - {{ states.sensor.humidity_158d0002323783.state | round(0) }}.
+        Гостинная - {{ states.sensor.humidity_158d000234816a.state | round(0) }}.
+        Детская - {{ states.sensor.humidity_158d0002271609.state | round(0) }}.
+        Спальня - {{ states.sensor.humidity_158d0001f23cbe.state | round(0) }}.
 
 tts_dima_leaves_work:
   sequence:
