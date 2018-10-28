@@ -1,6 +1,7 @@
 - platform: template
   sensors:
     days_in_month:
+      entity_id: now.month
       value_template: >
         {% set days = {
         1 : 31,

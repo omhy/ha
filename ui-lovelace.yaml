@@ -356,6 +356,8 @@ views:
             name: Week
           - entity: sensor.power_computer_month
             name: Month
+          - entity: sensor.power_strip_1_mean
+            name: 1h mean
       - id: 3b4372fbee3f4c1f8e297a2c0db82f09  # Automatically created id
         type: glance
         title: TV
@@ -369,6 +371,8 @@ views:
             name: Week
           - entity: sensor.power_tv_month
             name: Month
+          - entity: sensor.power_strip_4_mean
+            name: 1h mean
       - id: f587e23b3ee14a868d1893a969acaa19  # Automatically created id
         type: glance
         title: Router
@@ -382,6 +386,8 @@ views:
             name: Week
           - entity: sensor.power_router_month
             name: Month
+          - entity: sensor.power_strip_3_mean
+            name: 1h mean
       - id: 7801c10b3dd84ca68885e798d72e3758  # Automatically created id
         type: glance
         title: Kitchen
@@ -395,6 +401,8 @@ views:
             name: Week
           - entity: sensor.power_kitchen_month
             name: Month
+          - entity: sensor.power_strip_2_mean
+            name: 1h mean
       - id: 036b76b51dc74186ab2a71d4510cf3b6  # Automatically created id
         type: glance
         title: Power cords
@@ -931,14 +939,6 @@ views:
           - sensor.days_in_month
           - sensor.uptime
           - sensor.homeassistant_v2db
-#      - id: 874eb6eb9fcf4defa4368eedcdc3175c  # Automatically created id
-#        type: entities
-#        title: System state
-#        entities:
-#          - sensor.processor_use
-#          - sensor.memory_use_percent
-#          - sensor.disk_use_percent_home
-#          - sensor.swap_use_percent
       - id: 7914d9b9bd914b6dac4fa0633c13494d  # Automatically created id
         type: custom:monster-card
         card:
