@@ -12,8 +12,9 @@
   resources:
   - type: processor_use
   - type: memory_use_percent
-  - type: memory_use
-  - type: memory_free
+  - type: disk_use_percent
+    arg: /home
+  - type: swap_use_percent
 
 - platform: time_date
   display_options:

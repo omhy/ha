@@ -924,21 +924,21 @@ views:
     cards:
       - id: ae44121346734a62ac5937eecfb171a9  # Automatically created id
         type: glance
-        title: Date and time
+        title: Misc
         entities:
           - sensor.date
           - sensor.time
           - sensor.days_in_month
-      - id: 874eb6eb9fcf4defa4368eedcdc3175c  # Automatically created id
-        type: entities
-        title: System state
-        entities:
           - sensor.uptime
-          - sensor.processor_use
-          - sensor.memory_use_percent
-          - sensor.memory_use
-          - sensor.memory_free
           - sensor.homeassistant_v2db
+#      - id: 874eb6eb9fcf4defa4368eedcdc3175c  # Automatically created id
+#        type: entities
+#        title: System state
+#        entities:
+#          - sensor.processor_use
+#          - sensor.memory_use_percent
+#          - sensor.disk_use_percent_home
+#          - sensor.swap_use_percent
       - id: 7914d9b9bd914b6dac4fa0633c13494d  # Automatically created id
         type: custom:monster-card
         card:
@@ -947,3 +947,50 @@ views:
         filter:
           include:
             - entity_id: sensor.*_battery_level
+      - id: 08b0deb4930e4c9493c86c0170897427  # Automatically created id
+        type: horizontal-stack
+        cards:
+          - id: a982aa991a294bc08a7da41eb0e7a011 # Automatically created id
+            type: gauge
+            entity: sensor.processor_use
+            title: CPU
+            min: 0
+            max: 100
+            severity:
+              green: 30
+              yellow: 50
+              red: 70
+          - id: 0b934eca9c2843aea7e08e47b36287a0 # Automatically created id
+            type: gauge
+            entity: sensor.memory_use_percent
+            title: RAM
+            min: 0
+            max: 100
+            severity:
+              green: 30
+              yellow: 50
+              red: 70
+      - id: 8efe1fd7c83640a2b5f29425af1ee823  # Automatically created id
+        type: horizontal-stack
+        cards:
+          - id: e4c7a9aef5774f3c805c3f95030b81f1 # Automatically created id
+            type: gauge
+            entity: sensor.disk_use_percent_home
+            title: Disk
+            min: 0
+            max: 100
+            severity:
+              green: 30
+              yellow: 50
+              red: 70
+          - id: 22c82d0b20db4f6fb6eb75e163933d34 # Automatically created id
+            type: gauge
+            entity: sensor.swap_use_percent
+            title: Swap
+            min: 0
+            max: 100
+            severity:
+              green: 30
+              yellow: 50
+              red: 70
+

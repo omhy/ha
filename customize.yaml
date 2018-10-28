@@ -91,6 +91,8 @@ script.rmt_laptop_sleep:
   icon: mdi:laptop
 
 #SENSORS
+sensor.homeassistant_v2db:
+  friendly_name: Log size
 sensor.humidity_158d0002271609:
   friendly_name: chdroom/humidity
 sensor.pressure_158d0002271609:

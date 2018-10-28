@@ -34,19 +34,6 @@ logger:
   logs:
     homeassistant.components.sensor.rest: critical
 
-#openuv:
-#  api_key: !secret open_uv_api_key
-#  binary_sensors:
-#    monitored_conditions:
-#  sensors:
-#    monitored_conditions:
-#    - current_ozone_level
-#    - current_uv_index
-#    - current_uv_level
-#    - max_uv_index
-
-media_extractor:
-
 http:
   ip_ban_enabled: true
   login_attempts_threshold: 3
@@ -54,7 +41,7 @@ http:
 
 tts:
 - platform: google
-  language: 'ru'
+  language: "ru"
 
 system_log:
   max_entries: 20
