@@ -13,8 +13,7 @@ views:
     id: main
     icon: mdi:floor-plan
     cards:
-      - id: b83477d480944164b4f4a414222d404e  # Automatically created id
-        type: glance
+      - type: glance
         title: Lights
         entities:
           - entity: light.entrance_garland
@@ -37,8 +36,7 @@ views:
             icon: mdi:ceiling-light
             tap_action: toggle
 
-      - id: b5920328602d41d7925e76167f27eb34  # Automatically created id
-        type: glance
+      - type: entities
         title: Motions
         entities:
           - entity: binary_sensor.motion_sensor_158d0001fa3dc0
@@ -46,8 +44,7 @@ views:
           - entity: binary_sensor.motion_sensor_158d0001e52779
             name: Bathroom
 
-      - id: 9ab372130e684edfbd43924c3834a387  # Automatically created id
-        type: glance
+      - type: entities
         title: Motions total
         entities:
           - entity: sensor.livingroom_motions
@@ -55,8 +52,7 @@ views:
           - entity: sensor.bathroom_motions
             name: Bathroom
 
-      - id: 3db7c3650f2d49338d0192f2fe37e590  # Automatically created id
-        type: glance
+      - type: entities
         title: Illumination
         entities:
           - entity: sensor.illumination_158d0001fa3dc0
@@ -64,56 +60,35 @@ views:
           - entity: sensor.illumination_158d0001e52779
             name: Bathroom
 
-      - id: fea414077f524a27b11efbfc815df571  # Automatically created id
-        type: entities
-        title: Last changed
-        entities:
-          - entity: sensor.livingroom_motions
-            name: Living room
-            icon: mdi:run-fast
-            secondary_info: last-changed
-          - entity: sensor.bathroom_motions
-            icon: mdi:run-fast
-            name: Bathroom
-            secondary_info: last-changed
-
-      - id: b58eca2c4f774dff8b4f45731ec385ec  # Automatically created id
-        type: custom:mini-media-player
+      - type: custom:mini-media-player
         entity: media_player.kitchen_speaker
         icon: mdi:google-home
         artwork: cover
         short_info: true
 
-      - id: b4605e569147476d96f89880a8f744be  # Automatically created id
-        type: custom:mini-media-player
+      - type: custom:mini-media-player
         entity: media_player.spotify
         artwork: cover
         hide_power: true
         hide_mute: true
         short_info: true
 
-      - id: dff63807ece24e5f9758db09bdffbf16  # Automatically created id
-        type: custom:mini-media-player
+      - type: custom:mini-media-player
         entity: media_player.kodi
         icon: mdi:kodi
         artwork: cover
         hide_power: true
         short_info: true
 
-      - id: 77255fc21b8a4df68c198b894b7c5d93  # Automatically created id
-        type: weather-forecast
+      - type: weather-forecast
         entity: weather.smhi_home
-
-
-
 
     ##################   CLIMATE
   - title: Climate
     id: climate
     icon: mdi:gauge
     cards:
-      - id: 9ad72910f70f4a6aaea46561cfff3bfa  # Automatically created id
-        type: vertical-stack
+      - type: vertical-stack
         cards:
           - type: glance
             title: Temperature
@@ -155,16 +130,19 @@ views:
               - entity: sensor.pressure_158d0002271609
                 name: Children
 
-      - id: df1ec496e96f45ef92568a6b0c53b755  # Automatically created id
-        type: vertical-stack
+      - type: vertical-stack
         cards:
           - type: glance
             title: Outside
             entities:
+              - entity: sensor.current_uv_level
+                name: UV
               - entity: sensor.current_uv_index
                 name: Current UV
+              - entity: sensor.max_uv_index
+                name: Max UV
               - entity: sensor.current_ozone_level
-                name: Ozone level
+                name: Ozone
           - type: glance
             title: Temperature Today
             entities:
@@ -184,8 +162,7 @@ views:
                 name: Maximal @
                 icon: mdi:clock
 
-      - id: fe30f703a18b4524a50158ca6d1c7c01  # Automatically created id
-        type: vertical-stack
+      - type: vertical-stack
         cards:
           - type: gauge
             entity: sensor.temperature_158d00022c7cf2
@@ -242,11 +219,9 @@ views:
     id: lights
     icon: mdi:ceiling-light
     cards:
-      - id: c204959d934746d59072022e6e16587c  # Automatically created id
-        type: picture
+      - type: picture
         image: /local/mireds.png
-      - id: eef1396705554bb8abdc963bbf0b1301  # Automatically created id
-        type: entities
+      - type: entities
         show_header_toggle: false
         title: Light sources
         entities:
@@ -256,8 +231,7 @@ views:
             name: Torch
           - entity: light.livingroom_corner
             name: Corner
-      - id: 3a3950d9a2dc4f7c9f41d812f62bc239  # Automatically created id
-        type: entities
+      - type: entities
         title: Torch defaults
         entities:
           - entity: input_number.livingroom_torch_brightness
@@ -266,8 +240,7 @@ views:
             name: Mireds
           - entity: input_number.livingroom_torch_transition
             name: Transition
-      - id: 2dd4527c10bb487a94878ad391a9bf8e  # Automatically created id
-        type: entities
+      - type: entities
         title: Corner defaults
         entities:
           - entity: input_number.livingroom_corner_brightness
@@ -282,11 +255,9 @@ views:
     id: lights_flow
     icon: mdi:palette
     cards:
-      - id: a8891f6eff264d99b553650c0b493ad3  # Automatically created id
-        type: picture
+      - type: picture
         image: /local/hue.png
-      - id: a955fa44dc7d43e487673ef79812d1d6  # Automatically created id
-        type: glance
+      - type: glance
         title: Flow
         show_header_toggle: false
         entities:
@@ -300,38 +271,34 @@ views:
             service: input_boolean.toggle
           - entity: input_select.living_room_flow
             name: Flow type
-      - id: e2915473f6b6485dbfafed25d44197f0  # Automatically created id
-        type: entities
+      - type: entities
         title: Common settings
         show_header_toggle: true
         entities:
           - input_number.flow_transition
           - input_number.flow_brightness
           - input_number.flow_saturation
-#      - id: a5e00d958a2e497282ff357233202df8  # Automatically created id
-#        type: conditional
+#      - type: conditional
 #        conditions:
 #          - entity: input_select.living_room_flow
 #            state_not: custom
 #          - entity: input_select.living_room_flow
 #            state_not: random
 #        card:
-      - id: 4c00431a6b884ade9b2bf80d3f9c374b  # Automatically created id
-        type: entities
+      - type: entities
         title: Current flow settings
         entities:
           - input_number.flow_hue1
           - input_number.flow_hue2
           - input_number.flow_hue3
           - input_number.flow_hue4
-#      - id: 9b866631e10c44918612d2f21ab65cc0  # Automatically created id
-#        type: conditional
+#      - type: conditional
 #        conditions:
 #          - entity: input_select.living_room_flow
 #            state: custom
 #        card:
-      - id: a40ddd9e2c2c4f4d850be4cecdca4dc3  # Automatically created id
-        type: entities
+
+      - type: entities
         title: Custom flow settings
         entities:
           - input_number.flow_custom_hue1
@@ -344,8 +311,7 @@ views:
     id: electro
     icon: mdi:power-plug
     cards:
-      - id: 8eb11d9d8b004bd2aaea498e1b6d77e1  # Automatically created id
-        type: glance
+      - type: glance
         title: Computer
         entities:
           - entity: sensor.power_strip_1_load_power
@@ -358,8 +324,7 @@ views:
             name: Month
           - entity: sensor.power_strip_1_mean
             name: 1h mean
-      - id: 3b4372fbee3f4c1f8e297a2c0db82f09  # Automatically created id
-        type: glance
+      - type: glance
         title: TV
         show_header_toggle: true
         entities:
@@ -373,8 +338,7 @@ views:
             name: Month
           - entity: sensor.power_strip_4_mean
             name: 1h mean
-      - id: f587e23b3ee14a868d1893a969acaa19  # Automatically created id
-        type: glance
+      - type: glance
         title: Router
         show_header_toggle: true
         entities:
@@ -388,8 +352,7 @@ views:
             name: Month
           - entity: sensor.power_strip_3_mean
             name: 1h mean
-      - id: 7801c10b3dd84ca68885e798d72e3758  # Automatically created id
-        type: glance
+      - type: glance
         title: Kitchen
         show_header_toggle: true
         entities:
@@ -403,8 +366,7 @@ views:
             name: Month
           - entity: sensor.power_strip_2_mean
             name: 1h mean
-      - id: 036b76b51dc74186ab2a71d4510cf3b6  # Automatically created id
-        type: glance
+      - type: glance
         title: Power cords
         show_header_toggle: false
         entities:
@@ -417,7 +379,14 @@ views:
           - entity: switch.power_strip_2
             name: Kitchen
 
-    ##################   INFO
+      - type: glance
+        title: Computers
+        entities:
+        - binary_sensor.computer
+        - binary_sensor.laptop
+
+
+##################   INFO
   - title: Information
     id: info
     icon: mdi:information
@@ -993,4 +962,12 @@ views:
               green: 30
               yellow: 50
               red: 70
-
+      - type: gauge
+        entity: sensor.temp
+        title: Temperature
+        min: 0
+        max: 100
+        severity:
+          green: 30
+          yellow: 50
+          red: 70

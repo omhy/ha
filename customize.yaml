@@ -140,6 +140,12 @@ input_number.tts_volume:
   icon: mdi:volume-high
 
 #BINARY SENSORS
+binary_sensor.computer:
+  friendly_name: Computer
+  icon: mdi:desktop-classic
+binary_sensor.laptop:
+  friendly_name: Laptop
+  icon: mdi:laptop
 binary_sensor.cube_158d00028776ae:
   friendly_name: cube
   icon: mdi:cube-outline

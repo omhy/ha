@@ -75,14 +75,17 @@
   icon: mdi:home-assistant
 
 "sensor.power_strip_*_load_power":
-  icon: mdi:power-socket-eu
   friendly_name: Current
+  icon: mdi:power-socket-eu
 "sensor.power_*_day":
   friendly_name: Day
+  icon: mdi:calendar-today
 "sensor.power_*_week":
   friendly_name: Week
+  icon: mdi:calendar-week
 "sensor.power_*_month":
   friendly_name: Month
+  icon: mdi:calendar-text
 
 "sensor.wt00*":
   friendly_name: Now

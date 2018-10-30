@@ -16,6 +16,12 @@
     arg: /home
   - type: swap_use_percent
 
+- platform: command_line
+  name: "Temp"
+  command: "cat /sys/class/thermal/thermal_zone0/temp"
+  unit_of_measurement: "°C"
+  value_template: '{{ value | multiply(0.001) | round(1) }}'
+
 - platform: time_date
   display_options:
   - "time"
@@ -28,14 +34,3 @@
 
 - platform: version
   name: "version_ha_current"
-
-#- platform: rest
-#  name: "computer_probe"
-#  resource: "http://192.168.1.101:8585"
-#  value_template: "{{value == ''}}"
-#  scan_interval: 300
-#- platform: rest
-#  name: "laptop_probe"
-#  resource: "http://192.168.1.102:8585"
-#  value_template: "{{value == ''}}"
-#  scan_interval: 300

@@ -98,7 +98,7 @@ telegram_bot:
   - !secret tg_chat_alyona
 
 device_tracker:
-  platform: google_maps
+- platform: google_maps
   username: !secret bot_gmail_user
   password: !secret bot_gmail_pass
   interval_seconds: 850
