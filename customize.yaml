@@ -23,42 +23,42 @@ sensor.waze_work_home:
   friendly_name: waze/work/home
 
 #MQTT
-sensor.power_computer_day:
-  friendly_name: power/computer/day
-  icon: mdi:chip
-sensor.power_computer_week:
-  friendly_name: power/computer/week
-  icon: mdi:chip
-sensor.power_computer_month:
-  friendly_name: power/computer/month
-  icon: mdi:chip
-sensor.power_kitchen_day:
-  friendly_name: power/kitchen/day
-  icon: mdi:chip
-sensor.power_kitchen_week:
-  friendly_name: power/kitchen/week
-  icon: mdi:chip
-sensor.power_kitchen_month:
-  friendly_name: power/kitchen/month
-  icon: mdi:chip
-sensor.power_router_day:
-  friendly_name: power/router/day
-  icon: mdi:chip
-sensor.power_router_week:
-  friendly_name: power/router/week
-  icon: mdi:chip
-sensor.power_router_month:
-  friendly_name: power/router/month
-  icon: mdi:chip
-sensor.power_tv_day:
-  friendly_name: power/tv/day
-  icon: mdi:chip
-sensor.power_tv_week:
-  friendly_name: power/tv/week
-  icon: mdi:chip
-sensor.power_tv_month:
-  friendly_name: power/tv/month
-  icon: mdi:chip
+#sensor.power_computer_day:
+#  friendly_name: power/computer/day
+#  icon: mdi:chip
+#sensor.power_computer_week:
+#  friendly_name: power/computer/week
+#  icon: mdi:chip
+#sensor.power_computer_month:
+#  friendly_name: power/computer/month
+#  icon: mdi:chip
+#sensor.power_kitchen_day:
+#  friendly_name: power/kitchen/day
+#  icon: mdi:chip
+#sensor.power_kitchen_week:
+#  friendly_name: power/kitchen/week
+#  icon: mdi:chip
+#sensor.power_kitchen_month:
+#  friendly_name: power/kitchen/month
+#  icon: mdi:chip
+#sensor.power_router_day:
+#  friendly_name: power/router/day
+#  icon: mdi:chip
+#sensor.power_router_week:
+#  friendly_name: power/router/week
+#  icon: mdi:chip
+#sensor.power_router_month:
+#  friendly_name: power/router/month
+#  icon: mdi:chip
+#sensor.power_tv_day:
+#  friendly_name: power/tv/day
+#  icon: mdi:chip
+#sensor.power_tv_week:
+#  friendly_name: power/tv/week
+#  icon: mdi:chip
+#sensor.power_tv_month:
+#  friendly_name: power/tv/month
+#  icon: mdi:chip
 sensor.livingroom_motions:
   friendly_name: livingroom/motions
   icon: mdi:chip
