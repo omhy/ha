@@ -31,3 +31,9 @@ entity_config:
   script.tts_rooms:
     name: Say rooms
     expose: true
+  script.tts_outside:
+    name: Say outside
+    expose: true
+  script.tts_electro:
+    name: Say electro
+    expose: true
