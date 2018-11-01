@@ -22,18 +22,24 @@ entity_config:
   script.rmt_computer_sleep:
     name: Computer sleep
     expose: true
+    room: Speaker
   script.rmt_laptop_sleep:
     name: Laptop sleep
     expose: true
+    room: Speaker
   script.tts_summary:
     name: Say summary
     expose: true
+    room: Speaker
   script.tts_rooms:
     name: Say rooms
     expose: true
+    room: Speaker
   script.tts_outside:
     name: Say outside
     expose: true
-  script.tts_electro:
-    name: Say electro
+    room: Speaker
+  script.tts_consumption:
+    name: Say consumption
     expose: true
+    room: Speaker

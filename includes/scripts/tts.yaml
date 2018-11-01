@@ -45,7 +45,7 @@ tts_outside:
         Ветер - {{ states.sensor.wt01_wind_speed.state | round(0) }} метров в секунду.
         Осадки - {{ states.sensor.wt01_precipitation.state | round(0)}} миллиметров.
 
-tts_electro:
+tts_consumption:
   sequence:
   - service: script.tts_say_kitchen
     data_template:
