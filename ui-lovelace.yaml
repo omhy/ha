@@ -49,8 +49,10 @@ views:
         entities:
           - entity: sensor.livingroom_motions
             name: Living room
+            icon: mdi:television
           - entity: sensor.bathroom_motions
             name: Bathroom
+            icon: mdi:shower
 
       - type: entities
         title: Illumination

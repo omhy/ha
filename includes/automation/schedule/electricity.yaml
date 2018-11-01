@@ -15,3 +15,17 @@
   action:
   - service: switch.turn_on
     entity_id: switch.power_strip_1
+
+- alias: "saving_computer_is_off_for_a_while"
+  initial_state: "on"
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.computer
+    from: "on"
+    to: "off"
+    for:
+      minutes: 10
+  action:
+  - service: notify.telegram_dima
+    data_template:
+      message: "{{ now().strftime('%H:%M') }} Compuеer is off ащк 10 ьштгеуы"
