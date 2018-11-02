@@ -1,5 +1,5 @@
 - alias: "working_day_light_on"
-#  initial_state: "on"
+  initial_state: "on"
   trigger:
   - platform: time
     at: "06:50:00"
@@ -8,12 +8,16 @@
     entity_id: sensor.is_workday
     state: "True"
   action:
-  - service: script.light_turn_on_livingroom_torch_by_params
-  - service: script.light_turn_on_livingroom_corner_by_params
   - service: script.light_turn_on_entrance_garland
+  - service: light.turn_on
+    entity_id: light.livingroom_ambient
+    data_template:
+      brightness: "100"
+      color_temp: "500"
+      transition: "20"
 
 - alias: "working_day_light_off"
-#  initial_state: "on"
+  initial_state: "on"
   trigger:
   - platform: time
     at: "07:45:00"
@@ -28,7 +32,7 @@
     entity_id: switch.wall_plug_158d0002013f1e
 
 - alias: "working_day_light_ready_1"
-#  initial_state: "on"
+  initial_state: "on"
   trigger:
   - platform: time
     at: "07:25:00"
@@ -44,7 +48,7 @@
   - service: script.tts_summary
 
 - alias: "working_day_light_ready_2"
-#  initial_state: "on"
+  initial_state: "on"
   trigger:
   - platform: time
     at: "07:27:30"
@@ -59,7 +63,7 @@
       hs_color: [ 60, 100 ]
 
 - alias: "working_day_light_at_steady"
-#  initial_state: "on"
+  initial_state: "on"
   trigger:
   - platform: time
     at: "07:30:00"
@@ -75,7 +79,7 @@
   - service: script.rmt_computer_sleep
 
 - alias: "working_day_light_go"
-#  initial_state: "on"
+  initial_state: "on"
   trigger:
   - platform: time
     at: "07:35:00"

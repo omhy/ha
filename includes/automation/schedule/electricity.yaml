@@ -28,4 +28,4 @@
   action:
   - service: notify.telegram_dima
     data_template:
-      message: "{{ now().strftime('%H:%M') }} Compuеer is off ащк 10 ьштгеуы"
+      message: "{{ now().strftime('%H:%M') }} Computer was turned off 10 minutes ago"
