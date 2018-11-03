@@ -3,7 +3,9 @@ resources:
     type: js
   - url: /local/tracker-card.js?v=0.1.4
     type: js
-  - url: /local/mini-media-player.js?v=0.8.8
+  - url: /local/vertical-stack-in-card.js?v=0.0.8
+    type: js
+  - url: /local/mini-media-player.js?v=0.8.9
     type: module
 
 title: Home
@@ -622,25 +624,32 @@ views:
         filter:
           include:
             - entity_id: automation.doorbell*
-      - id: f844616943984fd2b99b894cc39fbf6d  # Automatically created id
-        type: custom:monster-card
+
+      - type: custom:monster-card
         card:
           type: entities
           title: Automations (entrance door)
         filter:
           include:
-            - entity_id: automation.entrance_door*
-      - id: 61f7367c59e8454eaa8f6ccc526ee8d3  # Automatically created id
-        type: custom:monster-card
+            - entity_id: "automation.entrance_door*"
+
+      - type: custom:monster-card
         card:
           type: entities
           title: Automations (scheduled)
         filter:
           include:
-            - entity_id: automation.schedule*
+            - entity_id: "automation.schedule*"
 
-      - id: 5d82749b27f24f0c9eb8e2f1ad25d0c8  # Automatically created id
-        type: custom:monster-card
+      - type: custom:monster-card
+        card:
+          type: entities
+          title: Automations (states)
+        filter:
+          include:
+            - entity_id: "automation.state*"
+
+      - type: custom:monster-card
         card:
           type: entities
           title: Automations (other)
@@ -774,8 +783,7 @@ views:
             - domain: input_boolean
             - domain: input_text
 
-      - id: 18ad02ab547749f78aefe60423fc2e1f  # Automatically created id
-        type: custom:monster-card
+      - type: custom:monster-card
         card:
           type: entities
           title: TTS
@@ -783,8 +791,7 @@ views:
           include:
             - entity_id: '*tts*'
 
-      - id: 6bed353ece2f46bdade29c29f6b2816b  # Automatically created id
-        type: custom:monster-card
+      - type: custom:monster-card
         card:
           type: entities
           title: Sensors
@@ -794,8 +801,7 @@ views:
           exclude:
             - entity_id: sensor.wt*
 
-      - id: f82a2218f58d4e4dadae2ed0bfda5f4f  # Automatically created id
-        type: custom:monster-card
+      - type: custom:monster-card
         card:
           type: entities
           title: Switches

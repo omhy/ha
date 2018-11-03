@@ -25,31 +25,41 @@
     to: "off"
     for:
       minutes: 10
-  condition:
-  - condition: state
-    entity_id: binary_sensor.computer
-    state: "off"
   action:
   - service: notify.telegram_dima
     data_template:
-      message: "{{ now().strftime('%H:%M') }} Computer was turned off 10 minutes ago"
+      message: "{{ now().strftime('%H:%M') }} \U0001F5A5 was turned off 10 minutes ago"
 
-- alias: "state_computer_changed"
+- alias: "state_computer_turned_off"
   initial_state: "on"
   trigger:
   - platform: state
     entity_id: binary_sensor.computer
+    from: "on"
+    to: "off"
   action:
   - service: notify.telegram_dima
     data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F5A5 is turned {{ trigger.to_state.state }}"
+      message: "{{ now().strftime('%H:%M') }} \U0001F5A5 is turned off"
 
-- alias: "state_laptop_changed"
+- alias: "state_computer_turned_on"
   initial_state: "on"
   trigger:
   - platform: state
-    entity_id: binary_sensor.laptop
+    entity_id: binary_sensor.computer
+    from: "off"
+    to: "on"
   action:
   - service: notify.telegram_dima
     data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F4BB is turned {{ trigger.to_state.state }}"
+      message: "{{ now().strftime('%H:%M') }} \U0001F5A5 is turned on"
+
+#- alias: "state_laptop_changed"
+#  initial_state: "on"
+#  trigger:
+#  - platform: state
+#    entity_id: binary_sensor.laptop
+#  action:
+#  - service: notify.telegram_dima
+#    data_template:
+#      message: "{{ now().strftime('%H:%M') }} \U0001F4BB is turned {{ trigger.to_state.state }}"
