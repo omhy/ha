@@ -1,6 +1,8 @@
 - platform: ping
   name: "computer"
   host: 192.168.1.101
+  scan_interval: 30
 - platform: ping
   name: "laptop"
   host: 192.168.1.102
+  scan_interval: 30

@@ -19,3 +19,13 @@
   - service: script.telegram_send_electro
     data_template:
       target: !secret tg_chat_dima
+
+#- alias: "schedule_day_begins"
+#  initial_state: "on"
+#  trigger:
+#  - platform: time
+#    at: "00:00:02"
+#  action:
+#  - service: homeassistant.update_entity
+#    entity_id:
+#    - sensor.is_workday
