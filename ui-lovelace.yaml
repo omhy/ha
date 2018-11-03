@@ -3,8 +3,8 @@ resources:
     type: js
   - url: /local/tracker-card.js?v=0.1.4
     type: js
-  - url: /local/vertical-stack-in-card.js?v=0.0.8
-    type: js
+#  - url: /local/vertical-stack-in-card.js?v=0.0.8
+#    type: js
   - url: /local/mini-media-player.js?v=0.8.9
     type: module
 
@@ -854,6 +854,10 @@ views:
           - type: weblink
             name: Light component
             url: https://www.home-assistant.io/components/light/
+            icon: mdi:home-assistant
+          - type: weblink
+            name: Stable verison
+            url: https://s3.amazonaws.com/hassio-version/stable.json
             icon: mdi:home-assistant
           - type: weblink
             name: Automation conditions
