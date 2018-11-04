@@ -48,7 +48,7 @@ ha_set_defaults:
   - service: input_number.set_value
     entity_id: input_number.livingroom_torch_brightness
     data_template:
-      value: 150
+      value: 200
   - service: input_number.set_value
     entity_id: input_number.livingroom_torch_mired
     data_template:
@@ -60,7 +60,7 @@ ha_set_defaults:
   - service: input_number.set_value
     entity_id: input_number.livingroom_corner_brightness
     data_template:
-      value: 50
+      value: 100
   - service: input_number.set_value
     entity_id: input_number.livingroom_corner_mired
     data_template:

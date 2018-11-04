@@ -3,9 +3,7 @@ resources:
     type: js
   - url: /local/tracker-card.js?v=0.1.4
     type: js
-#  - url: /local/vertical-stack-in-card.js?v=0.0.8
-#    type: js
-  - url: /local/mini-media-player.js?v=0.8.9
+  - url: /local/mini-media-player-bundle.js?v=0.9.0
     type: module
 
 title: Home
@@ -64,6 +62,7 @@ views:
           - entity: sensor.illumination_158d0001e52779
             name: Bathroom
 
+
       - type: custom:mini-media-player
         entity: media_player.kitchen_speaker
         icon: mdi:google-home
@@ -73,16 +72,21 @@ views:
       - type: custom:mini-media-player
         entity: media_player.spotify
         artwork: cover
-        hide_power: true
-        hide_mute: true
         short_info: true
+        hide_volume: true
+        show_source: small
+        show_shuffle: true
+        hide_power: true
+        show_progress: true
 
       - type: custom:mini-media-player
         entity: media_player.kodi
         icon: mdi:kodi
         artwork: cover
-        hide_power: true
         short_info: true
+        hide_volume: true
+        hide_power: true
+        show_progress: true
 
       - type: weather-forecast
         entity: weather.smhi_home
