@@ -10,6 +10,7 @@ light.livingroom_corner:
 
 #MISC
 sensor.is_workday:
+  friendly_name: Workday
   icon: mdi:briefcase
 
 #WAZE
