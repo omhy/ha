@@ -15,14 +15,10 @@ homeassistant:
 
 map:
 sun:
-#ffmpeg:
-
 hassio:
-
 config:
 frontend:
   themes: !include_dir_merge_named includes/themes
-#discovery:
 
 updater:
   include_used_components: true
@@ -31,17 +27,22 @@ history:
 logbook:
 logger:
   default: warn
-  logs:
-    homeassistant.components.sensor.rest: critical
 
 http:
   ip_ban_enabled: true
   login_attempts_threshold: 3
   base_url: !secret http_base_url_no_port
 
+panel_iframe:
+  router:
+    title: Grafana
+    url: http://192.168.1.10:3000
+    icon: mdi:graphql
+
+
 tts:
 - platform: google
-  language: "ru"
+  language: ru
 
 system_log:
   max_entries: 20

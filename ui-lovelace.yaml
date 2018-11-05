@@ -856,12 +856,16 @@ views:
         title: Home Assistant
         entities:
           - type: weblink
-            name: Light component
-            url: https://www.home-assistant.io/components/light/
-            icon: mdi:home-assistant
-          - type: weblink
             name: Stable verison
             url: https://s3.amazonaws.com/hassio-version/stable.json
+            icon: mdi:home-assistant
+          - type: weblink
+            name: Tags
+            url: https://github.com/home-assistant/home-assistant/tags
+            icon: mdi:github-circle
+          - type: weblink
+            name: Light component
+            url: https://www.home-assistant.io/components/light/
             icon: mdi:home-assistant
           - type: weblink
             name: Automation conditions
@@ -896,6 +900,9 @@ views:
             name: Mini-media-player card
             url: https://github.com/kalkih/mini-media-player
             icon: mdi:application
+
+
+
 
       - id: 9b7e3192533746b286a1564e988b3a17  # Automatically created id
         type: entities

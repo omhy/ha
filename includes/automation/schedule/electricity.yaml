@@ -1,4 +1,4 @@
-- alias: "schedule_power_strip_computer_off"
+- alias: "schedule_computer_power_strip_off"
   initial_state: "on"
   trigger:
   - platform: time
@@ -7,7 +7,7 @@
   - service: switch.turn_off
     entity_id: switch.power_strip_1
 
-- alias: "schedule_power_strip_computer_on"
+- alias: "schedule_computer_power_strip_on"
   initial_state: "on"
   trigger:
   - platform: time
@@ -39,6 +39,30 @@
   - service: notify.telegram_dima
     data_template:
       message: "{{ now().strftime('%H:%M') }} \U0001F5A5 is turned on"
+
+- alias: "state_laptop_turned_off"
+  initial_state: "on"
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.laptop
+    from: "on"
+    to: "off"
+  action:
+  - service: notify.telegram_dima
+    data_template:
+      message: "{{ now().strftime('%H:%M') }} \U0001F4BB is turned off"
+
+- alias: "state_laptop_turned_on"
+  initial_state: "on"
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.laptop
+    from: "off"
+    to: "on"
+  action:
+  - service: notify.telegram_dima
+    data_template:
+      message: "{{ now().strftime('%H:%M') }} \U0001F4BB is turned on"
 
 #- alias: "state_laptop_changed"
 #  initial_state: "on"
