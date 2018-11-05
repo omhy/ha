@@ -919,8 +919,9 @@ views:
         type: glance
         title: Misc
         entities:
-          - sensor.date
-          - sensor.time
+#          - sensor.date
+#          - sensor.time
+          - sensor.is_workday
           - sensor.days_in_month
           - sensor.uptime
           - sensor.homeassistant_v2db
