@@ -33,13 +33,6 @@ http:
   login_attempts_threshold: 3
   base_url: !secret http_base_url_no_port
 
-panel_iframe:
-  router:
-    title: Grafana
-    url: http://192.168.1.10:3000
-    icon: mdi:graphql
-
-
 tts:
 - platform: google
   language: ru
@@ -79,7 +72,6 @@ recorder:
     - sensor.days_in_month
     - sensor.date
     - sensor.time
-    - sensor.days_in_month
     - sensor.flow_random_hue
     - input_number.flow_idx
     - sensor.current_version

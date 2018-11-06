@@ -76,6 +76,17 @@
     data_template:
       entity_id: light.livingroom_ambient
       hs_color: [ 30, 100 ]
+
+- alias: "working_day_computer_off"
+  initial_state: "on"
+  trigger:
+  - platform: time
+    at: "07:33:00"
+  condition:
+  - condition: state
+    entity_id: sensor.is_workday
+    state: "True"
+  action:
   - service: script.rmt_computer_sleep
 
 - alias: "working_day_light_go"
