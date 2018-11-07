@@ -58,6 +58,7 @@ media_player:
   host: 192.168.1.20
 
 recorder:
+  db_url: !secret mariadb_url
   purge_keep_days: 1
   exclude:
     domains:
