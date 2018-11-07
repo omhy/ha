@@ -16,13 +16,18 @@ views:
       - type: glance
         title: Lights
         entities:
+          - entity: switch.entrance_garland
+            name: Garland sw
+#            tap_action: toggle
           - entity: light.entrance_garland
             name: Garland
-            tap_action: toggle
+#            tap_action: toggle
           - entity: light.livingroom_torch
             name: Torch
           - entity: light.livingroom_corner
             name: Corner
+          - entity: light.small_torch
+            name: Small torch
           - entity: switch.wall_plug_158d0002013f1e
             name: Star
             icon: mdi:star-outline
@@ -931,7 +936,7 @@ views:
           - sensor.is_workday
           - sensor.days_in_month
           - sensor.uptime
-          - sensor.homeassistant_v2db
+#          - sensor.homeassistant_v2db
       - id: 7914d9b9bd914b6dac4fa0633c13494d  # Automatically created id
         type: custom:monster-card
         card:

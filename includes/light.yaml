@@ -8,6 +8,10 @@
       name: livingroom_corner
       transition: 1000
       use_music_mode: True
+    192.168.1.133:
+      name: small_torch
+      transition: 1000
+      use_music_mode: True
 
 - platform: group
   name: livingroom_ambient
