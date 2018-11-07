@@ -2,10 +2,6 @@
   initial_state: "on"
   trigger:
   - platform: event
-    event_type: telegram_command
-    event_data:
-      command: "/menu"
-  - platform: event
     event_type: telegram_text
     event_data:
       text: "m"
@@ -13,6 +9,10 @@
     event_type: telegram_text
     event_data:
       text: "M"
+  - platform: event
+    event_type: telegram_text
+    event_data:
+      text: "ь"
   action:
   - service: telegram_bot.send_message
     data_template:
