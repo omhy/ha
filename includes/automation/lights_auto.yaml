@@ -10,6 +10,18 @@
   - service: switch.toggle
     entity_id: switch.wall_plug_158d0002013f1e
 
+- alias: "standalone_left_right"
+  initial_state: "on"
+  trigger:
+  - platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.wall_switch_right_158d00026b96c1
+      click_type: single
+  action:
+  - service: light.toggle
+    entity_id: light.small_torch
+
 - alias: "light_button_single_when_light_is_on"
   initial_state: "on"
   trigger:

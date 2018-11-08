@@ -238,12 +238,12 @@ views:
         show_header_toggle: false
         title: Light sources
         entities:
-          - entity: light.livingroom_ambient
-            name: Torch + corner
           - entity: light.livingroom_torch
-            name: Torch
+            name: Living room - Torch
           - entity: light.livingroom_corner
-            name: Corner
+            name: Living room - Corner
+          - entity: light.small_torch
+            name: Children room - Small torch
       - type: entities
         title: Torch defaults
         entities:
@@ -261,6 +261,15 @@ views:
           - entity: input_number.livingroom_corner_mired
             name: Mireds
           - entity: input_number.livingroom_corner_transition
+            name: Transition
+      - type: entities
+        title: Small torch defaults
+        entities:
+          - entity: input_number.small_torch_brightness
+            name: Brightness
+          - entity: input_number.small_torch_mired
+            name: Mireds
+          - entity: input_number.small_torch_transition
             name: Transition
 
 ##################   LIGHTS FLOW

@@ -27,6 +27,15 @@ livingroom_corner_brightness:
 livingroom_corner_transition:
   min: 1
   max: 20
+small_torch_mired:
+  min: 153
+  max: 588
+small_torch_brightness:
+  min: 1
+  max: 255
+small_torch_transition:
+  min: 1
+  max: 20
 
 
 flow_idx:

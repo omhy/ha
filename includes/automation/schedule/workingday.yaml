@@ -9,7 +9,10 @@
     state: "True"
   action:
   - service: light.turn_on
-    entity_id: light.livingroom_ambient
+    entity_id:
+    - light.livingroom_torch
+    - light.livingroom_corner
+    - light.small_torch
     data_template:
       brightness: "50"
       color_temp: "500"
@@ -26,13 +29,12 @@
     entity_id: sensor.is_workday
     state: "True"
   action:
-  sequence:
   - service: light.turn_off
     entity_id:
-    - light.entrance_garland
     - light.livingroom_corner
     - light.livingroom_torch
     - light.small_torch
+    - light.entrance_garland
   - service: switch.turn_off
     entity_id: switch.wall_plug_158d0002013f1e
 
@@ -47,8 +49,11 @@
     state: "True"
   action:
   - service: light.turn_on
+    entity_id:
+    - light.livingroom_torch
+    - light.livingroom_corner
+    - light.small_torch
     data_template:
-      entity_id: light.livingroom_ambient
       hs_color: [ 100, 100 ]
   - service: script.tts_summary
 
@@ -63,8 +68,11 @@
     state: "True"
   action:
   - service: light.turn_on
+    entity_id:
+    - light.livingroom_torch
+    - light.livingroom_corner
+    - light.small_torch
     data_template:
-      entity_id: light.livingroom_ambient
       hs_color: [ 60, 100 ]
 
 - alias: "working_day_light_at_steady"
@@ -78,8 +86,11 @@
     state: "True"
   action:
   - service: light.turn_on
+    entity_id:
+    - light.livingroom_torch
+    - light.livingroom_corner
+    - light.small_torch
     data_template:
-      entity_id: light.livingroom_ambient
       hs_color: [ 30, 100 ]
 
 - alias: "working_day_computer_off"
@@ -105,6 +116,9 @@
     state: "True"
   action:
   - service: light.turn_on
+    entity_id:
+    - light.livingroom_torch
+    - light.livingroom_corner
+    - light.small_torch
     data_template:
-      entity_id: light.livingroom_ambient
       hs_color: [ 0, 100 ]
