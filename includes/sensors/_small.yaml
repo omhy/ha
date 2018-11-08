@@ -4,9 +4,9 @@
 - platform: season
   type: astronomical
 
-- platform: filesize
-  file_paths:
-  - /config/home-assistant_v2.db
+#- platform: filesize
+#  file_paths:
+#  - /config/home-assistant_v2.db
 
 - platform: systemmonitor
   resources:
