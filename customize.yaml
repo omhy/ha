@@ -7,6 +7,9 @@ light.livingroom_torch:
 light.livingroom_corner:
   friendly_name: Corner
   icon: mdi:lamp
+light.small_torch:
+  friendly_name: Small torch
+  icon: mdi:lava-lamp
 
 #MISC
 sensor.is_workday:

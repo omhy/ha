@@ -63,27 +63,3 @@
   - service: notify.telegram_dima
     data_template:
       message: "{{ now().strftime('%H:%M') }} \U0001F4BB is turned on"
-
-#- alias: "state_laptop_changed"
-#  initial_state: "on"
-#  trigger:
-#  - platform: state
-#    entity_id: binary_sensor.laptop
-#  action:
-#  - service: notify.telegram_dima
-#    data_template:
-#      message: "{{ now().strftime('%H:%M') }} \U0001F4BB is turned {{ trigger.to_state.state }}"
-
-#- alias: "saving_computer_is_off_for_a_while"
-#  initial_state: "on"
-#  trigger:
-#  - platform: state
-#    entity_id: binary_sensor.computer
-#    from: "on"
-#    to: "off"
-#    for:
-#      minutes: 10
-#  action:
-#  - service: notify.telegram_dima
-#    data_template:
-#      message: "{{ now().strftime('%H:%M') }} \U0001F5A5 was turned off 10 minutes ago"

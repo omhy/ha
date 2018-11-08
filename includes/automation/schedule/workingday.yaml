@@ -8,13 +8,13 @@
     entity_id: sensor.is_workday
     state: "True"
   action:
-  - service: script.light_turn_on_entrance_garland
   - service: light.turn_on
     entity_id: light.livingroom_ambient
     data_template:
-      brightness: "100"
+      brightness: "50"
       color_temp: "500"
       transition: "20"
+  - service: script.light_turn_on_entrance_garland
 
 - alias: "working_day_light_off"
   initial_state: "on"
@@ -26,8 +26,13 @@
     entity_id: sensor.is_workday
     state: "True"
   action:
-  - service: script.light_turn_off_livingroom
-  - service: script.light_turn_off_entrance_garland
+  sequence:
+  - service: light.turn_off
+    entity_id:
+    - light.entrance_garland
+    - light.livingroom_corner
+    - light.livingroom_torch
+    - light.small_torch
   - service: switch.turn_off
     entity_id: switch.wall_plug_158d0002013f1e
 

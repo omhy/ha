@@ -16,8 +16,8 @@ views:
       - type: glance
         title: Lights
         entities:
-          - entity: switch.entrance_garland
-            name: Garland sw
+#          - entity: switch.entrance_garland
+#            name: Garland sw
 #            tap_action: toggle
           - entity: light.entrance_garland
             name: Garland
@@ -906,9 +906,6 @@ views:
             url: https://github.com/kalkih/mini-media-player
             icon: mdi:application
 
-
-
-
       - id: 9b7e3192533746b286a1564e988b3a17  # Automatically created id
         type: entities
         title: User interface
@@ -931,8 +928,8 @@ views:
         type: glance
         title: Misc
         entities:
-#          - sensor.date
-#          - sensor.time
+          - sensor.date
+          - sensor.time
           - sensor.is_workday
           - sensor.days_in_month
           - sensor.uptime

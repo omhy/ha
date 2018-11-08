@@ -23,8 +23,10 @@
     entity_id: light.livingroom_ambient
     state: "on"
   action:
-  - service: script.light_turn_off_livingroom_torch_by_params
-  - service: script.light_turn_off_livingroom_corner_by_params
+  - service: light.turn_off
+    entity_id:
+    - light.livingroom_corner
+    - light.livingroom_torch
 
 - alias: "light_button_single_when_light_is_off"
   initial_state: "on"
