@@ -20,10 +20,12 @@
   - light.livingroom_corner
 
 - platform: group
-  name: livingroom
+  name: moring
   entities:
-  - light.livingroom_ambient
-  - light.gateway_light_7811dcb36cee
+  - light.livingroom_torch
+  - light.livingroom_corner
+  - light.small_torch
+  - light.entrance_garland
 
 - platform: mqtt
   name: entrance_garland

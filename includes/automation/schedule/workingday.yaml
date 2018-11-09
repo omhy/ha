@@ -2,41 +2,19 @@
   initial_state: "on"
   trigger:
   - platform: time
-    at: "06:50:00"
+    at: "06:55:00"
   condition:
   - condition: state
     entity_id: sensor.is_workday
     state: "True"
   action:
   - service: light.turn_on
-    entity_id:
-    - light.livingroom_torch
-    - light.livingroom_corner
-    - light.small_torch
+    entity_id: light.moring
     data_template:
       brightness: "50"
       color_temp: "500"
       transition: "20"
   - service: script.light_turn_on_entrance_garland
-
-- alias: "working_day_light_off"
-  initial_state: "on"
-  trigger:
-  - platform: time
-    at: "07:45:00"
-  condition:
-  - condition: state
-    entity_id: sensor.is_workday
-    state: "True"
-  action:
-  - service: light.turn_off
-    entity_id:
-    - light.livingroom_corner
-    - light.livingroom_torch
-    - light.small_torch
-    - light.entrance_garland
-  - service: switch.turn_off
-    entity_id: switch.wall_plug_158d0002013f1e
 
 - alias: "working_day_light_ready_1"
   initial_state: "on"
@@ -49,10 +27,7 @@
     state: "True"
   action:
   - service: light.turn_on
-    entity_id:
-    - light.livingroom_torch
-    - light.livingroom_corner
-    - light.small_torch
+    entity_id: light.moring
     data_template:
       hs_color: [ 100, 100 ]
   - service: script.tts_summary
@@ -68,10 +43,7 @@
     state: "True"
   action:
   - service: light.turn_on
-    entity_id:
-    - light.livingroom_torch
-    - light.livingroom_corner
-    - light.small_torch
+    entity_id: light.moring
     data_template:
       hs_color: [ 60, 100 ]
 
@@ -86,10 +58,7 @@
     state: "True"
   action:
   - service: light.turn_on
-    entity_id:
-    - light.livingroom_torch
-    - light.livingroom_corner
-    - light.small_torch
+    entity_id: light.moring
     data_template:
       hs_color: [ 30, 100 ]
 
@@ -116,9 +85,21 @@
     state: "True"
   action:
   - service: light.turn_on
-    entity_id:
-    - light.livingroom_torch
-    - light.livingroom_corner
-    - light.small_torch
+    entity_id: light.moring
     data_template:
       hs_color: [ 0, 100 ]
+
+- alias: "working_day_light_off"
+  initial_state: "on"
+  trigger:
+  - platform: time
+    at: "07:45:00"
+  condition:
+  - condition: state
+    entity_id: sensor.is_workday
+    state: "True"
+  action:
+  - service: light.turn_off
+    entity_id: light.moring
+  - service: switch.turn_off
+    entity_id: switch.wall_plug_158d0002013f1e
