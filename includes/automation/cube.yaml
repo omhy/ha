@@ -12,10 +12,10 @@
     state: "False"
   action:
   - service: light.turn_on
-    entity_id: light.livingroom_ambient
+    entity_id: light.group_livingroom_ambient
     data_template:
       brightness: >
-        {% set current = states.light.livingroom_ambient.attributes.brightness | int %}
+        {% set current = states.light.group_livingroom_ambient.attributes.brightness | int %}
         {% set min = 1 | int %}
         {% set max = 255 | int %}
         {% set step = 50 | int %}
@@ -48,10 +48,10 @@
     state: "False"
   action:
   - service: light.turn_on
-    entity_id: light.livingroom_ambient
+    entity_id: light.group_livingroom_ambient
     data_template:
       color_temp: >
-        {% set current = states.light.livingroom_ambient.attributes.color_temp | int %}
+        {% set current = states.light.group_livingroom_ambient.attributes.color_temp | int %}
         {% set min = 153 | int %}
         {% set max = 588 | int %}
         {% set step = 80 | int %}
@@ -76,10 +76,10 @@
     state: "False"
   action:
   - service: light.turn_on
-    entity_id: light.livingroom_ambient
+    entity_id: light.group_livingroom_ambient
     data_template:
       color_temp: >
-        {% set current = states.light.livingroom_ambient.attributes.color_temp | int %}
+        {% set current = states.light.group_livingroom_ambient.attributes.color_temp | int %}
         {% set min = 153 | int %}
         {% set max = 588 | int %}
         {% set step = 80 | int %}

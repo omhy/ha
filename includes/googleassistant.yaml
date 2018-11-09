@@ -6,7 +6,7 @@ entity_config:
     name: Garland
     expose: true
     room: Entrance
-  light.livingroom_ambient:
+  light.group_livingroom_ambient:
     name: Ambient
     expose: true
     room: Living Room

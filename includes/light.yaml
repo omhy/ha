@@ -14,13 +14,13 @@
       use_music_mode: True
 
 - platform: group
-  name: livingroom_ambient
+  name: group_livingroom_ambient
   entities:
   - light.livingroom_torch
   - light.livingroom_corner
 
 - platform: group
-  name: moring
+  name: group_morning
   entities:
   - light.livingroom_torch
   - light.livingroom_corner

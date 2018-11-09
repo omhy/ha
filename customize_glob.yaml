@@ -27,6 +27,8 @@
 ### SPECIFIC
 "light.*":
   icon: mdi:lightbulb
+"light.group_*":
+  icon: mdi:group
 "alert.*":
   icon: mdi:alarm-light
 

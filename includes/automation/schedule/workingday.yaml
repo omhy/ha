@@ -9,7 +9,7 @@
     state: "True"
   action:
   - service: light.turn_on
-    entity_id: light.moring
+    entity_id: light.group_morning
     data_template:
       brightness: "50"
       color_temp: "500"
@@ -27,7 +27,7 @@
     state: "True"
   action:
   - service: light.turn_on
-    entity_id: light.moring
+    entity_id: light.group_morning
     data_template:
       hs_color: [ 100, 100 ]
   - service: script.tts_summary
@@ -43,7 +43,7 @@
     state: "True"
   action:
   - service: light.turn_on
-    entity_id: light.moring
+    entity_id: light.group_morning
     data_template:
       hs_color: [ 60, 100 ]
 
@@ -58,7 +58,7 @@
     state: "True"
   action:
   - service: light.turn_on
-    entity_id: light.moring
+    entity_id: light.group_morning
     data_template:
       hs_color: [ 30, 100 ]
 
@@ -85,7 +85,7 @@
     state: "True"
   action:
   - service: light.turn_on
-    entity_id: light.moring
+    entity_id: light.group_morning
     data_template:
       hs_color: [ 0, 100 ]
 
@@ -100,6 +100,6 @@
     state: "True"
   action:
   - service: light.turn_off
-    entity_id: light.moring
+    entity_id: light.group_morning
   - service: switch.turn_off
     entity_id: switch.wall_plug_158d0002013f1e

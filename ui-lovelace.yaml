@@ -3,7 +3,7 @@ resources:
     type: js
   - url: /local/tracker-card.js?v=0.1.4
     type: js
-  - url: /local/mini-media-player-bundle.js?v=0.9.0
+  - url: /local/mini-media-player-bundle.js?v=0.9.1
     type: module
 
 title: Home
@@ -230,7 +230,7 @@ views:
 ##################   LIGHTS
   - title: Lights
     id: lights
-    icon: mdi:ceiling-light
+    icon: mdi:floor-lamp
     cards:
       - type: picture
         image: /local/mireds.png
