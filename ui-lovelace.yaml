@@ -16,12 +16,9 @@ views:
       - type: glance
         title: Lights
         entities:
-#          - entity: switch.entrance_garland
-#            name: Garland sw
-#            tap_action: toggle
           - entity: light.entrance_garland
             name: Garland
-#            tap_action: toggle
+            tap_action: toggle
           - entity: light.livingroom_torch
             name: Torch
           - entity: light.livingroom_corner

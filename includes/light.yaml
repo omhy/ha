@@ -29,9 +29,9 @@
 
 - platform: mqtt
   name: entrance_garland
-  state_topic: "stat/sonoff1/POWER"
-  command_topic: "cmnd/sonoff1/POWER"
-  availability_topic: "tele/sonoff1/LWT"
+  state_topic: "stat/sonoffgrl/POWER"
+  command_topic: "cmnd/sonoffgrl/POWER"
+  availability_topic: "tele/sonoffgrl/LWT"
   qos: 1
   payload_on: "ON"
   payload_off: "OFF"

@@ -15,6 +15,7 @@ homeassistant:
 
 map:
 sun:
+#discovery:
 hassio:
 config:
 frontend:
@@ -39,9 +40,6 @@ tts:
 
 system_log:
   max_entries: 20
-
-mqtt:
-  broker: core-mosquitto
 
 influxdb:
   host: 192.168.1.10
