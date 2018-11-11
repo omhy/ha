@@ -1,9 +1,7 @@
 resources:
   - url: /local/monster-card.js?v=0.2.3
     type: js
-  - url: /local/tracker-card.js?v=0.1.4
-    type: js
-  - url: /local/mini-media-player-bundle.js?v=0.9.1
+  - url: /local/mini-media-player-bundle.js?v=0.9.2
     type: module
 
 title: Home
@@ -12,6 +10,10 @@ views:
   - title: Main
     id: main
     icon: mdi:floor-plan
+    badges:
+      - sun.sun
+      - sensor.moon
+      - device_tracker.google_maps_111683533988744565132
     cards:
       - type: glance
         title: Lights
@@ -646,7 +648,7 @@ views:
           title: Automations (entrance door)
         filter:
           include:
-            - entity_id: "automation.entrance_door*"
+            - entity_id: automation.entrance_door*
 
       - type: custom:monster-card
         card:
@@ -654,7 +656,7 @@ views:
           title: Automations (scheduled)
         filter:
           include:
-            - entity_id: "automation.schedule*"
+            - entity_id: automation.schedule*
 
       - type: custom:monster-card
         card:
@@ -662,7 +664,7 @@ views:
           title: Automations (states)
         filter:
           include:
-            - entity_id: "automation.state*"
+            - entity_id: automation.state*
 
       - type: custom:monster-card
         card:
@@ -697,6 +699,7 @@ views:
         filter:
           include:
             - entity_id: script.ha*
+
       - id: 0344a4e147be4cf8b67691f6fab11401  # Automatically created id
         type: custom:monster-card
         card:
@@ -705,6 +708,7 @@ views:
         filter:
           include:
             - entity_id: script.aqara*
+
       - id: 7afa9e5b5dd94d908cdeb2ed0cc02acb  # Automatically created id
         type: custom:monster-card
         card:
@@ -721,6 +725,7 @@ views:
         filter:
           include:
             - entity_id: script.light*
+
       - id: 26995327405141a19e3d6c15a9e86c71  # Automatically created id
         type: custom:monster-card
         card:
@@ -729,6 +734,7 @@ views:
         filter:
           include:
             - entity_id: script.cam*
+
       - id: 086c0481d1ac402982db146b3911a1bb  # Automatically created id
         type: custom:monster-card
         card:
@@ -737,6 +743,7 @@ views:
         filter:
           include:
             - entity_id: script.tts*
+
       - id: 7105eb6f65d5404f9ed6591bd27996e6  # Automatically created id
         type: custom:monster-card
         card:
@@ -771,7 +778,7 @@ views:
       - id: c6560f5249644e56ab9ba3f3c39b0530  # Automatically created id
         type: custom:monster-card
         card:
-          type: entities
+          type: glance
           title: Binary Sensors
         filter:
           include:
@@ -780,49 +787,173 @@ views:
       - id: aac21d7a46ef4bb8a995e5cf660239e9  # Automatically created id
         type: custom:monster-card
         card:
-          type: entities
+          type: glance
           title: Lights
         filter:
           include:
             - domain: light
 
-      - id: d38d37d32b7e4cd789b1c3892d472968  # Automatically created id
-        type: custom:monster-card
+      - type: custom:monster-card
         card:
-          type: entities
+          type: glance
           title: Inputs
         filter:
           include:
-            - domain: input_number
             - domain: input_select
             - domain: input_boolean
             - domain: input_text
 
       - type: custom:monster-card
         card:
-          type: entities
+          type: glance
+          title: Input numbers (hue)
+        filter:
+          include:
+          - entity_id: input_number.*hue*
+
+      - type: custom:monster-card
+        card:
+          type: glance
+          title: Input numbers (brightness)
+        filter:
+          include:
+          - entity_id: input_number.*brightness*
+
+      - type: custom:monster-card
+        card:
+          type: glance
+          title: Input numbers (transition)
+        filter:
+          include:
+          - entity_id: input_number.*transition*
+
+      - type: custom:monster-card
+        card:
+          type: glance
+          title: Input numbers (mired)
+        filter:
+          include:
+          - entity_id: input_number.*mired*
+
+      - type: custom:monster-card
+        card:
+          type: glance
+          title: Input numbers (other)
+        filter:
+          include:
+          - domain: input_number
+          exclude:
+          - entity_id: input_number.*hue*
+          - entity_id: input_number.*brightness*
+          - entity_id: input_number.*transition*
+          - entity_id: input_number.*mired*
+
+
+      - type: custom:monster-card
+        card:
+          type: glance
           title: TTS
         filter:
           include:
-            - entity_id: '*tts*'
+            - entity_id: "*tts*"
 
       - type: custom:monster-card
         card:
-          type: entities
-          title: Sensors
-        filter:
-          include:
-            - domain: sensor
-          exclude:
-            - entity_id: sensor.wt*
-
-      - type: custom:monster-card
-        card:
-          type: entities
+          type: glance
           title: Switches
         filter:
           include:
             - domain: switch
+
+      - type: custom:monster-card
+        card:
+          type: glance
+          title: Sensor (temperature)
+        filter:
+          include:
+          - entity_id: sensor.*temp*
+          exclude:
+          - entity_id: sensor.wt*
+
+      - type: custom:monster-card
+        card:
+          type: glance
+          title: Sensor (humidity)
+        filter:
+          include:
+          - entity_id: sensor.*humidity*
+          exclude:
+          - entity_id: sensor.wt*
+
+      - type: custom:monster-card
+        card:
+          type: glance
+          title: Sensor (pressure)
+        filter:
+          include:
+          - entity_id: sensor.*pressure*
+          exclude:
+          - entity_id: sensor.wt*
+
+      - type: custom:monster-card
+        card:
+          type: glance
+          title: Sensor (motions)
+        filter:
+          include:
+          - entity_id: sensor.*motion*
+
+      - type: custom:monster-card
+        card:
+          type: glance
+          title: Sensor (illumination)
+        filter:
+          include:
+          - entity_id: sensor.*illumination*
+
+      - type: custom:monster-card
+        card:
+          type: glance
+          title: Sensor (power)
+        filter:
+          include:
+          - entity_id: sensor.*power*
+
+      - type: custom:monster-card
+        card:
+          type: glance
+          title: Sensor (pandorabox)
+        filter:
+          include:
+          - entity_id: sensor.*pandorabox*
+
+      - type: custom:monster-card
+        card:
+          type: glance
+          title: Sensor (skin)
+        filter:
+          include:
+          - entity_id: sensor.*skin*
+
+      - type: custom:monster-card
+        card:
+          type: glance
+          title: Sensor (other)
+        filter:
+          include:
+          - domain: sensor
+          exclude:
+          - entity_id: sensor.wt*
+          - entity_id: sensor.*temp*
+          - entity_id: sensor.*humidity*
+          - entity_id: sensor.*battery*
+          - entity_id: sensor.*motion*
+          - entity_id: sensor.*illumination*
+          - entity_id: sensor.*power*
+          - entity_id: sensor.*pressure*
+          - entity_id: sensor.*pandorabox*
+          - entity_id: sensor.*skin*
+          - entity_id: sensor.*waze*
 
 ##################   LINKS
   - title: Links
