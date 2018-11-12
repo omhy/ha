@@ -23,22 +23,6 @@
     data_template:
       message: "{{ now().strftime('%H:%M') }} \U0001F4BC Dima leaves"
 
-- alias: "zone_dima_leaves_work_tts"
-  initial_state: "on"
-  trigger:
-  - platform: zone
-    entity_id: device_tracker.google_maps_111683533988744565132
-    zone: zone.work
-    event: leave
-  condition:
-  - condition: time
-    after: '15:00:00'
-  - condition: state
-    entity_id: sensor.is_workday
-    state: "True"
-  action:
-  - service: script.tts_dima_leaves_work
-
 - alias: "zone_dima_enters_home"
   initial_state: "on"
   trigger:

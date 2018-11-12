@@ -185,29 +185,3 @@ sensor.version_ha_current:
 switch.turn_off_bb:
   assumed_state: false
   icon: mdi:computer
-
-#BATTERIES
-sensor.t1_battery_level:
-  friendly_name: Chdroom climate sensor
-sensor.t2_battery_level:
-  friendly_name: Bedroom climate sensor
-sensor.t3_battery_level:
-  friendly_name: Outside climate sensor
-sensor.t4_battery_level:
-  friendly_name: Living room climate sensor
-sensor.t5_battery_level:
-  friendly_name: Kitchen climate sensor
-sensor.livingroom_light_button_battery_level:
-  friendly_name: Living room light button
-sensor.doorbell_button_battery_level:
-  friendly_name: Doorbell
-sensor.motion1_battery_level:
-  friendly_name: Bathroom motion sensor
-sensor.motion2_battery_level:
-  friendly_name: Living room motion sensor
-sensor.door_sensor_battery_level:
-  friendly_name: Entrance door sensor
-sensor.sw1_standalone_battery_level:
-  friendly_name: Standalone switch 1
-sensor.cube_battery_level:
-  friendly_name: Cube
