@@ -415,8 +415,8 @@ views:
       - type: glance
         title: Computers
         entities:
-        - binary_sensor.computer
-        - binary_sensor.laptop
+        - binary_sensor.ping_computer
+        - binary_sensor.ping_laptop
 
 
 ##################   INFO

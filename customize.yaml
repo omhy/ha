@@ -107,12 +107,31 @@ input_number.tts_volume:
   icon: mdi:volume-high
 
 #BINARY SENSORS
-binary_sensor.computer:
+binary_sensor.ping_computer:
   friendly_name: Computer
   icon: mdi:desktop-classic
-binary_sensor.laptop:
+binary_sensor.ping_laptop:
   friendly_name: Laptop
   icon: mdi:laptop
+binary_sensor.ping_android_box_wifi:
+  friendly_name: Android box wifi
+  icon: mdi:android
+binary_sensor.ping_google_home:
+  friendly_name: Google home
+  icon: mdi:google-home
+binary_sensor.ping_google_home_mini:
+  friendly_name: Google home mini
+  icon: mdi:music-box
+binary_sensor.ping_yeelight_corner:
+  friendly_name: Corner
+  icon: mdi:network
+binary_sensor.ping_yeelight_torch:
+  friendly_name: Torch
+  icon: mdi:network
+binary_sensor.ping_yeelight_small_torch:
+  friendly_name: Small torch
+  icon: mdi:network
+
 #cube
 binary_sensor.cube_158d00028776ae:
   friendly_name: cube
