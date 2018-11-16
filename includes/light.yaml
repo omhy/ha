@@ -27,6 +27,13 @@
   - light.small_torch
   - light.entrance_garland
 
+- platform: group
+  name: group_morning_core
+  entities:
+  - light.livingroom_torch
+  - light.livingroom_corner
+  - light.entrance_garland
+
 - platform: mqtt
   name: entrance_garland
   state_topic: "stat/sonoffgrl/POWER"
