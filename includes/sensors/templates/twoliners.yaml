@@ -87,6 +87,10 @@
       value_template: "{{ states.switch.power_strip_4.attributes.load_power | float }}"
       unit_of_measurement: "Wh"
       entity_id: switch.power_strip_4
+    power_strip_5_load_power:
+      value_template: "{{ states.switch.power_strip_5.attributes.load_power | float }}"
+      unit_of_measurement: "Wh"
+      entity_id: switch.power_strip_5
 #LOCATION
     dima_is_home:
       value_template: "{{ is_state('device_tracker.google_maps_111683533988744565132', 'home') }}"

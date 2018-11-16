@@ -400,6 +400,20 @@ views:
           - entity: sensor.power_strip_2_mean
             name: 1h mean
       - type: glance
+        title: Fridge
+        show_header_toggle: true
+        entities:
+          - entity: sensor.power_strip_5_load_power
+            name: Current
+          - entity: sensor.power_fridge_day
+            name: Today
+          - entity: sensor.power_fridge_week
+            name: Week
+          - entity: sensor.power_fridge_month
+            name: Month
+          - entity: sensor.power_strip_5_mean
+            name: 1h mean
+      - type: glance
         title: Power cords
         show_header_toggle: false
         entities:
@@ -411,6 +425,8 @@ views:
             name: TV
           - entity: switch.power_strip_2
             name: Kitchen
+          - entity: switch.power_strip_5
+            name: Fridge
 
       - type: glance
         title: Computers

@@ -51,6 +51,19 @@
   unit_of_measurement: "kW"
   
 - platform: mqtt
+  state_topic: "power/fridge/day"
+  name: "power_fridge_day"
+  unit_of_measurement: "kW"
+- platform: mqtt
+  state_topic: "power/fridge/week"
+  name: "power_fridge_week"
+  unit_of_measurement: "kW"
+- platform: mqtt
+  state_topic: "power/fridge/month"
+  name: "power_fridge_month"
+  unit_of_measurement: "kW"
+  
+- platform: mqtt
   state_topic: "livingroom/motions"
   name: "livingroom_motions"
 - platform: mqtt

@@ -186,6 +186,8 @@ switch.power_strip_3:
   friendly_name: Router cord
 switch.power_strip_4:
   friendly_name: Tv cord
+switch.power_strip_5:
+  friendly_name: Fridge
 switch.wall_plug_158d0002013f1e:
   friendly_name: Short cord
 
@@ -197,6 +199,8 @@ sensor.power_strip_3_load_power:
   friendly_name: power/router/current
 sensor.power_strip_4_load_power:
   friendly_name: power/tv/current
+sensor.power_strip_5_load_power:
+  friendly_name: power/fridge/current
 
 sensor.version_ha_current:
   friendly_name: Installed

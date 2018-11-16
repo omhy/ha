@@ -55,12 +55,7 @@ tts_consumption:
         Рутер - {{ states.sensor.power_router_day.state | round(2) }}.
         Телевизор - {{ states.sensor.power_tv_day.state | round(2) }}.
         Кухня - {{ states.sensor.power_kitchen_day.state | round(2) }}.
-
-tts_dima_leaves_work:
-  sequence:
-  - service: script.tts_say_kitchen
-    data_template:
-      message: "Дима ушёл с работы в {{ states.sensor.time.state }}."
+        Холодильник - {{ states.sensor.power_fridge_day.state | round(2) }}.
 
 tts_say_kitchen:
   sequence:

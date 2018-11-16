@@ -60,7 +60,8 @@ telegram_send_electro:
         {{ '\U0001F6E1' }}` ntw {{ frm | format(states.sensor.power_router_day.state | round(2), states.sensor.power_router_month.state | round(2), states.sensor.power_strip_3_load_power.state | round(2)) }}`
 
         {{ '\U0001F37D' }}` ktc {{ frm | format(states.sensor.power_kitchen_day.state | round(2), states.sensor.power_kitchen_month.state | round(2), states.sensor.power_strip_2_load_power.state | round(2)) }}`
-
+        
+        {{ '\U0001F969' }}` frg {{ frm | format(states.sensor.power_fridge_day.state | round(2), states.sensor.power_fridge_month.state | round(2), states.sensor.power_strip_5_load_power.state | round(2)) }}`
       inline_keyboard:
       - "\U0001F504 Refresh:/electro, \U0000267B Dismiss:/dismiss"
 

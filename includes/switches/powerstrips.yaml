@@ -14,3 +14,8 @@
   name: power_strip_4
   host: !secret power_strip_4_ip
   token: !secret power_strip_4_token
+- platform: xiaomi_miio
+  name: power_strip_5
+  host: !secret power_strip_5_ip
+  token: !secret power_strip_5_token
+  
