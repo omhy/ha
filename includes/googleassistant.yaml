@@ -19,6 +19,11 @@ entity_config:
     expose: true
     room: Childrens Room
 
+  witch.wall_plug_158d0002013f1e:
+    name: Star
+    expose: true
+    room: Childrens Room
+
   script.rmt_computer_sleep:
     name: Computer sleep
     expose: true
