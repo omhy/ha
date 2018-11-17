@@ -45,6 +45,9 @@
       topic: "power/tv/day"
   - service: script.mqtt_publish_zero
     data_template:
+      topic: "power/fridge/day"
+  - service: script.mqtt_publish_zero
+    data_template:
       topic: "bathroom/motions"
   - service: script.mqtt_publish_zero
     data_template:
@@ -71,6 +74,9 @@
   - service: script.mqtt_publish_zero
     data_template:
       topic: "power/tv/week"
+  - service: script.mqtt_publish_zero
+    data_template:
+      topic: "power/fridge/week"
 
 - alias: "mqtt_power_reset_month"
   initial_state: "on"
@@ -93,3 +99,6 @@
   - service: script.mqtt_publish_zero
     data_template:
       topic: "power/tv/month"
+  - service: script.mqtt_publish_zero
+    data_template:
+      topic: "power/fridge/month"
