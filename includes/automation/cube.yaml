@@ -142,6 +142,7 @@
       - light.livingroom_torch
       - light.entrance_garland
   - service: script.rmt_computer_sleep
+  - service: script.light_turn_off_entrance_garland
 
 #   action_type: move
 #   action_type: shake_air
