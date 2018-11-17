@@ -3,17 +3,19 @@
   trigger:
   - platform: time
     at: "23:59:00"
-  - platform: sun
-    event: sunset
-    offset: "05:00:00"
+#  - platform: sun
+#    event: sunset
+#    offset: "05:00:00"
   action:
   - service: script.light_turn_off_entrance_garland
 
 - alias: "light_on_at_the_sunset"
   initial_state: "on"
   trigger:
-  - platform: sun
-    event: sunset
-    offset: "01:00:00"
+  - platform: time
+    at: "17:00:00"
+#  - platform: sun
+#    event: sunset
+#    offset: "01:00:00"
   action:
   - service: script.light_turn_on_entrance_garland
