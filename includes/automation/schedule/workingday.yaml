@@ -14,7 +14,6 @@
       brightness: "20"
       color_temp: "500"
       transition: "20"
-  - service: script.light_turn_on_entrance_garland
 
 - alias: "working_day_light_ready_1"
   initial_state: "on"

@@ -43,16 +43,6 @@ light_turn_off_flow:
     - input_boolean.livingroom_torch_use
     - input_boolean.livingroom_corner_use
 
-light_turn_off_entrance_garland:
-  sequence:
-  - service: light.turn_off
-    entity_id: light.entrance_garland
-
-light_turn_on_entrance_garland:
-  sequence:
-  - service: light.turn_on
-    entity_id: light.entrance_garland
-
 light_turn_on_livingroom_torch_by_params:
   sequence:
   - service: script.light_turn_off_flow
