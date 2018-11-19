@@ -20,14 +20,13 @@ views:
         title: Lights
         entities:
           - entity: light.garland
-            name: Garland
             tap_action: toggle
           - entity: light.big_torch
-            name: Big torch
           - entity: light.corner_lamp
-            name: Corner lamp
           - entity: light.small_torch
-            name: Small torch
+          - entity: light.fire_lamp
+            name: Fire lamp
+            tap_action: toggle
           - entity: switch.wall_plug_158d0002013f1e
             name: Star
             icon: mdi:star-outline
@@ -75,7 +74,7 @@ views:
 
       - type: custom:mini-media-player
         entity: media_player.yury_speaker
-        icon: mdi:music-box
+        icon: mdi:dots-horizontal-circle
         artwork: cover
         short_info: true
 

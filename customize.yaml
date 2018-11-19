@@ -4,6 +4,9 @@ light.gateway_light_7811dcb36cee:
 light.big_torch:
   friendly_name: Big torch
   icon: mdi:floor-lamp
+light.garland:
+  friendly_name: Garland
+  icon: mdi:dots-horizontal
 light.corner_lamp:
   friendly_name: Corner
   icon: mdi:lamp
