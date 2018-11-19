@@ -9,7 +9,11 @@
     state: "True"
   action:
   - service: light.turn_on
-    entity_id: light.morning_core
+    entity_id:
+    - light.big_torch
+    - light.corner_lamp
+    - light.fire_lamp
+    - light.garland
     data_template:
       brightness: "20"
       color_temp: "500"
@@ -28,6 +32,7 @@
   - service: light.turn_on
     entity_id: light.morning
     data_template:
+      brightness: "50"
       hs_color: [ 100, 100 ]
   - service: script.tts_summary
 

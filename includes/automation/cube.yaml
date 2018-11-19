@@ -137,8 +137,9 @@
   action:
   - service: light.turn_off
     entity_id:
-    - light.corner_lamp
     - light.big_torch
+    - light.corner_lamp
+    - light.fire_lamp
     - light.garland
   - service: script.rmt_computer_sleep
 
