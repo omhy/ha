@@ -19,13 +19,13 @@ views:
       - type: glance
         title: Lights
         entities:
-          - entity: light.entrance_garland
+          - entity: light.garland
             name: Garland
             tap_action: toggle
           - entity: light.livingroom_torch
-            name: Torch
+            name: Big torch
           - entity: light.livingroom_corner
-            name: Corner
+            name: Corner lamp
           - entity: light.small_torch
             name: Small torch
           - entity: switch.wall_plug_158d0002013f1e
@@ -981,6 +981,10 @@ views:
           - type: weblink
             name: Sonoff garland
             url: http://192.168.1.40/
+            icon: mdi:switch
+          - type: weblink
+            name: Sonoff fire lamp
+            url: http://192.168.1.41/
             icon: mdi:switch
           - type: weblink
             name: Influx DB

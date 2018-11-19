@@ -13,35 +13,48 @@
       transition: 1000
       use_music_mode: True
 
-- platform: group
-  name: group_livingroom_ambient
-  entities:
-  - light.livingroom_torch
-  - light.livingroom_corner
-
-- platform: group
-  name: group_morning
-  entities:
-  - light.livingroom_torch
-  - light.livingroom_corner
-  - light.small_torch
-  - light.entrance_garland
-
-- platform: group
-  name: group_morning_core
-  entities:
-  - light.livingroom_torch
-  - light.livingroom_corner
-  - light.entrance_garland
-
 - platform: mqtt
-  name: entrance_garland
-  state_topic: "stat/sonoffgrl/POWER"
-  command_topic: "cmnd/sonoffgrl/POWER"
-  availability_topic: "tele/sonoffgrl/LWT"
+  name: garland
+  state_topic: "stat/sonoff_garland/POWER"
+  command_topic: "cmnd/sonoff_garland/POWER"
+  availability_topic: "tele/sonoff_garland/LWT"
   qos: 1
   payload_on: "ON"
   payload_off: "OFF"
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+
+- platform: mqtt
+  name: firelamp
+  state_topic: "stat/sonoff_firelamp/POWER"
+  command_topic: "cmnd/sonoff_firelamp/POWER"
+  availability_topic: "tele/sonoff_firelamp/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
+
+- platform: group
+  name: livroom_ambient
+  entities:
+  - light.livingroom_torch
+  - light.livingroom_corner
+
+- platform: group
+  name: morning
+  entities:
+  - light.livingroom_torch
+  - light.livingroom_corner
+  - light.small_torch
+  - light.garland
+
+- platform: group
+  name: morning_core
+  entities:
+  - light.livingroom_torch
+  - light.livingroom_corner
+  - light.garland
+

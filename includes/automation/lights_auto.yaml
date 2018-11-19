@@ -32,7 +32,7 @@
       click_type: single
   condition:
   - condition: state
-    entity_id: light.group_livingroom_ambient
+    entity_id: light.livroom_ambient
     state: "on"
   action:
   - service: light.turn_off
@@ -50,7 +50,7 @@
       click_type: single
   condition:
   - condition: state
-    entity_id: light.group_livingroom_ambient
+    entity_id: light.livroom_ambient
     state: "off"
   action:
   - service: script.light_turn_on_livingroom_torch_by_params
