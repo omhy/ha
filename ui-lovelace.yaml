@@ -22,9 +22,9 @@ views:
           - entity: light.garland
             name: Garland
             tap_action: toggle
-          - entity: light.livingroom_torch
+          - entity: light.big_torch
             name: Big torch
-          - entity: light.livingroom_corner
+          - entity: light.corner_lamp
             name: Corner lamp
           - entity: light.small_torch
             name: Small torch
@@ -243,9 +243,9 @@ views:
         show_header_toggle: false
         title: Light sources
         entities:
-          - entity: light.livingroom_torch
+          - entity: light.big_torch
             name: Living room - Torch
-          - entity: light.livingroom_corner
+          - entity: light.corner_lamp
             name: Living room - Corner
           - entity: light.small_torch
             name: Children room - Small torch

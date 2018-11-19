@@ -137,8 +137,8 @@
   action:
   - service: light.turn_off
     entity_id:
-    - light.livingroom_corner
-    - light.livingroom_torch
+    - light.corner_lamp
+    - light.big_torch
     - light.garland
   - service: script.rmt_computer_sleep
 
@@ -153,8 +153,8 @@
   action:
   - service: light.turn_on
     entity_id:
-    - light.livingroom_corner
-    - light.livingroom_torch
+    - light.corner_lamp
+    - light.big_torch
     data_template:
       brightness: "1"
       color_temp: "500"

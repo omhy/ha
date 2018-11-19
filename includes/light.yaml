@@ -1,11 +1,11 @@
 - platform: yeelight
   devices:
     192.168.1.131:
-      name: livingroom_torch
+      name: big_torch
       transition: 1000
       use_music_mode: True
     192.168.1.132:
-      name: livingroom_corner
+      name: corner_lamp
       transition: 1000
       use_music_mode: True
     192.168.1.133:
@@ -26,7 +26,7 @@
   retain: false
 
 - platform: mqtt
-  name: firelamp
+  name: fire_lamp
   state_topic: "stat/sonoff_firelamp/POWER"
   command_topic: "cmnd/sonoff_firelamp/POWER"
   availability_topic: "tele/sonoff_firelamp/LWT"
@@ -40,21 +40,21 @@
 - platform: group
   name: livroom_ambient
   entities:
-  - light.livingroom_torch
-  - light.livingroom_corner
+  - light.big_torch
+  - light.corner_lamp
 
 - platform: group
   name: morning
   entities:
-  - light.livingroom_torch
-  - light.livingroom_corner
+  - light.big_torch
+  - light.corner_lamp
   - light.small_torch
   - light.garland
 
 - platform: group
   name: morning_core
   entities:
-  - light.livingroom_torch
-  - light.livingroom_corner
+  - light.big_torch
+  - light.corner_lamp
   - light.garland
 
