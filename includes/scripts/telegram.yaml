@@ -3,11 +3,10 @@ telegram_send_outside:
   - service: telegram_bot.send_message
     data_template:
       target: "{{target}}"
+      title: "Temperatures {{ now().strftime('%Y-%m-%d') }}"
       message: >
         {% set frm1 = "%7s @ %5s" %}
         {% set frm2 = "%7s" %}
-
-        {{ now().strftime('%Y-%m-%d') }}
 
         {{ '\U0001F535' }} `min {{ frm1 | format(states.sensor.outside_temperature_min.state_with_unit, states.sensor.outside_temperature_min_at.state|default('-')) }}`
 
@@ -47,7 +46,7 @@ telegram_send_electro:
   - service: telegram_bot.send_message
     data_template:
       target: "{{target}}"
-      title: "Power consumption"
+      title: "Power consumption {{ now().strftime('%Y-%m-%d') }}"
       message: >
         {% set frm = "%-5s| %-6s| %-5s" %}
 
