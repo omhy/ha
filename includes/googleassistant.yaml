@@ -2,32 +2,34 @@ project_id: !secret google_actions_project_id
 api_key: !secret google_cloud_api_key
 expose_by_default: false
 entity_config:
+#Entrance
   light.garland:
-    name: Garland
+    name: Snake
     expose: true
     room: Entrance
+#Living room
   light.big_torch:
-    name: Big torch
+    name: Giraffe
     expose: true
     room: Living Room
   light.corner_lamp:
-    name: Corner lamp
+    name: Cat
     expose: true
     room: Living Room
   light.fire_lamp:
-    name: Fire lamp
+    name: Fox
     expose: true
     room: Living Room
+#Chd rom
   light.small_torch:
-    name: Small torch
+    name: Jellyfish
     expose: true
     room: Childrens Room
-
   switch.wall_plug_158d0002013f1e:
-    name: Star
+    name: Starfish
     expose: true
     room: Childrens Room
-
+#Scripts
   script.rmt_computer_sleep:
     name: Computer sleep
     expose: true
@@ -36,7 +38,7 @@ entity_config:
     name: Laptop sleep
     expose: true
     room: Speaker
-
+#Scripts tts
   script.tts_summary:
     name: Say summary
     expose: true
