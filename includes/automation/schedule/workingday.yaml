@@ -9,7 +9,11 @@
     state: "True"
   action:
   - service: light.turn_on
-    entity_id: light.morning
+    entities:
+      - light.torch_giraffe
+      - light.corner_cat
+      - light.fire_fox
+      - light.garland_snake
     data_template:
       brightness: "5"
       color_temp: "500"

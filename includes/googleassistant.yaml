@@ -3,25 +3,25 @@ api_key: !secret google_cloud_api_key
 expose_by_default: false
 entity_config:
 #Entrance
-  light.garland:
+  light.garland_snake:
     name: Snake
     expose: true
     room: Entrance
 #Living room
-  light.big_torch:
+  light.torch_giraffe:
     name: Giraffe
     expose: true
     room: Living Room
-  light.corner_lamp:
+  light.corner_cat:
     name: Cat
     expose: true
     room: Living Room
-  light.fire_lamp:
+  light.fire_fox:
     name: Fox
     expose: true
     room: Living Room
 #Chd rom
-  light.small_torch:
+  light.torch_jellyfish:
     name: Jellyfish
     expose: true
     room: Childrens Room

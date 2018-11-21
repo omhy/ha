@@ -1,19 +1,19 @@
 #LIGHTS
 light.gateway_light_7811dcb36cee:
   friendly_name: livingroom_gateway
-light.big_torch:
+light.torch_giraffe:
   friendly_name: Big torch
   icon: mdi:floor-lamp
-light.garland:
-  friendly_name: Garland
+light.garland_snake:
+  friendly_name: garland_snake
   icon: mdi:dots-horizontal
-light.corner_lamp:
+light.corner_cat:
   friendly_name: Corner
   icon: mdi:lamp
-light.small_torch:
+light.torch_jellyfish:
   friendly_name: Small torch
   icon: mdi:lava-lamp
-light.fire_lamp:
+light.fire_fox:
   friendly_name: Fire lamp
   icon: mdi:fire
 

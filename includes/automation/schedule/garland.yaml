@@ -8,7 +8,7 @@
 #    offset: "05:00:00"
   action:
   - service: light.turn_off
-    entity_id: light.garland
+    entity_id: light.garland_snake
 
 - alias: "light_on_at_the_sunset"
   initial_state: "on"
@@ -20,4 +20,4 @@
 #    offset: "01:00:00"
   action:
   - service: light.turn_on
-    entity_id: light.garland
+    entity_id: light.garland_snake

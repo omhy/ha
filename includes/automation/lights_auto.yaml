@@ -20,7 +20,7 @@
       click_type: single
   action:
   - service: light.toggle
-    entity_id: light.small_torch
+    entity_id: light.torch_jellyfish
 
 - alias: "light_button_single_when_light_is_on"
   initial_state: "on"
@@ -107,11 +107,11 @@
     data_template:
       id: >
         {% if is_state('input_boolean.livingroom_torch_use', 'on') and is_state('input_boolean.livingroom_corner_use', 'on') %}
-          light.big_torch,light.corner_lamp
+          light.torch_giraffe,light.corner_cat
         {% elif is_state('input_boolean.livingroom_torch_use', 'on') %}
-          light.big_torch
+          light.torch_giraffe
         {% elif is_state('input_boolean.livingroom_corner_use', 'on') %}
-          light.corner_lamp
+          light.corner_cat
         {% endif %}
       hue: >
         {% if is_state('input_select.living_room_flow', 'custom') %}

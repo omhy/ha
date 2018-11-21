@@ -19,12 +19,12 @@ views:
       - type: glance
         title: Lights
         entities:
-          - entity: light.garland
+          - entity: light.garland_snake
             tap_action: toggle
-          - entity: light.big_torch
-          - entity: light.corner_lamp
-          - entity: light.small_torch
-          - entity: light.fire_lamp
+          - entity: light.torch_giraffe
+          - entity: light.corner_cat
+          - entity: light.torch_jellyfish
+          - entity: light.fire_fox
             name: Fire lamp
             tap_action: toggle
           - entity: switch.wall_plug_158d0002013f1e
@@ -242,11 +242,11 @@ views:
         show_header_toggle: false
         title: Light sources
         entities:
-          - entity: light.big_torch
+          - entity: light.torch_giraffe
             name: Living room - Torch
-          - entity: light.corner_lamp
+          - entity: light.corner_cat
             name: Living room - Corner
-          - entity: light.small_torch
+          - entity: light.torch_jellyfish
             name: Children room - Small torch
       - type: entities
         title: Torch defaults
@@ -978,7 +978,7 @@ views:
             url: http://192.168.1.1/
             icon: mdi:router-wireless
           - type: weblink
-            name: Sonoff garland
+            name: Sonoff garland_snake
             url: http://192.168.1.40/
             icon: mdi:switch
           - type: weblink

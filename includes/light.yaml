@@ -1,20 +1,20 @@
 - platform: yeelight
   devices:
     192.168.1.131:
-      name: big_torch
+      name: torch_giraffe
       transition: 1000
       use_music_mode: True
     192.168.1.132:
-      name: corner_lamp
+      name: corner_cat
       transition: 1000
       use_music_mode: True
     192.168.1.133:
-      name: small_torch
+      name: torch_jellyfish
       transition: 1000
       use_music_mode: True
 
 - platform: mqtt
-  name: garland
+  name: garland_snake
   state_topic: "stat/sonoff_garland/POWER"
   command_topic: "cmnd/sonoff_garland/POWER"
   availability_topic: "tele/sonoff_garland/LWT"
@@ -26,7 +26,7 @@
   retain: false
 
 - platform: mqtt
-  name: fire_lamp
+  name: fire_fox
   state_topic: "stat/sonoff_firelamp/POWER"
   command_topic: "cmnd/sonoff_firelamp/POWER"
   availability_topic: "tele/sonoff_firelamp/LWT"
@@ -40,15 +40,15 @@
 - platform: group
   name: livroom_ambient
   entities:
-  - light.big_torch
-  - light.corner_lamp
+  - light.torch_giraffe
+  - light.corner_cat
 
 - platform: group
   name: morning
   entities:
-  - light.big_torch
-  - light.corner_lamp
-  - light.fire_lamp
-  - light.small_torch
-  - light.garland
+  - light.torch_giraffe
+  - light.corner_cat
+  - light.fire_fox
+  - light.torch_jellyfish
+  - light.garland_snake
 
