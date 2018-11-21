@@ -46,7 +46,9 @@
 - platform: group
   name: morning
   entities:
-  - light.livroom_ambient
-  - light.garland
+  - light.big_torch
+  - light.corner_lamp
   - light.fire_lamp
+  - light.small_torch
+  - light.garland
 

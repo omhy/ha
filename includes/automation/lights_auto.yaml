@@ -36,9 +36,7 @@
     state: "on"
   action:
   - service: light.turn_off
-    entity_id:
-    - light.corner_lamp
-    - light.big_torch
+    entity_id: light.livroom_ambient
 
 - alias: "light_button_single_when_light_is_off"
   initial_state: "on"
@@ -53,8 +51,8 @@
     entity_id: light.livroom_ambient
     state: "off"
   action:
-  - service: script.light_turn_on_livingroom_torch_by_params
-  - service: script.light_turn_on_livingroom_corner_by_params
+  - service: script.light_turn_on_big_torch_by_params
+  - service: script.light_turn_on_corner_lamp_by_params
 
 - alias: "light_button_double_when_flow_is_off"
   initial_state: "on"

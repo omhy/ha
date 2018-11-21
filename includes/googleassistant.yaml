@@ -18,10 +18,6 @@ entity_config:
     name: Fire lamp
     expose: true
     room: Living Room
-  light.livroom_ambient:
-    name: Ambient
-    expose: true
-    room: Living Room
   light.small_torch:
     name: Small torch
     expose: true

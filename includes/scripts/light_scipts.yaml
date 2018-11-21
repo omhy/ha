@@ -43,7 +43,7 @@ light_turn_off_flow:
     - input_boolean.livingroom_torch_use
     - input_boolean.livingroom_corner_use
 
-light_turn_on_livingroom_torch_by_params:
+light_turn_on_big_torch_by_params:
   sequence:
   - service: script.light_turn_off_flow
   - service: light.turn_on
@@ -53,7 +53,7 @@ light_turn_on_livingroom_torch_by_params:
       color_temp: "{{ states.input_number.livingroom_torch_mired.state | int }}"
       transition: "{{ states.input_number.livingroom_torch_transition.state | int }}"
 
-light_turn_on_livingroom_corner_by_params:
+light_turn_on_corner_lamp_by_params:
   sequence:
   - service: script.light_turn_off_flow
   - service: light.turn_on
