@@ -2,13 +2,13 @@
 light.gateway_light_7811dcb36cee:
   friendly_name: livingroom_gateway
 light.torch_giraffe:
-  friendly_name: Giraffe | torch
+  friendly_name: Giraffe
   icon: mdi:floor-lamp
 light.garland_snake:
-  friendly_name: Snake | garland
+  friendly_name: Snake
   icon: mdi:dots-horizontal
 light.corner_cat:
-  friendly_name: Cat | corner
+  friendly_name: Cat
   icon: mdi:lamp
 light.torch_jellyfish:
   friendly_name: Jellyfish
@@ -195,7 +195,7 @@ switch.power_strip_4:
 switch.power_strip_5:
   friendly_name: Fridge
 switch.wall_plug_158d0002013f1e:
-  friendly_name: Starfish cord
+  friendly_name: Starfish
 
 sensor.power_strip_1_load_power:
   friendly_name: power/computer/current

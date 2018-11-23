@@ -30,7 +30,7 @@ views:
             icon: mdi:star-outline
             tap_action: toggle
           - entity: switch.wall_switch_left_158d00022391ec
-            name: Small corridor
+            name: Corridor
             icon: mdi:ceiling-light
             tap_action: toggle
           - entity: switch.wall_switch_right_158d00022391ec
