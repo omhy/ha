@@ -1,7 +1,7 @@
 resources:
   - url: /local/monster-card.js?v=0.2.3
     type: js
-  - url: /local/mini-media-player-bundle.js?v=0.9.2
+  - url: /local/mini-media-player-bundle.js?v=0.9.4
     type: module
 
 title: Home
@@ -25,10 +25,8 @@ views:
           - entity: light.corner_cat
           - entity: light.torch_jellyfish
           - entity: light.fire_fox
-            name: Fire lamp
             tap_action: toggle
           - entity: switch.wall_plug_158d0002013f1e
-            name: Star
             icon: mdi:star-outline
             tap_action: toggle
           - entity: switch.wall_switch_left_158d00022391ec
