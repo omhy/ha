@@ -77,21 +77,21 @@ views:
         short_info: true
 
       - type: custom:mini-media-player
-        entity: media_player.spotify
-        artwork: cover
-        short_info: true
-        hide_volume: true
-        show_source: small
-        show_shuffle: true
-        hide_power: true
-        show_progress: true
-
-      - type: custom:mini-media-player
         entity: media_player.kodi
         icon: mdi:kodi
         artwork: cover
         short_info: true
         hide_volume: true
+        hide_power: true
+        show_progress: true
+
+      - type: custom:mini-media-player
+        entity: media_player.spotify
+        artwork: full-cover
+        short_info: true
+        hide_volume: true
+        show_source: small
+        show_shuffle: true
         hide_power: true
         show_progress: true
 
@@ -577,8 +577,7 @@ views:
     id: automations
     icon: mdi:creation
     cards:
-      - id: 7f11eea5e4f4405ea6512e51e0151895  # Automatically created id
-        type: custom:monster-card
+      - type: custom:monster-card
         card:
           type: entities
           title: Automations (working days)
@@ -592,56 +591,49 @@ views:
 #      filter:
 #        include:
 #        - entity_id: "automation.telegram*"
-      - id: 9abc6fffad6649ae8dca9b2539232330  # Automatically created id
-        type: custom:monster-card
+      - type: custom:monster-card
         card:
           type: entities
           title: Automations (zones)
         filter:
           include:
             - entity_id: automation.zone*
-      - id: 5d6a67b638fa491ca8a34dbaeb0527d3  # Automatically created id
-        type: custom:monster-card
+      - type: custom:monster-card
         card:
           type: entities
           title: Automations (cube)
         filter:
           include:
             - entity_id: automation.cube*
-      - id: e3a7e507958141de951d587b099a6937  # Automatically created id
-        type: custom:monster-card
+      - type: custom:monster-card
         card:
           type: entities
           title: Automations (mqtt)
         filter:
           include:
             - entity_id: automation.mqtt*
-      - id: 12830b59360f46d09d46f250bcb57c13  # Automatically created id
-        type: custom:monster-card
+      - type: custom:monster-card
         card:
           type: entities
           title: Automations (HA)
         filter:
           include:
             - entity_id: automation.ha*
-      - id: 3affdca0a5f14bd7a9d5f5ea7db6ab27  # Automatically created id
-        type: custom:monster-card
+      - type: custom:monster-card
         card:
           type: entities
           title: Automations (light)
         filter:
           include:
             - entity_id: automation.light*
-      - id: af2b14b7bae24e9c9feba713e180ea14  # Automatically created id
-        type: custom:monster-card
+      - type: custom:monster-card
         card:
           type: entities
           title: Automations (motion)
         filter:
           include:
             - entity_id: automation.motion*
-      - id: 84ac4e1e7cfb4727b77a1b8d14851ef8  # Automatically created id
-        type: custom:monster-card
+      - type: custom:monster-card
         card:
           type: entities
           title: Automations (doorbell)
@@ -676,6 +668,14 @@ views:
       - type: custom:monster-card
         card:
           type: entities
+          title: Automations (alert)
+        filter:
+          include:
+            - entity_id: automation.alert*
+              -
+      - type: custom:monster-card
+        card:
+          type: entities
           title: Automations (other)
         filter:
           include:
@@ -692,6 +692,7 @@ views:
             - entity_id: automation.doorbell*
             - entity_id: automation.entrance_door*
             - entity_id: automation.schedule*
+            - entity_id: automation.alert*
 
 ##################   SCRIPTS
   - title: Scripts

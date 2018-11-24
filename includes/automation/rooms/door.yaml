@@ -1,4 +1,4 @@
-- alias: "entrance_door_opened_too_long"
+- alias: "alert_entrance_door_opened_too_long"
   initial_state: "on"
   trigger:
   - platform: state
