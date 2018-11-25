@@ -11,6 +11,7 @@ views:
     id: main
     icon: mdi:floor-plan
     badges:
+      - sensor.temperature_158d00022c7cf2
       - device_tracker.google_maps_111683533988744565132
       - device_tracker.google_maps_115914092349482836896
       - sun.sun
@@ -19,12 +20,12 @@ views:
       - type: glance
         title: Lights
         entities:
-          - entity: light.garland_snake
+          - entity: light.garland
             tap_action: toggle
-          - entity: light.torch_giraffe
-          - entity: light.corner_cat
-          - entity: light.torch_jellyfish
-          - entity: light.fire_fox
+          - entity: light.big_torch
+          - entity: light.corner_lamp
+          - entity: light.small_torch
+          - entity: light.fire_lamp
             tap_action: toggle
           - entity: switch.wall_plug_158d0002013f1e
             icon: mdi:star-outline
@@ -240,12 +241,9 @@ views:
         show_header_toggle: false
         title: Light sources
         entities:
-          - entity: light.torch_giraffe
-            name: Living room - Torch
-          - entity: light.corner_cat
-            name: Living room - Corner
-          - entity: light.torch_jellyfish
-            name: Children room - Small torch
+          - entity: light.big_torch
+          - entity: light.corner_lamp
+          - entity: light.small_torch
       - type: entities
         title: Torch defaults
         entities:
@@ -392,6 +390,9 @@ views:
             name: Month
           - entity: sensor.power_strip_5_mean
             name: 1h mean
+          - entity: sensor.power_strip_5_15min_mean
+            name: 15m mean
+
       - type: glance
         title: Power cords
         show_header_toggle: false
@@ -977,7 +978,7 @@ views:
             url: http://192.168.1.1/
             icon: mdi:router-wireless
           - type: weblink
-            name: Sonoff garland_snake
+            name: Sonoff garland
             url: http://192.168.1.40/
             icon: mdi:switch
           - type: weblink

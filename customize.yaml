@@ -1,21 +1,23 @@
 #LIGHTS
 light.gateway_light_7811dcb36cee:
-  friendly_name: livingroom_gateway
-light.torch_giraffe:
-  friendly_name: Giraffe
+  friendly_name: Gateway light
+light.big_torch:
+  friendly_name: Big torch
   icon: mdi:floor-lamp
-light.garland_snake:
-  friendly_name: Snake
+light.garland:
+  friendly_name: Garland
   icon: mdi:dots-horizontal
-light.corner_cat:
-  friendly_name: Cat
+light.corner_lamp:
+  friendly_name: Corner lamp
   icon: mdi:lamp
-light.torch_jellyfish:
-  friendly_name: Jellyfish
+light.small_torch:
+  friendly_name: Small torch
   icon: mdi:lava-lamp
-light.fire_fox:
-  friendly_name: Fox
+light.fire_lamp:
+  friendly_name: Fire lamp
   icon: mdi:fire
+switch.wall_plug_158d0002013f1e:
+  friendly_name: Star lamp
 
 #MISC
 sensor.is_workday:
@@ -194,8 +196,6 @@ switch.power_strip_4:
   friendly_name: Tv cord
 switch.power_strip_5:
   friendly_name: Fridge
-switch.wall_plug_158d0002013f1e:
-  friendly_name: Starfish
 
 sensor.power_strip_1_load_power:
   friendly_name: power/computer/current

@@ -10,10 +10,10 @@
   action:
   - service: light.turn_on
     entity_id:
-    - light.torch_giraffe
-    - light.corner_cat
-    - light.fire_fox
-    - light.garland_snake
+    - light.big_torch
+    - light.corner_lamp
+    - light.fire_lamp
+    - light.garland
     data_template:
       brightness: "5"
       color_temp: "500"

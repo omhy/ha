@@ -137,10 +137,10 @@
   action:
   - service: light.turn_off
     entity_id:
-    - light.torch_giraffe
-    - light.corner_cat
-    - light.fire_fox
-    - light.garland_snake
+    - light.big_torch
+    - light.corner_lamp
+    - light.fire_lamp
+    - light.garland
   - service: script.rmt_computer_sleep
 
 - alias: "cube_action_shake_air"
@@ -154,8 +154,8 @@
   action:
   - service: light.turn_on
     entity_id:
-    - light.corner_cat
-    - light.torch_giraffe
+    - light.corner_lamp
+    - light.big_torch
     data_template:
       brightness: "1"
       color_temp: "500"

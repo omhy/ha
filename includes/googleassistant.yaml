@@ -3,30 +3,30 @@ api_key: !secret google_cloud_api_key
 expose_by_default: false
 entity_config:
 #Entrance
-  light.garland_snake:
-    name: Snake
+  light.garland:
+    name: Garland
     expose: true
     room: Entrance
 #Living room
-  light.torch_giraffe:
-    name: Giraffe
+  light.big_torch:
+    name: Big torch
     expose: true
     room: Living Room
-  light.corner_cat:
-    name: Cat
+  light.corner_lamp:
+    name: Corner lamp
     expose: true
     room: Living Room
-  light.fire_fox:
-    name: Fox
+  light.fire_lamp:
+    name: Fire lamp
     expose: true
     room: Living Room
 #Chd rom
-  light.torch_jellyfish:
-    name: Jellyfish
+  light.small_torch:
+    name: Small torch
     expose: true
     room: Childrens Room
   switch.wall_plug_158d0002013f1e:
-    name: Starfish
+    name: Star lamp
     expose: true
     room: Childrens Room
 
@@ -51,20 +51,21 @@ entity_config:
     name: Laptop sleep
     expose: true
     room: Speaker
+
 #Scripts tts
   script.tts_summary:
-    name: Tell summary
+    name: Say summary
     expose: true
     room: Speaker
   script.tts_rooms:
-    name: Tell rooms
+    name: Say rooms
     expose: true
     room: Speaker
   script.tts_outside:
-    name: Tell outside
+    name: Say outside
     expose: true
     room: Speaker
   script.tts_consumption:
-    name: Tell consumption
+    name: Say consumption
     expose: true
     room: Speaker
