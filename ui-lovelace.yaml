@@ -672,7 +672,7 @@ views:
         filter:
           include:
             - entity_id: automation.alert*
-              -
+
       - type: custom:monster-card
         card:
           type: entities

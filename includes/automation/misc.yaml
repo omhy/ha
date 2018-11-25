@@ -17,7 +17,7 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.power_strip_5_load_power
-      above: 125
+      above: 12500
       for:
         minutes: 12
   action:
@@ -29,6 +29,3 @@
         message: "{{ now().strftime('%H:%M') }} \U00002615 Turn off coffee machine!"
         inline_keyboard:
           - "\U0000267B Dismiss:/dismiss"
-    - service: script.tts_say_kitchen
-      data_template:
-        message: "Надо выключить кофейник!"
