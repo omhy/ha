@@ -1,4 +1,21 @@
-- alias: "working_day_light_on"
+- alias: "working_day_light_on_chdroom"
+  initial_state: "on"
+  trigger:
+    - platform: time
+      at: "06:55:00"
+  condition:
+    - condition: state
+      entity_id: sensor.is_workday
+      state: "True"
+  action:
+    - service: light.turn_on
+      entity_id: light.small_torch
+      data_template:
+        brightness: "5"
+        hs_color: [ 0, 100 ]
+        transition: "20"
+
+- alias: "working_day_light_on_livingroom"
   initial_state: "on"
   trigger:
   - platform: time
@@ -91,7 +108,7 @@
   - service: light.turn_on
     entity_id: light.morning
     data_template:
-      hs_color: [ 0, 100 ]
+      hs_color: [ 5, 100 ]
 
 - alias: "working_day_light_off"
   initial_state: "on"
