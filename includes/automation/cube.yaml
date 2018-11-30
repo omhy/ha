@@ -2,7 +2,7 @@
   initial_state: "on"
   trigger:
   - platform: event
-    event_type: cube_action
+    event_type: xiaomi_aqara.cube_action
     event_data:
       entity_id: binary_sensor.cube_158d00028776ae
       action_type: rotate
@@ -38,7 +38,7 @@
   initial_state: "on"
   trigger:
   - platform: event
-    event_type: cube_action
+    event_type: xiaomi_aqara.cube_action
     event_data:
       entity_id: binary_sensor.cube_158d00028776ae
       action_type: flip90
@@ -66,7 +66,7 @@
   initial_state: "on"
   trigger:
   - platform: event
-    event_type: cube_action
+    event_type: xiaomi_aqara.cube_action
     event_data:
       entity_id: binary_sensor.cube_158d00028776ae
       action_type: flip180
@@ -94,7 +94,7 @@
   initial_state: "on"
   trigger:
   - platform: event
-    event_type: cube_action
+    event_type: xiaomi_aqara.cube_action
     event_data:
       entity_id: binary_sensor.cube_158d00028776ae
       action_type: rotate
@@ -130,7 +130,7 @@
   initial_state: "on"
   trigger:
   - platform: event
-    event_type: cube_action
+    event_type: xiaomi_aqara.cube_action
     event_data:
       entity_id: binary_sensor.cube_158d00028776ae
       action_type: free_fall
@@ -147,7 +147,7 @@
   initial_state: "on"
   trigger:
   - platform: event
-    event_type: cube_action
+    event_type: xiaomi_aqara.cube_action
     event_data:
       entity_id: binary_sensor.cube_158d00028776ae
       action_type: shake_air

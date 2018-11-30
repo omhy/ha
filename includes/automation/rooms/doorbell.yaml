@@ -2,7 +2,7 @@
   initial_state: "on"
   trigger:
   - platform: event
-    event_type: click
+    event_type: xiaomi_aqara.click
     event_data:
       entity_id: binary_sensor.switch_158d00021350ee
       click_type: single
@@ -20,7 +20,7 @@
   initial_state: "on"
   trigger:
   - platform: event
-    event_type: click
+    event_type: xiaomi_aqara.click
     event_data:
       entity_id: binary_sensor.switch_158d00021350ee
       click_type: double
