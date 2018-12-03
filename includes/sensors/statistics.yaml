@@ -28,9 +28,3 @@
   name: "power_strip_5"
   max_age:
     minutes: 60
-- platform: statistics
-  entity_id: sensor.power_strip_5_load_power
-  sampling_size: 1000
-  name: "power_strip_5_15min"
-  max_age:
-    minutes: 15

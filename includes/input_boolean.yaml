@@ -4,3 +4,7 @@ livingroom_torch_use:
 livingroom_corner_use:
   initial: off
   icon: mdi:toggle-switch
+computer_today_limit:
+  initial: off
+  icon: mdi:toggle-switch
+

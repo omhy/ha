@@ -17,7 +17,8 @@ views:
       - sun.sun
       - sensor.moon
     cards:
-      - type: glance
+      - id: 5c72bd844c2c4323b0d56c0ded0384e0  # Automatically created id
+        type: glance
         title: Lights
         entities:
           - entity: light.garland
@@ -39,7 +40,8 @@ views:
             icon: mdi:ceiling-light
             tap_action: toggle
 
-      - type: entities
+      - id: e6b961f33e9b411fa5c4b6590a370b7e  # Automatically created id
+        type: entities
         title: Motions
         entities:
           - entity: binary_sensor.motion_sensor_158d0001fa3dc0
@@ -47,7 +49,8 @@ views:
           - entity: binary_sensor.motion_sensor_158d0001e52779
             name: Bathroom
 
-      - type: entities
+      - id: 68e35ab2cbba40c791a06c1a1ba7576c  # Automatically created id
+        type: entities
         title: Motions total
         entities:
           - entity: sensor.livingroom_motions
@@ -57,7 +60,8 @@ views:
             name: Bathroom
             icon: mdi:shower
 
-      - type: entities
+      - id: e352642f6fa1475998b4a9914dff47e0  # Automatically created id
+        type: entities
         title: Illumination
         entities:
           - entity: sensor.illumination_158d0001fa3dc0
@@ -65,19 +69,22 @@ views:
           - entity: sensor.illumination_158d0001e52779
             name: Bathroom
 
-      - type: custom:mini-media-player
+      - id: 7b8a3285d1264ffbab29f2a6daddcecb  # Automatically created id
+        type: custom:mini-media-player
         entity: media_player.kitchen_speaker
         icon: mdi:google-home
         artwork: cover
         short_info: true
 
-      - type: custom:mini-media-player
+      - id: 158300d76a9641ff8b89eeac20d42ce1  # Automatically created id
+        type: custom:mini-media-player
         entity: media_player.yury_speaker
         icon: mdi:dots-horizontal-circle
         artwork: cover
         short_info: true
 
-      - type: custom:mini-media-player
+      - id: 55b9abc90896484b809b9668847e7643  # Automatically created id
+        type: custom:mini-media-player
         entity: media_player.kodi
         icon: mdi:kodi
         artwork: cover
@@ -86,7 +93,8 @@ views:
         hide_power: true
         show_progress: true
 
-      - type: custom:mini-media-player
+      - id: ab16923ec86c468aac47e451efdb126c  # Automatically created id
+        type: custom:mini-media-player
         entity: media_player.spotify
         artwork: full-cover
         short_info: true
@@ -96,7 +104,8 @@ views:
         hide_power: true
         show_progress: true
 
-      - type: weather-forecast
+      - id: f6f63f7eb53e4d32819b4782bb59af34  # Automatically created id
+        type: weather-forecast
         entity: weather.smhi_home
 
     ##################   CLIMATE
@@ -104,7 +113,8 @@ views:
     id: climate
     icon: mdi:gauge
     cards:
-      - type: vertical-stack
+      - id: f66d1a61532d401a85b7163c66c99078  # Automatically created id
+        type: vertical-stack
         cards:
           - type: glance
             title: Temperature
@@ -146,7 +156,8 @@ views:
               - entity: sensor.pressure_158d0002271609
                 name: Children
 
-      - type: vertical-stack
+      - id: 8e8ce781290143d894ad75a68c96b286  # Automatically created id
+        type: vertical-stack
         cards:
           - type: glance
             title: Outside
@@ -178,7 +189,8 @@ views:
                 name: Maximal @
                 icon: mdi:clock
 
-      - type: vertical-stack
+      - id: b1ad28d12357498b87903083b450a4cc  # Automatically created id
+        type: vertical-stack
         cards:
           - type: gauge
             entity: sensor.temperature_158d00022c7cf2
@@ -235,16 +247,19 @@ views:
     id: lights
     icon: mdi:floor-lamp
     cards:
-      - type: picture
+      - id: dfaf98e65b60444c9a705fa597f8cea6  # Automatically created id
+        type: picture
         image: /local/mireds.png
-      - type: entities
+      - id: ad71c37ce3824305ac247a6efeed5c4f  # Automatically created id
+        type: entities
         show_header_toggle: false
         title: Light sources
         entities:
           - entity: light.big_torch
           - entity: light.corner_lamp
           - entity: light.small_torch
-      - type: entities
+      - id: 670a08d991cf44498504a1c3aee85169  # Automatically created id
+        type: entities
         title: Torch defaults
         entities:
           - entity: input_number.livingroom_torch_brightness
@@ -253,7 +268,8 @@ views:
             name: Mireds
           - entity: input_number.livingroom_torch_transition
             name: Transition
-      - type: entities
+      - id: 94bdf9cea63642d39c3ef3dc0ab61da9  # Automatically created id
+        type: entities
         title: Corner defaults
         entities:
           - entity: input_number.livingroom_corner_brightness
@@ -262,7 +278,8 @@ views:
             name: Mireds
           - entity: input_number.livingroom_corner_transition
             name: Transition
-      - type: entities
+      - id: 44a7c8acde8346b9b0d6b30edd62e111  # Automatically created id
+        type: entities
         title: Small torch defaults
         entities:
           - entity: input_number.small_torch_brightness
@@ -277,9 +294,11 @@ views:
     id: lights_flow
     icon: mdi:palette
     cards:
-      - type: picture
+      - id: 34ef17aa418b453fbd90ee224c7d0dc4  # Automatically created id
+        type: picture
         image: /local/hue.png
-      - type: glance
+      - id: 2af4732775674994a74f19a7e2870c92  # Automatically created id
+        type: glance
         title: Flow
         show_header_toggle: false
         entities:
@@ -293,14 +312,16 @@ views:
             service: input_boolean.toggle
           - entity: input_select.living_room_flow
             name: Flow type
-      - type: entities
+      - id: e55f4bbb1fda439c982fc5b344b3fb1b  # Automatically created id
+        type: entities
         title: Common settings
         show_header_toggle: true
         entities:
           - input_number.flow_transition
           - input_number.flow_brightness
           - input_number.flow_saturation
-      - type: entities
+      - id: 8cc4abc7eb2b4cbda990ac7bfa37d85e  # Automatically created id
+        type: entities
         title: Current flow settings
         entities:
           - input_number.flow_hue1
@@ -308,7 +329,8 @@ views:
           - input_number.flow_hue3
           - input_number.flow_hue4
 
-      - type: entities
+      - id: a75be4c41db8409c97b0009f9d55a98c  # Automatically created id
+        type: entities
         title: Custom flow settings
         entities:
           - input_number.flow_custom_hue1
@@ -321,7 +343,8 @@ views:
     id: electro
     icon: mdi:power-plug
     cards:
-      - type: glance
+      - id: ec272f66db9b4b4fbc56eeda97205816  # Automatically created id
+        type: glance
         title: Computer
         entities:
           - entity: sensor.power_strip_1_load_power
@@ -334,7 +357,8 @@ views:
             name: Month
           - entity: sensor.power_strip_1_mean
             name: 1h mean
-      - type: glance
+      - id: 0e3bba7cfc894887a0b870391a2bb17d  # Automatically created id
+        type: glance
         title: TV
         show_header_toggle: true
         entities:
@@ -348,7 +372,8 @@ views:
             name: Month
           - entity: sensor.power_strip_4_mean
             name: 1h mean
-      - type: glance
+      - id: 7c898a7c2a4647499d0be219a0ee1671  # Automatically created id
+        type: glance
         title: Router
         show_header_toggle: true
         entities:
@@ -362,7 +387,8 @@ views:
             name: Month
           - entity: sensor.power_strip_3_mean
             name: 1h mean
-      - type: glance
+      - id: 9a8ee0382c1c4c4a8f2633132c6556e2  # Automatically created id
+        type: glance
         title: Kitchen
         show_header_toggle: true
         entities:
@@ -376,7 +402,8 @@ views:
             name: Month
           - entity: sensor.power_strip_2_mean
             name: 1h mean
-      - type: glance
+      - id: 80524ae40029477e861cb7d9dd6fce93  # Automatically created id
+        type: glance
         title: Fridge
         show_header_toggle: true
         entities:
@@ -390,10 +417,9 @@ views:
             name: Month
           - entity: sensor.power_strip_5_mean
             name: 1h mean
-          - entity: sensor.power_strip_5_15min_mean
-            name: 15m mean
 
-      - type: glance
+      - id: 4f735e9e47a240d5936d33c7dd8419fa  # Automatically created id
+        type: glance
         title: Power cords
         show_header_toggle: false
         entities:
@@ -408,14 +434,20 @@ views:
           - entity: switch.power_strip_5
             name: Fridge
 
-      - type: glance
+      - id: 4511d325be864f82870ba9540c98fce1  # Automatically created id
+        type: glance
         title: Computers
         entities:
-        - binary_sensor.ping_computer
-        - binary_sensor.ping_laptop
+          - binary_sensor.ping_computer
+          - binary_sensor.ping_laptop
 
-
-##################   INFO
+      - id: 6ca601bd92874ea58662e34258afa93c  # Automatically created id
+        type: entities
+        show_header_toggle: false
+        title: Computer left
+        entities:
+          - input_boolean.computer_today_limit
+          - input_number.computer_today_left
   - title: Information
     id: info
     icon: mdi:information
@@ -578,7 +610,8 @@ views:
     id: automations
     icon: mdi:creation
     cards:
-      - type: custom:monster-card
+      - id: a14a186b6bda43ae907fdcd89c4e6bcd  # Automatically created id
+        type: custom:monster-card
         card:
           type: entities
           title: Automations (working days)
@@ -592,49 +625,56 @@ views:
 #      filter:
 #        include:
 #        - entity_id: "automation.telegram*"
-      - type: custom:monster-card
+      - id: 30b44a89934f480e8592b881778212bc  # Automatically created id
+        type: custom:monster-card
         card:
           type: entities
           title: Automations (zones)
         filter:
           include:
             - entity_id: automation.zone*
-      - type: custom:monster-card
+      - id: 0042b58d304c4cf09c67f2f45f8d9f06  # Automatically created id
+        type: custom:monster-card
         card:
           type: entities
           title: Automations (cube)
         filter:
           include:
             - entity_id: automation.cube*
-      - type: custom:monster-card
+      - id: 3c259a49a31749b6b89a70bd43228688  # Automatically created id
+        type: custom:monster-card
         card:
           type: entities
           title: Automations (mqtt)
         filter:
           include:
             - entity_id: automation.mqtt*
-      - type: custom:monster-card
+      - id: 5641fdc7350945ba9d59dcd1a4f19900  # Automatically created id
+        type: custom:monster-card
         card:
           type: entities
           title: Automations (HA)
         filter:
           include:
             - entity_id: automation.ha*
-      - type: custom:monster-card
+      - id: 455af10c07484baf9c9c4fafd26192b4  # Automatically created id
+        type: custom:monster-card
         card:
           type: entities
           title: Automations (light)
         filter:
           include:
             - entity_id: automation.light*
-      - type: custom:monster-card
+      - id: 719982889e7844e7bd80eb83a0d43397  # Automatically created id
+        type: custom:monster-card
         card:
           type: entities
           title: Automations (motion)
         filter:
           include:
             - entity_id: automation.motion*
-      - type: custom:monster-card
+      - id: 7a7cb0e209284105b2626d34f4315df3  # Automatically created id
+        type: custom:monster-card
         card:
           type: entities
           title: Automations (doorbell)
@@ -642,7 +682,8 @@ views:
           include:
             - entity_id: automation.doorbell*
 
-      - type: custom:monster-card
+      - id: 7ad2736325ea402a977e38e5089121a7  # Automatically created id
+        type: custom:monster-card
         card:
           type: entities
           title: Automations (entrance door)
@@ -650,7 +691,8 @@ views:
           include:
             - entity_id: automation.entrance_door*
 
-      - type: custom:monster-card
+      - id: eb07324dd204478bbd1152e76a1d0700  # Automatically created id
+        type: custom:monster-card
         card:
           type: entities
           title: Automations (scheduled)
@@ -658,7 +700,8 @@ views:
           include:
             - entity_id: automation.schedule*
 
-      - type: custom:monster-card
+      - id: 269fb5e44cbf4aeeae99a25d0f051490  # Automatically created id
+        type: custom:monster-card
         card:
           type: entities
           title: Automations (states)
@@ -666,7 +709,8 @@ views:
           include:
             - entity_id: automation.state*
 
-      - type: custom:monster-card
+      - id: f5f8f23255864305aaf6a0e2c87f3ade  # Automatically created id
+        type: custom:monster-card
         card:
           type: entities
           title: Automations (alert)
@@ -674,7 +718,8 @@ views:
           include:
             - entity_id: automation.alert*
 
-      - type: custom:monster-card
+      - id: eb3a8fa294ef49faaf643187bfbc5fc9  # Automatically created id
+        type: custom:monster-card
         card:
           type: entities
           title: Automations (other)
@@ -802,7 +847,8 @@ views:
           include:
             - domain: light
 
-      - type: custom:monster-card
+      - id: 8e88b55e97ff46b7b2b1420ed3353076  # Automatically created id
+        type: custom:monster-card
         card:
           type: glance
           title: Inputs
@@ -812,53 +858,59 @@ views:
             - domain: input_boolean
             - domain: input_text
 
-      - type: custom:monster-card
+      - id: c058cf62c3304499b6b0191fd2baf4a9  # Automatically created id
+        type: custom:monster-card
         card:
           type: glance
           title: Input numbers (hue)
         filter:
           include:
-          - entity_id: input_number.*hue*
+            - entity_id: input_number.*hue*
 
-      - type: custom:monster-card
+      - id: 9cb63f1e7ab641d9bb02ca4c8edd53f1  # Automatically created id
+        type: custom:monster-card
         card:
           type: glance
           title: Input numbers (brightness)
         filter:
           include:
-          - entity_id: input_number.*brightness*
+            - entity_id: input_number.*brightness*
 
-      - type: custom:monster-card
+      - id: 14ea510ae0654df4944d32f6f0f96e40  # Automatically created id
+        type: custom:monster-card
         card:
           type: glance
           title: Input numbers (transition)
         filter:
           include:
-          - entity_id: input_number.*transition*
+            - entity_id: input_number.*transition*
 
-      - type: custom:monster-card
+      - id: f0001bc3c1f04af0be8bb095a4724d6b  # Automatically created id
+        type: custom:monster-card
         card:
           type: glance
           title: Input numbers (mired)
         filter:
           include:
-          - entity_id: input_number.*mired*
+            - entity_id: input_number.*mired*
 
-      - type: custom:monster-card
+      - id: f9e4f343f04e4d7dadfbbe678473e4ca  # Automatically created id
+        type: custom:monster-card
         card:
           type: glance
           title: Input numbers (other)
         filter:
           include:
-          - domain: input_number
+            - domain: input_number
           exclude:
-          - entity_id: input_number.*hue*
-          - entity_id: input_number.*brightness*
-          - entity_id: input_number.*transition*
-          - entity_id: input_number.*mired*
+            - entity_id: input_number.*hue*
+            - entity_id: input_number.*brightness*
+            - entity_id: input_number.*transition*
+            - entity_id: input_number.*mired*
 
 
-      - type: custom:monster-card
+      - id: 3ec040dd793d48df8af27267cc77ecd1  # Automatically created id
+        type: custom:monster-card
         card:
           type: glance
           title: TTS
@@ -866,7 +918,8 @@ views:
           include:
             - entity_id: "*tts*"
 
-      - type: custom:monster-card
+      - id: c5a6a19da9a34d0a964ae6c90243e92c  # Automatically created id
+        type: custom:monster-card
         card:
           type: glance
           title: Switches
@@ -874,95 +927,104 @@ views:
           include:
             - domain: switch
 
-      - type: custom:monster-card
+      - id: 5d1141aa2c194c7884b586c354b2ec9c  # Automatically created id
+        type: custom:monster-card
         card:
           type: glance
           title: Sensor (temperature)
         filter:
           include:
-          - entity_id: sensor.*temp*
+            - entity_id: sensor.*temp*
           exclude:
-          - entity_id: sensor.wt*
+            - entity_id: sensor.wt*
 
-      - type: custom:monster-card
+      - id: d1f9c1326b934a309a7df66bc12b288e  # Automatically created id
+        type: custom:monster-card
         card:
           type: glance
           title: Sensor (humidity)
         filter:
           include:
-          - entity_id: sensor.*humidity*
+            - entity_id: sensor.*humidity*
           exclude:
-          - entity_id: sensor.wt*
+            - entity_id: sensor.wt*
 
-      - type: custom:monster-card
+      - id: 3149222c49194397ad935e501eb9146f  # Automatically created id
+        type: custom:monster-card
         card:
           type: glance
           title: Sensor (pressure)
         filter:
           include:
-          - entity_id: sensor.*pressure*
+            - entity_id: sensor.*pressure*
           exclude:
-          - entity_id: sensor.wt*
+            - entity_id: sensor.wt*
 
-      - type: custom:monster-card
+      - id: b8b866a9b6d74920a65b9bcde76c5c07  # Automatically created id
+        type: custom:monster-card
         card:
           type: glance
           title: Sensor (motions)
         filter:
           include:
-          - entity_id: sensor.*motion*
+            - entity_id: sensor.*motion*
 
-      - type: custom:monster-card
+      - id: 6f868580859d4a6d97b7aa6177144aec  # Automatically created id
+        type: custom:monster-card
         card:
           type: glance
           title: Sensor (illumination)
         filter:
           include:
-          - entity_id: sensor.*illumination*
+            - entity_id: sensor.*illumination*
 
-      - type: custom:monster-card
+      - id: 0156837a4eaf4bddad7da67f53cb6403  # Automatically created id
+        type: custom:monster-card
         card:
           type: glance
           title: Sensor (power)
         filter:
           include:
-          - entity_id: sensor.*power*
+            - entity_id: sensor.*power*
 
-      - type: custom:monster-card
+      - id: be4fe31248d24874bd1dca58edffedb7  # Automatically created id
+        type: custom:monster-card
         card:
           type: glance
           title: Sensor (pandorabox)
         filter:
           include:
-          - entity_id: sensor.*pandorabox*
+            - entity_id: sensor.*pandorabox*
 
-      - type: custom:monster-card
+      - id: fd545a41a09f49d1ab576b4c1fea9fba  # Automatically created id
+        type: custom:monster-card
         card:
           type: glance
           title: Sensor (skin)
         filter:
           include:
-          - entity_id: sensor.*skin*
+            - entity_id: sensor.*skin*
 
-      - type: custom:monster-card
+      - id: a7565538c9af45f197c544136fa7cd01  # Automatically created id
+        type: custom:monster-card
         card:
           type: glance
           title: Sensor (other)
         filter:
           include:
-          - domain: sensor
+            - domain: sensor
           exclude:
-          - entity_id: sensor.wt*
-          - entity_id: sensor.*temp*
-          - entity_id: sensor.*humidity*
-          - entity_id: sensor.*battery*
-          - entity_id: sensor.*motion*
-          - entity_id: sensor.*illumination*
-          - entity_id: sensor.*power*
-          - entity_id: sensor.*pressure*
-          - entity_id: sensor.*pandorabox*
-          - entity_id: sensor.*skin*
-          - entity_id: sensor.*waze*
+            - entity_id: sensor.wt*
+            - entity_id: sensor.*temp*
+            - entity_id: sensor.*humidity*
+            - entity_id: sensor.*battery*
+            - entity_id: sensor.*motion*
+            - entity_id: sensor.*illumination*
+            - entity_id: sensor.*power*
+            - entity_id: sensor.*pressure*
+            - entity_id: sensor.*pandorabox*
+            - entity_id: sensor.*skin*
+            - entity_id: sensor.*waze*
 
 ##################   LINKS
   - title: Links
