@@ -2,8 +2,15 @@ tts_volume:
   min: 1
   max: 10
 
-computer_today_left:
-  min: 10
+computer_today_allowed:
+  name: Allowed
+  icon: mdi:lock-clock
+  min: 0
+  max: 600
+computer_today_worked:
+  name: Worked
+  icon: mdi:lock-alert
+  min: 0
   max: 600
 
 doorbell_volume:

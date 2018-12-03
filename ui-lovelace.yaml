@@ -444,10 +444,13 @@ views:
       - id: 6ca601bd92874ea58662e34258afa93c  # Automatically created id
         type: entities
         show_header_toggle: false
-        title: Computer left
+        title: Computer limit
         entities:
+          - input_number.computer_today_allowed
+          - input_number.computer_today_worked
           - input_boolean.computer_today_limit
-          - input_number.computer_today_left
+          - sensor.computer_on_today
+          - sensor.laptop_on_today
   - title: Information
     id: info
     icon: mdi:information

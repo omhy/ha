@@ -1,4 +1,18 @@
-- alias: "light_off_after_sunset"
+- alias: "light_on_garland_and_fire_lamp"
+  initial_state: "on"
+  trigger:
+    - platform: time
+      at: "17:00:00"
+  #  - platform: sun
+  #    event: sunset
+  #    offset: "01:00:00"
+  action:
+    - service: light.turn_on
+      entity_id:
+        - light.garland
+        - light.fire_lamp
+
+- alias: "light_off_garland_and_fire_lamp"
   initial_state: "on"
   trigger:
   - platform: time
@@ -8,16 +22,6 @@
 #    offset: "05:00:00"
   action:
   - service: light.turn_off
-    entity_id: light.garland
-
-- alias: "light_on_at_the_sunset"
-  initial_state: "on"
-  trigger:
-  - platform: time
-    at: "17:00:00"
-#  - platform: sun
-#    event: sunset
-#    offset: "01:00:00"
-  action:
-  - service: light.turn_on
-    entity_id: light.garland
+    entity_id:
+      - light.garland
+      - light.fire_lamp

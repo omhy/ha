@@ -12,20 +12,36 @@
       payload: "{{ (states.sensor.outside_temperature_max.state | float - states.sensor.outside_temperature_min.state | float) | round(1)}}"
       retain: true
 
-- alias: "alert_coffee_machine_works_too_long"
+- alias: "computer_worked"
   initial_state: "on"
   trigger:
-    - platform: numeric_state
-      entity_id: sensor.power_strip_5_load_power
-      above: 12500
-      for:
-        minutes: 12
+    - platform: time
+      minutes: '/1'
+      seconds: 00
+  condition:
+    - condition: state
+      entity_id: binary_sensor.ping_computer
+      state: "on"
   action:
-    - service: telegram_bot.send_message
+    - service: input_number.set_value
+      entity_id: input_number.computer_today_worked
       data_template:
-        target:
-          - !secret tg_chat_dima
-          - !secret tg_chat_alyona
-        message: "{{ now().strftime('%H:%M') }} \U00002615 Turn off coffee machine!"
-        inline_keyboard:
-          - "\U0000267B Dismiss:/dismiss"
+        value: >
+          {% set current = states.input_number.computer_today_worked.state | int %}
+          {% set current = current + 1 %}
+          {{ current }}
+
+- alias: "computer_rest"
+  initial_state: "on"
+  trigger:
+    - platform: time
+      minutes: '/5'
+      seconds: 00
+  condition:
+    - condition: state
+      entity_id: input_boolean.computer_today_limit
+      state: "on"
+    - condition: template
+      value_template: "{{ states.input_number.computer_today_worked.state | int >= states.input_number.computer_today_allowed.state | int}}"
+  action:
+    - service:  script.rmt_computer_sleep

@@ -1,4 +1,4 @@
-- alias: "schedule_refresh_daily"
+- alias: "schedule_daily_refresh"
   initial_state: "on"
   trigger:
   - platform: time
@@ -7,3 +7,24 @@
   - service: homeassistant.update_entity
     entity_id:
     - sensor.is_workday
+
+
+- alias: "schedule_daily_sets"
+  initial_state: "on"
+  trigger:
+    - platform: time
+      at: "00:00:05"
+  action:
+  - service: input_number.set_value
+    entity_id: input_number.computer_today_allowed
+    data_template:
+      value: >
+        {% if is_state('sensor.is_workday', 'True') %}
+          300
+        {% else %}
+          500
+        {% endif %}
+  - service: input_number.set_value
+    entity_id: input_number.computer_today_worked
+    data_template:
+      value: 0

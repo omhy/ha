@@ -6,5 +6,6 @@ livingroom_corner_use:
   icon: mdi:toggle-switch
 computer_today_limit:
   initial: off
-  icon: mdi:toggle-switch
+  name: Limit?
+  icon: mdi:lock-question
 
