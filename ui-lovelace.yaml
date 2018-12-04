@@ -442,8 +442,8 @@ views:
         title: Computer limit
         entities:
           - input_number.computer_today_allowed
-          - input_number.computer_today_worked
           - input_boolean.computer_today_limit
+          - sensor.computer_on_today_minutes
           - sensor.computer_on_today
           - sensor.laptop_on_today
   - title: Information

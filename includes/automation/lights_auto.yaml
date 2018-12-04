@@ -7,8 +7,8 @@
       entity_id: binary_sensor.wall_switch_left_158d00026b96c1
       click_type: single
   action:
-  - service: switch.toggle
-    entity_id: switch.wall_plug_158d0002013f1e
+  - service: light.toggle
+    entity_id: light.star_lamp
 
 - alias: "standalone_left_right"
   initial_state: "on"

@@ -24,7 +24,3 @@
         {% else %}
           500
         {% endif %}
-  - service: input_number.set_value
-    entity_id: input_number.computer_today_worked
-    data_template:
-      value: 0

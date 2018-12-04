@@ -12,26 +12,7 @@
       payload: "{{ (states.sensor.outside_temperature_max.state | float - states.sensor.outside_temperature_min.state | float) | round(1)}}"
       retain: true
 
-- alias: "computer_worked"
-  initial_state: "on"
-  trigger:
-    - platform: time
-      minutes: '/1'
-      seconds: 00
-  condition:
-    - condition: state
-      entity_id: binary_sensor.ping_computer
-      state: "on"
-  action:
-    - service: input_number.set_value
-      entity_id: input_number.computer_today_worked
-      data_template:
-        value: >
-          {% set current = states.input_number.computer_today_worked.state | int %}
-          {% set current = current + 1 %}
-          {{ current }}
-
-- alias: "computer_rest"
+- alias: "computer_limiter"
   initial_state: "on"
   trigger:
     - platform: time
@@ -42,6 +23,6 @@
       entity_id: input_boolean.computer_today_limit
       state: "on"
     - condition: template
-      value_template: "{{ states.input_number.computer_today_worked.state | int >= states.input_number.computer_today_allowed.state | int}}"
+      value_template: "{{ states.computer_on_today_minutes.state | int >= states.input_number.computer_today_allowed.state | int}}"
   action:
     - service:  script.rmt_computer_sleep

@@ -25,7 +25,12 @@ light.bathroom:
 light.corridor:
   friendly_name: Corridor
   icon: mdi:ceiling-light
-
+light.livroom_ambient:
+  friendly_name: Ambient
+  icon: mdi:hazard-lights
+light.morning:
+  friendly_name: Morning lights
+  icon: mdi:weather-sunset
 
 switch.wall_plug_158d0002013f1e:
   friendly_name: Star lamp switch
@@ -37,28 +42,28 @@ sensor.is_workday:
 
 #WAZE
 sensor.waze_current_home:
-  friendly_name: waze/current/home
+  friendly_name: To home
 sensor.waze_current_work:
-  friendly_name: waze/current/work
+  friendly_name: To work
 sensor.waze_home_work:
-  friendly_name: waze/home/work
+  friendly_name: Home to work
 sensor.waze_work_home:
-  friendly_name: waze/work/home
+  friendly_name: Work to home
 
 sensor.livingroom_motions:
-  friendly_name: livingroom/motions
+  friendly_name: Living room motions
   icon: mdi:chip
 sensor.bathroom_motions:
-  friendly_name: bathroom/motions
+  friendly_name: Bathroom motions
   icon: mdi:chip
 
 #DEVICES
 device_tracker.google_maps_111683533988744565132:
-  friendly_name: location/dima
+  friendly_name: Dima
 device_tracker.google_maps_117454969161947422882:
-  friendly_name: location/yury
+  friendly_name: Yury
 device_tracker.google_maps_115914092349482836896:
-  friendly_name: location/alyona
+  friendly_name: Alyona
 
 #SCRIPTS
 script.ha_refresh:
@@ -166,11 +171,9 @@ binary_sensor.wall_switch_both_158d00026b96c1:
 
 #wall-real
 switch.wall_switch_left_158d00022391ec:
-  friendly_name: corridor/switch
-  icon: mdi:lightbulb
+  friendly_name: Corridor light switch
 switch.wall_switch_right_158d00022391ec:
-  friendly_name: bathroom/switch
-  icon: mdi:lightbulb
+  friendly_name: Bathroom light switch
 
 #buttons
 binary_sensor.switch_158d0002136276:
@@ -182,46 +185,42 @@ binary_sensor.switch_158d00021329e3:
 
 #motion
 binary_sensor.motion_sensor_158d0001e52779:
-  friendly_name: bathroom/motion
+  friendly_name: Bathroom motion
 binary_sensor.motion_sensor_158d0001fa3dc0:
-  friendly_name: livingroom/motion
+  friendly_name: Livingroom motion
 binary_sensor.door_window_sensor_158d00024367c8:
-  friendly_name: door/state
+  friendly_name: Door
 
 #ILLUMINATION
 sensor.illumination_158d0001e52779:
-  friendly_name: bathroom/illumination
+  friendly_name: Bathroom illumination
 sensor.illumination_158d0001fa3dc0:
-  friendly_name: livingroom/illumination
+  friendly_name: Livingroom illumination
 sensor.illumination_7811dcb36cee:
-  friendly_name: gateway/illumination
+  friendly_name: Gateway illumination
 
 #SWITCHES
 switch.power_strip_1:
-  friendly_name: Computer cord
+  friendly_name: Computer switch
 switch.power_strip_2:
-  friendly_name: Kitchen cord
+  friendly_name: Kitchen switch
 switch.power_strip_3:
-  friendly_name: Router cord
+  friendly_name: Router switch
 switch.power_strip_4:
-  friendly_name: Tv cord
+  friendly_name: Tv switch
 switch.power_strip_5:
-  friendly_name: Fridge
+  friendly_name: Fridge switch
 
 sensor.power_strip_1_load_power:
-  friendly_name: power/computer/current
+  friendly_name: Computer current
 sensor.power_strip_2_load_power:
-  friendly_name: power/kitchen/current
+  friendly_name: Kitchen current
 sensor.power_strip_3_load_power:
-  friendly_name: power/router/current
+  friendly_name: Router current
 sensor.power_strip_4_load_power:
-  friendly_name: power/tv/current
+  friendly_name: Tv current
 sensor.power_strip_5_load_power:
-  friendly_name: power/fridge/current
+  friendly_name: Fridge current
 
 sensor.version_ha_current:
   friendly_name: Installed
-
-switch.turn_off_bb:
-  assumed_state: false
-  icon: mdi:computer

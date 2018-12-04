@@ -121,6 +121,6 @@
     state: "True"
   action:
   - service: light.turn_off
-    entity_id: light.morning
-  - service: switch.turn_off
-    entity_id: switch.wall_plug_158d0002013f1e
+    entity_id:
+      - light.morning
+      - light.star_lamp
