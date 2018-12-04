@@ -52,3 +52,12 @@
   - light.small_torch
   - light.garland
 
+- platform: switch
+  name: star_lamp
+  entity_id: switch.wall_plug_158d0002013f1e
+- platform: switch
+  name: corridor
+  entity_id: switch.wall_switch_left_158d00022391ec
+- platform: switch
+  name: bathroom
+  entity_id: switch.wall_switch_right_158d00022391ec

@@ -1,5 +1,6 @@
 - platform: moon
 - platform: uptime
+- platform: launch_library
 
 - platform: season
   type: astronomical

@@ -16,8 +16,19 @@ light.small_torch:
 light.fire_lamp:
   friendly_name: Fire lamp
   icon: mdi:fire
-switch.wall_plug_158d0002013f1e:
+light.star_lamp:
   friendly_name: Star lamp
+  icon: mdi:star-outline
+light.bathroom:
+  friendly_name: Bathroom
+  icon: mdi:shower
+light.corridor:
+  friendly_name: Corridor
+  icon: mdi:ceiling-light
+
+
+switch.wall_plug_158d0002013f1e:
+  friendly_name: Star lamp switch
 
 #MISC
 sensor.is_workday:
