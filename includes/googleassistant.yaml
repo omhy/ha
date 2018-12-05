@@ -1,6 +1,7 @@
 project_id: !secret google_actions_project_id
 api_key: !secret google_cloud_api_key
 expose_by_default: false
+exposed_domains:
 entity_config:
 #Entrance
   light.garland:
