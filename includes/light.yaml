@@ -43,15 +43,6 @@
   - light.big_torch
   - light.corner_lamp
 
-- platform: group
-  name: morning
-  entities:
-  - light.big_torch
-  - light.corner_lamp
-  - light.fire_lamp
-  - light.small_torch
-  - light.garland
-
 - platform: switch
   name: star_lamp
   entity_id: switch.wall_plug_158d0002013f1e

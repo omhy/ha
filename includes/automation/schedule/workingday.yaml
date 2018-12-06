@@ -1,4 +1,4 @@
-- alias: "working_day_light_on_chdroom"
+- alias: "working_day_light_on"
   initial_state: "on"
   trigger:
     - platform: time
@@ -9,32 +9,24 @@
       state: "True"
   action:
     - service: light.turn_on
-      entity_id: light.small_torch
+      entity_id:
+        - light.small_torch
       data_template:
-        brightness: "5"
+        brightness: 5
         hs_color: [ 0, 100 ]
-        transition: "20"
-
-- alias: "working_day_light_on_livingroom"
-  initial_state: "on"
-  trigger:
-  - platform: time
-    at: "06:55:00"
-  condition:
-  - condition: state
-    entity_id: sensor.is_workday
-    state: "True"
-  action:
-  - service: light.turn_on
-    entity_id:
-    - light.big_torch
-    - light.corner_lamp
-    - light.fire_lamp
-    - light.garland
-    data_template:
-      brightness: "5"
-      color_temp: "500"
-      transition: "20"
+        transition: 20
+    - service: light.turn_on
+      entity_id:
+        - light.big_torch
+        - light.corner_lamp
+      data_template:
+        brightness: 5
+        color_temp: 500
+        transition: 20
+    - service: light.turn_on
+      entity_id:
+        - light.fire_lamp
+        - light.garland
 
 - alias: "working_day_light_ready_1"
   initial_state: "on"
@@ -47,9 +39,12 @@
     state: "True"
   action:
   - service: light.turn_on
-    entity_id: light.morning
+    entity_id:
+      - light.small_torch
+      - light.big_torch
+      - light.corner_lamp
     data_template:
-      brightness: "50"
+      brightness: 50
       hs_color: [ 100, 100 ]
   - service: script.tts_summary
 
@@ -64,7 +59,10 @@
     state: "True"
   action:
   - service: light.turn_on
-    entity_id: light.morning
+    entity_id:
+      - light.small_torch
+      - light.big_torch
+      - light.corner_lamp
     data_template:
       hs_color: [ 60, 100 ]
 
@@ -79,7 +77,10 @@
     state: "True"
   action:
   - service: light.turn_on
-    entity_id: light.morning
+    entity_id:
+      - light.small_torch
+      - light.big_torch
+      - light.corner_lamp
     data_template:
       hs_color: [ 30, 100 ]
 
@@ -106,7 +107,10 @@
     state: "True"
   action:
   - service: light.turn_on
-    entity_id: light.morning
+    entity_id:
+      - light.small_torch
+      - light.big_torch
+      - light.corner_lamp
     data_template:
       hs_color: [ 5, 100 ]
 
@@ -122,5 +126,8 @@
   action:
   - service: light.turn_off
     entity_id:
-      - light.morning
-      - light.star_lamp
+      - light.small_torch
+      - light.big_torch
+      - light.corner_lamp
+      - light.fire_lamp
+      - light.garland

@@ -28,9 +28,6 @@ light.corridor:
 light.livroom_ambient:
   friendly_name: Ambient
   icon: mdi:hazard-lights
-light.morning:
-  friendly_name: Morning lights
-  icon: mdi:weather-sunset
 
 switch.wall_plug_158d0002013f1e:
   friendly_name: Star lamp switch
@@ -64,6 +61,12 @@ device_tracker.google_maps_117454969161947422882:
   friendly_name: Yury
 device_tracker.google_maps_115914092349482836896:
   friendly_name: Alyona
+
+#HW
+sensor.since_last_boot:
+  friendly_name: Rsp uptime
+sensor.uptime:
+  friendly_name: HA uptime
 
 #SCRIPTS
 script.ha_refresh:
