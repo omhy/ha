@@ -9,16 +9,15 @@ living_room_flow:
   - blue
   - random
 
-input_select:
-  log_level:
-    name: Log Level
-    options:
-      - warn
-      - fatal
-      - error
-      - warning
-      - warn
-      - info
-      - debug
-      - notset
-    initial: error
+log_level:
+  name: Log Level
+  options:
+    - warn
+    - fatal
+    - error
+    - warning
+    - warn
+    - info
+    - debug
+    - notset
+  initial: error

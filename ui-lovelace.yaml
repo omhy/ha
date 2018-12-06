@@ -1133,22 +1133,28 @@ views:
   - title: System
     id: sys
     icon: mdi:desktop-tower
-    badges:
-      - sensor.processor_use
-      - sensor.memory_use_percent
-      - sensor.disk_use_percent_home
-      - sensor.swap_use_percent
-      - sensor.temp
+#    badges:
     cards:
       - id: ae44121346734a62ac5937eecfb171a9  # Automatically created id
+        type: entities
+        title: System
+        entities:
+          - sensor.processor_use
+          - sensor.memory_use_percent
+          - sensor.disk_use_percent_home
+          - sensor.swap_use_percent
+          - sensor.temp
+          - sensor.uptime
+          - sensor.since_last_boot
+          - input_select.log_level
+      - id: ae44121346734a62ac5937eecfb171a7  # Automatically created id
         type: glance
-        title: Misc
+        title: Dates
         entities:
           - sensor.date
           - sensor.time
           - sensor.is_workday
           - sensor.days_in_month
-          - sensor.uptime
       - id: 7914d9b9bd914b6dac4fa0633c13494d  # Automatically created id
         type: custom:monster-card
         card:
