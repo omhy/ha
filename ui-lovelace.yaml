@@ -261,8 +261,6 @@ views:
             name: Brightness
           - entity: input_number.livingroom_torch_mired
             name: Mireds
-          - entity: input_number.livingroom_torch_transition
-            name: Transition
       - id: 94bdf9cea63642d39c3ef3dc0ab61da9  # Automatically created id
         type: entities
         title: Corner defaults
@@ -271,8 +269,6 @@ views:
             name: Brightness
           - entity: input_number.livingroom_corner_mired
             name: Mireds
-          - entity: input_number.livingroom_corner_transition
-            name: Transition
       - id: 44a7c8acde8346b9b0d6b30edd62e111  # Automatically created id
         type: entities
         title: Small torch defaults
@@ -281,8 +277,6 @@ views:
             name: Brightness
           - entity: input_number.small_torch_mired
             name: Mireds
-          - entity: input_number.small_torch_transition
-            name: Transition
 
 ##################   LIGHTS FLOW
   - title: Lights flow

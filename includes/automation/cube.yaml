@@ -157,9 +157,9 @@
     - light.corner_lamp
     - light.big_torch
     data_template:
-      brightness: "1"
-      color_temp: "500"
-      transition: "1"
+      brightness: 1
+      color_temp: 500
+      transition: 1
 
 
 #   action_type: move

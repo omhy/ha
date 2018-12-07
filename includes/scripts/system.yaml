@@ -54,10 +54,6 @@ ha_set_defaults:
     data_template:
       value: 420
   - service: input_number.set_value
-    entity_id: input_number.livingroom_torch_transition
-    data_template:
-      value: 1
-  - service: input_number.set_value
     entity_id: input_number.livingroom_corner_brightness
     data_template:
       value: 100
@@ -66,10 +62,6 @@ ha_set_defaults:
     data_template:
       value: 500
   - service: input_number.set_value
-    entity_id: input_number.livingroom_corner_transition
-    data_template:
-      value: 1
-  - service: input_number.set_value
     entity_id: input_number.small_torch_brightness
     data_template:
       value: 100
@@ -77,10 +69,6 @@ ha_set_defaults:
     entity_id: input_number.small_torch_mired
     data_template:
       value: 500
-  - service: input_number.set_value
-    entity_id: input_number.small_torch_transition
-    data_template:
-      value: 1
 
   - service: input_number.set_value
     entity_id: input_number.flow_transition
