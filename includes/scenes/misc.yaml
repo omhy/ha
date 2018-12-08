@@ -1,0 +1,16 @@
+- name: "garland_and_fire"
+  entities:
+    light.garland: true
+    light.fire_lamp: true
+    light.big_torch: false
+    light.corner_lamp: false
+    light.small_torch: false
+    light.star_lamp: false
+- name: "living_room_low_light"
+  entities:
+    light.big_torch:
+      state: true
+      brightness: 1
+    light.corner_lamp:
+      state: true
+      brightness: 1

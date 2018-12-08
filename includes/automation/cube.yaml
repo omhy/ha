@@ -152,14 +152,8 @@
       entity_id: binary_sensor.cube_158d00028776ae
       action_type: shake_air
   action:
-  - service: light.turn_on
-    entity_id:
-    - light.corner_lamp
-    - light.big_torch
-    data_template:
-      brightness: 1
-      color_temp: 500
-
+  - service: scene.turn_on
+    entity_id: scene.living_room_low_light
 
 #   action_type: move
 #   action_type: tap_twice

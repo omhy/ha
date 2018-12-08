@@ -56,3 +56,4 @@
     light.small_torch: false
     light.big_torch: false
     light.corner_lamp: false
+    light.star_lamp: false
