@@ -57,7 +57,7 @@ media_player:
   host: 192.168.1.20
 
 recorder:
-#  db_url: !secret mariadb_url
+  db_url: !secret mariadb_url
   purge_keep_days: 1
   exclude:
     domains:
@@ -107,9 +107,10 @@ notify: !include includes/notify.yaml
 binary_sensor: !include includes/binary_sensor.yaml
 shell_command: !include includes/shell_command.yaml
 
+scene: !include_dir_merge_list includes/scenes
 sensor: !include_dir_merge_list includes/sensors
 switch: !include_dir_merge_list includes/switches
 automation: !include_dir_merge_list includes/automation
 
 script: !include_dir_merge_named includes/scripts
-history_graph: !include_dir_merge_named includes/historygraph
+#history_graph: !include_dir_merge_named includes/historygraph

@@ -2,15 +2,15 @@
   devices:
     192.168.1.131:
       name: big_torch
-      transition: 1000
+      transition: 500
       use_music_mode: True
     192.168.1.132:
       name: corner_lamp
-      transition: 1000
+      transition: 500
       use_music_mode: True
     192.168.1.133:
       name: small_torch
-      transition: 1000
+      transition: 400
       use_music_mode: True
 
 - platform: mqtt

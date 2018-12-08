@@ -919,6 +919,16 @@ views:
           include:
             - domain: switch
 
+      - id: c5a6a19da9a34d0a964ae6c90243e920  # Automatically created id
+        type: custom:monster-card
+        card:
+          type: glance
+          title: Scenes
+        filter:
+          include:
+            - domain: scene
+
+
       - id: 5d1141aa2c194c7884b586c354b2ec9c  # Automatically created id
         type: custom:monster-card
         card:
@@ -979,15 +989,6 @@ views:
           include:
             - entity_id: sensor.*power*
 
-      - id: be4fe31248d24874bd1dca58edffedb7  # Automatically created id
-        type: custom:monster-card
-        card:
-          type: glance
-          title: Sensor (pandorabox)
-        filter:
-          include:
-            - entity_id: sensor.*pandorabox*
-
       - id: fd545a41a09f49d1ab576b4c1fea9fba  # Automatically created id
         type: custom:monster-card
         card:
@@ -1014,7 +1015,6 @@ views:
             - entity_id: sensor.*illumination*
             - entity_id: sensor.*power*
             - entity_id: sensor.*pressure*
-            - entity_id: sensor.*pandorabox*
             - entity_id: sensor.*skin*
             - entity_id: sensor.*waze*
 
@@ -1055,6 +1055,14 @@ views:
             name: Kodi
             url: http://192.168.1.20:8080
             icon: mdi:kodi
+          - type: weblink
+            name: Google home mini API
+            url: http://192.168.1.30:8008/setup/eureka_info
+            icon: mdi:dots-horizontal-circle
+          - type: weblink
+            name: Google home API
+            url: http://192.168.1.31:8008/setup/eureka_info
+            icon: mdi:google-home
           - type: weblink
             name: Github repo
             url: https://github.com/omhy/ha

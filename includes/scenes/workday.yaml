@@ -1,0 +1,58 @@
+- name: "workday_init"
+  entities:
+    light.garland: true
+    light.fire_lamp: true
+    light.small_torch:
+      state: true
+      transition: 20
+      brightness: 5
+      hs_color: [ 0, 100 ]
+    light.big_torch:
+      state: true
+      transition: 20
+      brightness: 200
+      color_temp: 500
+    light.corner_lamp:
+      state: true
+      transition: 20
+      brightness: 200
+      color_temp: 500
+- name: "workday_ready_1"
+  entities:
+    light.small_torch:
+      hs_color: [ 100, 100 ]
+    light.big_torch:
+      hs_color: [ 100, 100 ]
+    light.corner_lamp:
+      hs_color: [ 100, 100 ]
+- name: "workday_ready_2"
+  entities:
+    light.small_torch:
+      hs_color: [ 60, 100 ]
+    light.big_torch:
+      hs_color: [ 60, 100 ]
+    light.corner_lamp:
+      hs_color: [ 60, 100 ]
+- name: "workday_steady"
+  entities:
+    light.small_torch:
+      hs_color: [ 30, 100 ]
+    light.big_torch:
+      hs_color: [ 30, 100 ]
+    light.corner_lamp:
+      hs_color: [ 30, 100 ]
+- name: "workday_go"
+  entities:
+    light.small_torch:
+      hs_color: [ 5, 100 ]
+    light.big_torch:
+      hs_color: [ 5, 100 ]
+    light.corner_lamp:
+      hs_color: [ 5, 100 ]
+- name: "workday_terminate"
+  entities:
+    light.garland: false
+    light.fire_lamp: false
+    light.small_torch: false
+    light.big_torch: false
+    light.corner_lamp: false

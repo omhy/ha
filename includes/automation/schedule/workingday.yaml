@@ -1,4 +1,4 @@
-- alias: "working_day_light_on"
+- alias: "working_day_scene_on"
   initial_state: "on"
   trigger:
     - platform: time
@@ -8,65 +8,37 @@
       entity_id: sensor.is_workday
       state: "True"
   action:
-    - service: light.turn_on
-      entity_id:
-        - light.small_torch
-      data_template:
-        brightness: 5
-        hs_color: [ 0, 100 ]
-        transition: 20
-    - service: light.turn_on
-      entity_id:
-        - light.big_torch
-        - light.corner_lamp
-      data_template:
-        brightness: 5
-        color_temp: 500
-        transition: 20
-    - service: light.turn_on
-      entity_id:
-        - light.fire_lamp
-        - light.garland
+    - service: scene.turn_on
+      entity_id: scene.workday_init
 
-- alias: "working_day_light_ready_1"
+- alias: "working_day_scene_ready_1"
   initial_state: "on"
   trigger:
-  - platform: time
-    at: "07:25:00"
+    - platform: time
+      at: "07:25:00"
   condition:
-  - condition: state
-    entity_id: sensor.is_workday
-    state: "True"
+    - condition: state
+      entity_id: sensor.is_workday
+      state: "True"
   action:
-  - service: light.turn_on
-    entity_id:
-      - light.small_torch
-      - light.big_torch
-      - light.corner_lamp
-    data_template:
-      brightness: 50
-      hs_color: [ 100, 100 ]
-  - service: script.tts_summary
+    - service: scene.turn_on
+      entity_id: scene.workday_ready_1
+    - service: script.tts_summary
 
-- alias: "working_day_light_ready_2"
+- alias: "working_day_scene_ready_2"
   initial_state: "on"
   trigger:
-  - platform: time
-    at: "07:27:30"
+    - platform: time
+      at: "07:27:30"
   condition:
-  - condition: state
-    entity_id: sensor.is_workday
-    state: "True"
+    - condition: state
+      entity_id: sensor.is_workday
+      state: "True"
   action:
-  - service: light.turn_on
-    entity_id:
-      - light.small_torch
-      - light.big_torch
-      - light.corner_lamp
-    data_template:
-      hs_color: [ 60, 100 ]
+    - service: scene.turn_on
+      entity_id: scene.workday_ready_2
 
-- alias: "working_day_light_at_steady"
+- alias: "working_day_scene_at_steady"
   initial_state: "on"
   trigger:
   - platform: time
@@ -76,58 +48,43 @@
     entity_id: sensor.is_workday
     state: "True"
   action:
-  - service: light.turn_on
-    entity_id:
-      - light.small_torch
-      - light.big_torch
-      - light.corner_lamp
-    data_template:
-      hs_color: [ 30, 100 ]
+    - service: scene.turn_on
+      entity_id: scene.workday_steady
 
 - alias: "working_day_computer_off"
   initial_state: "on"
   trigger:
-  - platform: time
-    at: "07:33:00"
+    - platform: time
+      at: "07:33:00"
   condition:
-  - condition: state
-    entity_id: sensor.is_workday
-    state: "True"
+    - condition: state
+      entity_id: sensor.is_workday
+      state: "True"
   action:
-  - service: script.rmt_computer_sleep
+    - service: script.rmt_computer_sleep
 
-- alias: "working_day_light_go"
+- alias: "working_day_scene_go"
   initial_state: "on"
   trigger:
-  - platform: time
-    at: "07:35:00"
+    - platform: time
+      at: "07:35:00"
   condition:
-  - condition: state
-    entity_id: sensor.is_workday
-    state: "True"
+    - condition: state
+      entity_id: sensor.is_workday
+      state: "True"
   action:
-  - service: light.turn_on
-    entity_id:
-      - light.small_torch
-      - light.big_torch
-      - light.corner_lamp
-    data_template:
-      hs_color: [ 5, 100 ]
+    - service: scene.turn_on
+      entity_id: scene.workday_go
 
-- alias: "working_day_light_off"
+- alias: "working_day_scene_terminate"
   initial_state: "on"
   trigger:
-  - platform: time
-    at: "07:45:00"
+    - platform: time
+      at: "07:45:00"
   condition:
-  - condition: state
-    entity_id: sensor.is_workday
-    state: "True"
+    - condition: state
+      entity_id: sensor.is_workday
+      state: "True"
   action:
-  - service: light.turn_off
-    entity_id:
-      - light.small_torch
-      - light.big_torch
-      - light.corner_lamp
-      - light.fire_lamp
-      - light.garland
+    - service: scene.turn_on
+      entity_id: scene.workday_terminate

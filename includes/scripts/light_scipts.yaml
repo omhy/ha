@@ -51,7 +51,6 @@ light_turn_on_big_torch_by_params:
     data_template:
       brightness: "{{ states.input_number.livingroom_torch_brightness.state | int }}"
       color_temp: "{{ states.input_number.livingroom_torch_mired.state | int }}"
-      transition: 1
 
 light_turn_on_corner_lamp_by_params:
   sequence:
@@ -61,7 +60,6 @@ light_turn_on_corner_lamp_by_params:
     data_template:
       brightness: "{{ states.input_number.livingroom_corner_brightness.state | int }}"
       color_temp: "{{ states.input_number.livingroom_corner_mired.state | int }}"
-      transition: 1
 
 light_turn_on_small_torch_by_params:
   sequence:
@@ -71,5 +69,3 @@ light_turn_on_small_torch_by_params:
     data_template:
       brightness: "{{ states.input_number.small_torch_brightness.state | int }}"
       color_temp: "{{ states.input_number.small_torch_mired.state | int }}"
-      transition: 1
-      
