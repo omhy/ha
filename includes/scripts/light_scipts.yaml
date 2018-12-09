@@ -1,56 +1,56 @@
 flow_idx_update:
   sequence:
-  - service: input_number.set_value
-    entity_id: input_number.flow_idx
-    data_template:
-      value: >
-        {% if states.input_number.flow_idx.state | int >= 4 %}
-          1
-        {% else %}
-          {{states.input_number.flow_idx.state | int + 1}}
-        {% endif %}
+    - service: input_number.set_value
+      entity_id: input_number.flow_idx
+      data_template:
+        value: >
+          {% if states.input_number.flow_idx.state | int >= 4 %}
+            1
+          {% else %}
+            {{states.input_number.flow_idx.state | int + 1}}
+          {% endif %}
 
 light_flow_next:
   sequence:
-  - service: input_select.select_option
-    data_template:
-      entity_id: input_select.living_room_flow
-      option: >
-        {% set flows = {
-          'custom' : 'random',
-          'random' : 'purple',
-          'purple' : 'red',
-          'red' : 'yellow',
-          'yellow' : 'green',
-          'green' : 'blue',
-          'blue' : 'custom'
-        } %}
-        {{flows[states.input_select.living_room_flow.state]}}
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.living_room_flow
+        option: >
+          {% set flows = {
+            'custom' : 'random',
+            'random' : 'purple',
+            'purple' : 'red',
+            'red' : 'yellow',
+            'yellow' : 'green',
+            'green' : 'blue',
+            'blue' : 'custom'
+          } %}
+          {{flows[states.input_select.living_room_flow.state]}}
 
 light_turn_on_hs:
   sequence:
-  - service: light.turn_on
-    data_template:
-      entity_id: "{{ id }}"
-      hs_color: [ "{{ hue|int }}", "{{ sat|int }}" ]
-      brightness: "{{ brightness | int }}"
-      transition: "{{ transition | int }}"
+    - service: light.turn_on
+      data_template:
+        entity_id: "{{ id }}"
+        hs_color: [ "{{ hue|int }}", "{{ sat|int }}" ]
+        brightness: "{{ brightness | int }}"
+        transition: "{{ transition | int }}"
 
 light_turn_off_flow:
-  sequence:
-  - service: input_boolean.turn_off
-    entity_id:
-    - input_boolean.livingroom_torch_use
-    - input_boolean.livingroom_corner_use
+    sequence:
+    - service: input_boolean.turn_off
+      entity_id:
+        - input_boolean.livingroom_torch_use
+        - input_boolean.livingroom_corner_use
 
 light_turn_on_big_torch_by_params:
   sequence:
-  - service: script.light_turn_off_flow
-  - service: light.turn_on
-    entity_id: light.big_torch
-    data_template:
-      brightness: "{{ states.input_number.livingroom_torch_brightness.state | int }}"
-      color_temp: "{{ states.input_number.livingroom_torch_mired.state | int }}"
+    - service: script.light_turn_off_flow
+    - service: light.turn_on
+      entity_id: light.big_torch
+      data_template:
+        brightness: "{{ states.input_number.livingroom_torch_brightness.state | int }}"
+        color_temp: "{{ states.input_number.livingroom_torch_mired.state | int }}"
 
 light_turn_on_corner_lamp_by_params:
   sequence:

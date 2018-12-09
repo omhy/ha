@@ -1,105 +1,102 @@
 ha_purge:
   sequence:
-  - service: recorder.purge
-  - service: notify.telegram_dima
-    data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F5D1 Purge - done"
+    - service: recorder.purge
+    - service: notify.telegram_dima
+      data_template:
+        message: "{{ now().strftime('%H:%M') }} \U0001F5D1 Purge - done"
 
 ha_purge_repack:
   sequence:
-  - service: recorder.purge
-    data:
-      repack: yes
-  - service: notify.telegram_dima
-    data_template:
-      message: "{{ now().strftime('%H:%M') }} \U00002702 Purge and repack - done"
+    - service: recorder.purge
+      data:
+        repack: yes
+    - service: notify.telegram_dima
+      data_template:
+        message: "{{ now().strftime('%H:%M') }} \U00002702 Purge and repack - done"
 
 ha_restart:
   sequence:
-  - service: homeassistant.restart
-  - service: notify.telegram_dima
-    data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F504 Restart requested"
+    - service: homeassistant.restart
+    - service: notify.telegram_dima
+      data_template:
+        message: "{{ now().strftime('%H:%M') }} \U0001F504 Restart requested"
 
 ha_refresh:
   sequence:
-  - service: automation.reload
-  - service: script.reload
-  - service: notify.telegram_dima
-    data_template:
-      message: "{{ now().strftime('%H:%M') }} \U00002699 Refresh - done"
-      inline_keyboard:
-      - "\U0000267E Again:/ha_refresh, \U0000267B Dismiss:/dismiss"
+    - service: automation.reload
+    - service: script.reload
+    - service: notify.telegram_dima
+      data_template:
+        message: "{{ now().strftime('%H:%M') }} \U00002699 Refresh - done"
+        inline_keyboard:
+        - "\U0000267E Again:/ha_refresh, \U0000267B Dismiss:/dismiss"
 
 ha_set_defaults:
   sequence:
-  - service: input_number.set_value
-    entity_id: input_number.tts_volume
-    data_template:
-      value: 3
-  - service: input_number.set_value
-    entity_id: input_number.doorbell_volume
-    data_template:
-      value: 13
-  - service: input_number.set_value
-    entity_id: input_number.doorbell_melody
-    data_template:
-      value: 10
-  - service: input_number.set_value
-    entity_id: input_number.livingroom_torch_brightness
-    data_template:
-      value: 200
-  - service: input_number.set_value
-    entity_id: input_number.livingroom_torch_mired
-    data_template:
-      value: 420
-  - service: input_number.set_value
-    entity_id: input_number.livingroom_corner_brightness
-    data_template:
-      value: 100
-  - service: input_number.set_value
-    entity_id: input_number.livingroom_corner_mired
-    data_template:
-      value: 500
-  - service: input_number.set_value
-    entity_id: input_number.small_torch_brightness
-    data_template:
-      value: 100
-  - service: input_number.set_value
-    entity_id: input_number.small_torch_mired
-    data_template:
-      value: 500
-
-  - service: input_number.set_value
-    entity_id: input_number.flow_transition
-    data_template:
-      value: 3
-  - service: input_number.set_value
-    entity_id: input_number.flow_brightness
-    data_template:
-      value: 250
-  - service: input_number.set_value
-    entity_id: input_number.flow_saturation
-    data_template:
-      value: 90
-
+    - service: input_number.set_value
+      entity_id: input_number.tts_volume
+      data_template:
+        value: 3
+    - service: input_number.set_value
+      entity_id: input_number.doorbell_volume
+      data_template:
+        value: 13
+    - service: input_number.set_value
+      entity_id: input_number.doorbell_melody
+      data_template:
+        value: 10
+    - service: input_number.set_value
+      entity_id: input_number.livingroom_torch_brightness
+      data_template:
+        value: 200
+    - service: input_number.set_value
+      entity_id: input_number.livingroom_torch_mired
+      data_template:
+        value: 420
+    - service: input_number.set_value
+      entity_id: input_number.livingroom_corner_brightness
+      data_template:
+        value: 100
+    - service: input_number.set_value
+      entity_id: input_number.livingroom_corner_mired
+      data_template:
+        value: 500
+    - service: input_number.set_value
+      entity_id: input_number.small_torch_brightness
+      data_template:
+        value: 100
+    - service: input_number.set_value
+      entity_id: input_number.small_torch_mired
+      data_template:
+        value: 500
+    - service: input_number.set_value
+      entity_id: input_number.flow_transition
+      data_template:
+        value: 3
+    - service: input_number.set_value
+      entity_id: input_number.flow_brightness
+      data_template:
+        value: 250
+    - service: input_number.set_value
+      entity_id: input_number.flow_saturation
+      data_template:
+        value: 90
 
 ###  AQARA
-
 aqara_stop_ringtone:
   sequence:
-  - service: xiaomi_aqara.stop_ringtone
-    data_template:
-      gw_mac: !secret gw_mac
+    - service: xiaomi_aqara.stop_ringtone
+      data_template:
+        gw_mac: !secret gw_mac
 
 ### MISC
 
 rmt_computer_sleep:
   sequence:
-  - service: shell_command.sleep_computer
+    - service: shell_command.sleep_computer
 rmt_laptop_sleep:
   sequence:
-  - service: shell_command.sleep_laptop
+      - service: shell_command.sleep_laptop
 
 aqara_add_device:
   sequence:

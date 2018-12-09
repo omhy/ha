@@ -1,0 +1,9 @@
+we_are_leaving:
+  sequence:
+    - service: scene.turn_on
+      entity_id: scene.we_are_leaving
+
+we_are_arriving:
+  sequence:
+    - service: scene.turn_on
+      entity_id: scene.we_are_leaving

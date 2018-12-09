@@ -1,212 +1,212 @@
 telegram_send_outside:
   sequence:
-  - service: telegram_bot.send_message
-    data_template:
-      target: "{{target}}"
-      title: "Temperatures {{ now().strftime('%Y-%m-%d') }}"
-      message: >
-        {% set frm1 = "%7s @ %5s" %}
-        {% set frm2 = "%7s" %}
+    - service: telegram_bot.send_message
+      data_template:
+        target: "{{target}}"
+        title: "Temperatures {{ now().strftime('%Y-%m-%d') }}"
+        message: >
+          {% set frm1 = "%7s @ %5s" %}
+          {% set frm2 = "%7s" %}
 
-        {{ '\U0001F535' }} `min {{ frm1 | format(states.sensor.outside_temperature_min.state_with_unit, states.sensor.outside_temperature_min_at.state|default('-')) }}`
+          {{ '\U0001F535' }} `min {{ frm1 | format(states.sensor.outside_temperature_min.state_with_unit, states.sensor.outside_temperature_min_at.state|default('-')) }}`
 
-        {{ '\U0001F534' }} `max {{ frm1 | format(states.sensor.outside_temperature_max.state_with_unit, states.sensor.outside_temperature_max_at.state|default('-')) }}`
+          {{ '\U0001F534' }} `max {{ frm1 | format(states.sensor.outside_temperature_max.state_with_unit, states.sensor.outside_temperature_max_at.state|default('-')) }}`
 
-        {{ '\U000026AA' }} `now {{ frm2 | format(states.sensor.temperature_158d00022c7cf2.state_with_unit) }}`
+          {{ '\U000026AA' }} `now {{ frm2 | format(states.sensor.temperature_158d00022c7cf2.state_with_unit) }}`
 
-        {{ '\U000026AB' }} `dif {{ frm2 | format(states.sensor.outside_temperature_diff.state_with_unit) }}`
-      inline_keyboard:
-      - "\U0001F504 Refresh:/outside, \U0000267B Dismiss:/dismiss"
+          {{ '\U000026AB' }} `dif {{ frm2 | format(states.sensor.outside_temperature_diff.state_with_unit) }}`
+        inline_keyboard:
+        - "\U0001F504 Refresh:/outside, \U0000267B Dismiss:/dismiss"
 
 telegram_send_rooms:
   sequence:
-  - service: telegram_bot.send_message
-    data_template:
-      target: "{{target}}"
-      title: "Rooms climate"
-      message: >
-        {% set frm = "%-8s| %-8s" %}
+    - service: telegram_bot.send_message
+      data_template:
+        target: "{{target}}"
+        title: "Rooms climate"
+        message: >
+          {% set frm = "%-8s| %-8s" %}
 
-        {{ '\U0001F3D8' }}`     {{ frm | format("temp", "hmdt") }}`
+          {{ '\U0001F3D8' }}`     {{ frm | format("temp", "hmdt") }}`
 
-        {{ '\U00002601' }}` out {{ frm | format(states.sensor.temperature_158d00022c7cf2.state_with_unit, states.sensor.humidity_158d00022c7cf2.state_with_unit) }}`
+          {{ '\U00002601' }}` out {{ frm | format(states.sensor.temperature_158d00022c7cf2.state_with_unit, states.sensor.humidity_158d00022c7cf2.state_with_unit) }}`
 
-        {{ '\U0001F37D' }}` ktc {{ frm | format(states.sensor.temperature_158d0002323783.state_with_unit, states.sensor.humidity_158d0002323783.state_with_unit) }}`
+          {{ '\U0001F37D' }}` ktc {{ frm | format(states.sensor.temperature_158d0002323783.state_with_unit, states.sensor.humidity_158d0002323783.state_with_unit) }}`
 
-        {{ '\U0001F6CB' }}` lvg {{ frm | format(states.sensor.temperature_158d000234816a.state_with_unit, states.sensor.humidity_158d000234816a.state_with_unit) }}`
+          {{ '\U0001F6CB' }}` lvg {{ frm | format(states.sensor.temperature_158d000234816a.state_with_unit, states.sensor.humidity_158d000234816a.state_with_unit) }}`
 
-        {{ '\U0001F4D0' }}` chd {{ frm | format(states.sensor.temperature_158d0002271609.state_with_unit, states.sensor.humidity_158d0002271609.state_with_unit) }}`
+          {{ '\U0001F4D0' }}` chd {{ frm | format(states.sensor.temperature_158d0002271609.state_with_unit, states.sensor.humidity_158d0002271609.state_with_unit) }}`
 
-        {{ '\U0001F6CF' }}` bdr {{ frm | format(states.sensor.temperature_158d0001f23cbe.state_with_unit, states.sensor.humidity_158d0001f23cbe.state_with_unit) }}`
-      inline_keyboard:
-      - "\U0001F504 Refresh:/rooms, \U0000267B Dismiss:/dismiss"
+          {{ '\U0001F6CF' }}` bdr {{ frm | format(states.sensor.temperature_158d0001f23cbe.state_with_unit, states.sensor.humidity_158d0001f23cbe.state_with_unit) }}`
+        inline_keyboard:
+        - "\U0001F504 Refresh:/rooms, \U0000267B Dismiss:/dismiss"
 
 telegram_send_electro:
   sequence:
-  - service: telegram_bot.send_message
-    data_template:
-      target: "{{target}}"
-      title: "Consumption {{ now().strftime('%Y-%m-%d') }} - {{ (states.sensor.power_computer_day.state | float + states.sensor.power_tv_day.state | float + states.sensor.power_router_day.state | float + states.sensor.power_kitchen_day.state | float + states.sensor.power_fridge_day.state | float) | round(2) }} kW"
-      message: >
-        {% set frm = "%-5s| %-6s| %-5s" %}
+    - service: telegram_bot.send_message
+      data_template:
+        target: "{{target}}"
+        title: "Consumption {{ now().strftime('%Y-%m-%d') }} - {{ (states.sensor.power_computer_day.state | float + states.sensor.power_tv_day.state | float + states.sensor.power_router_day.state | float + states.sensor.power_kitchen_day.state | float + states.sensor.power_fridge_day.state | float) | round(2) }} kW"
+        message: >
+          {% set frm = "%-5s| %-6s| %-5s" %}
 
-        {{ '\U0001F50C' }}` kW  {{ frm | format("day", "month", "curr") }}`
+          {{ '\U0001F50C' }}` kW  {{ frm | format("day", "month", "curr") }}`
 
-        {{ '\U0001F5A5' }}` cmp {{ frm | format(states.sensor.power_computer_day.state | round(2), states.sensor.power_computer_month.state | round(2), states.sensor.power_strip_1_load_power.state | round(2)) }}`
+          {{ '\U0001F5A5' }}` cmp {{ frm | format(states.sensor.power_computer_day.state | round(2), states.sensor.power_computer_month.state | round(2), states.sensor.power_strip_1_load_power.state | round(2)) }}`
 
-        {{ '\U0001F4FA' }}` tv  {{ frm | format(states.sensor.power_tv_day.state | round(2), states.sensor.power_tv_month.state | round(2), states.sensor.power_strip_4_load_power.state | round(2)) }}`
+          {{ '\U0001F4FA' }}` tv  {{ frm | format(states.sensor.power_tv_day.state | round(2), states.sensor.power_tv_month.state | round(2), states.sensor.power_strip_4_load_power.state | round(2)) }}`
 
-        {{ '\U0001F6E1' }}` ntw {{ frm | format(states.sensor.power_router_day.state | round(2), states.sensor.power_router_month.state | round(2), states.sensor.power_strip_3_load_power.state | round(2)) }}`
+          {{ '\U0001F6E1' }}` ntw {{ frm | format(states.sensor.power_router_day.state | round(2), states.sensor.power_router_month.state | round(2), states.sensor.power_strip_3_load_power.state | round(2)) }}`
 
-        {{ '\U0001F37D' }}` ktc {{ frm | format(states.sensor.power_kitchen_day.state | round(2), states.sensor.power_kitchen_month.state | round(2), states.sensor.power_strip_2_load_power.state | round(2)) }}`
-        
-        {{ '\U0001F969' }}` frg {{ frm | format(states.sensor.power_fridge_day.state | round(2), states.sensor.power_fridge_month.state | round(2), states.sensor.power_strip_5_load_power.state | round(2)) }}`
-      inline_keyboard:
-      - "\U0001F504 Refresh:/electro, \U0000267B Dismiss:/dismiss"
+          {{ '\U0001F37D' }}` ktc {{ frm | format(states.sensor.power_kitchen_day.state | round(2), states.sensor.power_kitchen_month.state | round(2), states.sensor.power_strip_2_load_power.state | round(2)) }}`
+
+          {{ '\U0001F969' }}` frg {{ frm | format(states.sensor.power_fridge_day.state | round(2), states.sensor.power_fridge_month.state | round(2), states.sensor.power_strip_5_load_power.state | round(2)) }}`
+        inline_keyboard:
+        - "\U0001F504 Refresh:/electro, \U0000267B Dismiss:/dismiss"
 
 telegram_send_weather_forecast:
   sequence:
-  - service: telegram_bot.send_message
-    data_template:
-      target: "{{target}}"
-      message: >
-        {% set icons = {
-        '1' : '\U00002600',
-        '2' : '\U0001F324',
-        '3' : '\U0001F325',
-        '4' : '\U00002601',
-        '5' : '\U0001F326',
-        '6' : '\U000026C8',
-        '7' : '\U0001F328',
-        '8' : '\U0001F328',
-        '9' : '\U0001F327',
-        '10' : '\U0001F327',
-        '11' : '\U0001F327',
-        '12' : '\U0001F327',
-        '13' : '\U0001F328',
-        '14' : '\U0001F328',
-        '15' : '\U0001F32B',
-        '20' : '\U000026C8',
-        '21' : '\U000026C8',
-        '22' : '\U000026C8',
-        '23' : '\U000026C8',
-        '24' : '\U000026C8',
-        '25' : '\U000026C8',
-        '26' : '\U000026C8',
-        '27' : '\U000026C8',
-        '28' : '\U000026C8',
-        '29' : '\U000026C8',
-        '30' : '\U000026C8',
-        '31' : '\U000026C8',
-        '32' : '\U000026C8',
-        '33' : '\U000026C8',
-        '34' : '\U000026C8',
-        '40' : '\U0001F326',
-        '41' : '\U0001F326',
-        '42' : '\U0001F326',
-        '43' : '\U0001F326',
-        '44' : '\U0001F326',
-        '45' : '\U0001F326',
-        '46' : '\U0001F327',
-        '47' : '\U0001F328',
-        '48' : '\U0001F328',
-        '49' : '\U0001F328',
-        '50' : '\U0001F328'
-        } %}
-        {% set frm = "%-4s|%-9s|%-8s|%-8s|%-8s|%-8s" %}
-        ```
-        {{ ('   ' + frm) | replace('|', ' ') | format("", "Temp", "Prcp", "Hmdt", "Wind", "Prss")}}
+    - service: telegram_bot.send_message
+      data_template:
+        target: "{{target}}"
+        message: >
+          {% set icons = {
+          '1' : '\U00002600',
+          '2' : '\U0001F324',
+          '3' : '\U0001F325',
+          '4' : '\U00002601',
+          '5' : '\U0001F326',
+          '6' : '\U000026C8',
+          '7' : '\U0001F328',
+          '8' : '\U0001F328',
+          '9' : '\U0001F327',
+          '10' : '\U0001F327',
+          '11' : '\U0001F327',
+          '12' : '\U0001F327',
+          '13' : '\U0001F328',
+          '14' : '\U0001F328',
+          '15' : '\U0001F32B',
+          '20' : '\U000026C8',
+          '21' : '\U000026C8',
+          '22' : '\U000026C8',
+          '23' : '\U000026C8',
+          '24' : '\U000026C8',
+          '25' : '\U000026C8',
+          '26' : '\U000026C8',
+          '27' : '\U000026C8',
+          '28' : '\U000026C8',
+          '29' : '\U000026C8',
+          '30' : '\U000026C8',
+          '31' : '\U000026C8',
+          '32' : '\U000026C8',
+          '33' : '\U000026C8',
+          '34' : '\U000026C8',
+          '40' : '\U0001F326',
+          '41' : '\U0001F326',
+          '42' : '\U0001F326',
+          '43' : '\U0001F326',
+          '44' : '\U0001F326',
+          '45' : '\U0001F326',
+          '46' : '\U0001F327',
+          '47' : '\U0001F328',
+          '48' : '\U0001F328',
+          '49' : '\U0001F328',
+          '50' : '\U0001F328'
+          } %}
+          {% set frm = "%-4s|%-9s|%-8s|%-8s|%-8s|%-8s" %}
+          ```
+          {{ ('   ' + frm) | replace('|', ' ') | format("", "Temp", "Prcp", "Hmdt", "Wind", "Prss")}}
 
-        {{icons[states.sensor.wt00_symbol.state]}}
-        {{frm | format(
-        "Now",
-        states.sensor.wt00_temperature.state_with_unit,
-        states.sensor.wt00_precipitation.state_with_unit,
-        states.sensor.wt00_humidity.state_with_unit,
-        states.sensor.wt00_wind_speed.state_with_unit,
-        states.sensor.wt00_pressure.state_with_unit)
-        }}
+          {{icons[states.sensor.wt00_symbol.state]}}
+          {{frm | format(
+          "Now",
+          states.sensor.wt00_temperature.state_with_unit,
+          states.sensor.wt00_precipitation.state_with_unit,
+          states.sensor.wt00_humidity.state_with_unit,
+          states.sensor.wt00_wind_speed.state_with_unit,
+          states.sensor.wt00_pressure.state_with_unit)
+          }}
 
-        {{icons[states.sensor.wt01_symbol.state]}}
-        {{frm | format("1h",
-        states.sensor.wt01_temperature.state_with_unit,
-        states.sensor.wt01_precipitation.state_with_unit,
-        states.sensor.wt01_humidity.state_with_unit,
-        states.sensor.wt01_wind_speed.state_with_unit,
-        states.sensor.wt01_pressure.state_with_unit)
-        }}
+          {{icons[states.sensor.wt01_symbol.state]}}
+          {{frm | format("1h",
+          states.sensor.wt01_temperature.state_with_unit,
+          states.sensor.wt01_precipitation.state_with_unit,
+          states.sensor.wt01_humidity.state_with_unit,
+          states.sensor.wt01_wind_speed.state_with_unit,
+          states.sensor.wt01_pressure.state_with_unit)
+          }}
 
-        {{icons[states.sensor.wt02_symbol.state]}}
-        {{frm | format("2h",
-        states.sensor.wt02_temperature.state_with_unit,
-        states.sensor.wt02_precipitation.state_with_unit,
-        states.sensor.wt02_humidity.state_with_unit,
-        states.sensor.wt02_wind_speed.state_with_unit,
-        states.sensor.wt02_pressure.state_with_unit)
-        }}
+          {{icons[states.sensor.wt02_symbol.state]}}
+          {{frm | format("2h",
+          states.sensor.wt02_temperature.state_with_unit,
+          states.sensor.wt02_precipitation.state_with_unit,
+          states.sensor.wt02_humidity.state_with_unit,
+          states.sensor.wt02_wind_speed.state_with_unit,
+          states.sensor.wt02_pressure.state_with_unit)
+          }}
 
-        {{icons[states.sensor.wt03_symbol.state]}}
-        {{frm | format("3h",
-        states.sensor.wt03_temperature.state_with_unit,
-        states.sensor.wt03_precipitation.state_with_unit,
-        states.sensor.wt03_humidity.state_with_unit,
-        states.sensor.wt03_wind_speed.state_with_unit,
-        states.sensor.wt03_pressure.state_with_unit)
-        }}
+          {{icons[states.sensor.wt03_symbol.state]}}
+          {{frm | format("3h",
+          states.sensor.wt03_temperature.state_with_unit,
+          states.sensor.wt03_precipitation.state_with_unit,
+          states.sensor.wt03_humidity.state_with_unit,
+          states.sensor.wt03_wind_speed.state_with_unit,
+          states.sensor.wt03_pressure.state_with_unit)
+          }}
 
-        {{icons[states.sensor.wt06_symbol.state]}}
-        {{frm | format("6h",
-        states.sensor.wt06_temperature.state_with_unit,
-        states.sensor.wt06_precipitation.state_with_unit,
-        states.sensor.wt06_humidity.state_with_unit,
-        states.sensor.wt06_wind_speed.state_with_unit,
-        states.sensor.wt06_pressure.state_with_unit)
-        }}
+          {{icons[states.sensor.wt06_symbol.state]}}
+          {{frm | format("6h",
+          states.sensor.wt06_temperature.state_with_unit,
+          states.sensor.wt06_precipitation.state_with_unit,
+          states.sensor.wt06_humidity.state_with_unit,
+          states.sensor.wt06_wind_speed.state_with_unit,
+          states.sensor.wt06_pressure.state_with_unit)
+          }}
 
-        {{icons[states.sensor.wt09_symbol.state]}}
-        {{frm | format("9h",
-        states.sensor.wt09_temperature.state_with_unit,
-        states.sensor.wt09_precipitation.state_with_unit,
-        states.sensor.wt09_humidity.state_with_unit,
-        states.sensor.wt09_wind_speed.state_with_unit,
-        states.sensor.wt09_pressure.state_with_unit)
-        }}
+          {{icons[states.sensor.wt09_symbol.state]}}
+          {{frm | format("9h",
+          states.sensor.wt09_temperature.state_with_unit,
+          states.sensor.wt09_precipitation.state_with_unit,
+          states.sensor.wt09_humidity.state_with_unit,
+          states.sensor.wt09_wind_speed.state_with_unit,
+          states.sensor.wt09_pressure.state_with_unit)
+          }}
 
-        {{icons[states.sensor.wt12_symbol.state]}}
-        {{frm | format("12h",
-        states.sensor.wt12_temperature.state_with_unit,
-        states.sensor.wt12_precipitation.state_with_unit,
-        states.sensor.wt12_humidity.state_with_unit,
-        states.sensor.wt12_wind_speed.state_with_unit,
-        states.sensor.wt12_pressure.state_with_unit)
-        }}
+          {{icons[states.sensor.wt12_symbol.state]}}
+          {{frm | format("12h",
+          states.sensor.wt12_temperature.state_with_unit,
+          states.sensor.wt12_precipitation.state_with_unit,
+          states.sensor.wt12_humidity.state_with_unit,
+          states.sensor.wt12_wind_speed.state_with_unit,
+          states.sensor.wt12_pressure.state_with_unit)
+          }}
 
-        {{icons[states.sensor.wt24_symbol.state]}}
-        {{frm | format("1d",
-        states.sensor.wt24_temperature.state_with_unit,
-        states.sensor.wt24_precipitation.state_with_unit,
-        states.sensor.wt24_humidity.state_with_unit,
-        states.sensor.wt24_wind_speed.state_with_unit,
-        states.sensor.wt24_pressure.state_with_unit)
-        }}
+          {{icons[states.sensor.wt24_symbol.state]}}
+          {{frm | format("1d",
+          states.sensor.wt24_temperature.state_with_unit,
+          states.sensor.wt24_precipitation.state_with_unit,
+          states.sensor.wt24_humidity.state_with_unit,
+          states.sensor.wt24_wind_speed.state_with_unit,
+          states.sensor.wt24_pressure.state_with_unit)
+          }}
 
-        {{icons[states.sensor.wt48_symbol.state]}}
-        {{frm | format("2d",
-        states.sensor.wt48_temperature.state_with_unit,
-        states.sensor.wt48_precipitation.state_with_unit,
-        states.sensor.wt48_humidity.state_with_unit,
-        states.sensor.wt48_wind_speed.state_with_unit,
-        states.sensor.wt48_pressure.state_with_unit)
-        }}
+          {{icons[states.sensor.wt48_symbol.state]}}
+          {{frm | format("2d",
+          states.sensor.wt48_temperature.state_with_unit,
+          states.sensor.wt48_precipitation.state_with_unit,
+          states.sensor.wt48_humidity.state_with_unit,
+          states.sensor.wt48_wind_speed.state_with_unit,
+          states.sensor.wt48_pressure.state_with_unit)
+          }}
 
-        {{icons[states.sensor.wt72_symbol.state]}}
-        {{frm | format("3d",
-        states.sensor.wt72_temperature.state_with_unit,
-        states.sensor.wt72_precipitation.state_with_unit,
-        states.sensor.wt72_humidity.state_with_unit,
-        states.sensor.wt72_wind_speed.state_with_unit,
-        states.sensor.wt72_pressure.state_with_unit)
-        }}
-        ```
-      inline_keyboard:
-      - "\U0001F504 Refresh:/forecast, \U0000267B Dismiss:/dismiss"
+          {{icons[states.sensor.wt72_symbol.state]}}
+          {{frm | format("3d",
+          states.sensor.wt72_temperature.state_with_unit,
+          states.sensor.wt72_precipitation.state_with_unit,
+          states.sensor.wt72_humidity.state_with_unit,
+          states.sensor.wt72_wind_speed.state_with_unit,
+          states.sensor.wt72_pressure.state_with_unit)
+          }}
+          ```
+        inline_keyboard:
+        - "\U0001F504 Refresh:/forecast, \U0000267B Dismiss:/dismiss"

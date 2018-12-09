@@ -1,73 +1,73 @@
 tts_summary:
   sequence:
-  - service: script.tts_say_kitchen
-    data_template:
-      message: >
-        Привет!
-        До работы ехать {{ states.sensor.waze_home_work.state }} минут.
-        За окном температура - {{ states.sensor.temperature_158d00022c7cf2.state | round(0) }} градусов.
-        ветер - {{ states.sensor.wt00_wind_speed.state | round(0) }} метров в секунду.
-        осадки - {{ states.sensor.wt00_precipitation.state | round(0)}} миллиметров.
-        Минимальная температура {{ states.sensor.outside_temperature_min.state | round(0) }} была в {{ states.sensor.outside_temperature_min_at.state }}.
-        Удачи вам, ребята!!!
+    - service: script.tts_say_kitchen
+      data_template:
+        message: >
+          Привет!
+          До работы ехать {{ states.sensor.waze_home_work.state }} минут.
+          За окном температура - {{ states.sensor.temperature_158d00022c7cf2.state | round(0) }} градусов.
+          ветер - {{ states.sensor.wt00_wind_speed.state | round(0) }} метров в секунду.
+          осадки - {{ states.sensor.wt00_precipitation.state | round(0)}} миллиметров.
+          Минимальная температура {{ states.sensor.outside_temperature_min.state | round(0) }} была в {{ states.sensor.outside_temperature_min_at.state }}.
+          Удачи вам, ребята!!!
 
 tts_rooms:
   sequence:
-  - service: script.tts_say_kitchen
-    data_template:
-      message: >
-        Температура.
-        Улица - {{ states.sensor.temperature_158d00022c7cf2.state | round(0) }}.
-        Кухня - {{ states.sensor.temperature_158d0002323783.state | round(0) }}.
-        Гостинная - {{ states.sensor.temperature_158d000234816a.state | round(0) }}.
-        Детская - {{ states.sensor.temperature_158d0002271609.state | round(0) }}.
-        Спальня - {{ states.sensor.temperature_158d0001f23cbe.state | round(0) }}.
-        Влажность.
-        Улица - {{ states.sensor.humidity_158d00022c7cf2.state | round(0) }}.
-        Кухня - {{ states.sensor.humidity_158d0002323783.state | round(0) }}.
-        Гостинная - {{ states.sensor.humidity_158d000234816a.state | round(0) }}.
-        Детская - {{ states.sensor.humidity_158d0002271609.state | round(0) }}.
-        Спальня - {{ states.sensor.humidity_158d0001f23cbe.state | round(0) }}.
+    - service: script.tts_say_kitchen
+      data_template:
+        message: >
+          Температура.
+          Улица - {{ states.sensor.temperature_158d00022c7cf2.state | round(0) }}.
+          Кухня - {{ states.sensor.temperature_158d0002323783.state | round(0) }}.
+          Гостинная - {{ states.sensor.temperature_158d000234816a.state | round(0) }}.
+          Детская - {{ states.sensor.temperature_158d0002271609.state | round(0) }}.
+          Спальня - {{ states.sensor.temperature_158d0001f23cbe.state | round(0) }}.
+          Влажность.
+          Улица - {{ states.sensor.humidity_158d00022c7cf2.state | round(0) }}.
+          Кухня - {{ states.sensor.humidity_158d0002323783.state | round(0) }}.
+          Гостинная - {{ states.sensor.humidity_158d000234816a.state | round(0) }}.
+          Детская - {{ states.sensor.humidity_158d0002271609.state | round(0) }}.
+          Спальня - {{ states.sensor.humidity_158d0001f23cbe.state | round(0) }}.
 
 tts_outside:
   sequence:
-  - service: script.tts_say_kitchen
-    data_template:
-      message: >
-        Сейчас на улице.
-        Температура {{ states.sensor.temperature_158d00022c7cf2.state | round(0) }}.
-        Влажность {{ states.sensor.humidity_158d00022c7cf2.state | round(0) }}.
-        Ветер - {{ states.sensor.wt00_wind_speed.state | round(0) }} метров в секунду.
-        Осадки - {{ states.sensor.wt00_precipitation.state | round(0)}} миллиметров.
-        Через час.
-        Температура {{ states.sensor.wt01_temperature.state | round(0) }}.
-        Влажность {{ states.sensor.wt01_humidity.state | round(0) }}.
-        Ветер - {{ states.sensor.wt01_wind_speed.state | round(0) }} метров в секунду.
-        Осадки - {{ states.sensor.wt01_precipitation.state | round(0)}} миллиметров.
+    - service: script.tts_say_kitchen
+      data_template:
+        message: >
+          Сейчас на улице.
+          Температура {{ states.sensor.temperature_158d00022c7cf2.state | round(0) }}.
+          Влажность {{ states.sensor.humidity_158d00022c7cf2.state | round(0) }}.
+          Ветер - {{ states.sensor.wt00_wind_speed.state | round(0) }} метров в секунду.
+          Осадки - {{ states.sensor.wt00_precipitation.state | round(0)}} миллиметров.
+          Через час.
+          Температура {{ states.sensor.wt01_temperature.state | round(0) }}.
+          Влажность {{ states.sensor.wt01_humidity.state | round(0) }}.
+          Ветер - {{ states.sensor.wt01_wind_speed.state | round(0) }} метров в секунду.
+          Осадки - {{ states.sensor.wt01_precipitation.state | round(0)}} миллиметров.
 
 tts_consumption:
   sequence:
-  - service: script.tts_say_kitchen
-    data_template:
-      message: >
-        Потребление в киловаттах за сегодня.
-        Компьютер - {{ states.sensor.power_computer_day.state | round(2) }}.
-        Рутер - {{ states.sensor.power_router_day.state | round(2) }}.
-        Телевизор - {{ states.sensor.power_tv_day.state | round(2) }}.
-        Кухня - {{ states.sensor.power_kitchen_day.state | round(2) }}.
-        Холодильник - {{ states.sensor.power_fridge_day.state | round(2) }}.
+    - service: script.tts_say_kitchen
+      data_template:
+        message: >
+          Потребление в киловаттах за сегодня.
+          Компьютер - {{ states.sensor.power_computer_day.state | round(2) }}.
+          Рутер - {{ states.sensor.power_router_day.state | round(2) }}.
+          Телевизор - {{ states.sensor.power_tv_day.state | round(2) }}.
+          Кухня - {{ states.sensor.power_kitchen_day.state | round(2) }}.
+          Холодильник - {{ states.sensor.power_fridge_day.state | round(2) }}.
 
 tts_say_kitchen:
   sequence:
-#  - service: media_player.media_pause
-  - service: media_player.volume_set
-    data_template:
+  #  - service: media_player.media_pause
+    - service: media_player.volume_set
+      data_template:
+        entity_id: media_player.kitchen_speaker
+        volume_level: "{{ (states.input_number.tts_volume.state | float) / 10 }}"
+    - service: tts.google_say
       entity_id: media_player.kitchen_speaker
-      volume_level: "{{ (states.input_number.tts_volume.state | float) / 10 }}"
-  - service: tts.google_say
-    entity_id: media_player.kitchen_speaker
-    data_template:
-      message:  "{{message}}"
-      language: "ru"
-      cache: false
-#  - service: media_player.media_play
+      data_template:
+        message:  "{{message}}"
+        language: "ru"
+        cache: false
+  #  - service: media_player.media_play

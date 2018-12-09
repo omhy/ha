@@ -14,3 +14,19 @@
     light.corner_lamp:
       state: true
       brightness: 1
+- name: "we_are_leaving"
+  entities:
+    media_player.kitchen_speaker: idle
+    media_player.yury_speaker: idle
+    light.garland: true
+    light.fire_lamp: true
+    light.big_torch: false
+    light.corner_lamp: false
+    light.small_torch: false
+    light.star_lamp: false
+    light.bathroom: false
+    light.corridor: false
+- name: "we_are_arriving"
+  entities:
+    light.garland: true
+    light.fire_lamp: true
