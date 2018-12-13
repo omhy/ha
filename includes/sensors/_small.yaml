@@ -18,7 +18,6 @@
   - type: disk_use_percent
     arg: /home
   - type: swap_use_percent
-  - type: since_last_boot
 
 - platform: command_line
   name: "Temp"

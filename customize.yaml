@@ -63,8 +63,6 @@ device_tracker.google_maps_115914092349482836896:
   friendly_name: Alyona
 
 #HW
-sensor.since_last_boot:
-  friendly_name: Rsp uptime
 sensor.uptime:
   friendly_name: HA uptime
 
