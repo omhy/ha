@@ -71,6 +71,16 @@ views:
 
       - type: vertical-stack
         cards:
+        - id: 55b9abc90896484b809b9668847e7643  # Automatically created id
+          type: custom:mini-media-player
+          entity: media_player.kodi
+          icon: mdi:kodi
+          artwork: cover
+          short_info: true
+          hide_volume: true
+          hide_power: true
+          show_progress: true
+
         - id: 7b8a3285d1264ffbab29f2a6dadd000b  # Automatically created id
           type: custom:mini-media-player
           entity: media_player.kitchen_display
@@ -108,7 +118,6 @@ views:
           show_source: small
           show_shuffle: true
           hide_power: true
-          show_progress: true
 
     ##################   CLIMATE
   - title: Climate
