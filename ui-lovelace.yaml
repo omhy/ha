@@ -1,13 +1,13 @@
 resources:
   - url: /local/custom-lovelace/monster-card.js?v=0.2.3
     type: js
-  - url: /local/custom-lovelace/mini-media-player-bundle.js?v=0.9.5
+  - url: /local/custom-lovelace/mini-media-player-bundle.js?v=0.9.7
     type: module
 
 
 title: Home
 views:
-##################   MAIN
+  ##################   MAIN
   - title: Main
     id: main
     icon: mdi:floor-plan
@@ -18,91 +18,126 @@ views:
       - sun.sun
       - sensor.moon
     cards:
+      - id: 455af10c07484baf9c9c4fafd2619200  # Automatically created id
+        type: custom:monster-card
+        card:
+          type: glance
+          title: Lights on now
+        filter:
+          include:
+            - domain: light
+              state: "on"
+          exclude:
+            - entity_id: light.livroom_ambient
+
       - id: 5c72bd844c2c4323b0d56c0ded0384e0  # Automatically created id
         type: glance
         title: Lights
         entities:
           - entity: light.garland
-            tap_action: toggle
+            tap_action:
+              action: toggle
           - entity: light.big_torch
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
           - entity: light.corner_lamp
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
           - entity: light.small_torch
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
           - entity: light.fire_lamp
-            tap_action: toggle
+            tap_action:
+              action: toggle
           - entity: light.star_lamp
-            tap_action: toggle
+            tap_action:
+              action: toggle
           - entity: light.corridor
-            tap_action: toggle
+            tap_action:
+              action: toggle
           - entity: light.bathroom
-            tap_action: toggle
+            tap_action:
+              action: toggle
 
       - id: e6b961f33e9b411fa5c4b6590a370b7e  # Automatically created id
-        type: entities
+        type: glance
         title: Motions
         entities:
           - entity: binary_sensor.motion_sensor_158d0001fa3dc0
             name: Living room
+          - entity: sensor.livingroom_motions
+            name: Today
+            icon: mdi:sigma
           - entity: binary_sensor.motion_sensor_158d0001e52779
             name: Bathroom
-
-      - id: 68e35ab2cbba40c791a06c1a1ba7576c  # Automatically created id
-        type: entities
-        title: Motions total
-        entities:
-          - entity: sensor.livingroom_motions
-            name: Living room
-            icon: mdi:television
           - entity: sensor.bathroom_motions
-            name: Bathroom
-            icon: mdi:shower
+            name: Today
+            icon: mdi:sigma
 
-      - id: e352642f6fa1475998b4a9914dff47e0  # Automatically created id
-        type: entities
-        title: Illumination
-        entities:
-          - entity: sensor.illumination_158d0001fa3dc0
-            name: Living room
-          - entity: sensor.illumination_158d0001e52779
-            name: Bathroom
-
-      - id: 7b8a3285d1264ffbab29f2a6daddcecb  # Automatically created id
-        type: custom:mini-media-player
-        entity: media_player.kitchen_speaker
-        icon: mdi:google-home
-        artwork: cover
-        short_info: true
-
-      - id: 158300d76a9641ff8b89eeac20d42ce1  # Automatically created id
-        type: custom:mini-media-player
-        entity: media_player.yury_speaker
-        icon: mdi:dots-horizontal-circle
-        artwork: cover
-        short_info: true
-
-      - id: 55b9abc90896484b809b9668847e7643  # Automatically created id
-        type: custom:mini-media-player
-        entity: media_player.kodi
-        icon: mdi:kodi
-        artwork: cover
-        short_info: true
-        hide_volume: true
-        hide_power: true
-        show_progress: true
-
-      - id: ab16923ec86c468aac47e451efdb126c  # Automatically created id
-        type: custom:mini-media-player
-        entity: media_player.spotify
-        artwork: full-cover
-        short_info: true
-        hide_volume: true
-        show_source: small
-        show_shuffle: true
-        hide_power: true
-        show_progress: true
+      #      - id: e352642f6fa1475998b4a9914dff47e0  # Automatically created id
+      #        type: entities
+      #        title: Illumination
+      #        entities:
+      #          - entity: sensor.illumination_158d0001fa3dc0
+      #            name: Living room
+      #          - entity: sensor.illumination_158d0001e52779
+      #            name: Bathroom
 
       - id: f6f63f7eb53e4d32819b4782bb59af34  # Automatically created id
         type: weather-forecast
         entity: weather.smhi_home
+
+      - type: vertical-stack
+        cards:
+          - id: 7b8a3285d1264ffbab29f2a6dadd000b  # Automatically created id
+            type: custom:mini-media-player
+            entity: media_player.kitchen_display
+            icon: mdi:monitor
+            artwork: cover
+            short_info: true
+
+          - id: 7b8a3285d1264ffbab29f2a6daddcecb  # Automatically created id
+            type: custom:mini-media-player
+            entity: media_player.loud_speaker
+            icon: mdi:google-home
+            artwork: cover
+            short_info: true
+
+          - id: 158300d76a9641ff8b89eeac20d42ce1  # Automatically created id
+            type: custom:mini-media-player
+            entity: media_player.yury_speaker
+            icon: mdi:dots-horizontal-circle
+            artwork: cover
+            short_info: true
+
+          - id: 55b9abc90896484b80009668847e7643  # Automatically created id
+            type: custom:mini-media-player
+            entity: media_player.speakers
+            icon: mdi:speaker-wireless
+            artwork: cover
+            short_info: true
+
+          - id: 55b9abc90896484b80009668847e7643  # Automatically created id
+            type: custom:mini-media-player
+            entity: media_player.kodi
+            icon: mdi:kodi
+            artwork: cover
+            short_info: true
+
+          - id: ab16923ec86c468aac47e451efdb126c  # Automatically created id
+            type: custom:mini-media-player
+            entity: media_player.spotify
+            artwork: full-cover
+            short_info: true
+            show_source: small
+            show_shuffle: true
+            hide_power: true
 
     ##################   CLIMATE
   - title: Climate
@@ -238,7 +273,7 @@ views:
                   yellow: 15
                   red: 20
 
-##################   LIGHTS
+  ##################   LIGHTS
   - title: Lights
     id: lights
     icon: mdi:floor-lamp
@@ -279,7 +314,7 @@ views:
           - entity: input_number.small_torch_mired
             name: Mireds
 
-##################   LIGHTS FLOW
+  ##################   LIGHTS FLOW
   - title: Lights flow
     id: lights_flow
     icon: mdi:palette
@@ -294,12 +329,12 @@ views:
         entities:
           - entity: input_boolean.livingroom_torch_use
             name: Use torch
-            tap_action: call-service
-            service: input_boolean.toggle
+            tap_action:
+              action: toggle
           - entity: input_boolean.livingroom_corner_use
             name: Use corner
-            tap_action: call-service
-            service: input_boolean.toggle
+            tap_action:
+              action: toggle
           - entity: input_select.living_room_flow
             name: Flow type
       - id: e55f4bbb1fda439c982fc5b344b3fb1b  # Automatically created id
@@ -328,7 +363,7 @@ views:
           - input_number.flow_custom_hue3
           - input_number.flow_custom_hue4
 
-##################   ELECTRO
+  ##################   ELECTRO
   - title: Electricity
     id: electro
     icon: mdi:power-plug
@@ -598,7 +633,7 @@ views:
           - sensor.wt48_symbol
           - sensor.wt72_symbol
 
-##################   AUTOMATIONS
+  ##################   AUTOMATIONS
   - title: Automations
     id: automations
     icon: mdi:creation
@@ -611,13 +646,13 @@ views:
         filter:
           include:
             - entity_id: automation.working_day*
-#    - type: custom:monster-card
-#      card:
-#        type: entities
-#        title: Automations (telegram)
-#      filter:
-#        include:
-#        - entity_id: "automation.telegram*"
+      #    - type: custom:monster-card
+      #      card:
+      #        type: entities
+      #        title: Automations (telegram)
+      #      filter:
+      #        include:
+      #        - entity_id: "automation.telegram*"
       - id: 30b44a89934f480e8592b881778212bc  # Automatically created id
         type: custom:monster-card
         card:
@@ -733,7 +768,7 @@ views:
             - entity_id: automation.schedule*
             - entity_id: automation.alert*
 
-##################   SCRIPTS
+  ##################   SCRIPTS
   - title: Scripts
     id: scripts
     icon: mdi:script
@@ -817,7 +852,7 @@ views:
             - entity_id: script.tts*
             - entity_id: script.telegram*
 
-##################   SUM
+  ##################   SUM
   - title: Summary
     id: sum
     icon: mdi:elephant
@@ -1019,7 +1054,7 @@ views:
             - entity_id: sensor.*skin*
             - entity_id: sensor.*waze*
 
-##################   LINKS
+  ##################   LINKS
   - title: Links
     id: links
     icon: mdi:link
@@ -1048,14 +1083,19 @@ views:
             name: Grafana
             url: http://192.168.1.10:3000
             icon: mdi:graphql
+          #          - type: weblink
+          #            name: MotionEye
+          #            url: http://192.168.1.10:8765
+          #            icon: mdi:cctv
           - type: weblink
-            name: MotionEye
-            url: http://192.168.1.10:8765
-            icon: mdi:cctv
-          - type: weblink
-            name: Kodi
-            url: http://192.168.1.20:8080
-            icon: mdi:kodi
+            name: Github repo
+            url: https://github.com/omhy/ha
+            icon: mdi:github-circle
+
+      - id: 614279a5c1f0431aa1605cb30dfcc511  # Automatically created id
+        type: entities
+        title: Media players
+        entities:
           - type: weblink
             name: Google home mini API
             url: http://192.168.1.30:8008/setup/eureka_info
@@ -1065,9 +1105,13 @@ views:
             url: http://192.168.1.31:8008/setup/eureka_info
             icon: mdi:google-home
           - type: weblink
-            name: Github repo
-            url: https://github.com/omhy/ha
-            icon: mdi:github-circle
+            name: Google home hub API
+            url: http://192.168.1.32:8008/setup/eureka_info
+            icon: mdi:monitor
+          - type: weblink
+            name: Kodi
+            url: http://192.168.1.20:8080
+            icon: mdi:kodi
 
       - id: 8a56f82634f642b597d7166564be6b45  # Automatically created id
         type: entities
@@ -1132,11 +1176,11 @@ views:
             url: http://unicode.org/emoji/charts/full-emoji-list.html
             icon: mdi:sticker-emoji
 
-##################   SYSTEM
+  ##################   SYSTEM
   - title: System
     id: sys
     icon: mdi:desktop-tower
-#    badges:
+    #    badges:
     cards:
       - id: ae44121346734a62ac5937eecfb171a9  # Automatically created id
         type: entities
@@ -1148,7 +1192,6 @@ views:
           - sensor.swap_use_percent
           - sensor.temp
           - sensor.uptime
-          - sensor.since_last_boot
           - input_select.log_level
       - id: ae44121346734a62ac5937eecfb171a7  # Automatically created id
         type: glance

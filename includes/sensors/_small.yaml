@@ -1,8 +1,8 @@
 - platform: moon
 - platform: uptime
 
-- platform: launch_library
-  name: launches
+#- platform: launch_library
+#  name: launches
 
 - platform: season
   type: astronomical
@@ -18,7 +18,6 @@
   - type: disk_use_percent
     arg: /home
   - type: swap_use_percent
-  - type: since_last_boot
 
 - platform: command_line
   name: "Temp"
