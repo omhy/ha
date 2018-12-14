@@ -65,8 +65,17 @@ recorder:
     domains:
       - sun
       - sensor
-#      - switch
-#      - light
+  exclude:
+    entities:
+      - sensor.season
+      - sensor.days_in_month
+      - sensor.date
+      - sensor.time
+      - sensor.flow_random_hue
+      - sensor.current_version
+      - sensor.cube_action
+      - sensor.alyona_is_home
+
 
 xiaomi_aqara:
   discovery_retry: 5
