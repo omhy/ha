@@ -126,6 +126,7 @@
         {% endif %}
         {{ current }}
 
+#ToDo replace with scene
 - alias: "cube_action_free_fall"
   initial_state: "on"
   trigger:

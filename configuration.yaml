@@ -28,6 +28,7 @@ lovelace:
 updater:
   include_used_components: true
 
+recorder: !include includes/recorder.yaml
 history:
 logbook:
 logger:
@@ -58,24 +59,6 @@ media_player:
   client_secret: !secret spotify_client_secret
 - platform: kodi
   host: 192.168.1.20
-
-recorder:
-  purge_keep_days: 1
-  include:
-    domains:
-      - sun
-      - sensor
-  exclude:
-    entities:
-      - sensor.season
-      - sensor.days_in_month
-      - sensor.date
-      - sensor.time
-      - sensor.flow_random_hue
-      - sensor.current_version
-      - sensor.cube_action
-      - sensor.alyona_is_home
-
 
 xiaomi_aqara:
   discovery_retry: 5

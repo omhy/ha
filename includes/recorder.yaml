@@ -1,0 +1,31 @@
+purge_keep_days: 1
+include:
+  domains:
+    - sun
+    - sensor
+  entities:
+    - sensor.temperature_158d0001f23cbe
+    - sensor.temperature_158d0002271609
+    - sensor.temperature_158d00022c7cf2
+    - sensor.temperature_158d0002323783
+    - sensor.temperature_158d000234816a
+    - sensor.humidity_158d0001f23cbe
+    - sensor.humidity_158d0002271609
+    - sensor.humidity_158d00022c7cf2
+    - sensor.humidity_158d0002323783
+    - sensor.humidity_158d000234816a
+    - sensor.pressure_158d0001f23cbe
+    - sensor.pressure_158d0002271609
+    - sensor.pressure_158d00022c7cf2
+    - sensor.pressure_158d0002323783
+    - sensor.pressure_158d000234816a
+exclude:
+  entities:
+    - sensor.season
+    - sensor.days_in_month
+    - sensor.date
+    - sensor.time
+    - sensor.flow_random_hue
+    - sensor.current_version
+    - sensor.cube_action
+    - sensor.alyona_is_home
