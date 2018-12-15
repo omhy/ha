@@ -2,7 +2,7 @@ purge_keep_days: 1
 include:
   domains:
     - sun
-    - sensor
+    - device_tracker
   entities:
     - sensor.temperature_158d0001f23cbe
     - sensor.temperature_158d0002271609
@@ -19,13 +19,58 @@ include:
     - sensor.pressure_158d00022c7cf2
     - sensor.pressure_158d0002323783
     - sensor.pressure_158d000234816a
-exclude:
-  entities:
-    - sensor.season
-    - sensor.days_in_month
-    - sensor.date
-    - sensor.time
-    - sensor.flow_random_hue
-    - sensor.current_version
-    - sensor.cube_action
-    - sensor.alyona_is_home
+    - sensor.wt00_temperature
+    - sensor.wt01_temperature
+    - sensor.wt02_temperature
+    - sensor.wt03_temperature
+    - sensor.wt06_temperature
+    - sensor.wt09_temperature
+    - sensor.wt12_temperature
+    - sensor.wt24_temperature
+    - sensor.wt72_temperature
+    - sensor.wt48_temperature
+    - sensor.wt96_temperature
+    - sensor.wt00_precipitation
+    - sensor.wt01_precipitation
+    - sensor.wt02_precipitation
+    - sensor.wt03_precipitation
+    - sensor.wt06_precipitation
+    - sensor.wt09_precipitation
+    - sensor.wt12_precipitation
+    - sensor.wt24_precipitation
+    - sensor.wt72_precipitation
+    - sensor.wt48_precipitation
+    - sensor.wt96_precipitation
+    - sensor.wt00_humidity
+    - sensor.wt01_humidity
+    - sensor.wt02_humidity
+    - sensor.wt03_humidity
+    - sensor.wt06_humidity
+    - sensor.wt09_humidity
+    - sensor.wt12_humidity
+    - sensor.wt24_humidity
+    - sensor.wt72_humidity
+    - sensor.wt48_humidity
+    - sensor.wt96_humidity
+    - sensor.wt00_wind_speed
+    - sensor.wt01_wind_speed
+    - sensor.wt02_wind_speed
+    - sensor.wt03_wind_speed
+    - sensor.wt06_wind_speed
+    - sensor.wt09_wind_speed
+    - sensor.wt12_wind_speed
+    - sensor.wt24_wind_speed
+    - sensor.wt72_wind_speed
+    - sensor.wt48_wind_speed
+    - sensor.wt96_wind_speed
+    - sensor.wt00_pressure
+    - sensor.wt01_pressure
+    - sensor.wt02_pressure
+    - sensor.wt03_pressure
+    - sensor.wt06_pressure
+    - sensor.wt09_pressure
+    - sensor.wt12_pressure
+    - sensor.wt24_pressure
+    - sensor.wt72_pressure
+    - sensor.wt48_pressure
+    - sensor.wt96_pressure
