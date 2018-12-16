@@ -26,12 +26,3 @@
       value_template: "{{ states.computer_on_today_minutes.state | int >= states.input_number.computer_today_allowed.state | int}}"
   action:
     - service:  script.rmt_computer_sleep
-
-- alias: "log_level"
-  trigger:
-    - platform: state
-      entity_id: input_select.log_level
-  action:
-    - service: logger.set_level
-      data_template:
-        homeassistant.components: "{{ trigger.to_state.state }}"

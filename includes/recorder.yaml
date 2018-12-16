@@ -1,9 +1,10 @@
-purge_keep_days: 3
+purge_keep_days: 2
 include:
   domains:
     - sun
     - device_tracker
     - light
+    - media_player
   entities:
     - sensor.moon
     - sensor.processor_use
@@ -11,6 +12,7 @@ include:
     - sensor.disk_use_percent_home
     - sensor.swap_use_percent
     - sensor.temp
+    - sensor.homeassistant_v2db
     - binary_sensor.motion_sensor_158d0001fa3dc0
     - binary_sensor.motion_sensor_158d0001e52779
     - binary_sensor.ping_computer

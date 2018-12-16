@@ -13,102 +13,83 @@ views:
     icon: mdi:floor-plan
     badges:
       - sensor.wt00_symbol
+      - sensor.temperature_158d00022c7cf2
+      - sensor.humidity_158d00022c7cf2
+      - sensor.pressure_158d00022c7cf2
+      - sensor.wt00_precipitation
+      - sensor.wt00_wind_speed
       - sun.sun
-      - sensor.moon
       - device_tracker.google_maps_111683533988744565132
       - device_tracker.google_maps_115914092349482836896
     cards:
-      - id: e6b961f33e9b411fa5c4b6585a370b7e  # Automatically created id
-        type: glance
-        title: Outside
-        entities:
-          - entity: sensor.temperature_158d00022c7cf2
-            name: Temperature
-          - entity: sensor.humidity_158d00022c7cf2
-            name: Humidity
-          - entity: sensor.pressure_158d00022c7cf2
-            name: Pressure
-          - entity: sensor.wt00_precipitation
-            name: Preciptation
-          - entity: sensor.wt00_wind_speed
-            name: Wind
-
-
-
-      - id: 455af10c07484baf9c9c4fafd2619200  # Automatically created id
-        type: custom:monster-card
-        card:
+      - type: vertical-stack
+        cards:
+        - id: e6b961f33e9b411fa5c4b6590a370b7e  # Automatically created id
           type: glance
-          title: Lights on now
-        filter:
-          include:
-            - domain: light
-              state: "on"
-          exclude:
-            - entity_id: light.livroom_ambient
+          title: Motions
+          entities:
+            - entity: binary_sensor.motion_sensor_158d0001fa3dc0
+              name: Living room
+            - entity: sensor.livingroom_motions
+              name: Today
+              icon: mdi:sigma
+            - entity: binary_sensor.motion_sensor_158d0001e52779
+              name: Bathroom
+            - entity: sensor.bathroom_motions
+              name: Today
+              icon: mdi:sigma
 
-      - id: 5c72bd844c2c4323b0d56c0ded0384e0  # Automatically created id
-        type: glance
-        title: Lights
-        entities:
-          - entity: light.garland
-            tap_action:
-              action: toggle
-          - entity: light.big_torch
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          - entity: light.corner_lamp
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          - entity: light.small_torch
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          - entity: light.fire_lamp
-            tap_action:
-              action: toggle
-          - entity: light.tree_lamp
-            tap_action:
-              action: toggle
-          - entity: light.corridor
-            tap_action:
-              action: toggle
-          - entity: light.bathroom
-            tap_action:
-              action: toggle
+        - id: f6f63f7eb53e4d32819b4782bb59af34  # Automatically created id
+          type: weather-forecast
+          entity: weather.smhi_home
 
-      - id: e6b961f33e9b411fa5c4b6590a370b7e  # Automatically created id
-        type: glance
-        title: Motions
-        entities:
-          - entity: binary_sensor.motion_sensor_158d0001fa3dc0
-            name: Living room
-          - entity: sensor.livingroom_motions
-            name: Today
-            icon: mdi:sigma
-          - entity: binary_sensor.motion_sensor_158d0001e52779
-            name: Bathroom
-          - entity: sensor.bathroom_motions
-            name: Today
-            icon: mdi:sigma
-
-      #      - id: e352642f6fa1475998b4a9914dff47e0  # Automatically created id
-      #        type: entities
-      #        title: Illumination
-      #        entities:
-      #          - entity: sensor.illumination_158d0001fa3dc0
-      #            name: Living room
-      #          - entity: sensor.illumination_158d0001e52779
-      #            name: Bathroom
-
-      - id: f6f63f7eb53e4d32819b4782bb59af34  # Automatically created id
-        type: weather-forecast
-        entity: weather.smhi_home
+      - type: vertical-stack
+        cards:
+        - id: 5c72bd844c2c4323b0d56c0ded0384e0  # Automatically created id
+          type: glance
+          title: Lights
+          entities:
+            - entity: light.garland
+              tap_action:
+                action: toggle
+            - entity: light.big_torch
+              tap_action:
+                action: toggle
+              hold_action:
+                action: more-info
+            - entity: light.corner_lamp
+              tap_action:
+                action: toggle
+              hold_action:
+                action: more-info
+            - entity: light.small_torch
+              tap_action:
+                action: toggle
+              hold_action:
+                action: more-info
+            - entity: light.fire_lamp
+              tap_action:
+                action: toggle
+            - entity: light.tree_lamp
+              tap_action:
+                action: toggle
+            - entity: light.corridor
+              tap_action:
+                action: toggle
+            - entity: light.bathroom
+              tap_action:
+                action: toggle
+        - id: 455af10c07484baf9c9c4fafd2619200  # Automatically created id
+          type: custom:monster-card
+          card:
+            type: entities
+            title: Lights on now
+          filter:
+            include:
+              - domain: light
+                state: "on"
+            exclude:
+              - entity_id: light.livroom_ambient
 
       - type: vertical-stack
         cards:
@@ -130,13 +111,6 @@ views:
             type: custom:mini-media-player
             entity: media_player.yury_speaker
             icon: mdi:dots-horizontal-circle
-            artwork: cover
-            short_info: true
-
-          - id: 55b9abc90896484b80009668847e7643  # Automatically created id
-            type: custom:mini-media-player
-            entity: media_player.speakers
-            icon: mdi:speaker-wireless
             artwork: cover
             short_info: true
 
@@ -295,17 +269,6 @@ views:
     id: lights
     icon: mdi:floor-lamp
     cards:
-      - id: dfaf98e65b60444c9a705fa597f8cea6  # Automatically created id
-        type: picture
-        image: /local/mireds.png
-      - id: ad71c37ce3824305ac247a6efeed5c4f  # Automatically created id
-        type: entities
-        show_header_toggle: false
-        title: Light sources
-        entities:
-          - entity: light.big_torch
-          - entity: light.corner_lamp
-          - entity: light.small_torch
       - id: 670a08d991cf44498504a1c3aee85169  # Automatically created id
         type: entities
         title: Torch defaults
@@ -330,6 +293,10 @@ views:
             name: Brightness
           - entity: input_number.small_torch_mired
             name: Mireds
+      - id: dfaf98e65b60444c9a705fa597f8cea6  # Automatically created id
+        type: picture
+        image: /local/mireds.png
+
 
   ##################   LIGHTS FLOW
   - title: Lights flow
@@ -1203,13 +1170,13 @@ views:
         type: entities
         title: System
         entities:
+          - sensor.homeassistant_v2db
           - sensor.processor_use
           - sensor.memory_use_percent
           - sensor.disk_use_percent_home
           - sensor.swap_use_percent
           - sensor.temp
           - sensor.uptime
-          - input_select.log_level
       - id: ae44121346734a62ac5937eecfb171a7  # Automatically created id
         type: glance
         title: Dates

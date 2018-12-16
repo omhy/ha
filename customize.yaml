@@ -86,11 +86,11 @@ script.rmt_laptop_sleep:
 sensor.homeassistant_v2db:
   friendly_name: Log size
 sensor.humidity_158d0002271609:
-  friendly_name: chdroom/humidity
+  friendly_name: yuriroom/humidity
 sensor.pressure_158d0002271609:
-  friendly_name: chdroom/pressure
+  friendly_name: yuriroom/pressure
 sensor.temperature_158d0002271609:
-  friendly_name: chdroom/temperature
+  friendly_name: yuriroom/temperature
 sensor.humidity_158d0001f23cbe:
   friendly_name: bedroom/humidity
 sensor.temperature_158d0001f23cbe:

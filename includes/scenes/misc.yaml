@@ -1,11 +1,26 @@
-- name: "garland_and_fire"
+- name: "cosiness_on"
   entities:
     light.garland: true
     light.fire_lamp: true
+    light.tree_lamp: true
+
+- name: "cosiness_off"
+  entities:
+    light.garland: false
+    light.fire_lamp: false
+    light.tree_lamp: false
+
+- name: "good_night"
+  entities:
+    light.garland: false
+    light.fire_lamp: false
+    light.tree_lamp: false
     light.big_torch: false
     light.corner_lamp: false
     light.small_torch: false
-    light.tree_lamp: false
+    light.bathroom: false
+    light.corridor: false
+
 - name: "living_room_low_light"
   entities:
     light.big_torch:
@@ -14,19 +29,22 @@
     light.corner_lamp:
       state: true
       brightness: 1
+
 - name: "we_are_leaving"
   entities:
-    media_player.kitchen_speaker: idle
-    media_player.yury_speaker: idle
     light.garland: true
     light.fire_lamp: true
+    light.tree_lamp: false
     light.big_torch: false
     light.corner_lamp: false
     light.small_torch: false
-    light.tree_lamp: false
     light.bathroom: false
     light.corridor: false
+
 - name: "we_are_arriving"
   entities:
     light.garland: true
     light.fire_lamp: true
+    light.tree_lamp: true
+    light.big_torch: true
+    light.corner_lamp: true
