@@ -1,10 +1,11 @@
-purge_keep_days: 1
+purge_keep_days: 3
 include:
   domains:
     - sun
     - device_tracker
     - light
   entities:
+    - sensor.moon
     - sensor.processor_use
     - sensor.memory_use_percent
     - sensor.disk_use_percent_home
