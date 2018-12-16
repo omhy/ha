@@ -5,7 +5,7 @@
     light.big_torch: false
     light.corner_lamp: false
     light.small_torch: false
-    light.star_lamp: false
+    light.tree_lamp: false
 - name: "living_room_low_light"
   entities:
     light.big_torch:
@@ -23,7 +23,7 @@
     light.big_torch: false
     light.corner_lamp: false
     light.small_torch: false
-    light.star_lamp: false
+    light.tree_lamp: false
     light.bathroom: false
     light.corridor: false
 - name: "we_are_arriving"

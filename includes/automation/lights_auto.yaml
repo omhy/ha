@@ -8,7 +8,7 @@
       click_type: single
   action:
   - service: light.toggle
-    entity_id: light.star_lamp
+    entity_id: light.tree_lamp
 
 - alias: "standalone_left_right"
   initial_state: "on"

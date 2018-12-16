@@ -20,13 +20,13 @@ entity_config:
     name: Fire lamp
     expose: true
     room: Living Room
-#Chd rom
+  light.tree_lamp:
+    name: Tree lamp
+    expose: true
+    room: Living Room
+  #Chd rom
   light.small_torch:
     name: Small torch
-    expose: true
-    room: Childrens Room
-  light.star_lamp:
-    name: Star lamp
     expose: true
     room: Childrens Room
 

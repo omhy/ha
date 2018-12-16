@@ -12,12 +12,29 @@ views:
     id: main
     icon: mdi:floor-plan
     badges:
-      - sensor.temperature_158d00022c7cf2
-      - device_tracker.google_maps_111683533988744565132
-      - device_tracker.google_maps_115914092349482836896
+      - sensor.wt00_symbol
       - sun.sun
       - sensor.moon
+      - device_tracker.google_maps_111683533988744565132
+      - device_tracker.google_maps_115914092349482836896
     cards:
+      - id: e6b961f33e9b411fa5c4b6585a370b7e  # Automatically created id
+        type: glance
+        title: Outside
+        entities:
+          - entity: sensor.temperature_158d00022c7cf2
+            name: Temperature
+          - entity: sensor.humidity_158d00022c7cf2
+            name: Humidity
+          - entity: sensor.pressure_158d00022c7cf2
+            name: Pressure
+          - entity: sensor.wt00_precipitation
+            name: Preciptation
+          - entity: sensor.wt00_wind_speed
+            name: Wind
+
+
+
       - id: 455af10c07484baf9c9c4fafd2619200  # Automatically created id
         type: custom:monster-card
         card:
@@ -55,7 +72,7 @@ views:
           - entity: light.fire_lamp
             tap_action:
               action: toggle
-          - entity: light.star_lamp
+          - entity: light.tree_lamp
             tap_action:
               action: toggle
           - entity: light.corridor

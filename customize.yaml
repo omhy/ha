@@ -16,9 +16,9 @@ light.small_torch:
 light.fire_lamp:
   friendly_name: Fire lamp
   icon: mdi:fire
-light.star_lamp:
-  friendly_name: Star lamp
-  icon: mdi:star-outline
+light.tree_lamp:
+  friendly_name: Tree lamp
+  icon: mdi:pine-tree
 light.bathroom:
   friendly_name: Bathroom
   icon: mdi:shower
@@ -30,7 +30,7 @@ light.livroom_ambient:
   icon: mdi:hazard-lights
 
 switch.wall_plug_158d0002013f1e:
-  friendly_name: Star lamp switch
+  friendly_name: Tree lamp switch
 
 #MISC
 sensor.is_workday:

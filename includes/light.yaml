@@ -44,7 +44,7 @@
   - light.corner_lamp
 
 - platform: switch
-  name: star_lamp
+  name: tree_lamp
   entity_id: switch.wall_plug_158d0002013f1e
 - platform: switch
   name: corridor
