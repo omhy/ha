@@ -59,15 +59,13 @@ tts_consumption:
 
 tts_say_kitchen:
   sequence:
-  #  - service: media_player.media_pause
-    - service: media_player.volume_set
-      data_template:
-        entity_id: media_player.kitchen_speaker
-        volume_level: "{{ (states.input_number.tts_volume.state | float) / 10 }}"
+#    - service: media_player.volume_set
+#      data_template:
+#        entity_id: media_player.kitchen_display
+#        volume_level: "{{ (states.input_number.tts_volume.state | float) / 10 }}"
     - service: tts.google_say
-      entity_id: media_player.kitchen_speaker
+      entity_id: media_player.kitchen_display
       data_template:
         message:  "{{message}}"
         language: "ru"
         cache: false
-  #  - service: media_player.media_play
