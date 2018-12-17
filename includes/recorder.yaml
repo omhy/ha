@@ -5,6 +5,7 @@ include:
     - device_tracker
     - light
     - media_player
+    - calendar
   entities:
     - sensor.moon
     - sensor.processor_use
