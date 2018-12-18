@@ -43,23 +43,3 @@
   - service: persistent_notification.dismiss
     data:
       notification_id: "httplogin"
-
-- alias: "ha_update_available"
-  hide_entity: true
-  trigger:
-    platform: state
-    entity_id: sensor.version_ha_latest
-  condition:
-    - condition: template
-      value_template: "{{ states.sensor.version_ha_current.state != states.sensor.version_ha_latest.state }}"
-    - condition: template
-      value_template: "{{ trigger.from_state.state != 'unavailable' }}"
-    - condition: template
-      value_template: "{{ trigger.to_state.state != 'unavailable' }}"
-  action:
-    - service: telegram_bot.send_message
-      data_template:
-        target: !secret tg_chat_dima
-        message: "{{ now().strftime('%H:%M') }} \U00002B06 HA version {{ states.sensor.version_ha_latest.state }} available!"
-        inline_keyboard:
-          - "\U0000267B Dismiss:/dismiss"

@@ -37,8 +37,3 @@
 
 - platform: version
   name: "version_ha_current"
-
-- platform: rest
-  resource: https://pypi.python.org/pypi/homeassistant/json
-  name: "version_ha_latest"
-  value_template: '{{ value_json.info.version }}'
