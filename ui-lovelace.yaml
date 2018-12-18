@@ -62,6 +62,9 @@ views:
                 action: toggle
               hold_action:
                 action: more-info
+            - entity: light.window_stars
+              tap_action:
+                action: toggle
             - entity: light.small_torch
               tap_action:
                 action: toggle
@@ -1052,14 +1055,6 @@ views:
             url: http://192.168.1.1/
             icon: mdi:router-wireless
           - type: weblink
-            name: Sonoff garland
-            url: http://192.168.1.40/
-            icon: mdi:switch
-          - type: weblink
-            name: Sonoff fire lamp
-            url: http://192.168.1.41/
-            icon: mdi:switch
-          - type: weblink
             name: Influx DB
             url: http://192.168.1.10:8888
             icon: mdi:database
@@ -1067,14 +1062,27 @@ views:
             name: Grafana
             url: http://192.168.1.10:3000
             icon: mdi:graphql
-          #          - type: weblink
-          #            name: MotionEye
-          #            url: http://192.168.1.10:8765
-          #            icon: mdi:cctv
           - type: weblink
             name: Github repo
             url: https://github.com/omhy/ha
             icon: mdi:github-circle
+
+      - id: 614279a5c1f0431aa16xxcb30dfcc511  # Automatically created id
+        type: entities
+        title: Sonoffs
+        entities:
+          - type: weblink
+            name: sonoff_garland
+            url: http://192.168.1.40/
+            icon: mdi:switch
+          - type: weblink
+            name: sonoff_firelamp
+            url: http://192.168.1.41/
+            icon: mdi:switch
+          - type: weblink
+            name: sonoff_window_stars
+            url: http://192.168.1.42/
+            icon: mdi:switch
 
       - id: 614279a5c1f0431aa1605cb30dfcc511  # Automatically created id
         type: entities

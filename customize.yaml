@@ -16,6 +16,9 @@ light.small_torch:
 light.fire_lamp:
   friendly_name: Fire lamp
   icon: mdi:fire
+light.window_stars:
+  friendly_name: Window stars
+  icon: mdi:weather-night
 light.tree_lamp:
   friendly_name: Tree lamp
   icon: mdi:pine-tree
