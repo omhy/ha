@@ -68,7 +68,7 @@
     light.garland: false
     light.fire_lamp: false
     light.tree_lamp: false
-    light.window_stars: flase
+    light.window_stars: false
     light.small_torch: false
     light.big_torch: false
     light.corner_lamp: false
