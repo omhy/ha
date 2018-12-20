@@ -153,7 +153,7 @@ views:
               - entity: sensor.temperature_158d0001f23cbe
                 name: Bedroom
               - entity: sensor.temperature_158d0002271609
-                name: Children
+                name: Yuri's
           - type: glance
             title: Humidity
             entities:
@@ -166,7 +166,7 @@ views:
               - entity: sensor.humidity_158d0001f23cbe
                 name: Bedroom
               - entity: sensor.humidity_158d0002271609
-                name: Children
+                name: Yuri's
           - type: glance
             title: Pressure
             entities:
@@ -179,7 +179,7 @@ views:
               - entity: sensor.pressure_158d0001f23cbe
                 name: Bedroom
               - entity: sensor.pressure_158d0002271609
-                name: Children
+                name: Yuri's
 
       - id: 8e8ce781290143d894ad75a68c96b286  # Automatically created id
         type: vertical-stack
@@ -219,7 +219,7 @@ views:
         cards:
           - type: gauge
             entity: sensor.temperature_158d00022c7cf2
-            title: Outside
+            name: Outside
             min: -30
             max: 30
             severity:
@@ -230,7 +230,7 @@ views:
             cards:
               - type: gauge
                 entity: sensor.temperature_158d0002323783
-                title: Kitchen
+                name: Kitchen
                 min: 10
                 max: 30
                 severity:
@@ -239,7 +239,7 @@ views:
                   red: 20
               - type: gauge
                 entity: sensor.temperature_158d000234816a
-                title: Living room
+                name: Living room
                 min: 10
                 max: 30
                 severity:
@@ -250,7 +250,7 @@ views:
             cards:
               - type: gauge
                 entity: sensor.temperature_158d0002271609
-                title: Children's room
+                name: Yuri's room
                 min: 10
                 max: 30
                 severity:
@@ -259,7 +259,7 @@ views:
                   red: 20
               - type: gauge
                 entity: sensor.temperature_158d0001f23cbe
-                title: Bedroom
+                name: Bedroom
                 min: 10
                 max: 30
                 severity:
