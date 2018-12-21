@@ -50,10 +50,16 @@
   retain: false
 
 - platform: group
-  name: livroom_ambient
+  name: group_livroom_ambient
   entities:
   - light.big_torch
   - light.corner_lamp
+
+- platform: group
+  name: group_christmas
+  entities:
+  - light.tree_lamp
+  - light.window_stars
 
 - platform: switch
   name: tree_lamp

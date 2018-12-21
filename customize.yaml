@@ -28,7 +28,7 @@ light.bathroom:
 light.corridor:
   friendly_name: Corridor
   icon: mdi:ceiling-light
-light.livroom_ambient:
+light.group_livroom_ambient:
   friendly_name: Ambient
   icon: mdi:hazard-lights
 

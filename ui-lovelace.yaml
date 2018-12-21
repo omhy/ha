@@ -92,7 +92,7 @@ views:
               - domain: light
                 state: "on"
             exclude:
-              - entity_id: light.livroom_ambient
+              - entity_id: light.group_*
 
       - type: vertical-stack
         cards:

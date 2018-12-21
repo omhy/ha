@@ -7,6 +7,11 @@ entity_config:
     name: Garland
     expose: true
     room: Entrance
+  light.fire_lamp:
+    name: Fire lamp
+    expose: true
+    room: Entrance
+
 #Living room
   light.big_torch:
     name: Big torch
@@ -16,14 +21,15 @@ entity_config:
     name: Corner lamp
     expose: true
     room: Living Room
-  light.fire_lamp:
-    name: Fire lamp
-    expose: true
-    room: Living Room
   light.tree_lamp:
     name: Tree lamp
     expose: true
     room: Living Room
+  light.group_christmas:
+    name: Christmas
+    expose: true
+    room: Living Room
+
 #Yuri room
   light.small_torch:
     name: Small torch

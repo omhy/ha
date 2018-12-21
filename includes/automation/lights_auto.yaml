@@ -32,11 +32,11 @@
       click_type: single
   condition:
   - condition: state
-    entity_id: light.livroom_ambient
+    entity_id: light.group_livroom_ambient
     state: "on"
   action:
   - service: light.turn_off
-    entity_id: light.livroom_ambient
+    entity_id: light.group_livroom_ambient
 
 - alias: "light_button_single_when_light_is_off"
   initial_state: "on"
@@ -48,7 +48,7 @@
       click_type: single
   condition:
   - condition: state
-    entity_id: light.livroom_ambient
+    entity_id: light.group_livroom_ambient
     state: "off"
   action:
   - service: script.light_turn_on_big_torch_by_params
