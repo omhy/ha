@@ -79,8 +79,7 @@ views:
             - entity: light.bathroom
               tap_action:
                 action: toggle
-        - id: 455af10c07484baf9c9c4fafd2619200  # Automatically created id
-          type: custom:monster-card
+        - type: custom:monster-card
           card:
             type: entities
             title: Lights on now
@@ -135,8 +134,7 @@ views:
     id: climate
     icon: mdi:gauge
     cards:
-      - id: f66d1a61532d401a85b7163c66c99078  # Automatically created id
-        type: vertical-stack
+      - type: vertical-stack
         cards:
           - type: glance
             title: Temperature
@@ -211,58 +209,21 @@ views:
                 name: Maximal @
                 icon: mdi:clock
 
-      - id: b1ad28d12357498b87903083b450a4cc  # Automatically created id
-        type: vertical-stack
-        cards:
-          - type: gauge
-            entity: sensor.temperature_158d00022c7cf2
-            name: Outside
-            min: -30
-            max: 30
-            severity:
-              green: 10
-              yellow: 15
-              red: 20
-          - type: horizontal-stack
-            cards:
-              - type: gauge
-                entity: sensor.temperature_158d0002323783
-                name: Kitchen
-                min: 10
-                max: 30
-                severity:
-                  green: 10
-                  yellow: 15
-                  red: 20
-              - type: gauge
-                entity: sensor.temperature_158d000234816a
-                name: Living room
-                min: 10
-                max: 30
-                severity:
-                  green: 10
-                  yellow: 15
-                  red: 20
-          - type: horizontal-stack
-            cards:
-              - type: gauge
-                entity: sensor.temperature_158d0002271609
-                name: Yuri's room
-                min: 10
-                max: 30
-                severity:
-                  green: 10
-                  yellow: 15
-                  red: 20
-              - type: gauge
-                entity: sensor.temperature_158d0001f23cbe
-                name: Bedroom
-                min: 10
-                max: 30
-                severity:
-                  green: 10
-                  yellow: 15
-                  red: 20
+      - type: history-graph
+        title: Outside
+        entities:
+          - sensor.temperature_158d00022c7cf2
+      - type: history-graph
+        title: Rooms
+        entities:
+          - entity: sensor.temperature_158d0002323783
+            name: Kitchen
+          - entity: sensor.temperature_158d000234816a
+            name: Living
+          - entity: sensor.temperature_158d0001f23cbe
+            name: Bedroom
+          - entity: sensor.temperature_158d0002271609
+            name: Yuri's
 
   ##################   LIGHTS
   - title: Lights
