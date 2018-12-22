@@ -28,9 +28,6 @@ light.bathroom:
 light.corridor:
   friendly_name: Corridor
   icon: mdi:ceiling-light
-light.group_livroom_ambient:
-  friendly_name: Ambient
-  icon: mdi:hazard-lights
 
 switch.wall_plug_158d0002013f1e:
   friendly_name: Tree lamp switch

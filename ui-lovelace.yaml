@@ -24,8 +24,7 @@ views:
     cards:
       - type: vertical-stack
         cards:
-        - id: e6b961f33e9b411fa5c4b6590a370b7e  # Automatically created id
-          type: glance
+        - type: glance
           title: Motions
           entities:
             - entity: binary_sensor.motion_sensor_158d0001fa3dc0
@@ -39,14 +38,12 @@ views:
               name: Today
               icon: mdi:sigma
 
-        - id: f6f63f7eb53e4d32819b4782bb59af34  # Automatically created id
-          type: weather-forecast
+        - type: weather-forecast
           entity: weather.smhi_home
 
       - type: vertical-stack
         cards:
-        - id: 5c72bd844c2c4323b0d56c0ded0384e0  # Automatically created id
-          type: glance
+        - type: glance
           title: Lights
           entities:
             - entity: light.garland
@@ -505,8 +502,7 @@ views:
             name: Alyona
           - entity: device_tracker.google_maps_117454969161947422882
             name: Yury
-      - id: 1b1adf5c51364e11a2c6dfdadfde92d9  # Automatically created id
-        type: history-graph
+      - type: history-graph
         title: People in last 24h
         entities:
           - entity: device_tracker.google_maps_111683533988744565132
@@ -1172,32 +1168,38 @@ views:
   - title: System
     id: sys
     icon: mdi:desktop-tower
-    #    badges:
+    badges:
+      - sensor.uptime
+      - sensor.homeassistant_v2db
     cards:
-      - id: ae44121346734a62ac5937eecfb171a9  # Automatically created id
-        type: entities
-        title: System
-        entities:
-          - sensor.homeassistant_v2db
-          - sensor.processor_use
-          - sensor.memory_use_percent
-          - sensor.disk_use_percent_home
-          - sensor.swap_use_percent
-          - sensor.temp
-          - sensor.uptime
-      - id: ae44121346734a62ac5937eecfb171a7  # Automatically created id
-        type: glance
-        title: Dates
-        entities:
-          - sensor.date
-          - sensor.time
-          - sensor.is_workday
-          - sensor.days_in_month
-      - id: 7914d9b9bd914b6dac4fa0633c13494d  # Automatically created id
-        type: custom:monster-card
+      - type: custom:monster-card
         card:
           type: entities
           title: Batteries
         filter:
           include:
             - entity_id: sensor.*_battery_level
+      - type: glance
+        title: System
+        entities:
+          - sensor.processor_use
+          - sensor.memory_use_percent
+          - sensor.disk_use_percent_home
+          - sensor.swap_use_percent
+          - sensor.temp
+      - type: glance
+        title: Dates
+        entities:
+          - sensor.date
+          - sensor.time
+          - sensor.is_workday
+          - sensor.days_in_month
+      - type: history-graph
+        title: CPU and memmory
+        entities:
+          - sensor.processor_use
+          - sensor.memory_use_percent
+      - type: history-graph
+        title: Temperature
+        entities:
+          - sensor.temp

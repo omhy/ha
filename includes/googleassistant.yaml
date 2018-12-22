@@ -25,6 +25,10 @@ entity_config:
     name: Tree lamp
     expose: true
     room: Living Room
+  light.window_stars:
+    name: Window stars
+    expose: true
+    room: Living Room
   light.group_christmas:
     name: Christmas
     expose: true
