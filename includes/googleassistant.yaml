@@ -33,6 +33,10 @@ entity_config:
     name: Christmas
     expose: true
     room: Living Room
+  light.group_livroom_ambient:
+    name: Ambient
+    expose: true
+    room: Living Room
 
 #Yuri room
   light.small_torch:
