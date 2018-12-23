@@ -69,3 +69,4 @@ tts_say_kitchen:
         message:  "{{message}}"
         language: "ru"
         cache: false
+    - service: media_player.media_stop

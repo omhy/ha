@@ -1,7 +1,7 @@
 resources:
   - url: /local/custom-lovelace/monster-card.js?v=0.2.3
     type: js
-  - url: /local/custom-lovelace/mini-media-player-bundle.js?v=0.9.7
+  - url: /local/custom-lovelace/mini-media-player-bundle.js?v=0.9.8
     type: module
 
 
@@ -211,10 +211,12 @@ views:
 
       - type: history-graph
         title: Outside
+        hours_to_show: 6
         entities:
           - sensor.temperature_158d00022c7cf2
       - type: history-graph
         title: Rooms
+        hours_to_show: 6
         entities:
           - entity: sensor.temperature_158d0002323783
             name: Kitchen
@@ -1012,6 +1014,10 @@ views:
             url: http://192.168.1.1/
             icon: mdi:router-wireless
           - type: weblink
+            name: Router firmwares
+            url: https://downloads.pangubox.com/pandorabox/
+            icon: mdi:router-wireless
+          - type: weblink
             name: Influx DB
             url: http://192.168.1.10:8888
             icon: mdi:database
@@ -1156,11 +1162,13 @@ views:
           - sensor.is_workday
           - sensor.days_in_month
       - type: history-graph
-        title: CPU and memmory
+        title: CPU and memory last 6h
+        hours_to_show: 6
         entities:
           - sensor.processor_use
           - sensor.memory_use_percent
       - type: history-graph
-        title: Temperature
+        title: Temperature last 6h
+        hours_to_show: 6
         entities:
           - sensor.temp
