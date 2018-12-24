@@ -27,16 +27,17 @@ views:
         - type: glance
           title: Motions
           entities:
-            - entity: binary_sensor.motion_sensor_158d0001fa3dc0
-              name: Living room
-            - entity: sensor.livingroom_motions
-              name: Today
-              icon: mdi:sigma
-            - entity: binary_sensor.motion_sensor_158d0001e52779
-              name: Bathroom
-            - entity: sensor.bathroom_motions
-              name: Today
-              icon: mdi:sigma
+            - binary_sensor.motion_sensor_158d0001fa3dc0
+            - sensor.livingroom_motions
+            - binary_sensor.motion_sensor_158d0001e52779
+            - sensor.bathroom_motions
+
+#        - type: history-graph
+#          title: Movements
+#          hours_to_show: 2
+#          entities:
+#            - binary_sensor.motion_sensor_158d0001fa3dc0
+#            - binary_sensor.motion_sensor_158d0001e52779
 
         - type: weather-forecast
           entity: weather.smhi_home
@@ -139,42 +140,27 @@ views:
           - type: glance
             title: Temperature
             entities:
-              - entity: sensor.temperature_158d00022c7cf2
-                name: Outside
-              - entity: sensor.temperature_158d0002323783
-                name: Kitchen
-              - entity: sensor.temperature_158d000234816a
-                name: Living
-              - entity: sensor.temperature_158d0001f23cbe
-                name: Bedroom
-              - entity: sensor.temperature_158d0002271609
-                name: Yuri's
+              - sensor.temperature_158d00022c7cf2
+              - sensor.temperature_158d0002323783
+              - sensor.temperature_158d000234816a
+              - sensor.temperature_158d0001f23cbe
+              - sensor.temperature_158d0002271609
           - type: glance
             title: Humidity
             entities:
-              - entity: sensor.humidity_158d00022c7cf2
-                name: Outside
-              - entity: sensor.humidity_158d0002323783
-                name: Kitchen
-              - entity: sensor.humidity_158d000234816a
-                name: Living
-              - entity: sensor.humidity_158d0001f23cbe
-                name: Bedroom
-              - entity: sensor.humidity_158d0002271609
-                name: Yuri's
+              - sensor.humidity_158d00022c7cf2
+              - sensor.humidity_158d0002323783
+              - sensor.humidity_158d000234816a
+              - sensor.humidity_158d0001f23cbe
+              - sensor.humidity_158d0002271609
           - type: glance
             title: Pressure
             entities:
-              - entity: sensor.pressure_158d00022c7cf2
-                name: Outside
-              - entity: sensor.pressure_158d0002323783
-                name: Kitchen
-              - entity: sensor.pressure_158d000234816a
-                name: Living
-              - entity: sensor.pressure_158d0001f23cbe
-                name: Bedroom
-              - entity: sensor.pressure_158d0002271609
-                name: Yuri's
+              - sensor.pressure_158d00022c7cf2
+              - sensor.pressure_158d0002323783
+              - sensor.pressure_158d000234816a
+              - sensor.pressure_158d0001f23cbe
+              - sensor.pressure_158d0002271609
 
       - id: 8e8ce781290143d894ad75a68c96b286  # Automatically created id
         type: vertical-stack
@@ -182,32 +168,18 @@ views:
           - type: glance
             title: Outside
             entities:
-              - entity: sensor.current_uv_level
-                name: UV
-              - entity: sensor.current_uv_index
-                name: Current UV
-              - entity: sensor.max_uv_index
-                name: Max UV
-              - entity: sensor.current_ozone_level
-                name: Ozone
+              - sensor.current_uv_level
+              - sensor.current_uv_index
+              - sensor.max_uv_index
+              - sensor.current_ozone_level
           - type: glance
             title: Temperature Today
             entities:
-              - entity: sensor.outside_temperature_min
-                name: Minimal
-                icon: mdi:minus-box
-              - entity: sensor.outside_temperature_max
-                name: Maximal
-                icon: mdi:plus-box
-              - entity: sensor.outside_temperature_diff
-                name: Difference
-                icon: mdi:poll-box
-              - entity: sensor.outside_temperature_min_at
-                name: Minimal @
-                icon: mdi:clock
-              - entity: sensor.outside_temperature_max_at
-                name: Maximal @
-                icon: mdi:clock
+              - sensor.outside_temperature_min
+              - sensor.outside_temperature_max
+              - sensor.outside_temperature_diff
+              - sensor.outside_temperature_min_at
+              - sensor.outside_temperature_max_at
 
       - type: history-graph
         title: Outside
@@ -218,14 +190,10 @@ views:
         title: Rooms
         hours_to_show: 6
         entities:
-          - entity: sensor.temperature_158d0002323783
-            name: Kitchen
-          - entity: sensor.temperature_158d000234816a
-            name: Living
-          - entity: sensor.temperature_158d0001f23cbe
-            name: Bedroom
-          - entity: sensor.temperature_158d0002271609
-            name: Yuri's
+          - sensor.temperature_158d0002323783
+          - sensor.temperature_158d000234816a
+          - sensor.temperature_158d0001f23cbe
+          - sensor.temperature_158d0002271609
 
   ##################   LIGHTS
   - title: Lights
@@ -236,26 +204,20 @@ views:
         type: entities
         title: Torch defaults
         entities:
-          - entity: input_number.livingroom_torch_brightness
-            name: Brightness
-          - entity: input_number.livingroom_torch_mired
-            name: Mireds
+          - input_number.livingroom_torch_brightness
+          - input_number.livingroom_torch_mired
       - id: 94bdf9cea63642d39c3ef3dc0ab61da9  # Automatically created id
         type: entities
         title: Corner defaults
         entities:
-          - entity: input_number.livingroom_corner_brightness
-            name: Brightness
-          - entity: input_number.livingroom_corner_mired
-            name: Mireds
+          - input_number.livingroom_corner_brightness
+          - input_number.livingroom_corner_mired
       - id: 44a7c8acde8346b9b0d6b30edd62e111  # Automatically created id
         type: entities
         title: Small torch defaults
         entities:
-          - entity: input_number.small_torch_brightness
-            name: Brightness
-          - entity: input_number.small_torch_mired
-            name: Mireds
+          - input_number.small_torch_brightness
+          - input_number.small_torch_mired
       - id: dfaf98e65b60444c9a705fa597f8cea6  # Automatically created id
         type: picture
         image: /local/mireds.png
@@ -319,92 +281,62 @@ views:
         type: glance
         title: Computer
         entities:
-          - entity: sensor.power_strip_1_load_power
-            name: Current
-          - entity: sensor.power_computer_day
-            name: Today
-          - entity: sensor.power_computer_week
-            name: Week
-          - entity: sensor.power_computer_month
-            name: Month
-          - entity: sensor.power_strip_1_mean
-            name: 1h mean
+          - sensor.power_strip_1_load_power
+          - sensor.power_computer_day
+          - sensor.power_computer_week
+          - sensor.power_computer_month
+          - sensor.power_strip_1_mean
       - id: 0e3bba7cfc894887a0b870391a2bb17d  # Automatically created id
         type: glance
         title: TV
         show_header_toggle: true
         entities:
-          - entity: sensor.power_strip_4_load_power
-            name: Current
-          - entity: sensor.power_tv_day
-            name: Today
-          - entity: sensor.power_tv_week
-            name: Week
-          - entity: sensor.power_tv_month
-            name: Month
-          - entity: sensor.power_strip_4_mean
-            name: 1h mean
+          - sensor.power_strip_4_load_power
+          - sensor.power_tv_day
+          - sensor.power_tv_week
+          - sensor.power_tv_month
+          - sensor.power_strip_4_mean
       - id: 7c898a7c2a4647499d0be219a0ee1671  # Automatically created id
         type: glance
         title: Router
         show_header_toggle: true
         entities:
-          - entity: sensor.power_strip_3_load_power
-            name: Current
-          - entity: sensor.power_router_day
-            name: Today
-          - entity: sensor.power_router_week
-            name: Week
-          - entity: sensor.power_router_month
-            name: Month
-          - entity: sensor.power_strip_3_mean
-            name: 1h mean
+          - sensor.power_strip_3_load_power
+          - sensor.power_router_day
+          - sensor.power_router_week
+          - sensor.power_router_month
+          - sensor.power_strip_3_mean
       - id: 9a8ee0382c1c4c4a8f2633132c6556e2  # Automatically created id
         type: glance
         title: Kitchen
         show_header_toggle: true
         entities:
-          - entity: sensor.power_strip_2_load_power
-            name: Current
-          - entity: sensor.power_kitchen_day
-            name: Today
-          - entity: sensor.power_kitchen_week
-            name: Week
-          - entity: sensor.power_kitchen_month
-            name: Month
-          - entity: sensor.power_strip_2_mean
-            name: 1h mean
+          - sensor.power_strip_2_load_power
+          - sensor.power_kitchen_day
+          - sensor.power_kitchen_week
+          - sensor.power_kitchen_month
+          - sensor.power_strip_2_mean
       - id: 80524ae40029477e861cb7d9dd6fce93  # Automatically created id
         type: glance
         title: Fridge
         show_header_toggle: true
         entities:
-          - entity: sensor.power_strip_5_load_power
-            name: Current
-          - entity: sensor.power_fridge_day
-            name: Today
-          - entity: sensor.power_fridge_week
-            name: Week
-          - entity: sensor.power_fridge_month
-            name: Month
-          - entity: sensor.power_strip_5_mean
-            name: 1h mean
+          - sensor.power_strip_5_load_power
+          - sensor.power_fridge_day
+          - sensor.power_fridge_week
+          - sensor.power_fridge_month
+          - sensor.power_strip_5_mean
 
       - id: 4f735e9e47a240d5936d33c7dd8419fa  # Automatically created id
         type: glance
         title: Power cords
         show_header_toggle: false
         entities:
-          - entity: switch.power_strip_1
-            name: Computer
-          - entity: switch.power_strip_3
-            name: Router
-          - entity: switch.power_strip_4
-            name: TV
-          - entity: switch.power_strip_2
-            name: Kitchen
-          - entity: switch.power_strip_5
-            name: Fridge
+          - switch.power_strip_1
+          - switch.power_strip_3
+          - switch.power_strip_4
+          - switch.power_strip_2
+          - switch.power_strip_5
 
       - id: 4511d325be864f82870ba9540c98fce1  # Automatically created id
         type: glance
@@ -447,33 +379,23 @@ views:
         title: Waze
         show_header_toggle: true
         entities:
-          - entity: sensor.waze_current_home
-            name: To home
-          - entity: sensor.waze_current_work
-            name: To work
-          - entity: sensor.waze_home_work
-            name: Home - work
-          - entity: sensor.waze_work_home
-            name: Work - home
+          - sensor.waze_current_home
+          - sensor.waze_current_work
+          - sensor.waze_home_work
+          - sensor.waze_work_home
       - id: c265f5051343475da47bd0429fe31ec1  # Automatically created id
         type: glance
         title: People
         entities:
-          - entity: device_tracker.google_maps_111683533988744565132
-            name: Dima
-          - entity: device_tracker.google_maps_115914092349482836896
-            name: Alyona
-          - entity: device_tracker.google_maps_117454969161947422882
-            name: Yury
+          - device_tracker.google_maps_111683533988744565132
+          - device_tracker.google_maps_115914092349482836896
+          - device_tracker.google_maps_117454969161947422882
       - type: history-graph
         title: People in last 24h
         entities:
-          - entity: device_tracker.google_maps_111683533988744565132
-            name: Dima
-          - entity: device_tracker.google_maps_115914092349482836896
-            name: Alyona
-          - entity: device_tracker.google_maps_117454969161947422882
-            name: Yury
+          - device_tracker.google_maps_111683533988744565132
+          - device_tracker.google_maps_115914092349482836896
+          - device_tracker.google_maps_117454969161947422882
       - id: 667da2802d164ef8bb5777b5137c2cca  # Automatically created id
         type: map
         default_zoom: 15

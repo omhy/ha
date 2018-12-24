@@ -15,10 +15,12 @@
   icon: mdi:bug
 "*brightness*":
   icon: mdi:brightness-5
+  friendly_name: Brightness
 "*saturation*":
   icon: mdi:invert-colors
 "*mired*":
   icon: mdi:thermometer
+  friendly_name: Mireds
 "*hue*":
   icon: mdi:format-color-fill
 "*transition*":
@@ -87,6 +89,9 @@
   icon: mdi:calendar-week
 "sensor.power_*_month":
   friendly_name: Month
+  icon: mdi:calendar-text
+"sensor.power_*_1_mean":
+  friendly_name: 1h mean
   icon: mdi:calendar-text
 
 "sensor.wt00*":
