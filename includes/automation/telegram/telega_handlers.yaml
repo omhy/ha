@@ -1,5 +1,4 @@
 - alias: "telegram_handle_callback_dismiss"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -16,7 +15,6 @@
       message_id: "{{ trigger.event.data.message.message_id }}"
 
 - alias: "telegram_handle_callback_restart_ha"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -30,7 +28,6 @@
   - service: homeassistant.restart
 
 - alias: "telegram_handle_callback_refresh_ha"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -44,7 +41,6 @@
   - service: script.ha_refresh
 
 - alias: "telegram_handle_callback_forecast"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -60,7 +56,6 @@
       target: "{{trigger.event.data.user_id}}"
 
 - alias: "telegram_handle_callback_outside"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -76,7 +71,6 @@
       target: "{{trigger.event.data.user_id}}"
 
 - alias: "telegram_handle_callback_rooms"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -92,7 +86,6 @@
       target: "{{trigger.event.data.user_id}}"
 
 - alias: "telegram_handle_callback_electro"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -108,7 +101,6 @@
       target: "{{trigger.event.data.user_id}}"
 
 - alias: "telegram_handle_command_say"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: telegram_command
@@ -120,7 +112,6 @@
       message: "{{trigger.event.data.args}}"
 
 - alias: "telegram_handle_callback_computer"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -140,7 +131,6 @@
       - "\U0000267B Dismiss:/dismiss"
 
 - alias: "telegram_handle_callback_laptop"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -160,7 +150,6 @@
       - "\U0000267B Dismiss:/dismiss"
 
 - alias: "telegram_handle_callback_computer_sleep"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -170,7 +159,6 @@
   - service: script.rmt_computer_sleep
 
 - alias: "telegram_handle_callback_laptop_sleep"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: telegram_callback

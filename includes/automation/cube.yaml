@@ -1,5 +1,4 @@
 - alias: "cube_action_rotate_when_flow_is_off"
-  initial_state: "on"
   trigger:
     - platform: event
       event_type: xiaomi_aqara.cube_action
@@ -35,7 +34,6 @@
           {{ current }}
 
 - alias: "cube_action_flip90_when_flow_is_off"
-  initial_state: "on"
   trigger:
     - platform: event
       event_type: xiaomi_aqara.cube_action
@@ -63,7 +61,6 @@
           {{ current }}
 
 - alias: "cube_action_flip180_when_flow_is_off"
-  initial_state: "on"
   trigger:
     - platform: event
       event_type: xiaomi_aqara.cube_action
@@ -91,7 +88,6 @@
           {{ current }}
 
 - alias: "cube_action_rotate_when_flow_is_on"
-  initial_state: "on"
   trigger:
     - platform: event
       event_type: xiaomi_aqara.cube_action
@@ -127,7 +123,6 @@
           {{ current }}
 
 - alias: "cube_action_free_fall"
-  initial_state: "on"
   trigger:
     - platform: event
       event_type: xiaomi_aqara.cube_action
@@ -140,7 +135,6 @@
       entity_id: scene.good_night
 
 - alias: "cube_action_shake_air"
-  initial_state: "on"
   trigger:
     - platform: event
       event_type: xiaomi_aqara.cube_action

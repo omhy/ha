@@ -1,5 +1,4 @@
 - alias: "motion_livingroom_detected"
-  initial_state: "on"
   trigger:
   - platform: state
     entity_id: binary_sensor.motion_sensor_158d0001fa3dc0
@@ -12,7 +11,6 @@
       retain: true
 
 - alias: "light_livingroom_turn_off"
-  initial_state: "on"
   trigger:
   - platform: state
     entity_id: binary_sensor.motion_sensor_158d0001fa3dc0

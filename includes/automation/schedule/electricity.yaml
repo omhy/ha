@@ -1,5 +1,4 @@
 - alias: "schedule_computer_power_strip_off"
-  initial_state: "on"
   trigger:
   - platform: time
     at: "02:00:00"
@@ -8,7 +7,6 @@
     entity_id: switch.power_strip_1
 
 - alias: "schedule_computer_power_strip_on"
-  initial_state: "on"
   trigger:
   - platform: time
     at: "06:50:00"
@@ -17,7 +15,6 @@
     entity_id: switch.power_strip_1
 
 - alias: "state_computer_turned_off"
-  initial_state: "on"
   trigger:
   - platform: state
     entity_id: binary_sensor.ping_computer
@@ -29,7 +26,6 @@
       message: "{{ now().strftime('%H:%M') }} \U0001F5A5 is turned off"
 
 - alias: "state_computer_turned_on"
-  initial_state: "on"
   trigger:
   - platform: state
     entity_id: binary_sensor.ping_computer
@@ -41,7 +37,6 @@
       message: "{{ now().strftime('%H:%M') }} \U0001F5A5 is turned on"
 
 - alias: "state_laptop_turned_off"
-  initial_state: "on"
   trigger:
   - platform: state
     entity_id: binary_sensor.ping_laptop
@@ -53,7 +48,6 @@
       message: "{{ now().strftime('%H:%M') }} \U0001F4BB is turned off"
 
 - alias: "state_laptop_turned_on"
-  initial_state: "on"
   trigger:
   - platform: state
     entity_id: binary_sensor.ping_laptop

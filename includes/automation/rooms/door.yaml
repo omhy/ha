@@ -1,5 +1,4 @@
 - alias: "alert_entrance_door_opened_too_long"
-  initial_state: "on"
   trigger:
   - platform: state
     entity_id: binary_sensor.door_window_sensor_158d00024367c8
@@ -10,7 +9,6 @@
   - service: script.alarm_door
 
 - alias: "entrance_door_opened"
-  initial_state: "on"
   trigger:
   - platform: state
     entity_id: binary_sensor.door_window_sensor_158d00024367c8
@@ -21,7 +19,6 @@
       message: "{{ now().strftime('%H:%M') }} \U0001F513 Door is opened"
 
 - alias: "entrance_door_closed"
-  initial_state: "on"
   trigger:
   - platform: state
     entity_id: binary_sensor.door_window_sensor_158d00024367c8

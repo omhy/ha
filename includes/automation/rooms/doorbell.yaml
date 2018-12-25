@@ -1,5 +1,4 @@
 - alias: "doorbell_single_click"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: xiaomi_aqara.click
@@ -17,7 +16,6 @@
       message: "{{ now().strftime('%H:%M') }} \U0001F514 Doorbell single click"
 
 - alias: "doorbell_double_click"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: xiaomi_aqara.click

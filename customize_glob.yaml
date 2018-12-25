@@ -39,6 +39,8 @@
   icon: mdi:chemical-weapon
 
 ### AUTOMATIONS
+"automation.*":
+  initial_state: "on"
 "automation.zone*":
   icon: mdi:map-marker
 "automation.working_day*":

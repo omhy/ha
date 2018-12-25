@@ -1,5 +1,4 @@
 - alias: "telegram_handle_command_menu"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: telegram_text
@@ -24,7 +23,6 @@
       - "\U0001F6A7 Tech:/tech, \U0000267B Dismiss:/dismiss"
 
 - alias: "telegram_handle_callback_menu"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -45,7 +43,6 @@
       - "\U0001F6A7 Tech:/tech, \U0000267B Dismiss:/dismiss"
 
 - alias: "telegram_handle_callback_tech"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: telegram_callback

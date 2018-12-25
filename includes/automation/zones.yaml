@@ -1,6 +1,5 @@
 ################## DIMA
 - alias: "zone_dima_enters_work"
-  initial_state: "on"
   trigger:
   - platform: zone
     entity_id: device_tracker.google_maps_111683533988744565132
@@ -12,7 +11,6 @@
       message: "{{ now().strftime('%H:%M') }} \U0001F4BC Dima enters"
 
 - alias: "zone_dima_leaves_work"
-  initial_state: "on"
   trigger:
   - platform: zone
     entity_id: device_tracker.google_maps_111683533988744565132
@@ -24,7 +22,6 @@
       message: "{{ now().strftime('%H:%M') }} \U0001F4BC Dima leaves"
 
 - alias: "zone_dima_enters_home"
-  initial_state: "on"
   trigger:
   - platform: zone
     entity_id: device_tracker.google_maps_111683533988744565132
@@ -36,7 +33,6 @@
       message: "{{ now().strftime('%H:%M') }} \U0001F3E0 Dima enters"
 
 - alias: "zone_dima_leaves_home"
-  initial_state: "on"
   trigger:
   - platform: zone
     entity_id: device_tracker.google_maps_111683533988744565132
@@ -48,7 +44,6 @@
       message: "{{ now().strftime('%H:%M') }} \U0001F3E0 Dima leaves"
 
 - alias: "zone_dima_enters_school"
-  initial_state: "on"
   trigger:
   - platform: zone
     entity_id: device_tracker.google_maps_111683533988744565132
@@ -60,7 +55,6 @@
       message: "{{ now().strftime('%H:%M') }} \U0001F3EB Dima enters"
 
 - alias: "zone_dima_leaves_school"
-  initial_state: "on"
   trigger:
   - platform: zone
     entity_id: device_tracker.google_maps_111683533988744565132
@@ -73,7 +67,6 @@
 
 ################## ALYONA
 - alias: "zone_alyona_enters_school"
-  initial_state: "on"
   trigger:
   - platform: zone
     entity_id: device_tracker.google_maps_115914092349482836896
@@ -85,7 +78,6 @@
       message: "{{ now().strftime('%H:%M') }} \U0001F3EB Alyona enters"
 
 - alias: "zone_alyona_leaves_school"
-  initial_state: "on"
   trigger:
   - platform: zone
     entity_id: device_tracker.google_maps_115914092349482836896

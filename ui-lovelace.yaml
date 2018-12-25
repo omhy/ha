@@ -237,15 +237,12 @@ views:
         show_header_toggle: false
         entities:
           - entity: input_boolean.livingroom_torch_use
-            name: Use torch
             tap_action:
               action: toggle
           - entity: input_boolean.livingroom_corner_use
-            name: Use corner
             tap_action:
               action: toggle
-          - entity: input_select.living_room_flow
-            name: Flow type
+          - input_select.living_room_flow
       - id: e55f4bbb1fda439c982fc5b344b3fb1b  # Automatically created id
         type: entities
         title: Common settings

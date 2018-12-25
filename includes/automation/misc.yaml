@@ -1,5 +1,4 @@
 - alias: "outside_temperature_calc_diff"
-  initial_state: "on"
   trigger:
   - platform: state
     entity_id:
@@ -13,7 +12,6 @@
       retain: true
 
 - alias: "computer_limiter"
-  initial_state: "on"
   trigger:
     - platform: time
       minutes: '/5'

@@ -1,5 +1,4 @@
 - alias: "telegram_send_outside"
-  initial_state: "on"
   trigger:
   - platform: time
     at: "06:55:00"
@@ -11,7 +10,6 @@
       target: !secret tg_chat_dima
 
 - alias: "telegram_send_electro"
-  initial_state: "on"
   trigger:
   - platform: time
     at: "23:59:00"

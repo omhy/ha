@@ -1,5 +1,4 @@
 - alias: "mqtt_reset_max_and_min"
-  initial_state: "on"
   trigger:
   - platform: time
     at: "00:00:05"
@@ -26,7 +25,6 @@
       retain: true
 
 - alias: "mqtt_power_reset_day"
-  initial_state: "on"
   trigger:
   - platform: time
     at: "00:00:05"
@@ -54,7 +52,6 @@
       topic: "livingroom/motions"
 
 - alias: "mqtt_power_reset_week"
-  initial_state: "on"
   trigger:
   - platform: time
     at: "00:00:15"
@@ -79,7 +76,6 @@
       topic: "power/fridge/week"
 
 - alias: "mqtt_power_reset_month"
-  initial_state: "on"
   trigger:
   - platform: time
     at: "00:00:25"

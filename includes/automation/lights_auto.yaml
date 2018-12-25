@@ -1,5 +1,4 @@
 - alias: "standalone_left_single"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: xiaomi_aqara.click
@@ -11,7 +10,6 @@
     entity_id: light.tree_lamp
 
 - alias: "standalone_left_right"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: xiaomi_aqara.click
@@ -23,7 +21,6 @@
     entity_id: light.small_torch
 
 - alias: "light_button_single_when_light_is_on"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: xiaomi_aqara.click
@@ -39,7 +36,6 @@
     entity_id: light.group_livroom_ambient
 
 - alias: "light_button_single_when_light_is_off"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: xiaomi_aqara.click
@@ -55,7 +51,6 @@
   - service: script.light_turn_on_corner_lamp_by_params
 
 - alias: "light_button_double_when_flow_is_off"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: xiaomi_aqara.click
@@ -73,7 +68,6 @@
     - input_boolean.livingroom_corner_use
 
 - alias: "light_button_double_when_flow_is_on"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: xiaomi_aqara.click
@@ -88,7 +82,6 @@
   - service: script.light_flow_next
 
 - alias: "light_livingroom_flow"
-  initial_state: "on"
   trigger:
   - platform: time
     seconds: "/5"
@@ -142,7 +135,6 @@
       transition: "{{ states.input_number.flow_transition.state }}"
 
 - alias: "light_livingroom_flow_hues"
-  initial_state: "on"
   trigger:
   - platform: state
     entity_id: input_select.living_room_flow

@@ -1,5 +1,4 @@
 - alias: "telegram_handle_callback_people"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -20,7 +19,6 @@
       - "\U0000267B Dismiss:/dismiss"
 
 - alias: "telegram_handle_prefix_tracker"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -47,7 +45,6 @@
       - "\U0001F5FA Map:/map {{ trigger.event.data.data.split(' ', 1)[1] }}, \U0001F504 Refresh:{{ trigger.event.data.data }}, \U0000267B Dismiss:/dismiss"
 
 - alias: "telegram_handle_prefix_map"
-  initial_state: "on"
   trigger:
   - platform: event
     event_type: telegram_callback

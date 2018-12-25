@@ -1,5 +1,4 @@
 - alias: "ha_start"
-  initial_state: "on"
   trigger:
   - platform: homeassistant
     event: start
@@ -13,7 +12,6 @@
       - "\U0001F532 Menu:/menu, \U0000267B Dismiss:/dismiss"
 
 - alias: "ha_shutdown"
-  initial_state: "on"
   trigger:
   - platform: homeassistant
     event: shutdown
@@ -26,7 +24,6 @@
       - "\U0000267B Dismiss:/dismiss"
 
 - alias: "ha_bad_login"
-  initial_state: "on"
   trigger:
   - platform: state
     entity_id: persistent_notification.httplogin

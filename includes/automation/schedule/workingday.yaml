@@ -1,5 +1,4 @@
 - alias: "working_day_scene_on"
-  initial_state: "on"
   trigger:
     - platform: time
       at: "06:55:00"
@@ -12,7 +11,6 @@
       entity_id: scene.workday_init
 
 - alias: "working_day_scene_ready_1"
-  initial_state: "on"
   trigger:
     - platform: time
       at: "07:25:00"
@@ -26,7 +24,6 @@
     - service: script.tts_summary
 
 - alias: "working_day_scene_ready_2"
-  initial_state: "on"
   trigger:
     - platform: time
       at: "07:27:30"
@@ -39,7 +36,6 @@
       entity_id: scene.workday_ready_2
 
 - alias: "working_day_scene_at_steady"
-  initial_state: "on"
   trigger:
   - platform: time
     at: "07:30:00"
@@ -52,7 +48,6 @@
       entity_id: scene.workday_steady
 
 - alias: "working_day_computer_off"
-  initial_state: "on"
   trigger:
     - platform: time
       at: "07:33:00"
@@ -64,7 +59,6 @@
     - service: script.rmt_computer_sleep
 
 - alias: "working_day_scene_go"
-  initial_state: "on"
   trigger:
     - platform: time
       at: "07:35:00"
@@ -77,7 +71,6 @@
       entity_id: scene.workday_go
 
 - alias: "working_day_scene_terminate"
-  initial_state: "on"
   trigger:
     - platform: time
       at: "07:45:00"

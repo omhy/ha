@@ -1,5 +1,4 @@
 - alias: "light_cosiness_on"
-  initial_state: "on"
   trigger:
     - platform: time
       at: "17:00:00"
@@ -8,7 +7,6 @@
       entity_id: scene.cosiness_on
 
 - alias: "light_cosiness_off"
-  initial_state: "on"
   trigger:
   - platform: time
     at: "23:59:00"

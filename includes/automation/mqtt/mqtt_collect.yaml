@@ -1,38 +1,4 @@
-#- alias: "mqtt_publish_states"
-#  initial_state: "on"
-#  trigger:
-#  - platform: state
-#    entity_id:
-#    - sensor.temperature_158d0001f23cbe
-#    - sensor.temperature_158d0002271609
-#    - sensor.temperature_158d00022c7cf2
-#    - sensor.temperature_158d000234816a
-#    - binary_sensor.switch_158d00021350ee
-#    - binary_sensor.motion_sensor_158d0001e52779
-#    - binary_sensor.motion_sensor_158d0001fa3dc0
-#    - binary_sensor.door_window_sensor_158d00024367c8
-#    - switch.wall_switch_left_158d00022391ec
-#    - switch.wall_switch_right_158d00022391ec
-#    - sensor.power_strip_1_load_power
-#    - sensor.power_strip_2_load_power
-#    - sensor.power_strip_3_load_power
-#    - sensor.power_strip_4_load_power
-#    - device_tracker.google_maps_111683533988744565132
-#    - device_tracker.google_maps_117454969161947422882
-#    - device_tracker.google_maps_115914092349482836896
-#    - sensor.waze_home_work
-#    - sensor.waze_work_home
-#    - sensor.waze_current_home
-#    - sensor.waze_current_work
-#  action:
-#  - service: mqtt.publish
-#    data_template:
-#      topic: "{{ trigger.from_state.attributes.friendly_name }}"
-#      payload: "{{ trigger.to_state.state }}"
-#      retain: true
-
 - alias: "mqtt_publish_outside_temperature_min"
-  initial_state: "on"
   trigger:
   - platform: state
     entity_id:
@@ -53,7 +19,6 @@
       retain: true
 
 - alias: "mqtt_publish_outside_temperature_max"
-  initial_state: "on"
   trigger:
   - platform: state
     entity_id:
@@ -74,7 +39,6 @@
       retain: true
 
 - alias: "mqtt_power_collect_electricity"
-  initial_state: "on"
   trigger:
   - platform: time
     seconds: "/30"
