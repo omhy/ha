@@ -3,7 +3,8 @@ resources:
     type: js
   - url: /local/custom-lovelace/mini-media-player-bundle.js?v=0.9.8
     type: module
-
+  - url: /local/custom-lovelace/mini-graph-card-bundle.js?v=0.1.0
+    type: module
 
 title: Home
 views:
@@ -93,36 +94,31 @@ views:
 
       - type: vertical-stack
         cards:
-          - id: 7b8a3285d1264ffbab29f2a6dadd000b  # Automatically created id
-            type: custom:mini-media-player
+          - type: custom:mini-media-player
             entity: media_player.kitchen_display
             icon: mdi:monitor
             artwork: cover
             short_info: true
 
-          - id: 7b8a3285d1264ffbab29f2a6daddcecb  # Automatically created id
-            type: custom:mini-media-player
+          - type: custom:mini-media-player
             entity: media_player.loud_speaker
             icon: mdi:google-home
             artwork: cover
             short_info: true
 
-          - id: 158300d76a9641ff8b89eeac20d42ce1  # Automatically created id
-            type: custom:mini-media-player
+          - type: custom:mini-media-player
             entity: media_player.yury_speaker
             icon: mdi:dots-horizontal-circle
             artwork: cover
             short_info: true
 
-          - id: 55b9abc90896484b80009668847e7643  # Automatically created id
-            type: custom:mini-media-player
+          - type: custom:mini-media-player
             entity: media_player.kodi
             icon: mdi:kodi
             artwork: cover
             short_info: true
 
-          - id: ab16923ec86c468aac47e451efdb126c  # Automatically created id
-            type: custom:mini-media-player
+          - type: custom:mini-media-player
             entity: media_player.spotify
             artwork: full-cover
             short_info: true
@@ -182,13 +178,13 @@ views:
               - sensor.outside_temperature_max_at
 
       - type: history-graph
-        title: Outside
-        hours_to_show: 6
+        title: Outside - 12h
+        hours_to_show: 12
         entities:
           - sensor.temperature_158d00022c7cf2
       - type: history-graph
-        title: Rooms
-        hours_to_show: 6
+        title: Rooms - 12h
+        hours_to_show: 12
         entities:
           - sensor.temperature_158d0002323783
           - sensor.temperature_158d000234816a
@@ -200,26 +196,25 @@ views:
     id: lights
     icon: mdi:floor-lamp
     cards:
-      - id: 670a08d991cf44498504a1c3aee85169  # Automatically created id
-        type: entities
+      - type: entities
         title: Torch defaults
+        show_header_toggle: false
         entities:
           - input_number.livingroom_torch_brightness
           - input_number.livingroom_torch_mired
-      - id: 94bdf9cea63642d39c3ef3dc0ab61da9  # Automatically created id
-        type: entities
+      - type: entities
         title: Corner defaults
+        show_header_toggle: false
         entities:
           - input_number.livingroom_corner_brightness
           - input_number.livingroom_corner_mired
-      - id: 44a7c8acde8346b9b0d6b30edd62e111  # Automatically created id
-        type: entities
+      - type: entities
         title: Small torch defaults
+        show_header_toggle: false
         entities:
           - input_number.small_torch_brightness
           - input_number.small_torch_mired
-      - id: dfaf98e65b60444c9a705fa597f8cea6  # Automatically created id
-        type: picture
+      - type: picture
         image: /local/mireds.png
 
 
@@ -246,7 +241,7 @@ views:
       - id: e55f4bbb1fda439c982fc5b344b3fb1b  # Automatically created id
         type: entities
         title: Common settings
-        show_header_toggle: true
+        show_header_toggle: false
         entities:
           - input_number.flow_transition
           - input_number.flow_brightness
@@ -254,6 +249,7 @@ views:
       - id: 8cc4abc7eb2b4cbda990ac7bfa37d85e  # Automatically created id
         type: entities
         title: Current flow settings
+        show_header_toggle: false
         entities:
           - input_number.flow_hue1
           - input_number.flow_hue2
@@ -263,6 +259,7 @@ views:
       - id: a75be4c41db8409c97b0009f9d55a98c  # Automatically created id
         type: entities
         title: Custom flow settings
+        show_header_toggle: false
         entities:
           - input_number.flow_custom_hue1
           - input_number.flow_custom_hue2
@@ -388,7 +385,7 @@ views:
           - device_tracker.google_maps_115914092349482836896
           - device_tracker.google_maps_117454969161947422882
       - type: history-graph
-        title: People in last 24h
+        title: People - 24h
         entities:
           - device_tracker.google_maps_111683533988744565132
           - device_tracker.google_maps_115914092349482836896
@@ -927,6 +924,7 @@ views:
       - id: 614279a5c1f0431aa1605cb30dfcc511  # Automatically created id
         type: entities
         title: Internal
+        show_header_toggle: false
         entities:
           - type: weblink
             name: Router
@@ -952,6 +950,7 @@ views:
       - id: 614279a5c1f0431aa16xxcb30dfcc511  # Automatically created id
         type: entities
         title: Sonoffs
+        show_header_toggle: false
         entities:
           - type: weblink
             name: sonoff_garland
@@ -969,6 +968,7 @@ views:
       - id: 614279a5c1f0431aa1605cb30dfcc511  # Automatically created id
         type: entities
         title: Media players
+        show_header_toggle: false
         entities:
           - type: weblink
             name: Google home mini API
@@ -990,10 +990,15 @@ views:
       - id: 8a56f82634f642b597d7166564be6b45  # Automatically created id
         type: entities
         title: Home Assistant
+        show_header_toggle: false
         entities:
           - type: weblink
             name: Stable verison
             url: https://s3.amazonaws.com/hassio-version/stable.json
+            icon: mdi:home-assistant
+          - type: weblink
+            name: Lovelace
+            url: https://www.home-assistant.io/lovelace
             icon: mdi:home-assistant
           - type: weblink
             name: Tags
@@ -1012,34 +1017,10 @@ views:
             url: https://www.home-assistant.io/docs/automation/trigger/
             icon: mdi:script
 
-      - id: 9c5eca7c30cf48e2b34fe054600f8666  # Automatically created id
-        type: entities
-        title: Lovelace
-        entities:
-          - type: weblink
-            name: Lovelace
-            url: https://www.home-assistant.io/lovelace
-            icon: mdi:home-assistant
-          - type: weblink
-            name: Lovelace custom cards
-            url: https://github.com/ciotlosm/custom-lovelace
-            icon: mdi:application
-          - type: weblink
-            name: Tracker card
-            url: https://github.com/custom-cards/tracker-card
-            icon: mdi:application
-          - type: weblink
-            name: Monster card
-            url: https://github.com/ciotlosm/custom-lovelace/tree/master/monster-card
-            icon: mdi:application
-          - type: weblink
-            name: Mini-media-player card
-            url: https://github.com/kalkih/mini-media-player
-            icon: mdi:application
-
       - id: 9b7e3192533746b286a1564e988b3a17  # Automatically created id
         type: entities
         title: User interface
+        show_header_toggle: false
         entities:
           - type: weblink
             name: MDI icons
@@ -1081,13 +1062,19 @@ views:
           - sensor.is_workday
           - sensor.days_in_month
       - type: history-graph
-        title: CPU and memory last 6h
-        hours_to_show: 6
+        title: CPU and memory 12h
+        hours_to_show: 12
         entities:
           - sensor.processor_use
           - sensor.memory_use_percent
       - type: history-graph
-        title: Temperature last 6h
-        hours_to_show: 6
+        title: Temperature 12h
+        hours_to_show: 12
         entities:
           - sensor.temp
+#      - type: custom:mini-graph-card
+#        entity: sensor.temp
+#        line_width: 4
+#        labels: true
+#        detail: 2
+#        hours_to_show: 12
