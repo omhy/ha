@@ -1,11 +1,11 @@
 - alias: "schedule_daily_refresh"
   trigger:
-  - platform: time
-    at: "00:00:01"
+    - platform: time
+      at: "00:00:01"
   action:
-  - service: homeassistant.update_entity
-    entity_id:
-    - sensor.is_workday
+    - service: homeassistant.update_entity
+      entity_id:
+        - sensor.is_workday
 
 
 - alias: "schedule_daily_sets"

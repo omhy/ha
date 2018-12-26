@@ -37,12 +37,12 @@
 
 - alias: "working_day_scene_at_steady"
   trigger:
-  - platform: time
-    at: "07:30:00"
+    - platform: time
+      at: "07:30:00"
   condition:
-  - condition: state
-    entity_id: sensor.is_workday
-    state: "True"
+    - condition: state
+      entity_id: sensor.is_workday
+      state: "True"
   action:
     - service: scene.turn_on
       entity_id: scene.workday_steady

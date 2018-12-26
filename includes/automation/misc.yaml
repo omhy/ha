@@ -14,13 +14,18 @@
 - alias: "computer_limiter"
   trigger:
     - platform: time
-      minutes: '/5'
-      seconds: 00
+      seconds: "/300"
   condition:
     - condition: state
       entity_id: input_boolean.computer_today_limit
       state: "on"
+    - condition: state
+      entity_id: binary_sensor.ping_computer
+      state: "on"
     - condition: template
-      value_template: "{{ states.computer_on_today_minutes.state | int >= states.input_number.computer_today_allowed.state | int}}"
+      value_template: "{{ states.sensor.computer_on_today_minutes.state | int >= states.input_number.computer_today_allowed.state | int}}"
   action:
+    - service: notify.telegram_dima
+      data_template:
+        message: "{{ now().strftime('%H:%M') }} \U0001F914 Computer limit passed. Turning off"
     - service:  script.rmt_computer_sleep
