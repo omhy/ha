@@ -92,9 +92,6 @@
 "sensor.power_*_month":
   friendly_name: Month
   icon: mdi:calendar-text
-"sensor.power_*_1_mean":
-  friendly_name: 1h mean
-  icon: mdi:calendar-text
 
 "sensor.wt00*":
   friendly_name: Now

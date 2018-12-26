@@ -85,7 +85,7 @@ google:
   client_secret: !secret google_cal_int_client_secret
   track_new_calendar: true
 
-google_assistant: !include includes/googleassistant.yaml
+google_assistant: !include includes/google_assistant.yaml
 zone: !include includes/zone.yaml
 input_number: !include includes/input_number.yaml
 input_boolean: !include includes/input_boolean.yaml

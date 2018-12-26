@@ -279,7 +279,6 @@ views:
           - sensor.power_computer_day
           - sensor.power_computer_week
           - sensor.power_computer_month
-          - sensor.power_strip_1_mean
       - id: 0e3bba7cfc894887a0b870391a2bb17d  # Automatically created id
         type: glance
         title: TV
@@ -289,7 +288,6 @@ views:
           - sensor.power_tv_day
           - sensor.power_tv_week
           - sensor.power_tv_month
-          - sensor.power_strip_4_mean
       - id: 7c898a7c2a4647499d0be219a0ee1671  # Automatically created id
         type: glance
         title: Router
@@ -299,7 +297,6 @@ views:
           - sensor.power_router_day
           - sensor.power_router_week
           - sensor.power_router_month
-          - sensor.power_strip_3_mean
       - id: 9a8ee0382c1c4c4a8f2633132c6556e2  # Automatically created id
         type: glance
         title: Kitchen
@@ -309,7 +306,6 @@ views:
           - sensor.power_kitchen_day
           - sensor.power_kitchen_week
           - sensor.power_kitchen_month
-          - sensor.power_strip_2_mean
       - id: 80524ae40029477e861cb7d9dd6fce93  # Automatically created id
         type: glance
         title: Fridge
@@ -319,7 +315,6 @@ views:
           - sensor.power_fridge_day
           - sensor.power_fridge_week
           - sensor.power_fridge_month
-          - sensor.power_strip_5_mean
 
       - id: 4f735e9e47a240d5936d33c7dd8419fa  # Automatically created id
         type: glance
