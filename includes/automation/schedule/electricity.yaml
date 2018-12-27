@@ -23,7 +23,7 @@
   action:
   - service: notify.telegram_dima
     data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F5A5 is turned off"
+      message: "{{ now().strftime('%H:%M') }} \U0001F5A5 is turned off ({{ states.sensor.computer_on_today_minutes.state | int }}/{{states.input_number.computer_today_allowed.state | int}})"
 
 - alias: "state_computer_turned_on"
   trigger:
@@ -34,7 +34,7 @@
   action:
   - service: notify.telegram_dima
     data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F5A5 is turned on"
+      message: "{{ now().strftime('%H:%M') }} \U0001F5A5 is turned on ({{ states.sensor.computer_on_today_minutes.state | int }}/{{states.input_number.computer_today_allowed.state | int}})"
 
 - alias: "state_laptop_turned_off"
   trigger:
@@ -45,7 +45,7 @@
   action:
   - service: notify.telegram_dima
     data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F4BB is turned off"
+      message: "{{ now().strftime('%H:%M') }} \U0001F4BB is turned off ({{ states.sensor.laptop_on_today_minutes.state | int }})"
 
 - alias: "state_laptop_turned_on"
   trigger:
@@ -56,4 +56,4 @@
   action:
   - service: notify.telegram_dima
     data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F4BB is turned on"
+      message: "{{ now().strftime('%H:%M') }} \U0001F4BB is turned on ({{ states.sensor.laptop_on_today_minutes.state | int }})"

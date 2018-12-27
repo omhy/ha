@@ -336,30 +336,28 @@ views:
           - binary_sensor.ping_computer
           - binary_sensor.ping_laptop
 
-      - id: 6ca601bd92874ea58662e34258afa93c  # Automatically created id
-        type: entities
+      - type: entities
         show_header_toggle: false
         title: Computer limit
         entities:
           - input_number.computer_today_allowed
           - input_boolean.computer_today_limit
-          - sensor.computer_on_today_minutes
           - sensor.computer_on_today
+          - sensor.computer_on_today_minutes
           - sensor.laptop_on_today
+          - sensor.laptop_on_today_minutes
   - title: Information
     id: info
     icon: mdi:information
     cards:
-      - id: 8e4830d67b1f415ab1c96a8e323eda8a  # Automatically created id
-        type: entities
+      - type: entities
         title: Doorbell settings
         show_header_toggle: false
         entities:
           - input_number.doorbell_volume
           - input_number.doorbell_melody
 
-      - id: 30abed80373e4eb9ad0e175fc6c9348c  # Automatically created id
-        type: entities
+      - type: entities
         title: TTS settings
         show_header_toggle: false
         entities:

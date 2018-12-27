@@ -7,7 +7,6 @@
       entity_id:
         - sensor.is_workday
 
-
 - alias: "schedule_daily_sets"
   trigger:
     - platform: time

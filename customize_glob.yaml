@@ -94,6 +94,10 @@
 "sensor.power_*_month":
   friendly_name: Month
   icon: mdi:calendar-text
+"sensor.computer*":
+  icon: mdi:desktop-classic
+"sensor.laptop*":
+  icon: mdi:laptop
 
 "sensor.wt00*":
   friendly_name: Now
