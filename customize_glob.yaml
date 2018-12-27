@@ -43,6 +43,8 @@
   initial_state: "on"
 "automation.zone*":
   icon: mdi:map-marker
+"automation.computer*":
+  icon: mdi:desktop-classic
 "automation.working_day*":
   icon: mdi:worker
 "automation.cube*":

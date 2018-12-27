@@ -5,6 +5,8 @@ resources:
     type: module
   - url: /local/custom-lovelace/mini-graph-card-bundle.js?v=0.1.0
     type: module
+  - url: /local/custom-lovelace/tracker-card.js?v=0.1.5
+    type: js
 
 title: Home
 views:
@@ -1067,9 +1069,8 @@ views:
         hours_to_show: 12
         entities:
           - sensor.temp
-#      - type: custom:mini-graph-card
-#        entity: sensor.temp
-#        line_width: 4
-#        labels: true
-#        detail: 2
-#        hours_to_show: 12
+      - type: custom:tracker-card
+        title:
+        trackers:
+          - sensor.custom_card_tracker
+          - sensor.custom_component_tracker

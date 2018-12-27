@@ -11,7 +11,7 @@
       payload: "{{ (states.sensor.outside_temperature_max.state | float - states.sensor.outside_temperature_min.state | float) | round(1)}}"
       retain: true
 
-- alias: "computer_limiter"
+- alias: "computer_limit_reached"
   trigger:
     - platform: time
       seconds: "/300"
@@ -27,5 +27,23 @@
   action:
     - service: notify.telegram_dima
       data_template:
-        message: "{{ now().strftime('%H:%M') }} \U0001F914 Computer limit passed. Turning off"
+        message: "{{ now().strftime('%H:%M') }} \U0001F61E Computer limit reached. Turning off"
     - service:  script.rmt_computer_sleep
+
+- alias: "computer_limit_warning"
+  trigger:
+    - platform: time
+      seconds: "/600"
+  condition:
+    - condition: state
+      entity_id: input_boolean.computer_today_limit
+      state: "on"
+    - condition: state
+      entity_id: binary_sensor.ping_computer
+      state: "on"
+    - condition: template
+      value_template: "{{ (states.input_number.computer_today_allowed.state | int - states.sensor.computer_on_today_minutes.state | int) < 30}}"
+  action:
+    - service: notify.telegram_dima
+      data_template:
+        message: "{{ now().strftime('%H:%M') }} \U0001F914 30 or less minutes left before computer limit"
