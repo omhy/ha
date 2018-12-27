@@ -35,37 +35,3 @@ light_turn_on_hs:
         hs_color: [ "{{ hue|int }}", "{{ sat|int }}" ]
         brightness: "{{ brightness | int }}"
         transition: "{{ transition | int }}"
-
-light_turn_off_flow:
-    sequence:
-    - service: input_boolean.turn_off
-      entity_id:
-        - input_boolean.livingroom_torch_use
-        - input_boolean.livingroom_corner_use
-
-light_turn_on_big_torch_by_params:
-  sequence:
-    - service: script.light_turn_off_flow
-    - service: light.turn_on
-      entity_id: light.big_torch
-      data_template:
-        brightness: "{{ states.input_number.livingroom_torch_brightness.state | int }}"
-        color_temp: "{{ states.input_number.livingroom_torch_mired.state | int }}"
-
-light_turn_on_corner_lamp_by_params:
-  sequence:
-  - service: script.light_turn_off_flow
-  - service: light.turn_on
-    entity_id: light.corner_lamp
-    data_template:
-      brightness: "{{ states.input_number.livingroom_corner_brightness.state | int }}"
-      color_temp: "{{ states.input_number.livingroom_corner_mired.state | int }}"
-
-light_turn_on_small_torch_by_params:
-  sequence:
-  - service: script.light_turn_off_flow
-  - service: light.turn_on
-    entity_id: light.small_torch
-    data_template:
-      brightness: "{{ states.input_number.small_torch_brightness.state | int }}"
-      color_temp: "{{ states.input_number.small_torch_mired.state | int }}"

@@ -35,13 +35,6 @@ views:
             - binary_sensor.motion_sensor_158d0001e52779
             - sensor.bathroom_motions
 
-#        - type: history-graph
-#          title: Movements
-#          hours_to_show: 2
-#          entities:
-#            - binary_sensor.motion_sensor_158d0001fa3dc0
-#            - binary_sensor.motion_sensor_158d0001e52779
-
         - type: weather-forecast
           entity: weather.smhi_home
 
@@ -83,6 +76,7 @@ views:
             - entity: light.bathroom
               tap_action:
                 action: toggle
+
         - type: custom:monster-card
           card:
             type: entities
@@ -180,12 +174,12 @@ views:
               - sensor.outside_temperature_max_at
 
       - type: history-graph
-        title: Outside - 12h
+        title: Outside 12h
         hours_to_show: 12
         entities:
           - sensor.temperature_158d00022c7cf2
       - type: history-graph
-        title: Rooms - 12h
+        title: Rooms 12h
         hours_to_show: 12
         entities:
           - sensor.temperature_158d0002323783
@@ -193,32 +187,38 @@ views:
           - sensor.temperature_158d0001f23cbe
           - sensor.temperature_158d0002271609
 
-  ##################   LIGHTS
-  - title: Lights
-    id: lights
-    icon: mdi:floor-lamp
+  ##################   HISTORY
+  - title: History
+    name: history
+    icon: mdi:chart-timeline
     cards:
-      - type: entities
-        title: Torch defaults
-        show_header_toggle: false
+      - type: history-graph
+        title: Movements 1h
+        hours_to_show: 1
         entities:
-          - input_number.livingroom_torch_brightness
-          - input_number.livingroom_torch_mired
-      - type: entities
-        title: Corner defaults
-        show_header_toggle: false
-        entities:
-          - input_number.livingroom_corner_brightness
-          - input_number.livingroom_corner_mired
-      - type: entities
-        title: Small torch defaults
-        show_header_toggle: false
-        entities:
-          - input_number.small_torch_brightness
-          - input_number.small_torch_mired
-      - type: picture
-        image: /local/mireds.png
+          - binary_sensor.motion_sensor_158d0001fa3dc0
+          - binary_sensor.motion_sensor_158d0001e52779
 
+      - type: history-graph
+        title: Computers 12h
+        hours_to_show: 12
+        entities:
+          - binary_sensor.ping_computer
+          - binary_sensor.ping_laptop
+
+      - type: history-graph
+        title: Lights 12h
+        hours_to_show: 12
+        entities:
+          - light.garland
+          - light.big_torch
+          - light.corner_lamp
+          - light.window_stars
+          - light.small_torch
+          - light.fire_lamp
+          - light.tree_lamp
+          - light.corridor
+          - light.bathroom
 
   ##################   LIGHTS FLOW
   - title: Lights flow

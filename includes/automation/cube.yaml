@@ -143,7 +143,7 @@
         action_type: shake_air
   action:
     - service: scene.turn_on
-      entity_id: scene.living_room_low_light
+      entity_id: scene.living_room_light_low
 
 #   action_type: move
 #   action_type: tap_twice
