@@ -33,7 +33,7 @@
       state: "on"
   action:
     - service: scene.turn_on
-      entity_id: scene.living_room_btn_light_off
+      entity_id: scene.living_room_light_off
 
 - alias: "light_button_single_when_light_is_off"
   trigger:
@@ -48,9 +48,7 @@
       state: "off"
   action:
     - service: scene.turn_on
-      entity_id: scene.living_room_btn_light_on
-#    - service: script.light_turn_on_big_torch_by_params
-#    - service: script.light_turn_on_corner_lamp_by_params
+      entity_id: scene.living_room_light_on_from_btn
 
 - alias: "light_button_double_when_flow_is_off"
   trigger:
@@ -64,10 +62,8 @@
     entity_id: sensor.livingroom_ambient_flow_is_on
     state: "False"
   action:
-  - service: input_boolean.turn_on
-    entity_id:
-    - input_boolean.livingroom_torch_use
-    - input_boolean.livingroom_corner_use
+    - service: scene.turn_on
+      entity_id: scene.living_room_flow_on
 
 - alias: "light_button_double_when_flow_is_on"
   trigger:

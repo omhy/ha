@@ -1,0 +1,23 @@
+- alias: "entrance_button_single"
+  trigger:
+    - platform: event
+      event_type: xiaomi_aqara.click
+      event_data:
+        entity_id: binary_sensor.switch_158d00021329e3
+        click_type: single
+  action:
+    - service: notify.telegram_dima
+      data_template:
+        message: "{{ now().strftime('%H:%M') }} Entrance btn single click"
+
+- alias: "entrance_button_double"
+  trigger:
+    - platform: event
+      event_type: xiaomi_aqara.click
+      event_data:
+        entity_id: binary_sensor.switch_158d00021329e3
+        click_type: double
+  action:
+    - service: notify.telegram_dima
+      data_template:
+        message: "{{ now().strftime('%H:%M') }} Entrance btn double click"

@@ -33,7 +33,7 @@
       state: true
       brightness: 1
 
-- name: "living_room_btn_light_on"
+- name: "living_room_light_on_from_btn"
   entities:
     input_boolean.livingroom_torch_use: false
     input_boolean.livingroom_corner_use: false
@@ -46,12 +46,17 @@
       brightness: 200
       color_temp: 500
 
-- name: "living_room_btn_light_off"
+- name: "living_room_light_off"
   entities:
     input_boolean.livingroom_torch_use: false
     input_boolean.livingroom_corner_use: false
     light.big_torch: false
     light.corner_lamp: false
+
+- name: "living_room_flow_on"
+  entities:
+    input_boolean.livingroom_torch_use: true
+    input_boolean.livingroom_corner_use: true
 
 - name: "we_are_leaving"
   entities:

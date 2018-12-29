@@ -1057,16 +1057,19 @@ views:
           - sensor.is_workday
           - sensor.days_in_month
       - type: history-graph
-        title: CPU and memory 12h
+        title: CPU/Mem/Disk 12h
         hours_to_show: 12
         entities:
           - sensor.processor_use
           - sensor.memory_use_percent
+          - sensor.disk_use_percent_home
+
       - type: history-graph
         title: Temperature 12h
         hours_to_show: 12
         entities:
           - sensor.temp
+
       - type: custom:tracker-card
         title:
         trackers:
