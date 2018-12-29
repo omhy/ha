@@ -1,7 +1,3 @@
-tts_volume:
-  min: 1
-  max: 10
-
 computer_today_allowed:
   name: Allowed
   icon: mdi:lock-clock

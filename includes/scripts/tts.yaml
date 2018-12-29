@@ -59,10 +59,6 @@ tts_consumption:
 
 tts_say_kitchen:
   sequence:
-#    - service: media_player.volume_set
-#      data_template:
-#        entity_id: media_player.kitchen_display
-#        volume_level: "{{ (states.input_number.tts_volume.state | float) / 10 }}"
     - service: tts.google_say
       entity_id: media_player.kitchen_display
       data_template:

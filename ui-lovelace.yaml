@@ -18,12 +18,9 @@ views:
       - sensor.wt00_symbol
       - sensor.temperature_158d00022c7cf2
       - sensor.humidity_158d00022c7cf2
-      - sensor.pressure_158d00022c7cf2
       - sensor.wt00_precipitation
       - sensor.wt00_wind_speed
       - sun.sun
-      - device_tracker.google_maps_111683533988744565132
-      - device_tracker.google_maps_115914092349482836896
     cards:
       - type: vertical-stack
         cards:
@@ -200,6 +197,21 @@ views:
           - binary_sensor.motion_sensor_158d0001e52779
 
       - type: history-graph
+        title: Illumination 1h
+        hours_to_show: 1
+        entities:
+          - sensor.illumination_158d0001fa3dc0
+          - sensor.illumination_158d0001e52779
+
+      - type: history-graph
+        title: Living room power 1h
+        hours_to_show: 1
+        entities:
+          - sensor.power_strip_1_load_power
+          - sensor.power_strip_3_load_power
+          - sensor.power_strip_4_load_power
+
+      - type: history-graph
         title: Computers 12h
         hours_to_show: 12
         entities:
@@ -349,6 +361,12 @@ views:
   - title: Information
     id: info
     icon: mdi:information
+    badges:
+      - device_tracker.google_maps_111683533988744565132
+      - device_tracker.google_maps_115914092349482836896
+      - device_tracker.google_maps_117454969161947422882
+      - sensor.waze_home_work
+      - sensor.waze_work_home
     cards:
       - type: entities
         title: Doorbell settings
@@ -357,36 +375,22 @@ views:
           - input_number.doorbell_volume
           - input_number.doorbell_melody
 
-      - type: entities
-        title: TTS settings
-        show_header_toggle: false
+      - type: history-graph
+        title: Waze 24h
+        hours_to_show: 24
         entities:
-          - input_number.tts_volume
-
-      - id: 8a3777b188af48e88c6d982e04125ee7  # Automatically created id
-        type: glance
-        title: Waze
-        show_header_toggle: true
-        entities:
-          - sensor.waze_current_home
-          - sensor.waze_current_work
           - sensor.waze_home_work
           - sensor.waze_work_home
-      - id: c265f5051343475da47bd0429fe31ec1  # Automatically created id
-        type: glance
-        title: People
-        entities:
-          - device_tracker.google_maps_111683533988744565132
-          - device_tracker.google_maps_115914092349482836896
-          - device_tracker.google_maps_117454969161947422882
+
       - type: history-graph
-        title: People - 24h
+        title: People 24h
+        hours_to_show: 24
         entities:
           - device_tracker.google_maps_111683533988744565132
           - device_tracker.google_maps_115914092349482836896
           - device_tracker.google_maps_117454969161947422882
-      - id: 667da2802d164ef8bb5777b5137c2cca  # Automatically created id
-        type: map
+
+      - type: map
         default_zoom: 15
         entities:
           - device_tracker.google_maps_111683533988744565132

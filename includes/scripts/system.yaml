@@ -1,10 +1,6 @@
 ha_set_defaults:
   sequence:
     - service: input_number.set_value
-      entity_id: input_number.tts_volume
-      data_template:
-        value: 3
-    - service: input_number.set_value
       entity_id: input_number.doorbell_volume
       data_template:
         value: 13

@@ -38,10 +38,10 @@ sensor.is_workday:
   icon: mdi:briefcase
 
 #WAZE
-sensor.waze_current_home:
-  friendly_name: To home
-sensor.waze_current_work:
-  friendly_name: To work
+#sensor.waze_current_home:
+#  friendly_name: To home
+#sensor.waze_current_work:
+#  friendly_name: To work
 sensor.waze_home_work:
   friendly_name: Home to work
 sensor.waze_work_home:
@@ -154,9 +154,6 @@ input_number.doorbell_volume:
 input_number.doorbell_melody:
   friendly_name: Melody
   icon: mdi:music-box
-input_number.tts_volume:
-  friendly_name: Volume
-  icon: mdi:volume-high
 input_boolean.livingroom_torch_use:
   friendly_name: Use torch
 input_boolean.livingroom_corner_use:
