@@ -65,4 +65,20 @@ tts_say_kitchen:
         message:  "{{message}}"
         language: "ru"
         cache: false
-    - service: media_player.media_stop
+#    - service: media_player.media_stop
+
+mp_loud_play_radio:
+  sequence:
+    - service: media_player.play_media
+      data:
+        entity_id: media_player.loud_speaker
+        media_content_id: "http://ice1.somafm.com/secretagent-128-mp3"
+        media_content_type: "audio/mp4"
+
+mp_loud_play_spotify:
+  sequence:
+    - service: media_player.play_media
+      data:
+        entity_id: media_player.loud_speaker
+        media_content_id: "spotify:track:34kQZhLBgnNr2i6NvD61p6"
+        media_content_type: "music"

@@ -1,0 +1,4 @@
+- platform: circadian_lighting
+  lights_ct:
+    - light.big_torch
+    - light.corner_lamp
