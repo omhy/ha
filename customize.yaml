@@ -241,6 +241,8 @@ switch.power_strip_4:
   friendly_name: TV
 switch.power_strip_5:
   friendly_name: Fridge
+switch.circadian_lighting_circadian_lighting:
+  icon: mdi:vector-circle
 
 sensor.power_strip_1_load_power:
   friendly_name: Computer
