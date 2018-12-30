@@ -1,4 +1,5 @@
 - platform: circadian_lighting
+  disable_brightness_adjust: true
   lights_ct:
     - light.big_torch
     - light.corner_lamp
