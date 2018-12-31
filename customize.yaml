@@ -168,6 +168,10 @@ binary_sensor.ping_computer:
 binary_sensor.ping_laptop:
   friendly_name: Laptop
   icon: mdi:laptop
+binary_sensor.ping_tv:
+  friendly_name: TV
+  icon: mdi:television
+
 binary_sensor.ping_android_box_wifi:
   friendly_name: Android box wifi
   icon: mdi:android
@@ -257,3 +261,16 @@ sensor.power_strip_5_load_power:
 
 sensor.version_ha_current:
   friendly_name: Installed
+
+sensor.computer_on_today_minutes :
+  friendly_name: Computer (minutes)
+  icon: mdi:desktop-classic
+sensor.computer_on_today:
+  friendly_name: Computer
+  icon: mdi:desktop-classic
+sensor.laptop_on_today:
+  friendly_name: Laptop
+  icon: mdi:laptop
+sensor.tv_on_today:
+  friendly_name: TV
+  icon: mdi:television

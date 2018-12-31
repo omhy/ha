@@ -3,8 +3,16 @@
   host: 192.168.1.101
   count: 2
   scan_interval: 30
+
 - platform: ping
   name: "ping_laptop"
   host: 192.168.1.102
   count: 2
   scan_interval: 180
+
+- platform: template
+  sensors:
+    ping_tv:
+      entity_id: sensor.power_strip_4_load_power
+      value_template: "{{states.sensor.power_strip_4_load_power.state | float > 80}}"
+      device_class: connectivity

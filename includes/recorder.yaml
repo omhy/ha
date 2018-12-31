@@ -20,6 +20,7 @@ include:
     - sensor.illumination_158d0001e52779
     - binary_sensor.ping_computer
     - binary_sensor.ping_laptop
+    - binary_sensor.ping_tv
     - sensor.power_strip_1_load_power
     - sensor.power_strip_2_load_power
     - sensor.power_strip_3_load_power

@@ -218,6 +218,7 @@ views:
         entities:
           - binary_sensor.ping_computer
           - binary_sensor.ping_laptop
+          - binary_sensor.ping_tv
 
       - type: history-graph
         title: Lights 12h
@@ -342,23 +343,29 @@ views:
           - switch.power_strip_2
           - switch.power_strip_5
 
-      - id: 4511d325be864f82870ba9540c98fce1  # Automatically created id
-        type: glance
-        title: Computers
+      - type: glance
+        title: Connectivity
         entities:
           - binary_sensor.ping_computer
           - binary_sensor.ping_laptop
+          - binary_sensor.ping_tv
+
+      - type: glance
+        show_header_toggle: false
+        title: On Today
+        entities:
+          - sensor.computer_on_today
+          - sensor.laptop_on_today
+          - sensor.tv_on_today
 
       - type: entities
         show_header_toggle: false
         title: Computer limit
         entities:
-          - input_number.computer_today_allowed
           - input_boolean.computer_today_limit
-          - sensor.computer_on_today
           - sensor.computer_on_today_minutes
-          - sensor.laptop_on_today
-          - sensor.laptop_on_today_minutes
+          - input_number.computer_today_allowed
+
   - title: Information
     id: info
     icon: mdi:information
