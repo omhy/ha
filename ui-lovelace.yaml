@@ -7,6 +7,8 @@ resources:
     type: module
   - url: /local/custom-lovelace/tracker-card.js?v=0.1.5
     type: js
+  - url: /local/custom-lovelace/custom-weather-card-chart.js
+    type: module
 
 title: Home
 views:
@@ -35,6 +37,11 @@ views:
 
         - type: weather-forecast
           entity: weather.smhi_home
+
+        - type: custom:weather-card-chart
+          title: Weather
+          weather: weather.smhi_home
+          sun: sun.sun
 
       - type: vertical-stack
         cards:
