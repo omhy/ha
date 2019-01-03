@@ -67,8 +67,8 @@
   friendly_name: motions
 "sensor.illumination*":
   friendly_name: Illumination
-"sensor.*_battery_level":
-  icon: mdi:battery
+#"sensor.*_battery_level":
+#  icon: mdi:battery
 "sensor.*_temperature*":
   icon: mdi:thermometer
 "sensor.*_humidity*":

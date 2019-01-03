@@ -1,23 +1,39 @@
-- alias: "entrance_button_single"
+- alias: "entrance_button_single_if_people_home_on"
   trigger:
     - platform: event
       event_type: xiaomi_aqara.click
       event_data:
         entity_id: binary_sensor.switch_158d00021329e3
         click_type: single
+    - condition: state
+      entity_id: binary_sensor.people_home
+      state: "on"
   action:
-    - service: notify.telegram_dima
-      data_template:
-        message: "{{ now().strftime('%H:%M') }} Entrance btn single click"
+    - service: scene.turn_on
+      entity_id: scene.we_are_leaving
 
-- alias: "entrance_button_double"
+- alias: "entrance_button_single_if_people_home_off"
   trigger:
     - platform: event
       event_type: xiaomi_aqara.click
       event_data:
         entity_id: binary_sensor.switch_158d00021329e3
-        click_type: double
+        click_type: single
+    - condition: state
+      entity_id: binary_sensor.people_home
+      state: "off"
   action:
-    - service: notify.telegram_dima
-      data_template:
-        message: "{{ now().strftime('%H:%M') }} Entrance btn double click"
+    - service: scene.turn_on
+      entity_id: scene.we_are_arriving
+#
+#- alias: "entrance_button_double"
+#  trigger:
+#    - platform: event
+#      event_type: xiaomi_aqara.click
+#      event_data:
+#        entity_id: binary_sensor.switch_158d00021329e3
+#        click_type: double
+#  action:
+#    - service: notify.telegram_dima
+#      data_template:
+#        message: "{{ now().strftime('%H:%M') }} Entrance btn double click"

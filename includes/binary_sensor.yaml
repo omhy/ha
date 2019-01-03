@@ -13,6 +13,27 @@
 - platform: template
   sensors:
     ping_tv:
-      entity_id: sensor.power_strip_4_load_power
       value_template: "{{states.sensor.power_strip_4_load_power.state | float > 80}}"
       device_class: connectivity
+      entity_id: sensor.power_strip_4_load_power
+    people_home:
+      value_template: >
+        {{
+        is_state('light.big_torch', 'on') or
+        is_state('light.corner_lamp', 'on') or
+        is_state('binary_sensor.ping_computer', 'on') or
+        is_state('binary_sensor.ping_laptop', 'on') or
+        is_state('binary_sensor.ping_tv', 'on') or
+        is_state('media_player.kitchen_display', 'playing') or
+        is_state('media_player.loud_speaker', 'playing') or
+        is_state('media_player.yury_speaker', 'playing')
+        }}
+      entity_id:
+        - light.big_torch
+        - light.corner_lamp
+        - binary_sensor.ping_computer
+        - binary_sensor.ping_laptop
+        - binary_sensor.ping_tv
+        - media_player.kitchen_display
+        - media_player.loud_speaker
+        - media_player.yury_speaker

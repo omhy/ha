@@ -33,7 +33,8 @@
 - alias: "computer_limit_warning"
   trigger:
     - platform: time
-      seconds: "/600"
+      minutes: "/5"
+      seconds: 00
   condition:
     - condition: state
       entity_id: input_boolean.computer_today_limit
