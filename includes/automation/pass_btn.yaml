@@ -5,6 +5,7 @@
       event_data:
         entity_id: binary_sensor.switch_158d00021329e3
         click_type: single
+  condition:
     - condition: state
       entity_id: binary_sensor.people_home
       state: "on"
@@ -19,21 +20,22 @@
       event_data:
         entity_id: binary_sensor.switch_158d00021329e3
         click_type: single
+  condition:
     - condition: state
       entity_id: binary_sensor.people_home
       state: "off"
   action:
     - service: scene.turn_on
       entity_id: scene.we_are_arriving
-#
-#- alias: "entrance_button_double"
-#  trigger:
-#    - platform: event
-#      event_type: xiaomi_aqara.click
-#      event_data:
-#        entity_id: binary_sensor.switch_158d00021329e3
-#        click_type: double
-#  action:
-#    - service: notify.telegram_dima
-#      data_template:
-#        message: "{{ now().strftime('%H:%M') }} Entrance btn double click"
+##
+##- alias: "entrance_button_double"
+##  trigger:
+##    - platform: event
+##      event_type: xiaomi_aqara.click
+##      event_data:
+##        entity_id: binary_sensor.switch_158d00021329e3
+##        click_type: double
+##  action:
+##    - service: notify.telegram_dima
+##      data_template:
+##        message: "{{ now().strftime('%H:%M') }} Entrance btn double click"

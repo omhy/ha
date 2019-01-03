@@ -67,8 +67,10 @@
   friendly_name: motions
 "sensor.illumination*":
   friendly_name: Illumination
-#"sensor.*_battery_level":
-#  icon: mdi:battery
+"sensor.*_battery_level":
+  icon: mdi:battery
+  device_class: battery
+  unit_of_measurement: "%"
 "sensor.*_temperature*":
   icon: mdi:thermometer
 "sensor.*_humidity*":
@@ -85,15 +87,22 @@
 "sensor.power_strip_*_load_power":
   friendly_name: Current
   icon: mdi:power-socket-eu
+  unit_of_measurement: "Wh"
 "sensor.power_*_day":
   friendly_name: Day
   icon: mdi:calendar-today
+  unit_of_measurement: "kW"
 "sensor.power_*_week":
   friendly_name: Week
   icon: mdi:calendar-week
+  unit_of_measurement: "kW"
 "sensor.power_*_month":
   friendly_name: Month
   icon: mdi:calendar-text
+  unit_of_measurement: "kW"
+"sensor.outside_temperature_*":
+  unit_of_measurement: "°C"
+
 "sensor.computer*":
   icon: mdi:desktop-classic
 "sensor.laptop*":

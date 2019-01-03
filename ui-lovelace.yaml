@@ -220,7 +220,7 @@ views:
           - sensor.power_strip_4_load_power
 
       - type: history-graph
-        title: Computers 12h
+        title: Pingable 12h
         hours_to_show: 12
         entities:
           - binary_sensor.ping_computer
