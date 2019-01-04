@@ -12,6 +12,8 @@
   action:
     - service: scene.turn_on
       entity_id: scene.we_are_leaving
+    - service: script.rmt_computer_sleep
+    - service: script.rmt_laptop_sleep
 
 - alias: "entrance_button_single_if_people_home_off"
   trigger:
