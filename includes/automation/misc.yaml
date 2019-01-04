@@ -1,15 +1,15 @@
 - alias: "outside_temperature_calc_diff"
   trigger:
-  - platform: state
-    entity_id:
-    - sensor.outside_temperature_min
-    - sensor.outside_temperature_max
+    - platform: state
+      entity_id:
+        - sensor.outside_temperature_min
+        - sensor.outside_temperature_max
   action:
-  - service: mqtt.publish
-    data_template:
-      topic: "outside/temperature/diff"
-      payload: "{{ (states.sensor.outside_temperature_max.state | float - states.sensor.outside_temperature_min.state | float) | round(1)}}"
-      retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "outside/temperature/diff"
+        payload: "{{ (states.sensor.outside_temperature_max.state | float - states.sensor.outside_temperature_min.state | float) | round(1)}}"
+        retain: true
 
 - alias: "computer_limit_reached"
   trigger:
@@ -25,9 +25,15 @@
     - condition: template
       value_template: "{{ states.sensor.computer_on_today_minutes.state | int >= states.input_number.computer_today_allowed.state | int}}"
   action:
-    - service: notify.telegram_dima
+    - service: telegram_bot.send_message
       data_template:
+        target:
+          - !secret tg_chat_dima
+          - !secret tg_chat_alyona
         message: "{{ now().strftime('%H:%M') }} \U0001F61E Computer limit reached. Turning off"
+        inline_keyboard:
+          - "\U000023F1 Extend 30 min:/rmt_computer_limit_extend, \U0001F6A8 Disable limit:/rmt_computer_limit_disable"
+          - "\U0000267B Dismiss:/dismiss"
     - service:  script.rmt_computer_sleep
 
 - alias: "computer_limit_warning"
