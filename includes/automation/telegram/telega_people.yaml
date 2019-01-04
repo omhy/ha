@@ -1,4 +1,4 @@
-- alias: "telegram_handle_callback_people"
+- alias: "telegram_handle_clb_people"
   trigger:
   - platform: event
     event_type: telegram_callback

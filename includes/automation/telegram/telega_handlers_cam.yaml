@@ -1,58 +1,96 @@
-- alias: "telegram_handle_callback_snap_cam1"
+- alias: "telegram_handle_clb_snap_cam1"
   trigger:
-  - platform: event
-    event_type: telegram_callback
-    event_data:
-      data: "/snap cam1"
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: "/snap cam1"
   action:
-  - service: telegram_bot.answer_callback_query
-    data_template:
-      callback_query_id: "{{ trigger.event.data.id }}"
-      message: "Roger {{ trigger.event.data.data }}"
-  - service: script.camera_snap_to_telegram
-    data_template:
-      file_prefix: "cam1"
-      rtsp: !secret cam1_rtsp
-      target: "{{ trigger.event.data.user_id }}"
-      callback_message: "{{ trigger.event.data.data }}"
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: "{{ trigger.event.data.id }}"
+        message: "Roger {{ trigger.event.data.data }}"
+    - service: script.camera_snap_to_telegram
+      data_template:
+        file_prefix: "cam1"
+        rtsp: !secret cam1_rtsp
+        target: "{{ trigger.event.data.user_id }}"
+        callback_message: "{{ trigger.event.data.data }}"
 
-- alias: "telegram_handle_callback_vid_cam1"
+- alias: "telegram_handle_cmd_snap_cam1"
   trigger:
-  - platform: event
-    event_type: telegram_callback
-    event_data:
-      data: "/vid cam1"
+    - platform: event
+      event_type: telegram_text
+      event_data:
+        text: "s1"
+    - platform: event
+      event_type: telegram_text
+      event_data:
+        text: "ы1"
   action:
-  - service: telegram_bot.answer_callback_query
-    data_template:
-      callback_query_id: "{{ trigger.event.data.id }}"
-      message: "Roger {{ trigger.event.data.data }}"
-  - service: script.camera_video_to_telegram
-    data_template:
-      file_prefix: "cam1"
-      rtsp: !secret cam1_rtsp
-      target: "{{trigger.event.data.user_id}}"
-      callback_message: "{{ trigger.event.data.data }}"
-      
-- alias: "telegram_handle_callback_snap_cam2"
-  trigger:
-  - platform: event
-    event_type: telegram_callback
-    event_data:
-      data: "/snap cam2"
-  action:
-  - service: telegram_bot.answer_callback_query
-    data_template:
-      callback_query_id: "{{ trigger.event.data.id }}"
-      message: "Roger {{ trigger.event.data.data }}"
-  - service: script.camera_snap_to_telegram
-    data_template:
-      file_prefix: "cam2"
-      rtsp: !secret cam2_rtsp
-      target: "{{ trigger.event.data.user_id }}"
-      callback_message: "{{ trigger.event.data.data }}"
+    - service: script.camera_snap_to_telegram
+      data_template:
+        file_prefix: "cam1"
+        rtsp: !secret cam1_rtsp
+        target: "{{ trigger.event.data.user_id }}"
+        callback_message: "{{ trigger.event.data.data }}"
 
-- alias: "telegram_handle_callback_vid_cam2"
+- alias: "telegram_handle_clb_vid_cam1"
+  trigger:
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: "/vid cam1"
+  action:
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: "{{ trigger.event.data.id }}"
+        message: "Roger {{ trigger.event.data.data }}"
+    - service: script.camera_video_to_telegram
+      data_template:
+        file_prefix: "cam1"
+        rtsp: !secret cam1_rtsp
+        target: "{{trigger.event.data.user_id}}"
+        callback_message: "{{ trigger.event.data.data }}"
+
+- alias: "telegram_handle_cmd_vid_cam1"
+  trigger:
+    - platform: event
+      event_type: telegram_text
+      event_data:
+        text: "v1"
+    - platform: event
+      event_type: telegram_text
+      event_data:
+        text: "м1"
+  action:
+    - service: script.camera_video_to_telegram
+      data_template:
+        file_prefix: "cam1"
+        rtsp: !secret cam1_rtsp
+        target: "{{trigger.event.data.user_id}}"
+        callback_message: "{{ trigger.event.data.data }}"
+
+########################################################################## CAM2 #####################################################
+
+- alias: "telegram_handle_clb_snap_cam2"
+  trigger:
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: "/snap cam2"
+  action:
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: "{{ trigger.event.data.id }}"
+        message: "Roger {{ trigger.event.data.data }}"
+    - service: script.camera_snap_to_telegram
+      data_template:
+        file_prefix: "cam2"
+        rtsp: !secret cam2_rtsp
+        target: "{{ trigger.event.data.user_id }}"
+        callback_message: "{{ trigger.event.data.data }}"
+
+- alias: "telegram_handle_clb_vid_cam2"
   trigger:
   - platform: event
     event_type: telegram_callback

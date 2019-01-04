@@ -56,13 +56,17 @@ entity_config:
     expose: true
     room: Bathroom
 
-  #Scripts
+#Scripts misc
   script.rmt_computer_sleep:
     name: Computer sleep
     expose: true
     room: Speaker
   script.rmt_laptop_sleep:
     name: Laptop sleep
+    expose: true
+    room: Speaker
+  script.living_room_random_flow_on:
+    name: Random flow
     expose: true
     room: Speaker
 

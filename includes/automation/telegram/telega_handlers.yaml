@@ -1,4 +1,4 @@
-- alias: "telegram_handle_callback_dismiss"
+- alias: "telegram_handle_clb_dismiss"
   trigger:
     - platform: event
       event_type: telegram_callback
@@ -14,7 +14,7 @@
         chat_id: "{{ trigger.event.data.chat_id }}"
         message_id: "{{ trigger.event.data.message.message_id }}"
 
-- alias: "telegram_handle_callback_restart_ha"
+- alias: "telegram_handle_clb_restart_ha"
   trigger:
     - platform: event
       event_type: telegram_callback
@@ -27,7 +27,7 @@
         message: "Roger {{ trigger.event.data.data }}"
     - service: homeassistant.restart
 
-- alias: "telegram_handle_callback_refresh_ha"
+- alias: "telegram_handle_clb_refresh_ha"
   trigger:
     - platform: event
       event_type: telegram_callback
@@ -40,7 +40,7 @@
         message: "Roger {{ trigger.event.data.data }}"
     - service: script.ha_refresh
 
-- alias: "telegram_handle_callback_forecast"
+- alias: "telegram_handle_clb_forecast"
   trigger:
     - platform: event
       event_type: telegram_callback
@@ -55,7 +55,7 @@
       data_template:
         target: "{{trigger.event.data.user_id}}"
 
-- alias: "telegram_handle_callback_outside"
+- alias: "telegram_handle_clb_outside"
   trigger:
     - platform: event
       event_type: telegram_callback
@@ -70,7 +70,7 @@
       data_template:
         target: "{{trigger.event.data.user_id}}"
 
-- alias: "telegram_handle_callback_rooms"
+- alias: "telegram_handle_clb_rooms"
   trigger:
     - platform: event
       event_type: telegram_callback
@@ -85,7 +85,7 @@
       data_template:
         target: "{{trigger.event.data.user_id}}"
 
-- alias: "telegram_handle_callback_electro"
+- alias: "telegram_handle_clb_electro"
   trigger:
     - platform: event
       event_type: telegram_callback
@@ -100,7 +100,7 @@
       data_template:
         target: "{{trigger.event.data.user_id}}"
 
-- alias: "telegram_handle_command_say"
+- alias: "telegram_handle_cmd_say"
   trigger:
     - platform: event
       event_type: telegram_command
@@ -111,7 +111,7 @@
       data_template:
         message: "{{trigger.event.data.args}}"
 
-- alias: "telegram_handle_callback_computer"
+- alias: "telegram_handle_clb_computer"
   trigger:
     - platform: event
       event_type: telegram_callback
@@ -130,7 +130,7 @@
           - "\U0001F5A5 \U0001F4A4 Sleep:/rmt_computer_sleep"
           - "\U0000267B Dismiss:/dismiss"
 
-- alias: "telegram_handle_callback_laptop"
+- alias: "telegram_handle_clb_laptop"
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -149,7 +149,7 @@
         - "\U0001F4BB \U0001F4A4 Sleep:/rmt_laptop_sleep"
         - "\U0000267B Dismiss:/dismiss"
 
-- alias: "telegram_handle_callback_computer_sleep"
+- alias: "telegram_handle_clb_computer_sleep"
   trigger:
     - platform: event
       event_type: telegram_callback
@@ -162,7 +162,7 @@
         message: "Roger {{ trigger.event.data.data }}"
     - service: script.rmt_computer_sleep
 
-- alias: "telegram_handle_callback_laptop_sleep"
+- alias: "telegram_handle_clb_laptop_sleep"
   trigger:
     - platform: event
       event_type: telegram_callback
@@ -175,7 +175,7 @@
         message: "Roger {{ trigger.event.data.data }}"
     - service: script.rmt_laptop_sleep
 
-- alias: "telegram_handle_callback_computer_limit_disable"
+- alias: "telegram_handle_clb_computer_limit_disable"
   trigger:
     - platform: event
       event_type: telegram_callback
@@ -189,7 +189,7 @@
     - service: input_boolean.turn_off
       entity_id: input_boolean.computer_today_limit
 
-- alias: "telegram_handle_callback_computer_limit_extend"
+- alias: "telegram_handle_clb_computer_limit_extend"
   trigger:
     - platform: event
       event_type: telegram_callback

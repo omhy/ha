@@ -113,12 +113,9 @@
       - input_boolean.livingroom_torch_use
       - input_boolean.livingroom_corner_use
     is_workday:
-      value_template: "{{ False }}"
-#      value_template: "{{ now().weekday() >= 0 and now().weekday() <= 4 }}"
+#      value_template: "{{ False }}"
+      value_template: "{{ now().weekday() >= 0 and now().weekday() <= 4 }}"
       entity_id: now.weekday
     computer_on_today_minutes:
       value_template: "{{((states.sensor.computer_on_today.state | float) * 60) | int}}"
       entity_id: sensor.computer_on_today
-#    laptop_on_today_minutes:
-#      value_template: "{{((states.sensor.laptop_on_today.state | float) * 60) | int}}"
-#      entity_id: sensor.laptop_on_today

@@ -1,4 +1,4 @@
-- alias: "telegram_handle_command_menu"
+- alias: "telegram_handle_cmd_menu"
   trigger:
   - platform: event
     event_type: telegram_text
@@ -22,7 +22,7 @@
       - "\U0001F3D8 Rooms:/rooms, \U0001F30D People:/people"
       - "\U0001F6A7 Tech:/tech, \U0000267B Dismiss:/dismiss"
 
-- alias: "telegram_handle_callback_menu"
+- alias: "telegram_handle_clb_menu"
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -42,7 +42,7 @@
       - "\U0001F3D8 Rooms:/rooms, \U0001F30D People:/people"
       - "\U0001F6A7 Tech:/tech, \U0000267B Dismiss:/dismiss"
 
-- alias: "telegram_handle_callback_tech"
+- alias: "telegram_handle_clb_tech"
   trigger:
   - platform: event
     event_type: telegram_callback

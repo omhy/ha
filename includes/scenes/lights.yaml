@@ -1,0 +1,39 @@
+- name: "living_room_light_low"
+  entities:
+    light.big_torch:
+      state: true
+      brightness: 1
+    light.corner_lamp:
+      state: true
+      brightness: 1
+
+- name: "living_room_light_on_from_btn"
+  entities:
+    input_boolean.livingroom_torch_use: false
+    input_boolean.livingroom_corner_use: false
+    light.big_torch:
+      state: true
+      brightness: 250
+      color_temp: 420
+    light.corner_lamp:
+      state: true
+      brightness: 200
+      color_temp: 500
+
+- name: "living_room_light_off"
+  entities:
+    input_boolean.livingroom_torch_use: false
+    input_boolean.livingroom_corner_use: false
+    light.big_torch: false
+    light.corner_lamp: false
+
+- name: "living_room_flow_on"
+  entities:
+    input_boolean.livingroom_torch_use: true
+    input_boolean.livingroom_corner_use: true
+
+- name: "living_room_random_flow_on"
+  entities:
+    input_boolean.livingroom_torch_use: true
+    input_boolean.livingroom_corner_use: true
+    input_select.living_room_flow: random
