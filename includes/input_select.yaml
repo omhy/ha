@@ -1,10 +1,26 @@
 living_room_flow:
   icon: mdi:palette
   options:
-  - custom
-  - purple
-  - red
-  - yellow
-  - green
-  - blue
-  - random
+    - custom
+    - purple
+    - red
+    - yellow
+    - green
+    - blue
+    - random
+radio_station:
+  name: "Radio station"
+  icon: mdi:radio
+  options:
+    - Illinois Street Lounge
+    - Left Coast 70s
+    - ThistleRadio
+    - Groove Salad
+radio_cast:
+  name: "Chromecast to use"
+  icon: mdi:cast
+  options:
+    - Kitchen speaker
+    - Loud speaker
+    - Yuri speaker
+    - All

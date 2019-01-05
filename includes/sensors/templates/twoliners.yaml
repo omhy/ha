@@ -88,11 +88,6 @@
     yury_is_home:
       value_template: "{{ is_state('device_tracker.google_maps_117454969161947422882', 'home') }}"
       entity_id: device_tracker.google_maps_117454969161947422882
-    parents_are_home:
-      value_template: "{{ is_state('dima_is_home', 'true') or is_state('alyona_is_home', 'true') }}"
-      entity_id:
-      - device_tracker.google_maps_111683533988744565132
-      - device_tracker.google_maps_115914092349482836896
 #MISC
     livingroom_ambient_flow_is_on:
       value_template: "{{ is_state('input_boolean.livingroom_torch_use', 'on') or is_state('input_boolean.livingroom_corner_use', 'on') }}"

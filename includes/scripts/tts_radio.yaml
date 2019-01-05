@@ -65,20 +65,25 @@ tts_say_kitchen:
         message:  "{{message}}"
         language: "ru"
         cache: false
-#    - service: media_player.media_stop
 
-mp_loud_play_radio:
+play_radio:
   sequence:
     - service: media_player.play_media
-      data:
-        entity_id: media_player.loud_speaker
-        media_content_id: "http://ice1.somafm.com/secretagent-128-mp3"
+      data_template:
+        entity_id: >
+          {% if is_state("input_select.radio_cast", "Kitchen speaker") %} media_player.kitchen_display
+          {% elif is_state("input_select.radio_cast", "Loud speaker") %} media_player.loud_speaker
+          {% elif is_state("input_select.radio_cast", "Yuri speaker") %} media_player.yury_speaker
+          {% elif is_state("input_select.radio_cast", "All") %} media_player.speakers
+          {% endif %}
+        media_content_id: >
+          {{
+          {
+          "Illinois Street Lounge" : "http://ice1.somafm.com/illstreet-128-mp3",
+          "Left Coast 70s" : "http://ice1.somafm.com/seventies-320-mp3",
+          "ThistleRadio": "http://ice1.somafm.com/thistle-128-mp3",
+          "Groove Salad" : "http://ice1.somafm.com/groovesalad-256-mp3"
+          }
+          [states("input_select.radio_station")]
+          }}
         media_content_type: "audio/mp4"
-
-mp_loud_play_spotify:
-  sequence:
-    - service: media_player.play_media
-      data:
-        entity_id: media_player.loud_speaker
-        media_content_id: "spotify:track:34kQZhLBgnNr2i6NvD61p6"
-        media_content_type: "music"
