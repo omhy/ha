@@ -3,7 +3,6 @@
   - platform: homeassistant
     event: start
   action:
-  - service: script.ha_set_defaults
   - service: telegram_bot.send_message
     data_template:
       target: !secret tg_chat_dima

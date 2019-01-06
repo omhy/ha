@@ -36,7 +36,8 @@ custom_updater:
   card_urls:
     - https://raw.githubusercontent.com/kalkih/mini-graph-card/master/tracker.json
     - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
-    - https://raw.githubusercontent.com/sgttrs/lovelace-weather-card-chart/master/custom-updater.json
+    - https://raw.githubusercontent.com/kuuji/button-card/master/tracker.json
+    - https://raw.githubusercontent.com/sgttrs/lovelace-weather-card-chart/master/tracker.json
 circadian_lighting:
 #  min_colortemp: 1800
 #  max_colortemp: 5000
@@ -104,6 +105,7 @@ zone: !include includes/zone.yaml
 input_number: !include includes/input_number.yaml
 input_boolean: !include includes/input_boolean.yaml
 input_select: !include includes/input_select.yaml
+input_text: !include includes/input_text.yaml
 light: !include includes/light.yaml
 #camera: !include includes/camera.yaml
 notify: !include includes/notify.yaml

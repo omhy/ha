@@ -37,6 +37,10 @@
 ### SCRIPTS
 "script.aqara*":
   icon: mdi:chemical-weapon
+"script.media_radio_play*":
+  icon: mdi:play
+"script.media_radio_stop*":
+  icon: mdi:stop
 
 ### AUTOMATIONS
 "automation.*":

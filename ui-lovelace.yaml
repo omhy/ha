@@ -9,6 +9,8 @@ resources:
     type: js
   - url: /local/custom-lovelace/custom-weather-card-chart.js?v=0.1
     type: module
+  - url: /local/custom-lovelace/button-card.js?v=0.0.3
+    type: module
 
 title: Home
 views:
@@ -38,10 +40,10 @@ views:
         - type: weather-forecast
           entity: weather.smhi_home
 
-        - type: custom:weather-card-chart
-          title: Weather
-          weather: weather.smhi_home
-          sun: sun.sun
+#        - type: custom:weather-card-chart
+#          title: Weather
+#          weather: weather.smhi_home
+#          sun: sun.sun
 
       - type: vertical-stack
         cards:
@@ -383,6 +385,32 @@ views:
       - sensor.waze_home_work
       - sensor.waze_work_home
     cards:
+      - type: vertical-stack
+        cards:
+        - type: entities
+          title: Radio
+          show_header_toggle: false
+          entities:
+            - input_select.radio_cast
+            - script.media_radio_play_soma_lounge
+            - script.media_radio_play_soma_70s
+            - script.media_radio_play_soma_celtics
+            - script.media_radio_play_soma_groove
+            - script.media_radio_stop_all
+        - type: custom:monster-card
+          card:
+            type: entities
+            title: Playing now
+            show_header_toggle: false
+          filter:
+            include:
+              - domain: media_player
+            exclude:
+              - entity_id: media_player.spotify
+              - entity_id: media_player.kodi
+              - state: "off"
+              - state: "idle"
+
       - type: entities
         title: Doorbell settings
         show_header_toggle: false
@@ -390,28 +418,30 @@ views:
           - input_number.doorbell_volume
           - input_number.doorbell_melody
 
-      - type: history-graph
-        title: Waze 24h
-        hours_to_show: 24
-        entities:
-          - sensor.waze_home_work
-          - sensor.waze_work_home
+      - type: vertical-stack
+        cards:
+        - type: history-graph
+          title: Waze 24h
+          hours_to_show: 24
+          entities:
+            - sensor.waze_home_work
+            - sensor.waze_work_home
 
-      - type: history-graph
-        title: People 24h
-        hours_to_show: 24
-        entities:
-          - device_tracker.google_maps_111683533988744565132
-          - device_tracker.google_maps_115914092349482836896
-          - device_tracker.google_maps_117454969161947422882
-          - binary_sensor.people_home
+        - type: history-graph
+          title: People 24h
+          hours_to_show: 24
+          entities:
+            - device_tracker.google_maps_111683533988744565132
+            - device_tracker.google_maps_115914092349482836896
+            - device_tracker.google_maps_117454969161947422882
+            - binary_sensor.people_home
 
-      - type: map
-        default_zoom: 15
-        entities:
-          - device_tracker.google_maps_111683533988744565132
-          - device_tracker.google_maps_115914092349482836896
-          - device_tracker.google_maps_117454969161947422882
+        - type: map
+          default_zoom: 15
+          entities:
+            - device_tracker.google_maps_111683533988744565132
+            - device_tracker.google_maps_115914092349482836896
+            - device_tracker.google_maps_117454969161947422882
 
     ##################   FORECAST
   - title: Forecast

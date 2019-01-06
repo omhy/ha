@@ -8,16 +8,8 @@ living_room_flow:
     - green
     - blue
     - random
-radio_station:
-  name: "Radio station"
-  icon: mdi:radio
-  options:
-    - Illinois Street Lounge
-    - Left Coast 70s
-    - ThistleRadio
-    - Groove Salad
 radio_cast:
-  name: "Chromecast to use"
+  name: "Play radio on"
   icon: mdi:cast
   options:
     - Kitchen speaker
