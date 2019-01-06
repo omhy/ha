@@ -7,7 +7,7 @@ resources:
     type: module
   - url: /local/custom-lovelace/tracker-card.js?v=0.1.5
     type: js
-  - url: /local/custom-lovelace/custom-weather-card-chart.js?v=0.1
+  - url: /local/custom-lovelace/custom-weather-card-chart.js?v=0.2
     type: module
   - url: /local/custom-lovelace/button-card.js?v=0.0.3
     type: module
