@@ -132,5 +132,3 @@
   friendly_name: 2d
 "sensor.wt72*":
   friendly_name: 3d
-"sensor.wt96*":
-  friendly_name: 4d

@@ -188,6 +188,10 @@ binary_sensor.ping_tv:
   friendly_name: TV
   icon: mdi:television
 
+binary_sensor.people_home:
+  friendly_name: Someone home
+  icon: mdi:account-multiple-check
+
 binary_sensor.ping_android_box_wifi:
   friendly_name: Android box wifi
   icon: mdi:android

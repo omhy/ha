@@ -60,7 +60,6 @@ include:
     - sensor.wt24_temperature
     - sensor.wt72_temperature
     - sensor.wt48_temperature
-    - sensor.wt96_temperature
     - sensor.wt00_precipitation
     - sensor.wt01_precipitation
     - sensor.wt02_precipitation
@@ -71,7 +70,6 @@ include:
     - sensor.wt24_precipitation
     - sensor.wt72_precipitation
     - sensor.wt48_precipitation
-    - sensor.wt96_precipitation
     - sensor.wt00_humidity
     - sensor.wt01_humidity
     - sensor.wt02_humidity
@@ -82,7 +80,6 @@ include:
     - sensor.wt24_humidity
     - sensor.wt72_humidity
     - sensor.wt48_humidity
-    - sensor.wt96_humidity
     - sensor.wt00_wind_speed
     - sensor.wt01_wind_speed
     - sensor.wt02_wind_speed
@@ -93,7 +90,6 @@ include:
     - sensor.wt24_wind_speed
     - sensor.wt72_wind_speed
     - sensor.wt48_wind_speed
-    - sensor.wt96_wind_speed
     - sensor.wt00_pressure
     - sensor.wt01_pressure
     - sensor.wt02_pressure
@@ -104,4 +100,3 @@ include:
     - sensor.wt24_pressure
     - sensor.wt72_pressure
     - sensor.wt48_pressure
-    - sensor.wt96_pressure
