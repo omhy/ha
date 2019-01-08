@@ -234,19 +234,33 @@ views:
             - binary_sensor.ping_laptop
             - binary_sensor.ping_tv
 
+#Sync entities with binary_sensor.people_home
         - type: history-graph
-          title: Lights 12h
+          title: Home presence factors 12h
           hours_to_show: 12
           entities:
-            - light.garland
+            - binary_sensor.people_home
             - light.big_torch
             - light.corner_lamp
-            - light.window_stars
-            - light.small_torch
-            - light.fire_lamp
-            - light.tree_lamp
-            - light.corridor
-            - light.bathroom
+            - binary_sensor.ping_computer
+            - binary_sensor.ping_laptop
+            - binary_sensor.ping_tv
+            - media_player.kitchen_display
+            - media_player.loud_speaker
+            - media_player.yury_speaker
+#        - type: history-graph
+#          title: Lights 12h
+#          hours_to_show: 12
+#          entities:
+#            - light.garland
+#            - light.big_torch
+#            - light.corner_lamp
+#            - light.window_stars
+#            - light.small_torch
+#            - light.fire_lamp
+#            - light.tree_lamp
+#            - light.corridor
+#            - light.bathroom
 
       - type: vertical-stack
         cards:
@@ -257,7 +271,6 @@ views:
             - device_tracker.google_maps_111683533988744565132
             - device_tracker.google_maps_115914092349482836896
             - device_tracker.google_maps_117454969161947422882
-            - binary_sensor.people_home
 
   ##################   LIGHTS FLOW
   - title: Lights flow
