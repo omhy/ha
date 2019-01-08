@@ -426,6 +426,7 @@ views:
               - entity_id: media_player.kodi
               - state: "off"
               - state: "idle"
+              - state: "unavailable"
 
       - type: entities
         title: Doorbell settings
