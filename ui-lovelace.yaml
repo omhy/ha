@@ -47,53 +47,53 @@ views:
 
       - type: vertical-stack
         cards:
-        - type: glance
-          title: Lights
-          entities:
-            - entity: light.garland
-              tap_action:
-                action: toggle
-            - entity: light.big_torch
-              tap_action:
-                action: toggle
-              hold_action:
-                action: more-info
-            - entity: light.corner_lamp
-              tap_action:
-                action: toggle
-              hold_action:
-                action: more-info
-            - entity: light.window_stars
-              tap_action:
-                action: toggle
-            - entity: light.small_torch
-              tap_action:
-                action: toggle
-              hold_action:
-                action: more-info
-            - entity: light.fire_lamp
-              tap_action:
-                action: toggle
-            - entity: light.tree_lamp
-              tap_action:
-                action: toggle
-            - entity: light.corridor
-              tap_action:
-                action: toggle
-            - entity: light.bathroom
-              tap_action:
-                action: toggle
+          - type: glance
+            title: Lights
+            entities:
+              - entity: light.garland
+                tap_action:
+                  action: toggle
+              - entity: light.big_torch
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+              - entity: light.corner_lamp
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+              - entity: light.window_stars
+                tap_action:
+                  action: toggle
+              - entity: light.small_torch
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+              - entity: light.fire_lamp
+                tap_action:
+                  action: toggle
+              - entity: light.tree_lamp
+                tap_action:
+                  action: toggle
+              - entity: light.corridor
+                tap_action:
+                  action: toggle
+              - entity: light.bathroom
+                tap_action:
+                  action: toggle
 
-        - type: custom:monster-card
-          card:
-            type: entities
-            title: Lights on now
-          filter:
-            include:
-              - domain: light
-                state: "on"
-            exclude:
-              - entity_id: light.group_*
+          - type: custom:monster-card
+            card:
+              type: entities
+              title: Lights on now
+            filter:
+              include:
+                - domain: light
+                  state: "on"
+              exclude:
+                - entity_id: light.group_*
 
       - type: vertical-stack
         cards:
@@ -161,8 +161,7 @@ views:
               - sensor.pressure_158d0001f23cbe
               - sensor.pressure_158d0002271609
 
-      - id: 8e8ce781290143d894ad75a68c96b286  # Automatically created id
-        type: vertical-stack
+      - type: vertical-stack
         cards:
           - type: glance
             title: Outside
@@ -180,68 +179,85 @@ views:
               - sensor.outside_temperature_min_at
               - sensor.outside_temperature_max_at
 
-      - type: history-graph
-        title: Outside 12h
-        hours_to_show: 12
-        entities:
-          - sensor.temperature_158d00022c7cf2
-      - type: history-graph
-        title: Rooms 12h
-        hours_to_show: 12
-        entities:
-          - sensor.temperature_158d0002323783
-          - sensor.temperature_158d000234816a
-          - sensor.temperature_158d0001f23cbe
-          - sensor.temperature_158d0002271609
+      - type: vertical-stack
+        cards:
+          - type: history-graph
+            title: Outside 12h
+            hours_to_show: 12
+            entities:
+              - sensor.temperature_158d00022c7cf2
+          - type: history-graph
+            title: Rooms 12h
+            hours_to_show: 12
+            entities:
+              - sensor.temperature_158d0002323783
+              - sensor.temperature_158d000234816a
+              - sensor.temperature_158d0001f23cbe
+              - sensor.temperature_158d0002271609
 
   ##################   HISTORY
   - title: History
     name: history
     icon: mdi:chart-timeline
     cards:
-      - type: history-graph
-        title: Movements 1h
-        hours_to_show: 1
-        entities:
-          - binary_sensor.motion_sensor_158d0001fa3dc0
-          - binary_sensor.motion_sensor_158d0001e52779
+      - type: vertical-stack
+        cards:
+        - type: history-graph
+          title: Movements 1h
+          hours_to_show: 1
+          entities:
+            - binary_sensor.motion_sensor_158d0001fa3dc0
+            - binary_sensor.motion_sensor_158d0001e52779
 
-      - type: history-graph
-        title: Illumination 1h
-        hours_to_show: 1
-        entities:
-          - sensor.illumination_158d0001fa3dc0
-          - sensor.illumination_158d0001e52779
+        - type: history-graph
+          title: Illumination 1h
+          hours_to_show: 1
+          entities:
+            - sensor.illumination_158d0001fa3dc0
+            - sensor.illumination_158d0001e52779
 
-      - type: history-graph
-        title: Living room power 1h
-        hours_to_show: 1
-        entities:
-          - sensor.power_strip_1_load_power
-          - sensor.power_strip_3_load_power
-          - sensor.power_strip_4_load_power
+        - type: history-graph
+          title: Living room power 1h
+          hours_to_show: 1
+          entities:
+            - sensor.power_strip_1_load_power
+            - sensor.power_strip_3_load_power
+            - sensor.power_strip_4_load_power
 
-      - type: history-graph
-        title: Pingable 12h
-        hours_to_show: 12
-        entities:
-          - binary_sensor.ping_computer
-          - binary_sensor.ping_laptop
-          - binary_sensor.ping_tv
+      - type: vertical-stack
+        cards:
+        - type: history-graph
+          title: Pingable 12h
+          hours_to_show: 12
+          entities:
+            - binary_sensor.ping_computer
+            - binary_sensor.ping_laptop
+            - binary_sensor.ping_tv
 
-      - type: history-graph
-        title: Lights 12h
-        hours_to_show: 12
-        entities:
-          - light.garland
-          - light.big_torch
-          - light.corner_lamp
-          - light.window_stars
-          - light.small_torch
-          - light.fire_lamp
-          - light.tree_lamp
-          - light.corridor
-          - light.bathroom
+        - type: history-graph
+          title: Lights 12h
+          hours_to_show: 12
+          entities:
+            - light.garland
+            - light.big_torch
+            - light.corner_lamp
+            - light.window_stars
+            - light.small_torch
+            - light.fire_lamp
+            - light.tree_lamp
+            - light.corridor
+            - light.bathroom
+
+      - type: vertical-stack
+        cards:
+        - type: history-graph
+          title: People 24h
+          hours_to_show: 24
+          entities:
+            - device_tracker.google_maps_111683533988744565132
+            - device_tracker.google_maps_115914092349482836896
+            - device_tracker.google_maps_117454969161947422882
+            - binary_sensor.people_home
 
   ##################   LIGHTS FLOW
   - title: Lights flow
@@ -426,15 +442,6 @@ views:
           entities:
             - sensor.waze_home_work
             - sensor.waze_work_home
-
-        - type: history-graph
-          title: People 24h
-          hours_to_show: 24
-          entities:
-            - device_tracker.google_maps_111683533988744565132
-            - device_tracker.google_maps_115914092349482836896
-            - device_tracker.google_maps_117454969161947422882
-            - binary_sensor.people_home
 
         - type: map
           default_zoom: 15
