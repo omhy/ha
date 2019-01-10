@@ -9,6 +9,7 @@ include:
   entities:
     - binary_sensor.motion_sensor_158d0001fa3dc0
     - binary_sensor.motion_sensor_158d0001e52779
+    - binary_sensor.motion_sensor_158d0002d43d7d
     - binary_sensor.ping_computer
     - binary_sensor.ping_laptop
     - binary_sensor.ping_tv

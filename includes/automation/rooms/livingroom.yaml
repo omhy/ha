@@ -1,15 +1,3 @@
-- alias: "motion_livingroom_detected"
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.motion_sensor_158d0001fa3dc0
-    to: "on"
-  action:
-  - service: mqtt.publish
-    data_template:
-      topic: "livingroom/motions"
-      payload: "{{states.sensor.livingroom_motions.state | int + 1}}"
-      retain: true
-
 - alias: "light_livingroom_turn_off"
   trigger:
   - platform: state

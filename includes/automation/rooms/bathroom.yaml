@@ -17,15 +17,3 @@
   action:
   - service: switch.turn_off
     entity_id: switch.wall_switch_right_158d00022391ec
-
-- alias: "motion_bathroom_detected"
-  trigger:
-  - platform: state
-    entity_id: binary_sensor.motion_sensor_158d0001e52779
-    to: "on"
-  action:
-  - service: mqtt.publish
-    data_template:
-      topic: "bathroom/motions"
-      payload: "{{states.sensor.bathroom_motions.state | int + 1}}"
-      retain: true

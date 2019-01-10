@@ -53,6 +53,9 @@ sensor.livingroom_motions:
 sensor.bathroom_motions:
   friendly_name: Today
   icon: mdi:sigma
+sensor.yuriroom_motions:
+  friendly_name: Today
+  icon: mdi:sigma
 
 #DEVICES
 device_tracker.google_maps_111683533988744565132:
@@ -243,6 +246,8 @@ binary_sensor.motion_sensor_158d0001e52779:
   friendly_name: Bathroom
 binary_sensor.motion_sensor_158d0001fa3dc0:
   friendly_name: Living room
+binary_sensor.motion_sensor_158d0002d43d7d:
+  friendly_name: Yuri room
 binary_sensor.door_window_sensor_158d00024367c8:
   friendly_name: Door
 

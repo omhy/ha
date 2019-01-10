@@ -1,0 +1,35 @@
+- alias: "motion_bathroom_detected"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d0001e52779
+      to: "on"
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "bathroom/motions"
+        payload: "{{states.sensor.bathroom_motions.state | int + 1}}"
+        retain: true
+
+- alias: "motion_yuriroom_detected"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d0002d43d7d
+      to: "on"
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "yuriroom/motions"
+        payload: "{{states.sensor.yuriroom_motions.state | int + 1}}"
+        retain: true
+
+- alias: "motion_livingroom_detected"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d0001fa3dc0
+      to: "on"
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "livingroom/motions"
+        payload: "{{states.sensor.livingroom_motions.state | int + 1}}"
+        retain: true

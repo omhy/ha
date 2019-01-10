@@ -54,6 +54,9 @@
 - platform: mqtt
   state_topic: "bathroom/motions"
   name: "bathroom_motions"
+- platform: mqtt
+  state_topic: "yuriroom/motions"
+  name: "yuriroom_motions"
 
 - platform: mqtt
   state_topic: "bathroom/motion"

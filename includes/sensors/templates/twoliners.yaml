@@ -44,6 +44,10 @@
       value_template: "{{ states.binary_sensor.motion_sensor_158d0001fa3dc0.attributes.battery_level | float }}"
       entity_id: binary_sensor.motion_sensor_158d0001fa3dc0
       friendly_name: Living room motion sensor
+    motion3_battery_level:
+      value_template: "{{ states.binary_sensor.motion_sensor_158d0002d43d7d.attributes.battery_level | float }}"
+      entity_id: binary_sensor.motion_sensor_158d0002d43d7d
+      friendly_name: Living room motion sensor
 #misc
     door_sensor_battery_level:
       value_template: "{{ states.binary_sensor.door_window_sensor_158d00024367c8.attributes.battery_level | float }}"

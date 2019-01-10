@@ -36,6 +36,8 @@ views:
             - sensor.livingroom_motions
             - binary_sensor.motion_sensor_158d0001e52779
             - sensor.bathroom_motions
+            - binary_sensor.motion_sensor_158d0002d43d7d
+            - sensor.yuriroom_motions
 
         - type: weather-forecast
           entity: weather.smhi_home
@@ -208,6 +210,7 @@ views:
           entities:
             - binary_sensor.motion_sensor_158d0001fa3dc0
             - binary_sensor.motion_sensor_158d0001e52779
+            - binary_sensor.motion_sensor_158d0002d43d7d
 
         - type: history-graph
           title: Illumination 1h
