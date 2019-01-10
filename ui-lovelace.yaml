@@ -30,22 +30,26 @@ views:
       - type: vertical-stack
         cards:
         - type: glance
-          title: Motions
+          title: Motion
           entities:
             - binary_sensor.motion_sensor_158d0001fa3dc0
-            - sensor.livingroom_motions
             - binary_sensor.motion_sensor_158d0001e52779
-            - sensor.bathroom_motions
             - binary_sensor.motion_sensor_158d0002d43d7d
+
+        - type: glance
+          title: Motions Today
+          entities:
+            - sensor.livingroom_motions
+            - sensor.bathroom_motions
             - sensor.yuriroom_motions
 
-        - type: weather-forecast
-          entity: weather.smhi_home
+#        - type: weather-forecast
+#          entity: weather.smhi_home
 
-#        - type: custom:weather-card-chart
-#          title: Weather
-#          weather: weather.smhi_home
-#          sun: sun.sun
+        - type: custom:weather-card-chart
+          title: Weather
+          weather: weather.smhi_home
+          sun: sun.sun
 
       - type: vertical-stack
         cards:
@@ -218,6 +222,7 @@ views:
           entities:
             - sensor.illumination_158d0001fa3dc0
             - sensor.illumination_158d0001e52779
+            - sensor.illumination_158d0002d43d7d
 
         - type: history-graph
           title: Living room power 1h
@@ -1106,7 +1111,7 @@ views:
     icon: mdi:desktop-tower
     badges:
       - sensor.uptime
-      - sensor.homeassistant_v2db
+      - sensor.home_assistant_v2_db
     cards:
       - type: custom:monster-card
         card:

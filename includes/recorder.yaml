@@ -20,9 +20,10 @@ include:
     - sensor.disk_use_percent_home
     - sensor.swap_use_percent
     - sensor.temp
-    - sensor.homeassistant_v2db
+    - sensor.home_assistant_v2_db
     - sensor.illumination_158d0001fa3dc0
     - sensor.illumination_158d0001e52779
+    - sensor.illumination_158d0002d43d7d
     - sensor.power_strip_1_load_power
     - sensor.power_strip_2_load_power
     - sensor.power_strip_3_load_power

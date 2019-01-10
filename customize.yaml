@@ -102,7 +102,7 @@ script.media_radio_stop_all:
   friendly_name: Stop all
 
 #SENSORS
-sensor.homeassistant_v2db:
+sensor.home_assistant_v2_db:
   friendly_name: Log size
 sensor.humidity_158d0002271609:
   friendly_name: Yuri's

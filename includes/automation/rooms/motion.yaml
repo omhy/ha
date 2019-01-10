@@ -22,6 +22,16 @@
         payload: "{{states.sensor.yuriroom_motions.state | int + 1}}"
         retain: true
 
+- alias: "debug_motion_yuriroom_detected"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d0002d43d7d
+      to: "on"
+  action:
+    - service: notify.telegram_dima
+      data_template:
+        message: "{{ now().strftime('%H:%M') }} \U0001F3C3 detected: {{ states.sensor.illumination_158d0002d43d7d.state_with_unit }}"
+
 - alias: "motion_livingroom_detected"
   trigger:
     - platform: state
