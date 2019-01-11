@@ -1,18 +1,18 @@
-media_radio_play_params:
+media_radio_play_param_cast:
   sequence:
     - service: media_player.play_media
       data_template:
-        entity_id: "{{ entity_id }}"
         media_content_id: "{{media_content_id}}"
+        entity_id: "{{ entity_id }}"
         media_content_type: "audio/mp4"
 
 media_radio_play_selected_cast:
   sequence:
-    - service: media_player.play_media
+    - service: script.media_radio_play_param_cast
       data_template:
         media_content_id: "{{media_content_id}}"
         entity_id: "{{ states.input_text.radio_cast.state }}"
-        media_content_type: "audio/mp4"
+
 media_radio_play_soma_lounge:
   sequence:
     - service: script.media_radio_play_selected_cast
