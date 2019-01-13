@@ -256,6 +256,8 @@ sensor.illumination_158d0001e52779:
   friendly_name: Bathroom
 sensor.illumination_158d0001fa3dc0:
   friendly_name: Livingroom
+sensor.illumination_158d0002d43d7d:
+  friendly_name: Yuri room
 sensor.illumination_7811dcb36cee:
   friendly_name: Gateway
 
