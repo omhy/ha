@@ -1017,6 +1017,10 @@ views:
             url: http://192.168.1.10:3000
             icon: mdi:graphql
           - type: weblink
+            name: Adguard
+            url: http://192.168.1.10:3210
+            icon: mdi:shield
+          - type: weblink
             name: Github repo
             url: https://github.com/omhy/ha
             icon: mdi:github-circle
