@@ -17,12 +17,9 @@
         entity_id: binary_sensor.wall_switch_right_158d00026b96c1
         click_type: single
   condition:
-    - condition: state
-      entity_id: light.small_torch
-      state: "on"
-    - condition: numeric_state
-      entity_id: sensor.illumination_158d0002d43d7d
-      below: 7
+    condition: state
+    entity_id: light.small_torch
+    state: "on"
   action:
     - service: light.turn_off
       entity_id: light.small_torch

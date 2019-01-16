@@ -27,6 +27,10 @@
     - platform: state
       entity_id: binary_sensor.motion_sensor_158d0002d43d7d
       to: "on"
+  condition:
+    condition: numeric_state
+    entity_id: sensor.illumination_158d0002d43d7d
+    below: 7
   action:
     - service: scene.turn_on
       entity_id: scene.small_torch_on_low
