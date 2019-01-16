@@ -2,22 +2,16 @@
   entities:
     light.garland: true
     light.fire_lamp: true
-    light.tree_lamp: true
-    light.window_stars: true
 
 - name: "cosiness_off"
   entities:
     light.garland: false
     light.fire_lamp: false
-    light.tree_lamp: false
-    light.window_stars: false
 
 - name: "good_night"
   entities:
     light.garland: false
     light.fire_lamp: false
-    light.tree_lamp: false
-    light.window_stars: false
     light.big_torch: false
     light.corner_lamp: false
     light.small_torch: false
@@ -28,8 +22,6 @@
   entities:
     light.garland: false
     light.fire_lamp: true
-    light.tree_lamp: false
-    light.window_stars: false
     light.big_torch: false
     light.corner_lamp: false
     light.small_torch: false
@@ -43,7 +35,5 @@
   entities:
     light.garland: true
     light.fire_lamp: true
-    light.tree_lamp: true
-    light.window_stars: true
     light.big_torch: true
     light.corner_lamp: true

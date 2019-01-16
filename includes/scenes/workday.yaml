@@ -2,8 +2,6 @@
   entities:
     light.garland: true
     light.fire_lamp: true
-    light.tree_lamp: true
-    light.window_stars: true
     light.small_torch:
       state: true
       transition: 5
@@ -67,8 +65,6 @@
   entities:
     light.garland: false
     light.fire_lamp: false
-    light.tree_lamp: false
-    light.window_stars: false
     light.small_torch: false
     light.big_torch: false
     light.corner_lamp: false

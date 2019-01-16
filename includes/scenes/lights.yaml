@@ -1,4 +1,4 @@
-- name: "living_room_light_low"
+- name: "living_room_light_on_low"
   entities:
     light.big_torch:
       state: true
@@ -37,3 +37,17 @@
     input_boolean.livingroom_torch_use: true
     input_boolean.livingroom_corner_use: true
     input_select.living_room_flow: random
+
+- name: "small_torch_on_full"
+  entities:
+    light.small_torch:
+      state: true
+      brightness: 255
+      color_temp: 420
+
+- name: "small_torch_on_low"
+  entities:
+    light.small_torch:
+      state: true
+      brightness: 1
+      color_temp: 580

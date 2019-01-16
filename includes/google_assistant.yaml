@@ -21,18 +21,6 @@ entity_config:
     name: Corner lamp
     expose: true
     room: Living Room
-  light.tree_lamp:
-    name: Tree lamp
-    expose: true
-    room: Living Room
-  light.window_stars:
-    name: Window stars
-    expose: true
-    room: Living Room
-  light.group_christmas:
-    name: Christmas
-    expose: true
-    room: Living Room
   light.group_livroom_ambient:
     name: Ambient
     expose: true

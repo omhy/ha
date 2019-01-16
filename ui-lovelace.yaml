@@ -69,18 +69,12 @@ views:
                   action: toggle
                 hold_action:
                   action: more-info
-              - entity: light.window_stars
-                tap_action:
-                  action: toggle
               - entity: light.small_torch
                 tap_action:
                   action: toggle
                 hold_action:
                   action: more-info
               - entity: light.fire_lamp
-                tap_action:
-                  action: toggle
-              - entity: light.tree_lamp
                 tap_action:
                   action: toggle
               - entity: light.corridor
@@ -256,19 +250,6 @@ views:
             - media_player.kitchen_display
             - media_player.loud_speaker
             - media_player.yury_speaker
-#        - type: history-graph
-#          title: Lights 12h
-#          hours_to_show: 12
-#          entities:
-#            - light.garland
-#            - light.big_torch
-#            - light.corner_lamp
-#            - light.window_stars
-#            - light.small_torch
-#            - light.fire_lamp
-#            - light.tree_lamp
-#            - light.corridor
-#            - light.bathroom
 
       - type: vertical-stack
         cards:
@@ -1038,10 +1019,10 @@ views:
             name: sonoff_firelamp
             url: http://192.168.1.41/
             icon: mdi:switch
-          - type: weblink
-            name: sonoff_window_stars
-            url: http://192.168.1.42/
-            icon: mdi:switch
+#          - type: weblink
+#            name: sonoff_window_stars
+#            url: http://192.168.1.42/
+#            icon: mdi:switch
 
       - id: 614279a5c1f0431aa1605cb30dfcc511  # Automatically created id
         type: entities
