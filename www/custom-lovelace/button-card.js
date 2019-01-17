@@ -1,6 +1,6 @@
 import {
   LitElement, html,
-} from 'https://unpkg.com/@polymer/lit-element@^0.5.2/lit-element.js?module';
+} from 'https://unpkg-gcp.firebaseapp.com/@polymer/lit-element@0.5.2/lit-element.js?module';
 
 class ButtonCard extends LitElement {
   static get properties() {
@@ -79,6 +79,11 @@ class ButtonCard extends LitElement {
         return icon;
       }
       return iconOff;
+    }
+    let configState = config.state ? config.state.find(configState => { return configState.value === state.state; }) : false;
+    if (configState && configState.icon) {
+      const icon = configState.icon;
+      return icon;
     }
     return iconOff;
   }
