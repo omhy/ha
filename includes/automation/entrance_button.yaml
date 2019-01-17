@@ -32,4 +32,4 @@
   action:
     - service: scene.turn_on
       entity_id: scene.we_are_arriving
-    - service: script.media_radio_play_soma_lounge
+    - service: script.media_radio_play_soma_illstreet

@@ -405,30 +405,72 @@ views:
     cards:
       - type: vertical-stack
         cards:
-        - type: entities
-          title: Radio
-          show_header_toggle: false
-          entities:
-            - input_select.radio_cast
-            - script.media_radio_play_soma_lounge
-            - script.media_radio_play_soma_70s
-            - script.media_radio_play_soma_celtics
-            - script.media_radio_play_soma_groove
-            - script.media_radio_stop_all
-        - type: custom:monster-card
-          card:
-            type: entities
-            title: Playing now
+        - type: horizontal-stack
+          cards:
+          - type: picture
+            image: /local/radio/groovesalad.jpg
+            tap_action:
+              action: call-service
+              service: script.media_radio_play_soma_groovesalad
+          - type: picture
+            image: /local/radio/illstreet.jpg
+            tap_action:
+              action: call-service
+              service: script.media_radio_play_soma_illstreet
+          - type: picture
+            image: /local/radio/seventies.jpg
+            tap_action:
+              action: call-service
+              service: script.media_radio_play_soma_seventies
+          - type: picture
+            image: /local/radio/thistle.jpg
+            tap_action:
+              action: call-service
+              service: script.media_radio_play_soma_thistle
+        - type: horizontal-stack
+          cards:
+          - type: picture
+            image: /local/radio/secretagent.jpg
+            tap_action:
+              action: call-service
+              service: script.media_radio_play_soma_secretagent
+          - type: picture
+            image: /local/radio/deepspaceone.jpg
+            tap_action:
+              action: call-service
+              service: script.media_radio_play_soma_deepspaceone
+          - type: picture
+            image: /local/radio/covers.jpg
+            tap_action:
+              action: call-service
+              service: script.media_radio_play_soma_covers
+          - type: picture
+            image: /local/radio/beatblender.jpg
+            tap_action:
+              action: call-service
+              service: script.media_radio_play_soma_beatblender
+        - type: vertical-stack
+          cards:
+          - type: entities
+            title: Radio
             show_header_toggle: false
-          filter:
-            include:
-              - domain: media_player
-            exclude:
-              - entity_id: media_player.spotify
-              - entity_id: media_player.kodi
-              - state: "off"
-              - state: "idle"
-              - state: "unavailable"
+            entities:
+              - input_select.radio_cast
+              - script.media_radio_stop_all
+          - type: custom:monster-card
+            card:
+              type: entities
+              title: Playing now
+              show_header_toggle: false
+            filter:
+              include:
+                - domain: media_player
+              exclude:
+                - entity_id: media_player.spotify
+                - entity_id: media_player.kodi
+                - state: "off"
+                - state: "idle"
+                - state: "unavailable"
 
       - type: entities
         title: Doorbell settings

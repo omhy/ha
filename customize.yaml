@@ -80,18 +80,6 @@ script.rmt_laptop_sleep:
   icon: mdi:laptop
 
 #RADIO
-script.media_radio_play_soma_70s:
-  friendly_name: Left Coast 70s
-  entity_picture: /local/radio/seventies.jpg
-script.media_radio_play_soma_celtics:
-  friendly_name: ThistleRadio
-  entity_picture: /local/radio/thistle.jpg
-script.media_radio_play_soma_groove:
-  friendly_name: Groove Salad
-  entity_picture: /local/radio/groovesalad.jpg
-script.media_radio_play_soma_lounge:
-  friendly_name: Illinois Street Lounge
-  entity_picture: /local/radio/illstreet.jpg
 script.media_radio_stop_all:
   friendly_name: Stop all
 

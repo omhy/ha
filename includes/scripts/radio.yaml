@@ -13,26 +13,46 @@ media_radio_play_selected_cast:
         media_content_id: "{{media_content_id}}"
         entity_id: "{{ states.input_text.radio_cast.state }}"
 
-media_radio_play_soma_lounge:
+media_radio_play_soma_illstreet:
   sequence:
     - service: script.media_radio_play_selected_cast
       data_template:
         media_content_id: "http://ice1.somafm.com/illstreet-128-mp3"
-media_radio_play_soma_70s:
+media_radio_play_soma_seventies:
   sequence:
     - service: script.media_radio_play_selected_cast
       data_template:
         media_content_id: "http://ice1.somafm.com/seventies-320-mp3"
-media_radio_play_soma_celtics:
+media_radio_play_soma_thistle:
   sequence:
     - service: script.media_radio_play_selected_cast
       data_template:
         media_content_id: "http://ice1.somafm.com/thistle-128-mp3"
-media_radio_play_soma_groove:
+media_radio_play_soma_groovesalad:
   sequence:
     - service: script.media_radio_play_selected_cast
       data_template:
         media_content_id: "http://ice1.somafm.com/groovesalad-256-mp3"
+media_radio_play_soma_deepspaceone:
+  sequence:
+    - service: script.media_radio_play_selected_cast
+      data_template:
+        media_content_id: "http://ice1.somafm.com/deepspaceone-128-mp3"
+media_radio_play_soma_covers:
+  sequence:
+    - service: script.media_radio_play_selected_cast
+      data_template:
+        media_content_id: "http://ice1.somafm.com/covers-128-mp3"
+media_radio_play_soma_secretagent:
+  sequence:
+    - service: script.media_radio_play_selected_cast
+      data_template:
+        media_content_id: "http://ice1.somafm.com/secretagent-128-mp3"
+media_radio_play_soma_beatblender:
+  sequence:
+    - service: script.media_radio_play_selected_cast
+      data_template:
+        media_content_id: "http://ice1.somafm.com/beatblender-128-mp3"
 
 media_radio_stop_all:
   sequence:
