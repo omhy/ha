@@ -82,6 +82,25 @@ script.rmt_laptop_sleep:
 #RADIO
 script.media_radio_stop_all:
   friendly_name: Stop all
+  icon: mdi:stop
+media_player.kitchen_display:
+  friendly_name: Kitchen display
+  icon: mdi:monitor
+media_player.loud_speaker:
+  friendly_name: Loud speaker
+  icon: mdi:google-home
+media_player.yury_speaker:
+  friendly_name: Yuri speaker
+  icon: mdi:dots-horizontal-circle
+media_player.kodi:
+  friendly_name: Kodi
+  icon: mdi:kodi
+media_player.spotify:
+  friendly_name: Spotify
+  icon: mdi:spotify
+media_player.speakers:
+  friendly_name: Speakers
+  icon: mdi:speaker-multiple
 
 #SENSORS
 sensor.home_assistant_v2_db:

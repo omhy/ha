@@ -32,7 +32,12 @@ homekit:
   filter:
     include_domains:
       - light
-      - media_player
+    include_entities:
+      - sensor.temperature_158d00022c7cf2
+      - sensor.temperature_158d0002323783
+      - sensor.temperature_158d000234816a
+      - sensor.temperature_158d0001f23cbe
+      - sensor.temperature_158d0002271609
 
 #CUSTOM
 custom_updater:
@@ -80,6 +85,13 @@ media_player:
   client_secret: !secret spotify_client_secret
 - platform: kodi
   host: 192.168.1.20
+- platform: androidtv
+  host: 192.168.1.20
+  name: ABOX
+  adb_server_ip: 127.0.0.1
+  adb_server_port: 5037
+  apps:
+    "youtube": "Youtube"
 
 xiaomi_aqara:
   discovery_retry: 5

@@ -99,25 +99,21 @@ views:
         cards:
           - type: custom:mini-media-player
             entity: media_player.kitchen_display
-            icon: mdi:monitor
             artwork: cover
             short_info: true
 
           - type: custom:mini-media-player
             entity: media_player.loud_speaker
-            icon: mdi:google-home
             artwork: cover
             short_info: true
 
           - type: custom:mini-media-player
             entity: media_player.yury_speaker
-            icon: mdi:dots-horizontal-circle
             artwork: cover
             short_info: true
 
           - type: custom:mini-media-player
             entity: media_player.kodi
-            icon: mdi:kodi
             artwork: cover
             short_info: true
 
