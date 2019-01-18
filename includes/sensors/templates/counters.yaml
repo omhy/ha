@@ -1,0 +1,101 @@
+- platform: template
+  sensors:
+    count_automations:
+      entity_id: sensor.date
+      value_template: >
+        {%- set domains = ['automation'] -%}
+        {%- for domain in domains -%}
+          {%- for item in states[domain] -%}
+            {% if loop.first %}
+              {{loop.length}}
+            {% endif %}
+          {%- endfor -%}
+        {%- endfor -%}
+    count_scripts:
+      entity_id: sensor.date
+      value_template: >
+        {%- set domains = ['script'] -%}
+        {%- for domain in domains -%}
+          {%- for item in states[domain] -%}
+            {% if loop.first %}
+              {{loop.length}}
+            {% endif %}
+          {%- endfor -%}
+        {%- endfor -%}
+    count_device_trackers:
+      entity_id: sensor.date
+      value_template: >
+        {%- set domains = ['device_tracker'] -%}
+        {%- for domain in domains -%}
+          {%- for item in states[domain] -%}
+            {% if loop.first %}
+              {{loop.length}}
+            {% endif %}
+          {%- endfor -%}
+        {%- endfor -%}
+    count_lights:
+      entity_id: sensor.date
+      value_template: >
+        {%- set domains = ['light'] -%}
+        {%- for domain in domains -%}
+          {%- for item in states[domain] -%}
+            {% if loop.first %}
+              {{loop.length}}
+            {% endif %}
+          {%- endfor -%}
+        {%- endfor -%}
+    count_binary_sensors:
+      entity_id: sensor.date
+      value_template: >
+        {%- set domains = ['binary_sensor'] -%}
+        {%- for domain in domains -%}
+          {%- for item in states[domain] -%}
+            {% if loop.first %}
+              {{loop.length}}
+            {% endif %}
+          {%- endfor -%}
+        {%- endfor -%}
+    count_sensors:
+      entity_id: sensor.date
+      value_template: >
+        {%- set domains = ['sensor'] -%}
+        {%- for domain in domains -%}
+          {%- for item in states[domain] -%}
+            {% if loop.first %}
+              {{loop.length}}
+            {% endif %}
+          {%- endfor -%}
+        {%- endfor -%}
+    count_switches:
+      entity_id: sensor.date
+      value_template: >
+        {%- set domains = ['switch'] -%}
+        {%- for domain in domains -%}
+          {%- for item in states[domain] -%}
+            {% if loop.first %}
+              {{loop.length}}
+            {% endif %}
+          {%- endfor -%}
+        {%- endfor -%}
+    count_zones:
+      entity_id: sensor.date
+      value_template: >
+        {%- set domains = ['zone'] -%}
+        {%- for domain in domains -%}
+          {%- for item in states[domain] -%}
+            {% if loop.first %}
+              {{loop.length}}
+            {% endif %}
+          {%- endfor -%}
+        {%- endfor -%}
+    count_scenes:
+      entity_id: sensor.date
+      value_template: >
+        {%- set domains = ['scene'] -%}
+        {%- for domain in domains -%}
+          {%- for item in states[domain] -%}
+            {% if loop.first %}
+              {{loop.length}}
+            {% endif %}
+          {%- endfor -%}
+        {%- endfor -%}
