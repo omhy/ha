@@ -101,6 +101,13 @@ views:
             entity: media_player.kitchen_display
             artwork: cover
             short_info: true
+            show_progress: true
+
+          - type: custom:mini-media-player
+            entity: media_player.chromecast0541
+            artwork: cover
+            short_info: true
+            show_progress: true
 
           - type: custom:mini-media-player
             entity: media_player.loud_speaker
@@ -1068,17 +1075,21 @@ views:
         show_header_toggle: false
         entities:
           - type: weblink
-            name: Google home mini API
+            name: Home mini API
             url: http://192.168.1.30:8008/setup/eureka_info
             icon: mdi:dots-horizontal-circle
           - type: weblink
-            name: Google home API
+            name: Home API
             url: http://192.168.1.31:8008/setup/eureka_info
             icon: mdi:google-home
           - type: weblink
-            name: Google home hub API
+            name: Home hub API
             url: http://192.168.1.32:8008/setup/eureka_info
             icon: mdi:monitor
+          - type: weblink
+            name: Chromecast API
+            url: http://192.168.1.33:8008/setup/eureka_info
+            icon: mdi:google-chrome
           - type: weblink
             name: Kodi
             url: http://192.168.1.20:8080

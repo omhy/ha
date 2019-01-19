@@ -57,9 +57,10 @@ media_radio_play_soma_beatblender:
 media_radio_stop_all:
   sequence:
     - service: media_player.media_stop
-      data_template:
-        entity_id:
-          - media_player.kitchen_display
-          - media_player.loud_speaker
-          - media_player.yuri_speaker
-          - media_player.speakers
+#      data_template:
+#        entity_id:
+#          - media_player.kitchen_display
+#          - media_player.loud_speaker
+#          - media_player.yuri_speaker
+#          - media_player.speakers
+#          - media_player.chromecast0541

@@ -100,7 +100,10 @@ media_player.spotify:
   icon: mdi:spotify
 media_player.speakers:
   friendly_name: Speakers
-  icon: mdi:speaker-multiple
+  icon: mdi:speaker
+media_player.chromecast0541:
+  friendly_name: Chromecast
+  icon: mdi:google-chrome
 
 #SENSORS
 sensor.home_assistant_v2_db:
