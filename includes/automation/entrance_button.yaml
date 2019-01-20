@@ -12,11 +12,7 @@
   action:
     - delay:
         seconds: 15
-    - service: scene.turn_on
-      entity_id: scene.we_are_leaving
-    - service: script.media_radio_stop_all
-    - service: script.rmt_computer_sleep
-    - service: script.rmt_laptop_sleep
+    - service: script.we_are_leaving
 
 - alias: "entrance_button_single_if_people_home_off"
   trigger:
@@ -30,6 +26,4 @@
       entity_id: binary_sensor.people_home
       state: "off"
   action:
-    - service: scene.turn_on
-      entity_id: scene.we_are_arriving
-    - service: script.media_radio_play_soma_illstreet
+    - service: script.we_are_arriving

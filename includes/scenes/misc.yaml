@@ -2,11 +2,13 @@
   entities:
     light.garland: true
     light.fire_lamp: true
+    light.standalone_switch: true
 
 - name: "cosiness_off"
   entities:
     light.garland: false
     light.fire_lamp: false
+    light.standalone_switch: false
 
 - name: "good_night"
   entities:
@@ -18,7 +20,7 @@
     light.bathroom: false
     light.corridor: false
 
-- name: "we_are_leaving"
+- name: "departed"
   entities:
     light.garland: false
     light.fire_lamp: true
@@ -27,11 +29,8 @@
     light.small_torch: false
     light.bathroom: false
     light.corridor: false
-    media_player.kitchen_display: off
-    media_player.loud_speaker: off
-    media_player.yury_speaker: off
 
-- name: "we_are_arriving"
+- name: "arrived"
   entities:
     light.garland: true
     light.fire_lamp: true

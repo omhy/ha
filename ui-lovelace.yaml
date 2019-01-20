@@ -59,6 +59,9 @@ views:
               - entity: light.garland
                 tap_action:
                   action: toggle
+              - entity: light.standalone_switch
+                tap_action:
+                  action: toggle
               - entity: light.big_torch
                 tap_action:
                   action: toggle
@@ -1075,7 +1078,7 @@ views:
         show_header_toggle: false
         entities:
           - type: weblink
-            name: Home mini API
+            name: Yuri home mini API
             url: http://192.168.1.30:8008/setup/eureka_info
             icon: mdi:dots-horizontal-circle
           - type: weblink

@@ -25,6 +25,10 @@ entity_config:
     name: Ambient
     expose: true
     room: Living Room
+  light.standalone_switch:
+    name: Corner garland
+    expose: true
+    room: Living Room
 
 #Yuri room
   light.small_torch:
