@@ -16,7 +16,7 @@ title: Home
 views:
   ##################   MAIN
   - title: Main
-    id: main
+    path: main
     icon: mdi:floor-plan
     badges:
       - sensor.wt00_symbol
@@ -135,9 +135,15 @@ views:
             show_shuffle: true
             hide_power: true
 
+  - title: Music
+    path: music
+    icon: mdi:music-circle
+    cards:
+
+
     ##################   CLIMATE
   - title: Climate
-    id: climate
+    path: climate
     icon: mdi:gauge
     cards:
       - type: vertical-stack
@@ -203,7 +209,7 @@ views:
 
   ##################   HISTORY
   - title: History
-    name: history
+    path: history
     icon: mdi:chart-timeline
     cards:
       - type: vertical-stack
@@ -269,7 +275,7 @@ views:
 
   ##################   LIGHTS FLOW
   - title: Lights flow
-    id: lights_flow
+    path: lights_flow
     icon: mdi:palette
     cards:
       - id: 34ef17aa418b453fbd90ee224c7d0dc4  # Automatically created id
@@ -317,7 +323,7 @@ views:
 
   ##################   ELECTRO
   - title: Electricity
-    id: electro
+    path: electro
     icon: mdi:power-plug
     cards:
       - id: ec272f66db9b4b4fbc56eeda97205816  # Automatically created id
@@ -400,7 +406,7 @@ views:
           - input_number.computer_today_allowed
 
   - title: Information
-    id: info
+    path: info
     icon: mdi:information
     badges:
       - device_tracker.google_maps_111683533988744565132
@@ -503,7 +509,7 @@ views:
 
     ##################   FORECAST
   - title: Forecast
-    id: forecast
+    path: forecast
     icon: mdi:cloud
     cards:
       - id: e53a1c26e82541cab42d51ec65fdd703  # Automatically created id
@@ -600,7 +606,7 @@ views:
 
   ##################   AUTOMATIONS
   - title: Automations
-    id: automations
+    path: automations
     icon: mdi:creation
     cards:
       - id: a14a186b6bda43ae907fdcd89c4e6bcd  # Automatically created id
@@ -735,7 +741,7 @@ views:
 
   ##################   SCRIPTS
   - title: Scripts
-    id: scripts
+    path: scripts
     icon: mdi:script
     cards:
       - id: 4a6c257921dc4828be78f29d2fb24511  # Automatically created id
@@ -819,7 +825,7 @@ views:
 
   ##################   SUM
   - title: Summary
-    id: sum
+    path: sum
     icon: mdi:elephant
     cards:
       - id: c6560f5249644e56ab9ba3f3c39b0530  # Automatically created id
@@ -1021,7 +1027,7 @@ views:
 
   ##################   LINKS
   - title: Links
-    id: links
+    path: links
     icon: mdi:link
     cards:
       - id: 614279a5c1f0431aa1605cb30dfcc511  # Automatically created id
@@ -1144,7 +1150,7 @@ views:
 
   ##################   SYSTEM
   - title: System
-    id: sys
+    path: sys
     icon: mdi:desktop-tower
     badges:
       - sensor.uptime
