@@ -50,9 +50,6 @@ custom_updater:
     - https://raw.githubusercontent.com/kuuji/button-card/master/tracker.json
     - https://raw.githubusercontent.com/sgttrs/lovelace-weather-card-chart/master/custom-updater.json
 circadian_lighting:
-#  min_colortemp: 1800
-#  max_colortemp: 5000
-#EO CUSTOM
 
 recorder: !include includes/recorder.yaml
 history:
@@ -85,13 +82,13 @@ media_player:
   client_secret: !secret spotify_client_secret
 - platform: kodi
   host: 192.168.1.20
-- platform: androidtv
-  host: 192.168.1.20
-  name: ABOX
-  adb_server_ip: 127.0.0.1
-  adb_server_port: 5037
-  apps:
-    "youtube": "Youtube"
+#- platform: androidtv
+#  host: 192.168.1.20
+#  name: ABOX
+#  adb_server_ip: 127.0.0.1
+#  adb_server_port: 5037
+#  apps:
+#    "youtube": "Youtube"
 
 xiaomi_aqara:
   discovery_retry: 5

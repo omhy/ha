@@ -27,77 +27,145 @@ views:
       - sun.sun
       - switch.circadian_lighting_circadian_lighting
     cards:
-      - type: vertical-stack
-        cards:
-        - type: glance
-          title: Motion
-          entities:
-            - binary_sensor.motion_sensor_158d0001fa3dc0
-            - binary_sensor.motion_sensor_158d0001e52779
-            - binary_sensor.motion_sensor_158d0002d43d7d
+      - type: glance
+        title: Motion
+        entities:
+          - binary_sensor.motion_sensor_158d0001fa3dc0
+          - binary_sensor.motion_sensor_158d0001e52779
+          - binary_sensor.motion_sensor_158d0002d43d7d
 
-        - type: glance
-          title: Motions Today
-          entities:
-            - sensor.livingroom_motions
-            - sensor.bathroom_motions
-            - sensor.yuriroom_motions
+      - type: glance
+        title: Motions Today
+        entities:
+          - sensor.livingroom_motions
+          - sensor.bathroom_motions
+          - sensor.yuriroom_motions
 
 #        - type: weather-forecast
 #          entity: weather.smhi_home
 
-        - type: custom:weather-card-chart
-          title: Weather
-          weather: weather.smhi_home
-          sun: sun.sun
 
+      - type: glance
+        title: Lights
+        entities:
+          - entity: light.garland
+            tap_action:
+              action: toggle
+          - entity: light.standalone_switch
+            tap_action:
+              action: toggle
+          - entity: light.big_torch
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+          - entity: light.corner_lamp
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+          - entity: light.small_torch
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+          - entity: light.fire_lamp
+            tap_action:
+              action: toggle
+          - entity: light.corridor
+            tap_action:
+              action: toggle
+          - entity: light.bathroom
+            tap_action:
+              action: toggle
+
+      - type: custom:monster-card
+        card:
+          type: entities
+          title: Lights on now
+        filter:
+          include:
+            - domain: light
+              state: "on"
+          exclude:
+            - entity_id: light.group_*
+
+      - type: custom:monster-card
+        card:
+          type: entities
+          title: Playing now
+          show_header_toggle: false
+        filter:
+          include:
+            - domain: media_player
+          exclude:
+            - entity_id: media_player.spotify
+            - entity_id: media_player.kodi
+            - state: "off"
+            - state: "idle"
+            - state: "unavailable"
+
+      - type: custom:weather-card-chart
+        title: Weather
+        weather: weather.smhi_home
+        sun: sun.sun
+
+  - title: Music
+    path: music
+    icon: mdi:music-circle
+    cards:
       - type: vertical-stack
         cards:
-          - type: glance
-            title: Lights
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/radio/groovesalad.jpg
+                tap_action:
+                  action: call-service
+                  service: script.media_radio_play_soma_groovesalad
+              - type: picture
+                image: /local/radio/illstreet.jpg
+                tap_action:
+                  action: call-service
+                  service: script.media_radio_play_soma_illstreet
+              - type: picture
+                image: /local/radio/seventies.jpg
+                tap_action:
+                  action: call-service
+                  service: script.media_radio_play_soma_seventies
+              - type: picture
+                image: /local/radio/thistle.jpg
+                tap_action:
+                  action: call-service
+                  service: script.media_radio_play_soma_thistle
+          - type: horizontal-stack
+            cards:
+              - type: picture
+                image: /local/radio/secretagent.jpg
+                tap_action:
+                  action: call-service
+                  service: script.media_radio_play_soma_secretagent
+              - type: picture
+                image: /local/radio/deepspaceone.jpg
+                tap_action:
+                  action: call-service
+                  service: script.media_radio_play_soma_deepspaceone
+              - type: picture
+                image: /local/radio/covers.jpg
+                tap_action:
+                  action: call-service
+                  service: script.media_radio_play_soma_covers
+              - type: picture
+                image: /local/radio/beatblender.jpg
+                tap_action:
+                  action: call-service
+                  service: script.media_radio_play_soma_beatblender
+          - type: entities
+            title: Radio
+            show_header_toggle: false
             entities:
-              - entity: light.garland
-                tap_action:
-                  action: toggle
-              - entity: light.standalone_switch
-                tap_action:
-                  action: toggle
-              - entity: light.big_torch
-                tap_action:
-                  action: toggle
-                hold_action:
-                  action: more-info
-              - entity: light.corner_lamp
-                tap_action:
-                  action: toggle
-                hold_action:
-                  action: more-info
-              - entity: light.small_torch
-                tap_action:
-                  action: toggle
-                hold_action:
-                  action: more-info
-              - entity: light.fire_lamp
-                tap_action:
-                  action: toggle
-              - entity: light.corridor
-                tap_action:
-                  action: toggle
-              - entity: light.bathroom
-                tap_action:
-                  action: toggle
-
-          - type: custom:monster-card
-            card:
-              type: entities
-              title: Lights on now
-            filter:
-              include:
-                - domain: light
-                  state: "on"
-              exclude:
-                - entity_id: light.group_*
-
+              - input_select.radio_cast
+              - script.media_radio_stop_all
       - type: vertical-stack
         cards:
           - type: custom:mini-media-player
@@ -135,10 +203,6 @@ views:
             show_shuffle: true
             hide_power: true
 
-  - title: Music
-    path: music
-    icon: mdi:music-circle
-    cards:
 
 
     ##################   CLIMATE
@@ -415,75 +479,6 @@ views:
       - sensor.waze_home_work
       - sensor.waze_work_home
     cards:
-      - type: vertical-stack
-        cards:
-        - type: horizontal-stack
-          cards:
-          - type: picture
-            image: /local/radio/groovesalad.jpg
-            tap_action:
-              action: call-service
-              service: script.media_radio_play_soma_groovesalad
-          - type: picture
-            image: /local/radio/illstreet.jpg
-            tap_action:
-              action: call-service
-              service: script.media_radio_play_soma_illstreet
-          - type: picture
-            image: /local/radio/seventies.jpg
-            tap_action:
-              action: call-service
-              service: script.media_radio_play_soma_seventies
-          - type: picture
-            image: /local/radio/thistle.jpg
-            tap_action:
-              action: call-service
-              service: script.media_radio_play_soma_thistle
-        - type: horizontal-stack
-          cards:
-          - type: picture
-            image: /local/radio/secretagent.jpg
-            tap_action:
-              action: call-service
-              service: script.media_radio_play_soma_secretagent
-          - type: picture
-            image: /local/radio/deepspaceone.jpg
-            tap_action:
-              action: call-service
-              service: script.media_radio_play_soma_deepspaceone
-          - type: picture
-            image: /local/radio/covers.jpg
-            tap_action:
-              action: call-service
-              service: script.media_radio_play_soma_covers
-          - type: picture
-            image: /local/radio/beatblender.jpg
-            tap_action:
-              action: call-service
-              service: script.media_radio_play_soma_beatblender
-        - type: vertical-stack
-          cards:
-          - type: entities
-            title: Radio
-            show_header_toggle: false
-            entities:
-              - input_select.radio_cast
-              - script.media_radio_stop_all
-          - type: custom:monster-card
-            card:
-              type: entities
-              title: Playing now
-              show_header_toggle: false
-            filter:
-              include:
-                - domain: media_player
-              exclude:
-                - entity_id: media_player.spotify
-                - entity_id: media_player.kodi
-                - state: "off"
-                - state: "idle"
-                - state: "unavailable"
-
       - type: entities
         title: Doorbell settings
         show_header_toggle: false
@@ -510,7 +505,7 @@ views:
     ##################   FORECAST
   - title: Forecast
     path: forecast
-    icon: mdi:cloud
+    icon: mdi:cloud-circle
     cards:
       - id: e53a1c26e82541cab42d51ec65fdd703  # Automatically created id
         type: glance
@@ -1178,6 +1173,15 @@ views:
           - sensor.time
           - sensor.is_workday
           - sensor.days_in_month
+
+#      - type: custom:monster-card
+#        card:
+#          type: entities
+#          title: Total
+#        filter:
+#          include:
+#            - entity_id: sensor.count*
+
       - type: history-graph
         title: CPU/Mem/Disk 12h
         hours_to_show: 12
