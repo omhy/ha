@@ -9,7 +9,7 @@ resources:
     type: js
   - url: /local/custom-lovelace/custom-weather-card-chart.js?v=0.2.2
     type: module
-  - url: /local/custom-lovelace/button-card.js?v=0.0.4
+  - url: /local/custom-lovelace/button-card.js?v=0.0.5
     type: module
 
 title: Home
