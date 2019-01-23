@@ -94,5 +94,7 @@
   state_topic: "outside/temperature/max/at"
   name: "outside_temperature_max_at"
 
-
-
+- platform: mqtt
+  name: Bridge state
+  state_topic: "zigbee2mqtt/bridge/state"
+  icon: mdi:router-wireless

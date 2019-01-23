@@ -8,4 +8,7 @@ computer_today_limit:
   initial: off
   name: Limit?
   icon: mdi:lock-question
-
+zigbee_permit_join:
+  name: Allow devices to join
+  initial: off
+  icon: mdi:cellphone-wireless

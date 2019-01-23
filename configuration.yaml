@@ -126,6 +126,7 @@ light: !include includes/light.yaml
 notify: !include includes/notify.yaml
 binary_sensor: !include includes/binary_sensor.yaml
 shell_command: !include includes/shell_command.yaml
+timer: !include includes/timer.yaml
 
 scene: !include_dir_merge_list includes/scenes
 sensor: !include_dir_merge_list includes/sensors
