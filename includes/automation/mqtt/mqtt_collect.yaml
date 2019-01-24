@@ -40,7 +40,7 @@
 
 - alias: "mqtt_power_collect_electricity"
   trigger:
-    - platform: time
+    - platform: time_pattern
       seconds: "/30"
   action:
     - service: mqtt.publish

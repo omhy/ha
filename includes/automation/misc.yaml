@@ -13,7 +13,7 @@
 
 - alias: "computer_limit_reached"
   trigger:
-    - platform: time
+    - platform: time_pattern
       seconds: "/300"
   condition:
     - condition: state
@@ -38,7 +38,7 @@
 
 - alias: "computer_limit_warning"
   trigger:
-    - platform: time
+    - platform: time_pattern
       minutes: "/5"
       seconds: 00
   condition:

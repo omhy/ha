@@ -100,7 +100,7 @@
 
 - alias: "light_livingroom_flow"
   trigger:
-  - platform: time
+  - platform: time_pattern
     seconds: "/5"
   condition:
     condition: or
