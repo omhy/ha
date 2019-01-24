@@ -287,14 +287,6 @@ views:
             - binary_sensor.motion_sensor_158d0002d43d7d
 
         - type: history-graph
-          title: Illumination 1h
-          hours_to_show: 1
-          entities:
-            - sensor.illumination_158d0001fa3dc0
-            - sensor.illumination_158d0001e52779
-            - sensor.illumination_158d0002d43d7d
-
-        - type: history-graph
           title: Living room power 1h
           hours_to_show: 1
           entities:
