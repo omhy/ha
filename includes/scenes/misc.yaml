@@ -16,6 +16,7 @@
     light.fire_lamp: false
     light.big_torch: false
     light.corner_lamp: false
+    light.standalone_switch: false
     light.small_torch: false
     light.bathroom: false
     light.corridor: false
@@ -26,6 +27,7 @@
     light.fire_lamp: true
     light.big_torch: false
     light.corner_lamp: false
+    light.standalone_switch: false
     light.small_torch: false
     light.bathroom: false
     light.corridor: false
@@ -36,3 +38,4 @@
     light.fire_lamp: true
     light.big_torch: true
     light.corner_lamp: true
+    light.standalone_switch: true
