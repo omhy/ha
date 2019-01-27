@@ -175,7 +175,7 @@ views:
             show_progress: true
 
           - type: custom:mini-media-player
-            entity: media_player.chromecast0541
+            entity: media_player.chromecast
             artwork: cover
             short_info: true
             show_progress: true
@@ -187,6 +187,21 @@ views:
 
           - type: custom:mini-media-player
             entity: media_player.yury_speaker
+            artwork: cover
+            short_info: true
+
+          - type: custom:mini-media-player
+            entity: media_player.black_speaker
+            artwork: cover
+            short_info: true
+
+          - type: custom:mini-media-player
+            entity: media_player.speakers
+            artwork: cover
+            short_info: true
+
+          - type: custom:mini-media-player
+            entity: media_player.livroom_speakers
             artwork: cover
             short_info: true
 
@@ -1041,8 +1056,12 @@ views:
         show_header_toggle: false
         entities:
           - type: weblink
-            name: Yuri home mini API
+            name: Yuri mini API
             url: http://192.168.1.30:8008/setup/eureka_info
+            icon: mdi:dots-horizontal-circle-outline
+          - type: weblink
+            name: Black mini API
+            url: http://192.168.1.34:8008/setup/eureka_info
             icon: mdi:dots-horizontal-circle
           - type: weblink
             name: Home API

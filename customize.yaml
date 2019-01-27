@@ -82,10 +82,11 @@ script.rmt_computer_sleep:
 script.rmt_laptop_sleep:
   icon: mdi:laptop
 
-#RADIO
 script.media_radio_stop_all:
   friendly_name: Stop all
   icon: mdi:stop
+
+#GOOGLE HOME
 media_player.kitchen_display:
   friendly_name: Kitchen display
   icon: mdi:monitor
@@ -94,17 +95,25 @@ media_player.loud_speaker:
   icon: mdi:google-home
 media_player.yury_speaker:
   friendly_name: Yuri speaker
+  icon: mdi:dots-horizontal-circle-outline
+media_player.black_speaker:
+  friendly_name: Black speaker
   icon: mdi:dots-horizontal-circle
+#GOOGLE HOME GROUPS
+media_player.speakers:
+  friendly_name: Speakers
+  icon: mdi:alpha-a
+media_player.livroom_speakers:
+  friendly_name: Livroom speakers
+  icon: mdi:alpha-l
+#MEDIA_PLAYERS MISC
 media_player.kodi:
   friendly_name: Kodi
   icon: mdi:kodi
 media_player.spotify:
   friendly_name: Spotify
   icon: mdi:spotify
-media_player.speakers:
-  friendly_name: Speakers
-  icon: mdi:speaker
-media_player.chromecast0541:
+media_player.chromecast:
   friendly_name: Chromecast
   icon: mdi:google-chrome
 
