@@ -102,10 +102,10 @@ media_player.black_speaker:
 #GOOGLE HOME GROUPS
 media_player.speakers:
   friendly_name: Speakers
-  icon: mdi:alpha-a
-media_player.livroom_speakers:
-  friendly_name: Livroom speakers
-  icon: mdi:alpha-l
+  icon: mdi:speaker
+media_player.surround:
+  friendly_name: Surround
+  icon: mdi:surround-sound
 #MEDIA_PLAYERS MISC
 media_player.kodi:
   friendly_name: Kodi

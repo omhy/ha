@@ -201,7 +201,7 @@ views:
             short_info: true
 
           - type: custom:mini-media-player
-            entity: media_player.livroom_speakers
+            entity: media_player.surround
             artwork: cover
             short_info: true
 
