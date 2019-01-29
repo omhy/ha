@@ -5,7 +5,7 @@ resources:
     type: module
   - url: /local/custom-lovelace/mini-graph-card-bundle.js?v=0.1.0
     type: module
-  - url: /local/custom-lovelace/tracker-card.js?v=0.1.5
+  - url: /local/custom-lovelace/tracker-card.js?v=0.2.0
     type: js
   - url: /local/custom-lovelace/custom-weather-card-chart.js?v=0.2.4
     type: module
@@ -25,7 +25,6 @@ views:
       - sensor.wt00_precipitation
       - sensor.wt00_wind_speed
       - sun.sun
-      - switch.circadian_lighting_circadian_lighting
     cards:
       - type: glance
         title: Motion
@@ -80,9 +79,10 @@ views:
               action: toggle
 
       - type: custom:monster-card
+        show_empty: false
         card:
           type: entities
-          title: Lights on now
+          title: Lights on
         filter:
           include:
             - domain: light
@@ -91,6 +91,7 @@ views:
             - entity_id: light.group_*
 
       - type: custom:monster-card
+        show_empty: false
         card:
           type: entities
           title: Playing now
@@ -290,6 +291,12 @@ views:
   - title: History
     path: history
     icon: mdi:chart-timeline
+    badges:
+      - device_tracker.google_maps_111683533988744565132
+      - device_tracker.google_maps_115914092349482836896
+      - device_tracker.google_maps_117454969161947422882
+      - sensor.waze_home_work
+      - sensor.waze_work_home
     cards:
       - type: vertical-stack
         cards:
@@ -343,6 +350,14 @@ views:
             - device_tracker.google_maps_111683533988744565132
             - device_tracker.google_maps_115914092349482836896
             - device_tracker.google_maps_117454969161947422882
+
+        - type: history-graph
+          title: Waze 24h
+          hours_to_show: 24
+          entities:
+            - sensor.waze_home_work
+            - sensor.waze_work_home
+
 
   ##################   LIGHTS FLOW
   - title: Lights flow
@@ -464,39 +479,6 @@ views:
           - input_boolean.computer_today_limit
           - sensor.computer_on_today_minutes
           - input_number.computer_today_allowed
-
-  - title: Information
-    path: info
-    icon: mdi:information
-    badges:
-      - device_tracker.google_maps_111683533988744565132
-      - device_tracker.google_maps_115914092349482836896
-      - device_tracker.google_maps_117454969161947422882
-      - sensor.waze_home_work
-      - sensor.waze_work_home
-    cards:
-      - type: entities
-        title: Doorbell settings
-        show_header_toggle: false
-        entities:
-          - input_number.doorbell_volume
-          - input_number.doorbell_melody
-
-      - type: vertical-stack
-        cards:
-        - type: history-graph
-          title: Waze 24h
-          hours_to_show: 24
-          entities:
-            - sensor.waze_home_work
-            - sensor.waze_work_home
-
-        - type: map
-          default_zoom: 15
-          entities:
-            - device_tracker.google_maps_111683533988744565132
-            - device_tracker.google_maps_115914092349482836896
-            - device_tracker.google_maps_117454969161947422882
 
     ##################   FORECAST
   - title: Forecast
@@ -1002,8 +984,7 @@ views:
     path: links
     icon: mdi:link
     cards:
-      - id: 614279a5c1f0431aa1605cb30dfcc511  # Automatically created id
-        type: entities
+      - type: entities
         title: Internal
         show_header_toggle: false
         entities:
@@ -1032,8 +1013,7 @@ views:
             url: https://github.com/omhy/ha
             icon: mdi:github-circle
 
-      - id: 614279a5c1f0431aa16xxcb30dfcc511  # Automatically created id
-        type: entities
+      - type: entities
         title: Sonoffs
         show_header_toggle: false
         entities:
@@ -1050,8 +1030,7 @@ views:
 #            url: http://192.168.1.42/
 #            icon: mdi:switch
 
-      - id: 614279a5c1f0431aa1605cb30dfcc511  # Automatically created id
-        type: entities
+      - type: entities
         title: Media players
         show_header_toggle: false
         entities:
@@ -1080,8 +1059,7 @@ views:
             url: http://192.168.1.20:8080
             icon: mdi:kodi
 
-      - id: 8a56f82634f642b597d7166564be6b45  # Automatically created id
-        type: entities
+      - type: entities
         title: Home Assistant
         show_header_toggle: false
         entities:
@@ -1110,8 +1088,7 @@ views:
             url: https://www.home-assistant.io/docs/automation/trigger/
             icon: mdi:script
 
-      - id: 9b7e3192533746b286a1564e988b3a17  # Automatically created id
-        type: entities
+      - type: entities
         title: User interface
         show_header_toggle: false
         entities:
@@ -1132,13 +1109,31 @@ views:
       - sensor.uptime
       - sensor.home_assistant_v2_db
     cards:
+      - type: entities
+        title: Doorbell settings
+        show_header_toggle: false
+        entities:
+          - input_number.doorbell_volume
+          - input_number.doorbell_melody
+
+      - type: entities
+        title: Zigbee
+        show_header_toggle: false
+        entities:
+          - input_boolean.zigbee_permit_join
+          - timer.zigbee_permit_join
+
       - type: custom:monster-card
+        show_empty: false
         card:
           type: entities
-          title: Batteries
+          title: Low batteries
+          show_header_toggle: false
         filter:
           include:
             - entity_id: sensor.*_battery_level
+              state: '< 25'
+
       - type: glance
         title: System
         entities:
@@ -1147,6 +1142,7 @@ views:
           - sensor.disk_use_percent_home
           - sensor.swap_use_percent
           - sensor.temp
+
       - type: glance
         title: Dates
         entities:
@@ -1154,14 +1150,6 @@ views:
           - sensor.time
           - sensor.is_workday
           - sensor.days_in_month
-
-#      - type: custom:monster-card
-#        card:
-#          type: entities
-#          title: Total
-#        filter:
-#          include:
-#            - entity_id: sensor.count*
 
       - type: history-graph
         title: CPU/Mem/Disk 12h
