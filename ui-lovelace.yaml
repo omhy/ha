@@ -79,7 +79,7 @@ views:
               action: toggle
 
       - type: custom:monster-card
-        show_empty: false
+#        show_empty: false
         card:
           type: entities
           title: Lights on
@@ -91,7 +91,7 @@ views:
             - entity_id: light.group_*
 
       - type: custom:monster-card
-        show_empty: false
+#        show_empty: false
         card:
           type: entities
           title: Playing now
