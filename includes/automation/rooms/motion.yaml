@@ -22,15 +22,6 @@
         payload: "{{states.sensor.yuriroom_motions.state | int + 1}}"
         retain: true
 
-- alias: "debug_motion_yuriroom_detected_light"
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.motion_sensor_158d0002d43d7d
-      to: "on"
-  action:
-    - service: scene.turn_on
-      entity_id: scene.small_torch_on_low
-
 - alias: "motion_livingroom_detected"
   trigger:
     - platform: state
