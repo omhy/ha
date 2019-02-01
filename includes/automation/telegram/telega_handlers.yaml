@@ -111,6 +111,17 @@
       data_template:
         message: "{{trigger.event.data.args}}"
 
+- alias: "telegram_handle_cmd_sayall"
+  trigger:
+    - platform: event
+      event_type: telegram_command
+      event_data:
+        command: "/sayall"
+  action:
+    - service: script.tts_say_surround
+      data_template:
+        message: "{{trigger.event.data.args}}"
+
 - alias: "telegram_handle_clb_computer"
   trigger:
     - platform: event

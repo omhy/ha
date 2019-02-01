@@ -65,3 +65,12 @@ tts_say_kitchen:
         message:  "{{message}}"
         language: "ru"
         cache: false
+
+tts_say_surround:
+  sequence:
+    - service: tts.google_say
+      entity_id: media_player.surround
+      data_template:
+        message:  "{{message}}"
+        language: "ru"
+        cache: false
