@@ -172,54 +172,38 @@ views:
           - type: custom:mini-media-player
             entity: media_player.kitchen_display
             artwork: cover
-            short_info: true
-            show_progress: true
 
           - type: custom:mini-media-player
             entity: media_player.chromecast
             artwork: cover
-            short_info: true
-            show_progress: true
 
           - type: custom:mini-media-player
             entity: media_player.loud_speaker
             artwork: cover
-            short_info: true
 
           - type: custom:mini-media-player
             entity: media_player.yury_speaker
             artwork: cover
-            short_info: true
 
           - type: custom:mini-media-player
             entity: media_player.black_speaker
             artwork: cover
-            short_info: true
 
           - type: custom:mini-media-player
             entity: media_player.speakers
             artwork: cover
-            short_info: true
 
           - type: custom:mini-media-player
             entity: media_player.surround
             artwork: cover
-            short_info: true
 
           - type: custom:mini-media-player
             entity: media_player.kodi
             artwork: cover
-            short_info: true
 
           - type: custom:mini-media-player
             entity: media_player.spotify
             artwork: full-cover
-            short_info: true
-            show_source: small
-            show_shuffle: true
-            hide_power: true
-
-
 
     ##################   CLIMATE
   - title: Climate
