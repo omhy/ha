@@ -16,7 +16,8 @@
   action:
   - service: notify.telegram_dima
     data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F513 Door is opened"
+      message: "{{ now().strftime('%H:%M') }} \U0001F513 Door is opened. Closed {{ ((now() - states.trigger_to.last_updated).seconds / 60) | round(0) }} minutes ago."
+#      message: "{{ now().strftime('%H:%M') }} \U0001F513 Door is opened. Closed {{ ((now() - states.binary_sensor.door_window_sensor_158d00024367c8.last_updated).seconds / 60) | round(0) }} minutes ago."
 
 - alias: "entrance_door_closed"
   trigger:
@@ -30,4 +31,4 @@
     - automation.entrance_door_opened_too_long_alarm
   - service: notify.telegram_dima
     data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F512 Door is closed"
+      message: "{{ now().strftime('%H:%M') }} \U0001F512 Door is closed. Opened {{ ((now() - states.trigger_to.last_updated).seconds / 60) | round(0) }} minutes ago."
