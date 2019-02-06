@@ -1,34 +1,41 @@
 - alias: "alert_entrance_door_opened_too_long"
   trigger:
-  - platform: state
-    entity_id: binary_sensor.door_window_sensor_158d00024367c8
-    to: "on"
-    for:
-      minutes: 2
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d00024367c8
+      to: "on"
+      for:
+        minutes: 2
   action:
-  - service: script.alarm_door
+    - service: script.alarm_door
 
 - alias: "entrance_door_opened"
   trigger:
-  - platform: state
-    entity_id: binary_sensor.door_window_sensor_158d00024367c8
-    to: "on"
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d00024367c8
+      to: "on"
   action:
-  - service: notify.telegram_dima
-    data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F513 Door is opened. Closed {{ ((now() - states.trigger_to.last_updated).seconds / 60) | round(0) }} minutes ago."
-#      message: "{{ now().strftime('%H:%M') }} \U0001F513 Door is opened. Closed {{ ((now() - states.binary_sensor.door_window_sensor_158d00024367c8.last_updated).seconds / 60) | round(0) }} minutes ago."
+    - service: notify.telegram_dima
+      data_template:
+        message: "{{ now().strftime('%H:%M') }} \U0001F513 Door is opened. Closed {{ ((now() - strptime(states.input_text.door_state_change.state, '%Y%m%d%H%M%S').astimezone()).seconds /60) | round(0)}} minutes ago."
+    - service: input_text.set_value
+      data_template:
+        entity_id: input_text.door_state_change
+        value: "{{ now().strftime('%Y%m%d%H%M%S') }}"
 
 - alias: "entrance_door_closed"
   trigger:
-  - platform: state
-    entity_id: binary_sensor.door_window_sensor_158d00024367c8
-    to: "off"
+    - platform: state
+      entity_id: binary_sensor.door_window_sensor_158d00024367c8
+      to: "off"
   action:
-  - service: script.aqara_stop_ringtone
-  - service: automation.turn_off
-    entity_id:
-    - automation.entrance_door_opened_too_long_alarm
-  - service: notify.telegram_dima
-    data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F512 Door is closed. Opened {{ ((now() - states.trigger_to.last_updated).seconds / 60) | round(0) }} minutes ago."
+    - service: script.aqara_stop_ringtone
+    - service: automation.turn_off
+      entity_id:
+      - automation.entrance_door_opened_too_long_alarm
+    - service: notify.telegram_dima
+      data_template:
+        message: "{{ now().strftime('%H:%M') }} \U0001F513 Door is closed. Opened {{ (now() - strptime(states.input_text.door_state_change.state, '%Y%m%d%H%M%S').astimezone()).seconds }} seconds ago."
+    - service: input_text.set_value
+      data_template:
+        entity_id: input_text.door_state_change
+        value: "{{ now().strftime('%Y%m%d%H%M%S') }}"
