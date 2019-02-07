@@ -145,8 +145,17 @@
     - service: scene.turn_on
       entity_id: scene.living_room_light_on_low
 
+- alias: "cube_action_tap_twice"
+  trigger:
+    - platform: event
+      event_type: xiaomi_aqara.cube_action
+      event_data:
+        entity_id: binary_sensor.cube_158d00028776ae
+        action_type: tap_twice
+  action:
+    - service: media_player.turn_off
+
 #   action_type: move
-#   action_type: tap_twice
 #   action_type: swing
 #   action_type: iam
 #   action_type: alert

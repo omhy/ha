@@ -122,6 +122,7 @@ input_number: !include includes/input_number.yaml
 input_boolean: !include includes/input_boolean.yaml
 input_select: !include includes/input_select.yaml
 input_text: !include includes/input_text.yaml
+utility_meter: !include includes/utility_meter.yaml
 light: !include includes/light.yaml
 #camera: !include includes/camera.yaml
 notify: !include includes/notify.yaml
