@@ -11,6 +11,10 @@ resources:
     type: module
   - url: /local/custom-lovelace/button-card.js?v=0.0.5
     type: module
+  - url: /local/custom-lovelace/card-tools.js?v=0.3
+    type: js
+  - url: /local/custom-lovelace/auto-entities.js?v=0.1
+    type: js
 
 title: Home
 views:
