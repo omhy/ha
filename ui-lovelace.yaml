@@ -401,7 +401,7 @@ views:
           - sensor.power_computer_week
           - sensor.power_computer_month
       - type: entities
-        title: Computer utility test
+        title: Computecr utility test
         entities:
           - sensor.power_strip_1_utility_h
           - sensor.power_strip_1_utility_hi

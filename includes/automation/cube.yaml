@@ -133,6 +133,7 @@
     - service: script.rmt_computer_sleep
     - service: scene.turn_on
       entity_id: scene.good_night
+    - service: media_player.turn_off
 
 - alias: "cube_action_shake_air"
   trigger:
