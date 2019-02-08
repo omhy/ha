@@ -64,23 +64,23 @@
 #LOAD POWERS
     power_strip_1_load_power:
       value_template: "{{ states.switch.power_strip_1.attributes.load_power | float }}"
-      unit_of_measurement: "Wh"
+      unit_of_measurement: "W"
       entity_id: switch.power_strip_1
     power_strip_2_load_power:
       value_template: "{{ states.switch.power_strip_2.attributes.load_power | float }}"
-      unit_of_measurement: "Wh"
+      unit_of_measurement: "W"
       entity_id: switch.power_strip_2
     power_strip_3_load_power:
       value_template: "{{ states.switch.power_strip_3.attributes.load_power | float }}"
-      unit_of_measurement: "Wh"
+      unit_of_measurement: "W"
       entity_id: switch.power_strip_3
     power_strip_4_load_power:
       value_template: "{{ states.switch.power_strip_4.attributes.load_power | float }}"
-      unit_of_measurement: "Wh"
+      unit_of_measurement: "W"
       entity_id: switch.power_strip_4
     power_strip_5_load_power:
       value_template: "{{ states.switch.power_strip_5.attributes.load_power | float }}"
-      unit_of_measurement: "Wh"
+      unit_of_measurement: "W"
       entity_id: switch.power_strip_5
 #LOCATION
     dima_is_home:

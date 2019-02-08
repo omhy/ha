@@ -134,6 +134,7 @@
     - service: scene.turn_on
       entity_id: scene.good_night
     - service: media_player.turn_off
+      entity_id: all
 
 - alias: "cube_action_shake_air"
   trigger:
@@ -155,6 +156,7 @@
         action_type: tap_twice
   action:
     - service: media_player.turn_off
+      entity_id: all
 
 #   action_type: move
 #   action_type: swing

@@ -3,7 +3,7 @@ resources:
     type: js
   - url: /local/custom-lovelace/mini-media-player-bundle.js?v=1.0.0
     type: module
-  - url: /local/custom-lovelace/mini-graph-card-bundle.js?v=0.2.1
+  - url: /local/custom-lovelace/mini-graph-card-bundle.js?v=0.2.2
     type: module
   - url: /local/custom-lovelace/tracker-card.js?v=0.3.0
     type: js
@@ -80,8 +80,8 @@ views:
             tap_action:
               action: toggle
 
+#      - type: custom:monster-card
       - type: custom:monster-card
-#        show_empty: false
         card:
           type: entities
           title: Lights on
@@ -93,7 +93,6 @@ views:
             - entity_id: light.group_*
 
       - type: custom:monster-card
-#        show_empty: false
         card:
           type: entities
           title: Playing now
@@ -401,12 +400,11 @@ views:
           - sensor.power_computer_week
           - sensor.power_computer_month
       - type: entities
-        title: Computecr utility test
+        title: Computer utility test
         entities:
+          - sensor.power_strip_1_integral
           - sensor.power_strip_1_utility_h
-          - sensor.power_strip_1_utility_hi
           - sensor.power_strip_1_utility_d
-          - sensor.power_strip_1_utility_di
       - type: glance
         title: TV
         show_header_toggle: true
@@ -1151,7 +1149,6 @@ views:
           - sensor.processor_use
           - sensor.memory_use_percent
           - sensor.disk_use_percent_home
-
       - type: history-graph
         title: Temperature 12h
         hours_to_show: 12
