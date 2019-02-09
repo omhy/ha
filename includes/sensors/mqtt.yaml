@@ -1,4 +1,7 @@
 - platform: mqtt
+  state_topic: "power/computer/hour"
+  name: "power_computer_hour"
+- platform: mqtt
   state_topic: "power/computer/day"
   name: "power_computer_day"
 - platform: mqtt

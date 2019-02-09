@@ -37,24 +37,3 @@
 
 - platform: version
   name: "version_ha_current"
-
-- platform: integration
-  source: sensor.power_strip_1_load_power
-  name: "power_strip_1_integral"
-  unit_prefix: k
-#- platform: integration
-#  source: sensor.power_strip_1_load_power
-#  name: "power_strip_1_integral_d"
-#  unit_prefix: k
-#  unit_time: d
-#- platform: integration
-#  source: sensor.power_strip_2_load_power
-#  name: "power_strip_2_integration_h"
-#  unit_prefix: k
-#  unit_time: h
-#- platform: integration
-#  source: sensor.power_strip_2_load_power
-#  name: "power_strip_2_integration_d"
-#  unit_prefix: k
-#  unit_time: d
-

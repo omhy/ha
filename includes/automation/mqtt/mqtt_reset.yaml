@@ -24,6 +24,15 @@
       payload: "-"
       retain: true
 
+- alias: "mqtt_power_reset_hour"
+  trigger:
+    - platform: time_pattern
+      hours: "/1"
+  action:
+    - service: script.mqtt_publish_zero
+      data_template:
+        topic: "power/computer/hour"
+
 - alias: "mqtt_power_reset_day"
   trigger:
   - platform: time

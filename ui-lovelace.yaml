@@ -400,11 +400,19 @@ views:
           - sensor.power_computer_week
           - sensor.power_computer_month
       - type: entities
-        title: Computer utility test
+        title: Computer new sensors test
+        show_header_toggle: false
         entities:
-          - sensor.power_strip_1_integral
+          - sensor.power_strip_1_load_power
+          - sensor.power_computer_hour
+          - sensor.power_computer_day
+          - sensor.power_computer_week
+          - sensor.power_computer_month
+          - sensor.power_strip_1_integral_h
+          - sensor.power_strip_1_integral_d
           - sensor.power_strip_1_utility_h
-          - sensor.power_strip_1_utility_d
+          - sensor.power_strip_1_utility_d_d
+          - sensor.power_strip_1_utility_d_h
       - type: glance
         title: TV
         show_header_toggle: true

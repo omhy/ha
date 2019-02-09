@@ -45,6 +45,11 @@
   action:
     - service: mqtt.publish
       data_template:
+        topic: "power/computer/hour"
+        payload: "{{(states.sensor.power_computer_hour.state | float + (states.sensor.power_strip_1_load_power.state | float /120000))|round(5)}}"
+        retain: true
+    - service: mqtt.publish
+      data_template:
         topic: "power/computer/day"
         payload: "{{(states.sensor.power_computer_day.state | float + (states.sensor.power_strip_1_load_power.state | float /120000))|round(5)}}"
         retain: true

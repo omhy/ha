@@ -25,8 +25,11 @@
   icon: mdi:format-color-fill
 "*transition*":
   icon: mdi:av-timer
+
 "*integral*":
   icon: mdi:function-variant
+"*utility*":
+  icon: mdi:sigma
 
 ### SPECIFIC
 "light.*":
@@ -94,6 +97,10 @@
   friendly_name: Current
   icon: mdi:power-socket-eu
   unit_of_measurement: "W"
+"sensor.power_*_hour":
+  friendly_name: Hour
+  icon: mdi:calendar-clock
+  unit_of_measurement: "kW"
 "sensor.power_*_day":
   friendly_name: Day
   icon: mdi:calendar-today

@@ -1,0 +1,10 @@
+- platform: integration
+  source: sensor.power_strip_1_load_power
+  name: "power_strip_1_integral_h"
+  unit_prefix: k
+  unit_time: h
+- platform: integration
+  source: sensor.power_strip_1_load_power
+  name: "power_strip_1_integral_d"
+  unit_prefix: k
+  unit_time: d
