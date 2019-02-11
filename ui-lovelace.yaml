@@ -408,11 +408,19 @@ views:
           - sensor.power_computer_day
           - sensor.power_computer_week
           - sensor.power_computer_month
-          - sensor.power_strip_1_integral_h
-          - sensor.power_strip_1_integral_d
           - sensor.power_strip_1_utility_h
-          - sensor.power_strip_1_utility_d_d
-          - sensor.power_strip_1_utility_d_h
+          - sensor.power_strip_1_utility_d
+          - sensor.power_strip_1_utility_w
+          - sensor.power_strip_1_utility_m
+      - type: entities
+        title: Integrals
+        show_header_toggle: false
+        entities:
+          - sensor.power_strip_1_integral
+          - sensor.power_strip_2_integral
+          - sensor.power_strip_3_integral
+          - sensor.power_strip_4_integral
+          - sensor.power_strip_5_integral
       - type: glance
         title: TV
         show_header_toggle: true
