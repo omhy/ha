@@ -99,3 +99,13 @@ include:
     - sensor.wt24_pressure
     - sensor.wt72_pressure
     - sensor.wt48_pressure
+    - sensor.power_strip_1_integral
+    - sensor.power_strip_2_integral
+    - sensor.power_strip_3_integral
+    - sensor.power_strip_4_integral
+    - sensor.power_strip_5_integral
+    - sensor.power_strip_1_utility_h
+    - sensor.power_strip_1_utility_d
+    - sensor.power_strip_1_utility_w
+    - sensor.power_strip_1_utility_m
+
