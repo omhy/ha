@@ -1182,11 +1182,26 @@ views:
     icon: mdi:bug
     cards:
       - type: history-graph
-        title: CPU/Mem/Disk 12h
+        hours_to_show: 12
+        entities:
+          - sensor.power_strip_1_load_power
+      - type: history-graph
         hours_to_show: 12
         entities:
           - sensor.power_strip_1_integral
+      - type: history-graph
+        hours_to_show: 12
+        entities:
           - sensor.power_strip_1_utility_h
+      - type: history-graph
+        hours_to_show: 12
+        entities:
           - sensor.power_strip_1_utility_d
+      - type: history-graph
+        hours_to_show: 12
+        entities:
           - sensor.power_strip_1_utility_w
+      - type: history-graph
+        hours_to_show: 12
+        entities:
           - sensor.power_strip_1_utility_m
