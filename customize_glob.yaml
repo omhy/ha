@@ -25,11 +25,8 @@
   icon: mdi:format-color-fill
 "*transition*":
   icon: mdi:av-timer
-
 "*integral*":
   icon: mdi:function-variant
-"*utility*":
-  icon: mdi:sigma
 
 ### SPECIFIC
 "light.*":
@@ -70,6 +67,8 @@
   icon: mdi:home-assistant
 
 ### SENSORS
+"sensor.*utility*":
+  icon: mdi:sigma
 "binary_sensor.motion_sensor*":
   friendly_name: motion
 "sensor.*_motions":
