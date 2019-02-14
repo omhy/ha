@@ -25,8 +25,6 @@
   icon: mdi:format-color-fill
 "*transition*":
   icon: mdi:av-timer
-"*integral*":
-  icon: mdi:function-variant
 
 ### SPECIFIC
 "light.*":
@@ -69,6 +67,8 @@
 ### SENSORS
 "sensor.*utility*":
   icon: mdi:sigma
+"sensor.*integral*":
+  icon: mdi:function-variant
 "binary_sensor.motion_sensor*":
   friendly_name: motion
 "sensor.*_motions":
