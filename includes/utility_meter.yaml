@@ -1,3 +1,4 @@
+#COMPUTER
 power_strip_1_utility_h:
   source: sensor.power_strip_1_integral
   cycle: hourly
@@ -10,6 +11,7 @@ power_strip_1_utility_w:
 power_strip_1_utility_m:
   source: sensor.power_strip_1_integral
   cycle: monthly
+#KITCHEN
 power_strip_2_utility_h:
   source: sensor.power_strip_2_integral
   cycle: hourly
@@ -22,6 +24,7 @@ power_strip_2_utility_w:
 power_strip_2_utility_m:
   source: sensor.power_strip_2_integral
   cycle: monthly
+#ROUTER
 power_strip_3_utility_h:
   source: sensor.power_strip_3_integral
   cycle: hourly
@@ -34,6 +37,7 @@ power_strip_3_utility_w:
 power_strip_3_utility_m:
   source: sensor.power_strip_3_integral
   cycle: monthly
+#TV
 power_strip_4_utility_h:
   source: sensor.power_strip_4_integral
   cycle: hourly
@@ -46,6 +50,7 @@ power_strip_4_utility_w:
 power_strip_4_utility_m:
   source: sensor.power_strip_4_integral
   cycle: monthly
+#FRIDGE
 power_strip_5_utility_h:
   source: sensor.power_strip_5_integral
   cycle: hourly
