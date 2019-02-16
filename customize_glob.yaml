@@ -65,8 +65,6 @@
   icon: mdi:home-assistant
 
 ### SENSORS
-"sensor.*utility*":
-  icon: mdi:sigma
 "sensor.*integral*":
   icon: mdi:function-variant
 "binary_sensor.motion_sensor*":
@@ -92,28 +90,25 @@
 "sensor.version_ha_*":
   icon: mdi:home-assistant
 
+"sensor.outside_temperature_*":
+  unit_of_measurement: "°C"
+
 "sensor.power_strip_*_load_power":
   friendly_name: Current
   icon: mdi:power-socket-eu
   unit_of_measurement: "W"
-"sensor.power_*_hour":
+"sensor.power_*_utility_h":
   friendly_name: Hour
   icon: mdi:calendar-clock
-  unit_of_measurement: "kW"
-"sensor.power_*_day":
+"sensor.power_*_utility_d":
   friendly_name: Day
   icon: mdi:calendar-today
-  unit_of_measurement: "kW"
-"sensor.power_*_week":
+"sensor.power_*_utility_w":
   friendly_name: Week
   icon: mdi:calendar-week
-  unit_of_measurement: "kW"
-"sensor.power_*_month":
+"sensor.power_*_utility_m":
   friendly_name: Month
   icon: mdi:calendar-text
-  unit_of_measurement: "kW"
-"sensor.outside_temperature_*":
-  unit_of_measurement: "°C"
 
 "sensor.computer*":
   icon: mdi:desktop-classic

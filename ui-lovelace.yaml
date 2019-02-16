@@ -9,9 +9,9 @@ resources:
     type: js
   - url: /local/custom-lovelace/custom-weather-card-chart.js?v=0.2.4
     type: module
-  - url: /local/custom-lovelace/card-tools.js?v=297fcc
+  - url: /local/custom-lovelace/card-tools.js?v=97d985
     type: js
-  - url: /local/custom-lovelace/auto-entities.js?v=1d85a8
+  - url: /local/custom-lovelace/auto-entities.js?v=f9a58c
     type: js
 
 title: Home
@@ -396,64 +396,46 @@ views:
         title: Computer
         entities:
           - sensor.power_strip_1_load_power
-          - sensor.power_computer_day
-          - sensor.power_computer_week
-          - sensor.power_computer_month
-      - type: entities
-        title: Computer new sensors test
-        show_header_toggle: false
-        entities:
-          - sensor.power_strip_1_load_power
-          - sensor.power_computer_hour
-          - sensor.power_computer_day
-          - sensor.power_computer_week
-          - sensor.power_computer_month
           - sensor.power_strip_1_utility_h
           - sensor.power_strip_1_utility_d
           - sensor.power_strip_1_utility_w
           - sensor.power_strip_1_utility_m
-      - type: entities
-        title: Integrals
-        show_header_toggle: false
-        entities:
-          - sensor.power_strip_1_integral
-          - sensor.power_strip_2_integral
-          - sensor.power_strip_3_integral
-          - sensor.power_strip_4_integral
-          - sensor.power_strip_5_integral
       - type: glance
         title: TV
         show_header_toggle: true
         entities:
           - sensor.power_strip_4_load_power
-          - sensor.power_tv_day
-          - sensor.power_tv_week
-          - sensor.power_tv_month
+          - sensor.power_strip_4_utility_h
+          - sensor.power_strip_4_utility_d
+          - sensor.power_strip_4_utility_w
+          - sensor.power_strip_4_utility_m
       - type: glance
         title: Router
         show_header_toggle: true
         entities:
           - sensor.power_strip_3_load_power
-          - sensor.power_router_day
-          - sensor.power_router_week
-          - sensor.power_router_month
+          - sensor.power_strip_3_utility_h
+          - sensor.power_strip_3_utility_d
+          - sensor.power_strip_3_utility_w
+          - sensor.power_strip_3_utility_m
       - type: glance
         title: Kitchen
         show_header_toggle: true
         entities:
           - sensor.power_strip_2_load_power
-          - sensor.power_kitchen_day
-          - sensor.power_kitchen_week
-          - sensor.power_kitchen_month
+          - sensor.power_strip_2_utility_h
+          - sensor.power_strip_2_utility_d
+          - sensor.power_strip_2_utility_w
+          - sensor.power_strip_2_utility_m
       - type: glance
         title: Fridge
         show_header_toggle: true
         entities:
           - sensor.power_strip_5_load_power
-          - sensor.power_fridge_day
-          - sensor.power_fridge_week
-          - sensor.power_fridge_month
-
+          - sensor.power_strip_5_utility_h
+          - sensor.power_strip_5_utility_d
+          - sensor.power_strip_5_utility_w
+          - sensor.power_strip_5_utility_m
       - type: glance
         title: Power cords
         show_header_toggle: false
@@ -1185,7 +1167,6 @@ views:
         entities:
           - sensor.power_strip_1_load_power
       - type: history-graph
-        hours_to_show: 12
         entities:
           - sensor.power_strip_1_integral
       - type: history-graph
@@ -1200,3 +1181,6 @@ views:
       - type: history-graph
         entities:
           - sensor.power_strip_1_utility_m
+      - type: history-graph
+        entities:
+          - sensor.outside_temp_integral

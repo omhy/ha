@@ -50,7 +50,7 @@ custom_updater:
     - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
     - https://raw.githubusercontent.com/kuuji/button-card/master/tracker.json
     - https://raw.githubusercontent.com/sgttrs/lovelace-weather-card-chart/master/custom-updater.json
-circadian_lighting:
+#circadian_lighting:
 
 recorder: !include includes/recorder.yaml
 history:

@@ -51,11 +51,11 @@ tts_consumption:
       data_template:
         message: >
           Потребление в киловаттах за сегодня.
-          Компьютер - {{ states.sensor.power_computer_day.state | round(2) }}.
-          Рутер - {{ states.sensor.power_router_day.state | round(2) }}.
-          Телевизор - {{ states.sensor.power_tv_day.state | round(2) }}.
-          Кухня - {{ states.sensor.power_kitchen_day.state | round(2) }}.
-          Холодильник - {{ states.sensor.power_fridge_day.state | round(2) }}.
+          Компьютер - {{ states.sensor.power_strip_1_utility_d.state | round(2) }}.
+          Рутер - {{ states.sensor.power_strip_3_utility_d.state | round(2) }}.
+          Телевизор - {{ states.sensor.power_strip_4_utility_d.state | round(2) }}.
+          Кухня - {{ states.sensor.power_strip_2_utility_d.state | round(2) }}.
+          Холодильник - {{ states.sensor.power_strip_5_utility_d.state | round(2) }}.
 
 tts_say_kitchen:
   sequence:

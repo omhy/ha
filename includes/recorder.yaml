@@ -108,4 +108,4 @@ include:
     - sensor.power_strip_1_utility_d
     - sensor.power_strip_1_utility_w
     - sensor.power_strip_1_utility_m
-
+    - sensor.outside_temp_integral
