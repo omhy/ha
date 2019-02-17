@@ -28,9 +28,3 @@
   unit_prefix: k
   unit_time: h
   round: 4
-
-- platform: integration
-  source: sensor.temperature_158d00022c7cf2
-  name: "outside_temp_integral"
-  round: 4
-  

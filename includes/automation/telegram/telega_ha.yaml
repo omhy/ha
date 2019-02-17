@@ -1,41 +1,49 @@
 - alias: "ha_start"
   trigger:
-  - platform: homeassistant
-    event: start
+    - platform: homeassistant
+      event: start
   action:
-  - service: telegram_bot.send_message
-    data_template:
-      target: !secret tg_chat_dima
-      message: "{{ now().strftime('%H:%M') }} \U0001F916 {{ states.sensor.version_ha_current.state }} HA back online!"
-      inline_keyboard:
-      - "\U0001F532 Menu:/menu, \U0000267B Dismiss:/dismiss"
+    - service: telegram_bot.send_message
+      data_template:
+        target: !secret tg_chat_dima
+        message: "{{ now().strftime('%H:%M') }} \U0001F916 {{ states.sensor.version_ha_current.state }} #HA back online ({{ ((now() - strptime(states.input_text.ha_state_change.state, '%Y%m%d%H%M%S').astimezone()).seconds /60) | round(2)}} min)"
+        inline_keyboard:
+        - "\U0001F532 Menu:/menu, \U0000267B Dismiss:/dismiss"
+    - service: input_text.set_value
+      data_template:
+        entity_id: input_text.ha_state_change
+        value: "{{ now().strftime('%Y%m%d%H%M%S') }}"
 
 - alias: "ha_shutdown"
   trigger:
-  - platform: homeassistant
-    event: shutdown
+    - platform: homeassistant
+      event: shutdown
   action:
-  - service: telegram_bot.send_message
-    data_template:
-      target: !secret tg_chat_dima
-      message: "{{ now().strftime('%H:%M') }} \U0001F6D1 {{ states.sensor.version_ha_current.state }} HA goes offline!"
-      inline_keyboard:
-      - "\U0000267B Dismiss:/dismiss"
+    - service: telegram_bot.send_message
+      data_template:
+        target: !secret tg_chat_dima
+        message: "{{ now().strftime('%H:%M') }} \U0001F6D1 {{ states.sensor.version_ha_current.state }} #HA goes offline ({{ ((now() - strptime(states.input_text.ha_state_change.state, '%Y%m%d%H%M%S').astimezone()).seconds /60) | round(0)}} min)"
+        inline_keyboard:
+          - "\U0000267B Dismiss:/dismiss"
+    - service: input_text.set_value
+      data_template:
+        entity_id: input_text.ha_state_change
+        value: "{{ now().strftime('%Y%m%d%H%M%S') }}"
 
 - alias: "ha_bad_login"
   trigger:
-  - platform: state
-    entity_id: persistent_notification.httplogin
+    - platform: state
+      entity_id: persistent_notification.httplogin
   condition:
-  - condition: template
-    value_template: "{{ trigger.to_state.state == 'notifying' }}"
+    - condition: template
+      value_template: "{{ trigger.to_state.state == 'notifying' }}"
   action:
-  - service: telegram_bot.send_message
-    data_template:
-      target: !secret tg_chat_dima
-      message: "{{ now().strftime('%H:%M') }} \U00002620 {{ states.persistent_notification.httplogin.attributes.message }}"
-      inline_keyboard:
-      - "\U0000267B Dismiss:/dismiss"
-  - service: persistent_notification.dismiss
-    data:
-      notification_id: "httplogin"
+    - service: telegram_bot.send_message
+      data_template:
+        target: !secret tg_chat_dima
+        message: "{{ now().strftime('%H:%M') }} \U00002620 {{ states.persistent_notification.httplogin.attributes.message }}"
+        inline_keyboard:
+        - "\U0000267B Dismiss:/dismiss"
+    - service: persistent_notification.dismiss
+      data:
+        notification_id: "httplogin"

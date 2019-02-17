@@ -1,17 +1,17 @@
 resources:
-  - url: /local/custom-lovelace/monster-card.js?v=0.2.3
+  - url: /customcards/custom-lovelace/monster-card.js
     type: js
-  - url: /local/custom-lovelace/mini-media-player-bundle.js?v=1.0.1
+  - url: /customcards/custom-lovelace/mini-media-player-bundle.js
     type: module
-  - url: /local/custom-lovelace/mini-graph-card-bundle.js?v=0.2.4
+  - url: /customcards/custom-lovelace/mini-graph-card-bundle.js
     type: module
-  - url: /local/custom-lovelace/tracker-card.js?v=0.3.2
+  - url: /customcards/custom-lovelace/tracker-card.js
     type: js
-  - url: /local/custom-lovelace/custom-weather-card-chart.js?v=0.2.4
+  - url: /customcards/custom-lovelace/custom-weather-card-chart.js
     type: module
-  - url: /local/custom-lovelace/card-tools.js?v=297fcc
+  - url: /customcards/custom-lovelace/card-tools.js
     type: js
-  - url: /local/custom-lovelace/auto-entities.js?v=1d85a8
+  - url: /customcards/custom-lovelace/auto-entities.js
     type: js
 
 title: Home
@@ -396,64 +396,46 @@ views:
         title: Computer
         entities:
           - sensor.power_strip_1_load_power
-          - sensor.power_computer_day
-          - sensor.power_computer_week
-          - sensor.power_computer_month
-      - type: entities
-        title: Computer new sensors test
-        show_header_toggle: false
-        entities:
-          - sensor.power_strip_1_load_power
-          - sensor.power_computer_hour
-          - sensor.power_computer_day
-          - sensor.power_computer_week
-          - sensor.power_computer_month
           - sensor.power_strip_1_utility_h
           - sensor.power_strip_1_utility_d
           - sensor.power_strip_1_utility_w
           - sensor.power_strip_1_utility_m
-      - type: entities
-        title: Integrals
-        show_header_toggle: false
-        entities:
-          - sensor.power_strip_1_integral
-          - sensor.power_strip_2_integral
-          - sensor.power_strip_3_integral
-          - sensor.power_strip_4_integral
-          - sensor.power_strip_5_integral
       - type: glance
         title: TV
         show_header_toggle: true
         entities:
           - sensor.power_strip_4_load_power
-          - sensor.power_tv_day
-          - sensor.power_tv_week
-          - sensor.power_tv_month
+          - sensor.power_strip_4_utility_h
+          - sensor.power_strip_4_utility_d
+          - sensor.power_strip_4_utility_w
+          - sensor.power_strip_4_utility_m
       - type: glance
         title: Router
         show_header_toggle: true
         entities:
           - sensor.power_strip_3_load_power
-          - sensor.power_router_day
-          - sensor.power_router_week
-          - sensor.power_router_month
+          - sensor.power_strip_3_utility_h
+          - sensor.power_strip_3_utility_d
+          - sensor.power_strip_3_utility_w
+          - sensor.power_strip_3_utility_m
       - type: glance
         title: Kitchen
         show_header_toggle: true
         entities:
           - sensor.power_strip_2_load_power
-          - sensor.power_kitchen_day
-          - sensor.power_kitchen_week
-          - sensor.power_kitchen_month
+          - sensor.power_strip_2_utility_h
+          - sensor.power_strip_2_utility_d
+          - sensor.power_strip_2_utility_w
+          - sensor.power_strip_2_utility_m
       - type: glance
         title: Fridge
         show_header_toggle: true
         entities:
           - sensor.power_strip_5_load_power
-          - sensor.power_fridge_day
-          - sensor.power_fridge_week
-          - sensor.power_fridge_month
-
+          - sensor.power_strip_5_utility_h
+          - sensor.power_strip_5_utility_d
+          - sensor.power_strip_5_utility_w
+          - sensor.power_strip_5_utility_m
       - type: glance
         title: Power cords
         show_header_toggle: false
@@ -1016,6 +998,10 @@ views:
             url: http://192.168.1.10:3210
             icon: mdi:shield
           - type: weblink
+            name: Glances
+            url: http://192.168.1.10:61208
+            icon: mdi:magnify-plus
+          - type: weblink
             name: Github repo
             url: https://github.com/omhy/ha
             icon: mdi:github-circle
@@ -1176,27 +1162,3 @@ views:
         trackers:
           - sensor.custom_card_tracker
           - sensor.custom_component_tracker
-##################   DEBUG
-  - title: Debug
-    path: debug
-    icon: mdi:bug
-    cards:
-      - type: history-graph
-        entities:
-          - sensor.power_strip_1_load_power
-      - type: history-graph
-        hours_to_show: 12
-        entities:
-          - sensor.power_strip_1_integral
-      - type: history-graph
-        entities:
-          - sensor.power_strip_1_utility_h
-      - type: history-graph
-        entities:
-          - sensor.power_strip_1_utility_d
-      - type: history-graph
-        entities:
-          - sensor.power_strip_1_utility_w
-      - type: history-graph
-        entities:
-          - sensor.power_strip_1_utility_m

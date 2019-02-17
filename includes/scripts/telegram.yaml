@@ -3,7 +3,7 @@ telegram_send_outside:
     - service: telegram_bot.send_message
       data_template:
         target: "{{target}}"
-        title: "Temperatures {{ now().strftime('%Y-%m-%d') }}"
+        title: "#Temperatures {{ now().strftime('%Y-%m-%d') }}"
         message: >
           {% set frm1 = "%7s @ %5s" %}
           {% set frm2 = "%7s" %}
@@ -46,21 +46,21 @@ telegram_send_electro:
     - service: telegram_bot.send_message
       data_template:
         target: "{{target}}"
-        title: "Consumption {{ now().strftime('%Y-%m-%d') }} - {{ (states.sensor.power_computer_day.state | float + states.sensor.power_tv_day.state | float + states.sensor.power_router_day.state | float + states.sensor.power_kitchen_day.state | float + states.sensor.power_fridge_day.state | float) | round(2) }} kW"
+        title: "#Consumption {{ now().strftime('%Y-%m-%d') }} - {{ (states.sensor.power_strip_1_utility_d.state | float + states.sensor.power_strip_2_utility_d.state | float + states.sensor.power_strip_3_utility_d.state | float + states.sensor.power_strip_4_utility_d.state | float + states.sensor.power_strip_5_utility_d.state | float) | round(2) }} kW"
         message: >
           {% set frm = "%-5s| %-6s| %-5s" %}
 
           {{ '\U0001F50C' }}` kW  {{ frm | format("day", "month", "curr") }}`
 
-          {{ '\U0001F5A5' }}` cmp {{ frm | format(states.sensor.power_computer_day.state | round(2), states.sensor.power_computer_month.state | round(2), states.sensor.power_strip_1_load_power.state | round(2)) }}`
+          {{ '\U0001F5A5' }}` cmp {{ frm | format(states.sensor.power_strip_1_utility_d.state | round(2), states.sensor.power_strip_1_utility_m.state | round(2), states.sensor.power_strip_1_load_power.state | round(2)) }}`
 
-          {{ '\U0001F4FA' }}` tv  {{ frm | format(states.sensor.power_tv_day.state | round(2), states.sensor.power_tv_month.state | round(2), states.sensor.power_strip_4_load_power.state | round(2)) }}`
+          {{ '\U0001F4FA' }}` tv  {{ frm | format(states.sensor.power_strip_4_utility_d.state | round(2), states.sensor.power_strip_4_utility_m.state | round(2), states.sensor.power_strip_4_load_power.state | round(2)) }}`
 
-          {{ '\U0001F6E1' }}` ntw {{ frm | format(states.sensor.power_router_day.state | round(2), states.sensor.power_router_month.state | round(2), states.sensor.power_strip_3_load_power.state | round(2)) }}`
+          {{ '\U0001F6E1' }}` ntw {{ frm | format(states.sensor.power_strip_3_utility_d.state | round(2), states.sensor.power_strip_3_utility_m.state | round(2), states.sensor.power_strip_3_load_power.state | round(2)) }}`
 
-          {{ '\U0001F37D' }}` ktc {{ frm | format(states.sensor.power_kitchen_day.state | round(2), states.sensor.power_kitchen_month.state | round(2), states.sensor.power_strip_2_load_power.state | round(2)) }}`
+          {{ '\U0001F37D' }}` ktc {{ frm | format(states.sensor.power_strip_2_utility_d.state | round(2), states.sensor.power_strip_2_utility_m.state | round(2), states.sensor.power_strip_2_load_power.state | round(2)) }}`
 
-          {{ '\U0001F969' }}` frg {{ frm | format(states.sensor.power_fridge_day.state | round(2), states.sensor.power_fridge_month.state | round(2), states.sensor.power_strip_5_load_power.state | round(2)) }}`
+          {{ '\U0001F969' }}` frg {{ frm | format(states.sensor.power_strip_5_utility_d.state | round(2), states.sensor.power_strip_5_utility_m.state | round(2), states.sensor.power_strip_5_load_power.state | round(2)) }}`
         inline_keyboard:
         - "\U0001F504 Refresh:/electro, \U0000267B Dismiss:/dismiss"
 

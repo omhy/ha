@@ -3,3 +3,5 @@ radio_cast:
   initial: ""
 door_state_change:
   name: door_state_change
+ha_state_change:
+  name: ha_state_change

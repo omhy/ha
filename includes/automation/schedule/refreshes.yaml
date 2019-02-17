@@ -24,21 +24,21 @@
             500
           {% endif %}
 
-- alias: "schedule_circadian_on"
-  trigger:
-    - platform: time
-      at: "16:00:00"
-  action:
-    - service: switch.turn_on
-      entity_id: switch.circadian_lighting_circadian_lighting
-
-- alias: "schedule_circadian_off"
-  trigger:
-    - platform: time
-      at: "00:05:00"
-  action:
-    - service: switch.turn_off
-      entity_id: switch.circadian_lighting_circadian_lighting
+#- alias: "schedule_circadian_on"
+#  trigger:
+#    - platform: time
+#      at: "16:00:00"
+#  action:
+#    - service: switch.turn_on
+#      entity_id: switch.circadian_lighting_circadian_lighting
+#
+#- alias: "schedule_circadian_off"
+#  trigger:
+#    - platform: time
+#      at: "00:05:00"
+#  action:
+#    - service: switch.turn_off
+#      entity_id: switch.circadian_lighting_circadian_lighting
 
 - alias: "schedule_backups_to_dropbox"
   trigger:
