@@ -1,17 +1,17 @@
 resources:
-  - url: /local/custom-lovelace/monster-card.js?v=0.2.3
+  - url: /customcards/custom-lovelace/monster-card.js
     type: js
-  - url: /local/custom-lovelace/mini-media-player-bundle.js?v=1.0.1
+  - url: /customcards/custom-lovelace/mini-media-player-bundle.js
     type: module
-  - url: /local/custom-lovelace/mini-graph-card-bundle.js?v=0.2.4
+  - url: /customcards/custom-lovelace/mini-graph-card-bundle.js
     type: module
-  - url: /local/custom-lovelace/tracker-card.js?v=0.3.2
+  - url: /customcards/custom-lovelace/tracker-card.js
     type: js
-  - url: /local/custom-lovelace/custom-weather-card-chart.js?v=0.2.4
+  - url: /customcards/custom-lovelace/custom-weather-card-chart.js
     type: module
-  - url: /local/custom-lovelace/card-tools.js?v=97d985
+  - url: /customcards/custom-lovelace/card-tools.js
     type: js
-  - url: /local/custom-lovelace/auto-entities.js?v=f9a58c
+  - url: /customcards/custom-lovelace/auto-entities.js
     type: js
 
 title: Home
@@ -997,6 +997,10 @@ views:
             name: Adguard
             url: http://192.168.1.10:3210
             icon: mdi:shield
+          - type: weblink
+            name: Glances
+            url: http://192.168.1.10:61208
+            icon: mdi:magnify-plus
           - type: weblink
             name: Github repo
             url: https://github.com/omhy/ha

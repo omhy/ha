@@ -16,7 +16,6 @@ homeassistant:
 map:
 sun:
 #discovery:
-hassio:
 config:
 system_health:
 frontend:
@@ -137,3 +136,5 @@ automation: !include_dir_merge_list includes/automation
 
 script: !include_dir_merge_named includes/scripts
 #history_graph: !include_dir_merge_named includes/historygraph
+
+hassio:
