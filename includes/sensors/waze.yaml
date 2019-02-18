@@ -1,14 +1,14 @@
-#- platform: waze_travel_time
-#  name: "waze_home_work"
-#  origin: zone.home
-#  destination: zone.work
-#  region: "EU"
-#
-#- platform: waze_travel_time
-#  name: "waze_work_home"
-#  origin: zone.work
-#  destination: zone.home
-#  region: "EU"
+- platform: waze_travel_time
+  name: "waze_home_work"
+  origin: zone.home
+  destination: zone.work
+  region: "EU"
+
+- platform: waze_travel_time
+  name: "waze_work_home"
+  origin: zone.work
+  destination: zone.home
+  region: "EU"
 
 #- platform: waze_travel_time
 #  name: "waze_current_home"
