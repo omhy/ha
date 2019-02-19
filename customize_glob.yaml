@@ -1,6 +1,8 @@
 ### COMMON
 "*telegram*":
   icon: mdi:telegram
+"*dropbox*":
+  icon: mdi:dropbox
 "*door*":
   icon: mdi:door
 "*doorbell*":
