@@ -45,7 +45,4 @@
     - platform: time
       at: "00:05:00"
   action:
-    - service: hassio.addon_stdin
-      data:
-        addon: "7be23ff5_dropbox_sync"
-        input: {"command":"upload"}
+    - service: script.upload_to_dropbox
