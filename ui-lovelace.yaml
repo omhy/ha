@@ -5,7 +5,7 @@ resources:
     type: module
   - url: /customcards/custom-lovelace/mini-graph-card-bundle.js
     type: module
-  - url: /customcards/custom-lovelace/tracker-card.js?track=true
+  - url: /customcards/custom-lovelace/tracker-card.js
     type: module
   - url: /customcards/custom-lovelace/custom-weather-card-chart.js
     type: module
@@ -80,8 +80,7 @@ views:
             tap_action:
               action: toggle
 
-#      - type: custom:monster-card
-      - type: custom:monster-card
+      - type: custom:auto-entities
         card:
           type: entities
           title: Lights on
@@ -92,7 +91,7 @@ views:
           exclude:
             - entity_id: light.group_*
 
-      - type: custom:monster-card
+      - type: custom:auto-entities
         card:
           type: entities
           title: Playing now
@@ -565,42 +564,42 @@ views:
     path: automations
     icon: mdi:creation
     cards:
-      - type: custom:monster-card
+      - type: custom:auto-entities
         card:
           type: entities
           title: Automations (working days)
         filter:
           include:
             - entity_id: automation.working_day*
-      - type: custom:monster-card
+      - type: custom:auto-entities
         card:
           type: entities
           title: Automations (zones)
         filter:
           include:
             - entity_id: automation.zone*
-      - type: custom:monster-card
+      - type: custom:auto-entities
         card:
           type: entities
           title: Automations (cube)
         filter:
           include:
             - entity_id: automation.cube*
-      - type: custom:monster-card
+      - type: custom:auto-entities
         card:
           type: entities
           title: Automations (mqtt)
         filter:
           include:
             - entity_id: automation.mqtt*
-      - type: custom:monster-card
+      - type: custom:auto-entities
         card:
           type: entities
           title: Automations (HA)
         filter:
           include:
             - entity_id: automation.ha*
-      - type: custom:monster-card
+      - type: custom:auto-entities
         card:
           type: entities
           title: Automations (light)
@@ -608,7 +607,7 @@ views:
           include:
             - entity_id: automation.light*
       - id: 719982889e7844e7bd80eb83a0d43397  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: entities
           title: Automations (motion)
@@ -616,7 +615,7 @@ views:
           include:
             - entity_id: automation.motion*
       - id: 7a7cb0e209284105b2626d34f4315df3  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: entities
           title: Automations (doorbell)
@@ -625,7 +624,7 @@ views:
             - entity_id: automation.doorbell*
 
       - id: 7ad2736325ea402a977e38e5089121a7  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: entities
           title: Automations (entrance door)
@@ -634,7 +633,7 @@ views:
             - entity_id: automation.entrance_door*
 
       - id: eb07324dd204478bbd1152e76a1d0700  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: entities
           title: Automations (scheduled)
@@ -643,7 +642,7 @@ views:
             - entity_id: automation.schedule*
 
       - id: 269fb5e44cbf4aeeae99a25d0f051490  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: entities
           title: Automations (states)
@@ -652,7 +651,7 @@ views:
             - entity_id: automation.state*
 
       - id: f5f8f23255864305aaf6a0e2c87f3ade  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: entities
           title: Automations (alert)
@@ -661,7 +660,7 @@ views:
             - entity_id: automation.alert*
 
       - id: eb3a8fa294ef49faaf643187bfbc5fc9  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: entities
           title: Automations (other)
@@ -688,7 +687,7 @@ views:
     icon: mdi:script
     cards:
       - id: 4a6c257921dc4828be78f29d2fb24511  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: entities
           title: Scripts (HA)
@@ -697,7 +696,7 @@ views:
             - entity_id: script.ha*
 
       - id: 0344a4e147be4cf8b67691f6fab11401  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: entities
           title: Scripts (aqara)
@@ -706,7 +705,7 @@ views:
             - entity_id: script.aqara*
 
       - id: 7afa9e5b5dd94d908cdeb2ed0cc02acb  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: entities
           title: Scripts (remote)
@@ -714,7 +713,7 @@ views:
           include:
             - entity_id: script.rmt*
       - id: 04e787fb64624ba080ffec7f0699182c  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: entities
           title: Scripts (light)
@@ -723,7 +722,7 @@ views:
             - entity_id: script.light*
 
       - id: 26995327405141a19e3d6c15a9e86c71  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: entities
           title: Scripts (cameras)
@@ -732,7 +731,7 @@ views:
             - entity_id: script.cam*
 
       - id: 086c0481d1ac402982db146b3911a1bb  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: entities
           title: Scripts (TTS)
@@ -741,7 +740,7 @@ views:
             - entity_id: script.tts*
 
       - id: 7105eb6f65d5404f9ed6591bd27996e6  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: entities
           title: Scripts (telegram)
@@ -750,7 +749,7 @@ views:
             - entity_id: script.telegram*
 
       - id: abfdecfa2af14afeaa1e57c2f33dbb42  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: entities
           title: Scripts (other)
@@ -772,7 +771,7 @@ views:
     icon: mdi:elephant
     cards:
       - id: c6560f5249644e56ab9ba3f3c39b0530  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: glance
           title: Binary Sensors
@@ -781,7 +780,7 @@ views:
             - domain: binary_sensor
 
       - id: aac21d7a46ef4bb8a995e5cf660239e9  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: glance
           title: Lights
@@ -790,7 +789,7 @@ views:
             - domain: light
 
       - id: 8e88b55e97ff46b7b2b1420ed3353076  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: glance
           title: Inputs
@@ -801,7 +800,7 @@ views:
             - domain: input_text
 
       - id: c058cf62c3304499b6b0191fd2baf4a9  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: glance
           title: Input numbers (hue)
@@ -810,7 +809,7 @@ views:
             - entity_id: input_number.*hue*
 
       - id: 9cb63f1e7ab641d9bb02ca4c8edd53f1  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: glance
           title: Input numbers (brightness)
@@ -819,7 +818,7 @@ views:
             - entity_id: input_number.*brightness*
 
       - id: 14ea510ae0654df4944d32f6f0f96e40  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: glance
           title: Input numbers (transition)
@@ -827,17 +826,8 @@ views:
           include:
             - entity_id: input_number.*transition*
 
-      - id: f0001bc3c1f04af0be8bb095a4724d6b  # Automatically created id
-        type: custom:monster-card
-        card:
-          type: glance
-          title: Input numbers (mired)
-        filter:
-          include:
-            - entity_id: input_number.*mired*
-
       - id: f9e4f343f04e4d7dadfbbe678473e4ca  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: glance
           title: Input numbers (other)
@@ -848,11 +838,9 @@ views:
             - entity_id: input_number.*hue*
             - entity_id: input_number.*brightness*
             - entity_id: input_number.*transition*
-            - entity_id: input_number.*mired*
-
 
       - id: 3ec040dd793d48df8af27267cc77ecd1  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: glance
           title: TTS
@@ -861,7 +849,7 @@ views:
             - entity_id: "*tts*"
 
       - id: c5a6a19da9a34d0a964ae6c90243e92c  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: glance
           title: Switches
@@ -870,7 +858,7 @@ views:
             - domain: switch
 
       - id: c5a6a19da9a34d0a964ae6c90243e920  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: entities
           title: Scenes
@@ -880,7 +868,7 @@ views:
 
 
       - id: 5d1141aa2c194c7884b586c354b2ec9c  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: glance
           title: Sensor (temperature)
@@ -891,7 +879,7 @@ views:
             - entity_id: sensor.wt*
 
       - id: d1f9c1326b934a309a7df66bc12b288e  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: glance
           title: Sensor (humidity)
@@ -902,7 +890,7 @@ views:
             - entity_id: sensor.wt*
 
       - id: 3149222c49194397ad935e501eb9146f  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: glance
           title: Sensor (pressure)
@@ -913,7 +901,7 @@ views:
             - entity_id: sensor.wt*
 
       - id: b8b866a9b6d74920a65b9bcde76c5c07  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: glance
           title: Sensor (motions)
@@ -922,7 +910,7 @@ views:
             - entity_id: sensor.*motion*
 
       - id: 6f868580859d4a6d97b7aa6177144aec  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: glance
           title: Sensor (illumination)
@@ -931,7 +919,7 @@ views:
             - entity_id: sensor.*illumination*
 
       - id: 0156837a4eaf4bddad7da67f53cb6403  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: glance
           title: Sensor (power)
@@ -940,7 +928,7 @@ views:
             - entity_id: sensor.*power*
 
       - id: fd545a41a09f49d1ab576b4c1fea9fba  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: glance
           title: Sensor (skin)
@@ -949,7 +937,7 @@ views:
             - entity_id: sensor.*skin*
 
       - id: a7565538c9af45f197c544136fa7cd01  # Automatically created id
-        type: custom:monster-card
+        type: custom:auto-entities
         card:
           type: glance
           title: Sensor (other)
@@ -1116,7 +1104,7 @@ views:
           - input_boolean.zigbee_permit_join
           - timer.zigbee_permit_join
 
-      - type: custom:monster-card
+      - type: custom:auto-entities
         show_empty: false
         card:
           type: entities
