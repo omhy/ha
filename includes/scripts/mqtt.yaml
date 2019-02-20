@@ -5,3 +5,11 @@ mqtt_publish_zero:
         topic: "{{ topic }}"
         payload: '{{ 0 }}'
         retain: true
+
+mqtt_publish_retain:
+  sequence:
+    - service: mqtt.publish
+      data_template:
+        topic: "{{ topic }}"
+        payload: '{{ payload }}'
+        retain: true
