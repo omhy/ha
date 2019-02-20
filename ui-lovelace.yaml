@@ -5,8 +5,8 @@ resources:
     type: module
   - url: /customcards/custom-lovelace/mini-graph-card-bundle.js
     type: module
-  - url: /customcards/custom-lovelace/tracker-card.js
-    type: js
+  - url: /customcards/custom-lovelace/tracker-card.js?track=true
+    type: module
   - url: /customcards/custom-lovelace/custom-weather-card-chart.js
     type: module
   - url: /customcards/custom-lovelace/card-tools.js
