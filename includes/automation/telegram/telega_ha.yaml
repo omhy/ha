@@ -13,6 +13,10 @@
       data_template:
         entity_id: input_text.ha_state_change
         value: "{{ now().strftime('%Y%m%d%H%M%S') }}"
+    - service: script.mqtt_publish_retain
+      data_template:
+        topic: "ha_state_change"
+        payload: "{{ now().strftime('%Y%m%d%H%M%S') }}"
 
 - alias: "ha_shutdown"
   trigger:
@@ -29,6 +33,10 @@
       data_template:
         entity_id: input_text.ha_state_change
         value: "{{ now().strftime('%Y%m%d%H%M%S') }}"
+    - service: script.mqtt_publish_retain
+      data_template:
+        topic: "ha_state_change"
+        payload: "{{ now().strftime('%Y%m%d%H%M%S') }}"
 
 - alias: "ha_bad_login"
   trigger:

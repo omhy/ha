@@ -9,30 +9,6 @@ ha_set_defaults:
       data_template:
         value: 10
     - service: input_number.set_value
-      entity_id: input_number.livingroom_torch_brightness
-      data_template:
-        value: 200
-    - service: input_number.set_value
-      entity_id: input_number.livingroom_torch_mired
-      data_template:
-        value: 420
-    - service: input_number.set_value
-      entity_id: input_number.livingroom_corner_brightness
-      data_template:
-        value: 100
-    - service: input_number.set_value
-      entity_id: input_number.livingroom_corner_mired
-      data_template:
-        value: 500
-    - service: input_number.set_value
-      entity_id: input_number.small_torch_brightness
-      data_template:
-        value: 100
-    - service: input_number.set_value
-      entity_id: input_number.small_torch_mired
-      data_template:
-        value: 500
-    - service: input_number.set_value
       entity_id: input_number.flow_transition
       data_template:
         value: 3
@@ -53,7 +29,6 @@ aqara_stop_ringtone:
         gw_mac: !secret gw_mac
 
 ### MISC
-
 rmt_computer_sleep:
   sequence:
     - service: shell_command.sleep_computer
@@ -63,25 +38,32 @@ rmt_laptop_sleep:
 
 aqara_add_device:
   sequence:
-  - service: xiaomi_aqara.add_device
-    data_template:
-      gw_mac: !secret gw_mac
+    - service: xiaomi_aqara.add_device
+      data_template:
+        gw_mac: !secret gw_mac
 
 alarm_door:
   sequence:
-  - service: xiaomi_aqara.play_ringtone
-    data_template:
-      gw_mac: !secret gw_mac
-      ringtone_id: "8"
-      ringtone_vol: "10"
-  - service: notify.telegram_all
-    data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F6A8 Door opened for a while"
+    - service: xiaomi_aqara.play_ringtone
+      data_template:
+        gw_mac: !secret gw_mac
+        ringtone_id: "8"
+        ringtone_vol: "10"
+    - service: notify.telegram_all
+      data_template:
+        message: "{{ now().strftime('%H:%M') }} \U0001F6A8 Door opened for a while"
 
 remove_file:
   sequence:
-  - service: shell_command.remove_file
-    data:
-      rtsp: !secret cam1_rtsp
-      filename: "/share/cam1.mp4"
-      duration: "10"
+    - service: shell_command.remove_file
+      data:
+        rtsp: !secret cam1_rtsp
+        filename: "/share/cam1.mp4"
+        duration: "10"
+
+upload_to_dropbox:
+  sequence:
+    - service: hassio.addon_stdin
+      data:
+        addon: "7be23ff5_dropbox_sync"
+        input: {"command":"upload"}
