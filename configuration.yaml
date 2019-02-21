@@ -15,9 +15,11 @@ homeassistant:
 
 map:
 sun:
-#discovery:
 config:
 system_health:
+person:
+default_config:
+
 frontend:
   themes: !include_dir_merge_named includes/themes
   javascript_version: latest
