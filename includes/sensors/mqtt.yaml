@@ -48,3 +48,7 @@
   name: Bridge state
   state_topic: "zigbee2mqtt/bridge/state"
   icon: mdi:router-wireless
+
+- platform: mqtt
+  state_topic: "ha_state_change"
+  name: "ha_state_change"

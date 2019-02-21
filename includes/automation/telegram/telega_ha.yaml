@@ -6,17 +6,10 @@
     - service: telegram_bot.send_message
       data_template:
         target: !secret tg_chat_dima
-        message: "{{ now().strftime('%H:%M') }} \U0001F916 {{ states.sensor.version_ha_current.state }} #HA back online ({{ ((now() - strptime(states.input_text.ha_state_change.state, '%Y%m%d%H%M%S').astimezone()).seconds /60) | round(2)}} min)"
+        message: "{{ now().strftime('%H:%M') }} \U0001F916 {{ states.sensor.version_ha_current.state }} #HA back online ({{ ((now() - strptime(states.sensor.ha_state_change.state, '%Y%m%d%H%M%S').astimezone()).seconds /60) | round(2)}} min)"
         inline_keyboard:
         - "\U0001F532 Menu:/menu, \U0000267B Dismiss:/dismiss"
-    - service: input_text.set_value
-      data_template:
-        entity_id: input_text.ha_state_change
-        value: "{{ now().strftime('%Y%m%d%H%M%S') }}"
-    - service: script.mqtt_publish_retain
-      data_template:
-        topic: "ha_state_change"
-        payload: "{{ now().strftime('%Y%m%d%H%M%S') }}"
+    - service: script.update_ha_state
 
 - alias: "ha_shutdown"
   trigger:
@@ -26,17 +19,10 @@
     - service: telegram_bot.send_message
       data_template:
         target: !secret tg_chat_dima
-        message: "{{ now().strftime('%H:%M') }} \U0001F6D1 {{ states.sensor.version_ha_current.state }} #HA goes offline ({{ ((now() - strptime(states.input_text.ha_state_change.state, '%Y%m%d%H%M%S').astimezone()).seconds /60) | round(0)}} min)"
+        message: "{{ now().strftime('%H:%M') }} \U0001F6D1 {{ states.sensor.version_ha_current.state }} #HA goes offline ({{ ((now() - strptime(states.sensor.ha_state_change.state, '%Y%m%d%H%M%S').astimezone()).seconds /60) | round(0)}} min)"
         inline_keyboard:
           - "\U0000267B Dismiss:/dismiss"
-    - service: input_text.set_value
-      data_template:
-        entity_id: input_text.ha_state_change
-        value: "{{ now().strftime('%Y%m%d%H%M%S') }}"
-    - service: script.mqtt_publish_retain
-      data_template:
-        topic: "ha_state_change"
-        payload: "{{ now().strftime('%Y%m%d%H%M%S') }}"
+    - service: script.update_ha_state
 
 - alias: "ha_bad_login"
   trigger:

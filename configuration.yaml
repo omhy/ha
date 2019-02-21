@@ -54,9 +54,9 @@ recorder: !include includes/recorder.yaml
 history:
 logbook:
 logger:
-  default: error
-  logs:
-    homeassistant.components.hassio: debug
+  default: warn
+#  logs:
+#    homeassistant.components.hassio: debug
 #    homeassistant.components.media_player: debug
 
 http:

@@ -1,6 +1,4 @@
 resources:
-  - url: /customcards/custom-lovelace/monster-card.js
-    type: js
   - url: /customcards/custom-lovelace/mini-media-player-bundle.js
     type: module
   - url: /customcards/custom-lovelace/mini-graph-card-bundle.js
@@ -1088,7 +1086,7 @@ views:
     icon: mdi:desktop-tower
     badges:
       - sensor.uptime
-      - sensor.home_assistant_v2_db
+#      - sensor.home_assistant_v2_db
     cards:
       - type: entities
         title: Doorbell settings

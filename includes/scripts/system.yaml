@@ -67,3 +67,10 @@ upload_to_dropbox:
       data:
         addon: "7be23ff5_dropbox_sync"
         input: {"command":"upload"}
+
+update_ha_state:
+  sequence:
+    - service: script.mqtt_publish_retain
+      data_template:
+        topic: "ha_state_change"
+        payload: "{{ now().strftime('%Y%m%d%H%M%S') }}"
