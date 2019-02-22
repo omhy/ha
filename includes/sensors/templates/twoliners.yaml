@@ -104,6 +104,9 @@
     computer_on_today_minutes:
       value_template: "{{((states.sensor.computer_on_today.state | float) * 60) | int}}"
       entity_id: sensor.computer_on_today
+    laptop_on_today_minutes:
+      value_template: "{{((states.sensor.laptop_on_today.state | float) * 60) | int}}"
+      entity_id: sensor.laptop_on_today
     abox_app:
       value_template: "{{states.media_player.abox.attributes.app_id.package}}"
       entity_id: media_player.abox
