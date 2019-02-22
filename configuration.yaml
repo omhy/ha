@@ -18,7 +18,7 @@ sun:
 config:
 system_health:
 person:
-default_config:
+#default_config:
 
 frontend:
   themes: !include_dir_merge_named includes/themes
@@ -57,9 +57,6 @@ history:
 logbook:
 logger:
   default: warn
-#  logs:
-#    homeassistant.components.hassio: debug
-#    homeassistant.components.media_player: debug
 
 http:
   ip_ban_enabled: true
@@ -86,13 +83,16 @@ media_player:
   client_secret: !secret spotify_client_secret
 - platform: kodi
   host: 192.168.1.20
-#- platform: androidtv
-#  host: 192.168.1.20
-#  name: ABOX
-#  adb_server_ip: 127.0.0.1
-#  adb_server_port: 5037
-#  apps:
-#    "youtube": "Youtube"
+- platform: androidtv
+  host: 192.168.1.20
+  name: abox
+  adb_server_ip: 127.0.0.1
+  adb_server_port: 5037
+
+#googlehome:
+#  devices:
+#    - host: 192.168.1.32
+#      track_alarms: true
 
 xiaomi_aqara:
   discovery_retry: 5

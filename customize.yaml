@@ -90,6 +90,9 @@ script.media_radio_stop_all:
 media_player.kitchen_display:
   friendly_name: Kitchen display
   icon: mdi:monitor
+media_player.abox:
+  friendly_name: Android box
+  icon: mdi:android
 media_player.loud_speaker:
   friendly_name: Loud speaker
   icon: mdi:google-home
@@ -177,6 +180,13 @@ sensor.outside_temperature_max_at:
 sensor.temp:
   friendly_name: Temperature
   device_class: temperature
+sensor.db_size_maria:
+  friendly_name: MariaDb size
+  icon: mdi:database
+sensor.db_size_influx:
+  friendly_name: InfluxDb size
+  icon: mdi:database
+
 
 sensor.days_in_month:
   friendly_name: Days in month

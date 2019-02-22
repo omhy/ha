@@ -12,14 +12,14 @@
       name: small_torch
       transition: 400
       use_music_mode: true
-  custom_effects:
-    - name: 'Fire Flicker'
-      flow_params:
-        count: 0
-        transitions:
-          - TemperatureTransition: [1900, 1000, 80]
-          - TemperatureTransition: [1900, 2000, 60]
-          - SleepTransition: [1000]
+#  custom_effects:
+#    - name: 'Fire Flicker'
+#      flow_params:
+#        count: 0
+#        transitions:
+#          - TemperatureTransition: [1900, 1000, 80]
+#          - TemperatureTransition: [1900, 2000, 60]
+#          - SleepTransition: [1000]
 
 - platform: mqtt
   name: garland

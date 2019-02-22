@@ -1,6 +1,5 @@
 - platform: sql
   db_url: !secret mariadb_url
-  icon: mdi:database
   queries:
     - name: "db_size_maria"
       query: 'SELECT table_schema "database", Round(Sum(data_length + index_length) / 1048576, 2) "value" FROM information_schema.tables WHERE table_schema="homeassistant" GROUP BY table_schema;'
@@ -8,6 +7,8 @@
       unit_of_measurement: MB
 
 - platform: influxdb
+  username: !secret influxdb_username
+  password: !secret influxdb_password
   queries:
     - name: "db_size_influx"
       unit_of_measurement: MB

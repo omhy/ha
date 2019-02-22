@@ -100,6 +100,7 @@ views:
           exclude:
             - entity_id: media_player.spotify
             - entity_id: media_player.kodi
+            - entity_id: media_player.abox
             - state: "off"
             - state: "idle"
             - state: "unavailable"
@@ -194,6 +195,10 @@ views:
           - type: custom:mini-media-player
             entity: media_player.surround
             artwork: cover
+
+#          - type: custom:mini-media-player
+#            entity: media_player.abox
+#            artwork: cover
 
           - type: custom:mini-media-player
             entity: media_player.kodi
@@ -984,10 +989,6 @@ views:
             url: http://192.168.1.10:3210
             icon: mdi:shield
           - type: weblink
-            name: Glances
-            url: http://192.168.1.10:61208
-            icon: mdi:magnify-plus
-          - type: weblink
             name: Github repo
             url: https://github.com/omhy/ha
             icon: mdi:github-circle
@@ -1086,6 +1087,9 @@ views:
     icon: mdi:desktop-tower
     badges:
       - sensor.uptime
+      - sensor.db_size_maria
+      - sensor.db_size_influx
+      - sensor.abox_app
 #      - sensor.home_assistant_v2_db
     cards:
       - type: entities
