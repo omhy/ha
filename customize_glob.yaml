@@ -27,6 +27,8 @@
   icon: mdi:format-color-fill
 "*transition*":
   icon: mdi:av-timer
+"*zigbee*":
+  icon: mdi:zigbee
 
 ### SPECIFIC
 "light.*":

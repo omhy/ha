@@ -1,4 +1,4 @@
-- alias: enable_zigbee_join
+- alias: "zigbee_enable_join"
   trigger:
     platform: state
     entity_id: input_boolean.zigbee_permit_join
@@ -12,7 +12,7 @@
       data:
         entity_id: timer.zigbee_permit_join
 
-- alias: disable_zigbee_join
+- alias: "zigbee_disable_join"
   trigger:
     - entity_id: input_boolean.zigbee_permit_join
       platform: state
@@ -26,7 +26,7 @@
         entity_id: timer.zigbee_permit_join
       service: timer.cancel
 
-- alias: disable_zigbee_join_timer
+- alias: "zigbee_disable_join_timer"
   trigger:
     - platform: event
       event_type: timer.finished

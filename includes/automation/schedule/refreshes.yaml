@@ -39,10 +39,3 @@
 #  action:
 #    - service: switch.turn_off
 #      entity_id: switch.circadian_lighting_circadian_lighting
-
-- alias: "schedule_backups_to_dropbox"
-  trigger:
-    - platform: time
-      at: "00:05:00"
-  action:
-    - service: script.upload_to_dropbox

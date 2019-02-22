@@ -1,0 +1,13 @@
+- alias: "ha_sch_snapshot_create"
+  trigger:
+    - platform: time
+      at: "01:15:00"
+  action:
+    - service: script.ha_snapshot_create
+
+- alias: "ha_sch_snapshot_to_dropbox"
+  trigger:
+    - platform: time
+      at: "03:15:00"
+  action:
+    - service: script.ha_snapshot_to_dropbox
