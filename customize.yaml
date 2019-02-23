@@ -53,6 +53,9 @@ sensor.bathroom_motions:
 sensor.yuriroom_motions:
   friendly_name: Today
   icon: mdi:sigma
+sensor.abox_app:
+  friendly_name: Abox app
+  icon: mdi:android-debug-bridge
 
 #DEVICES
 device_tracker.google_maps_111683533988744565132:

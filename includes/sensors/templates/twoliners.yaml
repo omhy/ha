@@ -108,8 +108,8 @@
       value_template: "{{((states.sensor.laptop_on_today.state | float) * 60) | int}}"
       entity_id: sensor.laptop_on_today
     abox_app:
-      value_template: "{{states.media_player.abox.attributes.app_id.package}}"
-      entity_id: media_player.abox
-    abox_app_short:
       value_template: "{{states.media_player.abox.attributes.app_id.package.split('.')[-1]}}"
+      entity_id: media_player.abox
+    abox_app_full:
+      value_template: "{{states.media_player.abox.attributes.app_id.package}}"
       entity_id: media_player.abox

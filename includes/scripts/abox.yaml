@@ -1,0 +1,18 @@
+abox_key_home:
+  sequence:
+    - service: media_player.androidtv_key
+      data:
+        entity_id: media_player.abox
+        key: "KEYCODE_HOME"
+abox_key_wakeup:
+  sequence:
+    - service: media_player.androidtv_key
+      data:
+        entity_id: media_player.abox
+        key: "KEYCODE_WAKEUP"
+g_sleep:
+  sequence:
+    - service: media_player.androidtv_key
+      data:
+        entity_id: media_player.abox
+        key: "KEYCODE_SLEEP"

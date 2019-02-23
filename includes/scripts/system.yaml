@@ -32,7 +32,7 @@ ha_snapshot_create:
   sequence:
     - service: hassio.snapshot_full
       data_template:
-        name: "backup_{{ now().strftime('%Y%m%d%_H%M%S') }}"
+        name: "backup_{{ now().strftime('%Y%m%d%H%M%S') }}"
 
 ha_snapshot_to_dropbox:
   sequence:
