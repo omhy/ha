@@ -62,9 +62,12 @@ media_player_stop_chromecast:
   sequence:
     - service: media_player.media_stop
       data_template:
-        entity_id:
-          - media_player.chromecast
-#          - media_player.loud_speaker
-#          - media_player.yuri_speaker
-#          - media_player.speakers
-#          - media_player.chromecast0541
+        entity_id: media_player.chromecast
+
+media_player_stop_chromecast_if_active:
+  sequence:
+    - condition: state
+      entity_id: binary_sensor.chromecast_is_active
+      state: 'on'
+    - service: script.media_player_stop_chromecast
+

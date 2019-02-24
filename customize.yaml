@@ -219,29 +219,15 @@ binary_sensor.ping_laptop:
 binary_sensor.ping_tv:
   friendly_name: TV
   icon: mdi:television
-
 binary_sensor.people_home:
   friendly_name: Someone home
   icon: mdi:account-multiple-check
-
-binary_sensor.ping_android_box_wifi:
-  friendly_name: Android box wifi
+binary_sensor.chromecast_is_active:
+  friendly_name: Chromecast active
+  icon: mdi:google-chrome
+binary_sensor.abox_is_active:
+  friendly_name: Android box active
   icon: mdi:android
-binary_sensor.ping_google_home:
-  friendly_name: Google home
-  icon: mdi:google-home
-binary_sensor.ping_google_home_mini:
-  friendly_name: Google home mini
-  icon: mdi:music-box
-binary_sensor.ping_yeelight_corner:
-  friendly_name: Corner
-  icon: mdi:network
-binary_sensor.ping_yeelight_torch:
-  friendly_name: Torch
-  icon: mdi:network
-binary_sensor.ping_yeelight_small_torch:
-  friendly_name: Small torch
-  icon: mdi:network
 
 #cube
 binary_sensor.cube_158d00028776ae:

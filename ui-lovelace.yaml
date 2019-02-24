@@ -42,8 +42,13 @@ views:
 
       - type: history-graph
         title: Android box
-        hours_to_show: 3
+        hours_to_show: 1
         entities:
+          - binary_sensor.ping_tv
+          - binary_sensor.abox_is_active
+          - binary_sensor.chromecast_is_active
+          - media_player.chromecast
+          - media_player.abox
           - sensor.abox_app
 
       - type: glance

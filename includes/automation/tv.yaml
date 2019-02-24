@@ -16,5 +16,5 @@
       from: "on"
       to: "off"
   action:
-    - service: script.abox_key_home
-    - service: script.media_player_stop_chromecast
+    - service: script.abox_key_home_if_active
+    - service: script.media_player_stop_chromecast_if_active
