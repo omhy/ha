@@ -7,6 +7,7 @@ include:
     - light
     - media_player
     - calendar
+    - person
   entities:
     - binary_sensor.motion_sensor_158d0001fa3dc0
     - binary_sensor.motion_sensor_158d0001e52779

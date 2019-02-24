@@ -22,3 +22,10 @@ state_change_update_alyona:
     - service: script.input_text_set_now
       data_template:
         entity_id: input_text.state_change_alyona
+
+state_change_update_ha:
+  sequence:
+    - service: script.mqtt_publish_retain
+      data_template:
+        topic: "state_change_ha"
+        payload: "{{ now().strftime('%Y%m%d%H%M%S') }}"

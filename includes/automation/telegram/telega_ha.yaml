@@ -6,23 +6,23 @@
     - service: telegram_bot.send_message
       data_template:
         target: !secret tg_chat_dima
-        message: "{{ now().strftime('%H:%M') }} \U0001F916 {{ states.sensor.version_ha_current.state }} #HA back online ({{ ((now() - strptime(states.sensor.ha_state_change.state, '%Y%m%d%H%M%S').astimezone()).seconds /60) | round(2)}} min)"
+        message: "{{ now().strftime('%H:%M') }} \U0001F916 {{ states.sensor.version_ha_current.state }} #HA back online ({{ ((now() - strptime(states.sensor.state_change_ha.state, '%Y%m%d%H%M%S').astimezone()).seconds /60) | round(2)}} min)"
         inline_keyboard:
         - "\U0001F532 Menu:/menu, \U0000267B Dismiss:/dismiss"
-    - service: script.ha_update_state_timestamp
+    - service: script.state_change_update_ha
 
 - alias: "ha_shutdown"
   trigger:
     - platform: homeassistant
       event: shutdown
   action:
+    - service: script.state_change_update_ha
     - service: telegram_bot.send_message
       data_template:
         target: !secret tg_chat_dima
-        message: "{{ now().strftime('%H:%M') }} \U0001F6D1 {{ states.sensor.version_ha_current.state }} #HA goes offline ({{ ((now() - strptime(states.sensor.ha_state_change.state, '%Y%m%d%H%M%S').astimezone()).seconds /60) | round(0)}} min)"
+        message: "{{ now().strftime('%H:%M') }} \U0001F6D1 {{ states.sensor.version_ha_current.state }} #HA goes offline ({{ ((now() - strptime(states.sensor.state_change_ha.state, '%Y%m%d%H%M%S').astimezone()).seconds /60) | round(2)}} min)"
         inline_keyboard:
           - "\U0000267B Dismiss:/dismiss"
-    - service: script.ha_update_state_timestamp
 
 - alias: "ha_bad_login"
   trigger:

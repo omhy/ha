@@ -50,5 +50,5 @@
   icon: mdi:router-wireless
 
 - platform: mqtt
-  state_topic: "ha_state_change"
-  name: "ha_state_change"
+  state_topic: "state_change_ha"
+  name: "state_change_ha"

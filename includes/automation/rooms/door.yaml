@@ -16,7 +16,7 @@
   action:
     - service: notify.telegram_dima
       data_template:
-        message: "{{ now().strftime('%H:%M') }} \U0001F513 Door is opened ({{ ((now() - strptime(states.input_text.state_change_door.state, '%Y%m%d%H%M%S').astimezone()).seconds /60) | round(0)}} min)"
+        message: "{{ now().strftime('%H:%M') }} \U0001F513 Door is opened ({{ states.sensor.state_change_door_ago_min.state }})"
     - service: script.state_change_update_door
 
 - alias: "entrance_door_closed"
@@ -31,5 +31,5 @@
       - automation.entrance_door_opened_too_long_alarm
     - service: notify.telegram_dima
       data_template:
-        message: "{{ now().strftime('%H:%M') }} \U0001F512 Door is closed ({{ (now() - strptime(states.input_text.state_change_door.state, '%Y%m%d%H%M%S').astimezone()).seconds }} sec)"
+        message: "{{ now().strftime('%H:%M') }} \U0001F512 Door is closed ({{ states.sensor.state_change_door_ago_sec.state }})"
     - service: script.state_change_update_door
