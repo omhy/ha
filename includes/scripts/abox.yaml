@@ -10,7 +10,7 @@ abox_key_wakeup:
       data:
         entity_id: media_player.abox
         key: "KEYCODE_WAKEUP"
-g_sleep:
+abox_key_sleep:
   sequence:
     - service: media_player.androidtv_key
       data:

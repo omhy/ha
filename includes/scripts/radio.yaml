@@ -54,12 +54,16 @@ media_radio_play_soma_beatblender:
       data_template:
         media_content_id: "http://ice1.somafm.com/beatblender-128-mp3"
 
-media_radio_stop_all:
+media_player_stop_all:
   sequence:
     - service: media_player.media_stop
-#      data_template:
-#        entity_id:
-#          - media_player.kitchen_display
+
+media_player_stop_chromecast:
+  sequence:
+    - service: media_player.media_stop
+      data_template:
+        entity_id:
+          - media_player.chromecast
 #          - media_player.loud_speaker
 #          - media_player.yuri_speaker
 #          - media_player.speakers

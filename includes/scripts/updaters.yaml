@@ -1,0 +1,24 @@
+input_text_set_now:
+  sequence:
+    - service: input_text.set_value
+      data_template:
+        entity_id: "{{ entity_id }}"
+        value: "{{ now().strftime('%Y%m%d%H%M%S') }}"
+
+state_change_update_door:
+  sequence:
+    - service: script.input_text_set_now
+      data_template:
+        entity_id: input_text.state_change_door
+
+state_change_update_dima:
+  sequence:
+    - service: script.input_text_set_now
+      data_template:
+        entity_id: input_text.state_change_dima
+
+state_change_update_alyona:
+  sequence:
+    - service: script.input_text_set_now
+      data_template:
+        entity_id: input_text.state_change_alyona

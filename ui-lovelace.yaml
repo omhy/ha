@@ -167,7 +167,7 @@ views:
             show_header_toggle: false
             entities:
               - input_select.radio_cast
-              - script.media_radio_stop_all
+              - script.media_player_stop_all
       - type: vertical-stack
         cards:
           - type: custom:mini-media-player

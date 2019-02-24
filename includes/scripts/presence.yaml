@@ -2,7 +2,7 @@ we_are_leaving:
   sequence:
     - service: scene.turn_on
       entity_id: scene.departed
-    - service: script.media_radio_stop_all
+    - service: script.media_player_stop_all
     - service: script.rmt_computer_sleep
     - service: script.rmt_laptop_sleep
 

@@ -85,7 +85,7 @@ script.rmt_computer_sleep:
 script.rmt_laptop_sleep:
   icon: mdi:laptop
 
-script.media_radio_stop_all:
+script.media_player_stop_all:
   friendly_name: Stop all
   icon: mdi:stop
 

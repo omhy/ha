@@ -1,89 +1,97 @@
 ################## DIMA
 - alias: "zone_dima_enters_work"
   trigger:
-  - platform: zone
-    entity_id: device_tracker.google_maps_111683533988744565132
-    zone: zone.work
-    event: enter
+    - platform: zone
+      entity_id: device_tracker.google_maps_111683533988744565132
+      zone: zone.work
+      event: enter
   action:
-  - service: notify.telegram_dima
-    data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F4BC Dima enters"
+    - service: notify.telegram_dima
+      data_template:
+        message: "{{ now().strftime('%H:%M') }} \U0001F4BC Dima enters"
+    - service: script.state_change_update_dima
 
 - alias: "zone_dima_leaves_work"
   trigger:
-  - platform: zone
-    entity_id: device_tracker.google_maps_111683533988744565132
-    zone: zone.work
-    event: leave
+    - platform: zone
+      entity_id: device_tracker.google_maps_111683533988744565132
+      zone: zone.work
+      event: leave
   action:
-  - service: notify.telegram_dima
-    data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F4BC Dima leaves"
+    - service: notify.telegram_dima
+      data_template:
+        message: "{{ now().strftime('%H:%M') }} \U0001F4BC Dima leaves"
+    - service: script.state_change_update_dima
 
 - alias: "zone_dima_enters_home"
   trigger:
-  - platform: zone
-    entity_id: device_tracker.google_maps_111683533988744565132
-    zone: zone.home
-    event: enter
+    - platform: zone
+      entity_id: device_tracker.google_maps_111683533988744565132
+      zone: zone.home
+      event: enter
   action:
-  - service: notify.telegram_dima
-    data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F3E0 Dima enters"
+    - service: notify.telegram_dima
+      data_template:
+        message: "{{ now().strftime('%H:%M') }} \U0001F3E0 Dima enters"
+    - service: script.state_change_update_dima
 
 - alias: "zone_dima_leaves_home"
   trigger:
-  - platform: zone
-    entity_id: device_tracker.google_maps_111683533988744565132
-    zone: zone.home
-    event: leave
+    - platform: zone
+      entity_id: device_tracker.google_maps_111683533988744565132
+      zone: zone.home
+      event: leave
   action:
-  - service: notify.telegram_dima
-    data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F3E0 Dima leaves"
+    - service: notify.telegram_dima
+      data_template:
+        message: "{{ now().strftime('%H:%M') }} \U0001F3E0 Dima leaves"
+    - service: script.state_change_update_dima
 
 - alias: "zone_dima_enters_school"
   trigger:
-  - platform: zone
-    entity_id: device_tracker.google_maps_111683533988744565132
-    zone: zone.school
-    event: enter
+    - platform: zone
+      entity_id: device_tracker.google_maps_111683533988744565132
+      zone: zone.school
+      event: enter
   action:
-  - service: notify.telegram_dima
-    data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F3EB Dima enters"
+    - service: notify.telegram_dima
+      data_template:
+        message: "{{ now().strftime('%H:%M') }} \U0001F3EB Dima enters"
+    - service: script.state_change_update_dima
 
 - alias: "zone_dima_leaves_school"
   trigger:
-  - platform: zone
-    entity_id: device_tracker.google_maps_111683533988744565132
-    zone: zone.school
-    event: leave
+    - platform: zone
+      entity_id: device_tracker.google_maps_111683533988744565132
+      zone: zone.school
+      event: leave
   action:
-  - service: notify.telegram_dima
-    data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F3EB Dima leaves"
+    - service: notify.telegram_dima
+      data_template:
+        message: "{{ now().strftime('%H:%M') }} \U0001F3EB Dima leaves"
+    - service: script.state_change_update_dima
 
 ################## ALYONA
 - alias: "zone_alyona_enters_school"
   trigger:
-  - platform: zone
-    entity_id: device_tracker.google_maps_115914092349482836896
-    zone: zone.school
-    event: enter
+    - platform: zone
+      entity_id: device_tracker.google_maps_115914092349482836896
+      zone: zone.school
+      event: enter
   action:
-  - service: notify.telegram_dima
-    data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F3EB Alyona enters"
+    - service: notify.telegram_dima
+      data_template:
+        message: "{{ now().strftime('%H:%M') }} \U0001F3EB Alyona enters"
+    - service: script.state_change_update_alyona
 
 - alias: "zone_alyona_leaves_school"
   trigger:
-  - platform: zone
-    entity_id: device_tracker.google_maps_115914092349482836896
-    zone: zone.school
-    event: leave
+    - platform: zone
+      entity_id: device_tracker.google_maps_115914092349482836896
+      zone: zone.school
+      event: leave
   action:
-  - service: notify.telegram_dima
-    data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F3EB Alyona leaves"
+    - service: notify.telegram_dima
+      data_template:
+        message: "{{ now().strftime('%H:%M') }} \U0001F3EB Alyona leaves"
+    - service: script.state_change_update_alyona
