@@ -44,3 +44,14 @@
         is_state('media_player.chromecast', 'paused')
         }}
       entity_id: media_player.chromecast
+    abox_is_active:
+      value_template: >
+        {{
+        not(
+        is_state('sensor.abox_app', 'launcher') or
+        is_state('sensor.abox_app', 'unknown')
+        )
+        }}
+      entity_id:
+        - sensor.abox_app
+        - media_player.abox
