@@ -1,0 +1,12 @@
+- platform: spotify
+  client_id: !secret spotify_client_id
+  client_secret: !secret spotify_client_secret
+
+- platform: kodi
+  host: 192.168.1.20
+
+- platform: androidtv
+  host: 192.168.1.20
+  name: abox
+  adb_server_ip: 127.0.0.1
+  adb_server_port: 5037

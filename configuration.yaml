@@ -7,7 +7,6 @@ homeassistant:
   time_zone: !secret timezone
   customize: !include customize.yaml
   customize_glob: !include customize_glob.yaml
-
   whitelist_external_dirs:
   - /config
   - /tmp
@@ -18,7 +17,8 @@ sun:
 config:
 system_health:
 person:
-#default_config:
+system_log:
+  max_entries: 20
 
 frontend:
   themes: !include_dir_merge_named includes/themes
@@ -41,22 +41,13 @@ homekit:
       - sensor.temperature_158d0001f23cbe
       - sensor.temperature_158d0002271609
 
-#CUSTOM
-custom_updater:
-  track:
-    - cards
-    - components
-  card_urls:
-    - https://raw.githubusercontent.com/kalkih/mini-graph-card/master/tracker.json
-    - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
-    - https://raw.githubusercontent.com/kuuji/button-card/master/tracker.json
-    - https://raw.githubusercontent.com/sgttrs/lovelace-weather-card-chart/master/custom-updater.json
-
+influxdb: !include includes/influxdb.yaml
 recorder: !include includes/recorder.yaml
 history:
 logbook:
 logger:
   default: warn
+custom_updater: !include includes/custom_updater.yaml
 
 http:
   ip_ban_enabled: true
@@ -66,28 +57,6 @@ http:
 tts:
 - platform: google
   language: ru
-
-system_log:
-  max_entries: 20
-
-influxdb:
-  host: 192.168.1.10
-  port: 8086
-  database: homeassistant
-  username: !secret influxdb_username
-  password: !secret influxdb_password
-
-media_player:
-- platform: spotify
-  client_id: !secret spotify_client_id
-  client_secret: !secret spotify_client_secret
-- platform: kodi
-  host: 192.168.1.20
-- platform: androidtv
-  host: 192.168.1.20
-  name: abox
-  adb_server_ip: 127.0.0.1
-  adb_server_port: 5037
 
 #googlehome:
 #  devices:
@@ -127,6 +96,7 @@ input_select: !include includes/input_select.yaml
 input_text: !include includes/input_text.yaml
 utility_meter: !include includes/utility_meter.yaml
 light: !include includes/light.yaml
+media_player: !include includes/media_player.yaml
 #camera: !include includes/camera.yaml
 notify: !include includes/notify.yaml
 binary_sensor: !include includes/binary_sensor.yaml

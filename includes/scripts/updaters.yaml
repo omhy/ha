@@ -29,3 +29,14 @@ state_change_update_ha:
       data_template:
         topic: "state_change_ha"
         payload: "{{ now().strftime('%Y%m%d%H%M%S') }}"
+
+#NO ENTITY_ID IN TEMPLATE, UPDATE ONLY MANUALLY
+state_change_update_dima_ago:
+  sequence:
+    - service: homeassistant.update_entity
+      entity_id: sensor.state_change_dima_ago
+
+state_change_update_alyona_ago:
+  sequence:
+    - service: homeassistant.update_entity
+      entity_id: sensor.state_change_alyona_ago

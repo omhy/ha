@@ -6,6 +6,7 @@
       zone: zone.work
       event: enter
   action:
+    - service: script.state_change_update_dima_ago
     - service: notify.telegram_dima
       data_template:
         message: "{{ now().strftime('%H:%M') }} \U0001F4BC Dima enters ({{ states.sensor.state_change_dima_ago.state }})"
@@ -18,6 +19,7 @@
       zone: zone.work
       event: leave
   action:
+    - service: script.state_change_update_dima_ago
     - service: notify.telegram_dima
       data_template:
         message: "{{ now().strftime('%H:%M') }} \U0001F4BC Dima leaves ({{ states.sensor.state_change_dima_ago.state }})"
@@ -30,6 +32,7 @@
       zone: zone.home
       event: enter
   action:
+    - service: script.state_change_update_dima_ago
     - service: notify.telegram_dima
       data_template:
         message: "{{ now().strftime('%H:%M') }} \U0001F3E0 Dima enters ({{ states.sensor.state_change_dima_ago.state }})"
@@ -42,6 +45,7 @@
       zone: zone.home
       event: leave
   action:
+    - service: script.state_change_update_dima_ago
     - service: notify.telegram_dima
       data_template:
         message: "{{ now().strftime('%H:%M') }} \U0001F3E0 Dima leaves ({{ states.sensor.state_change_dima_ago.state }})"
@@ -54,6 +58,7 @@
       zone: zone.school
       event: enter
   action:
+    - service: script.state_change_update_dima_ago
     - service: notify.telegram_dima
       data_template:
         message: "{{ now().strftime('%H:%M') }} \U0001F3EB Dima enters ({{ states.sensor.state_change_dima_ago.state }})"
@@ -66,6 +71,7 @@
       zone: zone.school
       event: leave
   action:
+    - service: script.state_change_update_dima_ago
     - service: notify.telegram_dima
       data_template:
         message: "{{ now().strftime('%H:%M') }} \U0001F3EB Dima leaves ({{ states.sensor.state_change_dima_ago.state }})"
@@ -79,6 +85,7 @@
       zone: zone.school
       event: enter
   action:
+    - service: script.state_change_update_alyona_ago
     - service: notify.telegram_dima
       data_template:
         message: "{{ now().strftime('%H:%M') }} \U0001F3EB Alyona enters ({{ states.sensor.state_change_alyona_ago.state }})"
@@ -91,6 +98,7 @@
       zone: zone.school
       event: leave
   action:
+    - service: script.state_change_update_alyona_ago
     - service: notify.telegram_dima
       data_template:
         message: "{{ now().strftime('%H:%M') }} \U0001F3EB Alyona leaves ({{ states.sensor.state_change_alyona_ago.state }})"
