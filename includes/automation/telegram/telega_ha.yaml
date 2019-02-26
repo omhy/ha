@@ -14,7 +14,7 @@
   trigger:
     - platform: homeassistant
       event: shutdown
-  action:lo
+  action:
     - service: telegram_bot.send_message
       data_template:
         target: !secret tg_chat_dima
