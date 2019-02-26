@@ -8,3 +8,7 @@ state_change_dima:
   name: state_change_dima
 state_change_alyona:
   name: state_change_alyona
+state_change_ha_on:
+  name: state_change_ha_on
+state_change_ha_off:
+  name: state_change_ha_off

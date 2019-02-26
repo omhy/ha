@@ -229,6 +229,14 @@ binary_sensor.abox_is_active:
   friendly_name: Android box active
   icon: mdi:android
 
+#persons
+person.dima:
+  entity_picture: /local/persons/dima.jpg
+person.alyona:
+  entity_picture: /local/persons/alyona.jpg
+person.yuri:
+  entity_picture: /local/persons/yuri.jpg
+
 #cube
 binary_sensor.cube_158d00028776ae:
   friendly_name: cube

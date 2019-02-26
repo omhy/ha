@@ -344,6 +344,9 @@ views:
           title: People 24h
           hours_to_show: 24
           entities:
+            - person.dima
+            - person.alyona
+            - person.yuri
             - device_tracker.google_maps_111683533988744565132
             - device_tracker.google_maps_115914092349482836896
             - device_tracker.google_maps_117454969161947422882
