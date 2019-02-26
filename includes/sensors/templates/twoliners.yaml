@@ -125,3 +125,6 @@
     abox_app_full:
       value_template: "{{states.media_player.abox.attributes.app_id.package}}"
       entity_id: media_player.abox
+    now_hm:
+      value_template: "{{ now().strftime('%H:%M') }}"
+      entity_id: sensor.time

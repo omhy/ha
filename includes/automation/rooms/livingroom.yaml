@@ -1,10 +1,10 @@
 - alias: "light_livingroom_turn_off"
   trigger:
-  - platform: state
-    entity_id: binary_sensor.motion_sensor_158d0001fa3dc0
-    to: "off"
-    for:
-      minutes: 60
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d0001fa3dc0
+      to: "off"
+      for:
+        minutes: 60
   action:
-  - service: light.turn_off
-    entity_id: light.livingroom
+    - service: light.turn_off
+      entity_id: light.livingroom

@@ -11,9 +11,9 @@
 
 - alias: "telegram_send_electro"
   trigger:
-  - platform: time
-    at: "23:59:00"
+    - platform: time
+      at: "23:59:00"
   action:
-  - service: script.telegram_send_electro
-    data_template:
-      target: !secret tg_chat_dima
+    - service: script.telegram_send_electro
+      data_template:
+        target: !secret tg_chat_dima

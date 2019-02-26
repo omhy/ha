@@ -1,59 +1,59 @@
 - alias: "schedule_computer_power_strip_off"
   trigger:
-  - platform: time
-    at: "02:00:00"
+    - platform: time
+      at: "02:00:00"
   action:
-  - service: switch.turn_off
-    entity_id: switch.power_strip_1
+    - service: switch.turn_off
+      entity_id: switch.power_strip_1
 
 - alias: "schedule_computer_power_strip_on"
   trigger:
-  - platform: time
-    at: "06:50:00"
+    - platform: time
+      at: "06:50:00"
   action:
-  - service: switch.turn_on
-    entity_id: switch.power_strip_1
+    - service: switch.turn_on
+      entity_id: switch.power_strip_1
 
 - alias: "state_computer_turned_off"
   trigger:
-  - platform: state
-    entity_id: binary_sensor.ping_computer
-    from: "on"
-    to: "off"
+    - platform: state
+      entity_id: binary_sensor.ping_computer
+      from: "on"
+      to: "off"
   action:
-  - service: notify.telegram_dima
-    data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F5A5 is turned off ({{ states.sensor.computer_on_today_minutes.state | int }}/{{states.input_number.computer_today_allowed.state | int}})"
+    - service: notify.telegram_dima
+      data_template:
+        message: "{{ now().strftime('%H:%M') }} \U0001F5A5 is turned off ({{ states.sensor.computer_on_today_minutes.state | int }}/{{states.input_number.computer_today_allowed.state | int}})"
 
 - alias: "state_computer_turned_on"
   trigger:
-  - platform: state
-    entity_id: binary_sensor.ping_computer
-    from: "off"
-    to: "on"
+    - platform: state
+      entity_id: binary_sensor.ping_computer
+      from: "off"
+      to: "on"
   action:
-  - service: notify.telegram_dima
-    data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F5A5 is turned on ({{ states.sensor.computer_on_today_minutes.state | int }}/{{states.input_number.computer_today_allowed.state | int}})"
+    - service: notify.telegram_dima
+      data_template:
+        message: "{{ now().strftime('%H:%M') }} \U0001F5A5 is turned on ({{ states.sensor.computer_on_today_minutes.state | int }}/{{states.input_number.computer_today_allowed.state | int}})"
 
 - alias: "state_laptop_turned_off"
   trigger:
-  - platform: state
-    entity_id: binary_sensor.ping_laptop
-    from: "on"
-    to: "off"
+    - platform: state
+      entity_id: binary_sensor.ping_laptop
+      from: "on"
+      to: "off"
   action:
-  - service: notify.telegram_dima
-    data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F4BB is turned off ({{ states.sensor.laptop_on_today_minutes.state | int }})"
+    - service: notify.telegram_dima
+      data_template:
+        message: "{{ now().strftime('%H:%M') }} \U0001F4BB is turned off ({{ states.sensor.laptop_on_today_minutes.state | int }})"
 
 - alias: "state_laptop_turned_on"
   trigger:
-  - platform: state
-    entity_id: binary_sensor.ping_laptop
-    from: "off"
-    to: "on"
+    - platform: state
+      entity_id: binary_sensor.ping_laptop
+      from: "off"
+      to: "on"
   action:
-  - service: notify.telegram_dima
-    data_template:
-      message: "{{ now().strftime('%H:%M') }} \U0001F4BB is turned on ({{ states.sensor.laptop_on_today_minutes.state | int }})"
+    - service: notify.telegram_dima
+      data_template:
+        message: "{{ now().strftime('%H:%M') }} \U0001F4BB is turned on ({{ states.sensor.laptop_on_today_minutes.state | int }})"

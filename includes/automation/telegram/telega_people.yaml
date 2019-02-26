@@ -1,65 +1,65 @@
 - alias: "telegram_handle_clb_people"
   trigger:
-  - platform: event
-    event_type: telegram_callback
-    event_data:
-      data: "/people"
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: "/people"
   action:
-  - service: telegram_bot.answer_callback_query
-    data_template:
-      callback_query_id: "{{ trigger.event.data.id }}"
-      message: "Roger {{ trigger.event.data.data }}"
-  - service: telegram_bot.send_message
-    data_template:
-      target: "{{trigger.event.data.user_id}}"
-      message: "Select person to check"
-      inline_keyboard:
-      - "\U0001F468 Dima:/tracker google_maps_111683533988744565132, \U0001F469 Alyona:/tracker google_maps_115914092349482836896"
-      - "\U0001F466 Yury:/tracker google_maps_117454969161947422882, \U0001F467 Elisa:/tracker elisa"
-      - "\U0000267B Dismiss:/dismiss"
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: "{{ trigger.event.data.id }}"
+        message: "Roger {{ trigger.event.data.data }}"
+    - service: telegram_bot.send_message
+      data_template:
+        target: "{{trigger.event.data.user_id}}"
+        message: "Select person to check"
+        inline_keyboard:
+        - "\U0001F468 Dima:/tracker google_maps_111683533988744565132, \U0001F469 Alyona:/tracker google_maps_115914092349482836896"
+        - "\U0001F466 Yury:/tracker google_maps_117454969161947422882, \U0001F467 Elisa:/tracker elisa"
+        - "\U0000267B Dismiss:/dismiss"
 
 - alias: "telegram_handle_prefix_tracker"
   trigger:
-  - platform: event
-    event_type: telegram_callback
+    - platform: event
+      event_type: telegram_callback
   condition:
-  - condition: template
-    value_template: "{{ trigger.event.data.data.startswith('/tracker ') }}"
+    - condition: template
+      value_template: "{{ trigger.event.data.data.startswith('/tracker ') }}"
   action:
-  - service: telegram_bot.answer_callback_query
-    data_template:
-      callback_query_id: "{{ trigger.event.data.id }}"
-      message: "Roger {{ trigger.event.data.data }}"
-  - service: telegram_bot.send_message
-    data_template:
-      target: "{{trigger.event.data.user_id}}"
-      message: >
-        {% set id = trigger.event.data.data.split(' ', 1)[1] %}
-        {{ states.device_tracker[id].attributes.full_name }}
-        {{ ((now() - states.device_tracker[id].attributes.last_seen.astimezone()).seconds / 60) | round(0) }}
-        minutes ago was `{{ states.device_tracker[id].state }}`
-        with GPS accuracy {{ states.device_tracker[id].attributes.gps_accuracy }}.
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: "{{ trigger.event.data.id }}"
+        message: "Roger {{ trigger.event.data.data }}"
+    - service: telegram_bot.send_message
+      data_template:
+        target: "{{trigger.event.data.user_id}}"
+        message: >
+          {% set id = trigger.event.data.data.split(' ', 1)[1] %}
+          {{ states.device_tracker[id].attributes.full_name }}
+          {{ ((now() - states.device_tracker[id].attributes.last_seen.astimezone()).seconds / 60) | round(0) }}
+          minutes ago was `{{ states.device_tracker[id].state }}`
+          with GPS accuracy {{ states.device_tracker[id].attributes.gps_accuracy }}.
 
-        `{{ states.device_tracker[id].attributes.address }}`
-      inline_keyboard:
-      - "\U0001F5FA Map:/map {{ trigger.event.data.data.split(' ', 1)[1] }}, \U0001F504 Refresh:{{ trigger.event.data.data }}, \U0000267B Dismiss:/dismiss"
+          `{{ states.device_tracker[id].attributes.address }}`
+        inline_keyboard:
+        - "\U0001F5FA Map:/map {{ trigger.event.data.data.split(' ', 1)[1] }}, \U0001F504 Refresh:{{ trigger.event.data.data }}, \U0000267B Dismiss:/dismiss"
 
 - alias: "telegram_handle_prefix_map"
   trigger:
-  - platform: event
-    event_type: telegram_callback
+    - platform: event
+      event_type: telegram_callback
   condition:
-  - condition: template
-    value_template: "{{ trigger.event.data.data.startswith('/map ') }}"
+    - condition: template
+      value_template: "{{ trigger.event.data.data.startswith('/map ') }}"
   action:
-  - service: telegram_bot.answer_callback_query
-    data_template:
-      callback_query_id: "{{ trigger.event.data.id }}"
-      message: "Roger {{ trigger.event.data.data }}"
-  - service: telegram_bot.send_location
-    data_template:
-      target: "{{ trigger.event.data.user_id }}"
-      latitude: "{{ states.device_tracker[trigger.event.data.data.split(' ', 1)[1]].attributes.latitude }}"
-      longitude: "{{ states.device_tracker[trigger.event.data.data.split(' ', 1)[1]].attributes.longitude }}"
-      inline_keyboard:
-      - "\U0001F504 Refresh:{{ trigger.event.data.data }}, \U0000267B Dismiss:/dismiss"
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: "{{ trigger.event.data.id }}"
+        message: "Roger {{ trigger.event.data.data }}"
+    - service: telegram_bot.send_location
+      data_template:
+        target: "{{ trigger.event.data.user_id }}"
+        latitude: "{{ states.device_tracker[trigger.event.data.data.split(' ', 1)[1]].attributes.latitude }}"
+        longitude: "{{ states.device_tracker[trigger.event.data.data.split(' ', 1)[1]].attributes.longitude }}"
+        inline_keyboard:
+        - "\U0001F504 Refresh:{{ trigger.event.data.data }}, \U0000267B Dismiss:/dismiss"

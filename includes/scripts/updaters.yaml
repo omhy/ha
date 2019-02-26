@@ -23,18 +23,6 @@ state_change_update_alyona:
       data_template:
         entity_id: input_text.state_change_alyona
 
-state_change_update_ha_on:
-  sequence:
-    - service: script.input_text_set_now
-      data_template:
-        entity_id: input_text.state_change_ha_on
-
-state_change_update_ha_off:
-  sequence:
-    - service: script.input_text_set_now
-      data_template:
-        entity_id: input_text.state_change_ha_off
-
 #NO ENTITY_ID IN TEMPLATE, UPDATE ONLY MANUALLY
 state_change_update_dima_ago:
   sequence:

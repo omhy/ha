@@ -1,19 +1,19 @@
 - alias: "light_bathroom_turn_on"
   trigger:
-  - platform: state
-    entity_id: binary_sensor.motion_sensor_158d0001e52779
-    to: "on"
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d0001e52779
+      to: "on"
   action:
-  - service: switch.turn_on
-    entity_id: switch.wall_switch_right_158d00022391ec
+    - service: switch.turn_on
+      entity_id: switch.wall_switch_right_158d00022391ec
 
 - alias: "light_bathroom_turn_off"
   trigger:
-  - platform: state
-    entity_id: binary_sensor.motion_sensor_158d0001e52779
-    to: "off"
-    for:
-      minutes: 10
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d0001e52779
+      to: "off"
+      for:
+        minutes: 10
   action:
-  - service: switch.turn_off
-    entity_id: switch.wall_switch_right_158d00022391ec
+    - service: switch.turn_off
+      entity_id: switch.wall_switch_right_158d00022391ec

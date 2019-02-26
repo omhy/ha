@@ -1,0 +1,19 @@
+- alias: "ha_startup"
+  trigger:
+    - platform: homeassistant
+      event: start
+  action:
+    - service: script.ha_set_defaults
+    - service: automation.trigger
+      data_template:
+        entity_id:
+          - automation.update_input_text_radio_cast
+
+- alias: "ha_log_level_change"
+  trigger:
+    - platform: state
+      entity_id: input_select.ha_log_level
+  action:
+    - service: logger.set_level
+      data_template:
+        homeassistant.components: "{{ trigger.to_state.state }}"

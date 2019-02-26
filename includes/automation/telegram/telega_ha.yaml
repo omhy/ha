@@ -7,14 +7,12 @@
     - service: telegram_bot.send_message
       data_template:
         target: !secret tg_chat_dima
-        message: "{{ now().strftime('%H:%M') }} \U0001F916 {{ states.sensor.version_ha_current.state }} #HA back online ({{ ((now() - strptime(states.input_text.state_change_ha_off.state, '%Y%m%d%H%M%S').astimezone()).seconds /60) | round(0)}} min)"
+        message: "{{ now().strftime('%H:%M') }} \U0001F916 {{ states.sensor.version_ha_current.state }} #HA is back online"
         inline_keyboard:
         - "\U0001F532 Menu:/menu, \U0000267B Dismiss:/dismiss"
 
 - alias: "ha_shutdown"
   trigger:
-#    - platform: event
-#      event_type: homeassistant_stop
     - platform: homeassistant
       event: shutdown
   action:
@@ -22,7 +20,7 @@
     - service: telegram_bot.send_message
       data_template:
         target: !secret tg_chat_dima
-        message: "{{ now().strftime('%H:%M') }} \U0001F6D1 {{ states.sensor.version_ha_current.state }} #HA goes offline ({{ ((now() - strptime(states.input_text.state_change_ha_on.state, '%Y%m%d%H%M%S').astimezone()).seconds /60) | round(0)}} min)"
+        message: "{{ now().strftime('%H:%M') }} \U0001F6D1 {{ states.sensor.version_ha_current.state }} #HA goes offline (uptime {{ (1440 * states.sensor.uptime.state | float) | round(0)}} min)"
         inline_keyboard:
           - "\U0000267B Dismiss:/dismiss"
 

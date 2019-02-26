@@ -1,25 +1,25 @@
 - alias: "mqtt_reset_max_and_min"
   trigger:
-  - platform: time
-    at: "00:00:05"
+    - platform: time
+      at: "00:00:05"
   action:
-  - service: mqtt.publish
-    data_template:
-      topic: "outside/temperature/min"
-      payload: "{{ states.sensor.temperature_158d00022c7cf2.state }}"
-      retain: true
-  - service: mqtt.publish
-    data_template:
-      topic: "outside/temperature/min/at"
-      payload: "-"
-      retain: true
-  - service: mqtt.publish
-    data_template:
-      topic: "outside/temperature/max"
-      payload: "{{ states.sensor.temperature_158d00022c7cf2.state }}"
-      retain: true
-  - service: mqtt.publish
-    data_template:
-      topic: "outside/temperature/max/at"
-      payload: "-"
-      retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "outside/temperature/min"
+        payload: "{{ states.sensor.temperature_158d00022c7cf2.state }}"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "outside/temperature/min/at"
+        payload: "-"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "outside/temperature/max"
+        payload: "{{ states.sensor.temperature_158d00022c7cf2.state }}"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "outside/temperature/max/at"
+        payload: "-"
+        retain: true

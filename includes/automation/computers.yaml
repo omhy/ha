@@ -1,16 +1,3 @@
-- alias: "outside_temperature_calc_diff"
-  trigger:
-    - platform: state
-      entity_id:
-        - sensor.outside_temperature_min
-        - sensor.outside_temperature_max
-  action:
-    - service: mqtt.publish
-      data_template:
-        topic: "outside/temperature/diff"
-        payload: "{{ (states.sensor.outside_temperature_max.state | float - states.sensor.outside_temperature_min.state | float) | round(1)}}"
-        retain: true
-
 - alias: "computer_limit_reached"
   trigger:
     - platform: time_pattern

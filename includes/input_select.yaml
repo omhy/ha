@@ -19,3 +19,14 @@ radio_cast:
     - Chromecast
     - Speakers
     - Surround
+ha_log_level:
+  name: "ha_log_level"
+  options:
+    - warn
+    - fatal
+    - error
+    - warning
+    - warn
+    - info
+    - debug
+    - notset
