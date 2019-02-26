@@ -64,7 +64,7 @@ alarm_door:
         ringtone_vol: "10"
     - service: notify.telegram_all
       data_template:
-        message: "{{ now().strftime('%H:%M') }} \U0001F6A8 Door opened for a while"
+        message: "{{ states.sensor.now_hm.state }} \U0001F6A8 Door opened for a while"
 
 remove_file:
   sequence:

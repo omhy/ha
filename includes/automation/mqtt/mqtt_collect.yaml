@@ -3,7 +3,7 @@
     - platform: state
       entity_id:
       - sensor.temperature_158d00022c7cf2
-    condition:
+  condition:
     - condition: template
       value_template: "{{ (trigger.to_state.state | default('0') | float) < (states.sensor.outside_temperature_min.state | default('0') | float) }}"
   action:

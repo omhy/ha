@@ -17,7 +17,7 @@
         target:
           - !secret tg_chat_dima
           - !secret tg_chat_alyona
-        message: "{{ now().strftime('%H:%M') }} \U0001F61E Computer limit reached. Turning off"
+        message: "{{ states.sensor.now_hm.state }} \U0001F61E Computer limit reached. Turning off"
         inline_keyboard:
           - "\U000023F1 Extend 30 min:/rmt_computer_limit_extend, \U0001F6A8 Disable limit:/rmt_computer_limit_disable"
           - "\U0000267B Dismiss:/dismiss"
@@ -43,7 +43,7 @@
         target:
           - !secret tg_chat_dima
           - !secret tg_chat_alyona
-        message: "{{ now().strftime('%H:%M') }} \U0001F914 Computer used {{ states.sensor.computer_on_today_minutes.state | int }}/{{states.input_number.computer_today_allowed.state | int}} minutes"
+        message: "{{ states.sensor.now_hm.state }} \U0001F914 Computer used {{ states.sensor.computer_on_today_minutes.state | int }}/{{states.input_number.computer_today_allowed.state | int}} minutes"
         inline_keyboard:
           - "\U000023F1 Extend 30 min:/rmt_computer_limit_extend, \U0001F6A8 Disable limit:/rmt_computer_limit_disable"
           - "\U0000267B Dismiss:/dismiss"

@@ -9,7 +9,7 @@
     - service: script.state_change_update_dima_ago
     - service: notify.telegram_dima
       data_template:
-        message: "{{ now().strftime('%H:%M') }} \U0001F4BC Dima enters ({{ states.sensor.state_change_dima_ago.state }})"
+        message: "{{ states.sensor.now_hm.state }} \U0001F4BC Dima enters ({{ states.sensor.state_change_dima_ago.state }})"
     - service: script.state_change_update_dima
 
 - alias: "zone_dima_leaves_work"
@@ -22,7 +22,7 @@
     - service: script.state_change_update_dima_ago
     - service: notify.telegram_dima
       data_template:
-        message: "{{ now().strftime('%H:%M') }} \U0001F4BC Dima leaves ({{ states.sensor.state_change_dima_ago.state }})"
+        message: "{{ states.sensor.now_hm.state }} \U0001F4BC Dima leaves ({{ states.sensor.state_change_dima_ago.state }})"
     - service: script.state_change_update_dima
 
 - alias: "zone_dima_enters_home"
@@ -35,7 +35,7 @@
     - service: script.state_change_update_dima_ago
     - service: notify.telegram_dima
       data_template:
-        message: "{{ now().strftime('%H:%M') }} \U0001F3E0 Dima enters ({{ states.sensor.state_change_dima_ago.state }})"
+        message: "{{ states.sensor.now_hm.state }} \U0001F3E0 Dima enters ({{ states.sensor.state_change_dima_ago.state }})"
     - service: script.state_change_update_dima
 
 - alias: "zone_dima_leaves_home"
@@ -48,7 +48,7 @@
     - service: script.state_change_update_dima_ago
     - service: notify.telegram_dima
       data_template:
-        message: "{{ now().strftime('%H:%M') }} \U0001F3E0 Dima leaves ({{ states.sensor.state_change_dima_ago.state }})"
+        message: "{{ states.sensor.now_hm.state }} \U0001F3E0 Dima leaves ({{ states.sensor.state_change_dima_ago.state }})"
     - service: script.state_change_update_dima
 
 - alias: "zone_dima_enters_school"
@@ -61,7 +61,7 @@
     - service: script.state_change_update_dima_ago
     - service: notify.telegram_dima
       data_template:
-        message: "{{ now().strftime('%H:%M') }} \U0001F3EB Dima enters ({{ states.sensor.state_change_dima_ago.state }})"
+        message: "{{ states.sensor.now_hm.state }} \U0001F3EB Dima enters ({{ states.sensor.state_change_dima_ago.state }})"
     - service: script.state_change_update_dima
 
 - alias: "zone_dima_leaves_school"
@@ -74,7 +74,7 @@
     - service: script.state_change_update_dima_ago
     - service: notify.telegram_dima
       data_template:
-        message: "{{ now().strftime('%H:%M') }} \U0001F3EB Dima leaves ({{ states.sensor.state_change_dima_ago.state }})"
+        message: "{{ states.sensor.now_hm.state }} \U0001F3EB Dima leaves ({{ states.sensor.state_change_dima_ago.state }})"
     - service: script.state_change_update_dima
 
 ################## ALYONA
@@ -88,7 +88,7 @@
     - service: script.state_change_update_alyona_ago
     - service: notify.telegram_dima
       data_template:
-        message: "{{ now().strftime('%H:%M') }} \U0001F3EB Alyona enters ({{ states.sensor.state_change_alyona_ago.state }})"
+        message: "{{ states.sensor.now_hm.state }} \U0001F3EB Alyona enters ({{ states.sensor.state_change_alyona_ago.state }})"
     - service: script.state_change_update_alyona
 
 - alias: "zone_alyona_leaves_school"
@@ -101,5 +101,5 @@
     - service: script.state_change_update_alyona_ago
     - service: notify.telegram_dima
       data_template:
-        message: "{{ now().strftime('%H:%M') }} \U0001F3EB Alyona leaves ({{ states.sensor.state_change_alyona_ago.state }})"
+        message: "{{ states.sensor.now_hm.state }} \U0001F3EB Alyona leaves ({{ states.sensor.state_change_alyona_ago.state }})"
     - service: script.state_change_update_alyona
