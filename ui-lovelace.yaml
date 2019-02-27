@@ -11,6 +11,10 @@ resources:
     type: js
   - url: /customcards/custom-lovelace/auto-entities.js
     type: js
+  - url: https://unpkg.com/moment@2.22.2/moment.js
+    type: js
+  - url: /customcards/custom-lovelace/calendar-card.js
+    type: module
 
 title: Home
 views:
