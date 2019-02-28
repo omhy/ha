@@ -11,10 +11,8 @@ resources:
     type: js
   - url: /customcards/custom-lovelace/auto-entities.js
     type: js
-  - url: https://unpkg.com/moment@2.22.2/moment.js
-    type: js
   - url: /customcards/custom-lovelace/calendar-card.js
-    type: module
+    type: js
 
 title: Home
 views:
@@ -30,6 +28,15 @@ views:
       - sensor.wt00_wind_speed
       - sun.sun
     cards:
+      - type: custom:calendar-card
+        title: Events
+        numberOfDays: 14
+        progressBar: true
+        entities:
+          - calendar.personal
+          - calendar.family
+          - calendar.holidays_in_latvia
+
       - type: glance
         title: Motion
         entities:
@@ -43,17 +50,6 @@ views:
 #          - sensor.livingroom_motions
 #          - sensor.bathroom_motions
 #          - sensor.yuriroom_motions
-
-      - type: history-graph
-        title: Android box
-        hours_to_show: 1
-        entities:
-          - binary_sensor.ping_tv
-          - binary_sensor.abox_is_active
-          - binary_sensor.chromecast_is_active
-          - media_player.chromecast
-          - media_player.abox
-          - sensor.abox_app
 
       - type: glance
         title: Lights
@@ -316,6 +312,17 @@ views:
             - sensor.power_strip_1_load_power
             - sensor.power_strip_3_load_power
             - sensor.power_strip_4_load_power
+
+        - type: history-graph
+          title: Android box 1h
+          hours_to_show: 1
+          entities:
+            - binary_sensor.ping_tv
+            - binary_sensor.abox_is_active
+            - binary_sensor.chromecast_is_active
+            - media_player.chromecast
+            - media_player.abox
+            - sensor.abox_app
 
       - type: vertical-stack
         cards:
