@@ -12,10 +12,15 @@
 
 - platform: template
   sensors:
+    is_workday_bin:
+      value_template: "{{ now().weekday() >= 0 and now().weekday() <= 4 }}"
+      entity_id: now.weekday
+
     ping_tv:
       value_template: "{{states.sensor.power_strip_4_load_power.state | float > 80}}"
       device_class: connectivity
       entity_id: sensor.power_strip_4_load_power
+
     people_home:
       value_template: >
         {{
@@ -37,6 +42,7 @@
         - media_player.kitchen_display
         - media_player.loud_speaker
         - media_player.yury_speaker
+
     chromecast_is_active:
       value_template: >
         {{
@@ -44,6 +50,7 @@
         is_state('media_player.chromecast', 'paused')
         }}
       entity_id: media_player.chromecast
+
     abox_is_active:
       value_template: >
         {{
