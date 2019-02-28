@@ -25,7 +25,7 @@ ha_snapshot_create:
   sequence:
     - service: hassio.snapshot_full
       data_template:
-        name: "backup_{{ now().strftime('%Y%m%d%H%M%S') }}"
+        name: "backup_{{ states.sensor.now_ymdhms.state }}"
 
 ha_snapshot_to_dropbox:
   sequence:

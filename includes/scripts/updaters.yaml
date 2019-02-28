@@ -3,7 +3,7 @@ input_text_set_now:
     - service: input_text.set_value
       data_template:
         entity_id: "{{ entity_id }}"
-        value: "{{ now().strftime('%Y%m%d%H%M%S') }}"
+        value: "{{ states.sensor.now_ymdhms.state }}"
 
 state_change_update_door:
   sequence:

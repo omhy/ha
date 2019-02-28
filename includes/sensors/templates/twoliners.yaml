@@ -128,3 +128,6 @@
     now_hm:
       value_template: "{{ now().strftime('%H:%M') }}"
       entity_id: sensor.time
+    now_ymdhms:
+      value_template: "{{ now().strftime('%Y%m%d%H%M%S') }}"
+      entity_id: sensor.time
