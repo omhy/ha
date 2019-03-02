@@ -189,6 +189,22 @@ sensor.db_size_maria:
 sensor.db_size_influx:
   friendly_name: InfluxDb size
   icon: mdi:database
+sensor.abox_on_today:
+  friendly_name: Android box
+  icon: mdi:android
+
+sensor.youtube_today:
+  friendly_name: Youtube
+  icon: mdi:youtube
+sensor.perfectplayer_today:
+  friendly_name: Perfect player
+  icon: mdi:television-box
+sensor.launcher_today:
+  friendly_name: Launcher
+  icon: mdi:rocket
+sensor.hdvideo_today:
+  friendly_name: HD Video
+  icon: mdi:video-vintage
 
 
 sensor.days_in_month:
@@ -208,6 +224,9 @@ input_boolean.livingroom_corner_use:
   friendly_name: Use corner
 input_select.living_room_flow:
   friendly_name: Flow type
+input_select.ha_log_level:
+  friendly_name: Log level
+  icon: mdi:view-list
 
 #BINARY SENSORS
 binary_sensor.ping_computer:
@@ -219,15 +238,16 @@ binary_sensor.ping_laptop:
 binary_sensor.ping_tv:
   friendly_name: TV
   icon: mdi:television
+binary_sensor.ping_abox:
+  friendly_name: Android box
+  icon: mdi:android
+
 binary_sensor.people_home:
   friendly_name: Someone home
   icon: mdi:account-multiple-check
 binary_sensor.chromecast_is_active:
   friendly_name: Chromecast active
   icon: mdi:google-chrome
-binary_sensor.abox_is_active:
-  friendly_name: Android box active
-  icon: mdi:android
 
 #persons
 person.dima:

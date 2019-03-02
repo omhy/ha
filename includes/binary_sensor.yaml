@@ -51,7 +51,7 @@
         }}
       entity_id: media_player.chromecast
 
-    abox_is_active:
+    ping_abox:
       value_template: >
         {{
         not(

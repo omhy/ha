@@ -1,20 +1,55 @@
 - platform: history_stats
   name: computer_on_today
   entity_id: binary_sensor.ping_computer
-  state: 'on'
-  start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
-  end: '{{ now() }}'
+  state: "on"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
 
 - platform: history_stats
   name: laptop_on_today
   entity_id: binary_sensor.ping_laptop
-  state: 'on'
-  start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
-  end: '{{ now() }}'
+  state: "on"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
 
 - platform: history_stats
   name: tv_on_today
   entity_id: binary_sensor.ping_tv
-  state: 'on'
-  start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
-  end: '{{ now() }}'
+  state: "on"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  name: abox_on_today
+  entity_id: binary_sensor.ping_abox
+  state: "on"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  name: youtube_today
+  entity_id: sensor.abox_app
+  state: "youtube"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  name: perfectplayer_today
+  entity_id: sensor.abox_app
+  state: "pp"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  name: launcher_today
+  entity_id: sensor.abox_app
+  state: "launcher"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  name: hdvideo_today
+  entity_id: sensor.abox_app
+  state: "hdbox"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"

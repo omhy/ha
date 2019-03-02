@@ -26,7 +26,7 @@ include:
     - sensor.db_size_influx
     - sensor.abox_app
     - sensor.abox_app_full
-    - binary_sensor.abox_is_active
+    - binary_sensor.ping_abox
     - binary_sensor.chromecast_is_active
     - sensor.power_strip_1_load_power
     - sensor.power_strip_2_load_power

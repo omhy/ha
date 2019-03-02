@@ -13,6 +13,8 @@ resources:
     type: js
   - url: /customcards/custom-lovelace/calendar-card.js
     type: js
+  - url: /customcards/custom-lovelace/vertical-stack-in-card.js
+    type: js
 
 title: Home
 views:
@@ -265,15 +267,14 @@ views:
               - sensor.outside_temperature_min_at
               - sensor.outside_temperature_max_at
 
-      - type: vertical-stack
+      - type: custom:vertical-stack-in-card
+        title: Temperatures 12h
         cards:
           - type: history-graph
-            title: Outside 12h
             hours_to_show: 12
             entities:
               - sensor.temperature_158d00022c7cf2
           - type: history-graph
-            title: Rooms 12h
             hours_to_show: 12
             entities:
               - sensor.temperature_158d0002323783
@@ -295,84 +296,85 @@ views:
       - sensor.waze_home_work
       - sensor.waze_work_home
     cards:
-      - type: vertical-stack
+      - type: custom:vertical-stack-in-card
+        title: Devices
         cards:
-        - type: history-graph
-          title: Movements 1h
-          hours_to_show: 1
-          entities:
-            - binary_sensor.motion_sensor_158d0001fa3dc0
-            - binary_sensor.motion_sensor_158d0001e52779
-            - binary_sensor.motion_sensor_158d0002d43d7d
+          - type: glance
+            entities:
+              - binary_sensor.ping_computer
+              - binary_sensor.ping_laptop
+              - binary_sensor.ping_tv
+              - binary_sensor.ping_abox
+          - type: glance
+            entities:
+              - sensor.computer_on_today
+              - sensor.laptop_on_today
+              - sensor.tv_on_today
+              - sensor.abox_on_today
+          - type: glance
+            entities:
+              - sensor.launcher_today
+              - sensor.youtube_today
+              - sensor.perfectplayer_today
+              - sensor.hdvideo_today
 
-        - type: history-graph
-          title: Living room power 1h
-          hours_to_show: 1
-          entities:
-            - sensor.power_strip_1_load_power
-            - sensor.power_strip_3_load_power
-            - sensor.power_strip_4_load_power
+      - type: history-graph
+        title: Movements 1h
+        hours_to_show: 1
+        entities:
+          - binary_sensor.motion_sensor_158d0001fa3dc0
+          - binary_sensor.motion_sensor_158d0001e52779
+          - binary_sensor.motion_sensor_158d0002d43d7d
 
-        - type: history-graph
-          title: Android box 1h
-          hours_to_show: 1
-          entities:
-            - binary_sensor.ping_tv
-            - binary_sensor.abox_is_active
-            - binary_sensor.chromecast_is_active
-            - media_player.chromecast
-            - media_player.abox
-            - sensor.abox_app
+      - type: history-graph
+        title: Living room power 1h
+        hours_to_show: 1
+        entities:
+          - sensor.power_strip_1_load_power
+          - sensor.power_strip_3_load_power
+          - sensor.power_strip_4_load_power
 
-      - type: vertical-stack
+      - type: history-graph
+        title: Android box 1h
+        hours_to_show: 1
+        entities:
+          - binary_sensor.ping_tv
+          - binary_sensor.ping_abox
+          - binary_sensor.chromecast_is_active
+          - media_player.chromecast
+          - media_player.abox
+          - sensor.abox_app
+
+      - type: custom:vertical-stack-in-card
+        title: Device trackers
         cards:
-        - type: history-graph
-          title: Pingable 12h
-          hours_to_show: 12
-          entities:
-            - binary_sensor.ping_computer
-            - binary_sensor.ping_laptop
-            - binary_sensor.ping_tv
+          - type: history-graph
+            hours_to_show: 24
+            entities:
+              - person.dima
+              - entity: device_tracker.google_maps_111683533988744565132
+                name: DimaGM
 
-#Sync entities with binary_sensor.people_home
-        - type: history-graph
-          title: Home presence factors 12h
-          hours_to_show: 12
-          entities:
-            - binary_sensor.people_home
-            - light.big_torch
-            - light.corner_lamp
-            - binary_sensor.ping_computer
-            - binary_sensor.ping_laptop
-            - binary_sensor.ping_tv
-            - media_player.kitchen_display
-            - media_player.loud_speaker
-            - media_player.yury_speaker
+          - type: history-graph
+            hours_to_show: 24
+            entities:
+              - person.alyona
+              - entity: device_tracker.google_maps_115914092349482836896
+                name: AlyonaGM
 
-      - type: vertical-stack
-        cards:
-        - type: history-graph
-          title: Persons 24h
-          hours_to_show: 24
-          entities:
-            - person.dima
-            - person.alyona
-            - person.yuri
+          - type: history-graph
+            hours_to_show: 24
+            entities:
+              - person.yuri
+              - entity: device_tracker.google_maps_117454969161947422882
+                name: YuriGM
 
-        - type: history-graph
-          title: Device Trackers 24h
-          hours_to_show: 24
-          entities:
-            - device_tracker.google_maps_111683533988744565132
-            - device_tracker.google_maps_115914092349482836896
-            - device_tracker.google_maps_117454969161947422882
-
-        - type: history-graph
-          title: Waze 24h
-          hours_to_show: 24
-          entities:
-            - sensor.waze_home_work
-            - sensor.waze_work_home
+      - type: history-graph
+        title: Waze 24h
+        hours_to_show: 24
+        entities:
+          - sensor.waze_home_work
+          - sensor.waze_work_home
 
 
   ##################   LIGHTS FLOW
@@ -467,30 +469,6 @@ views:
           - sensor.power_strip_5_utility_d
           - sensor.power_strip_5_utility_w
           - sensor.power_strip_5_utility_m
-      - type: glance
-        title: Power cords
-        show_header_toggle: false
-        entities:
-          - switch.power_strip_1
-          - switch.power_strip_3
-          - switch.power_strip_4
-          - switch.power_strip_2
-          - switch.power_strip_5
-
-      - type: glance
-        title: Connectivity
-        entities:
-          - binary_sensor.ping_computer
-          - binary_sensor.ping_laptop
-          - binary_sensor.ping_tv
-
-      - type: glance
-        show_header_toggle: false
-        title: On Today
-        entities:
-          - sensor.computer_on_today
-          - sensor.laptop_on_today
-          - sensor.tv_on_today
 
       - type: entities
         show_header_toggle: false
@@ -1114,17 +1092,13 @@ views:
   - title: System
     path: sys
     icon: mdi:desktop-tower
-    badges:
-      - sensor.uptime
-      - sensor.db_size_maria
-      - sensor.db_size_influx
-      - sensor.abox_appfor
     cards:
-      - type: entities
-        title: Misc
-        show_header_toggle: false
-        entities:
-          - input_select.ha_log_level
+      - type: custom:tracker-card
+        title:
+        trackers:
+          - sensor.custom_card_tracker
+          - sensor.custom_component_tracker
+
       - type: entities
         title: Doorbell settings
         show_header_toggle: false
@@ -1132,12 +1106,12 @@ views:
           - input_number.doorbell_volume
           - input_number.doorbell_melody
 
-      - type: entities
-        title: Zigbee
-        show_header_toggle: false
-        entities:
-          - input_boolean.zigbee_permit_join
-          - timer.zigbee_permit_join
+#      - type: entities
+#        title: Zigbee
+#        show_header_toggle: false
+#        entities:
+#          - input_boolean.zigbee_permit_join
+#          - timer.zigbee_permit_join
 
       - type: custom:auto-entities
         show_empty: false
@@ -1150,14 +1124,23 @@ views:
             - entity_id: sensor.*_battery_level
               state: '< 25'
 
-      - type: glance
+      - type: custom:vertical-stack-in-card
         title: System
-        entities:
-          - sensor.processor_use
-          - sensor.memory_use_percent
-          - sensor.disk_use_percent_home
-          - sensor.swap_use_percent
-          - sensor.temp
+        cards:
+          - type: glance
+            entities:
+              - sensor.uptime
+              - sensor.processor_use
+              - sensor.memory_use_percent
+              - sensor.temp
+              - input_select.ha_log_level
+
+          - type: glance
+            entities:
+              - sensor.disk_use_percent_home
+              - sensor.swap_use_percent
+              - sensor.db_size_maria
+              - sensor.db_size_influx
 
       - type: glance
         title: Dates
@@ -1174,14 +1157,9 @@ views:
           - sensor.processor_use
           - sensor.memory_use_percent
           - sensor.disk_use_percent_home
+
       - type: history-graph
         title: Temperature 12h
         hours_to_show: 12
         entities:
           - sensor.temp
-
-      - type: custom:tracker-card
-        title:
-        trackers:
-          - sensor.custom_card_tracker
-          - sensor.custom_component_tracker
