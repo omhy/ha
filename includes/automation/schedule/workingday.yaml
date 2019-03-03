@@ -4,7 +4,7 @@
       at: "06:55:00"
   condition:
     - condition: state
-      entity_id: sensor.is_workday
+      entity_id: binary_sensor.is_workday
       state: "True"
   action:
     - service: scene.turn_on
@@ -24,7 +24,7 @@
       at: "07:25:00"
   condition:
     - condition: state
-      entity_id: sensor.is_workday
+      entity_id: binary_sensor.is_workday
       state: "True"
   action:
     - service: scene.turn_on
@@ -37,7 +37,7 @@
       at: "07:27:30"
   condition:
     - condition: state
-      entity_id: sensor.is_workday
+      entity_id: binary_sensor.is_workday
       state: "True"
   action:
     - service: scene.turn_on
@@ -49,7 +49,7 @@
       at: "07:30:00"
   condition:
     - condition: state
-      entity_id: sensor.is_workday
+      entity_id: binary_sensor.is_workday
       state: "True"
   action:
     - service: scene.turn_on
@@ -61,7 +61,7 @@
       at: "07:33:00"
   condition:
     - condition: state
-      entity_id: sensor.is_workday
+      entity_id: binary_sensor.is_workday
       state: "True"
   action:
     - service: script.rmt_computer_sleep
@@ -72,7 +72,7 @@
       at: "07:35:00"
   condition:
     - condition: state
-      entity_id: sensor.is_workday
+      entity_id: binary_sensor.is_workday
       state: "True"
   action:
     - service: scene.turn_on
@@ -84,7 +84,7 @@
       at: "07:45:00"
   condition:
     - condition: state
-      entity_id: sensor.is_workday
+      entity_id: binary_sensor.is_workday
       state: "True"
   action:
     - service: scene.turn_on

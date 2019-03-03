@@ -2,16 +2,16 @@ media_radio_play_param_cast:
   sequence:
     - service: media_player.play_media
       data_template:
-        media_content_id: "{{media_content_id}}"
         entity_id: "{{ entity_id }}"
+        media_content_id: "{{media_content_id}}"
         media_content_type: "audio/mp4"
 
 media_radio_play_selected_cast:
   sequence:
     - service: script.media_radio_play_param_cast
       data_template:
-        media_content_id: "{{media_content_id}}"
         entity_id: "{{ states.input_text.radio_cast.state }}"
+        media_content_id: "{{media_content_id}}"
 
 media_radio_play_soma_illstreet:
   sequence:
@@ -63,11 +63,3 @@ media_player_stop_chromecast:
     - service: media_player.media_stop
       data_template:
         entity_id: media_player.chromecast
-
-media_player_stop_chromecast_if_active:
-  sequence:
-    - condition: state
-      entity_id: binary_sensor.chromecast_is_active
-      state: 'on'
-    - service: script.media_player_stop_chromecast
-

@@ -30,7 +30,7 @@ switch.wall_plug_158d0002013f1e:
   friendly_name: Standalone switch
 
 #MISC
-sensor.is_workday:
+binary_sensor.is_workday:
   friendly_name: Workday
   icon: mdi:briefcase
 
@@ -238,9 +238,11 @@ binary_sensor.ping_laptop:
 binary_sensor.ping_tv:
   friendly_name: TV
   icon: mdi:television
+  device_class: connectivity
 binary_sensor.ping_abox:
   friendly_name: Android box
   icon: mdi:android
+  device_class: connectivity
 
 binary_sensor.people_home:
   friendly_name: Someone home

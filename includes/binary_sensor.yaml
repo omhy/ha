@@ -12,13 +12,12 @@
 
 - platform: template
   sensors:
-    is_workday_bin:
+    is_workday:
       value_template: "{{ now().weekday() >= 0 and now().weekday() <= 4 }}"
       entity_id: now.weekday
 
     ping_tv:
       value_template: "{{states.sensor.power_strip_4_load_power.state | float > 80}}"
-      device_class: connectivity
       entity_id: sensor.power_strip_4_load_power
 
     people_home:

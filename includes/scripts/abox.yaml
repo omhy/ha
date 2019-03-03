@@ -5,13 +5,6 @@ abox_key_home:
         entity_id: media_player.abox
         key: "KEYCODE_HOME"
 
-abox_key_home_if_active:
-  sequence:
-    - condition: state
-      entity_id: binary_sensor.ping_abox
-      state: 'on'
-    - service: script.abox_key_home
-
 abox_key_wakeup:
   sequence:
     - service: media_player.androidtv_key
