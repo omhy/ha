@@ -57,6 +57,8 @@ media_radio_play_soma_beatblender:
 media_player_stop_all:
   sequence:
     - service: media_player.media_stop
+      data_template:
+        entity_id: all
 
 media_player_stop_chromecast:
   sequence:
