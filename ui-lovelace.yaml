@@ -11,8 +11,6 @@ resources:
     type: js
   - url: /customcards/custom-lovelace/auto-entities.js
     type: js
-  - url: /customcards/custom-lovelace/vertical-stack-in-card.js
-    type: js
   - url: /customcards/custom-lovelace/calendar-card.js
     type: js
 
@@ -177,7 +175,6 @@ views:
               - script.media_player_stop_all
 
       - type: vertical-stack
-#      - type: custom:vertical-stack-in-card
         cards:
           - type: custom:mini-media-player
             entity: media_player.kitchen_display
@@ -269,14 +266,15 @@ views:
               - sensor.outside_temperature_min_at
               - sensor.outside_temperature_max_at
 
-      - type: custom:vertical-stack-in-card
-        title: Temperatures 12h
+      - type: vertical-stack
         cards:
           - type: history-graph
+            title: Outside 12h
             hours_to_show: 12
             entities:
               - sensor.temperature_158d00022c7cf2
           - type: history-graph
+            title: Temperatures 12h
             hours_to_show: 12
             entities:
               - sensor.temperature_158d0002323783
@@ -295,22 +293,24 @@ views:
       - sensor.waze_home_work
       - sensor.waze_work_home
     cards:
-      - type: custom:vertical-stack-in-card
-        title: Devices
+      - type: vertical-stack
         cards:
           - type: glance
+            title: Is on now
             entities:
               - binary_sensor.ping_computer
               - binary_sensor.ping_laptop
               - binary_sensor.ping_tv
               - binary_sensor.ping_abox
           - type: glance
+            title: Is on Today
             entities:
               - sensor.computer_on_today
               - sensor.laptop_on_today
               - sensor.tv_on_today
               - sensor.abox_on_today
           - type: glance
+            title: Abox usage
             entities:
 #              - sensor.launcher_today
               - sensor.abox_app
@@ -1107,10 +1107,11 @@ views:
             - entity_id: sensor.*_battery_level
               state: '< 25'
 
-      - type: custom:vertical-stack-in-card
+      - type: vertical-stack
         title: System
         cards:
           - type: glance
+            title: System
             entities:
               - sensor.uptime
               - sensor.processor_use
@@ -1119,6 +1120,7 @@ views:
               - input_select.ha_log_level
 
           - type: glance
+            title: Storage
             entities:
               - sensor.disk_use_percent_home
               - sensor.swap_use_percent
