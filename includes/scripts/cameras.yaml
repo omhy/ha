@@ -1,3 +1,10 @@
+camera_snap:
+  sequence:
+    - service: shell_command.cam_snp
+      data_template:
+        rtsp: "{{ rtsp }}"
+        file: "/share/{{ file_prefix }}.jpg"
+
 camera_snap_to_telegram:
   sequence:
     - service: shell_command.cam_snp
