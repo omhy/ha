@@ -14,7 +14,7 @@
         chat_id: "{{ trigger.event.data.chat_id }}"
         message_id: "{{ trigger.event.data.message.message_id }}"
 
-- alias: "telegram_handle_clb_restart_ha"
+- alias: "telegram_handle_clb_ha_restart"
   trigger:
     - platform: event
       event_type: telegram_callback
@@ -27,7 +27,7 @@
         message: "Roger {{ trigger.event.data.data }}"
     - service: homeassistant.restart
 
-- alias: "telegram_handle_clb_refresh_ha"
+- alias: "telegram_handle_clb_ha_getlog"
   trigger:
     - platform: event
       event_type: telegram_callback
