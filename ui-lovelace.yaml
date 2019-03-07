@@ -290,8 +290,8 @@ views:
       - person.dima
       - person.alyona
       - person.yuri
-      - sensor.waze_home_work
-      - sensor.waze_work_home
+#      - sensor.waze_home_work
+#      - sensor.waze_work_home
     cards:
       - type: vertical-stack
         cards:
@@ -346,18 +346,19 @@ views:
           - sensor.abox_app
 
       - type: history-graph
-        hours_to_show: 24
+        title: Persons 3h
+        hours_to_show: 2
         entities:
           - person.dima
           - person.alyona
           - person.yuri
 
-      - type: history-graph
-        title: Waze 24h
-        hours_to_show: 24
-        entities:
-          - sensor.waze_home_work
-          - sensor.waze_work_home
+#      - type: history-graph
+#        title: Waze 24h
+#        hours_to_show: 24
+#        entities:
+#          - sensor.waze_home_work
+#          - sensor.waze_work_home
 
 
   ##################   LIGHTS FLOW
