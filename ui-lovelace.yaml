@@ -27,6 +27,8 @@ views:
       - sensor.wt00_precipitation
       - sensor.wt00_wind_speed
       - sun.sun
+      - sensor.next_dusk
+      - sensor.next_dawn
     cards:
       - type: custom:calendar-card
         title: Events
