@@ -8,14 +8,8 @@ include:
     - media_player
     - calendar
     - person
+    - binary_sensor
   entities:
-    - binary_sensor.motion_sensor_158d0001fa3dc0
-    - binary_sensor.motion_sensor_158d0001e52779
-    - binary_sensor.motion_sensor_158d0002d43d7d
-    - binary_sensor.ping_computer
-    - binary_sensor.ping_laptop
-    - binary_sensor.ping_tv
-    - binary_sensor.people_home
     - sensor.moon
     - sensor.processor_use
     - sensor.memory_use_percent

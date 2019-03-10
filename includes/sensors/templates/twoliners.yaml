@@ -110,24 +110,21 @@
       entity_id:
       - input_boolean.livingroom_torch_use
       - input_boolean.livingroom_corner_use
-#    is_workday:
-#      value_template: "{{ now().weekday() >= 0 and now().weekday() <= 4 }}"
-#      entity_id: now.weekday
     computer_on_today_minutes:
       value_template: "{{((states.sensor.computer_on_today.state | float) * 60) | int}}"
       entity_id: sensor.computer_on_today
     laptop_on_today_minutes:
       value_template: "{{((states.sensor.laptop_on_today.state | float) * 60) | int}}"
       entity_id: sensor.laptop_on_today
-    abox_app:
-      value_template: "{{states.media_player.abox.attributes.app_id.package.split('.')[-1]}}"
-      entity_id: media_player.abox
-    abox_app_full:
-      value_template: "{{states.media_player.abox.attributes.app_id.package}}"
-      entity_id: media_player.abox
     now_hm:
       value_template: "{{ now().strftime('%H:%M') }}"
       entity_id: sensor.time
     now_ymdhms:
       value_template: "{{ now().strftime('%Y%m%d%H%M%S') }}"
       entity_id: sensor.time
+    abox_app:
+      value_template: "{{states.media_player.abox.attributes.app_id.package.split('.')[-1]}}"
+      entity_id: media_player.abox
+    abox_app_full:
+      value_template: "{{states.media_player.abox.attributes.app_id.package}}"
+      entity_id: media_player.abox

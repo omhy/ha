@@ -214,9 +214,6 @@ input_boolean.livingroom_corner_use:
   friendly_name: Use corner
 input_select.living_room_flow:
   friendly_name: Flow type
-input_select.ha_log_level:
-  friendly_name: Log level
-  icon: mdi:view-list
 
 #BINARY SENSORS
 binary_sensor.ping_computer:

@@ -721,7 +721,6 @@ views:
               - sensor.processor_use
               - sensor.memory_use_percent
               - sensor.temp
-              - input_select.ha_log_level
 
           - type: glance
             title: Storage

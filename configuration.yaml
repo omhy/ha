@@ -45,9 +45,13 @@ influxdb: !include includes/influxdb.yaml
 recorder: !include includes/recorder.yaml
 history:
 logbook:
-logger:
-  default: warn
 custom_updater: !include includes/custom_updater.yaml
+
+logger:
+  default: warning
+  logs:
+    homeassistant.components.media_player: critical
+    custom_components.androidtv.media_player: critical
 
 http:
   ip_ban_enabled: true

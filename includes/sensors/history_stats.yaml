@@ -1,6 +1,39 @@
 - platform: history_stats
+  name: count_opened_door
+  entity_id: binary_sensor.door_window_sensor_158d00024367c8
+  type: "count"
+  state: "on"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  name: count_motions_bathroom
+  entity_id: binary_sensor.motion_sensor_158d0001e52779
+  type: "count"
+  state: "on"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  name: count_motions_yury_room
+  entity_id: binary_sensor.motion_sensor_158d0002d43d7d
+  type: "count"
+  state: "on"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  name: count_motions_living_room
+  entity_id: binary_sensor.motion_sensor_158d0001fa3dc0
+  type: "count"
+  state: "on"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
   name: computer_on_today
   entity_id: binary_sensor.ping_computer
+  type: "time"
   state: "on"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
   end: "{{ now() }}"
@@ -8,6 +41,7 @@
 - platform: history_stats
   name: laptop_on_today
   entity_id: binary_sensor.ping_laptop
+  type: "time"
   state: "on"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
   end: "{{ now() }}"
@@ -15,13 +49,16 @@
 - platform: history_stats
   name: tv_on_today
   entity_id: binary_sensor.ping_tv
+  type: "time"
   state: "on"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
   end: "{{ now() }}"
 
+#ABOX
 - platform: history_stats
   name: abox_on_today
   entity_id: binary_sensor.ping_abox
+  type: "time"
   state: "on"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
   end: "{{ now() }}"
@@ -29,6 +66,7 @@
 - platform: history_stats
   name: youtube_today
   entity_id: sensor.abox_app
+  type: "time"
   state: "youtube"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
   end: "{{ now() }}"
@@ -36,6 +74,7 @@
 - platform: history_stats
   name: perfectplayer_today
   entity_id: sensor.abox_app
+  type: "time"
   state: "pp"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
   end: "{{ now() }}"
@@ -43,6 +82,7 @@
 - platform: history_stats
   name: launcher_today
   entity_id: sensor.abox_app
+  type: "time"
   state: "launcher"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
   end: "{{ now() }}"
@@ -50,6 +90,7 @@
 - platform: history_stats
   name: hdvideo_today
   entity_id: sensor.abox_app
+  type: "time"
   state: "hdbox"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
   end: "{{ now() }}"
