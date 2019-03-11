@@ -42,14 +42,6 @@
         - media_player.loud_speaker
         - media_player.yury_speaker
 
-    chromecast_is_active:
-      value_template: >
-        {{
-        is_state('media_player.chromecast', 'playing') or
-        is_state('media_player.chromecast', 'paused')
-        }}
-      entity_id: media_player.chromecast
-
     ping_abox:
       value_template: >
         {{

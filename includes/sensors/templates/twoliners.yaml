@@ -125,9 +125,6 @@
     abox_app:
       value_template: "{{ states.media_player.abox.attributes.app_id.package.split('.')[-1] }}"
       entity_id: media_player.abox
-    abox_app_full:
-      value_template: "{{ states.media_player.abox.attributes.app_id.package }}"
-      entity_id: media_player.abox
 
     next_dusk:
       value_template: "{{ states.sun.sun.attributes.next_dusk.split('T')[1][0:5] }}"

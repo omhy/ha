@@ -13,6 +13,8 @@ resources:
     type: js
   - url: /customcards/custom-lovelace/calendar-card.js
     type: js
+  - url: /customcards/custom-lovelace/flex-table-card.js
+    type: js
 
 title: Home
 views:
@@ -26,14 +28,11 @@ views:
       - sensor.humidity_158d00022c7cf2
       - sensor.wt00_precipitation
       - sensor.wt00_wind_speed
-      - sun.sun
       - sensor.next_dusk
       - sensor.next_dawn
     cards:
       - type: custom:calendar-card
         title: Events
-#        numberOfDays: 14
-#        progressBar: true
         entities:
           - calendar.personal
           - calendar.family
@@ -342,7 +341,6 @@ views:
         entities:
           - binary_sensor.ping_tv
           - binary_sensor.ping_abox
-          - binary_sensor.chromecast_is_active
           - media_player.chromecast
           - media_player.abox
           - sensor.abox_app
@@ -468,7 +466,63 @@ views:
   - title: Forecast
     path: forecast
     icon: mdi:cloud-circle
+    badges:
+      - sensor.moon
+      - sun.sun
     cards:
+#      - type: custom:flex-table-card
+#        sort_by: name
+#        entities:
+#          include:
+#            - sensor.wt*_temperature
+#        columns:
+#          - name: Name
+#            prop: name
+#            id: name
+#          - name: Temp
+#            prop: state
+#            suffix: "°C"
+#      - type: custom:flex-table-card
+#        sort_by: name
+#        entities:
+#          include:
+#            - sensor.wt*_humidity
+#        columns:
+#          - name: Name
+#            prop: name
+#            id: name
+#          - name: Humidity
+#            prop: state
+#            suffix: "%"
+#            hidden: true
+#      - type: custom:flex-table-card
+#        sort_by: name
+#        entities:
+#          include:
+#            - sensor.wt*_precipitation
+#        columns:
+#          - name: Name
+#            prop: name
+#            id: name
+#          - name: Precipitation
+#            prop: state
+#            suffix: "mm"
+#            hidden: true
+#      - type: custom:flex-table-card
+#        sort_by: name
+#        entities:
+#          include:
+#            - sensor.wt*_wind_speed
+#        columns:
+#          - name: Name
+#            prop: name
+#            id: name
+#          - name: Wind speed
+#            prop: state
+#            suffix: "m/s"
+#            hidden: true
+
+
       - type: glance
         title: Temperature
         show_header_toggle: true
