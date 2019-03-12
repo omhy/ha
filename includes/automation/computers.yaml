@@ -10,7 +10,7 @@
       entity_id: binary_sensor.ping_computer
       state: "on"
     - condition: template
-      value_template: "{{ states.sensor.computer_on_today_minutes.state | int >= states.input_number.computer_today_allowed.state | int}}"
+      value_template: "{{ states.sensor.computer_on_today_minutes.state | int >= states.input_number.computer_today_allowed.state | int }}"
   action:
     - service: telegram_bot.send_message
       data_template:
@@ -36,14 +36,14 @@
       entity_id: binary_sensor.ping_computer
       state: "on"
     - condition: template
-      value_template: "{{ (states.input_number.computer_today_allowed.state | int - states.sensor.computer_on_today_minutes.state | int) < 30}}"
+      value_template: "{{ (states.input_number.computer_today_allowed.state | int - states.sensor.computer_on_today_minutes.state | int) < 30 }}"
   action:
     - service: telegram_bot.send_message
       data_template:
         target:
           - !secret tg_chat_dima
           - !secret tg_chat_alyona
-        message: "{{ states.sensor.now_hm.state }} \U0001F914 Computer used {{ states.sensor.computer_on_today_minutes.state | int }}/{{states.input_number.computer_today_allowed.state | int}} minutes"
+        message: "{{ states.sensor.now_hm.state }} \U0001F914 Computer used {{ states.sensor.computer_on_today_minutes.state | int }}/{{ states.input_number.computer_today_allowed.state | int }} minutes"
         inline_keyboard:
           - "\U000023F1 Extend 30 min:/rmt_computer_limit_extend, \U0001F6A8 Disable limit:/rmt_computer_limit_disable"
           - "\U0000267B Dismiss:/dismiss"

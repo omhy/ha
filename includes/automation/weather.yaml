@@ -8,5 +8,5 @@
     - service: mqtt.publish
       data_template:
         topic: "outside/temperature/diff"
-        payload: "{{ (states.sensor.outside_temperature_max.state | float - states.sensor.outside_temperature_min.state | float) | round(1)}}"
+        payload: "{{ (states.sensor.outside_temperature_max.state | float - states.sensor.outside_temperature_min.state | float) | round(1) }}"
         retain: true

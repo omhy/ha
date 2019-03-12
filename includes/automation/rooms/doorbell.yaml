@@ -9,8 +9,8 @@
     - service: xiaomi_aqara.play_ringtone
       data_template:
         gw_mac: !secret gw_mac
-        ringtone_id: "{{states.input_number.doorbell_melody.state|int}}"
-        ringtone_vol: "{{states.input_number.doorbell_volume.state|int}}"
+        ringtone_id: "{{ states.input_number.doorbell_melody.state | int }}"
+        ringtone_vol: "{{ states.input_number.doorbell_volume.state | int }}"
     - service: notify.telegram_dima
       data_template:
         message: "{{ states.sensor.now_hm.state }} \U0001F514 Doorbell single click"
@@ -27,7 +27,7 @@
       data_template:
         gw_mac: !secret gw_mac
         ringtone_id: "10002"
-        ringtone_vol: "{{states.input_number.doorbell_volume.state|int}}"
+        ringtone_vol: "{{ states.input_number.doorbell_volume.state | int }}"
     - service: notify.telegram_dima
       data_template:
         message: "{{ states.sensor.now_hm.state }} \U0001F514 Doorbell double click"

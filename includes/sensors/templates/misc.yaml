@@ -17,4 +17,4 @@
         11 : 30,
         12 : 31
         } %}
-        {{days[now().month]}}
+        {{ days[now().month] }}

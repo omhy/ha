@@ -23,7 +23,7 @@
   action:
     - service: notify.telegram_dima
       data_template:
-        message: "{{ states.sensor.now_hm.state }} \U0001F5A5 is turned off ({{ states.sensor.computer_on_today_minutes.state | int }}/{{states.input_number.computer_today_allowed.state | int}})"
+        message: "{{ states.sensor.now_hm.state }} \U0001F5A5 is turned off ({{ states.sensor.computer_on_today_minutes.state | int }}/{{ states.input_number.computer_today_allowed.state | int }})"
 
 - alias: "state_computer_turned_on"
   trigger:
@@ -34,7 +34,7 @@
   action:
     - service: notify.telegram_dima
       data_template:
-        message: "{{ states.sensor.now_hm.state }} \U0001F5A5 is turned on ({{ states.sensor.computer_on_today_minutes.state | int }}/{{states.input_number.computer_today_allowed.state | int}})"
+        message: "{{ states.sensor.now_hm.state }} \U0001F5A5 is turned on ({{ states.sensor.computer_on_today_minutes.state | int }}/{{ states.input_number.computer_today_allowed.state | int }})"
 
 - alias: "state_laptop_turned_off"
   trigger:

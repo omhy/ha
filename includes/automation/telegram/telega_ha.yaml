@@ -8,7 +8,7 @@
         target: !secret tg_chat_dima
         message: "{{ states.sensor.now_hm.state }} \U0001F916 {{ states.sensor.version_ha_current.state }} #HA is back online"
         inline_keyboard:
-        - "\U0001F532 Menu:/menu, \U0000267B Dismiss:/dismiss"
+          - "\U0001F532 Menu:/menu, \U0000267B Dismiss:/dismiss"
 
 - alias: "ha_shutdown"
   trigger:
@@ -18,7 +18,7 @@
     - service: telegram_bot.send_message
       data_template:
         target: !secret tg_chat_dima
-        message: "{{ states.sensor.now_hm.state }} \U0001F6D1 {{ states.sensor.version_ha_current.state }} #HA goes offline (uptime {{ (1440 * states.sensor.uptime.state | float) | round(0)}} min)"
+        message: "{{ states.sensor.now_hm.state }} \U0001F6D1 {{ states.sensor.version_ha_current.state }} #HA goes offline (uptime {{ (1440 * states.sensor.uptime.state | float) | round(0) }} min)"
         inline_keyboard:
           - "\U0000267B Dismiss:/dismiss"
 
@@ -35,7 +35,7 @@
         target: !secret tg_chat_dima
         message: "{{ states.sensor.now_hm.state }} \U00002620 {{ states.persistent_notification.httplogin.attributes.message }}"
         inline_keyboard:
-        - "\U0000267B Dismiss:/dismiss"
+          - "\U0000267B Dismiss:/dismiss"
     - service: persistent_notification.dismiss
       data:
         notification_id: "httplogin"

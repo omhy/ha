@@ -3,7 +3,7 @@ media_radio_play_param_cast:
     - service: media_player.play_media
       data_template:
         entity_id: "{{ entity_id }}"
-        media_content_id: "{{media_content_id}}"
+        media_content_id: "{{ media_content_id }}"
         media_content_type: "audio/mp4"
 
 media_radio_play_selected_cast:
@@ -11,7 +11,7 @@ media_radio_play_selected_cast:
     - service: script.media_radio_play_param_cast
       data_template:
         entity_id: "{{ states.input_text.radio_cast.state }}"
-        media_content_id: "{{media_content_id}}"
+        media_content_id: "{{ media_content_id }}"
 
 media_radio_play_soma_illstreet:
   sequence:

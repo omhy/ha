@@ -155,7 +155,7 @@
             4 : states.input_number.flow_hue4.state | int
           } %}
         {% endif %}
-        {{hue[states.input_number.flow_idx.state|int]}}
+        {{ hue[states.input_number.flow_idx.state | int] }}
       sat: "{{ states.input_number.flow_saturation.state }}"
       brightness: "{{ states.input_number.flow_brightness.state }}"
       transition: "{{ states.input_number.flow_transition.state }}"
@@ -176,7 +176,7 @@
           'green' : 100,
           'blue' : 200
         } %}
-        {{hue[states.input_select.living_room_flow.state]}}
+        {{ hue[states.input_select.living_room_flow.state] }}
   - service: input_number.set_value
     entity_id: input_number.flow_hue2
     data_template:
@@ -188,7 +188,7 @@
           'green' : 120,
           'blue' : 220
         } %}
-        {{hue[states.input_select.living_room_flow.state]}}
+        {{ hue[states.input_select.living_room_flow.state] }}
   - service: input_number.set_value
     entity_id: input_number.flow_hue3
     data_template:
@@ -200,7 +200,7 @@
           'green' : 140,
           'blue' : 240
         } %}
-        {{hue[states.input_select.living_room_flow.state]}}
+        {{ hue[states.input_select.living_room_flow.state] }}
   - service: input_number.set_value
     entity_id: input_number.flow_hue4
     data_template:
@@ -212,4 +212,4 @@
           'green' : 160,
           'blue' : 260
         } %}
-        {{hue[states.input_select.living_room_flow.state]}}
+        {{ hue[states.input_select.living_room_flow.state] }}

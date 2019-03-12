@@ -65,7 +65,7 @@
       data_template:
         file_prefix: "cam1"
         rtsp: !secret cam1_rtsp
-        target: "{{trigger.event.data.user_id}}"
+        target: "{{ trigger.event.data.user_id }}"
         callback_message: "{{ trigger.event.data.data }}"
 
 - alias: "telegram_handle_cmd_vid_cam1"
@@ -83,7 +83,7 @@
       data_template:
         file_prefix: "cam1"
         rtsp: !secret cam1_rtsp
-        target: "{{trigger.event.data.user_id}}"
+        target: "{{ trigger.event.data.user_id }}"
         callback_message: "{{ trigger.event.data.data }}"
 
 ########################################################################## CAM2 #####################################################
@@ -121,5 +121,5 @@
     data_template:
       file_prefix: "cam2"
       rtsp: !secret cam2_rtsp
-      target: "{{trigger.event.data.user_id}}"
+      target: "{{ trigger.event.data.user_id }}"
       callback_message: "{{ trigger.event.data.data }}"

@@ -17,7 +17,7 @@
       entity_id: now.weekday
 
     ping_tv:
-      value_template: "{{states.sensor.power_strip_4_load_power.state | float > 80}}"
+      value_template: "{{ states.sensor.power_strip_4_load_power.state | float > 80 }}"
       entity_id: sensor.power_strip_4_load_power
 
     people_home:

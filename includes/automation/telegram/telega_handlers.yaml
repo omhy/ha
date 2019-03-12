@@ -40,7 +40,7 @@
         message: "Roger {{ trigger.event.data.data }}"
     - service: telegram_bot.send_document
       data_template:
-        target: "{{trigger.event.data.user_id}}"
+        target: "{{ trigger.event.data.user_id }}"
         file: "/config/home-assistant.log"
         inline_keyboard:
           - "\U0001F504 Refresh:{{ trigger.event.data.data }}, \U0000267B Dismiss:/dismiss"
@@ -58,7 +58,7 @@
         message: "Roger {{ trigger.event.data.data }}"
     - service: script.telegram_send_weather_forecast
       data_template:
-        target: "{{trigger.event.data.user_id}}"
+        target: "{{ trigger.event.data.user_id }}"
 
 - alias: "telegram_handle_clb_outside"
   trigger:
@@ -73,7 +73,7 @@
         message: "Roger {{ trigger.event.data.data }}"
     - service: script.telegram_send_outside
       data_template:
-        target: "{{trigger.event.data.user_id}}"
+        target: "{{ trigger.event.data.user_id }}"
 
 - alias: "telegram_handle_clb_rooms"
   trigger:
@@ -88,7 +88,7 @@
         message: "Roger {{ trigger.event.data.data }}"
     - service: script.telegram_send_rooms
       data_template:
-        target: "{{trigger.event.data.user_id}}"
+        target: "{{ trigger.event.data.user_id }}"
 
 - alias: "telegram_handle_clb_electro"
   trigger:
@@ -103,7 +103,7 @@
         message: "Roger {{ trigger.event.data.data }}"
     - service: script.telegram_send_electro
       data_template:
-        target: "{{trigger.event.data.user_id}}"
+        target: "{{ trigger.event.data.user_id }}"
 
 - alias: "telegram_handle_cmd_say"
   trigger:
@@ -114,7 +114,7 @@
   action:
     - service: script.tts_say_kitchen
       data_template:
-        message: "{{trigger.event.data.args}}"
+        message: "{{ trigger.event.data.args }}"
 
 - alias: "telegram_handle_cmd_sayall"
   trigger:
@@ -125,7 +125,7 @@
   action:
     - service: script.tts_say_surround
       data_template:
-        message: "{{trigger.event.data.args}}"
+        message: "{{ trigger.event.data.args }}"
 
 - alias: "telegram_handle_clb_computer"
   trigger:
@@ -140,7 +140,7 @@
         message: "Roger {{ trigger.event.data.data }}"
     - service: telegram_bot.send_message
       data_template:
-        target: "{{trigger.event.data.user_id}}"
+        target: "{{ trigger.event.data.user_id }}"
         message: "Computer"
         inline_keyboard:
           - "\U0001F5A5 \U0001F4A4 Sleep:/rmt_computer_sleep"
@@ -159,7 +159,7 @@
       message: "Roger {{ trigger.event.data.data }}"
   - service: telegram_bot.send_message
     data_template:
-      target: "{{trigger.event.data.user_id}}"
+      target: "{{ trigger.event.data.user_id }}"
       message: "Laptop"
       inline_keyboard:
         - "\U0001F4BB \U0001F4A4 Sleep:/rmt_laptop_sleep"
