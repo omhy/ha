@@ -2,7 +2,7 @@
 - alias: "zone_dima_enters_work"
   trigger:
     - platform: zone
-      entity_id: device_tracker.google_maps_111683533988744565132
+      entity_id: person.dima
       zone: zone.work
       event: enter
   action:
@@ -15,7 +15,7 @@
 - alias: "zone_dima_leaves_work"
   trigger:
     - platform: zone
-      entity_id: device_tracker.google_maps_111683533988744565132
+      entity_id: person.dima
       zone: zone.work
       event: leave
   action:
@@ -28,7 +28,7 @@
 - alias: "zone_dima_enters_home"
   trigger:
     - platform: zone
-      entity_id: device_tracker.google_maps_111683533988744565132
+      entity_id: person.dima
       zone: zone.home
       event: enter
   action:
@@ -41,7 +41,7 @@
 - alias: "zone_dima_leaves_home"
   trigger:
     - platform: zone
-      entity_id: device_tracker.google_maps_111683533988744565132
+      entity_id: person.dima
       zone: zone.home
       event: leave
   action:
@@ -54,7 +54,7 @@
 - alias: "zone_dima_enters_school"
   trigger:
     - platform: zone
-      entity_id: device_tracker.google_maps_111683533988744565132
+      entity_id: person.dima
       zone: zone.school
       event: enter
   action:
@@ -67,7 +67,7 @@
 - alias: "zone_dima_leaves_school"
   trigger:
     - platform: zone
-      entity_id: device_tracker.google_maps_111683533988744565132
+      entity_id: person.dima
       zone: zone.school
       event: leave
   action:
@@ -81,7 +81,7 @@
 - alias: "zone_alyona_enters_school"
   trigger:
     - platform: zone
-      entity_id: device_tracker.google_maps_115914092349482836896
+      entity_id: person.alyona
       zone: zone.school
       event: enter
   action:
@@ -94,7 +94,7 @@
 - alias: "zone_alyona_leaves_school"
   trigger:
     - platform: zone
-      entity_id: device_tracker.google_maps_115914092349482836896
+      entity_id: person.alyona
       zone: zone.school
       event: leave
   action:
