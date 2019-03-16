@@ -12,6 +12,7 @@ homeassistant:
   - /tmp
   - /share
 
+#ffmpeg:
 map:
 sun:
 config:
@@ -101,7 +102,6 @@ input_text: !include includes/input_text.yaml
 utility_meter: !include includes/utility_meter.yaml
 light: !include includes/light.yaml
 media_player: !include includes/media_player.yaml
-#camera: !include includes/camera.yaml
 notify: !include includes/notify.yaml
 binary_sensor: !include includes/binary_sensor.yaml
 shell_command: !include includes/shell_command.yaml
@@ -113,5 +113,6 @@ switch: !include_dir_merge_list includes/switches
 automation: !include_dir_merge_list includes/automation
 
 script: !include_dir_merge_named includes/scripts
+#camera: !include includes/camera.yaml
 
 hassio:
