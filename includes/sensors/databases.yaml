@@ -13,8 +13,8 @@
     - name: "db_size_influx"
       unit_of_measurement: MB
       value_template: '{{ (value | float / 1024 /1024) | round(1) }}'
-      group_function: max
+      group_function: sum
       database: _internal
       measurement: '"monitor"."shard"'
       field: diskBytes
-      where: 'time > now() - 120s'
+      where: 'time > now() - 10s'
