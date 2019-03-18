@@ -18,8 +18,8 @@
     light.corner_lamp: false
     light.standalone_switch: false
     light.small_torch: false
-    light.bathroom: false
-    light.corridor: false
+#    light.bathroom: false
+#    light.corridor: false
 
 - name: "departed"
   entities:
