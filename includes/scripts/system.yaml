@@ -27,13 +27,6 @@ ha_snapshot_create:
       data_template:
         name: "backup_{{ states.sensor.now_ymdhms.state }}"
 
-ha_snapshot_to_dropbox:
-  sequence:
-    - service: hassio.addon_stdin
-      data:
-        addon: "7be23ff5_dropbox_sync"
-        input: {"command":"upload"}
-
 ###  AQARA
 aqara_stop_ringtone:
   sequence:
