@@ -1,0 +1,4 @@
+google_backup:
+  url: "http://localhost:8055/gb/doBackup"
+  method: "get"
+  timeout: "300"

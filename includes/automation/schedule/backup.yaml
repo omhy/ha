@@ -11,3 +11,10 @@
       at: "03:15:00"
   action:
     - service: script.ha_snapshot_to_dropbox
+
+- alias: "ha_sch_snapshot_to_gdrive"
+  trigger:
+    - platform: time
+      at: "03:30:00"
+  action:
+    - service: rest_command.google_backup

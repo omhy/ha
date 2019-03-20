@@ -1,6 +1,7 @@
 - name: "workday_init"
   entities:
-    light.garland: true
+#    Let's use garland @ Winter only
+#    light.garland: true
     light.fire_lamp: true
     light.small_torch:
       state: true

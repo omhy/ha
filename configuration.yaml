@@ -93,19 +93,20 @@ google:
   client_secret: !secret google_cal_int_client_secret
   track_new_calendar: true
 
-google_assistant: !include includes/google_assistant.yaml
-zone: !include includes/zone.yaml
 input_number: !include includes/input_number.yaml
 input_boolean: !include includes/input_boolean.yaml
 input_select: !include includes/input_select.yaml
 input_text: !include includes/input_text.yaml
 utility_meter: !include includes/utility_meter.yaml
 light: !include includes/light.yaml
+google_assistant: !include includes/google_assistant.yaml
+zone: !include includes/zone.yaml
 media_player: !include includes/media_player.yaml
 notify: !include includes/notify.yaml
 binary_sensor: !include includes/binary_sensor.yaml
 shell_command: !include includes/shell_command.yaml
 timer: !include includes/timer.yaml
+rest_command: !include includes/rest_command.yaml
 
 scene: !include_dir_merge_list includes/scenes
 sensor: !include_dir_merge_list includes/sensors
