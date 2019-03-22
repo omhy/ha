@@ -59,9 +59,3 @@ media_player_stop_all:
     - service: media_player.media_stop
       data_template:
         entity_id: all
-
-media_player_stop_chromecast:
-  sequence:
-    - service: media_player.media_stop
-      data_template:
-        entity_id: media_player.chromecast
