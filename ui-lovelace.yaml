@@ -291,8 +291,8 @@ views:
       - person.dima
       - person.alyona
       - person.yuri
-#      - sensor.waze_home_work
-#      - sensor.waze_work_home
+      - sensor.waze_home_work
+      - sensor.waze_work_home
     cards:
       - type: vertical-stack
         cards:

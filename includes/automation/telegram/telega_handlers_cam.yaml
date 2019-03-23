@@ -11,7 +11,7 @@
         message: "Roger {{ trigger.event.data.data }}"
     - service: script.camera_snap
       data_template:
-        rtsp: !secret cam1_rtsp
+        rtsp: !secret cam1_stream
         file_prefix: "cam1"
     - delay:
         seconds: 3
@@ -28,7 +28,7 @@
 #    - service: script.camera_snap_to_telegram
 #      data_template:
 #        file_prefix: "cam1"
-#        rtsp: !secret cam1_rtsp
+#        rtsp: !secret cam1_stream
 #        target: "{{ trigger.event.data.user_id }}"
 #        callback_message: "{{ trigger.event.data.data }}"
 
@@ -46,7 +46,7 @@
     - service: script.camera_snap_to_telegram
       data_template:
         file_prefix: "cam1"
-        rtsp: !secret cam1_rtsp
+        rtsp: !secret cam1_stream
         target: "{{ trigger.event.data.user_id }}"
         callback_message: "{{ trigger.event.data.data }}"
 
@@ -64,7 +64,7 @@
     - service: script.camera_video_to_telegram
       data_template:
         file_prefix: "cam1"
-        rtsp: !secret cam1_rtsp
+        rtsp: !secret cam1_stream
         target: "{{ trigger.event.data.user_id }}"
         callback_message: "{{ trigger.event.data.data }}"
 
@@ -82,7 +82,7 @@
     - service: script.camera_video_to_telegram
       data_template:
         file_prefix: "cam1"
-        rtsp: !secret cam1_rtsp
+        rtsp: !secret cam1_stream
         target: "{{ trigger.event.data.user_id }}"
         callback_message: "{{ trigger.event.data.data }}"
 
@@ -102,7 +102,7 @@
     - service: script.camera_snap_to_telegram
       data_template:
         file_prefix: "cam2"
-        rtsp: !secret cam2_rtsp
+        rtsp: !secret cam2_stream
         target: "{{ trigger.event.data.user_id }}"
         callback_message: "{{ trigger.event.data.data }}"
 
@@ -120,6 +120,6 @@
   - service: script.camera_video_to_telegram
     data_template:
       file_prefix: "cam2"
-      rtsp: !secret cam2_rtsp
+      rtsp: !secret cam2_stream
       target: "{{ trigger.event.data.user_id }}"
       callback_message: "{{ trigger.event.data.data }}"

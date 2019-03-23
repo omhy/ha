@@ -12,7 +12,8 @@ homeassistant:
   - /tmp
   - /share
 
-#ffmpeg:
+stream:
+
 map:
 sun:
 config:
@@ -31,17 +32,6 @@ lovelace:
 updater:
   include_used_components: true
 
-homekit:
-  filter:
-    include_domains:
-      - light
-    include_entities:
-      - sensor.temperature_158d00022c7cf2
-      - sensor.temperature_158d0002323783
-      - sensor.temperature_158d000234816a
-      - sensor.temperature_158d0001f23cbe
-      - sensor.temperature_158d0002271609
-
 influxdb: !include includes/influxdb.yaml
 recorder: !include includes/recorder.yaml
 history:
@@ -50,9 +40,9 @@ custom_updater: !include includes/custom_updater.yaml
 
 logger:
   default: warning
-  logs:
-    homeassistant.components.media_player: critical
-    custom_components.androidtv.media_player: critical
+#  logs:
+#    homeassistant.components.media_player: critical
+#    custom_components.androidtv.media_player: critical
 
 http:
   ip_ban_enabled: true

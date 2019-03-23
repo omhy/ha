@@ -63,6 +63,6 @@ remove_file:
   sequence:
     - service: shell_command.remove_file
       data:
-        rtsp: !secret cam1_rtsp
+        rtsp: !secret cam1_stream
         filename: "/share/cam1.mp4"
         duration: "10"
