@@ -10,11 +10,11 @@
   name: abox
   adb_server_ip: 127.0.0.1
   adb_server_port: 5037
-  apps:
-    - com.vanced.android.youtube: "Youtube"
-    - com.teslacoilsw.launcher: "Nova"
-    - com.niklabs.pp: "PerfectPlayer"
-    - com.niklabs.pp: "PerfectPlayer"
-    - dkc.video.hdbox: "HDVideobox"
-    - org.telegram.messenger: "Telegram"
-    - org.xbmc.kodi: "Kodi"
+#   apps:
+#     - com.vanced.android.youtube: "Youtube"
+#     - com.teslacoilsw.launcher: "Nova"
+#     - com.niklabs.pp: "PerfectPlayer"
+#     - com.niklabs.pp: "PerfectPlayer"
+#     - dkc.video.hdbox: "HDVideobox"
+#     - org.telegram.messenger: "Telegram"
+#     - org.xbmc.kodi: "Kodi"
