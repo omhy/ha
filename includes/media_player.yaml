@@ -17,3 +17,4 @@
     - com.niklabs.pp: "PerfectPlayer"
     - dkc.video.hdbox: "HDVideobox"
     - org.telegram.messenger: "Telegram"
+    - org.xbmc.kodi: "Kodi"
