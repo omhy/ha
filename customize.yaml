@@ -23,8 +23,8 @@ light.corridor:
   friendly_name: Corridor
   icon: mdi:ceiling-light
 light.standalone_switch:
-  friendly_name: Corner garland
-  icon: mdi:star-face
+  friendly_name: Chain lamp
+  icon: mdi:track-light
 
 switch.wall_plug_158d0002013f1e:
   friendly_name: Standalone switch

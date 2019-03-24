@@ -123,7 +123,7 @@
       value_template: "{{ now().strftime('%Y%m%d%H%M%S') }}"
       entity_id: sensor.time
     abox_app:
-      value_template: "{{ states.media_player.abox.attributes.app_id.package.split('.')[-1] }}"
+      value_template: "{{ states.media_player.abox.attributes.app_id.split('.')[-1] }}"
       entity_id: media_player.abox
 
     next_dusk:
