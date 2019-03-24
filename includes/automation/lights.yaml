@@ -78,34 +78,16 @@
     - service: scene.turn_on
       entity_id: scene.living_room_light_on_from_btn
 
-- alias: "light_button_double_when_flow_is_off"
+- alias: "light_button_double"
   trigger:
   - platform: event
     event_type: xiaomi_aqara.click
     event_data:
       entity_id: binary_sensor.switch_158d0002136276
       click_type: double
-  condition:
-  - condition: state
-    entity_id: sensor.livingroom_ambient_flow_is_on
-    state: "False"
   action:
-    - service: scene.turn_on
-      entity_id: scene.living_room_flow_on
-
-- alias: "light_button_double_when_flow_is_on"
-  trigger:
-  - platform: event
-    event_type: xiaomi_aqara.click
-    event_data:
-      entity_id: binary_sensor.switch_158d0002136276
-      click_type: double
-  condition:
-  - condition: state
-    entity_id: sensor.livingroom_ambient_flow_is_on
-    state: "True"
-  action:
-  - service: script.light_flow_next
+    - service: light.toggle
+      entity_id: light.standalone_switch
 
 - alias: "light_livingroom_flow"
   trigger:
