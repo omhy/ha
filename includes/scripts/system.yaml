@@ -21,7 +21,7 @@ ha_set_defaults:
       data_template:
         value: 90
 
-ha_snapshot_create:
+ha_snapshot_full_create:
   sequence:
     - service: hassio.snapshot_full
       data_template:
