@@ -1,7 +1,12 @@
 - platform: template
   sensors:
     is_workday:
-      value_template: "{{ now().weekday() >= 0 and now().weekday() <= 4 }}"
+      value_template: >
+        {% if is_state('input_boolean.is_vacation', 'on') %}
+          false
+        {% else %}
+          {{ now().weekday() >= 0 and now().weekday() <= 4 }}
+        {% endif %}
       entity_id: now.weekday
 
     ping_tv:

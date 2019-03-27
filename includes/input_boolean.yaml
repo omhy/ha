@@ -8,11 +8,10 @@ computer_today_limit:
   initial: off
   name: Limit?
   icon: mdi:lock-question
-use_workday_sensor:
-  initial: on
-  name: Use workday sensor?
-  icon: mdi: briefcase-outline
-
+is_vacation:
+  initial: off
+  name: Vacation?
+  icon: mdi:beach
 zigbee_permit_join:
   name: Allow devices to join
   initial: off

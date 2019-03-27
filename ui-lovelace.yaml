@@ -789,10 +789,11 @@ views:
       - type: glance
         title: Dates
         entities:
+          - sensor.days_in_month
           - sensor.date
           - sensor.time
           - binary_sensor.is_workday
-          - sensor.days_in_month
+          - input_boolean.is_vacation
 
       - type: history-graph
         title: CPU/Mem/Disk 12h
