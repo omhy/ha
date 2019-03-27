@@ -7,7 +7,9 @@
         {% else %}
           {{ now().weekday() >= 0 and now().weekday() <= 4 }}
         {% endif %}
-      entity_id: now.weekday
+      entity_id: 
+        - now.weekday
+        - input_boolean.is_vacation
 
     ping_tv:
       value_template: "{{ states.sensor.power_strip_4_load_power.state | float > 80 }}"
