@@ -45,15 +45,22 @@ views:
           - binary_sensor.motion_sensor_158d0001e52779
           - binary_sensor.motion_sensor_158d0002d43d7d
 
-#      - type: glance
-#        title: Motions Today
-#        entities:
-#          - sensor.livingroom_motions
-#          - sensor.bathroom_motions
-#          - sensor.yuriroom_motions
+      - type: entities
+        title: Adjustible lights
+        show_header_toggle: false
+        entities:
+            - type: custom:slider-entity-row
+              entity: light.big_torch
+              toggle: true
+            - type: custom:slider-entity-row
+              entity: light.corner_lamp
+              toggle: true
+            - type: custom:slider-entity-row
+              entity: light.small_torch
+              toggle: true
 
       - type: glance
-        title: Lights
+        title: Binary lights
         entities:
           - entity: light.garland
             tap_action:
@@ -61,21 +68,6 @@ views:
           - entity: light.standalone_switch
             tap_action:
               action: toggle
-          - entity: light.big_torch
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          - entity: light.corner_lamp
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          - entity: light.small_torch
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
           - entity: light.fire_lamp
             tap_action:
               action: toggle
