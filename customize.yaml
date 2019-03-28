@@ -31,7 +31,7 @@ switch.wall_plug_158d0002013f1e:
 
 #MISC
 binary_sensor.is_workday:
-  friendly_name: Workday
+  friendly_name: Workday?
   icon: mdi:briefcase
 
 #WAZE
