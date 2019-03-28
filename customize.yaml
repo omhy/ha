@@ -109,9 +109,6 @@ media_player.surround:
   friendly_name: Surround
   icon: mdi:surround-sound
 #MEDIA_PLAYERS MISC
-media_player.kodi:
-  friendly_name: Kodi
-  icon: mdi:kodi
 media_player.spotify:
   friendly_name: Spotify
   icon: mdi:spotify

@@ -99,7 +99,6 @@ views:
             - domain: media_player
           exclude:
             - entity_id: media_player.spotify
-            - entity_id: media_player.kodi
             - entity_id: media_player.abox
             - state: "off"
             - state: "idle"
@@ -195,14 +194,6 @@ views:
 
           - type: custom:mini-media-player
             entity: media_player.surround
-            artwork: cover
-
-#          - type: custom:mini-media-player
-#            entity: media_player.abox
-#            artwork: cover
-
-          - type: custom:mini-media-player
-            entity: media_player.kodi
             artwork: cover
 
           - type: custom:mini-media-player
@@ -653,7 +644,7 @@ views:
 #            icon: mdi:switch
 
       - type: entities
-        title: Media players
+        title: Google homes
         show_header_toggle: false
         entities:
           - type: weblink
@@ -676,10 +667,6 @@ views:
             name: Chromecast API
             url: http://192.168.1.33:8008/setup/eureka_info
             icon: mdi:google-chrome
-          - type: weblink
-            name: Kodi
-            url: http://192.168.1.20:8080
-            icon: mdi:kodi
 
       - type: entities
         title: Home Assistant
