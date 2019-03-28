@@ -13,7 +13,7 @@ resources:
     type: js
   - url: /customcards/custom-lovelace/calendar-card.js
     type: js
-  - url: /customcards/custom-lovelace/flex-table-card.js
+  - url: /customcards/custom-lovelace/slider-entity-row.js
     type: js
 
 title: Home
