@@ -113,99 +113,99 @@ telegram_send_weather_forecast:
           '49' : '\U0001F328',
           '50' : '\U0001F328'
           } %}
-          {% set frm = "%-4s | %-9s | %-8s | %-8s | %-8s | %-8s" %}
+          {% set frm = "%-4s | %-6s | %-6s | %-6s | %-6s | %-6s" %}
           ```
           {{ ('   ' + frm) | replace(' | ', ' ') | format("", "Temp", "Prcp", "Hmdt", "Wind", "Prss") }}
 
           {{ icons[states.sensor.wt00_symbol.state] }}
           {{ frm | format(
           "Now",
-          states.sensor.wt00_temperature.state_with_unit,
-          states.sensor.wt00_precipitation.state_with_unit,
-          states.sensor.wt00_humidity.state_with_unit,
-          states.sensor.wt00_wind_speed.state_with_unit,
-          states.sensor.wt00_pressure.state_with_unit)
+          states.sensor.wt00_temperature.state,
+          states.sensor.wt00_precipitation.state,
+          states.sensor.wt00_humidity.state,
+          states.sensor.wt00_wind_speed.state,
+          states.sensor.wt00_pressure.state)
           }}
 
           {{ icons[states.sensor.wt01_symbol.state] }}
           {{ frm | format("1h",
-          states.sensor.wt01_temperature.state_with_unit,
-          states.sensor.wt01_precipitation.state_with_unit,
-          states.sensor.wt01_humidity.state_with_unit,
-          states.sensor.wt01_wind_speed.state_with_unit,
-          states.sensor.wt01_pressure.state_with_unit)
+          states.sensor.wt01_temperature.state,
+          states.sensor.wt01_precipitation.state,
+          states.sensor.wt01_humidity.state,
+          states.sensor.wt01_wind_speed.state,
+          states.sensor.wt01_pressure.state)
           }}
 
           {{ icons[states.sensor.wt02_symbol.state] }}
           {{ frm | format("2h",
-          states.sensor.wt02_temperature.state_with_unit,
-          states.sensor.wt02_precipitation.state_with_unit,
-          states.sensor.wt02_humidity.state_with_unit,
-          states.sensor.wt02_wind_speed.state_with_unit,
-          states.sensor.wt02_pressure.state_with_unit)
+          states.sensor.wt02_temperature.state,
+          states.sensor.wt02_precipitation.state,
+          states.sensor.wt02_humidity.state,
+          states.sensor.wt02_wind_speed.state,
+          states.sensor.wt02_pressure.state)
           }}
 
           {{ icons[states.sensor.wt03_symbol.state] }}
           {{ frm | format("3h",
-          states.sensor.wt03_temperature.state_with_unit,
-          states.sensor.wt03_precipitation.state_with_unit,
-          states.sensor.wt03_humidity.state_with_unit,
-          states.sensor.wt03_wind_speed.state_with_unit,
-          states.sensor.wt03_pressure.state_with_unit)
+          states.sensor.wt03_temperature.state,
+          states.sensor.wt03_precipitation.state,
+          states.sensor.wt03_humidity.state,
+          states.sensor.wt03_wind_speed.state,
+          states.sensor.wt03_pressure.state)
           }}
 
           {{ icons[states.sensor.wt06_symbol.state] }}
           {{ frm | format("6h",
-          states.sensor.wt06_temperature.state_with_unit,
-          states.sensor.wt06_precipitation.state_with_unit,
-          states.sensor.wt06_humidity.state_with_unit,
-          states.sensor.wt06_wind_speed.state_with_unit,
-          states.sensor.wt06_pressure.state_with_unit)
+          states.sensor.wt06_temperature.state,
+          states.sensor.wt06_precipitation.state,
+          states.sensor.wt06_humidity.state,
+          states.sensor.wt06_wind_speed.state,
+          states.sensor.wt06_pressure.state)
           }}
 
           {{ icons[states.sensor.wt09_symbol.state] }}
           {{ frm | format("9h",
-          states.sensor.wt09_temperature.state_with_unit,
-          states.sensor.wt09_precipitation.state_with_unit,
-          states.sensor.wt09_humidity.state_with_unit,
-          states.sensor.wt09_wind_speed.state_with_unit,
-          states.sensor.wt09_pressure.state_with_unit)
+          states.sensor.wt09_temperature.state,
+          states.sensor.wt09_precipitation.state,
+          states.sensor.wt09_humidity.state,
+          states.sensor.wt09_wind_speed.state,
+          states.sensor.wt09_pressure.state)
           }}
 
           {{ icons[states.sensor.wt12_symbol.state] }}
           {{ frm | format("12h",
-          states.sensor.wt12_temperature.state_with_unit,
-          states.sensor.wt12_precipitation.state_with_unit,
-          states.sensor.wt12_humidity.state_with_unit,
-          states.sensor.wt12_wind_speed.state_with_unit,
-          states.sensor.wt12_pressure.state_with_unit)
+          states.sensor.wt12_temperature.state,
+          states.sensor.wt12_precipitation.state,
+          states.sensor.wt12_humidity.state,
+          states.sensor.wt12_wind_speed.state,
+          states.sensor.wt12_pressure.state)
           }}
 
           {{ icons[states.sensor.wt24_symbol.state] }}
-          {{ frm | format("1d",
-          states.sensor.wt24_temperature.state_with_unit,
-          states.sensor.wt24_precipitation.state_with_unit,
-          states.sensor.wt24_humidity.state_with_unit,
-          states.sensor.wt24_wind_speed.state_with_unit,
-          states.sensor.wt24_pressure.state_with_unit)
+          {{ frm | format("24h",
+          states.sensor.wt24_temperature.state,
+          states.sensor.wt24_precipitation.state,
+          states.sensor.wt24_humidity.state,
+          states.sensor.wt24_wind_speed.state,
+          states.sensor.wt24_pressure.state)
           }}
 
           {{ icons[states.sensor.wt48_symbol.state] }}
-          {{ frm | format("2d",
-          states.sensor.wt48_temperature.state_with_unit,
-          states.sensor.wt48_precipitation.state_with_unit,
-          states.sensor.wt48_humidity.state_with_unit,
-          states.sensor.wt48_wind_speed.state_with_unit,
-          states.sensor.wt48_pressure.state_with_unit)
+          {{ frm | format("48h",
+          states.sensor.wt48_temperature.state,
+          states.sensor.wt48_precipitation.state,
+          states.sensor.wt48_humidity.state,
+          states.sensor.wt48_wind_speed.state,
+          states.sensor.wt48_pressure.state)
           }}
 
           {{ icons[states.sensor.wt72_symbol.state] }}
-          {{ frm | format("3d",
-          states.sensor.wt72_temperature.state_with_unit,
-          states.sensor.wt72_precipitation.state_with_unit,
-          states.sensor.wt72_humidity.state_with_unit,
-          states.sensor.wt72_wind_speed.state_with_unit,
-          states.sensor.wt72_pressure.state_with_unit)
+          {{ frm | format("72h",
+          states.sensor.wt72_temperature.state,
+          states.sensor.wt72_precipitation.state,
+          states.sensor.wt72_humidity.state,
+          states.sensor.wt72_wind_speed.state,
+          states.sensor.wt72_pressure.state)
           }}
           ```
         inline_keyboard:
