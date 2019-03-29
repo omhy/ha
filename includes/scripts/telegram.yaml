@@ -113,9 +113,9 @@ telegram_send_weather_forecast:
           '49' : '\U0001F328',
           '50' : '\U0001F328'
           } %}
-          {% set frm = "%-4s | %-6s | %-6s | %-6s | %-6s | %-6s" %}
+          {% set frm = "%-3s | %-5s | %-4s | %-5s | %-4s" %}
           ```
-          {{ ('   ' + frm) | replace(' | ', ' ') | format("", "Temp", "Prcp", "Hmdt", "Wind", "Prss") }}
+          {{ ('  ' + frm) | replace('|', ' ') | format("", "Tm", "Pt", "Hm", "Wd") }}
 
           {{ icons[states.sensor.wt00_symbol.state] }}
           {{ frm | format(
@@ -123,53 +123,47 @@ telegram_send_weather_forecast:
           states.sensor.wt00_temperature.state,
           states.sensor.wt00_precipitation.state,
           states.sensor.wt00_humidity.state,
-          states.sensor.wt00_wind_speed.state,
-          states.sensor.wt00_pressure.state)
+          states.sensor.wt00_wind_speed.state)
           }}
 
           {{ icons[states.sensor.wt01_symbol.state] }}
-          {{ frm | format("1h",
+          {{ frm | format("01h",
           states.sensor.wt01_temperature.state,
           states.sensor.wt01_precipitation.state,
           states.sensor.wt01_humidity.state,
-          states.sensor.wt01_wind_speed.state,
-          states.sensor.wt01_pressure.state)
+          states.sensor.wt01_wind_speed.state)
           }}
 
           {{ icons[states.sensor.wt02_symbol.state] }}
-          {{ frm | format("2h",
+          {{ frm | format("02h",
           states.sensor.wt02_temperature.state,
           states.sensor.wt02_precipitation.state,
           states.sensor.wt02_humidity.state,
-          states.sensor.wt02_wind_speed.state,
-          states.sensor.wt02_pressure.state)
+          states.sensor.wt02_wind_speed.state)
           }}
 
           {{ icons[states.sensor.wt03_symbol.state] }}
-          {{ frm | format("3h",
+          {{ frm | format("03h",
           states.sensor.wt03_temperature.state,
           states.sensor.wt03_precipitation.state,
           states.sensor.wt03_humidity.state,
-          states.sensor.wt03_wind_speed.state,
-          states.sensor.wt03_pressure.state)
+          states.sensor.wt03_wind_speed.state)
           }}
 
           {{ icons[states.sensor.wt06_symbol.state] }}
-          {{ frm | format("6h",
+          {{ frm | format("06h",
           states.sensor.wt06_temperature.state,
           states.sensor.wt06_precipitation.state,
           states.sensor.wt06_humidity.state,
-          states.sensor.wt06_wind_speed.state,
-          states.sensor.wt06_pressure.state)
+          states.sensor.wt06_wind_speed.state)
           }}
 
           {{ icons[states.sensor.wt09_symbol.state] }}
-          {{ frm | format("9h",
+          {{ frm | format("09h",
           states.sensor.wt09_temperature.state,
           states.sensor.wt09_precipitation.state,
           states.sensor.wt09_humidity.state,
-          states.sensor.wt09_wind_speed.state,
-          states.sensor.wt09_pressure.state)
+          states.sensor.wt09_wind_speed.state)
           }}
 
           {{ icons[states.sensor.wt12_symbol.state] }}
@@ -177,8 +171,7 @@ telegram_send_weather_forecast:
           states.sensor.wt12_temperature.state,
           states.sensor.wt12_precipitation.state,
           states.sensor.wt12_humidity.state,
-          states.sensor.wt12_wind_speed.state,
-          states.sensor.wt12_pressure.state)
+          states.sensor.wt12_wind_speed.state)
           }}
 
           {{ icons[states.sensor.wt24_symbol.state] }}
@@ -186,8 +179,7 @@ telegram_send_weather_forecast:
           states.sensor.wt24_temperature.state,
           states.sensor.wt24_precipitation.state,
           states.sensor.wt24_humidity.state,
-          states.sensor.wt24_wind_speed.state,
-          states.sensor.wt24_pressure.state)
+          states.sensor.wt24_wind_speed.state)
           }}
 
           {{ icons[states.sensor.wt48_symbol.state] }}
@@ -195,8 +187,7 @@ telegram_send_weather_forecast:
           states.sensor.wt48_temperature.state,
           states.sensor.wt48_precipitation.state,
           states.sensor.wt48_humidity.state,
-          states.sensor.wt48_wind_speed.state,
-          states.sensor.wt48_pressure.state)
+          states.sensor.wt48_wind_speed.state)
           }}
 
           {{ icons[states.sensor.wt72_symbol.state] }}
@@ -204,8 +195,7 @@ telegram_send_weather_forecast:
           states.sensor.wt72_temperature.state,
           states.sensor.wt72_precipitation.state,
           states.sensor.wt72_humidity.state,
-          states.sensor.wt72_wind_speed.state,
-          states.sensor.wt72_pressure.state)
+          states.sensor.wt72_wind_speed.state)
           }}
           ```
         inline_keyboard:
