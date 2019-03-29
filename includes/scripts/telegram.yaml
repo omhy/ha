@@ -46,7 +46,7 @@ telegram_send_electro:
     - service: telegram_bot.send_message
       data_template:
         target: "{{ target }}"
-        title: "#Consumption {{ now().strftime('%Y-%m-%d') }} - {{ (states.sensor.power_strip_1_utility_d.state | float + states.sensor.power_strip_2_utility_d.state | float + states.sensor.power_strip_3_utility_d.state | float + states.sensor.power_strip_4_utility_d.state | float + states.sensor.power_strip_5_utility_d.state | float) | round(2) }} kW"
+        title: "#Consumption {{ now().strftime('%Y-%m-%d') }} - {{ states.sensor.consumption_today.state_with_unit }}"
         message: >
           {% set frm = "%-5s | %-6s | %-5s" %}
 

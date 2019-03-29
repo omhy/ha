@@ -391,6 +391,8 @@ views:
   - title: Electricity
     path: electro
     icon: mdi:power-plug
+    badges:
+      - sensor.consumption_today
     cards:
       - type: glance
         title: Computer

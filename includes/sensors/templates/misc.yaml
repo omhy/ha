@@ -18,3 +18,20 @@
         12 : 31
         } %}
         {{ days[now().month] }}
+    consumption_today:
+      value_template: >
+        {{ (
+        states.sensor.power_strip_1_utility_d.state | float + 
+        states.sensor.power_strip_2_utility_d.state | float + 
+        states.sensor.power_strip_3_utility_d.state | float + 
+        states.sensor.power_strip_4_utility_d.state | float + 
+        states.sensor.power_strip_5_utility_d.state | float
+        ) | round(2)
+        }}
+      entity_id:
+        - sensor.power_strip_1_utility_d
+        - sensor.power_strip_2_utility_d
+        - sensor.power_strip_3_utility_d
+        - sensor.power_strip_4_utility_d
+        - sensor.power_strip_5_utility_d                
+      unit_of_measurement: "kW"
