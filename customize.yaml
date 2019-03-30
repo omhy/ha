@@ -63,6 +63,13 @@ sensor.abox_app:
   friendly_name: Abox app
   icon: mdi:android-debug-bridge
 
+sensor.consumption_today:
+  friendly_name: Today
+  icon: mdi:power-plug
+sensor.consumption_now:
+  friendly_name: Now
+  icon: mdi:power-plug
+
 #DEVICES
 device_tracker.google_maps_111683533988744565132:
   friendly_name: Dima

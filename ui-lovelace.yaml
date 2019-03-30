@@ -392,6 +392,7 @@ views:
     path: electro
     icon: mdi:power-plug
     badges:
+      - sensor.consumption_now
       - sensor.consumption_today
     cards:
       - type: glance
