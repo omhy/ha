@@ -193,16 +193,16 @@ sensor.abox_on_today:
   friendly_name: Android box
   icon: mdi:android
 
-sensor.youtube_today:
+sensor.abox_youtube_today:
   friendly_name: Youtube
   icon: mdi:youtube
-sensor.perfectplayer_today:
+sensor.abox_perfectplayer_today:
   friendly_name: Perfect player
   icon: mdi:television-box
-sensor.launcher_today:
+sensor.abox_launcher_today:
   friendly_name: Launcher
   icon: mdi:rocket
-sensor.hdvideo_today:
+sensor.abox_hdvideo_today:
   friendly_name: HD Video
   icon: mdi:video-vintage
 

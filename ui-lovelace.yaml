@@ -296,11 +296,11 @@ views:
           - type: glance
             title: Abox usage
             entities:
-#              - sensor.launcher_today
+#              - sensor.abox_launcher_today
               - sensor.abox_app
-              - sensor.youtube_today
-              - sensor.perfectplayer_today
-              - sensor.hdvideo_today
+              - sensor.abox_youtube_today
+              - sensor.abox_perfectplayer_today
+              - sensor.abox_hdvideo_today
 
       - type: history-graph
         title: Movements 1h

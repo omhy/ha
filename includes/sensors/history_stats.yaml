@@ -1,3 +1,4 @@
+### COUNTERS
 - platform: history_stats
   name: count_opened_door
   entity_id: binary_sensor.door_window_sensor_158d00024367c8
@@ -29,7 +30,7 @@
   state: "on"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
   end: "{{ now() }}"
-
+### TIMERS
 - platform: history_stats
   name: computer_on_today
   entity_id: binary_sensor.ping_computer
@@ -54,7 +55,6 @@
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
   end: "{{ now() }}"
 
-#ABOX
 - platform: history_stats
   name: abox_on_today
   entity_id: binary_sensor.ping_abox
@@ -63,8 +63,9 @@
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
   end: "{{ now() }}"
 
+### ABOX APPS
 - platform: history_stats
-  name: youtube_today
+  name: abox_youtube_today
   entity_id: sensor.abox_app
   type: "time"
   state: "youtube"
@@ -72,7 +73,7 @@
   end: "{{ now() }}"
 
 - platform: history_stats
-  name: perfectplayer_today
+  name: abox_perfectplayer_today
   entity_id: sensor.abox_app
   type: "time"
   state: "pp"
@@ -80,7 +81,7 @@
   end: "{{ now() }}"
 
 - platform: history_stats
-  name: launcher_today
+  name: abox_launcher_today
   entity_id: sensor.abox_app
   type: "time"
   state: "launcher"
@@ -88,7 +89,7 @@
   end: "{{ now() }}"
 
 - platform: history_stats
-  name: hdvideo_today
+  name: abox_hdvideo_today
   entity_id: sensor.abox_app
   type: "time"
   state: "hdbox"
