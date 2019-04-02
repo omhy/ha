@@ -94,16 +94,18 @@
       entity_id: device_tracker.google_maps_117454969161947422882
 #STATE_CH
     state_change_door_ago_min:
-      value_template: "{{ ((now() - strptime(states.input_text.state_change_door.state, '%Y%m%d%H%M%S').astimezone()).seconds / 60) | round(0) }} min"
+      value_template: "{{ ((now() - states.binary_sensor.door_window_sensor_158d00024367c8.last_changed).total_seconds() / 60) | round(0) }} min"
       entity_id: binary_sensor.door_window_sensor_158d00024367c8
     state_change_door_ago_sec:
-      value_template: "{{ ((now() - strptime(states.input_text.state_change_door.state, '%Y%m%d%H%M%S').astimezone()).seconds) | round(0) }} sec"
+      value_template: "{{ (now() - states.binary_sensor.door_window_sensor_158d00024367c8.last_changed).total_seconds() | round(0) }} sec"
       entity_id: binary_sensor.door_window_sensor_158d00024367c8
 #STATE_CH_MANUAL
     state_change_dima_ago:
-      value_template: "{{ ((now() - strptime(states.input_text.state_change_dima.state, '%Y%m%d%H%M%S').astimezone()).seconds / 60) | round(0) }} min"
+      value_template: "{{ ((now() - states.device_tracker.google_maps_111683533988744565132.last_changed).total_seconds() / 60) | round(0)}} min"
+      entity_id: device_tracker.google_maps_111683533988744565132
     state_change_alyona_ago:
-      value_template: "{{ ((now() - strptime(states.input_text.state_change_alyona.state, '%Y%m%d%H%M%S').astimezone()).seconds / 60) | round(0) }} min"
+      value_template: "{{ ((now() - states.device_tracker.google_maps_115914092349482836896.last_changed).total_seconds() / 60) | round(0)}} min"
+      entity_id: device_tracker.google_maps_115914092349482836896
 #MISC
     livingroom_ambient_flow_is_on:
       value_template: "{{ is_state('input_boolean.livingroom_torch_use', 'on') or is_state('input_boolean.livingroom_corner_use', 'on') }}"

@@ -17,7 +17,6 @@
     - service: notify.telegram_dima
       data_template:
         message: "{{ states.sensor.now_hm.state }} \U0001F513 Door is opened ({{ states.sensor.state_change_door_ago_min.state }})"
-    - service: script.state_change_update_door
 
 - alias: "entrance_door_closed"
   trigger:
@@ -32,4 +31,3 @@
     - service: notify.telegram_dima
       data_template:
         message: "{{ states.sensor.now_hm.state }} \U0001F512 Door is closed ({{ states.sensor.state_change_door_ago_sec.state }})"
-    - service: script.state_change_update_door
