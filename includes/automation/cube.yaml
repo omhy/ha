@@ -8,7 +8,7 @@
   condition:
     - condition: state
       entity_id: sensor.livingroom_ambient_flow_is_on
-      state: "False"
+      state: "false"
   action:
     - service: light.turn_on
       entity_id: light.group_livroom_ambient
@@ -43,7 +43,7 @@
   condition:
     - condition: state
       entity_id: sensor.livingroom_ambient_flow_is_on
-      state: "False"
+      state: "false"
   action:
     - service: light.turn_on
       entity_id: light.group_livroom_ambient
@@ -70,7 +70,7 @@
   condition:
     - condition: state
       entity_id: sensor.livingroom_ambient_flow_is_on
-      state: "False"
+      state: "false"
   action:
     - service: light.turn_on
       entity_id: light.group_livroom_ambient
@@ -97,7 +97,7 @@
   condition:
     - condition: state
       entity_id: sensor.livingroom_ambient_flow_is_on
-      state: "True"
+      state: "true"
   action:
     - service: input_number.set_value
       entity_id: input_number.flow_brightness
