@@ -1,0 +1,16 @@
+devices:
+  192.168.1.131:
+    name: big_torch
+    model: color2
+    transition: 500
+    # use_music_mode: true
+  192.168.1.132:
+    name: corner_lamp
+    model: color2
+    transition: 500
+    # use_music_mode: true
+  192.168.1.133:
+    name: small_torch
+    model: color2
+    transition: 400
+    # use_music_mode: true

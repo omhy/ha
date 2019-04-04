@@ -1,26 +1,3 @@
-- platform: yeelight
-  devices:
-    192.168.1.131:
-      name: big_torch
-      transition: 500
-      use_music_mode: true
-    192.168.1.132:
-      name: corner_lamp
-      transition: 500
-      use_music_mode: true
-    192.168.1.133:
-      name: small_torch
-      transition: 400
-      use_music_mode: true
-#  custom_effects:
-#    - name: 'Fire Flicker'
-#      flow_params:
-#        count: 0
-#        transitions:
-#          - TemperatureTransition: [1900, 1000, 80]
-#          - TemperatureTransition: [1900, 2000, 60]
-#          - SleepTransition: [1000]
-
 - platform: mqtt
   name: garland
   state_topic: "stat/sonoff_garland/POWER"

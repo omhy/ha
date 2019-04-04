@@ -89,6 +89,7 @@ input_select: !include includes/input_select.yaml
 input_text: !include includes/input_text.yaml
 utility_meter: !include includes/utility_meter.yaml
 light: !include includes/light.yaml
+yeelight: !include includes/yeelight.yaml
 google_assistant: !include includes/google_assistant.yaml
 zone: !include includes/zone.yaml
 media_player: !include includes/media_player.yaml
