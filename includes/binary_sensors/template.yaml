@@ -4,6 +4,24 @@
       value_template: >
         {% if is_state('input_boolean.is_vacation', 'on') %}
           false
+        {% elif 
+          states.sensor.date.state.endswith('01-01') or
+          states.sensor.date.state.endswith('05-01') or
+          states.sensor.date.state.endswith('05-04') or
+          states.sensor.date.state.endswith('06-23') or
+          states.sensor.date.state.endswith('06-24') or
+          states.sensor.date.state.endswith('11-18') or
+          states.sensor.date.state.endswith('12-24') or
+          states.sensor.date.state.endswith('12-24') or
+          states.sensor.date.state.endswith('12-31')
+        %}
+          false
+        {% elif 
+          states.sensor.date.state.endswith('2019-04-19') or
+          states.sensor.date.state.endswith('2019-04-22') or
+          states.sensor.date.state.endswith('2019-05-06')
+        %}
+          false
         {% else %}
           {{ now().weekday() >= 0 and now().weekday() <= 4 }}
         {% endif %}
