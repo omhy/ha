@@ -12,7 +12,8 @@
           states.sensor.date.state.endswith('06-24') or
           states.sensor.date.state.endswith('11-18') or
           states.sensor.date.state.endswith('12-24') or
-          states.sensor.date.state.endswith('12-24') or
+          states.sensor.date.state.endswith('12-25') or
+          states.sensor.date.state.endswith('12-26') or
           states.sensor.date.state.endswith('12-31')
         %}
           false
