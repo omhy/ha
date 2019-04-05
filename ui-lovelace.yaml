@@ -1,8 +1,6 @@
 resources:
   - url: /customcards/custom-lovelace/mini-media-player-bundle.js
     type: module
-  - url: /customcards/custom-lovelace/mini-graph-card-bundle.js
-    type: module
   - url: /customcards/custom-lovelace/tracker-card.js
     type: module
   - url: /customcards/custom-lovelace/custom-weather-card-chart.js
@@ -15,6 +13,9 @@ resources:
     type: js
   - url: /customcards/custom-lovelace/slider-entity-row.js
     type: js
+  - url: /customcards/custom-lovelace/secondaryinfo-entity-row.js
+    type: js
+
 
 title: Home
 views:

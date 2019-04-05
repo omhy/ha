@@ -7,3 +7,4 @@ card_urls:
   - https://raw.githubusercontent.com/kuuji/button-card/master/tracker.json
   - https://raw.githubusercontent.com/sgttrs/lovelace-weather-card-chart/master/custom-updater.json
   - https://raw.githubusercontent.com/ljmerza/calendar-card/master/custom_updater.json
+  - https://raw.githubusercontent.com/MizterB/lovelace-secondaryinfo-entity-row/master/custom_cards.json
