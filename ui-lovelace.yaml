@@ -741,7 +741,7 @@ views:
         show_header_toggle: false
         entities:
           - switch.wol_computer
-          - switch.wol_laptop
+          - script.aqara_add_device
 
 #      - type: entities
 #        title: Zigbee

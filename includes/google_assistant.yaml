@@ -53,6 +53,10 @@ entity_config:
     name: Computer sleep
     expose: true
     room: Speaker
+  script.rmt_computer_wakeup:
+    name: Computer wakeup
+    expose: true
+    room: Speaker
   script.rmt_laptop_sleep:
     name: Laptop sleep
     expose: true

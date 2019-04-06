@@ -51,10 +51,6 @@ rmt_computer_wakeup:
   sequence:
     - service: switch.turn_on
       entity_id: switch.wol_computer
-rmt_laptop_wakeup:
-  sequence:
-    - service: switch.turn_on
-      entity_id: switch.wol_laptop
 
 alarm_door:
   sequence:

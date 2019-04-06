@@ -22,6 +22,3 @@
 - platform: wake_on_lan
   name: wol_computer
   mac_address: "D0-50-99-3E-70-DA"
-- platform: wake_on_lan
-  name: wol_laptop
-  mac_address: "30-E3-7A-fA-6D-C9"
