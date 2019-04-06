@@ -41,6 +41,7 @@ views:
 
       - type: entities
         title: Motion
+        show_header_toggle: false
         entities:
           - entity: binary_sensor.motion_sensor_158d0001fa3dc0
             secondary_info: last-changed
@@ -734,6 +735,13 @@ views:
         entities:
           - input_number.doorbell_volume
           - input_number.doorbell_melody
+
+      - type: entities
+        title: WakeOnLAN
+        show_header_toggle: false
+        entities:
+          - switch.wol_computer
+          - switch.wol_laptop
 
 #      - type: entities
 #        title: Zigbee

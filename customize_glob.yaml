@@ -29,6 +29,10 @@
   icon: mdi:av-timer
 "*zigbee*":
   icon: mdi:zigbee
+"*computer*":
+  icon: mdi:desktop-classic
+"*laptop*":
+  icon: mdi:laptop
 
 ### SPECIFIC
 "light.*":
@@ -53,8 +57,6 @@
   initial_state: "on"
 "automation.zone*":
   icon: mdi:map-marker
-"automation.computer*":
-  icon: mdi:desktop-classic
 "automation.working_day*":
   icon: mdi:worker
 "automation.cube*":
@@ -115,11 +117,6 @@
 "sensor.power_*_utility_m":
   friendly_name: Month
   icon: mdi:calendar-text
-
-"sensor.computer*":
-  icon: mdi:desktop-classic
-"sensor.laptop*":
-  icon: mdi:laptop
 
 "sensor.wt00*":
   friendly_name: Now

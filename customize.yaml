@@ -83,11 +83,6 @@ sensor.uptime:
   friendly_name: HA uptime
 
 #SCRIPTS
-script.rmt_computer_sleep:
-  icon: mdi:desktop-classic
-script.rmt_laptop_sleep:
-  icon: mdi:laptop
-
 script.media_player_stop_all:
   friendly_name: Stop all
   icon: mdi:stop
@@ -228,10 +223,8 @@ input_select.living_room_flow:
 #BINARY SENSORS
 binary_sensor.ping_computer:
   friendly_name: Computer
-  icon: mdi:desktop-classic
 binary_sensor.ping_laptop:
   friendly_name: Laptop
-  icon: mdi:laptop
 binary_sensor.ping_tv:
   friendly_name: TV
   icon: mdi:television
