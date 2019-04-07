@@ -257,14 +257,10 @@ views:
       - type: vertical-stack
         cards:
           - type: history-graph
-            title: Outside 12h
-            hours_to_show: 12
-            entities:
-              - sensor.temperature_158d00022c7cf2
-          - type: history-graph
             title: Temperatures 12h
             hours_to_show: 12
             entities:
+              - sensor.temperature_158d00022c7cf2
               - sensor.temperature_158d0002323783
               - sensor.temperature_158d000234816a
               - sensor.temperature_158d0001f23cbe
@@ -748,24 +744,19 @@ views:
           - sensor.time
           - binary_sensor.is_workday
           - input_boolean.is_vacation
-      - type: entities
-        title: Aqara
-        show_header_toggle: false
-        entities:
-          - script.aqara_add_device
       - type: history-graph
-        title: CPU/Mem/Disk 12h
+        title: System 12h
         hours_to_show: 12
         entities:
           - sensor.processor_use
           - sensor.memory_use_percent
           - sensor.disk_use_percent_home
-
-      - type: history-graph
-        title: CPU temp 12h
-        hours_to_show: 12
-        entities:
           - sensor.temp
+      - type: entities
+        title: Aqara
+        show_header_toggle: false
+        entities:
+          - script.aqara_add_device
 
 
 
