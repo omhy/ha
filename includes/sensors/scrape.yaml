@@ -1,0 +1,31 @@
+# - platform: scrape
+#   resource: https://www.asos.com/olivia-burton/olivia-burton-ob16sg04-faux-leather-midi-watch-in-pink/prd/10176964
+#   name: "asos_olivia_watch"
+#   select: "span[itemprop='price']"
+#   value_template: '{{ value }}'
+#   unit_of_measurement: "EUR"
+#   scan_interval: 3600
+#   headers:
+#     User-Agent: Mozilla/5.0
+
+# - platform: scrape
+#   resource: https://www.asos.com/emporio-armani/emporio-armani-ar11170-gianni-t-bar-bracelet-watch-32mm/prd/10910322
+#   name: "asos_armani_watch_price"
+#   select: "span[itemprop='price']"
+#   value_template: '{{ value }}'
+#   unit_of_measurement: "EUR"
+#   scan_interval: 3600
+#   headers:
+#     Host: www.asos.com
+#     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:67.0) Gecko/20100101 Firefox/67.0
+
+# - platform: scrape
+#   resource: https://www.asos.com/emporio-armani/emporio-armani-ar11170-gianni-t-bar-bracelet-watch-32mm/prd/10910322
+#   name: "asos_armani_watch_curr"
+#   select: "span[itemprop='priceCurrency']"
+#   attribute: content
+#   unit_of_measurement: "EUR"
+#   scan_interval: 3600
+#   headers:
+#     Host: www.asos.com
+#     User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:67.0) Gecko/20100101 Firefox/67.0
