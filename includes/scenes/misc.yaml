@@ -1,20 +1,20 @@
-- name: "cosiness_on"
+- name: cosiness_on
   entities:
     light.garland: true
     light.fire_lamp: true
     light.standalone_switch: true
 
-- name: "cosiness_off"
+- name: cosiness_off
   entities:
     light.garland: false
     light.fire_lamp: false
     light.standalone_switch: false
 
-- name: "good_morning"
+- name: good_morning
   entities:
     light.standalone_switch: true
 
-- name: "good_night"
+- name: good_night
   entities:
     light.garland: false
     light.fire_lamp: false
@@ -23,7 +23,7 @@
     light.standalone_switch: false
     light.small_torch: false
 
-- name: "departed"
+- name: departed
   entities:
     light.garland: false
     light.fire_lamp: true
@@ -33,7 +33,7 @@
     light.bathroom: false
     light.corridor: false
 
-- name: "arrived"
+- name: arrived
   entities:
     light.garland: true
     light.fire_lamp: true

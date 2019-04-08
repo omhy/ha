@@ -1,9 +1,6 @@
 - platform: moon
 - platform: uptime
 
-#- platform: launch_library
-#  name: launches
-
 - platform: season
   type: astronomical
 
@@ -16,7 +13,7 @@
   - type: swap_use_percent
 
 - platform: command_line
-  name: "Temp"
+  name: Temp
   command: "cat /sys/class/thermal/thermal_zone0/temp"
   unit_of_measurement: "°C"
   value_template: '{{ value | multiply(0.001) | round(1) }}'
@@ -27,9 +24,9 @@
   - "date"
 
 - platform: random
-  name: "flow_random_hue"
+  name: flow_random_hue
   minimum: 1
   maximum: 360
 
 - platform: version
-  name: "version_ha_current"
+  name: version_ha_current

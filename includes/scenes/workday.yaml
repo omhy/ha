@@ -1,4 +1,4 @@
-- name: "workday_init"
+- name: workday_init
   entities:
 #    Let's use garland @ Winter only
 #    light.garland: true
@@ -18,7 +18,7 @@
       transition: 2
       brightness: 50
       color_temp: 500
-- name: "workday_ready_1"
+- name: workday_ready_1
   entities:
     light.small_torch:
       state: true
@@ -29,7 +29,7 @@
     light.corner_lamp:
       state: true
       hs_color: [ 100, 100 ]
-- name: "workday_ready_2"
+- name: workday_ready_2
   entities:
     light.small_torch:
       state: true
@@ -40,7 +40,7 @@
     light.corner_lamp:
       state: true
       hs_color: [ 60, 100 ]
-- name: "workday_steady"
+- name: workday_steady
   entities:
     light.small_torch:
       state: true
@@ -51,7 +51,7 @@
     light.corner_lamp:
       state: true
       hs_color: [ 30, 100 ]
-- name: "workday_go"
+- name: workday_go
   entities:
     light.small_torch:
       state: true
@@ -62,7 +62,7 @@
     light.corner_lamp:
       state: true
       hs_color: [ 5, 100 ]
-- name: "workday_terminate"
+- name: workday_terminate
   entities:
     light.garland: false
     light.fire_lamp: false
