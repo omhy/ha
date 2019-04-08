@@ -40,9 +40,6 @@ custom_updater: !include includes/custom_updater.yaml
 
 logger:
   default: warning
-#  logs:
-#    homeassistant.components.media_player: critical
-#    custom_components.androidtv.media_player: critical
 
 http:
   ip_ban_enabled: true
@@ -71,12 +68,6 @@ telegram_bot:
   - !secret tg_chat_yury
   - !secret tg_chat_alyona
 
-device_tracker:
-- platform: google_maps
-  username: !secret bot_gmail_user
-  password: !secret bot_gmail_pass
-  interval_seconds: 850
-
 #calendar integration
 google:
   client_id: !secret google_cal_int_client_id
@@ -92,6 +83,7 @@ light: !include includes/light.yaml
 yeelight: !include includes/yeelight.yaml
 google_assistant: !include includes/google_assistant.yaml
 zone: !include includes/zone.yaml
+device_tracker: !include includes/device_tracker.yaml
 media_player: !include includes/media_player.yaml
 notify: !include includes/notify.yaml
 shell_command: !include includes/shell_command.yaml

@@ -1,0 +1,10 @@
+- platform: google_maps
+  username: !secret bot_gmail_user
+  password: !secret bot_gmail_pass
+  interval_seconds: 850
+
+# - platform: traccar
+#   host: a0d7b954-traccar
+#   port: 8072
+#   username: YOUR_USERNAME
+#   password: YOUR_PASSWORD
