@@ -32,13 +32,6 @@ views:
       - sensor.next_dusk
       - sensor.next_dawn
     cards:
-      - type: custom:calendar-card
-        title: Events
-        entities:
-          - calendar.personal
-          - calendar.family
-          - calendar.holidays_in_latvia
-
       - type: entities
         title: Activity
         show_header_toggle: false
@@ -118,6 +111,12 @@ views:
         title: Weather
         weather: weather.smhi_home
         sun: sun.sun
+      - type: custom:calendar-card
+        title: Events
+        entities:
+          - calendar.personal
+          - calendar.family
+          - calendar.holidays_in_latvia
 
   - title: Music
     path: music
@@ -277,12 +276,22 @@ views:
     path: history
     icon: mdi:chart-timeline
     badges:
-      - person.dima
-      - person.alyona
-      - person.yuri
       - sensor.waze_home_work
       - sensor.waze_work_home
     cards:
+      - type: entities
+        title: Persons
+        show_header_toggle: false
+        entities:
+          - entity: person.dima
+            type: "custom:secondaryinfo-entity-row"
+            secondary_info: "[[ device_tracker.google_maps_111683533988744565132.attributes.address ]]"
+          - entity: person.alyona
+            type: "custom:secondaryinfo-entity-row"
+            secondary_info: "[[ device_tracker.google_maps_115914092349482836896.attributes.address ]]"
+          - entity: person.yuri
+            type: "custom:secondaryinfo-entity-row"
+            secondary_info: "[[ device_tracker.google_maps_117454969161947422882.attributes.address ]]"
       - type: vertical-stack
         cards:
           - type: glance
