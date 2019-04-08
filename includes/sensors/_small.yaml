@@ -30,3 +30,9 @@
 
 - platform: version
   name: version_ha_current
+
+- platform: github
+  access_token: !secret github_access_token
+  repositories:
+    - path: "home-assistant/home-assistant"
+    - path: "omhy/ha"
