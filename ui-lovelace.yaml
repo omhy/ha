@@ -40,7 +40,7 @@ views:
           - calendar.holidays_in_latvia
 
       - type: entities
-        title: Motion
+        title: Activity
         show_header_toggle: false
         entities:
           - entity: binary_sensor.motion_sensor_158d0001fa3dc0
@@ -48,6 +48,12 @@ views:
           - entity: binary_sensor.motion_sensor_158d0001e52779
             secondary_info: last-changed
           - entity: binary_sensor.motion_sensor_158d0002d43d7d
+            secondary_info: last-changed
+          - entity: binary_sensor.door_window_sensor_158d00024367c8
+            secondary_info: last-changed
+          - entity: person.dima
+            secondary_info: last-changed
+          - entity: person.alyona
             secondary_info: last-changed
       - type: entities
         title: Adjustible lights
