@@ -111,12 +111,13 @@ views:
         title: Weather
         weather: weather.smhi_home
         sun: sun.sun
-      - type: custom:calendar-card
-        title: Events
-        entities:
-          - calendar.personal
-          - calendar.family
-          - calendar.holidays_in_latvia
+
+      # - type: custom:calendar-card
+      #   title: Events
+      #   entities:
+      #     - calendar.personal
+      #     - calendar.family
+      #     - calendar.holidays_in_latvia
 
   - title: Music
     path: music
