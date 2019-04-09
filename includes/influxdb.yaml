@@ -3,3 +3,13 @@ port: 8086
 database: homeassistant
 username: !secret influxdb_username
 password: !secret influxdb_password
+max_retries: 3
+default_measurement: state
+include:
+  domains:
+    - person
+    - device_tracker
+    - sensor
+    - binary_sensor
+    - light
+    - switch
