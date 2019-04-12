@@ -6,7 +6,7 @@
     - service: telegram_bot.send_message
       data_template:
         target: !secret tg_chat_dima
-        message: "{{ states.sensor.now_hm.state }} \U0001F916 {{ states.sensor.version_ha_current.state }} #HA is back online"
+        message: "{{ states.sensor.now_hm.state }} \U0001F916 {{ states.sensor.version_ha_current.state }} #HA is back online. CPU: {{ states.sensor.processor_use.state_with_unit }}, MEM: {{ states.sensor.memory_use_percent.state_with_unit }}"
         inline_keyboard:
           - "\U0001F532 Menu:/menu, \U0000267B Dismiss:/dismiss"
 
@@ -18,7 +18,7 @@
     - service: telegram_bot.send_message
       data_template:
         target: !secret tg_chat_dima
-        message: "{{ states.sensor.now_hm.state }} \U0001F6D1 {{ states.sensor.version_ha_current.state }} #HA goes offline (uptime {{ (1440 * states.sensor.uptime.state | float) | round(0) }} min)"
+        message: "{{ states.sensor.now_hm.state }} \U0001F6D1 {{ states.sensor.version_ha_current.state }} #HA goes offline (uptime {{ (24 * states.sensor.uptime.state | float) | round(2) }} h)"
         inline_keyboard:
           - "\U0000267B Dismiss:/dismiss"
 
