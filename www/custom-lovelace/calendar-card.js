@@ -423,6 +423,15 @@ var De="adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prot
         flex-direction: column;
     }
 
+    .loader {
+        width: 100%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .header {
         font-family: var(--paper-font-headline_-_font-family);
         -webkit-font-smoothing: var(--paper-font-headline_-_-webkit-font-smoothing);
@@ -605,7 +614,14 @@ Ce.a.version="2.24.0",Object(Ce.b)(Ne.a),Ce.a.fn=dn,Ce.a.min=function(){return $
               >${e.name}</paper-checkbox>`)}
         </div>
       </div>
-    `:q``}_valueChanged(e){if(!this._config||!this.hass||!this._firstRendered)return;const{target:{configValue:t,value:n,entityValue:a},detail:{value:r}}=e;if(a)if(r){const e=Array.from(this._config.entities);e.push(a),this._config=Object.assign({},this._config,{entities:e})}else{const e=this._config.entities.filter(e=>e!==a);this._config=Object.assign({},this._config,{entities:e})}else this._config=void 0!==r||null!==r?Object.assign({},this._config,{[t]:r}):Object.assign({},this._config,{[t]:n});console.log(this._config),ea(this,"config-changed",{config:this._config})}});customElements.define("calendar-card",class extends Ae{static get properties(){return{hass:Object,config:Object,content:Object}}constructor(){super(),this.content=q``,this.events=null,this.isUpdating=!1}static async getConfigElement(){return document.createElement("calendar-card-editor")}setConfig(e){if(!e.entities)throw new Error("You need to define at least one calendar entity via entities");const t=this.config&&this.config.entities||[];this.config&&this.arraysEqual(t,e.entities)&&e.numberOfDays===this.config.numberOfDays||(this.eventNeedUpdating=!0),this.config=Object.assign({},Qn,e)}arraysEqual(e,t){if(e===t)return!0;if(null==e||null==t)return!1;if(e.length!=t.length)return!1;for(let n=0;n<e.length;++n)if(e[n]!==t[n])return!1;return!0}getCardSize(){return 8}static get styles(){return Fe}render(){return(async()=>{if(this.isUpdating)return;this.isUpdating=!0,r.a.locale(this.hass.language);const e=await this.getAllEvents(this.config.entities);await this.updateCard(e),this.isUpdating=!1})(),this.content}async getAllEvents(e){let t=this.events||[];if(this.eventNeedUpdating||r()().diff(this.lastEventsUpdate,"minutes")>=15){const n="YYYY-MM-DDTHH:mm:ss",a=r()().startOf("day"),s=a.format(n),i=a.add(this.config.numberOfDays,"days").format(n),o=e.map(e=>`calendars/${e}?start=${s}Z&end=${i}Z`),d=await this.getAllUrls(o);(t=[].concat(...d).map(e=>new Kn(e))).sort((e,t)=>new Date(e.startDateTime)-new Date(t.startDateTime)),this.events=t,this.lastEventsUpdate=r()()}return this.eventNeedUpdating=!1,t}async getAllUrls(e){try{return await Promise.all(e.map(e=>this.__hass.callApi("get",e)))}catch(e){throw e}}updateCard(e){const t=this.groupEventsByDay(e).reduce((e,t)=>{const n=r()(t.day),a=t.events.map((e,a)=>q`
+    `:q``}_valueChanged(e){if(!this._config||!this.hass||!this._firstRendered)return;const{target:{configValue:t,value:n,entityValue:a},detail:{value:r}}=e;if(a)if(r){const e=Array.from(this._config.entities);e.push(a),this._config=Object.assign({},this._config,{entities:e})}else{const e=this._config.entities.filter(e=>e!==a);this._config=Object.assign({},this._config,{entities:e})}else this._config=void 0!==r||null!==r?Object.assign({},this._config,{[t]:r}):Object.assign({},this._config,{[t]:n});console.log(this._config),ea(this,"config-changed",{config:this._config})}});customElements.define("calendar-card",class extends Ae{static get properties(){return{hass:Object,config:Object,content:Object}}constructor(){super(),this.content=q``,this.events=null,this.isUpdating=!1}static async getConfigElement(){return document.createElement("calendar-card-editor")}setConfig(e){if(!e.entities||!e.entities.length)throw new Error("You need to define at least one calendar entity via entities");const t=this.config&&this.config.entities||[];this.config&&this.arraysEqual(t,e.entities)&&e.numberOfDays===this.config.numberOfDays||(this.eventNeedUpdating=!0),this.config=Object.assign({},Qn,e)}arraysEqual(e,t){if(e===t)return!0;if(null==e||null==t)return!1;if(e.length!=t.length)return!1;for(let n=0;n<e.length;++n)if(e[n]!==t[n])return!1;return!0}getCardSize(){return 8}static get styles(){return Fe}render(){return(async()=>{if(this.isUpdating)return;this.isUpdating=!0,r.a.locale(this.hass.language);const e=await this.getAllEvents(this.config.entities);await this.updateCard(e),this.isUpdating=!1})(),this.content}async getAllEvents(e){let t=this.events||[];if(this.eventNeedUpdating||r()().diff(this.lastEventsUpdate,"minutes")>=15){this.setLoadingUi();const n="YYYY-MM-DDTHH:mm:ss",a=r()().startOf("day"),s=a.format(n),i=a.add(this.config.numberOfDays,"days").format(n),o=e.map(e=>`calendars/${e}?start=${s}Z&end=${i}Z`),d=await Promise.all(o.map(e=>this.__hass.callApi("get",e)));(t=[].concat(...d).map(e=>new Kn(e))).sort((e,t)=>new Date(e.startDateTime)-new Date(t.startDateTime)),this.events=t,this.lastEventsUpdate=r()()}return this.eventNeedUpdating=!1,t}setLoadingUi(){this.content=q`
+      <ha-card class='calendar-card'>
+        ${this.createHeader()}
+        <div class='loader'>
+          <paper-spinner active></paper-spinner>
+        </div>
+        </ha-card>
+    `}updateCard(e){const t=this.groupEventsByDay(e).reduce((e,t)=>{const n=r()(t.day),a=t.events.map((e,a)=>q`
           <tr class='day-wrapper ${t.events.length===a+1?" day-wrapper-last":""}'>
             <td class="date">
               ${this.getDateHtml(a,n)}
@@ -656,3 +672,4 @@ Ce.a.version="2.24.0",Object(Ce.b)(Ne.a),Ce.a.fn=dn,Ce.a.min=function(){return $
         </div>
       </a>
     `:q``}})}]);
+//# sourceMappingURL=calendar-card.js.map
