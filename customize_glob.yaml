@@ -33,6 +33,8 @@
   icon: mdi:desktop-classic
 "*laptop*":
   icon: mdi:laptop
+"*aqara*":
+  icon: mdi:hubspot
 
 ### SPECIFIC
 "light.*":
@@ -43,8 +45,6 @@
   icon: mdi:alarm-light
 
 ### SCRIPTS
-"script.aqara*":
-  icon: mdi:chemical-weapon
 "script.media_radio_play*":
   icon: mdi:play
 "script.media_radio_stop*":
