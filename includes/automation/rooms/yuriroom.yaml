@@ -1,0 +1,19 @@
+- alias: "yuriroom_movement"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d0002d43d7d
+      to: "on"
+  condition:
+    condition: numeric_state
+    entity_id: counter.yuriroom_motions_watch
+    above: 0
+  action:
+    - service: counter.decrement
+      entity_id: counter.yuriroom_motions_watch
+    - service: telegram_bot.send_message
+      data_template:
+        target: !secret tg_chat_dima
+        message: "{{ states.sensor.now_hm.state }} \U0001F4A5 Movement in Yuri' room"
+        inline_keyboard:
+          - "\U0000267B Dismiss:/dismiss"
+

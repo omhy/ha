@@ -5,6 +5,8 @@
   action:
     - service: homeassistant.update_entity
       entity_id: binary_sensor.is_workday
+    - service: counter.reset
+      entity_id: counter.yuriroom_motions_watch
 
 - alias: "schedule_daily_sets"
   trigger:

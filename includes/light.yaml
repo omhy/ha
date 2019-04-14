@@ -40,6 +40,13 @@
   - light.big_torch
   - light.corner_lamp
 
+- platform: group
+  name: _livroom_ambient
+  entities:
+  - light.big_torch
+  - light.corner_lamp
+  - light.standalone_switch
+
 #- platform: group
 #  name: group_christmas
 #  entities:
