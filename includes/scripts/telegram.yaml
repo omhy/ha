@@ -48,13 +48,13 @@ telegram_send_electro:
         target: "{{ target }}"
         title: "#Consumption {{ now().strftime('%Y-%m-%d') }} - {{ states.sensor.consumption_today.state_with_unit }}"
         message: >
-          {% set frm = "%-5s | %-6s | %-5s" %}
+          {% set frm = "%-4s | %-5s | %-6s" %}
 
           {{ '\U0001F50C' }}` kW  {{ frm | format("day", "month", "curr") }}`
 
-          {{ '\U0001F5A5' }}` cmp {{ frm | format(states.sensor.power_strip_1_utility_d.state | round(2), states.sensor.power_strip_1_utility_m.state | round(2), states.sensor.power_strip_1_load_power.state | round(2)) }}`
+          {{ '\U0001F5A5' }}` cmp {{ frm | format(states.sensor.power_strip_1_utility_d.state | round(2), states.sensor.power_strip_1_utility_m.state | round(2), states.sensor.power_strip_1_load_power.state | round(2)) }} | {{ states.sensor.computer_on_today.attributes.value }}`
 
-          {{ '\U0001F4FA' }}` tv  {{ frm | format(states.sensor.power_strip_4_utility_d.state | round(2), states.sensor.power_strip_4_utility_m.state | round(2), states.sensor.power_strip_4_load_power.state | round(2)) }}`
+          {{ '\U0001F4FA' }}` tv  {{ frm | format(states.sensor.power_strip_4_utility_d.state | round(2), states.sensor.power_strip_4_utility_m.state | round(2), states.sensor.power_strip_4_load_power.state | round(2)) }} | {{ states.sensor.tv_on_today.attributes.value }}`
 
           {{ '\U0001F6E1' }}` ntw {{ frm | format(states.sensor.power_strip_3_utility_d.state | round(2), states.sensor.power_strip_3_utility_m.state | round(2), states.sensor.power_strip_3_load_power.state | round(2)) }}`
 
