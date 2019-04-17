@@ -15,7 +15,8 @@ resources:
     type: js
   - url: /customcards/custom-lovelace/secondaryinfo-entity-row.js
     type: js
-
+  - url: /customcards/custom-lovelace/bar-card.js
+    type: js
 
 title: Home
 views:
@@ -112,12 +113,12 @@ views:
         weather: weather.smhi_home
         sun: sun.sun
 
-      # - type: custom:calendar-card
-      #   title: Events
-      #   entities:
-      #     - calendar.personal
-      #     - calendar.family
-      #     - calendar.holidays_in_latvia
+      - type: custom:calendar-card
+        title: Events
+        entities:
+          - calendar.personal
+          - calendar.family
+          - calendar.holidays_in_latvia
 
   - title: Music
     path: music
@@ -217,8 +218,19 @@ views:
     cards:
       - type: vertical-stack
         cards:
-          - type: glance
-            title: Temperature
+          - type: custom:bar-card
+            direction: up
+            title_position: inside
+            columns: 5
+            height: 169px
+            max: 40
+            severity:
+              - value: 15
+                color: '#7da6e8'
+              - value: 20
+                color: '#bf9540'
+              - value: 30
+                color: '#40bf40'
             entities:
               - sensor.temperature_158d00022c7cf2
               - sensor.temperature_158d0002323783
@@ -476,62 +488,20 @@ views:
       - sensor.moon
       - sun.sun
     cards:
-#      - type: custom:flex-table-card
-#        sort_by: name
-#        entities:
-#          include:
-#            - sensor.wt*_temperature
-#        columns:
-#          - name: Name
-#            prop: name
-#            id: name
-#          - name: Temp
-#            prop: state
-#            suffix: "°C"
-#      - type: custom:flex-table-card
-#        sort_by: name
-#        entities:
-#          include:
-#            - sensor.wt*_humidity
-#        columns:
-#          - name: Name
-#            prop: name
-#            id: name
-#          - name: Humidity
-#            prop: state
-#            suffix: "%"
-#            hidden: true
-#      - type: custom:flex-table-card
-#        sort_by: name
-#        entities:
-#          include:
-#            - sensor.wt*_precipitation
-#        columns:
-#          - name: Name
-#            prop: name
-#            id: name
-#          - name: Precipitation
-#            prop: state
-#            suffix: "mm"
-#            hidden: true
-#      - type: custom:flex-table-card
-#        sort_by: name
-#        entities:
-#          include:
-#            - sensor.wt*_wind_speed
-#        columns:
-#          - name: Name
-#            prop: name
-#            id: name
-#          - name: Wind speed
-#            prop: state
-#            suffix: "m/s"
-#            hidden: true
-
-
-      - type: glance
-        title: Temperature
-        show_header_toggle: true
+      - type: custom:bar-card
+        direction: up
+        title_position: inside
+        columns: 10
+        height: 200px
+        padding: 2px
+        max: 40
+        severity:
+          - value: 10
+            color: '#7da6e8'
+          - value: 20
+            color: '#bf9540'
+          - value: 30
+            color: '#40bf40'
         entities:
           - sensor.wt00_temperature
           - sensor.wt01_temperature
@@ -543,6 +513,25 @@ views:
           - sensor.wt24_temperature
           - sensor.wt48_temperature
           - sensor.wt72_temperature
+      - type: custom:bar-card
+        direction: up
+        title_position: inside
+        columns: 10
+        height: 200px
+        padding: 2px
+        max: 8
+        show_header_toggle: true
+        entities:
+          - sensor.wt00_wind_speed
+          - sensor.wt01_wind_speed
+          - sensor.wt02_wind_speed
+          - sensor.wt03_wind_speed
+          - sensor.wt06_wind_speed
+          - sensor.wt09_wind_speed
+          - sensor.wt12_wind_speed
+          - sensor.wt24_wind_speed
+          - sensor.wt48_wind_speed
+          - sensor.wt72_wind_speed
       - type: glance
         title: Humidity
         show_header_toggle: true
@@ -571,20 +560,6 @@ views:
           - sensor.wt24_precipitation
           - sensor.wt48_precipitation
           - sensor.wt72_precipitation
-      - type: glance
-        title: Wind speed
-        show_header_toggle: true
-        entities:
-          - sensor.wt00_wind_speed
-          - sensor.wt01_wind_speed
-          - sensor.wt02_wind_speed
-          - sensor.wt03_wind_speed
-          - sensor.wt06_wind_speed
-          - sensor.wt09_wind_speed
-          - sensor.wt12_wind_speed
-          - sensor.wt24_wind_speed
-          - sensor.wt48_wind_speed
-          - sensor.wt72_wind_speed
       - type: glance
         title: Pressure
         show_header_toggle: true
