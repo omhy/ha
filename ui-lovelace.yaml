@@ -488,50 +488,85 @@ views:
       - sensor.moon
       - sun.sun
     cards:
-      - type: custom:bar-card
-        direction: up
-        title_position: inside
-        columns: 10
-        height: 200px
-        padding: 2px
-        max: 40
-        severity:
-          - value: 10
-            color: '#7da6e8'
-          - value: 20
-            color: '#bf9540'
-          - value: 30
-            color: '#40bf40'
-        entities:
-          - sensor.wt00_temperature
-          - sensor.wt01_temperature
-          - sensor.wt02_temperature
-          - sensor.wt03_temperature
-          - sensor.wt06_temperature
-          - sensor.wt09_temperature
-          - sensor.wt12_temperature
-          - sensor.wt24_temperature
-          - sensor.wt48_temperature
-          - sensor.wt72_temperature
-      - type: custom:bar-card
-        direction: up
-        title_position: inside
-        columns: 10
-        height: 200px
-        padding: 2px
-        max: 8
-        show_header_toggle: true
-        entities:
-          - sensor.wt00_wind_speed
-          - sensor.wt01_wind_speed
-          - sensor.wt02_wind_speed
-          - sensor.wt03_wind_speed
-          - sensor.wt06_wind_speed
-          - sensor.wt09_wind_speed
-          - sensor.wt12_wind_speed
-          - sensor.wt24_wind_speed
-          - sensor.wt48_wind_speed
-          - sensor.wt72_wind_speed
+# TEMPS    
+      - type: vertical-stack
+        cards:
+        - type: markdown
+          content: Temperature
+        - type: custom:bar-card
+          direction: up
+          title_position: inside
+          columns: 8
+          height: 100px
+          max: 40
+          severity:
+            - value: 10
+              color: '#7da6e8'
+            - value: 20
+              color: '#bf9540'
+            - value: 30
+              color: '#40bf40'
+          entities:
+            - sensor.wt00_temperature
+            - sensor.wt01_temperature
+            - sensor.wt02_temperature
+            - sensor.wt03_temperature
+            - sensor.wt06_temperature
+            - sensor.wt09_temperature
+            - sensor.wt12_temperature
+            - sensor.wt24_temperature
+        - type: custom:bar-card
+          direction: up
+          title_position: inside
+          columns: 4
+          height: 100px
+          max: 40
+          severity:
+            - value: 10
+              color: '#7da6e8'
+            - value: 20
+              color: '#bf9540'
+            - value: 30
+              color: '#40bf40'
+          entities:
+            - sensor.wt00_temperature
+            - sensor.wt24_temperature
+            - sensor.wt48_temperature
+            - sensor.wt72_temperature
+# WIND
+      - type: vertical-stack
+        cards:
+        - type: markdown
+          content: Wind speed
+        - type: custom:bar-card
+          direction: up
+          title_position: inside
+          columns: 8
+          height: 100px
+          max: 8
+          show_header_toggle: true
+          entities:
+            - sensor.wt00_wind_speed
+            - sensor.wt01_wind_speed
+            - sensor.wt02_wind_speed
+            - sensor.wt03_wind_speed
+            - sensor.wt06_wind_speed
+            - sensor.wt09_wind_speed
+            - sensor.wt12_wind_speed
+            - sensor.wt24_wind_speed
+        - type: custom:bar-card
+          direction: up
+          title_position: inside
+          columns: 4
+          height: 100px
+          max: 8
+          show_header_toggle: true
+          entities:
+            - sensor.wt00_wind_speed
+            - sensor.wt24_wind_speed
+            - sensor.wt48_wind_speed
+            - sensor.wt72_wind_speed
+
       - type: glance
         title: Humidity
         show_header_toggle: true
