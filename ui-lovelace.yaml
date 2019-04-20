@@ -17,6 +17,8 @@ resources:
     type: js
   - url: /customcards/custom-lovelace/bar-card.js
     type: js
+  - url: /customcards/custom-lovelace/vertical-stack-in-card.js
+    type: js
 
 title: Home
 views:
@@ -222,7 +224,7 @@ views:
             direction: up
             title_position: inside
             columns: 5
-            height: 169px
+            height: 100px
             max: 40
             severity:
               - value: 15
@@ -237,16 +239,32 @@ views:
               - sensor.temperature_158d000234816a
               - sensor.temperature_158d0001f23cbe
               - sensor.temperature_158d0002271609
-          - type: glance
-            title: Humidity
+          - type: custom:bar-card
+            direction: up
+            title_position: inside
+            columns: 5
+            height: 100px
+            max: 100
+            severity:
+              - value: 60
+                color: !secret sand
+              - value: 80
+                color: !secret green
+              - value: 100
+                color: !secret red
             entities:
               - sensor.humidity_158d00022c7cf2
               - sensor.humidity_158d0002323783
               - sensor.humidity_158d000234816a
               - sensor.humidity_158d0001f23cbe
               - sensor.humidity_158d0002271609
-          - type: glance
-            title: Pressure
+          - type: custom:bar-card
+            direction: up
+            title_position: inside
+            columns: 5
+            height: 100px
+            min: 1000
+            max: 1050
             entities:
               - sensor.pressure_158d00022c7cf2
               - sensor.pressure_158d0002323783
@@ -489,7 +507,7 @@ views:
       - sun.sun
     cards:
 # TEMPS    
-      - type: vertical-stack
+      - type: custom:vertical-stack-in-card
         cards:
         - type: markdown
           content: Temperature
@@ -534,7 +552,7 @@ views:
             - sensor.wt48_temperature
             - sensor.wt72_temperature
 # WIND
-      - type: vertical-stack
+      - type: custom:vertical-stack-in-card
         cards:
         - type: markdown
           content: Wind speed
