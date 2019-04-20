@@ -226,11 +226,11 @@ views:
             max: 40
             severity:
               - value: 15
-                color: '#7da6e8'
-              - value: 20
-                color: '#bf9540'
+                color: !secret blue
+              - value: 22
+                color: !secret green
               - value: 30
-                color: '#40bf40'
+                color: !secret red
             entities:
               - sensor.temperature_158d00022c7cf2
               - sensor.temperature_158d0002323783
@@ -501,11 +501,11 @@ views:
           max: 40
           severity:
             - value: 10
-              color: '#7da6e8'
+              color: !secret blue
             - value: 20
-              color: '#bf9540'
+              color: !secret sand
             - value: 30
-              color: '#40bf40'
+              color: !secret red
           entities:
             - sensor.wt00_temperature
             - sensor.wt01_temperature
@@ -523,11 +523,11 @@ views:
           max: 40
           severity:
             - value: 10
-              color: '#7da6e8'
+              color: !secret blue
             - value: 20
-              color: '#bf9540'
+              color: !secret sand
             - value: 30
-              color: '#40bf40'
+              color: !secret red
           entities:
             - sensor.wt00_temperature
             - sensor.wt24_temperature
@@ -544,7 +544,13 @@ views:
           columns: 8
           height: 100px
           max: 8
-          show_header_toggle: true
+          severity:
+            - value: 3
+              color: !secret green
+            - value: 5
+              color: !secret sand
+            - value: 10
+              color: !secret red
           entities:
             - sensor.wt00_wind_speed
             - sensor.wt01_wind_speed
@@ -560,7 +566,13 @@ views:
           columns: 4
           height: 100px
           max: 8
-          show_header_toggle: true
+          severity:
+            - value: 3
+              color: !secret green
+            - value: 5
+              color: !secret sand
+            - value: 10
+              color: !secret red
           entities:
             - sensor.wt00_wind_speed
             - sensor.wt24_wind_speed

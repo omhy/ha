@@ -6,7 +6,7 @@
     - service: telegram_bot.send_message
       data_template:
         target: !secret tg_chat_dima
-        message: "{{ states.sensor.now_hm.state }} \U0001F916 {{ states.sensor.version_ha_current.state }} #HA is back online. CPU: {{ states.sensor.processor_use.state_with_unit }}, MEM: {{ states.sensor.memory_use_percent.state_with_unit }}"
+        message: "{{ states.sensor.now_hm.state }} \U0001F916 {{ states.sensor.version_ha_current.state }} #HA is back online. Temp: {{ states.sensor.temp.state_with_unit }}"
         inline_keyboard:
           - "\U0001F532 Menu:/menu, \U0000267B Dismiss:/dismiss"
 
