@@ -119,22 +119,22 @@
   icon: mdi:calendar-text
 
 "sensor.wt00*":
-  friendly_name: Now
+  friendly_name: 0h
 "sensor.wt01*":
-  friendly_name: 01h
+  friendly_name: 1h
 "sensor.wt02*":
-  friendly_name: 02h
+  friendly_name: 2h
 "sensor.wt03*":
-  friendly_name: 03h
+  friendly_name: 3h
 "sensor.wt06*":
-  friendly_name: 06h
+  friendly_name: 6h
 "sensor.wt09*":
-  friendly_name: 09h
+  friendly_name: 9h
 "sensor.wt12*":
   friendly_name: 12h
 "sensor.wt24*":
-  friendly_name: 24h
+  friendly_name: 1d
 "sensor.wt48*":
-  friendly_name: 48h
+  friendly_name: 2d
 "sensor.wt72*":
-  friendly_name: 72h
+  friendly_name: 3d
