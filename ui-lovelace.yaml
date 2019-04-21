@@ -510,7 +510,20 @@ views:
       - type: custom:vertical-stack-in-card
         cards:
         - type: markdown
-          content: Temperature
+          content: Hourly
+        - type: glance
+          columns: 8
+          show_header_toggle: true
+          show_state: false
+          entities:
+            - sensor.wt00_symbol
+            - sensor.wt01_symbol
+            - sensor.wt02_symbol
+            - sensor.wt03_symbol
+            - sensor.wt06_symbol
+            - sensor.wt09_symbol
+            - sensor.wt12_symbol
+            - sensor.wt24_symbol
         - type: custom:bar-card
           direction: up
           title_position: inside
@@ -536,29 +549,6 @@ views:
         - type: custom:bar-card
           direction: up
           title_position: inside
-          columns: 4
-          height: 80px
-          max: 40
-          severity:
-            - value: 10
-              color: !secret blue
-            - value: 20
-              color: !secret sand
-            - value: 30
-              color: !secret red
-          entities:
-            - sensor.wt00_temperature
-            - sensor.wt24_temperature
-            - sensor.wt48_temperature
-            - sensor.wt72_temperature
-# WIND
-      - type: custom:vertical-stack-in-card
-        cards:
-        - type: markdown
-          content: Wind speed
-        - type: custom:bar-card
-          direction: up
-          title_position: inside
           columns: 8
           height: 80px
           max: 8
@@ -578,29 +568,6 @@ views:
             - sensor.wt09_wind_speed
             - sensor.wt12_wind_speed
             - sensor.wt24_wind_speed
-        - type: custom:bar-card
-          direction: up
-          title_position: inside
-          columns: 4
-          height: 80px
-          max: 8
-          severity:
-            - value: 3
-              color: !secret green
-            - value: 5
-              color: !secret sand
-            - value: 10
-              color: !secret red
-          entities:
-            - sensor.wt00_wind_speed
-            - sensor.wt24_wind_speed
-            - sensor.wt48_wind_speed
-            - sensor.wt72_wind_speed
-# PRECIPITATION
-      - type: custom:vertical-stack-in-card
-        cards:
-        - type: markdown
-          content: Precipitation
         - type: custom:bar-card
           direction: up
           title_position: inside
@@ -626,29 +593,6 @@ views:
         - type: custom:bar-card
           direction: up
           title_position: inside
-          columns: 4
-          height: 80px
-          max: 20
-          severity:
-            - value: 3
-              color: !secret green
-            - value: 5
-              color: !secret sand
-            - value: 10
-              color: !secret red
-          entities:
-            - sensor.wt00_precipitation
-            - sensor.wt24_precipitation
-            - sensor.wt48_precipitation
-            - sensor.wt72_precipitation
-# HUMIDITY
-      - type: custom:vertical-stack-in-card
-        cards:
-        - type: markdown
-          content: Humidity
-        - type: custom:bar-card
-          direction: up
-          title_position: inside
           columns: 8
           height: 80px
           max: 100
@@ -668,6 +612,74 @@ views:
             - sensor.wt09_humidity
             - sensor.wt12_humidity
             - sensor.wt24_humidity
+
+      - type: custom:vertical-stack-in-card
+        cards:
+        - type: markdown
+          content: Daily
+        - type: glance
+          columns: 4
+          show_header_toggle: true
+          show_state: false
+          entities:
+            - sensor.wt00_symbol
+            - sensor.wt24_symbol
+            - sensor.wt48_symbol
+            - sensor.wt72_symbol
+        - type: custom:bar-card
+          direction: up
+          title_position: inside
+          columns: 4
+          height: 80px
+          max: 40
+          severity:
+            - value: 10
+              color: !secret blue
+            - value: 20
+              color: !secret sand
+            - value: 30
+              color: !secret red
+          entities:
+            - sensor.wt00_temperature
+            - sensor.wt24_temperature
+            - sensor.wt48_temperature
+            - sensor.wt72_temperature
+        - type: custom:bar-card
+          direction: up
+          title_position: inside
+          columns: 4
+          height: 80px
+          max: 8
+          severity:
+            - value: 3
+              color: !secret green
+            - value: 5
+              color: !secret sand
+            - value: 10
+              color: !secret red
+          entities:
+            - sensor.wt00_wind_speed
+            - sensor.wt24_wind_speed
+            - sensor.wt48_wind_speed
+            - sensor.wt72_wind_speed
+        - type: custom:bar-card
+          direction: up
+          title_position: inside
+          columns: 4
+          height: 80px
+          max: 20
+          severity:
+            - value: 3
+              color: !secret green
+            - value: 5
+              color: !secret sand
+            - value: 10
+              color: !secret red
+          entities:
+            - sensor.wt00_precipitation
+            - sensor.wt24_precipitation
+            - sensor.wt48_precipitation
+            - sensor.wt72_precipitation
         - type: custom:bar-card
           direction: up
           title_position: inside
@@ -686,12 +698,6 @@ views:
             - sensor.wt24_humidity
             - sensor.wt48_humidity
             - sensor.wt72_humidity
-
-# PRESSURE
-      - type: custom:vertical-stack-in-card
-        cards:
-        - type: markdown
-          content: Pressure
         - type: custom:bar-card
           direction: up
           title_position: inside
@@ -704,22 +710,6 @@ views:
             - sensor.wt24_pressure
             - sensor.wt48_pressure
             - sensor.wt72_pressure
-
-      - type: glance
-        title: Outside
-        show_header_toggle: true
-        show_state: false
-        entities:
-          - sensor.wt00_symbol
-          - sensor.wt01_symbol
-          - sensor.wt02_symbol
-          - sensor.wt03_symbol
-          - sensor.wt06_symbol
-          - sensor.wt09_symbol
-          - sensor.wt12_symbol
-          - sensor.wt24_symbol
-          - sensor.wt48_symbol
-          - sensor.wt72_symbol
 
   ##################   LINKS
   - title: Links
