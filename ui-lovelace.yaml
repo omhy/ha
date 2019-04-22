@@ -533,7 +533,7 @@ views:
             - sensor.wt24_symbol
         - type: custom:bar-card
           direction: up
-          title_position: inside
+          title_position: "off"
           columns: 8
           height: 80px
           max: 40
@@ -555,7 +555,7 @@ views:
             - sensor.wt24_temperature
         - type: custom:bar-card
           direction: up
-          title_position: inside
+          title_position: "off"
           columns: 8
           height: 80px
           max: 8
@@ -577,7 +577,7 @@ views:
             - sensor.wt24_wind_speed
         - type: custom:bar-card
           direction: up
-          title_position: inside
+          title_position: "off"
           columns: 8
           height: 80px
           max: 20
@@ -599,7 +599,7 @@ views:
             - sensor.wt24_precipitation
         - type: custom:bar-card
           direction: up
-          title_position: inside
+          title_position: "off"
           columns: 8
           height: 80px
           max: 100
@@ -636,7 +636,7 @@ views:
             - sensor.wt72_symbol
         - type: custom:bar-card
           direction: up
-          title_position: inside
+          title_position: "off"
           columns: 4
           height: 80px
           max: 40
@@ -654,7 +654,7 @@ views:
             - sensor.wt72_temperature
         - type: custom:bar-card
           direction: up
-          title_position: inside
+          title_position: "off"
           columns: 4
           height: 80px
           max: 8
@@ -672,7 +672,7 @@ views:
             - sensor.wt72_wind_speed
         - type: custom:bar-card
           direction: up
-          title_position: inside
+          title_position: "off"
           columns: 4
           height: 80px
           max: 20
@@ -690,7 +690,7 @@ views:
             - sensor.wt72_precipitation
         - type: custom:bar-card
           direction: up
-          title_position: inside
+          title_position: "off"
           columns: 4
           height: 80px
           max: 100
@@ -708,7 +708,7 @@ views:
             - sensor.wt72_humidity
         - type: custom:bar-card
           direction: up
-          title_position: inside
+          title_position: "off"
           columns: 4
           height: 80px
           min: 1000
@@ -898,7 +898,7 @@ views:
         filter:
           include:
             - entity_id: sensor.*_battery_level
-              state: '< 25'
+              state: "< 25"
 
       - type: custom:tracker-card
         title:

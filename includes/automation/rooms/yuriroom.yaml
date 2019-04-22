@@ -4,9 +4,12 @@
       entity_id: binary_sensor.motion_sensor_158d0002d43d7d
       to: "on"
   condition:
-    condition: numeric_state
-    entity_id: counter.yuriroom_motions_watch
-    above: 0
+    - condition: time
+      after: '05:00:00'
+      before: '08:00:00'
+    - condition: numeric_state
+      entity_id: counter.yuriroom_motions_watch
+      above: 0
   action:
     - service: counter.decrement
       entity_id: counter.yuriroom_motions_watch

@@ -1,3 +1,4 @@
+# COMMON
 media_radio_play_param_cast:
   sequence:
     - service: media_player.play_media
@@ -6,13 +7,21 @@ media_radio_play_param_cast:
         media_content_id: "{{ media_content_id }}"
         media_content_type: "audio/mp4"
 
+# MORNING
+media_radio_play_at_morning:
+  sequence:
+    - service: script.media_radio_play_param_cast
+      data_template:
+        entity_id: media_player.kitchen_display
+        media_content_id: "http://ice.stream.frequence3.net/frequence3-128.mp3"
+
+# PLAY ON SELECTTED
 media_radio_play_selected_cast:
   sequence:
     - service: script.media_radio_play_param_cast
       data_template:
         entity_id: "{{ states.input_text.radio_cast.state }}"
         media_content_id: "{{ media_content_id }}"
-
 media_radio_play_soma_illstreet:
   sequence:
     - service: script.media_radio_play_selected_cast
@@ -59,11 +68,15 @@ media_radio_play_frequence3:
       data_template:
         media_content_id: "http://ice.stream.frequence3.net/frequence3-128.mp3"
 
-
-
-
 media_player_stop_all:
   sequence:
     - service: media_player.media_stop
       data_template:
-        entity_id: all
+        entity_id:
+          - media_player.black_speaker
+          - media_player.kitchen_display
+          - media_player.loud_speaker
+          - media_player.yury_speaker
+          - media_player.chromecast
+          - media_player.speakers
+          - media_player.surround
