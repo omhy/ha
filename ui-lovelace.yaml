@@ -131,6 +131,11 @@ views:
           - type: horizontal-stack
             cards:
               - type: picture
+                image: /local/radio/f3.jpg
+                tap_action:
+                  action: call-service
+                  service: script.media_radio_play_frequence3
+              - type: picture
                 image: /local/radio/groovesalad.jpg
                 tap_action:
                   action: call-service
@@ -502,15 +507,17 @@ views:
   - title: Forecast
     path: forecast
     icon: mdi:cloud-circle
-    badges:
-      - sensor.moon
-      - sun.sun
     cards:
+      - type: custom:bar-card
+        entities:
+          - sensor.temperature_158d00022c7cf2
+          - sensor.wt00_temperature
 # TEMPS    
       - type: custom:vertical-stack-in-card
         cards:
         - type: markdown
-          content: Hourly
+          content: |
+            ## Hourly
         - type: glance
           columns: 8
           show_header_toggle: true
@@ -533,7 +540,7 @@ views:
           severity:
             - value: 10
               color: !secret blue
-            - value: 20
+            - value: 16
               color: !secret sand
             - value: 30
               color: !secret red
@@ -616,7 +623,8 @@ views:
       - type: custom:vertical-stack-in-card
         cards:
         - type: markdown
-          content: Daily
+          content: |
+            ## Daily
         - type: glance
           columns: 4
           show_header_toggle: true
@@ -635,7 +643,7 @@ views:
           severity:
             - value: 10
               color: !secret blue
-            - value: 20
+            - value: 16
               color: !secret sand
             - value: 30
               color: !secret red
