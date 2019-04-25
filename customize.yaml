@@ -134,11 +134,11 @@ sensor.temperature_158d0001f23cbe:
 sensor.pressure_158d0001f23cbe:
   friendly_name: Bedroom
 sensor.humidity_158d00022c7cf2:
-  friendly_name: Outside
+  friendly_name: Outdoor
 sensor.temperature_158d00022c7cf2:
-  friendly_name: Outside
+  friendly_name: Outdoor
 sensor.pressure_158d00022c7cf2:
-  friendly_name: Outside
+  friendly_name: Outdoor
 sensor.humidity_158d000234816a:
   friendly_name: Living room
 sensor.temperature_158d000234816a:
