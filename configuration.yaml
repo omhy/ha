@@ -47,7 +47,8 @@ http:
   base_url: !secret http_base_url_no_port
 
 tts:
-- platform: google
+- platform: google_translate
+  # service_name: google_say
   language: ru
 
 #googlehome:
