@@ -900,6 +900,17 @@ views:
             - entity_id: sensor.*_battery_level
               state: "< 25"
 
+      - type: custom:auto-entities
+        show_empty: false
+        card:
+          type: entities
+          title: Google casts
+          show_header_toggle: false
+        filter:
+          include:
+            - entity_id: sensor.cast_version*
+            - entity_id: sensor.build_version*
+
       - type: custom:tracker-card
         title:
         trackers:
