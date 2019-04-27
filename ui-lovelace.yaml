@@ -889,6 +889,12 @@ views:
     path: misc
     icon: mdi:cat
     cards:
+      - type: custom:tracker-card
+        title:
+        trackers:
+          - sensor.custom_card_tracker
+          - sensor.custom_component_tracker
+              
       - type: custom:auto-entities
         show_empty: false
         card:
@@ -910,13 +916,7 @@ views:
           include:
             - entity_id: sensor.cast_version*
             - entity_id: sensor.build_version*
-
-      - type: custom:tracker-card
-        title:
-        trackers:
-          - sensor.custom_card_tracker
-          - sensor.custom_component_tracker
-      
+     
       - type: entities
         title: Doorbell settings
         show_header_toggle: false

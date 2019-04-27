@@ -119,7 +119,7 @@
   icon: mdi:calendar-text
 
 "sensor.wt00*":
-  friendly_name: 0h
+  friendly_name: Nw
 "sensor.wt01*":
   friendly_name: 1h
 "sensor.wt02*":
