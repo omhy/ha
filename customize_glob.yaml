@@ -118,8 +118,13 @@
   friendly_name: Month
   icon: mdi:calendar-text
 
+"sensor.cast_version_*":
+  icon: mdi:cast
+"sensor.build_version_*":
+  icon: mdi:wrench
+
 "sensor.wt00*":
-  friendly_name: Nw
+  friendly_name: Now
 "sensor.wt01*":
   friendly_name: 1h
 "sensor.wt02*":

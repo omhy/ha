@@ -332,6 +332,14 @@ views:
           - entity: person.yuri
             type: "custom:secondaryinfo-entity-row"
             secondary_info: "[[ device_tracker.google_maps_117454969161947422882.attributes.address ]]"
+      - type: history-graph
+        title: Persons 2h
+        hours_to_show: 2
+        entities:
+          - person.dima
+          - person.alyona
+          - person.yuri
+
       - type: vertical-stack
         cards:
           - type: glance
@@ -366,14 +374,6 @@ views:
           - binary_sensor.motion_sensor_158d0002d43d7d
 
       - type: history-graph
-        title: Living room power 1h
-        hours_to_show: 1
-        entities:
-          - sensor.power_strip_1_load_power
-          - sensor.power_strip_3_load_power
-          - sensor.power_strip_4_load_power
-
-      - type: history-graph
         title: Android box 1h
         hours_to_show: 1
         entities:
@@ -382,14 +382,6 @@ views:
           - media_player.chromecast
           - media_player.abox
           - sensor.abox_app
-
-      - type: history-graph
-        title: Persons 3h
-        hours_to_show: 2
-        entities:
-          - person.dima
-          - person.alyona
-          - person.yuri
 
 #      - type: history-graph
 #        title: Waze 24h
@@ -502,6 +494,15 @@ views:
           - input_boolean.computer_today_limit
           - sensor.computer_on_today_minutes
           - input_number.computer_today_allowed
+
+      - type: history-graph
+        title: Living room power 1h
+        hours_to_show: 1
+        entities:
+          - sensor.power_strip_1_load_power
+          - sensor.power_strip_3_load_power
+          - sensor.power_strip_4_load_power
+
 
 ##############   FORECAST
   - title: Forecast
@@ -736,22 +737,6 @@ views:
             name: Router firmwares
             url: https://downloads.pangubox.com/pandorabox/
             icon: mdi:router-wireless
-          - type: weblink
-            name: Influx DB
-            url: http://192.168.1.10:8888
-            icon: mdi:database
-          - type: weblink
-            name: Grafana
-            url: http://192.168.1.10:3000
-            icon: mdi:graphql
-          - type: weblink
-            name: Adguard
-            url: http://192.168.1.10:3210
-            icon: mdi:shield
-          - type: weblink
-            name: Github repo
-            url: https://github.com/omhy/ha
-            icon: mdi:github-circle
 
       - type: entities
         title: Sonoffs
@@ -794,49 +779,7 @@ views:
             name: Chromecast API
             url: http://192.168.1.33:8008/setup/eureka_info
             icon: mdi:google-chrome
-
-      - type: entities
-        title: Home Assistant
-        show_header_toggle: false
-        entities:
-          - type: weblink
-            name: Stable verison
-            url: https://s3.amazonaws.com/hassio-version/stable.json
-            icon: mdi:home-assistant
-          - type: weblink
-            name: Lovelace
-            url: https://www.home-assistant.io/lovelace
-            icon: mdi:home-assistant
-          - type: weblink
-            name: Tags
-            url: https://github.com/home-assistant/home-assistant/tags
-            icon: mdi:github-circle
-          - type: weblink
-            name: Light component
-            url: https://www.home-assistant.io/components/light/
-            icon: mdi:home-assistant
-          - type: weblink
-            name: Automation conditions
-            url: https://www.home-assistant.io/docs/automation/condition/
-            icon: mdi:script
-          - type: weblink
-            name: Automation trigger
-            url: https://www.home-assistant.io/docs/automation/trigger/
-            icon: mdi:script
-
-      - type: entities
-        title: User interface
-        show_header_toggle: false
-        entities:
-          - type: weblink
-            name: MDI icons
-            url: https://materialdesignicons.com
-            icon: mdi:sticker
-          - type: weblink
-            name: Emoji list
-            url: http://unicode.org/emoji/charts/full-emoji-list.html
-            icon: mdi:sticker-emoji
-
+            
   ##################   SYSTEM
   - title: System
     path: sys
