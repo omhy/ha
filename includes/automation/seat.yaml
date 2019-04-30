@@ -1,0 +1,21 @@
+- alias: "sensor_vibrated"
+  trigger:
+    - platform: event
+      event_type: xiaomi_aqara.movement
+      event_data:
+        entity_id: binary_sensor.vibration_158d0002c4e568
+        movement_type: vibrate
+    - platform: event
+      event_type: xiaomi_aqara.movement
+      event_data:
+        entity_id: binary_sensor.vibration_158d0002c4e568
+        movement_type: tilt
+    - platform: event
+      event_type: xiaomi_aqara.movement
+      event_data:
+        entity_id: binary_sensor.vibration_158d0002c4e568
+        movement_type: free_fall
+  action:
+    - service: script.input_text_set_now
+      data_template:
+        entity_id: input_text.state_change_seat
