@@ -44,11 +44,6 @@
   trigger:
     - platform: state
       entity_id:
-        - sensor.build_version_black_speaker
-        - sensor.build_version_chromecast
-        - sensor.build_version_kitchen_display
-        - sensor.build_version_loud_speaker
-        - sensor.build_version_yuri_speaker
         - sensor.cast_version_black_speaker
         - sensor.cast_version_chromecast
         - sensor.cast_version_kitchen_display

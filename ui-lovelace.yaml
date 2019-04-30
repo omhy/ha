@@ -825,8 +825,6 @@ views:
         entities:
           - script.aqara_add_device
 
-
-
   ##################   DETAILS
   - title: Misc
     path: misc
@@ -858,8 +856,7 @@ views:
         filter:
           include:
             - entity_id: sensor.cast_version*
-            - entity_id: sensor.build_version*
-     
+
       - type: entities
         title: Doorbell settings
         show_header_toggle: false
