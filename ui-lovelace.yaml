@@ -47,6 +47,7 @@ views:
             secondary_info: last-changed
           - entity: binary_sensor.door_window_sensor_158d00024367c8
             secondary_info: last-changed
+          - sensor.state_change_seat_ago_min
           - entity: person.dima
             secondary_info: last-changed
           - entity: person.alyona
@@ -268,7 +269,7 @@ views:
             title_position: inside
             columns: 5
             height: 80px
-            min: 1000
+            min: 950
             max: 1050
             entities:
               - sensor.pressure_158d00022c7cf2

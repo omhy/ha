@@ -5,6 +5,8 @@
   icon: mdi:dropbox
 "*door*":
   icon: mdi:door
+"*seat*":
+  icon: mdi:seat
 "*doorbell*":
   icon: mdi:bell-ring
 "*mqtt*":

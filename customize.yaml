@@ -283,8 +283,9 @@ binary_sensor.motion_sensor_158d0002d43d7d:
 binary_sensor.door_window_sensor_158d00024367c8:
   friendly_name: Door
 binary_sensor.vibration_158d0002c4e568:
-  friendly_name: Chair
-  icon: mdi:seat
+  friendly_name: Seat
+sensor.state_change_seat_ago_min:
+  friendly_name: Seat
 
 #ILLUMINATION
 sensor.illumination_158d0001e52779:
