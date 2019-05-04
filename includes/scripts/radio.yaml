@@ -67,6 +67,11 @@ media_radio_play_frequence3:
     - service: script.media_radio_play_selected_cast
       data_template:
         media_content_id: "http://ice.stream.frequence3.net/frequence3-128.mp3"
+media_radio_play_moskvafm:
+  sequence:
+    - service: script.media_radio_play_selected_cast
+      data_template:
+        media_content_id: "http://icecast.vgtrk.cdnvideo.ru/moscowfm128"
 
 media_player_stop_all:
   sequence:

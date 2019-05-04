@@ -159,6 +159,11 @@ views:
           - type: horizontal-stack
             cards:
               - type: picture
+                image: /local/radio/moskvafm.jpg
+                tap_action:
+                  action: call-service
+                  service: script.media_radio_play_moskvafm
+              - type: picture
                 image: /local/radio/secretagent.jpg
                 tap_action:
                   action: call-service
