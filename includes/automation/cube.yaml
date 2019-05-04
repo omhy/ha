@@ -1,14 +1,10 @@
-- alias: "cube_action_rotate_when_flow_is_off"
+- alias: "cube_action_rotate"
   trigger:
     - platform: event
       event_type: xiaomi_aqara.cube_action
       event_data:
         entity_id: binary_sensor.cube_158d00028776ae
         action_type: rotate
-  condition:
-    - condition: state
-      entity_id: sensor.livingroom_ambient_flow_is_on
-      state: "false"
   action:
     - service: light.turn_on
       entity_id: light.group_livroom_ambient
@@ -33,17 +29,13 @@
           {% endif %}
           {{ current }}
 
-- alias: "cube_action_flip90_when_flow_is_off"
+- alias: "cube_action_flip90"
   trigger:
     - platform: event
       event_type: xiaomi_aqara.cube_action
       event_data:
         entity_id: binary_sensor.cube_158d00028776ae
         action_type: flip90
-  condition:
-    - condition: state
-      entity_id: sensor.livingroom_ambient_flow_is_on
-      state: "false"
   action:
     - service: light.turn_on
       entity_id: light.group_livroom_ambient
@@ -60,17 +52,13 @@
           {% endif %}
           {{ current }}
 
-- alias: "cube_action_flip180_when_flow_is_off"
+- alias: "cube_action_flip180"
   trigger:
     - platform: event
       event_type: xiaomi_aqara.cube_action
       event_data:
         entity_id: binary_sensor.cube_158d00028776ae
         action_type: flip180
-  condition:
-    - condition: state
-      entity_id: sensor.livingroom_ambient_flow_is_on
-      state: "false"
   action:
     - service: light.turn_on
       entity_id: light.group_livroom_ambient
@@ -84,41 +72,6 @@
             {% set current = current - step %}
           {% else %}
             {% set current = min %}
-          {% endif %}
-          {{ current }}
-
-- alias: "cube_action_rotate_when_flow_is_on"
-  trigger:
-    - platform: event
-      event_type: xiaomi_aqara.cube_action
-      event_data:
-        entity_id: binary_sensor.cube_158d00028776ae
-        action_type: rotate
-  condition:
-    - condition: state
-      entity_id: sensor.livingroom_ambient_flow_is_on
-      state: "true"
-  action:
-    - service: input_number.set_value
-      entity_id: input_number.flow_brightness
-      data_template:
-        value: >
-          {% set current = states.input_number.flow_brightness.state | int %}
-          {% set min = 1 | int %}
-          {% set max = 255 | int %}
-          {% set step = 50 | int %}
-          {% if trigger.event.data.action_value | default('0') | float < 0 %}
-            {% if current > min + step %}
-              {% set current = current - step %}
-            {% else %}
-              {% set current = min %}
-            {% endif %}
-          {% else %}
-            {% if current < max - step %}
-              {% set current = current + step %}
-            {% else %}
-              {% set current = max %}
-            {% endif %}
           {% endif %}
           {{ current }}
 
@@ -146,17 +99,6 @@
   action:
     - service: scene.turn_on
       entity_id: scene.living_room_light_on_low
-
-- alias: "cube_action_tap_twice"
-  trigger:
-    - platform: event
-      event_type: xiaomi_aqara.cube_action
-      event_data:
-        entity_id: binary_sensor.cube_158d00028776ae
-        action_type: tap_twice
-  action:
-    - service: media_player.turn_off
-      entity_id: all
 
 #   action_type: move
 #   action_type: swing
