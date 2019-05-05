@@ -498,7 +498,7 @@ views:
         title: Computer limit
         entities:
           - input_boolean.computer_today_limit
-          - sensor.computer_on_today_minutes
+          - sensor.computer_on_today_min
           - input_number.computer_today_allowed
 
       - type: history-graph
@@ -800,7 +800,7 @@ views:
               - sensor.uptime
               - sensor.processor_use
               - sensor.memory_use_percent
-              - sensor.temp
+              - sensor.temperature
 
           - type: glance
             title: Storage
@@ -824,7 +824,7 @@ views:
           - sensor.processor_use
           - sensor.memory_use_percent
           - sensor.disk_use_percent_home
-          - sensor.temp
+          - sensor.temperature
       - type: entities
         title: Aqara
         show_header_toggle: false

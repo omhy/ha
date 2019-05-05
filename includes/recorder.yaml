@@ -23,9 +23,7 @@ include:
     - sensor.memory_use_percent
     - sensor.disk_use_percent_home
     - sensor.swap_use_percent
-    - sensor.temp
-    - sensor.db_size_maria
-    - sensor.db_size_influx
+    - sensor.temperature
     - sensor.abox_app
     - sensor.next_dusk
     - sensor.next_dawn

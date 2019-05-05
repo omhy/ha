@@ -94,23 +94,29 @@
       entity_id: device_tracker.google_maps_117454969161947422882
 #STATE_CH
     state_change_door_ago_min:
-      value_template: "{{ ((now() - strptime(states.input_text.state_change_door.state, '%Y%m%d%H%M%S').astimezone()).seconds / 60) | round(0) }} min"
+      value_template: "{{ ((now() - strptime(states.input_text.state_change_door.state, '%Y%m%d%H%M%S').astimezone()).seconds / 60) | round(0) }}"
       entity_id: binary_sensor.door_window_sensor_158d00024367c8
+      unit_of_measurement: "min"
     state_change_door_ago_sec:
-      value_template: "{{ ((now() - strptime(states.input_text.state_change_door.state, '%Y%m%d%H%M%S').astimezone()).seconds) | round(0) }} sec"
+      value_template: "{{ ((now() - strptime(states.input_text.state_change_door.state, '%Y%m%d%H%M%S').astimezone()).seconds) | round(0) }}"
       entity_id: binary_sensor.door_window_sensor_158d00024367c8
+      unit_of_measurement: "sec"
 #STATE_CH_MANUAL
     state_change_dima_ago:
-      value_template: "{{ ((now() - strptime(states.input_text.state_change_dima.state, '%Y%m%d%H%M%S').astimezone()).seconds / 60) | round(0) }} min"
+      value_template: "{{ ((now() - strptime(states.input_text.state_change_dima.state, '%Y%m%d%H%M%S').astimezone()).seconds / 60) | round(0) }}"
+      unit_of_measurement: "min"
     state_change_alyona_ago:
-      value_template: "{{ ((now() - strptime(states.input_text.state_change_alyona.state, '%Y%m%d%H%M%S').astimezone()).seconds / 60) | round(0) }} min"
+      value_template: "{{ ((now() - strptime(states.input_text.state_change_alyona.state, '%Y%m%d%H%M%S').astimezone()).seconds / 60) | round(0) }}"
+      unit_of_measurement: "min"
 #MISC
-    computer_on_today_minutes:
+    computer_on_today_min:
       value_template: "{{ ((states.sensor.computer_on_today.state | float) * 60) | int }}"
       entity_id: sensor.computer_on_today
+      unit_of_measurement: "min"
     laptop_on_today_minutes:
       value_template: "{{ ((states.sensor.laptop_on_today.state | float) * 60) | int }}"
       entity_id: sensor.laptop_on_today
+      unit_of_measurement: "min"
     abox_app:
       value_template: "{{ states.media_player.abox.attributes.app_id.split('.')[-1] }}"
       entity_id: media_player.abox
@@ -122,7 +128,8 @@
       entity_id: sun.sun
 #STATE_CH_TIME
     state_change_seat_ago_min:
-      value_template: "{{ ((now() - strptime(states.input_text.state_change_seat.state, '%Y%m%d%H%M%S').astimezone()).seconds / 60) | round(0) }}"
+      value_template: "{{ ((now() - strptime(states.input_text.state_change_seat.state, '%Y%m%d%H%M%S').astimezone()).seconds / 60) | round(2) }}"
+      unit_of_measurement: "min"
       entity_id:
         - sensor.time
         - input_text.state_change_seat
