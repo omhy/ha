@@ -1,11 +1,5 @@
 ###### NOT USED
-#- platform: ffmpeg
-#  name: cam1
-#  input: -rtsp_transport tcp -i !secret cam1_rtsp_stream
-#- platform: ffmpeg
-#  name: cam2
-#  input: -rtsp_transport tcp -i !secret cam2_rtsp_stream
 - platform: generic
   name: cam1
-  still_image_url: cam1_rtsp_still
-  stream_source: cam1_rtsp_stream
+  still_image_url: !secret cam1_stream
+  stream_source: !secret cam1_stream

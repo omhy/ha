@@ -9,21 +9,12 @@
       data_template:
         callback_query_id: "{{ trigger.event.data.id }}"
         message: "Roger {{ trigger.event.data.data }}"
-    - service: script.camera_snap
-      data_template:
-        rtsp: !secret cam1_stream
-        file_prefix: "cam1"
-    - delay:
-        seconds: 3
     - service: telegram_bot.send_photo
       data_template:
-        target: "{{ target }}"
-        file: "/share/cam1.jpg"
+        target: "{{ trigger.event.data.user_id }}"
+        file: "http://localhost:8123{{ states.camera.cam1.attributes.entity_picture }}"
         inline_keyboard:
           - "\U0001F504 Refresh:{{ trigger.event.data.data }}, \U0000267B Dismiss:/dismiss"
-    - service: shell_command.remove_file
-      data_template:
-        file: "/share/cam1.jpg"
 
 #    - service: script.camera_snap_to_telegram
 #      data_template:
@@ -31,24 +22,6 @@
 #        rtsp: !secret cam1_stream
 #        target: "{{ trigger.event.data.user_id }}"
 #        callback_message: "{{ trigger.event.data.data }}"
-
-- alias: "telegram_handle_cmd_snap_cam1"
-  trigger:
-    - platform: event
-      event_type: telegram_text
-      event_data:
-        text: "s1"
-    - platform: event
-      event_type: telegram_text
-      event_data:
-        text: "ы1"
-  action:
-    - service: script.camera_snap_to_telegram
-      data_template:
-        file_prefix: "cam1"
-        rtsp: !secret cam1_stream
-        target: "{{ trigger.event.data.user_id }}"
-        callback_message: "{{ trigger.event.data.data }}"
 
 - alias: "telegram_handle_clb_vid_cam1"
   trigger:
@@ -61,24 +34,6 @@
       data_template:
         callback_query_id: "{{ trigger.event.data.id }}"
         message: "Roger {{ trigger.event.data.data }}"
-    - service: script.camera_video_to_telegram
-      data_template:
-        file_prefix: "cam1"
-        rtsp: !secret cam1_stream
-        target: "{{ trigger.event.data.user_id }}"
-        callback_message: "{{ trigger.event.data.data }}"
-
-- alias: "telegram_handle_cmd_vid_cam1"
-  trigger:
-    - platform: event
-      event_type: telegram_text
-      event_data:
-        text: "v1"
-    - platform: event
-      event_type: telegram_text
-      event_data:
-        text: "м1"
-  action:
     - service: script.camera_video_to_telegram
       data_template:
         file_prefix: "cam1"
