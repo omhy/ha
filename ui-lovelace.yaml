@@ -869,3 +869,14 @@ views:
         entities:
           - input_number.doorbell_volume
           - input_number.doorbell_melody
+
+  ##################   CAMERAS
+  - title: Cameras
+    path: cam
+    icon: mdi:cctv
+    cards:
+      - type: picture-entity
+        entity: camera.cam1
+        camera_image: camera.cam1
+        camera_view: live
+
