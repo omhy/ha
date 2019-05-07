@@ -36,8 +36,8 @@
         message: "Roger {{ trigger.event.data.data }}"
     - service: script.camera_video_to_telegram
       data_template:
+        entity_id: camera.cam1
         file_prefix: "cam1"
-        rtsp: !secret cam1_stream
         target: "{{ trigger.event.data.user_id }}"
         callback_message: "{{ trigger.event.data.data }}"
 
@@ -74,7 +74,7 @@
       message: "Roger {{ trigger.event.data.data }}"
   - service: script.camera_video_to_telegram
     data_template:
+      entity_id: camera.cam2
       file_prefix: "cam2"
-      rtsp: !secret cam2_stream
       target: "{{ trigger.event.data.user_id }}"
       callback_message: "{{ trigger.event.data.data }}"

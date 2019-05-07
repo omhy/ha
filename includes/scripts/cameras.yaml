@@ -1,16 +1,9 @@
-camera_snap:
-  sequence:
-    - service: shell_command.cam_snp
-      data_template:
-        rtsp: "{{ rtsp }}"
-        file: "/share/{{ file_prefix }}.jpg"
-
 camera_snap_to_telegram:
   sequence:
-    - service: shell_command.cam_snp
-      data_template:
-        rtsp: "{{ rtsp }}"
-        file: "/share/{{ file_prefix }}.jpg"
+    # - service: shell_command.cam_snp
+    #   data_template:
+    #     rtsp: "{{ rtsp }}"
+    #     file: "/share/{{ file_prefix }}.jpg"
     - delay:
         seconds: 4
     - service: telegram_bot.send_photo
@@ -25,13 +18,12 @@ camera_snap_to_telegram:
 
 camera_video_to_telegram:
   sequence:
-    - service: shell_command.cam_vid
+    - service: script.camera_record
       data_template:
-        rtsp: "{{ rtsp }}"
-        file: "/share/{{ file_prefix }}.mp4"
-        duration: "10"
+        entity_id: "{{ entity_id }}"
+        filename: "/share/{{ file_prefix }}.mp4"
     - delay:
-        seconds: 12
+        seconds: 20
     - service: telegram_bot.send_video
       data_template:
         target: "{{ target }}"

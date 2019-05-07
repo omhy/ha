@@ -70,3 +70,19 @@ remove_file:
         rtsp: !secret cam1_stream
         filename: "/share/cam1.mp4"
         duration: "10"
+
+camera_room_stream:
+  sequence:
+    - service: camera.play_stream
+      data:
+        entity_id: camera.cam1
+        media_player: media_player.kitchen_display
+
+camera_record:
+  sequence:
+    - service: camera.record
+      data_template:
+        entity_id: "{{ entity_id }}"
+        filename: "{{ filename }}"
+        duration: 10
+        lookback: 2
