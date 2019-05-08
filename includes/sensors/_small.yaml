@@ -13,9 +13,8 @@
   - type: swap_use_percent
 
 - platform: command_line
-  name: Temp
+  name: Temperature
   command: "cat /sys/class/thermal/thermal_zone0/temp"
-  unit_of_measurement: "°C"
   value_template: '{{ value | multiply(0.001) | round(1) }}'
 
 - platform: time_date
@@ -29,4 +28,4 @@
   maximum: 360
 
 - platform: version
-  name: version_ha_current
+  name: ha_version_current

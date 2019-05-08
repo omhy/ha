@@ -65,6 +65,10 @@ entity_config:
     name: Random flow
     expose: true
     room: Speaker
+  script.camera_room_stream:
+    name: Stream room
+    expose: true
+    room: Speaker
 
 #Scripts tts
   script.tts_summary:

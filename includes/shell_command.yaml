@@ -1,5 +1,3 @@
 sleep_computer: "/usr/bin/curl -X GET http://192.168.1.101:8585/?cmd=sleep"
 sleep_laptop: "/usr/bin/curl -X GET http://192.168.1.102:8585/?cmd=sleep"
-cam_snp: "ffmpeg -rtsp_transport udp -i {{ rtsp }} -y -nostdin -vf fps=1/3 -pix_fmt yuvj420p -s 1920x1080 {{ file }}"
-cam_vid: "ffmpeg -rtsp_transport udp -i {{ rtsp }} -y -nostdin -t {{ duration }} -c copy -map 0 -update 1 {{ file }}"
 remove_file: "rm -f {{ file }}"

@@ -40,6 +40,10 @@ custom_updater: !include includes/custom_updater.yaml
 
 logger:
   default: warning
+  logs:
+    homeassistant.components.media_player: error
+    homeassistant.components.script: error
+    homeassistant.components.influxdb.sensor: error
 
 http:
   ip_ban_enabled: true
@@ -48,7 +52,7 @@ http:
 
 tts:
 - platform: google_translate
-  # service_name: google_say
+  service_name: google_say
   language: ru
 
 #googlehome:
@@ -99,7 +103,7 @@ switch: !include_dir_merge_list includes/switches
 automation: !include_dir_merge_list includes/automation
 
 script: !include_dir_merge_named includes/scripts
-#camera: !include includes/camera.yaml
+camera: !include includes/camera.yaml
 hassio:
 
 group:

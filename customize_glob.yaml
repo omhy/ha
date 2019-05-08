@@ -5,6 +5,8 @@
   icon: mdi:dropbox
 "*door*":
   icon: mdi:door
+"*seat*":
+  icon: mdi:seat
 "*doorbell*":
   icon: mdi:bell-ring
 "*mqtt*":
@@ -85,21 +87,18 @@
   icon: mdi:battery
   device_class: battery
   unit_of_measurement: "%"
-"sensor.*_temperature*":
+"sensor.*temperature*":
   icon: mdi:thermometer
-"sensor.*_humidity*":
-  icon: mdi:water-percent
-"sensor.*_precipitation*":
-  icon: mdi:weather-rainy
-"sensor.*_wind_speed*":
-  icon: mdi:weather-windy
-"sensor.*_pressure*":
-  icon: mdi:gauge
-"sensor.version_ha_*":
-  icon: mdi:home-assistant
-
-"sensor.outside_temperature_*":
+  device_class: temperature
   unit_of_measurement: "°C"
+"sensor.*humidity*":
+  icon: mdi:water-percent
+"sensor.*precipitation*":
+  icon: mdi:weather-rainy
+"sensor.*wind_speed*":
+  icon: mdi:weather-windy
+"sensor.*pressure*":
+  icon: mdi:gauge
 
 "sensor.power_strip_*_load_power":
   friendly_name: Current
@@ -118,8 +117,13 @@
   friendly_name: Month
   icon: mdi:calendar-text
 
+"sensor.cast_version_*":
+  icon: mdi:cast
+"sensor.build_version_*":
+  icon: mdi:wrench
+
 "sensor.wt00*":
-  friendly_name: Nw
+  friendly_name: Now
 "sensor.wt01*":
   friendly_name: 1h
 "sensor.wt02*":
