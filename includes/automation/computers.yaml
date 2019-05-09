@@ -47,10 +47,29 @@
           - "\U000023F1 Extend 30 min:/rmt_computer_limit_extend, \U0001F6A8 Disable limit:/rmt_computer_limit_disable"
           - "\U0000267B Dismiss:/dismiss"
 
-- alias: "computer_inactive"
+- alias: "computer_inactive_warning"
   trigger:
     - platform: time_pattern
-      minutes: "/1"
+      minutes: "/5"
+  condition:
+    - condition: numeric_state
+      entity_id: sensor.state_change_seat_ago_min
+      above: 30
+    - condition: state
+      entity_id: binary_sensor.ping_computer
+      state: "on"
+  action:
+    - service: telegram_bot.send_message
+      data_template:
+        target: !secret tg_chat_dima
+        message: "{{ states.sensor.now_hm.state }} \U000026A0 Computer inactive {{ states.sensor.state_change_seat_ago_min.state_with_unit }}"
+        inline_keyboard:
+          - "\U0000267B Dismiss:/dismiss"
+
+- alias: "computer_inactive_action"
+  trigger:
+    - platform: time_pattern
+      minutes: "/5"
   condition:
     - condition: numeric_state
       entity_id: sensor.state_change_seat_ago_min
