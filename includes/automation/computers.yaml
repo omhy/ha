@@ -27,7 +27,6 @@
   trigger:
     - platform: time_pattern
       minutes: "/5"
-      seconds: 00
   condition:
     - condition: state
       entity_id: input_boolean.computer_today_limit
@@ -47,3 +46,21 @@
         inline_keyboard:
           - "\U000023F1 Extend 30 min:/rmt_computer_limit_extend, \U0001F6A8 Disable limit:/rmt_computer_limit_disable"
           - "\U0000267B Dismiss:/dismiss"
+
+- alias: "computer_inactive"
+  trigger:
+    - platform: time_pattern
+      minutes: "/1"
+  condition:
+    - condition: numeric_state
+      entity_id: sensor.state_change_seat_ago_min
+      above: 60
+    - condition: state
+      entity_id: binary_sensor.ping_computer
+      state: "on"
+  action:
+    - service: telegram_bot.send_message
+      data_template:
+        target: !secret tg_chat_dima
+        message: "{{ states.sensor.now_hm.state }} \U0001F4BA Computer inactive {{ states.sensor.state_change_seat_ago_min.state_with_unit }}, turning off"
+    - service:  script.rmt_computer_sleep
