@@ -3,3 +3,7 @@
   name: cam1
   still_image_url: !secret cam1_stream
   stream_source: !secret cam1_stream
+- platform: generic
+  name: cam2
+  still_image_url: !secret cam2_stream
+  stream_source: !secret cam2_stream

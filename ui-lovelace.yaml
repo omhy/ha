@@ -34,6 +34,8 @@ views:
       - sensor.wt00_wind_speed
       - sensor.next_dusk
       - sensor.next_dawn
+      - camera.cam1
+      - camera.cam2
     cards:
       - type: entities
         title: Activity
@@ -870,13 +872,17 @@ views:
           - input_number.doorbell_volume
           - input_number.doorbell_melody
 
-  ##################   CAMERAS
-  - title: Cameras
-    path: cam
-    icon: mdi:cctv
-    cards:
-      - type: picture-entity
-        entity: camera.cam1
-        camera_image: camera.cam1
-        camera_view: live
+  # ##################   CAMERAS
+  # - title: Cameras
+  #   path: cam
+  #   icon: mdi:cctv
+  #   cards:
+  #     - type: picture-entity
+  #       entity: camera.cam1
+  #       camera_image: camera.cam1
+  #       camera_view: live
+  #     - type: picture-entity
+  #       entity: camera.cam2
+  #       camera_image: camera.cam2
+  #       camera_view: live
 
