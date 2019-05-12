@@ -35,7 +35,6 @@ views:
       - sensor.next_dusk
       - sensor.next_dawn
       - camera.cam1
-      - camera.cam2
     cards:
       - type: entities
         title: Activity
@@ -98,20 +97,69 @@ views:
           exclude:
             - entity_id: light.group_*
 
-      - type: custom:auto-entities
-        card:
-          type: entities
-          title: Playing now
-          show_header_toggle: false
-        filter:
-          include:
-            - domain: media_player
-          exclude:
-            - entity_id: media_player.spotify
-            - entity_id: media_player.abox
-            - state: "off"
-            - state: "idle"
-            - state: "unavailable"
+# CONDITIONAL OFF
+      # - type: entities
+      #   title: Turn off
+      #   entities:
+      #     - script.media_player_stop_all
+      #     - script.abox_key_sleep
+      #     - script.rmt_computer_sleep
+      #     - script.rmt_laptop_sleep
+
+      - type: custom:vertical-stack-in-card
+        cards:
+# CAST
+        - type: conditional
+          conditions:
+            - entity: binary_sensor.some_casting
+              state: "on"
+          card:
+            type: entities
+            entities:
+              - script.media_player_stop_all
+# TV
+        - type: conditional
+          conditions:
+            - entity: binary_sensor.ping_tv
+              state: "on"
+          card:
+            type: entities
+            entities:
+              - script.abox_key_sleep
+# COMP
+        - type: conditional
+          conditions:
+            - entity: binary_sensor.ping_computer
+              state: "on"
+          card:
+            type: entities
+            entities:
+              - script.rmt_computer_sleep
+# LAPTOP
+        - type: conditional
+          conditions:
+            - entity: binary_sensor.ping_laptop
+              state: "on"
+          card:
+            type: entities
+            entities:
+              - script.rmt_laptop_sleep
+# PLAYING
+        - type: custom:auto-entities
+          show_empty: false
+          card:
+            type: entities
+            show_header_toggle: false
+          filter:
+            include:
+              - domain: media_player
+            exclude:
+              - entity_id: media_player.spotify
+              - entity_id: media_player.abox
+              - state: "off"
+              - state: "idle"
+              - state: "unavailable"
+# EO CONDITIONAL OFF
 
       - type: custom:weather-card-chart
         title: Weather

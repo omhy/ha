@@ -84,8 +84,14 @@ sensor.uptime:
 
 #SCRIPTS
 script.media_player_stop_all:
-  friendly_name: Stop all
+  friendly_name: Stop cast
   icon: mdi:stop
+script.abox_key_sleep:
+  friendly_name: Sleep abox
+script.rmt_computer_sleep:
+  friendly_name: Sleep computer
+script.rmt_laptop_sleep:
+  friendly_name: Sleep laptop
 
 #GOOGLE HOME
 media_player.kitchen_display:

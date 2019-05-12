@@ -67,3 +67,23 @@
       entity_id:
         - sensor.abox_app
         - media_player.abox
+
+    some_casting:
+      value_template: >
+        {{
+        (
+        is_state('media_player.loud_speaker', 'playing') or
+        is_state('media_player.black_speaker', 'playing') or
+        is_state('media_player.yury_speaker', 'playing') or
+        is_state('media_player.kitchen_display', 'playing') or
+        is_state('media_player.surround', 'playing') or
+        is_state('media_player.speakers', 'playing')
+        )
+        }}
+      entity_id:
+        - media_player.loud_speaker
+        - media_player.black_speaker
+        - media_player.yury_speaker
+        - media_player.kitchen_display
+        - media_player.surround
+        - media_player.speakers
