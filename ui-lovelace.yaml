@@ -34,7 +34,8 @@ views:
       - sensor.wt00_wind_speed
       - sensor.next_dusk
       - sensor.next_dawn
-      - camera.cam1
+      # - camera.cam1
+      # - camera.cam2
     cards:
       - type: entities
         title: Activity
@@ -126,6 +127,8 @@ views:
             type: entities
             entities:
               - script.abox_key_sleep
+              - script.abox_key_vol_dn
+              - script.abox_key_vol_up
 # COMP
         - type: conditional
           conditions:
@@ -159,6 +162,7 @@ views:
               - state: "off"
               - state: "idle"
               - state: "unavailable"
+              - state: "paused"
 # EO CONDITIONAL OFF
 
       - type: custom:weather-card-chart

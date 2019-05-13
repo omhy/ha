@@ -87,7 +87,13 @@ script.media_player_stop_all:
   friendly_name: Stop cast
   icon: mdi:stop
 script.abox_key_sleep:
-  friendly_name: Sleep abox
+  friendly_name: Sleep
+script.abox_key_vol_up:
+  friendly_name: Volume up
+  icon: mdi:volume-plus
+script.abox_key_vol_dn:
+  friendly_name: Volume down
+  icon: mdi:volume-minus
 script.rmt_computer_sleep:
   friendly_name: Sleep computer
 script.rmt_laptop_sleep:
