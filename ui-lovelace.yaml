@@ -19,8 +19,6 @@ resources:
     type: js
   - url: /customcards/custom-lovelace/vertical-stack-in-card.js
     type: js
-  - url: /customcards/custom-lovelace/compact-custom-header.js
-    type: module
 
 title: Home
 views:
