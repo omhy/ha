@@ -247,6 +247,16 @@ binary_sensor.people_home:
   friendly_name: Someone home
   icon: mdi:account-multiple-check
 
+binary_sensor.lv_kurzeme:
+  friendly_name: Kurzeme
+binary_sensor.lv_zemgale:
+  friendly_name: Zemgale
+binary_sensor.lv_vidzeme:
+  friendly_name: Vidzeme
+binary_sensor.lv_latgale:
+  friendly_name: Latgale
+
+
 #persons
 person.dima:
   entity_picture: /local/persons/dima.jpg

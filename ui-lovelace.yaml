@@ -779,6 +779,22 @@ views:
             - sensor.wt24_pressure
             - sensor.wt48_pressure
             - sensor.wt72_pressure
+      - type: entities
+        title: Latvia
+        show_header_toggle: false
+        entities:
+          - entity: binary_sensor.lv_kurzeme
+            type: "custom:secondaryinfo-entity-row"
+            secondary_info: "[[ binary_sensor.lv_kurzeme.attributes.event ]], [[ binary_sensor.lv_kurzeme.attributes.urgency ]], [[ binary_sensor.lv_kurzeme.attributes.severity ]]"
+          - entity: binary_sensor.lv_zemgale
+            type: "custom:secondaryinfo-entity-row"
+            secondary_info: "[[ binary_sensor.lv_zemgale.attributes.event ]], [[ binary_sensor.lv_zemgale.attributes.urgency ]], [[ binary_sensor.lv_zemgale.attributes.severity ]]"
+          - entity: binary_sensor.lv_vidzeme
+            type: "custom:secondaryinfo-entity-row"
+            secondary_info: "[[ binary_sensor.lv_vidzeme.attributes.event ]], [[ binary_sensor.lv_vidzeme.attributes.urgency ]], [[ binary_sensor.lv_vidzeme.attributes.severity ]]"
+          - entity: binary_sensor.lv_latgale
+            type: "custom:secondaryinfo-entity-row"
+            secondary_info: "[[ binary_sensor.lv_latgale.attributes.event ]], [[ binary_sensor.lv_latgale.attributes.urgency ]], [[ binary_sensor.lv_latgale.attributes.severity ]]"
 
   ##################   LINKS
   - title: Links
