@@ -1,0 +1,19 @@
+- platform: meteoalarm
+  name: "lv_kurzeme"
+  country: 'LV'
+  province: 'Kurzeme'
+
+- platform: meteoalarm
+  name: "lv_latgale"
+  country: 'LV'
+  province: 'Latgale'
+
+- platform: meteoalarm
+  name: "lv_zemgale"
+  country: 'LV'
+  province: 'Zemgale'
+
+- platform: meteoalarm
+  name: "lv_vidzeme"
+  country: 'LV'
+  province: 'Vidzeme'
