@@ -12,7 +12,7 @@
 
 - name: good_morning
   entities:
-    light.standalone_switch: true
+    light.standalone_switch: false
 
 - name: good_night
   entities:
