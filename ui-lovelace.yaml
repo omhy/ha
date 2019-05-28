@@ -34,7 +34,7 @@ views:
       - sensor.wt00_wind_speed
       - sensor.next_dusk
       - sensor.next_dawn
-      # - camera.cam1
+      - camera.cam1
       # - camera.cam2
     cards:
       - type: entities
