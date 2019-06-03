@@ -3,7 +3,7 @@ telegram_send_weather_today:
     - service: telegram_bot.send_message
       data_template:
         target: "{{ target }}"
-        title: "#TempAnalysis {{ now().strftime('%Y-%m-%d') }}"
+        title: "#EnvToday {{ now().strftime('%Y-%m-%d') }}"
         message: >
           {% set frm1 = "%7s @ %5s" %}
           {% set frm2 = "%7s" %}
@@ -23,7 +23,7 @@ telegram_send_weather_now:
     - service: telegram_bot.send_message
       data_template:
         target: "{{ target }}"
-        title: "#TempShort {{ now().strftime('%Y-%m-%d') }}"
+        title: "#EnvNow {{ now().strftime('%Y-%m-%d') }}"
         message: >
           `Temp: `{{ states.sensor.temperature_158d00022c7cf2.state_with_unit }}
 

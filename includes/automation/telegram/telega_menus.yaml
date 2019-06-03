@@ -18,7 +18,7 @@
         target: "{{ trigger.event.data.user_id }}"
         message: "Main menu"
         inline_keyboard:
-          - "\U00002601 Environment:/environment, \U0001F30D People:/people"
+          - "\U000026C5 Environment:/environment, \U0001F30D People:/people"
           - "\U0001F6A7 Tech:/tech, \U0000267B Dismiss:/dismiss"
 
 - alias: "telegram_handle_clb_menu"
@@ -37,7 +37,7 @@
         target: "{{ trigger.event.data.user_id }}"
         message: "Main menu"
         inline_keyboard:
-          - "\U00002601 Environment:/environment, \U0001F30D People:/people"
+          - "\U000026C5 Environment:/environment, \U0001F30D People:/people"
           - "\U0001F6A7 Tech:/tech, \U0000267B Dismiss:/dismiss"
 
 - alias: "telegram_handle_clb_tech"
@@ -79,6 +79,6 @@
         target: "{{ trigger.event.data.user_id }}"
         message: "Weather menu"
         inline_keyboard:
-          - "\U00002601 Analysis:/weather_today, \U00002601 Now:/weather_now"
+          - "\U0001F9E9 Today:/weather_today, \U00002601 Now:/weather_now"
           - "\U0001F3D8 Rooms:/rooms, \U0001F308 Forecast:/forecast"
 
