@@ -1,9 +1,9 @@
-telegram_send_outside:
+telegram_send_weather_today:
   sequence:
     - service: telegram_bot.send_message
       data_template:
         target: "{{ target }}"
-        title: "#Temperatures {{ now().strftime('%Y-%m-%d') }}"
+        title: "#TempAnalysis {{ now().strftime('%Y-%m-%d') }}"
         message: >
           {% set frm1 = "%7s @ %5s" %}
           {% set frm2 = "%7s" %}
@@ -16,7 +16,24 @@ telegram_send_outside:
 
           {{ '\U000026AB' }} `dif {{ frm2 | format(states.sensor.outside_temperature_diff.state_with_unit) }}`
         inline_keyboard:
-        - "\U0001F504 Refresh:/outside, \U0000267B Dismiss:/dismiss"
+        - "\U0001F504 Refresh:/weather_today, \U0000267B Dismiss:/dismiss"
+
+telegram_send_weather_now:
+  sequence:
+    - service: telegram_bot.send_message
+      data_template:
+        target: "{{ target }}"
+        title: "#TempShort {{ now().strftime('%Y-%m-%d') }}"
+        message: >
+          `Temp: `{{ states.sensor.temperature_158d00022c7cf2.state_with_unit }}
+
+          `Hmdt: `{{ states.sensor.humidity_158d00022c7cf2.state_with_unit }}
+
+          `Wind: `{{ states.sensor.wt00_wind_speed.state_with_unit }}
+
+          `Rain: `{{ states.sensor.wt00_precipitation.state_with_unit }}
+        inline_keyboard:
+        - "\U0001F504 Refresh:/weather_now, \U0000267B Dismiss:/dismiss"
 
 telegram_send_rooms:
   sequence:

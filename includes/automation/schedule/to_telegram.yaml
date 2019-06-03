@@ -1,20 +1,20 @@
-- alias: "telegram_send_outside_dima"
+- alias: "telegram_send_weather_today"
   trigger:
     - platform: time
       at: "06:55:00"
     - platform: time
       at: "23:55:00"
   action:
-    - service: script.telegram_send_outside
+    - service: script.telegram_send_weather_today
       data_template:
         target: !secret tg_chat_dima
 
-- alias: "telegram_send_outside_alyona"
+- alias: "telegram_send_weather_now"
   trigger:
     - platform: time
       at: "07:30:00"
   action:
-    - service: script.telegram_send_outside
+    - service: script.telegram_send_weather_now
       data_template:
         target: !secret tg_chat_alyona
 
