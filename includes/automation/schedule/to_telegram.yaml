@@ -1,4 +1,4 @@
-- alias: "telegram_send_outside"
+- alias: "telegram_send_outside_dima"
   trigger:
     - platform: time
       at: "06:55:00"
@@ -8,6 +8,15 @@
     - service: script.telegram_send_outside
       data_template:
         target: !secret tg_chat_dima
+
+- alias: "telegram_send_outside_alyona"
+  trigger:
+    - platform: time
+      at: "07:30:00"
+  action:
+    - service: script.telegram_send_outside
+      data_template:
+        target: !secret tg_chat_alyona
 
 - alias: "telegram_send_electro"
   trigger:
