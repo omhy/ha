@@ -99,14 +99,6 @@ views:
             - entity_id: light.group_*
 
 # CONDITIONAL OFF
-      # - type: entities
-      #   title: Turn off
-      #   entities:
-      #     - script.media_player_stop_all
-      #     - script.abox_key_sleep
-      #     - script.rmt_computer_sleep
-      #     - script.rmt_laptop_sleep
-
       - type: custom:vertical-stack-in-card
         cards:
 # CAST

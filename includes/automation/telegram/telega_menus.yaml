@@ -18,8 +18,7 @@
         target: "{{ trigger.event.data.user_id }}"
         message: "Main menu"
         inline_keyboard:
-          - "\U00002601 Outside:/outside, \U0001F308 Forecast:/forecast"
-          - "\U0001F3D8 Rooms:/rooms, \U0001F30D People:/people"
+          - "\U00002601 Environment:/environment, \U0001F30D People:/people"
           - "\U0001F6A7 Tech:/tech, \U0000267B Dismiss:/dismiss"
 
 - alias: "telegram_handle_clb_menu"
@@ -38,8 +37,7 @@
         target: "{{ trigger.event.data.user_id }}"
         message: "Main menu"
         inline_keyboard:
-          - "\U00002601 Outside:/outside, \U0001F308 Forecast:/forecast"
-          - "\U0001F3D8 Rooms:/rooms, \U0001F30D People:/people"
+          - "\U00002601 Environment:/environment, \U0001F30D People:/people"
           - "\U0001F6A7 Tech:/tech, \U0000267B Dismiss:/dismiss"
 
 - alias: "telegram_handle_clb_tech"
@@ -64,3 +62,23 @@
           - "\U0001F4CB Get log:/ha_getlog, \U0001F528 Restart HA:/ha_restart"
           - "\U0001F50C Consumed:/electro, \U0000267B Dismiss:/dismiss"
           #      - "\U0001F4F7 Camera 1:/snap cam1, \U0001F4F7 Camera 2:/snap cam2"
+
+- alias: "telegram_handle_clb_environment"
+  trigger:
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: "/environment"
+  action:
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: "{{ trigger.event.data.id }}"
+        message: "Roger {{ trigger.event.data.data }}"
+    - service: telegram_bot.send_message
+      data_template:
+        target: "{{ trigger.event.data.user_id }}"
+        message: "Weather menu"
+        inline_keyboard:
+          - "\U00002601 Analysis:/weather_today, \U00002601 Now:/weather_now"
+          - "\U0001F3D8 Rooms:/rooms, \U0001F308 Forecast:/forecast"
+
