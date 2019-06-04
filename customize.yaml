@@ -145,24 +145,25 @@ sensor.temperature_158d0001f23cbe:
   friendly_name: Bedroom
 sensor.pressure_158d0001f23cbe:
   friendly_name: Bedroom
-sensor.humidity_158d00022c7cf2:
-  friendly_name: Outdoor
-sensor.temperature_158d00022c7cf2:
-  friendly_name: Outdoor
-sensor.pressure_158d00022c7cf2:
-  friendly_name: Outdoor
 sensor.humidity_158d000234816a:
   friendly_name: Living room
 sensor.temperature_158d000234816a:
   friendly_name: Living room
 sensor.pressure_158d000234816a:
   friendly_name: Living room
+
 sensor.humidity_158d0002323783:
-  friendly_name: Kitchen
+  friendly_name: Outdoor yard
 sensor.temperature_158d0002323783:
-  friendly_name: Kitchen
+  friendly_name: Outdoor yard
 sensor.pressure_158d0002323783:
-  friendly_name: Kitchen
+  friendly_name: Outdoor yard
+sensor.humidity_158d00022c7cf2:
+  friendly_name: Outdoor park
+sensor.temperature_158d00022c7cf2:
+  friendly_name: Outdoor park
+sensor.pressure_158d00022c7cf2:
+  friendly_name: Outdoor park
 
 sensor.current_uv_level:
   friendly_name: UV
@@ -172,21 +173,6 @@ sensor.max_uv_index:
   friendly_name: Max UV
 sensor.current_ozone_level:
   friendly_name: Ozone
-sensor.outside_temperature_min:
-  friendly_name: Minimal
-  icon: mdi:minus-box
-sensor.outside_temperature_max:
-  friendly_name: Maximal
-  icon: mdi:plus-box
-sensor.outside_temperature_diff:
-  friendly_name: Difference
-  icon: mdi:poll-box
-sensor.outside_temperature_min_at:
-  friendly_name: Minimal @
-  icon: mdi:clock
-sensor.outside_temperature_max_at:
-  friendly_name: Maximal @
-  icon: mdi:clock
 sensor.db_size_maria:
   friendly_name: MariaDb size
   icon: mdi:database
@@ -196,6 +182,37 @@ sensor.db_size_influx:
 sensor.abox_on_today:
   friendly_name: Android box
   icon: mdi:android
+
+sensor.outpark_temperature_min:
+  friendly_name: Park min
+  icon: mdi:minus-box
+sensor.outpark_temperature_max:
+  friendly_name: Park max
+  icon: mdi:plus-box
+sensor.outpark_temperature_diff:
+  friendly_name: Park diff
+  icon: mdi:poll-box
+sensor.outpark_temperature_min_at:
+  friendly_name: Minimal @
+  icon: mdi:clock
+sensor.outpark_temperature_max_at:
+  friendly_name: Maximal @
+  icon: mdi:clock
+sensor.outyard_temperature_min:
+  friendly_name: Yard min
+  icon: mdi:minus-box
+sensor.outyard_temperature_max:
+  friendly_name: Yard max
+  icon: mdi:plus-box
+sensor.outyard_temperature_diff:
+  friendly_name: Yard diff
+  icon: mdi:poll-box
+sensor.outyard_temperature_min_at:
+  friendly_name: Minimal @
+  icon: mdi:clock
+sensor.outyard_temperature_max_at:
+  friendly_name: Maximal @
+  icon: mdi:clock
 
 sensor.abox_youtube_today:
   friendly_name: Youtube

@@ -339,13 +339,21 @@ views:
               - sensor.max_uv_index
               - sensor.current_ozone_level
           - type: glance
-            title: Temperature Today
+            title: Park Today
             entities:
-              - sensor.outside_temperature_min
-              - sensor.outside_temperature_max
-              - sensor.outside_temperature_diff
-              - sensor.outside_temperature_min_at
-              - sensor.outside_temperature_max_at
+              - sensor.outpark_temperature_min
+              - sensor.outpark_temperature_max
+              - sensor.outpark_temperature_diff
+              - sensor.outpark_temperature_min_at
+              - sensor.outpark_temperature_max_at
+          - type: glance
+            title: Yard Today
+            entities:
+              - sensor.outyard_temperature_min
+              - sensor.outyard_temperature_max
+              - sensor.outyard_temperature_diff
+              - sensor.outyard_temperature_min_at
+              - sensor.outyard_temperature_max_at
 
       - type: vertical-stack
         cards:
@@ -353,15 +361,15 @@ views:
             title: Rooms t 12h
             hours_to_show: 12
             entities:
-              - sensor.temperature_158d0002323783
               - sensor.temperature_158d000234816a
               - sensor.temperature_158d0001f23cbe
               - sensor.temperature_158d0002271609
           - type: history-graph
-            title: Outside t 12h
+            title: Outdoor t 12h
             hours_to_show: 12
             entities:
               - sensor.temperature_158d00022c7cf2
+              - sensor.temperature_158d0002323783
 
   ##################   HISTORY
   - title: History

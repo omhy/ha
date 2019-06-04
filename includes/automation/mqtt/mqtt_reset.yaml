@@ -5,21 +5,41 @@
   action:
     - service: mqtt.publish
       data_template:
-        topic: "outside/temperature/min"
+        topic: "outpark/temperature/min"
         payload: "{{ states.sensor.temperature_158d00022c7cf2.state }}"
         retain: true
     - service: mqtt.publish
       data_template:
-        topic: "outside/temperature/min/at"
+        topic: "outpark/temperature/min/at"
         payload: "-"
         retain: true
     - service: mqtt.publish
       data_template:
-        topic: "outside/temperature/max"
+        topic: "outpark/temperature/max"
         payload: "{{ states.sensor.temperature_158d00022c7cf2.state }}"
         retain: true
     - service: mqtt.publish
       data_template:
-        topic: "outside/temperature/max/at"
+        topic: "outpark/temperature/max/at"
+        payload: "-"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "outyard/temperature/min"
+        payload: "{{ states.sensor.temperature_158d0002323783.state }}"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "outyard/temperature/min/at"
+        payload: "-"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "outyard/temperature/max"
+        payload: "{{ states.sensor.temperature_158d0002323783.state }}"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "outyard/temperature/max/at"
         payload: "-"
         retain: true

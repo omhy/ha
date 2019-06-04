@@ -5,10 +5,12 @@ tts_summary:
         message: >
           Привет!
           До работы ехать {{ states.sensor.waze_home_work.state }} минут.
-          За окном температура - {{ states.sensor.temperature_158d00022c7cf2.state | round(0) }} градусов.
+          В парке температура - {{ states.sensor.temperature_158d00022c7cf2.state | round(0) }} градусов.
+          Во дворе температура - {{ states.sensor.temperature_158d0002323783.state | round(0) }} градусов.
           ветер - {{ states.sensor.wt00_wind_speed.state | round(0) }} метров в секунду.
           осадки - {{ states.sensor.wt00_precipitation.state | round(0) }} миллиметров.
-          Минимальная температура {{ states.sensor.outside_temperature_min.state | round(0) }} была в {{ states.sensor.outside_temperature_min_at.state }}.
+          Минимальная температура в парке {{ states.sensor.outpark_temperature_min.state | round(0) }} была в {{ states.sensor.outpark_temperature_min_at.state }}.
+          Минимальная температура во дворе {{ states.sensor.outyard_temperature_min.state | round(0) }} была в {{ states.sensor.outyard_temperature_min_at.state }}.
           Удачи вам, ребята!!!
 
 tts_rooms:
@@ -17,14 +19,14 @@ tts_rooms:
       data_template:
         message: >
           Температура.
-          Улица - {{ states.sensor.temperature_158d00022c7cf2.state | round(0) }}.
-          Кухня - {{ states.sensor.temperature_158d0002323783.state | round(0) }}.
+          Парк - {{ states.sensor.temperature_158d00022c7cf2.state | round(0) }}.
+          Двор - {{ states.sensor.temperature_158d0002323783.state | round(0) }}.
           Гостинная - {{ states.sensor.temperature_158d000234816a.state | round(0) }}.
           Юркина - {{ states.sensor.temperature_158d0002271609.state | round(0) }}.
           Спальня - {{ states.sensor.temperature_158d0001f23cbe.state | round(0) }}.
           Влажность.
-          Улица - {{ states.sensor.humidity_158d00022c7cf2.state | round(0) }}.
-          Кухня - {{ states.sensor.humidity_158d0002323783.state | round(0) }}.
+          Парк - {{ states.sensor.humidity_158d00022c7cf2.state | round(0) }}.
+          Двор - {{ states.sensor.humidity_158d0002323783.state | round(0) }}.
           Гостинная - {{ states.sensor.humidity_158d000234816a.state | round(0) }}.
           Юркина - {{ states.sensor.humidity_158d0002271609.state | round(0) }}.
           Спальня - {{ states.sensor.humidity_158d0001f23cbe.state | round(0) }}.
@@ -35,10 +37,14 @@ tts_outside:
       data_template:
         message: >
           Сейчас на улице.
-          Температура {{ states.sensor.temperature_158d00022c7cf2.state | round(0) }}.
-          Влажность {{ states.sensor.humidity_158d00022c7cf2.state | round(0) }}.
           Ветер - {{ states.sensor.wt00_wind_speed.state | round(0) }} метров в секунду.
           Осадки - {{ states.sensor.wt00_precipitation.state | round(0) }} миллиметров.
+          В парке.
+          Температура {{ states.sensor.temperature_158d00022c7cf2.state | round(0) }}.
+          Влажность {{ states.sensor.humidity_158d00022c7cf2.state | round(0) }}.
+          Во дворе.
+          Температура {{ states.sensor.temperature_158d0002323783.state | round(0) }}.
+          Влажность {{ states.sensor.humidity_158d0002323783.state | round(0) }}.
           Через час.
           Температура {{ states.sensor.wt01_temperature.state | round(0) }}.
           Влажность {{ states.sensor.wt01_humidity.state | round(0) }}.

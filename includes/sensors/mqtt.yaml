@@ -1,20 +1,37 @@
 - platform: mqtt
-  state_topic: "outside/temperature/min"
-  name: outside_temperature_min
+  state_topic: "outpark/temperature/min"
+  name: outpark_temperature_min
 - platform: mqtt
-  state_topic: "outside/temperature/max"
-  name: outside_temperature_max
+  state_topic: "outpark/temperature/max"
+  name: outpark_temperature_max
 - platform: mqtt
-  state_topic: "outside/temperature/diff"
-  name: outside_temperature_diff
+  state_topic: "outpark/temperature/diff"
+  name: outpark_temperature_diff
 
 - platform: mqtt
-  state_topic: "outside/temperature/min/at"
-  name: outside_temperature_min_at
+  state_topic: "outpark/temperature/min/at"
+  name: outpark_temperature_min_at
 - platform: mqtt
-  state_topic: "outside/temperature/max/at"
-  name: outside_temperature_max_at
+  state_topic: "outpark/temperature/max/at"
+  name: outpark_temperature_max_at
 
+- platform: mqtt
+  state_topic: "outyard/temperature/min"
+  name: outyard_temperature_min
+- platform: mqtt
+  state_topic: "outyard/temperature/max"
+  name: outyard_temperature_max
+- platform: mqtt
+  state_topic: "outyard/temperature/diff"
+  name: outyard_temperature_diff
+
+- platform: mqtt
+  state_topic: "outyard/temperature/min/at"
+  name: outyard_temperature_min_at
+- platform: mqtt
+  state_topic: "outyard/temperature/max/at"
+  name: outyard_temperature_max_at
+  
 - platform: mqtt
   name: bridge_state
   state_topic: "zigbee2mqtt/bridge/state"

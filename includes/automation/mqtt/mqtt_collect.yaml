@@ -1,39 +1,79 @@
-- alias: "mqtt_publish_outside_temperature_min"
+- alias: "mqtt_publish_outpark_temperature_min"
   trigger:
     - platform: state
       entity_id:
       - sensor.temperature_158d00022c7cf2
   condition:
     - condition: template
-      value_template: "{{ (trigger.to_state.state | default('0') | float) < (states.sensor.outside_temperature_min.state | default('0') | float) }}"
+      value_template: "{{ (trigger.to_state.state | default('0') | float) < (states.sensor.outpark_temperature_min.state | default('0') | float) }}"
   action:
     - service: mqtt.publish
       data_template:
-        topic: "outside/temperature/min"
+        topic: "outpark/temperature/min"
         payload: "{{ trigger.to_state.state }}"
         retain: true
     - service: mqtt.publish
       data_template:
-        topic: "outside/temperature/min/at"
+        topic: "outpark/temperature/min/at"
         payload: "{{ now().strftime('%H:%M') }}"
         retain: true
 
-- alias: "mqtt_publish_outside_temperature_max"
+- alias: "mqtt_publish_outpark_temperature_max"
   trigger:
     - platform: state
       entity_id:
       - sensor.temperature_158d00022c7cf2
   condition:
     - condition: template
-      value_template: "{{ (trigger.to_state.state | default('0') | float) > (states.sensor.outside_temperature_max.state | default('0') | float) }}"
+      value_template: "{{ (trigger.to_state.state | default('0') | float) > (states.sensor.outpark_temperature_max.state | default('0') | float) }}"
   action:
     - service: mqtt.publish
       data_template:
-        topic: "outside/temperature/max"
+        topic: "outpark/temperature/max"
         payload: "{{ trigger.to_state.state }}"
         retain: true
     - service: mqtt.publish
       data_template:
-        topic: "outside/temperature/max/at"
+        topic: "outpark/temperature/max/at"
+        payload: "{{ now().strftime('%H:%M') }}"
+        retain: true
+
+- alias: "mqtt_publish_outyard_temperature_min"
+  trigger:
+    - platform: state
+      entity_id:
+      - sensor.temperature_158d0002323783
+  condition:
+    - condition: template
+      value_template: "{{ (trigger.to_state.state | default('0') | float) < (states.sensor.outyard_temperature_min.state | default('0') | float) }}"
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "outyard/temperature/min"
+        payload: "{{ trigger.to_state.state }}"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "outyard/temperature/min/at"
+        payload: "{{ now().strftime('%H:%M') }}"
+        retain: true
+
+- alias: "mqtt_publish_outyard_temperature_max"
+  trigger:
+    - platform: state
+      entity_id:
+      - sensor.temperature_158d0002323783
+  condition:
+    - condition: template
+      value_template: "{{ (trigger.to_state.state | default('0') | float) > (states.sensor.outyard_temperature_max.state | default('0') | float) }}"
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "outyard/temperature/max"
+        payload: "{{ trigger.to_state.state }}"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "outyard/temperature/max/at"
         payload: "{{ now().strftime('%H:%M') }}"
         retain: true
