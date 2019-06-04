@@ -29,13 +29,13 @@ views:
     badges:
       - sensor.wt00_symbol
       - sensor.temperature_158d00022c7cf2
+      - sensor.temperature_158d0002323783
       - sensor.humidity_158d00022c7cf2
-      - sensor.wt00_humidity
+      - sensor.humidity_158d0002323783
+      - sensor.wt00_precipitation
       - sensor.wt00_wind_speed
       - sensor.next_dusk
       - sensor.next_dawn
-      # - camera.cam1
-      # - camera.cam2
     cards:
       - type: entities
         title: Activity

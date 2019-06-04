@@ -153,17 +153,17 @@ sensor.pressure_158d000234816a:
   friendly_name: Living room
 
 sensor.humidity_158d0002323783:
-  friendly_name: Outdoor yard
+  friendly_name: Yard
 sensor.temperature_158d0002323783:
-  friendly_name: Outdoor yard
+  friendly_name: Yard
 sensor.pressure_158d0002323783:
-  friendly_name: Outdoor yard
+  friendly_name: Yard
 sensor.humidity_158d00022c7cf2:
-  friendly_name: Outdoor park
+  friendly_name: Park
 sensor.temperature_158d00022c7cf2:
-  friendly_name: Outdoor park
+  friendly_name: Park
 sensor.pressure_158d00022c7cf2:
-  friendly_name: Outdoor park
+  friendly_name: Park
 
 sensor.current_uv_level:
   friendly_name: UV
