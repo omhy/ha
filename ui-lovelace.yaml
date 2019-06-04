@@ -570,8 +570,14 @@ views:
     icon: mdi:cloud-circle
     cards:
       - type: custom:bar-card
+        direction: up
+        title_position: "inside"
+        columns: 3
+        height: 80px
+        max: 40
         entities:
           - sensor.temperature_158d00022c7cf2
+          - sensor.temperature_158d0002323783
           - sensor.wt00_temperature
 # TEMPS    
       - type: custom:vertical-stack-in-card

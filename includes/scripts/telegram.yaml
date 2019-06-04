@@ -8,25 +8,26 @@ telegram_send_weather_today:
           {% set frm1 = "%7s @ %5s" %}
           {% set frm2 = "%7s" %}
 
-          Park:
+          {{ '\U0001F333' }} `Park:`
 
-          {{ '\U0001F535' }} `min {{ frm1 | format(states.sensor.outpark_temperature_min.state_with_unit, states.sensor.outpark_temperature_min_at.state | default('-')) }}`
+          {{ '\U0001f976' }} `min {{ frm1 | format(states.sensor.outpark_temperature_min.state_with_unit, states.sensor.outpark_temperature_min_at.state | default('-')) }}`
 
-          {{ '\U0001F534' }} `max {{ frm1 | format(states.sensor.outpark_temperature_max.state_with_unit, states.sensor.outpark_temperature_max_at.state | default('-')) }}`
+          {{ '\U0001f975' }} `max {{ frm1 | format(states.sensor.outpark_temperature_max.state_with_unit, states.sensor.outpark_temperature_max_at.state | default('-')) }}`
 
-          {{ '\U000026AA' }} `now {{ frm2 | format(states.sensor.temperature_158d00022c7cf2.state_with_unit) }}`
+          {{ '\U0001f321' }} `now {{ frm2 | format(states.sensor.temperature_158d00022c7cf2.state_with_unit) }}`
 
-          {{ '\U000026AB' }} `dif {{ frm2 | format(states.sensor.outpark_temperature_diff.state_with_unit) }}`
+          {{ '\U00002753' }} `dif {{ frm2 | format(states.sensor.outpark_temperature_diff.state_with_unit) }}`
 
-          Yard:
 
-          {{ '\U0001F535' }} `min {{ frm1 | format(states.sensor.outyard_temperature_min.state_with_unit, states.sensor.outyard_temperature_min_at.state | default('-')) }}`
+          {{ '\U0001F3D8' }} `Yard:`
 
-          {{ '\U0001F534' }} `max {{ frm1 | format(states.sensor.outyard_temperature_max.state_with_unit, states.sensor.outyard_temperature_max_at.state | default('-')) }}`
+          {{ '\U0001f976' }} `min {{ frm1 | format(states.sensor.outyard_temperature_min.state_with_unit, states.sensor.outyard_temperature_min_at.state | default('-')) }}`
 
-          {{ '\U000026AA' }} `now {{ frm2 | format(states.sensor.humidity_158d0002323783.state_with_unit) }}`
+          {{ '\U0001f975' }} `max {{ frm1 | format(states.sensor.outyard_temperature_max.state_with_unit, states.sensor.outyard_temperature_max_at.state | default('-')) }}`
 
-          {{ '\U000026AB' }} `dif {{ frm2 | format(states.sensor.outyard_temperature_diff.state_with_unit) }}`
+          {{ '\U0001f321' }} `now {{ frm2 | format(states.sensor.humidity_158d0002323783.state_with_unit) }}`
+
+          {{ '\U00002753' }} `dif {{ frm2 | format(states.sensor.outyard_temperature_diff.state_with_unit) }}`
 
         inline_keyboard:
         - "\U0001F504 Refresh:/weather_today, \U0000267B Dismiss:/dismiss"
@@ -38,13 +39,13 @@ telegram_send_weather_now:
         target: "{{ target }}"
         title: "#EnvNow {{ now().strftime('%Y-%m-%d') }}"
         message: >
-          `Park:` {{ states.sensor.temperature_158d00022c7cf2.state_with_unit }}, {{ states.sensor.humidity_158d00022c7cf2.state_with_unit }}
+          {{ '\U0001F333' }} `Park: {{ states.sensor.temperature_158d00022c7cf2.state_with_unit }}, {{ states.sensor.humidity_158d00022c7cf2.state_with_unit }}`
 
-          `Yard:` {{ states.sensor.temperature_158d0002323783.state_with_unit }}, {{ states.sensor.humidity_158d0002323783.state_with_unit }}
+          {{ '\U0001F3D8' }} `Yard: {{ states.sensor.temperature_158d0002323783.state_with_unit }}, {{ states.sensor.humidity_158d0002323783.state_with_unit }}`
 
-          `Wind: `{{ states.sensor.wt00_wind_speed.state_with_unit }}
+          {{ '\U0001F32C' }} `Wind: {{ states.sensor.wt00_wind_speed.state_with_unit }}`
 
-          `Rain: `{{ states.sensor.wt00_precipitation.state_with_unit }}
+          {{ '\U00002614' }} `Rain: {{ states.sensor.wt00_precipitation.state_with_unit }}`
         inline_keyboard:
         - "\U0001F504 Refresh:/weather_now, \U0000267B Dismiss:/dismiss"
 
