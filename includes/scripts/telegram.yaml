@@ -25,7 +25,7 @@ telegram_send_weather_today:
 
           {{ '\U0001f975' }} `max {{ frm1 | format(states.sensor.outyard_temperature_max.state_with_unit, states.sensor.outyard_temperature_max_at.state | default('-')) }}`
 
-          {{ '\U0001f321' }} `now {{ frm2 | format(states.sensor.humidity_158d0002323783.state_with_unit) }}`
+          {{ '\U0001f321' }} `now {{ frm2 | format(states.sensor.temperature_158d0002323783.state_with_unit) }}`
 
           {{ '\U00002753' }} `dif {{ frm2 | format(states.sensor.outyard_temperature_diff.state_with_unit) }}`
 
