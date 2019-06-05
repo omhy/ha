@@ -64,7 +64,7 @@
         target: !secret tg_chat_dima
         message: "{{ states.sensor.now_hm.state }} \U000026A0 Computer inactive {{ states.sensor.state_change_seat_ago_min.state_with_unit }}"
         inline_keyboard:
-          - "\U0000267B Dismiss:/dismiss"
+          - "\U0001F4A4 Sleep:/rmt_computer_sleep, \U0000267B Dismiss:/dismiss"
 
 - alias: "computer_inactive_action"
   trigger:
