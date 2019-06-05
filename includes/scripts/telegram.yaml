@@ -5,21 +5,22 @@ telegram_send_weather_today:
         target: "{{ target }}"
         title: "#EnvToday {{ now().strftime('%Y-%m-%d') }}"
         message: >
-          {% set frm3 = "%8s | %8s" %}
+          {% set frm3 = "%8s | %-8s" %}
+          ```
+          .           {{ '\U0001F333' }} | {{ '\U0001F3D8' }}
 
-          {{ '\U0001F333' }} `Park:`   | {{ '\U0001F3D8' }} `Yard:`
+          {{ '\U0001f976' }} min {{ frm3 | format(states.sensor.outpark_temperature_min.state_with_unit, states.sensor.outyard_temperature_min.state_with_unit) }}
 
-          {{ '\U0001f976' }} `min {{ frm3 | format(states.sensor.outpark_temperature_min.state_with_unit, states.sensor.outyard_temperature_min.state_with_unit) }}`
+          {{ '\U0001f550' }} at  {{ frm3 | format(states.sensor.outpark_temperature_min_at.state, states.sensor.outyard_temperature_min_at.state) }}
 
-          {{ '\U0001f976' }} `at  {{ frm3 | format(states.sensor.outpark_temperature_min_at.state_with_unit, states.sensor.outyard_temperature_min_at.state_with_unit) }}`
+          {{ '\U0001f975' }} max {{ frm3 | format(states.sensor.outpark_temperature_max.state_with_unit, states.sensor.outyard_temperature_max.state_with_unit) }}
 
-          {{ '\U0001f975' }} `max {{ frm3 | format(states.sensor.outpark_temperature_max.state_with_unit, states.sensor.outyard_temperature_max.state_with_unit) }}`
+          {{ '\U0001f554' }} at  {{ frm3 | format(states.sensor.outpark_temperature_max_at.state, states.sensor.outyard_temperature_max_at.state) }}
 
-          {{ '\U0001f975' }} `at {{ frm3 | format(states.sensor.outpark_temperature_max_at.state_with_unit, states.sensor.outyard_temperature_max_at.state_with_unit) }}`
+          {{ '\U0001f321' }} now {{ frm3 | format(states.sensor.temperature_158d00022c7cf2.state_with_unit, states.sensor.temperature_158d0002323783.state_with_unit) }}
 
-          {{ '\U0001f321' }} `now {{ frm3 | format(states.sensor.temperature_158d00022c7cf2.state_with_unit, states.sensor.temperature_158d0002323783.state_with_unit) }}`
-
-          {{ '\U00002753' }} `dif {{ frm3 | format(states.sensor.outpark_temperature_diff.state_with_unit, states.sensor.outpark_temperature_diff.state_with_unit) }}`
+          {{ '\U00002753' }} dif {{ frm3 | format(states.sensor.outpark_temperature_diff.state_with_unit, states.sensor.outpark_temperature_diff.state_with_unit) }}
+          ```
         inline_keyboard:
         - "\U0001F504 Refresh:/weather_today, \U0000267B Dismiss:/dismiss"
 

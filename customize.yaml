@@ -195,15 +195,19 @@ sensor.outpark_temperature_diff:
 sensor.outpark_temperature_min_at:
   friendly_name: Minimal @
   icon: mdi:clock
+  unit_of_measurement: ""
 sensor.outpark_temperature_max_at:
   friendly_name: Maximal @
   icon: mdi:clock
+  unit_of_measurement: ""
 sensor.outyard_temperature_min:
   friendly_name: Yard min
   icon: mdi:minus-box
+  unit_of_measurement: ""
 sensor.outyard_temperature_max:
   friendly_name: Yard max
   icon: mdi:plus-box
+  unit_of_measurement: ""
 sensor.outyard_temperature_diff:
   friendly_name: Yard diff
   icon: mdi:poll-box
