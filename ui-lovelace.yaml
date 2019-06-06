@@ -282,7 +282,7 @@ views:
             title_position: inside
             columns: 5
             height: 80px
-            max: 40
+            max: 45
             severity:
               - value: 15
                 color: !secret blue
