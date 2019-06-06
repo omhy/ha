@@ -1,11 +1,11 @@
-- alias: "mqtt_publish_outpark_temperature_min"
+- alias: "mqtt_publish_outpark_temp_min"
   trigger:
     - platform: state
       entity_id:
       - sensor.temperature_158d00022c7cf2
   condition:
     - condition: template
-      value_template: "{{ (trigger.to_state.state | default('0') | float) < (states.sensor.outpark_temperature_min.state | default('0') | float) }}"
+      value_template: "{{ (trigger.to_state.state | default('0') | float) < (states.sensor.outpark_temp_min.state | default('0') | float) }}"
   action:
     - service: mqtt.publish
       data_template:
@@ -18,14 +18,14 @@
         payload: "{{ now().strftime('%H:%M') }}"
         retain: true
 
-- alias: "mqtt_publish_outpark_temperature_max"
+- alias: "mqtt_publish_outpark_temp_max"
   trigger:
     - platform: state
       entity_id:
       - sensor.temperature_158d00022c7cf2
   condition:
     - condition: template
-      value_template: "{{ (trigger.to_state.state | default('0') | float) > (states.sensor.outpark_temperature_max.state | default('0') | float) }}"
+      value_template: "{{ (trigger.to_state.state | default('0') | float) > (states.sensor.outpark_temp_max.state | default('0') | float) }}"
   action:
     - service: mqtt.publish
       data_template:
@@ -38,14 +38,14 @@
         payload: "{{ now().strftime('%H:%M') }}"
         retain: true
 
-- alias: "mqtt_publish_outyard_temperature_min"
+- alias: "mqtt_publish_outyard_temp_min"
   trigger:
     - platform: state
       entity_id:
       - sensor.temperature_158d0002323783
   condition:
     - condition: template
-      value_template: "{{ (trigger.to_state.state | default('0') | float) < (states.sensor.outyard_temperature_min.state | default('0') | float) }}"
+      value_template: "{{ (trigger.to_state.state | default('0') | float) < (states.sensor.outyard_temp_min.state | default('0') | float) }}"
   action:
     - service: mqtt.publish
       data_template:
@@ -58,14 +58,14 @@
         payload: "{{ now().strftime('%H:%M') }}"
         retain: true
 
-- alias: "mqtt_publish_outyard_temperature_max"
+- alias: "mqtt_publish_outyard_temp_max"
   trigger:
     - platform: state
       entity_id:
       - sensor.temperature_158d0002323783
   condition:
     - condition: template
-      value_template: "{{ (trigger.to_state.state | default('0') | float) > (states.sensor.outyard_temperature_max.state | default('0') | float) }}"
+      value_template: "{{ (trigger.to_state.state | default('0') | float) > (states.sensor.outyard_temp_max.state | default('0') | float) }}"
   action:
     - service: mqtt.publish
       data_template:

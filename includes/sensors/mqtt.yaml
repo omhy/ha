@@ -1,36 +1,36 @@
 - platform: mqtt
   state_topic: "outpark/temperature/min"
-  name: outpark_temperature_min
+  name: outpark_temp_min
 - platform: mqtt
   state_topic: "outpark/temperature/max"
-  name: outpark_temperature_max
+  name: outpark_temp_max
 - platform: mqtt
   state_topic: "outpark/temperature/diff"
-  name: outpark_temperature_diff
+  name: outpark_temp_diff
 
 - platform: mqtt
   state_topic: "outpark/temperature/min/at"
-  name: outpark_temperature_min_at
+  name: outpark_temp_min_at
 - platform: mqtt
   state_topic: "outpark/temperature/max/at"
-  name: outpark_temperature_max_at
+  name: outpark_temp_max_at
 
 - platform: mqtt
   state_topic: "outyard/temperature/min"
-  name: outyard_temperature_min
+  name: outyard_temp_min
 - platform: mqtt
   state_topic: "outyard/temperature/max"
-  name: outyard_temperature_max
+  name: outyard_temp_max
 - platform: mqtt
   state_topic: "outyard/temperature/diff"
-  name: outyard_temperature_diff
+  name: outyard_temp_diff
 
 - platform: mqtt
   state_topic: "outyard/temperature/min/at"
-  name: outyard_temperature_min_at
+  name: outyard_temp_min_at
 - platform: mqtt
   state_topic: "outyard/temperature/max/at"
-  name: outyard_temperature_max_at
+  name: outyard_temp_max_at
   
 - platform: mqtt
   name: bridge_state

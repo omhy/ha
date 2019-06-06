@@ -183,38 +183,35 @@ sensor.abox_on_today:
   friendly_name: Android box
   icon: mdi:android
 
-sensor.outpark_temperature_min:
+sensor.outpark_temp_min:
   friendly_name: Park min
   icon: mdi:minus-box
-sensor.outpark_temperature_max:
+sensor.outpark_temp_max:
   friendly_name: Park max
   icon: mdi:plus-box
-sensor.outpark_temperature_diff:
+sensor.outpark_temp_diff:
   friendly_name: Park diff
   icon: mdi:poll-box
-sensor.outpark_temperature_min_at:
+sensor.outpark_temp_min_at:
   friendly_name: Minimal @
   icon: mdi:clock
-  unit_of_measurement: ""
-sensor.outpark_temperature_max_at:
+sensor.outpark_temp_max_at:
   friendly_name: Maximal @
   icon: mdi:clock
-  unit_of_measurement: ""
-sensor.outyard_temperature_min:
+  
+sensor.outyard_temp_min:
   friendly_name: Yard min
   icon: mdi:minus-box
-  unit_of_measurement: ""
-sensor.outyard_temperature_max:
+sensor.outyard_temp_max:
   friendly_name: Yard max
   icon: mdi:plus-box
-  unit_of_measurement: ""
-sensor.outyard_temperature_diff:
+sensor.outyard_temp_diff:
   friendly_name: Yard diff
   icon: mdi:poll-box
-sensor.outyard_temperature_min_at:
+sensor.outyard_temp_min_at:
   friendly_name: Minimal @
   icon: mdi:clock
-sensor.outyard_temperature_max_at:
+sensor.outyard_temp_max_at:
   friendly_name: Maximal @
   icon: mdi:clock
 

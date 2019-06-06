@@ -9,8 +9,8 @@ tts_summary:
           Во дворе температура - {{ states.sensor.temperature_158d0002323783.state | round(0) }} градусов.
           ветер - {{ states.sensor.wt00_wind_speed.state | round(0) }} метров в секунду.
           осадки - {{ states.sensor.wt00_precipitation.state | round(0) }} миллиметров.
-          Минимальная температура в парке {{ states.sensor.outpark_temperature_min.state | round(0) }} была в {{ states.sensor.outpark_temperature_min_at.state }}.
-          Минимальная температура во дворе {{ states.sensor.outyard_temperature_min.state | round(0) }} была в {{ states.sensor.outyard_temperature_min_at.state }}.
+          Минимальная температура в парке {{ states.sensor.outpark_temp_min.state | round(0) }} была в {{ states.sensor.outpark_temp_min_at.state }}.
+          Минимальная температура во дворе {{ states.sensor.outyard_temp_min.state | round(0) }} была в {{ states.sensor.outyard_temp_min_at.state }}.
           Удачи вам, ребята!!!
 
 tts_rooms:

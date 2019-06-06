@@ -1,25 +1,25 @@
-- alias: "outpark_temperature_calc_diff"
+- alias: "outpark_temp_calc_diff"
   trigger:
     - platform: state
       entity_id:
-        - sensor.outpark_temperature_min
-        - sensor.outpark_temperature_max
+        - sensor.outpark_temp_min
+        - sensor.outpark_temp_max
   action:
     - service: mqtt.publish
       data_template:
         topic: "outpark/temperature/diff"
-        payload: "{{ (states.sensor.outpark_temperature_max.state | float - states.sensor.outpark_temperature_min.state | float) | round(1) }}"
+        payload: "{{ (states.sensor.outpark_temp_max.state | float - states.sensor.outpark_temp_min.state | float) | round(1) }}"
         retain: true
 
-- alias: "outyard_temperature_calc_diff"
+- alias: "outyard_temp_calc_diff"
   trigger:
     - platform: state
       entity_id:
-        - sensor.outyard_temperature_min
-        - sensor.outyard_temperature_max
+        - sensor.outyard_temp_min
+        - sensor.outyard_temp_max
   action:
     - service: mqtt.publish
       data_template:
         topic: "outyard/temperature/diff"
-        payload: "{{ (states.sensor.outyard_temperature_max.state | float - states.sensor.outyard_temperature_min.state | float) | round(1) }}"
+        payload: "{{ (states.sensor.outyard_temp_max.state | float - states.sensor.outyard_temp_min.state | float) | round(1) }}"
         retain: true

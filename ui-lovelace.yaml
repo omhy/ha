@@ -341,19 +341,19 @@ views:
           - type: glance
             title: Park Today
             entities:
-              - sensor.outpark_temperature_min
-              - sensor.outpark_temperature_max
-              - sensor.outpark_temperature_diff
-              - sensor.outpark_temperature_min_at
-              - sensor.outpark_temperature_max_at
+              - sensor.outpark_temp_min
+              - sensor.outpark_temp_max
+              - sensor.outpark_temp_diff
+              - sensor.outpark_temp_min_at
+              - sensor.outpark_temp_max_at
           - type: glance
             title: Yard Today
             entities:
-              - sensor.outyard_temperature_min
-              - sensor.outyard_temperature_max
-              - sensor.outyard_temperature_diff
-              - sensor.outyard_temperature_min_at
-              - sensor.outyard_temperature_max_at
+              - sensor.outyard_temp_min
+              - sensor.outyard_temp_max
+              - sensor.outyard_temp_diff
+              - sensor.outyard_temp_min_at
+              - sensor.outyard_temp_max_at
 
       - type: vertical-stack
         cards:
