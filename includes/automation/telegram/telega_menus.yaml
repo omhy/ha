@@ -81,4 +81,5 @@
         inline_keyboard:
           - "\U0001F9E9 Today:/weather_today, \U00002601 Now:/weather_now"
           - "\U0001F3D8 Rooms:/rooms, \U0001F308 Forecast:/forecast"
+          - "\U0000267B Dismiss:/dismiss"
 
