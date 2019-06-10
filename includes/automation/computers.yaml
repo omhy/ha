@@ -66,23 +66,23 @@
         inline_keyboard:
           - "\U0001F4A4 Sleep:/rmt_computer_sleep, \U0000267B Dismiss:/dismiss"
 
-- alias: "computer_high_consumption_warning"
-  trigger:
-    - platform: time_pattern
-      minutes: "/10"
-  condition:
-    - condition: numeric_state
-      entity_id: sensor.power_strip_1_load_power
-      above: 200
-      for:
-        minutes: 60
-  action:
-    - service: telegram_bot.send_message
-      data_template:
-        target: !secret tg_chat_dima
-        message: "{{ states.sensor.now_hm.state }} \U0001f50c Computer high consumption for 60 minutes! {{ states.sensor.power_strip_1_load_power.state_with_unit }}"
-        inline_keyboard:
-          - "\U0001F4A4 Sleep:/rmt_computer_sleep, \U0000267B Dismiss:/dismiss"
+# - alias: "computer_high_consumption_warning"
+#   trigger:
+#     - platform: time_pattern
+#       minutes: "/10"
+#   condition:
+#     - condition: numeric_state
+#       entity_id: sensor.power_strip_1_load_power
+#       above: 200
+#       for:
+#         minutes: 60
+#   action:
+#     - service: telegram_bot.send_message
+#       data_template:
+#         target: !secret tg_chat_dima
+#         message: "{{ states.sensor.now_hm.state }} \U0001f50c Computer high consumption for 60 minutes! {{ states.sensor.power_strip_1_load_power.state_with_unit }}"
+#         inline_keyboard:
+#           - "\U0001F4A4 Sleep:/rmt_computer_sleep, \U0000267B Dismiss:/dismiss"
 
 - alias: "computer_inactive_action"
   trigger:
