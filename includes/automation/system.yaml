@@ -8,3 +8,6 @@
       data_template:
         entity_id:
           - automation.update_input_text_radio_cast
+    - service: script.input_text_set_now
+      data_template:
+        entity_id: input_text.state_change_seat
