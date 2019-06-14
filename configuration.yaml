@@ -44,6 +44,10 @@ logger:
     homeassistant.components.media_player: error
     homeassistant.components.script: error
     homeassistant.components.influxdb.sensor: error
+    homeassistant.components.sensor: error
+    homeassistant.helpers.entity: error
+    homeassistant.components.androidtv.media_player: error
+    homeassistant.components.template.sensor: error
 
 http:
   ip_ban_enabled: true
@@ -103,7 +107,7 @@ switch: !include_dir_merge_list includes/switches
 automation: !include_dir_merge_list includes/automation
 
 script: !include_dir_merge_named includes/scripts
-#camera: !include includes/camera.yaml
+camera: !include includes/camera.yaml
 hassio:
 
 group:
