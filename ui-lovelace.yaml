@@ -901,11 +901,19 @@ views:
           - sensor.memory_use_percent
           - sensor.disk_use_percent_home
           - sensor.temperature
-      - type: entities
-        title: Aqara
-        show_header_toggle: false
+      - type: history-graph
+        title: System 2h
+        hours_to_show: 2
         entities:
-          - script.aqara_add_device
+          - sensor.processor_use
+          - sensor.memory_use_percent
+          - sensor.disk_use_percent_home
+          - sensor.temperature
+      # - type: entities
+      #   title: Aqara
+      #   show_header_toggle: false
+      #   entities:
+      #     - script.aqara_add_device
 
   ##################   DETAILS
   - title: Misc
