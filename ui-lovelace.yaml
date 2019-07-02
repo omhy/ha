@@ -280,7 +280,7 @@ views:
           - type: custom:bar-card
             direction: up
             title_position: inside
-            columns: 5
+            columns: 6
             height: 80px
             max: 45
             severity:
@@ -300,7 +300,7 @@ views:
           - type: custom:bar-card
             direction: up
             title_position: inside
-            columns: 5
+            columns: 6
             height: 80px
             max: 100
             severity:
@@ -320,7 +320,7 @@ views:
           - type: custom:bar-card
             direction: up
             title_position: inside
-            columns: 5
+            columns: 6
             height: 80px
             min: 950
             max: 1050
