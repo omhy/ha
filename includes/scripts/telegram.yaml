@@ -76,6 +76,8 @@ telegram_send_rooms:
           {{ '\U0001F4D0' }}` chd  {{ frm | format(states.sensor.temperature_158d0002271609.state_with_unit, states.sensor.humidity_158d0002271609.state_with_unit) }}`
 
           {{ '\U0001F6CF' }}` bdr  {{ frm | format(states.sensor.temperature_158d0001f23cbe.state_with_unit, states.sensor.humidity_158d0001f23cbe.state_with_unit) }}`
+
+          {{ '\U0001F6CF' }}` ktc  {{ frm | format(states.sensor.temperature_158d00032308dd.state_with_unit, states.sensor.humidity_158d00032308dd.state_with_unit) }}`
         inline_keyboard:
         - "\U0001F504 Refresh:/rooms, \U0000267B Dismiss:/dismiss"
 

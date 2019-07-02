@@ -151,7 +151,12 @@ sensor.temperature_158d000234816a:
   friendly_name: Living room
 sensor.pressure_158d000234816a:
   friendly_name: Living room
-
+sensor.humidity_158d00032308dd:
+  friendly_name: Kitchen
+sensor.temperature_158d00032308dd:
+  friendly_name: Kitchen
+sensor.pressure_158d00032308dd:
+  friendly_name: Kitchen
 sensor.humidity_158d0002323783:
   friendly_name: Yard
 sensor.temperature_158d0002323783:

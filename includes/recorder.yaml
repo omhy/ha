@@ -45,16 +45,19 @@ include:
     - sensor.temperature_158d00022c7cf2
     - sensor.temperature_158d0002323783
     - sensor.temperature_158d000234816a
+    - sensor.temperature_158d00032308dd
     - sensor.humidity_158d0001f23cbe
     - sensor.humidity_158d0002271609
     - sensor.humidity_158d00022c7cf2
     - sensor.humidity_158d0002323783
     - sensor.humidity_158d000234816a
+    - sensor.humidity_158d00032308dd
     - sensor.pressure_158d0001f23cbe
     - sensor.pressure_158d0002271609
     - sensor.pressure_158d00022c7cf2
     - sensor.pressure_158d0002323783
     - sensor.pressure_158d000234816a
+    - sensor.pressure_158d00032308dd
     - sensor.wt00_temperature
     - sensor.wt01_temperature
     - sensor.wt02_temperature

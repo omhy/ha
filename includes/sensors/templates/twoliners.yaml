@@ -13,7 +13,7 @@
     t3_battery_level:
       value_template: "{{ states.sensor.temperature_158d00022c7cf2.attributes.battery_level | float }}"
       entity_id: sensor.temperature_158d00022c7cf2
-      friendly_name: Outside climate sensor
+      friendly_name: Park climate sensor
     t4_battery_level:
       value_template: "{{ states.sensor.temperature_158d000234816a.attributes.battery_level | float }}"
       entity_id: sensor.temperature_158d000234816a
@@ -21,7 +21,12 @@
     t5_battery_level:
       value_template: "{{ states.sensor.temperature_158d0002323783.attributes.battery_level | float }}"
       entity_id: sensor.temperature_158d0002323783
+      friendly_name: Yard climate sensor
+    t6_battery_level:
+      value_template: "{{ states.sensor.temperature_158d00032308dd.attributes.battery_level | float }}"
+      entity_id: sensor.temperature_158d00032308dd
       friendly_name: Kitchen climate sensor
+
 #buttons
     doorbell_button_battery_level:
       value_template: "{{ states.binary_sensor.switch_158d00021350ee.attributes.battery_level | float }}"
