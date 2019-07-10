@@ -34,8 +34,7 @@ views:
       - sensor.humidity_158d0002323783
       - sensor.wt00_precipitation
       - sensor.wt00_wind_speed
-      - sensor.next_dusk
-      - sensor.next_dawn
+      - sun.sun
     cards:
       - type: entities
         title: Activity
