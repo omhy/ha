@@ -43,12 +43,12 @@ sensor.waze_home_work:
   friendly_name: Home to work
 sensor.waze_work_home:
   friendly_name: Work to home
-sensor.next_dusk:
-  friendly_name: Next dusk
-  icon: mdi:weather-sunset-down
-sensor.next_dawn:
-  friendly_name: Next dawn
-  icon: mdi:weather-sunset-up
+# sensor.next_dusk:
+#   friendly_name: Next dusk
+#   icon: mdi:weather-sunset-down
+# sensor.next_dawn:
+#   friendly_name: Next dawn
+#   icon: mdi:weather-sunset-up
 
 sensor.livingroom_motions:
   friendly_name: Today
