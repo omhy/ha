@@ -1,23 +1,23 @@
 resources:
-  - url: /customcards/custom-lovelace/mini-media-player-bundle.js
+  - url: /community_plugin/mini-media-player/mini-media-player.js
     type: module
-  - url: /customcards/custom-lovelace/tracker-card.js
-    type: module
+  - url: /community_plugin/calendar-card/calendar-card.js
+    type: js
+  - url: /community_plugin/bar-card/bar-card.js
+    type: js
+  - url: /community_plugin/secondaryinfo-entity-row/secondaryinfo-entity-row.js
+    type: js
+  - url: /community_plugin/vertical-stack-in-card/vertical-stack-in-card.js
+    type: js
+
+
   - url: /customcards/custom-lovelace/custom-weather-card-chart.js
     type: module
   - url: /customcards/custom-lovelace/card-tools.js
     type: js
   - url: /customcards/custom-lovelace/auto-entities.js
     type: js
-  - url: /customcards/custom-lovelace/calendar-card.js
-    type: js
   - url: /customcards/custom-lovelace/slider-entity-row.js
-    type: js
-  - url: /customcards/custom-lovelace/secondaryinfo-entity-row.js
-    type: js
-  - url: /customcards/custom-lovelace/bar-card.js
-    type: js
-  - url: /customcards/custom-lovelace/vertical-stack-in-card.js
     type: js
 
 title: Home
@@ -880,6 +880,7 @@ views:
               - sensor.processor_use
               - sensor.memory_use_percent
               - sensor.temperature
+              - sensor.rpi_power_status
 
           - type: glance
             title: Storage
@@ -923,12 +924,13 @@ views:
     path: misc
     icon: mdi:cat
     cards:
-      - type: custom:tracker-card
-        title:
-        trackers:
-          - sensor.custom_card_tracker
-          - sensor.custom_component_tracker
-              
+      - type: entities
+        title: Doorbell settings
+        show_header_toggle: false
+        entities:
+          - input_number.doorbell_volume
+          - input_number.doorbell_melody
+
       - type: custom:auto-entities
         show_empty: false
         card:
@@ -950,31 +952,24 @@ views:
           include:
             - entity_id: sensor.cast_version*
 
-      - type: entities
-        title: Doorbell settings
-        show_header_toggle: false
-        entities:
-          - input_number.doorbell_volume
-          - input_number.doorbell_melody
-
-      - type: entities
-        title: Adguard settings
-        show_header_toggle: false
-        entities:
-          - switch.adguard_protection
-          - switch.adguard_filtering
-          - switch.adguard_parental_control
-          - switch.adguard_query_log
-          - switch.adguard_safe_browsing
-          - switch.adguard_safe_search
-          - sensor.adguard_average_processing_speed
-          - sensor.adguard_dns_queries
-          - sensor.adguard_dns_queries_blocked
-          - sensor.adguard_dns_queries_blocked_ratio
-          - sensor.adguard_parental_control_blocked
-          - sensor.adguard_safe_browsing_blocked
-          - sensor.searches_safe_search_enforced
-          - sensor.adguard_rules_count
+      # - type: entities
+      #   title: Adguard settings
+      #   show_header_toggle: false
+      #   entities:
+      #     - switch.adguard_protection
+      #     - switch.adguard_filtering
+      #     - switch.adguard_parental_control
+      #     - switch.adguard_query_log
+      #     - switch.adguard_safe_browsing
+      #     - switch.adguard_safe_search
+      #     - sensor.adguard_average_processing_speed
+      #     - sensor.adguard_dns_queries
+      #     - sensor.adguard_dns_queries_blocked
+      #     - sensor.adguard_dns_queries_blocked_ratio
+      #     - sensor.adguard_parental_control_blocked
+      #     - sensor.adguard_safe_browsing_blocked
+      #     - sensor.searches_safe_search_enforced
+      #     - sensor.adguard_rules_count
 
   # ##################   CAMERAS
   # - title: Cameras

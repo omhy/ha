@@ -18,6 +18,7 @@ include:
     - binary_sensor.motion_sensor_158d0001e52779
     - binary_sensor.motion_sensor_158d0001fa3dc0
     - binary_sensor.motion_sensor_158d0002d43d7d
+    - sensor.rpi_power_status
     - sensor.moon
     - sensor.processor_use
     - sensor.memory_use_percent
@@ -25,8 +26,6 @@ include:
     - sensor.swap_use_percent
     - sensor.temperature
     - sensor.abox_app
-    # - sensor.next_dusk
-    # - sensor.next_dawn
     - sensor.power_strip_1_load_power
     - sensor.power_strip_2_load_power
     - sensor.power_strip_3_load_power

@@ -990,7 +990,7 @@ class BarCard extends HTMLElement {
 
     // Check for unknown state
     let entityState
-    if (entityObject == undefined || entityObject.state == 'unknown') {
+    if (entityObject == undefined || entityObject.state == 'unknown' || entityObject.state == 'unavailable') {
       entityState = 'N/A'
     } else {
       if (config.attribute != false) {
@@ -1006,7 +1006,7 @@ class BarCard extends HTMLElement {
 
     // Set measurement
     let measurement
-    if (entityObject == undefined || entityObject.state == 'unknown') measurement = ''
+    if (entityObject == undefined || entityObject.state == 'unknown' || entityObject.state == 'unavailable') measurement = ''
     else if (config.unit_of_measurement !== false) measurement = config.unit_of_measurement
     else measurement = entityObject.attributes.unit_of_measurement || ''
 

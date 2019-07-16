@@ -29,3 +29,6 @@
 
 - platform: version
   name: ha_version_current
+
+- platform: rpi_power
+  text_state: true
