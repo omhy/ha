@@ -23,7 +23,7 @@ system_log:
   max_entries: 20
 
 hacs:
-  token: f340180c94afd4f916c48eeb3ed1ecc1d0e73f3e
+  token: github_access_token
 
 frontend:
   themes: !include_dir_merge_named includes/themes
