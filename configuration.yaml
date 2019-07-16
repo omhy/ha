@@ -36,7 +36,7 @@ influxdb: !include includes/influxdb.yaml
 recorder: !include includes/recorder.yaml
 history:
 logbook:
-custom_updater: !include includes/custom_updater.yaml
+# custom_updater: !include includes/custom_updater.yaml
 
 logger:
   default: warning
