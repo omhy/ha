@@ -902,17 +902,8 @@ views:
           - binary_sensor.is_workday
           - input_boolean.is_vacation
       - type: history-graph
-        title: System 12h
-        hours_to_show: 12
-        entities:
-          - sensor.processor_use
-          - sensor.memory_use_percent
-          - sensor.disk_use_percent_home
-          - sensor.temperature
-          - sensor.rpi_power_status
-      - type: history-graph
-        title: System 3h
-        hours_to_show: 3
+        title: System 6h
+        hours_to_show: 6
         entities:
           - sensor.processor_use
           - sensor.memory_use_percent
