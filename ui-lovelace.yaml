@@ -11,6 +11,8 @@ resources:
     type: js
   - url: /community_plugin/lovelace-card-tools/card-tools.js
     type: js
+  - url: /community_plugin/weather-card/weather-card.js
+    type: module
 
   - url: /local/custom-lovelace/custom-weather-card-chart.js
     type: module
