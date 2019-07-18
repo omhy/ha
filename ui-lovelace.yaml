@@ -9,15 +9,16 @@ resources:
     type: js
   - url: /community_plugin/vertical-stack-in-card/vertical-stack-in-card.js
     type: js
-
-
-  - url: /customcards/custom-lovelace/custom-weather-card-chart.js
+  - url: /community_plugin/lovelace-card-tools/card-tools.js
+    type: js
+  - url: /community_plugin/weather-card/weather-card.js
     type: module
-  - url: /customcards/custom-lovelace/card-tools.js
+
+  - url: /local/custom-lovelace/custom-weather-card-chart.js
+    type: module
+  - url: /local/custom-lovelace/auto-entities.js
     type: js
-  - url: /customcards/custom-lovelace/auto-entities.js
-    type: js
-  - url: /customcards/custom-lovelace/slider-entity-row.js
+  - url: /local/custom-lovelace/slider-entity-row.js
     type: js
 
 title: Home
@@ -160,6 +161,9 @@ views:
         title: Weather
         weather: weather.smhi_home
         sun: sun.sun
+
+      - type: custom:weather-card
+        entity: weather.smhi_home
 
       - type: custom:calendar-card
         title: Events
@@ -905,14 +909,16 @@ views:
           - sensor.memory_use_percent
           - sensor.disk_use_percent_home
           - sensor.temperature
+          - sensor.rpi_power_status
       - type: history-graph
-        title: System 2h
-        hours_to_show: 2
+        title: System 3h
+        hours_to_show: 3
         entities:
           - sensor.processor_use
           - sensor.memory_use_percent
           - sensor.disk_use_percent_home
           - sensor.temperature
+          - sensor.rpi_power_status
       # - type: entities
       #   title: Aqara
       #   show_header_toggle: false
