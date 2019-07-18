@@ -9,15 +9,14 @@ resources:
     type: js
   - url: /community_plugin/vertical-stack-in-card/vertical-stack-in-card.js
     type: js
+  - url: /community_plugin/lovelace-card-tools/card-tools.js
+    type: js
 
-
-  - url: /customcards/custom-lovelace/custom-weather-card-chart.js
+  - url: /local/custom-lovelace/custom-weather-card-chart.js
     type: module
-  - url: /customcards/custom-lovelace/card-tools.js
+  - url: /local/custom-lovelace/auto-entities.js
     type: js
-  - url: /customcards/custom-lovelace/auto-entities.js
-    type: js
-  - url: /customcards/custom-lovelace/slider-entity-row.js
+  - url: /local/custom-lovelace/slider-entity-row.js
     type: js
 
 title: Home
