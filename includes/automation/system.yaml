@@ -11,3 +11,21 @@
     - service: script.input_text_set_now
       data_template:
         entity_id: input_text.state_change_seat
+
+- alias: "rpi_power_tracker"
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.rpi_power_status
+    value_template: '{{ state.attributes.value }}'
+    above: 0
+    for:
+      minutes: 5
+  action:
+  - service: persistent_notification.create
+    data_template:
+      message: "RPI Power reported {{ states.sensor.rpi_power_status.state }}. The state had changed from {{ trigger.from_state.state }} "
+      title: Power Supply Issue
+  - service: notify.notify
+    data_template:
+      message: "RPI Power reported {{ states.sensor.rpi_power_status.state }}. The state had  changed from {{ trigger.from_state.state }}"
+      title: Power Supply Issue
