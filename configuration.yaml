@@ -12,7 +12,8 @@ homeassistant:
   - /tmp
   - /share
 
-stream:
+# stream:
+wwlln:
 
 map:
 sun:
