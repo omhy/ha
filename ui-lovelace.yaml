@@ -946,15 +946,15 @@ views:
             - entity_id: sensor.*_battery_level
               state: "< 25"
 
-      - type: custom:auto-entities
-        show_empty: false
-        card:
-          type: entities
-          title: Google casts
-          show_header_toggle: false
-        filter:
-          include:
-            - entity_id: sensor.cast_version*
+      - type: entities
+        title: Google casts
+        show_header_toggle: false
+        entities:
+          - sensor.cast_version_kitchen_display
+          - sensor.cast_version_loud_speaker
+          - sensor.cast_version_chromecast
+          - sensor.cast_version_black_speaker
+          - sensor.cast_version_yuri_speaker
 
       # - type: entities
       #   title: Adguard settings
