@@ -9,6 +9,8 @@ include:
     - calendar
     - person
   entities:
+    - input_boolean.is_school
+    - input_boolean.is_vacation
     - binary_sensor.ping_computer
     - binary_sensor.ping_abox
     - binary_sensor.ping_laptop

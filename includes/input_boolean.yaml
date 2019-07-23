@@ -8,11 +8,14 @@ computer_today_limit:
   initial: off
   name: Limit?
   icon: mdi:lock-question
-is_vacation:
-  initial: off
-  name: Vacation?
-  icon: mdi:beach
 zigbee_permit_join:
   name: Allow devices to join
   initial: off
   icon: mdi:cellphone-wireless
+
+is_vacation:
+  name: Vacation?
+  icon: mdi:beach
+is_school:
+  name: School?
+  icon: mdi:school  
