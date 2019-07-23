@@ -19,6 +19,8 @@ resources:
     type: js
   - url: /community_plugin/lovelace-weather-card-chart/weather-card-chart.js
     type: module
+  - url: /community_plugin/compact-custom-header/compact-custom-header.js
+    type: module
 
 title: Home
 views:
@@ -920,15 +922,19 @@ views:
           - sensor.date
           - sensor.time
 
-      - type: entities
-        title: Date roles
-        show_header_toggle: false
-        entities:
-          - input_boolean.is_school
-          - input_boolean.is_vacation
-          - binary_sensor.is_holiday
-          - binary_sensor.is_workday
-          - binary_sensor.is_morning_activity
+      - type: custom:vertical-stack-in-card
+        cards:
+        - type: entities
+          title: Date roles
+          show_header_toggle: false
+          entities:
+            - input_boolean.is_school
+            - input_boolean.is_vacation
+        - type: glance
+          entities:
+            - binary_sensor.is_holiday
+            - binary_sensor.is_workday
+            - binary_sensor.is_morning_activity
 
       - type: entities
         title: Doorbell settings

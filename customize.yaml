@@ -33,6 +33,12 @@ switch.wall_plug_158d0002013f1e:
 binary_sensor.is_workday:
   friendly_name: Workday?
   icon: mdi:briefcase
+binary_sensor.is_holiday:
+  friendly_name: Holiday?
+  icon: mdi:cake-variant
+binary_sensor.is_morning_activity:
+  friendly_name: Morning
+  icon: mdi:penguin
 
 #WAZE
 #sensor.waze_current_home:
