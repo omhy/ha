@@ -155,12 +155,6 @@ views:
               - state: "unavailable"
               - state: "paused"
 # EO CONDITIONAL OFF
-
-      - type: custom:weather-card-chart
-        title: Weather
-        weather: weather.smhi_home
-        sun: sun.sun
-
       - type: custom:weather-card
         entity: weather.smhi_home
 
@@ -791,6 +785,12 @@ views:
             - sensor.wt24_pressure
             - sensor.wt48_pressure
             - sensor.wt72_pressure
+
+      - type: custom:weather-card-chart
+        title: Weather
+        weather: weather.smhi_home
+        sun: sun.sun
+
       - type: entities
         title: Latvia
         show_header_toggle: false
