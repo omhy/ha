@@ -919,8 +919,10 @@ views:
           - sensor.days_in_month
           - sensor.date
           - sensor.time
+
       - type: entities
         title: Date roles
+        show_header_toggle: false
         entities:
           - input_boolean.is_school
           - input_boolean.is_vacation
