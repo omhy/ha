@@ -919,7 +919,6 @@ views:
           - sensor.days_in_month
           - sensor.date
           - sensor.time
-
       - type: entities
         title: Date roles
         entities:
@@ -975,18 +974,3 @@ views:
       #     - sensor.adguard_safe_browsing_blocked
       #     - sensor.searches_safe_search_enforced
       #     - sensor.adguard_rules_count
-
-  # ##################   CAMERAS
-  # - title: Cameras
-  #   path: cam
-  #   icon: mdi:cctv
-  #   cards:
-  #     - type: picture-entity
-  #       entity: camera.cam1
-  #       camera_image: camera.cam1
-  #       camera_view: live
-  #     - type: picture-entity
-  #       entity: camera.cam2
-  #       camera_image: camera.cam2
-  #       camera_view: live
-

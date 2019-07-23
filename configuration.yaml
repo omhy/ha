@@ -12,7 +12,6 @@ homeassistant:
   - /tmp
   - /share
 
-# stream:
 wwlln:
 
 map:
@@ -40,7 +39,6 @@ influxdb: !include includes/influxdb.yaml
 recorder: !include includes/recorder.yaml
 history:
 logbook:
-# custom_updater: !include includes/custom_updater.yaml
 
 logger:
   default: warning
@@ -62,11 +60,6 @@ tts:
 - platform: google_translate
   service_name: google_say
   language: ru
-
-#googlehome:
-#  devices:
-#    - host: 192.168.1.32
-#      track_alarms: true
 
 xiaomi_aqara:
   discovery_retry: 5
@@ -111,17 +104,5 @@ switch: !include_dir_merge_list includes/switches
 automation: !include_dir_merge_list includes/automation
 
 script: !include_dir_merge_named includes/scripts
-# camera: !include includes/camera.yaml
-hassio:
 
-group:
-  sounds:
-    name: "sounds"
-    entities:
-      - media_player.black_speaker
-      - media_player.kitchen_display
-      - media_player.loud_speaker
-      - media_player.yury_speaker
-      - media_player.chromecast
-      - media_player.speakers
-      - media_player.surround
+hassio:
