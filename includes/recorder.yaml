@@ -9,8 +9,6 @@ include:
     - calendar
     - person
   entities:
-    - input_boolean.is_school
-    - input_boolean.is_vacation
     - binary_sensor.ping_computer
     - binary_sensor.ping_abox
     - binary_sensor.ping_laptop
@@ -33,10 +31,6 @@ include:
     - sensor.power_strip_3_load_power
     - sensor.power_strip_4_load_power
     - sensor.power_strip_5_load_power
-    - sensor.waze_current_home
-    - sensor.waze_current_work
-    - sensor.waze_home_work
-    - sensor.waze_work_home
     - sensor.current_uv_level
     - sensor.current_uv_index
     - sensor.max_uv_index
