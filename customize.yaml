@@ -43,7 +43,7 @@ binary_sensor.is_morning_activity:
 sensor.processor_use:
   friendly_name: CPU
 sensor.memory_use_percent:
-  friendly_name: Memoru
+  friendly_name: Memory
 sensor.disk_use_percent_home:
   friendly_name: Disk
 sensor.swap_use_percent:
