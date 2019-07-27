@@ -9,6 +9,8 @@ include:
     - calendar
     - person
   entities:
+    - sensor.adguard_rules_count
+    - sensor.adguard_average_processing_speed
     - binary_sensor.ping_computer
     - binary_sensor.ping_abox
     - binary_sensor.ping_laptop
