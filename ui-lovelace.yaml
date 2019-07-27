@@ -874,25 +874,26 @@ views:
   - title: System
     path: sys
     icon: mdi:desktop-tower
+    badges:
+      - sensor.uptime
+      - sensor.db_size_maria
+      - sensor.db_size_influx
     cards:
-      - type: vertical-stack
-        title: System
-        cards:
-          - type: glance
-            title: System
-            entities:
-              - sensor.uptime
-              - sensor.processor_use
-              - sensor.memory_use_percent
-              - sensor.temperature
+      # - type: glance
+      #   title: System
+      #   entities:
+      #     - sensor.uptime
+      #     - sensor.processor_use
+      #     - sensor.memory_use_percent
+      #     - sensor.temperature
 
-          - type: glance
-            title: Storage
-            entities:
-              - sensor.disk_use_percent_home
-              - sensor.swap_use_percent
-              - sensor.db_size_maria
-              - sensor.db_size_influx
+      # - type: glance
+      #   title: Storage
+      #   entities:
+      #     - sensor.disk_use_percent_home
+      #     - sensor.swap_use_percent
+      #     - sensor.db_size_maria
+      #     - sensor.db_size_influx
 
       - type: history-graph
         title: System 9h
@@ -903,11 +904,39 @@ views:
           - sensor.disk_use_percent_home
           - sensor.temperature
 
-      - type: history-graph
-        title: RPI power 24h
-        hours_to_show: 24
+      - type: custom:vertical-stack-in-card
+        cards:
+        - type: history-graph
+          title: RPI
+          hours_to_show: 24
+          entities:
+            - sensor.rpi_power_status
+        - type: custom:bar-card
+          max: 100
+          severity:
+            - value: 40
+              color: !secret green
+            - value: 70
+              color: !secret sand
+            - value: 100
+              color: !secret red
+          entities:
+            - sensor.temperature
+
+      - type: custom:bar-card
+        max: 100
+        severity:
+          - value: 40
+            color: !secret green
+          - value: 70
+            color: !secret sand
+          - value: 100
+            color: !secret red
         entities:
-          - sensor.rpi_power_status
+          - sensor.processor_use
+          - sensor.memory_use_percent
+          - sensor.disk_use_percent_home
+          - sensor.swap_use_percent
 
       # - type: entities
       #   title: Adguard settings

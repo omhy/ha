@@ -40,6 +40,16 @@ binary_sensor.is_morning_activity:
   friendly_name: Morning
   icon: mdi:penguin
 
+sensor.processor_use:
+  friendly_name: CPU
+sensor.memory_use_percent:
+  friendly_name: Memoru
+sensor.disk_use_percent_home:
+  friendly_name: Disk
+sensor.swap_use_percent:
+  friendly_name: Swap
+
+
 #WAZE
 #sensor.waze_current_home:
 #  friendly_name: To home
