@@ -879,22 +879,6 @@ views:
       - sensor.db_size_maria
       - sensor.db_size_influx
     cards:
-      # - type: glance
-      #   title: System
-      #   entities:
-      #     - sensor.uptime
-      #     - sensor.processor_use
-      #     - sensor.memory_use_percent
-      #     - sensor.temperature
-
-      # - type: glance
-      #   title: Storage
-      #   entities:
-      #     - sensor.disk_use_percent_home
-      #     - sensor.swap_use_percent
-      #     - sensor.db_size_maria
-      #     - sensor.db_size_influx
-
       - type: history-graph
         title: System 9h
         hours_to_show: 9
