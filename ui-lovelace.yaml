@@ -575,8 +575,15 @@ views:
         direction: up
         title_position: "inside"
         columns: 3
-        height: 80px
+        height: 100px
         max: 40
+        # severity:
+        #   - value: 0
+        #     color: !secret green
+        #   - value: 20
+        #     color: !secret sand
+        #   - value: 30
+        #     color: !secret red
         entities:
           - sensor.temperature_158d00022c7cf2
           - sensor.temperature_158d0002323783
@@ -880,22 +887,14 @@ views:
       - sensor.db_size_influx
     cards:
       - type: history-graph
-        title: System 9h
-        hours_to_show: 9
+        title: RPI
+        hours_to_show: 24
         entities:
-          - sensor.processor_use
-          - sensor.memory_use_percent
-          - sensor.disk_use_percent_home
-          - sensor.temperature
-
+          - sensor.rpi_power_status
       - type: custom:vertical-stack-in-card
         cards:
-        - type: history-graph
-          title: RPI
-          hours_to_show: 24
-          entities:
-            - sensor.rpi_power_status
         - type: custom:bar-card
+          title_position: "inside"
           max: 100
           severity:
             - value: 40
@@ -906,21 +905,24 @@ views:
               color: !secret red
           entities:
             - sensor.temperature
-
-      - type: custom:bar-card
-        max: 100
-        severity:
-          - value: 40
-            color: !secret green
-          - value: 70
-            color: !secret sand
-          - value: 100
-            color: !secret red
-        entities:
-          - sensor.processor_use
-          - sensor.memory_use_percent
-          - sensor.disk_use_percent_home
-          - sensor.swap_use_percent
+        - type: custom:bar-card
+          direction: up
+          title_position: "inside"
+          columns: 4
+          height: 100px
+          max: 100
+          severity:
+            - value: 40
+              color: !secret green
+            - value: 70
+              color: !secret sand
+            - value: 100
+              color: !secret red
+          entities:
+            - sensor.processor_use
+            - sensor.memory_use_percent
+            - sensor.disk_use_percent_home
+            - sensor.swap_use_percent
 
       # - type: entities
       #   title: Adguard settings
@@ -946,11 +948,14 @@ views:
           # - sensor.searches_safe_search_enforced
           - sensor.adguard_rules_count
 
-      # - type: entities
-      #   title: Aqara
-      #   show_header_toggle: false
-      #   entities:
-      #     - script.aqara_add_device
+      - type: history-graph
+        title: System 9h
+        hours_to_show: 9
+        entities:
+          - sensor.processor_use
+          - sensor.memory_use_percent
+          - sensor.disk_use_percent_home
+          - sensor.temperature
 
   ##################   DETAILS
   - title: Misc
