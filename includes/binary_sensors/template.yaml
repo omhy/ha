@@ -51,6 +51,12 @@
         - input_boolean.is_vacation
         - input_boolean.is_school
 
+    is_backup_day:
+      value_template: >
+        {{now().weekday() == 1 or now().weekday() == 3 or now().weekday() == 6}}
+      entity_id: 
+        - now.weekday
+
     ping_tv:
       value_template: "{{ states.sensor.power_strip_4_load_power.state | float > 70 }}"
       entity_id: sensor.power_strip_4_load_power
