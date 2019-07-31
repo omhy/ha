@@ -114,6 +114,8 @@ script.rmt_computer_sleep:
   friendly_name: Sleep computer
 script.rmt_laptop_sleep:
   friendly_name: Sleep laptop
+script.ha_check_config:
+  friendly_name: Check configuration
 
 #GOOGLE HOME
 media_player.kitchen_display:

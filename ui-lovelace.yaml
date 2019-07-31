@@ -160,6 +160,9 @@ views:
       - type: custom:weather-card
         entity: weather.smhi_home
 
+      # - type: custom:weather-card
+      #   entity: weather.home
+
       - type: custom:calendar-card
         title: Events
         entities:
@@ -885,7 +888,12 @@ views:
       - sensor.uptime
       - sensor.db_size_maria
       - sensor.db_size_influx
+
     cards:
+      - type: entities
+        entities:
+          - script.ha_check_config
+
       - type: history-graph
         title: RPI
         hours_to_show: 24

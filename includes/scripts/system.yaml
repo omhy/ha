@@ -27,6 +27,10 @@ ha_snapshot_full_create:
       data_template:
         name: "backup_{{ states.sensor.now_ymdhms.state }}"
 
+ha_check_config:
+  sequence:
+    - service: config_check.run
+
 ###  AQARA
 aqara_stop_ringtone:
   sequence:

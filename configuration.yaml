@@ -19,6 +19,7 @@ sun:
 config:
 system_health:
 person:
+config_check:
 
 system_log:
   max_entries: 20
