@@ -1,6 +1,5 @@
 - platform: google_maps
   username: !secret bot_gmail_user
-  password: !secret bot_gmail_pass
   interval_seconds: 850
 
 # - platform: traccar
