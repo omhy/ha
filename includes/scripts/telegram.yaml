@@ -22,7 +22,7 @@ telegram_send_weather_today:
           {{ '\U00002753' }} dif {{ frm3 | format(states.sensor.outpark_temp_diff.state_with_unit, states.sensor.outyard_temp_diff.state_with_unit) }}
           ```
         inline_keyboard:
-        - "\U0001F504 Refresh:/weather_today, \U0000267B Dismiss:/dismiss"
+          - "\U0001F504 Refresh:/weather_today, \U0000267B Dismiss:/dismiss"
 
 telegram_send_weather_now:
   sequence:
@@ -39,7 +39,7 @@ telegram_send_weather_now:
 
           {{ '\U00002614' }} `Rain: {{ states.sensor.wt00_precipitation.state_with_unit }}`
         inline_keyboard:
-        - "\U0001F504 Refresh:/weather_now, \U0000267B Dismiss:/dismiss"
+          - "\U0001F504 Refresh:/weather_now, \U0000267B Dismiss:/dismiss"
 
 telegram_send_rooms:
   sequence:
@@ -64,7 +64,7 @@ telegram_send_rooms:
 
           {{ '\U0001F6CF' }}` ktc  {{ frm | format(states.sensor.temperature_158d00032308dd.state_with_unit, states.sensor.humidity_158d00032308dd.state_with_unit) }}`
         inline_keyboard:
-        - "\U0001F504 Refresh:/rooms, \U0000267B Dismiss:/dismiss"
+          - "\U0001F504 Refresh:/rooms, \U0000267B Dismiss:/dismiss"
 
 telegram_send_electro:
   sequence:
@@ -91,7 +91,27 @@ telegram_send_electro:
 
           `{{ '\U0001F5A5' }} {{ states.sensor.computer_on_today.attributes.value }}, {{ '\U0001F4FA' }} {{ states.sensor.tv_on_today.attributes.value }}`
         inline_keyboard:
-        - "\U0001F504 Refresh:/electro, \U0000267B Dismiss:/dismiss"
+          - "\U0001F504 Refresh:/electro, \U0000267B Dismiss:/dismiss"
+
+telegram_send_fit:
+  sequence:
+    - service: telegram_bot.send_message
+      data_template:
+        target: "{{ target }}"
+        title: "#Fit {{ now().strftime('%Y-%m-%d') }}"
+        message: >
+          {{ '\U0001f463' }} {{states.sensor.google_fit_steps.state_with_unit }}
+          
+          {{ '\U0001f6b6' }} {{states.sensor.google_fit_distance.state_with_unit }}
+          
+          {{ '\U000023f1' }} {{states.sensor.google_fit_move_time.state_with_unit }}
+          
+          {{ '\U0001f354' }} {{states.sensor.google_fit_calories.state_with_unit }}
+
+          {{ '\U0001f4a4' }} {{states.sensor.google_fit_sleep.state_with_unit }}
+
+        inline_keyboard:
+          - "\U0000267B Dismiss:/dismiss"
 
 telegram_send_weather_forecast:
   sequence:
@@ -228,4 +248,4 @@ telegram_send_weather_forecast:
           }}
           ```
         inline_keyboard:
-        - "\U0001F504 Refresh:/forecast, \U0000267B Dismiss:/dismiss"
+          - "\U0001F504 Refresh:/forecast, \U0000267B Dismiss:/dismiss"

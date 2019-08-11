@@ -18,7 +18,7 @@
     - service: light.turn_off
       entity_id: light.small_torch
 
-- alias: "standalone_left_right_when_small_torch_off"
+- alias: "standalone_right_when_small_torch_off"
   trigger:
     - platform: event
       event_type: xiaomi_aqara.click
@@ -33,7 +33,7 @@
     - service: scene.turn_on
       entity_id: scene.small_torch_on_full
 
-- alias: "standalone_left_left_when_small_torch_off"
+- alias: "standalone_left_when_small_torch_off"
   trigger:
     - platform: event
       event_type: xiaomi_aqara.click

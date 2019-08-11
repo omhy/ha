@@ -102,8 +102,6 @@ class WeatherCard extends LitElement {
     this._config = config;
   }
 
-  numberElements = 0;
-
   shouldUpdate(changedProps) {
     return hasConfigOrEntityChanged(this, changedProps);
   }
@@ -153,10 +151,10 @@ class WeatherCard extends LitElement {
       <div class="current ${this.numberElements > 1 ? "spacer" : ""}">
         <span
           class="icon bigger"
-          style="background: none, url(${this.getWeatherIcon(
+          style="background: none, url('${this.getWeatherIcon(
             stateObj.state.toLowerCase(),
             this.hass.states["sun.sun"].state
-          )}) no-repeat; background-size: contain;"
+          )}') no-repeat; background-size: contain;"
           >${stateObj.state}
         </span>
         ${this._config.name
@@ -240,8 +238,6 @@ class WeatherCard extends LitElement {
 
     const lang = this.hass.selectedLanguage || this.hass.language;
 
-    console.log(forecast);
-
     this.numberElements++;
     return html`
       <div class="forecast clear ${this.numberElements > 1 ? "spacer" : ""}">
@@ -255,9 +251,9 @@ class WeatherCard extends LitElement {
               </div>
               <i
                 class="icon"
-                style="background: none, url(${this.getWeatherIcon(
+                style="background: none, url('${this.getWeatherIcon(
                   daily.condition.toLowerCase()
-                )}) no-repeat; background-size: contain;"
+                )}') no-repeat; background-size: contain;"
               ></i>
               <div class="highTemp">
                 ${daily.temperature}${this.getUnit("temperature")}
@@ -269,11 +265,11 @@ class WeatherCard extends LitElement {
                     </div>
                   `
                 : ""}
-              ${daily.precipitation !== undefined &&
+              ${!this._config.hide_precipitation &&
+              daily.precipitation !== undefined &&
               daily.precipitation !== null
                 ? html`
                     <div class="precipitation">
-                      <ha-icon icon="mdi:weather-rainy"></ha-icon>
                       ${daily.precipitation} ${this.getUnit("precipitation")}
                     </div>
                   `
@@ -449,10 +445,6 @@ class WeatherCard extends LitElement {
         .precipitation {
           color: var(--primary-text-color);
           font-weight: 300;
-        }
-
-        .precipitation ha-icon {
-          height: 18px;
         }
 
         .icon.bigger {

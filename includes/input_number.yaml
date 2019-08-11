@@ -49,3 +49,16 @@ flow_hue3:
 flow_hue4:
   min: 1
   max: 360
+
+def_big_torch_brightness:
+  min: 1
+  max: 255
+def_big_torch_color_temp:
+  min: 153
+  max: 370
+def_corner_lamp_brightness:
+  min: 1
+  max: 255
+def_corner_lamp_color_temp:
+  min: 153
+  max: 370  

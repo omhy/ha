@@ -913,6 +913,7 @@ views:
               color: !secret red
           entities:
             - sensor.temperature
+            - sensor.gpu_temperature
         - type: custom:bar-card
           direction: up
           title_position: "inside"
@@ -932,28 +933,15 @@ views:
             - sensor.disk_use_percent_home
             - sensor.swap_use_percent
 
-      # - type: entities
-      #   title: Adguard settings
-      #   show_header_toggle: false
-      #   entities:
-      #     - switch.adguard_protection
-      #     - switch.adguard_filtering
-      #     - switch.adguard_parental_control
-      #     - switch.adguard_query_log
-      #     - switch.adguard_safe_browsing
-      #     - switch.adguard_safe_search
-
       - type: entities
         title: Adguard stats
         show_header_toggle: false
         entities:
+          - switch.adguard_protection
           - sensor.adguard_average_processing_speed
           - sensor.adguard_dns_queries
           - sensor.adguard_dns_queries_blocked
           - sensor.adguard_dns_queries_blocked_ratio
-          # - sensor.adguard_parental_control_blocked
-          # - sensor.adguard_safe_browsing_blocked
-          # - sensor.searches_safe_search_enforced
           - sensor.adguard_rules_count
 
       - type: history-graph
@@ -964,6 +952,7 @@ views:
           - sensor.memory_use_percent
           - sensor.disk_use_percent_home
           - sensor.temperature
+          - sensor.gpu_temperature
 
   ##################   DETAILS
   - title: Misc
@@ -976,6 +965,16 @@ views:
           - sensor.days_in_month
           - sensor.date
           - sensor.time
+
+      - type: entities
+        title: Dima
+        entities:
+          - sensor.google_fit_steps
+          - sensor.google_fit_distance
+          - sensor.google_fit_move_time
+          - sensor.google_fit_calories
+          - sensor.google_fit_sleep
+          
 
       - type: custom:vertical-stack-in-card
         cards:

@@ -120,6 +120,18 @@
       data_template:
         target: "{{ trigger.event.data.user_id }}"
 
+- alias: "telegram_handle_clb_fit"
+  trigger:
+    - platform: event
+      event_type: telegram_command
+      event_data:
+        command: "/fit"
+  action:
+    - service: script.telegram_send_fit
+      data_template:
+        target: "{{ trigger.event.data.user_id }}"
+
+
 - alias: "telegram_handle_cmd_say"
   trigger:
     - platform: event

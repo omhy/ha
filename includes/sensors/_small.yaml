@@ -17,6 +17,12 @@
   command: "cat /sys/class/thermal/thermal_zone0/temp"
   value_template: '{{ value | multiply(0.001) | round(1) }}'
 
+- platform: command_line
+  name: GPU Temperature
+  command: "/opt/vc/bin/vcgencmd measure_temp"
+  unit_of_measurement: "°C"
+  value_template: '{{ value | replace("temp=", "") | replace("''C", "") | round(0) }}'
+
 - platform: time_date
   display_options:
   - "time"
@@ -32,3 +38,8 @@
 
 - platform: rpi_power
   text_state: true
+
+- platform: google_fit
+  name: Google Fit
+  client_id: !secret google_cal_int_client_id
+  client_secret: !secret google_cal_int_client_secret
