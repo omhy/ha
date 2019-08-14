@@ -934,6 +934,41 @@ views:
             - sensor.swap_use_percent
 
       - type: entities
+        title: Casts
+        show_header_toggle: false
+        entities:
+          - type: cast
+            view: main
+            hide_if_unavailable: true
+          - type: cast
+            view: music
+            hide_if_unavailable: true
+          - type: cast
+            view: climate
+            hide_if_unavailable: true
+          - type: cast
+            view: history
+            hide_if_unavailable: true
+          - type: cast
+            view: lights_flow
+            hide_if_unavailable: true
+          - type: cast
+            view: electro
+            hide_if_unavailable: true
+          - type: cast
+            view: forecast
+            hide_if_unavailable: true
+          - type: cast
+            view: links
+            hide_if_unavailable: true
+          - type: cast
+            view: sys
+            hide_if_unavailable: true
+          - type: cast
+            view: misc
+            hide_if_unavailable: true
+
+      - type: entities
         title: Adguard stats
         show_header_toggle: false
         entities:
@@ -968,13 +1003,13 @@ views:
 
       - type: entities
         title: Dima
+        show_header_toggle: false
         entities:
           - sensor.google_fit_steps
           - sensor.google_fit_distance
           - sensor.google_fit_move_time
           - sensor.google_fit_calories
           - sensor.google_fit_sleep
-          
 
       - type: custom:vertical-stack-in-card
         cards:
