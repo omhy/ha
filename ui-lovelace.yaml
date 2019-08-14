@@ -938,33 +938,39 @@ views:
         show_header_toggle: false
         entities:
           - type: cast
+            name: main
             view: main
             hide_if_unavailable: true
           - type: cast
+            name: music
             view: music
             hide_if_unavailable: true
           - type: cast
+            name: climate
             view: climate
             hide_if_unavailable: true
           - type: cast
+            name: history
             view: history
             hide_if_unavailable: true
           - type: cast
+            name: lights_flow
             view: lights_flow
             hide_if_unavailable: true
           - type: cast
+            name: electro
             view: electro
             hide_if_unavailable: true
           - type: cast
+            name: forecast
             view: forecast
             hide_if_unavailable: true
           - type: cast
-            view: links
-            hide_if_unavailable: true
-          - type: cast
+            name: sys
             view: sys
             hide_if_unavailable: true
           - type: cast
+            name: misc
             view: misc
             hide_if_unavailable: true
 
