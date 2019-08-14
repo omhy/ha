@@ -1,3 +1,4 @@
+# temperatures
 - platform: mqtt
   state_topic: "outpark/temperature/min"
   name: outpark_temp_min
@@ -31,7 +32,28 @@
 - platform: mqtt
   state_topic: "outyard/temperature/max/at"
   name: outyard_temp_max_at
-  
+
+# fit
+- platform: mqtt
+  state_topic: "fit/steps"
+  name: fit_steps
+- platform: mqtt
+  state_topic: "fit/distance"
+  name: fit_distance
+- platform: mqtt
+  state_topic: "fit/move_time"
+  name: fit_move_time
+- platform: mqtt
+  state_topic: "fit/calories"
+  name: fit_calories
+- platform: mqtt
+  state_topic: "fit/sleep"
+  name: fit_sleep
+- platform: mqtt
+  state_topic: "fit_weight"
+  name: fit_weight
+
+# zigbee2mqtt  
 - platform: mqtt
   name: bridge_state
   state_topic: "zigbee2mqtt/bridge/state"

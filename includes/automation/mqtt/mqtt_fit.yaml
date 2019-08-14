@@ -1,0 +1,35 @@
+- alias: "mqtt_keep_fit"
+  trigger:
+    - platform: time
+      at: "23:58:00"
+  action:
+    - service: mqtt.publish
+      data_template:
+        topic: "fit/steps"
+        payload: "{{ states.sensor.google_fit_steps.state }}"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "fit/distance"
+        payload: "{{ states.sensor.google_fit_distance.state }}"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "fit/move_time"
+        payload: "{{ states.sensor.google_fit_move_time.state }}"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "fit/calories"
+        payload: "{{ states.sensor.google_fit_calories.state }}"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "fit/sleep"
+        payload: "{{ states.sensor.google_fit_sleep.state }}"
+        retain: true
+    - service: mqtt.publish
+      data_template:
+        topic: "fit/weight"
+        payload: "{{ states.sensor.google_fit_weight.state }}"
+        retain: true

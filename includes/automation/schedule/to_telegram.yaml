@@ -35,12 +35,3 @@
     - service: script.telegram_send_fit
       data_template:
         target: !secret tg_chat_dima
-
-- alias: "telegram_send_fit_2"
-  trigger:
-    - platform: time
-      at: "00:01:00"
-  action:
-    - service: script.telegram_send_fit
-      data_template:
-        target: !secret tg_chat_dima
