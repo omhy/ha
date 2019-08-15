@@ -913,7 +913,6 @@ views:
               color: !secret red
           entities:
             - sensor.temperature
-            - sensor.gpu_temperature
         - type: custom:bar-card
           direction: up
           title_position: "inside"
@@ -987,7 +986,6 @@ views:
           - sensor.memory_use_percent
           - sensor.disk_use_percent_home
           - sensor.temperature
-          - sensor.gpu_temperature
 
   ##################   DETAILS
   - title: Misc
@@ -1009,6 +1007,7 @@ views:
           - sensor.google_fit_distance
           - sensor.google_fit_move_time
           - sensor.google_fit_calories
+          - sensor.google_fit_weight
           - sensor.google_fit_sleep
 
       - type: custom:vertical-stack-in-card

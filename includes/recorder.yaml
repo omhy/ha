@@ -27,12 +27,12 @@ include:
     - sensor.disk_use_percent_home
     - sensor.swap_use_percent
     - sensor.temperature
-    - sensor.gpu_temperature
-    - sensor.google_fit_calories
-    - sensor.google_fit_distance
-    - sensor.google_fit_move_time
-    - sensor.google_fit_sleep
-    - sensor.google_fit_steps
+    - sensor.fit_calories
+    - sensor.fit_distance
+    - sensor.fit_move_time
+    - sensor.fit_sleep
+    - sensor.fit_steps
+    - sensor.fit_weight
     - sensor.abox_app
     - sensor.power_strip_1_load_power
     - sensor.power_strip_2_load_power
