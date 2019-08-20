@@ -14,18 +14,31 @@
 
 - alias: "rpi_power_tracker"
   trigger:
-  - platform: numeric_state
-    entity_id: sensor.rpi_power_status
-    value_template: '{{ state.attributes.value }}'
-    above: 0
-    for:
-      minutes: 5
+    - platform: numeric_state
+      entity_id: sensor.rpi_power_status
+      value_template: '{{ state.attributes.value }}'
+      above: 0
+      for:
+        minutes: 5
   action:
-  - service: persistent_notification.create
-    data_template:
-      message: "RPI Power reported {{ states.sensor.rpi_power_status.state }}. The state had changed from {{ trigger.from_state.state }} "
-      title: Power Supply Issue
-  - service: notify.notify
-    data_template:
-      message: "RPI Power reported {{ states.sensor.rpi_power_status.state }}. The state had  changed from {{ trigger.from_state.state }}"
-      title: Power Supply Issue
+    - service: persistent_notification.create
+      data_template:
+        title: "Power Supply Issue"
+        message: "RPI Power reported {{ states.sensor.rpi_power_status.state }}. The state had changed from {{ trigger.from_state.state }}"
+    - service: notify.telegram_dima
+      data_template:
+        message: "RPI Power reported {{ states.sensor.rpi_power_status.state }}. The state had changed from {{ trigger.from_state.state }}"
+        inline_keyboard:
+          - "\U0000267B Dismiss:/dismiss"
+
+- alias: "hacs_updates"
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.hacs
+      above: 0
+  action:
+    - service: notify.telegram_dima
+      data_template:
+        message: "HASC updated available: {{states.sensor.hacs.state}}"
+        inline_keyboard:
+          - "\U0000267B Dismiss:/dismiss"
