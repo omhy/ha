@@ -19,8 +19,6 @@ resources:
     type: js
   - url: /community_plugin/lovelace-weather-card-chart/weather-card-chart.js
     type: module
-  - url: /community_plugin/compact-custom-header/compact-custom-header.js
-    type: module
   - url: /community_plugin/lovelace-swipe-navigation/swipe-navigation.js
     type: js
 
