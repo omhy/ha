@@ -1,27 +1,27 @@
-abox_key_home:
+androidbox_key_home:
   sequence:
     - service: androidtv.adb_command
       data:
-        entity_id: media_player.abox
+        entity_id: media_player.androidbox
         command: "HOME"
 
-abox_key_sleep:
+androidbox_key_sleep:
   sequence:
     - service: androidtv.adb_command
       data:
-        entity_id: media_player.abox
+        entity_id: media_player.androidbox
         command: "SLEEP"
 
-abox_key_vol_dn:
+androidbox_key_vol_dn:
   sequence:
     - service: androidtv.adb_command
       data:
-        entity_id: media_player.abox
+        entity_id: media_player.androidbox
         command: "VOLUME_DOWN"
 
-abox_key_vol_up:
+androidbox_key_vol_up:
   sequence:
     - service: androidtv.adb_command
       data:
-        entity_id: media_player.abox
+        entity_id: media_player.androidbox
         command: "VOLUME_UP"

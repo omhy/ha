@@ -117,9 +117,9 @@ views:
           card:
             type: entities
             entities:
-              - script.abox_key_sleep
-              - script.abox_key_vol_dn
-              - script.abox_key_vol_up
+              - script.androidbox_key_sleep
+              - script.androidbox_key_vol_dn
+              - script.androidbox_key_vol_up
 # COMP
         - type: conditional
           conditions:
@@ -149,7 +149,7 @@ views:
               - domain: media_player
             exclude:
               - entity_id: media_player.spotify
-              - entity_id: media_player.abox
+              - entity_id: media_player.androidbox
               - state: "off"
               - state: "idle"
               - state: "unavailable"
@@ -374,9 +374,9 @@ views:
               - sensor.temperature_158d00022c7cf2
               - sensor.temperature_158d0002323783
 
-  ##################   HISTORY
-  - title: History
-    path: history
+  ##################   ACTIVITY
+  - title: Activity
+    path: activity
     icon: mdi:chart-timeline
     badges:
       - sensor.waze_home_work
@@ -411,22 +411,22 @@ views:
               - binary_sensor.ping_computer
               - binary_sensor.ping_laptop
               - binary_sensor.ping_tv
-              - binary_sensor.ping_abox
+              - binary_sensor.ping_androidbox
           - type: glance
             title: Is on Today
             entities:
               - sensor.computer_on_today
               - sensor.laptop_on_today
               - sensor.tv_on_today
-              - sensor.abox_on_today
+              - sensor.androidbox_on_today
           - type: glance
-            title: Abox usage
+            title: androidbox usage
             entities:
-#              - sensor.abox_launcher_today
-              - sensor.abox_app
-              - sensor.abox_youtube_today
-              - sensor.abox_perfectplayer_today
-              - sensor.abox_hdvideo_today
+#              - sensor.androidbox_launcher_today
+              - sensor.androidbox_app
+              - sensor.androidbox_youtube_today
+              - sensor.androidbox_perfectplayer_today
+              - sensor.androidbox_hdvideo_today
 
       - type: history-graph
         title: Movements 1h
@@ -441,10 +441,10 @@ views:
         hours_to_show: 1
         entities:
           - binary_sensor.ping_tv
-          - binary_sensor.ping_abox
+          - binary_sensor.ping_androidbox
           - media_player.chromecast
-          - media_player.abox
-          - sensor.abox_app
+          - media_player.androidbox
+          - sensor.androidbox_app
 
 #      - type: history-graph
 #        title: Waze 24h
@@ -833,7 +833,7 @@ views:
             icon: mdi:router-wireless
           - type: weblink
             name: Router firmwares
-            url: https://downloads.pangubox.com/pandorabox/
+            url: https://downloads.pangubox.com/pandorandroidbox/
             icon: mdi:router-wireless
 
       - type: entities
@@ -893,8 +893,8 @@ views:
           - script.ha_check_config
 
       - type: history-graph
-        title: RPI
-        hours_to_show: 24
+        title: RPI 2h
+        hours_to_show: 2
         entities:
           - sensor.rpi_power_status
       - type: custom:vertical-stack-in-card

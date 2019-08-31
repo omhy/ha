@@ -56,41 +56,41 @@
   end: "{{ now() }}"
 
 - platform: history_stats
-  name: abox_on_today
-  entity_id: binary_sensor.ping_abox
+  name: androidbox_on_today
+  entity_id: binary_sensor.ping_androidbox
   type: "time"
   state: "on"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
   end: "{{ now() }}"
 
-### ABOX APPS
+### androidbox APPS
 - platform: history_stats
-  name: abox_youtube_today
-  entity_id: sensor.abox_app
+  name: androidbox_youtube_today
+  entity_id: sensor.androidbox_app
   type: "time"
   state: "youtube"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
   end: "{{ now() }}"
 
 - platform: history_stats
-  name: abox_perfectplayer_today
-  entity_id: sensor.abox_app
+  name: androidbox_perfectplayer_today
+  entity_id: sensor.androidbox_app
   type: "time"
   state: "pp"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
   end: "{{ now() }}"
 
 - platform: history_stats
-  name: abox_launcher_today
-  entity_id: sensor.abox_app
+  name: androidbox_launcher_today
+  entity_id: sensor.androidbox_app
   type: "time"
   state: "launcher"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
   end: "{{ now() }}"
 
 - platform: history_stats
-  name: abox_hdvideo_today
-  entity_id: sensor.abox_app
+  name: androidbox_hdvideo_today
+  entity_id: sensor.androidbox_app
   type: "time"
   state: "hdbox"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"

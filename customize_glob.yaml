@@ -51,7 +51,7 @@
   icon: mdi:play
 "script.media_radio_stop*":
   icon: mdi:stop
-"script.abox_key_*":
+"script.androidbox_key_*":
   icon: mdi:dialpad
 
 ### AUTOMATIONS

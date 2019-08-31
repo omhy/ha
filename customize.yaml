@@ -100,7 +100,7 @@ sensor.bathroom_motions:
 sensor.yuriroom_motions:
   friendly_name: Today
   icon: mdi:sigma
-sensor.abox_app:
+sensor.androidbox_app:
   friendly_name: Abox app
   icon: mdi:android-debug-bridge
 
@@ -127,12 +127,12 @@ sensor.uptime:
 script.media_player_stop_all:
   friendly_name: Stop cast
   icon: mdi:stop
-script.abox_key_sleep:
+script.androidbox_key_sleep:
   friendly_name: Sleep
-script.abox_key_vol_up:
+script.androidbox_key_vol_up:
   friendly_name: Volume up
   icon: mdi:volume-plus
-script.abox_key_vol_dn:
+script.androidbox_key_vol_dn:
   friendly_name: Volume down
   icon: mdi:volume-minus
 script.rmt_computer_sleep:
@@ -146,7 +146,7 @@ script.ha_check_config:
 media_player.kitchen_display:
   friendly_name: Kitchen display
   icon: mdi:monitor
-media_player.abox:
+media_player.androidbox:
   friendly_name: Android box
   icon: mdi:android
 media_player.loud_speaker:
@@ -227,7 +227,7 @@ sensor.db_size_maria:
 sensor.db_size_influx:
   friendly_name: InfluxDb size
   icon: mdi:database
-sensor.abox_on_today:
+sensor.androidbox_on_today:
   friendly_name: Android box
   icon: mdi:android
 
@@ -263,16 +263,16 @@ sensor.outyard_temp_max_at:
   friendly_name: Maximal @
   icon: mdi:clock
 
-sensor.abox_youtube_today:
+sensor.androidbox_youtube_today:
   friendly_name: Youtube
   icon: mdi:youtube
-sensor.abox_perfectplayer_today:
+sensor.androidbox_perfectplayer_today:
   friendly_name: Perfect player
   icon: mdi:television-box
-sensor.abox_launcher_today:
+sensor.androidbox_launcher_today:
   friendly_name: Launcher
   icon: mdi:rocket
-sensor.abox_hdvideo_today:
+sensor.androidbox_hdvideo_today:
   friendly_name: HD Video
   icon: mdi:video-vintage
 
@@ -304,8 +304,8 @@ binary_sensor.ping_tv:
   friendly_name: TV
   icon: mdi:television
   device_class: connectivity
-binary_sensor.ping_abox:
-  friendly_name: Android box
+binary_sensor.ping_androidbox:
+  friendly_name: Abox state
   icon: mdi:android
   device_class: connectivity
 

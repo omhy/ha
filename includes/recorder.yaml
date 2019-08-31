@@ -12,7 +12,7 @@ include:
     - sensor.adguard_rules_count
     - sensor.adguard_average_processing_speed
     - binary_sensor.ping_computer
-    - binary_sensor.ping_abox
+    - binary_sensor.ping_androidbox
     - binary_sensor.ping_laptop
     - binary_sensor.ping_tv
     - binary_sensor.door_window_sensor_158d00024367c8
@@ -33,7 +33,7 @@ include:
     - sensor.fit_sleep
     - sensor.fit_steps
     - sensor.fit_weight
-    - sensor.abox_app
+    - sensor.androidbox_app
     - sensor.power_strip_1_load_power
     - sensor.power_strip_2_load_power
     - sensor.power_strip_3_load_power

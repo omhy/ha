@@ -83,17 +83,17 @@
         - media_player.loud_speaker
         - media_player.yury_speaker
 
-    ping_abox:
+    ping_androidbox:
       value_template: >
         {{
         not(
-        is_state('sensor.abox_app', 'launcher') or
-        is_state('sensor.abox_app', 'unknown')
+        is_state('sensor.androidbox_app', 'launcher') or
+        is_state('sensor.androidbox_app', 'unknown')
         )
         }}
       entity_id:
-        - sensor.abox_app
-        - media_player.abox
+        - sensor.androidbox_app
+        - media_player.androidbox
 
     some_casting:
       value_template: >
