@@ -11,6 +11,13 @@
     - service: script.input_text_set_now
       data_template:
         entity_id: input_text.state_change_seat
+    - service: homeassistant.update_entity
+      data_template:
+        entity_id:
+          - binary_sensor.is_holiday
+          - binary_sensor.is_workday
+          - binary_sensor.is_morning_activity
+          - binary_sensor.is_backup_day
 
 - alias: "rpi_power_tracker"
   trigger:
