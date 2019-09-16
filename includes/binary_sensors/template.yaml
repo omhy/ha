@@ -25,7 +25,7 @@
           false
         {% endif %}
       entity_id: 
-        - now.weekday
+        - sensor.date
 
     is_workday:
       value_template: >
@@ -35,7 +35,8 @@
           {{ now().weekday() >= 0 and now().weekday() <= 4 }}
         {% endif %}
       entity_id: 
-        - now.weekday
+        - sensor.date
+        - binary_sensor.is_holiday
 
     is_morning_activity:
       value_template: >
@@ -47,7 +48,8 @@
           is_state('input_boolean.is_school', 'on')
         }}
       entity_id:
-        - now.weekday
+        - sensor.date
+        - binary_sensor.is_workday
         - input_boolean.is_vacation
         - input_boolean.is_school
 
@@ -55,7 +57,7 @@
       value_template: >
         {{now().weekday() == 1 or now().weekday() == 3 or now().weekday() == 6}}
       entity_id: 
-        - now.weekday
+        - sensor.date
 
     ping_tv:
       value_template: "{{ states.sensor.power_strip_4_load_power.state | float > 70 }}"
