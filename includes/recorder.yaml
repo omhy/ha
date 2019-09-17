@@ -20,6 +20,7 @@ include:
     - binary_sensor.motion_sensor_158d0001e52779
     - binary_sensor.motion_sensor_158d0001fa3dc0
     - binary_sensor.motion_sensor_158d0002d43d7d
+    - binary_sensor.smoke_sensor_158d0003537bf0
     - sensor.rpi_power_status
     - sensor.moon
     - sensor.processor_use

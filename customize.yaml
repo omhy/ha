@@ -39,6 +39,9 @@ binary_sensor.is_holiday:
 binary_sensor.is_morning_activity:
   friendly_name: Morning
   icon: mdi:penguin
+binary_sensor.smoke_sensor_158d0003537bf0:
+  friendly_name: Smoke
+  icon: mdi:smoke-detector
 
 sensor.processor_use:
   friendly_name: CPU
