@@ -96,3 +96,5 @@ reeder_green:
   lumo-shade-10pct: "rgba(0,0,0, .1)"
   lumo-shade-5pct: "rgba(255,255,255, .05)"
   lumo-tint-5pct: "#333333"
+
+  card-background-color: "var(--paper-card-background-color)"
