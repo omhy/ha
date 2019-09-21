@@ -161,12 +161,12 @@ views:
       # - type: custom:weather-card
       #   entity: weather.home
 
-      - type: custom:calendar-card
-        title: Events
-        entities:
-          - calendar.personal
-          - calendar.family
-          - calendar.holidays_in_latvia
+      # - type: custom:calendar-card
+      #   title: Events
+      #   entities:
+      #     - calendar.personal
+      #     - calendar.family
+      #     - calendar.holidays_in_latvia
 
   - title: Music
     path: music
@@ -379,6 +379,7 @@ views:
     path: activity
     icon: mdi:chart-timeline
     badges:
+      - binary_sensor.smoke_sensor_158d0003537bf0
       - sensor.waze_home_work
       - sensor.waze_work_home
     cards:
