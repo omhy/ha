@@ -87,3 +87,28 @@ entity_config:
     name: Say consumption
     expose: true
     room: Speaker
+
+  script.cast_main:
+    name: Cast main
+    expose: true
+    room: Speaker
+  script.cast_music:
+    name: Cast music
+    expose: true
+    room: Speaker
+  script.cast_forecast:
+    name: Cast forecast
+    expose: true
+    room: Speaker
+  script.cast_climate:
+    name: Cast climate
+    expose: true
+    room: Speaker
+  script.cast_activity:
+    name: Cast activity
+    expose: true
+    room: Speaker
+  script.cast_sys:
+    name: Cast systme
+    expose: true
+    room: Speaker
