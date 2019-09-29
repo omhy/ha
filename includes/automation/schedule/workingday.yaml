@@ -16,7 +16,7 @@
     - service: script.media_radio_play_param_cast
       data_template:
         entity_id: media_player.kitchen_display
-        media_content_id: "http://ice.stream.frequence3.net/frequence3-128.mp3"
+        media_content_id: "http://icecast.vgtrk.cdnvideo.ru/moscowfm128"
 
 - alias: "working_day_scene_ready_1"
   trigger:
@@ -29,7 +29,8 @@
   action:
     - service: scene.turn_on
       entity_id: scene.workday_ready_1
-    - service: script.tts_summary
+
+    # - service: script.tts_summary
 
 - alias: "working_day_scene_ready_2"
   trigger:
