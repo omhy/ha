@@ -5,18 +5,18 @@
     light.fire_lamp: true
     light.small_torch:
       state: true
-      transition: 5
-      brightness: 5
+      transition: 10
+      brightness: 1
       hs_color: [ 0, 100 ]
     light.big_torch:
       state: true
-      transition: 2
-      brightness: 50
+      transition: 10
+      brightness: 1
       color_temp: 500
     light.corner_lamp:
       state: true
-      transition: 2
-      brightness: 50
+      transition: 10
+      brightness: 1
       color_temp: 500
 - name: workday_ready_1
   entities:
