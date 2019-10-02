@@ -53,6 +53,9 @@ logger:
     homeassistant.helpers.entity: error
     homeassistant.components.androidtv.media_player: error
     homeassistant.components.template.sensor: error
+    androidtv.adb_manager: error
+    pychromecast.socket_client: error
+    pychromecast.controllers: error
 
 http:
   # ip_ban_enabled: true
