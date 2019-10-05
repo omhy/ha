@@ -1,0 +1,9 @@
+- alias: "smoke_detected"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.smoke_sensor_158d0003537bf0
+      to: "on"
+  action:
+    - service: notify.telegram_all
+      data_template:
+        message: "{{ states.sensor.now_hm.state }} \U0001f525 Smoke detected!!!"
