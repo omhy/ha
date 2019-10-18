@@ -161,12 +161,13 @@ views:
       # - type: custom:weather-card
       #   entity: weather.home
 
-      # - type: custom:calendar-card
-      #   title: Events
-      #   entities:
-      #     - calendar.personal
-      #     - calendar.family
-      #     - calendar.holidays_in_latvia
+      - type: custom:calendar-card
+        title: Events
+        entities:
+          - calendar.personal
+          - calendar.family
+          - calendar.contacts
+          - calendar.holidays_in_latvia
 
   - title: Music
     path: music
@@ -360,16 +361,16 @@ views:
       - type: vertical-stack
         cards:
           - type: history-graph
-            title: Rooms t 12h
-            hours_to_show: 12
+            title: Rooms t 24h
+            hours_to_show: 24
             entities:
               - sensor.temperature_158d000234816a
               - sensor.temperature_158d0001f23cbe
               - sensor.temperature_158d0002271609
               - sensor.temperature_158d00032308dd
           - type: history-graph
-            title: Outdoor t 12h
-            hours_to_show: 12
+            title: Outdoor t 24h
+            hours_to_show: 24
             entities:
               - sensor.temperature_158d00022c7cf2
               - sensor.temperature_158d0002323783
