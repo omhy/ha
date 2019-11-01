@@ -1016,6 +1016,7 @@ views:
           - sensor.google_fit_move_time
           - sensor.google_fit_calories
           - sensor.google_fit_weight
+          - sensor.google_fit_heartrate
           - sensor.google_fit_sleep
 
       - type: custom:vertical-stack-in-card

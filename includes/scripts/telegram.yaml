@@ -110,6 +110,8 @@ telegram_send_fit:
 
           {{ '\U0001f4a4' }} {{states.sensor.google_fit_sleep.state_with_unit }}
 
+          {{ '\U0001f493' }} {{states.sensor.google_fit_heartrate.state_with_unit }}
+
         inline_keyboard:
           - "\U0000267B Dismiss:/dismiss"
 

@@ -34,24 +34,24 @@
   name: outyard_temp_max_at
 
 # fit
-- platform: mqtt
-  state_topic: "fit/steps"
-  name: fit_steps
-- platform: mqtt
-  state_topic: "fit/distance"
-  name: fit_distance
-- platform: mqtt
-  state_topic: "fit/move_time"
-  name: fit_move_time
-- platform: mqtt
-  state_topic: "fit/calories"
-  name: fit_calories
-- platform: mqtt
-  state_topic: "fit/sleep"
-  name: fit_sleep
-- platform: mqtt
-  state_topic: "fit_weight"
-  name: fit_weight
+# - platform: mqtt
+#   state_topic: "fit/steps"
+#   name: fit_steps
+# - platform: mqtt
+#   state_topic: "fit/distance"
+#   name: fit_distance
+# - platform: mqtt
+#   state_topic: "fit/move_time"
+#   name: fit_move_time
+# - platform: mqtt
+#   state_topic: "fit/calories"
+#   name: fit_calories
+# - platform: mqtt
+#   state_topic: "fit/sleep"
+#   name: fit_sleep
+# - platform: mqtt
+#   state_topic: "fit_weight"
+#   name: fit_weight
 
 # zigbee2mqtt  
 - platform: mqtt
