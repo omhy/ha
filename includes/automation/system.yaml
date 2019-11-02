@@ -35,8 +35,6 @@
     - service: notify.telegram_dima
       data_template:
         message: "RPI Power reported {{ states.sensor.rpi_power_status.state }}. The state had changed from {{ trigger.from_state.state }}"
-        inline_keyboard:
-          - "\U0000267B Dismiss:/dismiss"
 
 - alias: "hacs_updates"
   trigger:
@@ -47,5 +45,3 @@
     - service: notify.telegram_dima
       data_template:
         message: "HASC updated available: {{states.sensor.hacs.state}}"
-        inline_keyboard:
-          - "\U0000267B Dismiss:/dismiss"
