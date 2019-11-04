@@ -7,8 +7,8 @@ resources:
     type: js
   - url: /community_plugin/secondaryinfo-entity-row/secondaryinfo-entity-row.js
     type: js
-  - url: /community_plugin/vertical-stack-in-card/vertical-stack-in-card.js
-    type: js
+  # - url: /community_plugin/vertical-stack-in-card/vertical-stack-in-card.js
+  #   type: js
   - url: /community_plugin/lovelace-card-tools/card-tools.js
     type: js
   - url: /community_plugin/weather-card/weather-card.js
@@ -100,7 +100,7 @@ views:
             - entity_id: light.group_*
 
 # CONDITIONAL OFF
-      - type: custom:vertical-stack-in-card
+      - type: vertical-stack
         cards:
 # CAST
         - type: conditional
@@ -277,7 +277,7 @@ views:
     path: climate
     icon: mdi:gauge
     cards:
-      - type: custom:vertical-stack-in-card
+      - type: vertical-stack
         cards:
           - type: custom:bar-card
             direction: up
@@ -594,7 +594,7 @@ views:
           - sensor.temperature_158d0002323783
           - sensor.wt00_temperature
 # TEMPS    
-      - type: custom:vertical-stack-in-card
+      - type: vertical-stack
         cards:
         - type: markdown
           content: |
@@ -701,7 +701,7 @@ views:
             - sensor.wt12_humidity
             - sensor.wt24_humidity
 
-      - type: custom:vertical-stack-in-card
+      - type: vertical-stack
         cards:
         - type: markdown
           content: |
@@ -901,7 +901,7 @@ views:
         hours_to_show: 2
         entities:
           - sensor.rpi_power_status
-      - type: custom:vertical-stack-in-card
+      - type: vertical-stack
         cards:
         - type: custom:bar-card
           title_position: "inside"
@@ -1019,7 +1019,14 @@ views:
           - sensor.google_fit_heartrate
           - sensor.google_fit_sleep
 
-      - type: custom:vertical-stack-in-card
+      # - type: history-graph
+      #   title: Fit 9h
+      #   hours_to_show: 9
+      #   entities:
+      #     - sensor.google_fit_steps
+      #     - sensor.google_fit_move_time
+
+      - type: vertical-stack
         cards:
         - type: entities
           title: Date roles
@@ -1060,3 +1067,15 @@ views:
           - sensor.cast_version_chromecast
           - sensor.cast_version_black_speaker
           - sensor.cast_version_yuri_speaker
+
+      # - type: custom:logbook-card
+      #   title: Entrance door
+      #   entity: binary_sensor.door_window_sensor_158d00024367c8
+      #   max_items: 20
+      #   desc: true
+      #   history: 1
+      #   state_map:
+      #     - label: Open
+      #       value: "on"
+      #     - label: Closed
+      #       value: "off"

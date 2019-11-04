@@ -1,0 +1,29 @@
+- alias: "alert_weather_vidzeme"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.lv_vidzeme
+      to: "on"
+  action:
+    - service: telegram_bot.send_message
+      data_template:
+        target: !secret tg_chat_dima
+        title: "{{ states.sensor.now_hm.state }} \U000026a0 Vidzeme {{states.binary_sensor.lv_vidzeme.attributes.event}} ({{states.binary_sensor.lv_vidzeme.attributes.certainty}})"
+        message: >
+          `{{states.binary_sensor.lv_vidzeme.attributes.description}}`
+        inline_keyboard:
+          - "\U0000267B Dismiss:/dismiss"
+
+- alias: "alert_weather_kurzeme"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.lv_kurzeme
+      to: "on"
+  action:
+    - service: telegram_bot.send_message
+      data_template:
+        target: !secret tg_chat_dima
+        title: "{{ states.sensor.now_hm.state }} \U000026a0 Kurzeme {{states.binary_sensor.lv_kurzeme.attributes.event}} ({{states.binary_sensor.lv_kurzeme.attributes.certainty}})"
+        message: >
+          `{{states.binary_sensor.lv_kurzeme.attributes.description}}`
+        inline_keyboard:
+          - "\U0000267B Dismiss:/dismiss"
