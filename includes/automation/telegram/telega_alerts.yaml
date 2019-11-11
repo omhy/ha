@@ -2,6 +2,7 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.lv_vidzeme
+      from: "off"
       to: "on"
   action:
     - service: telegram_bot.send_message
@@ -17,6 +18,7 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.lv_kurzeme
+      from: "off"
       to: "on"
   action:
     - service: telegram_bot.send_message

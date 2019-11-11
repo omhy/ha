@@ -26,7 +26,7 @@
       value_template: '{{ state.attributes.value }}'
       above: 0
       for:
-        minutes: 5
+        minutes: 10
   action:
     - service: persistent_notification.create
       data_template:
