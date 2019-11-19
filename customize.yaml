@@ -52,6 +52,10 @@ sensor.disk_use_percent_home:
 sensor.swap_use_percent:
   friendly_name: Swap
 
+sensor.google_fit_sleep_minutes:
+  friendly_name: Google Fit sleep
+  icon: mdi:clock
+
 #WAZE
 #sensor.waze_current_home:
 #  friendly_name: To home

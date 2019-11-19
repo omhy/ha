@@ -1018,6 +1018,7 @@ views:
           - sensor.google_fit_weight
           - sensor.google_fit_heartrate
           - sensor.google_fit_sleep
+          - sensor.google_fit_sleep_minutes
 
       # - type: history-graph
       #   title: Fit 9h

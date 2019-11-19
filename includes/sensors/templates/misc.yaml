@@ -1,6 +1,6 @@
 - platform: template
   sensors:
-    sensor.google_fit_sleep_min:
+    google_fit_sleep_minutes:
       entity_id: sensor.google_fit_sleep
       unit_of_measurement: "minutes"
       value_template: >
