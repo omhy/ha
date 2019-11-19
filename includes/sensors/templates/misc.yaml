@@ -1,5 +1,14 @@
 - platform: template
   sensors:
+    sensor.google_fit_sleep_min:
+      entity_id: sensor.google_fit_sleep
+      unit_of_measurement: "minutes"
+      value_template: >
+        {% set parts = states.sensor.google_fit_sleep.state.split(':') %}
+        {% set h = parts[0] | int %}
+        {% set m = parts[1] | int %}
+        {{ h*60 + m }}
+
     days_in_month:
       entity_id: now.month
       value_template: >

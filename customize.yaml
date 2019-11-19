@@ -52,32 +52,6 @@ sensor.disk_use_percent_home:
 sensor.swap_use_percent:
   friendly_name: Swap
 
-#FIT
-# sensor.fit_steps:
-#   friendly_name: Fit steps
-#   unit_of_measurement: steps
-#   icon: mdi:walk
-# sensor.fit_distance:
-#   friendly_name: Fit distance
-#   unit_of_measurement: km
-#   icon: mdi:map-marker-distance
-# sensor.fit_move_time:
-#   friendly_name: Fit move time
-#   unit_of_measurement: min
-#   icon: mdi:clock-outline
-# sensor.fit_calories:
-#   friendly_name: Fit calories
-#   unit_of_measurement: calories
-#   icon: mdi:food
-# sensor.fit_sleep:
-#   friendly_name: Fit sleep
-#   unit_of_measurement: sleep
-#   icon: mdi:clock
-# sensor.fit_weight:
-#   friendly_name: Fit weight
-#   unit_of_measurement: kg
-#   icon: mdi:weight-kilogram
-
 #WAZE
 #sensor.waze_current_home:
 #  friendly_name: To home
@@ -419,14 +393,14 @@ sensor.computer_on_today:
 sensor.computer_on_today_min:
   friendly_name: Computer (minutes)
   icon: mdi:desktop-classic
-  unit_of_measurement: "min"
+  unit_of_measurement: "minutes"
 sensor.laptop_on_today:
   friendly_name: Laptop
   icon: mdi:laptop
 sensor.laptop_on_today_min:
   friendly_name: Laptop (minutes)
   icon: mdi:laptop
-  unit_of_measurement: "min"
+  unit_of_measurement: "minutes"
 sensor.tv_on_today:
   friendly_name: TV
   icon: mdi:television

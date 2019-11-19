@@ -4,14 +4,14 @@
     - name: "db_size_maria"
       query: 'SELECT table_schema "database", Round(Sum(data_length + index_length) / 1048576, 2) "value" FROM information_schema.tables WHERE table_schema="homeassistant" GROUP BY table_schema;'
       column: 'value'
-      unit_of_measurement: MB
+      unit_of_measurement: "MB"
 
 - platform: influxdb
   username: !secret influxdb_username
   password: !secret influxdb_password
   queries:
     - name: "db_size_influx"
-      unit_of_measurement: MB
+      unit_of_measurement: "MB"
       value_template: '{{ (value | float / 1024 /1024) | round(1) }}'
       group_function: sum
       database: _internal
