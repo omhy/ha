@@ -35,6 +35,7 @@ include:
     - sensor.google_fit_steps
     - sensor.google_fit_weight
     - sensor.google_fit_heartrate
+    - sensor.google_fit_sleep_minutes
     - sensor.androidbox_app
     - sensor.power_strip_1_load_power
     - sensor.power_strip_2_load_power

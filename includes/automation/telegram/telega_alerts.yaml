@@ -1,4 +1,4 @@
-- alias: "alert_weather_vidzeme"
+- alias: "weather_vidzeme_alert"
   trigger:
     - platform: state
       entity_id: binary_sensor.lv_vidzeme
@@ -14,7 +14,7 @@
         inline_keyboard:
           - "\U0000267B Dismiss:/dismiss"
 
-- alias: "alert_weather_kurzeme"
+- alias: "weather_kurzeme_alert"
   trigger:
     - platform: state
       entity_id: binary_sensor.lv_kurzeme
@@ -27,5 +27,33 @@
         title: "{{ states.sensor.now_hm.state }} \U000026a0 Kurzeme {{states.binary_sensor.lv_kurzeme.attributes.event}} ({{states.binary_sensor.lv_kurzeme.attributes.certainty}})"
         message: >
           `{{states.binary_sensor.lv_kurzeme.attributes.description}}`
+        inline_keyboard:
+          - "\U0000267B Dismiss:/dismiss"
+
+- alias: "weather_vidzeme_safe"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.lv_vidzeme
+      from: "on"
+      to: "off"
+  action:
+    - service: telegram_bot.send_message
+      data_template:
+        target: !secret tg_chat_dima
+        message: "{{ states.sensor.now_hm.state }} \U00002705 Vidzeme is safe"
+        inline_keyboard:
+          - "\U0000267B Dismiss:/dismiss"
+
+- alias: "weather_kurzeme_safe"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.lv_kurzeme
+      from: "on"
+      to: "off"
+  action:
+    - service: telegram_bot.send_message
+      data_template:
+        target: !secret tg_chat_dima
+        message: "{{ states.sensor.now_hm.state }} \U00002705 Kurzeme is safe"
         inline_keyboard:
           - "\U0000267B Dismiss:/dismiss"
