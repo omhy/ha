@@ -6,8 +6,9 @@
     - service: telegram_bot.send_message
       data_template:
         target: !secret tg_chat_dima
-        title: "{{ states.sensor.now_hm.state }} \U00002139 Vidzeme"
         message: >
+          {{ states.sensor.now_hm.state }} \U00002139 Vidzeme
+
           {% if is_state('binary_sensor.lv_vidzeme', 'on')  %}
             {{ '\U0001f321' }} {{ states.binary_sensor.lv_vidzeme.attributes.event }} ({{ states.binary_sensor.lv_vidzeme.attributes.certainty }})
             {{ states.binary_sensor.lv_vidzeme.attributes.description }}  
@@ -25,8 +26,9 @@
     - service: telegram_bot.send_message
       data_template:
         target: !secret tg_chat_dima
-        title: "{{ states.sensor.now_hm.state }} \U00002139 Kurzeme"
         message: >
+          {{ states.sensor.now_hm.state }} \U00002139 Kurzeme
+          
           {% if is_state('binary_sensor.lv_kurzeme', 'on')  %}
             {{ '\U0001f321' }} {{ states.binary_sensor.lv_kurzeme.attributes.event }} ({{ states.binary_sensor.lv_kurzeme.attributes.certainty }})
             {{ states.binary_sensor.lv_kurzeme.attributes.description }}  
