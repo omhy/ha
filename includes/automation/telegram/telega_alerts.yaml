@@ -7,7 +7,7 @@
       data_template:
         target: !secret tg_chat_dima
         message: >
-          {{ states.sensor.now_hm.state }} \U00002139 Vidzeme
+          {{ states.sensor.now_hm.state }} {{ '\U00002139' }} Vidzeme
 
           {% if is_state('binary_sensor.lv_vidzeme', 'on')  %}
             {{ '\U0001f321' }} {{ states.binary_sensor.lv_vidzeme.attributes.event }} ({{ states.binary_sensor.lv_vidzeme.attributes.certainty }})
@@ -27,7 +27,7 @@
       data_template:
         target: !secret tg_chat_dima
         message: >
-          {{ states.sensor.now_hm.state }} \U00002139 Kurzeme
+          {{ states.sensor.now_hm.state }} {{ '\U00002139' }} Kurzeme
           
           {% if is_state('binary_sensor.lv_kurzeme', 'on')  %}
             {{ '\U0001f321' }} {{ states.binary_sensor.lv_kurzeme.attributes.event }} ({{ states.binary_sensor.lv_kurzeme.attributes.certainty }})
