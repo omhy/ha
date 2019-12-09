@@ -7,6 +7,9 @@ light.big_torch:
 light.garland:
   friendly_name: Garland
   icon: mdi:dots-horizontal
+light.window_stars:
+  friendly_name: Stars
+  icon: mdi:key-star
 light.corner_lamp:
   friendly_name: Corner lamp
   icon: mdi:lamp

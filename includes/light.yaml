@@ -22,17 +22,17 @@
   payload_not_available: "Offline"
   retain: false
 
-#- platform: mqtt
-#  name: window_stars
-#  state_topic: "stat/sonoff_window_stars/POWER"
-#  command_topic: "cmnd/sonoff_window_stars/POWER"
-#  availability_topic: "tele/sonoff_window_stars/LWT"
-#  qos: 1
-#  payload_on: "ON"
-#  payload_off: "OFF"
-#  payload_available: "Online"
-#  payload_not_available: "Offline"
-#  retain: false
+- platform: mqtt
+  name: window_stars
+  state_topic: "stat/sonoff_window_stars/POWER"
+  command_topic: "cmnd/sonoff_window_stars/POWER"
+  availability_topic: "tele/sonoff_window_stars/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
 
 - platform: group
   name: group_livroom_ambient
@@ -40,11 +40,11 @@
   - light.big_torch
   - light.corner_lamp
 
-#- platform: group
-#  name: group_christmas
-#  entities:
-#  - light.tree_lamp
-#  - light.window_stars
+- platform: group
+  name: group_christmas
+  entities:
+  - light.tree_lamp
+  - light.window_stars
 
 - platform: switch
   name: standalone_switch

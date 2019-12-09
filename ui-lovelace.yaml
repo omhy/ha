@@ -7,8 +7,6 @@ resources:
     type: js
   - url: /community_plugin/secondaryinfo-entity-row/secondaryinfo-entity-row.js
     type: js
-  # - url: /community_plugin/vertical-stack-in-card/vertical-stack-in-card.js
-  #   type: js
   - url: /community_plugin/lovelace-card-tools/card-tools.js
     type: js
   - url: /community_plugin/weather-card/weather-card.js
@@ -20,8 +18,6 @@ resources:
   - url: /community_plugin/lovelace-weather-card-chart/weather-card-chart.js
     type: module
   - url: /community_plugin/lovelace-swipe-navigation/swipe-navigation.js
-    type: js
-  - url: /community_plugin/logbook-card/logbook-card.js
     type: js
 
 title: Home
@@ -85,6 +81,9 @@ views:
             tap_action:
               action: toggle
           - entity: light.bathroom
+            tap_action:
+              action: toggle
+          - entity: light.window_stars
             tap_action:
               action: toggle
 
