@@ -1068,6 +1068,27 @@ views:
           - sensor.cast_version_black_speaker
           - sensor.cast_version_yuri_speaker
 
+      - type: entities
+        title: Power switches
+        show_header_toggle: false
+        entities:
+          - entity: switch.power_strip_1
+            type: "custom:secondaryinfo-entity-row"
+            secondary_info: "[[ switch.power_strip_1.attributes.load_power ]] Wh"
+          - entity: switch.power_strip_2
+            type: "custom:secondaryinfo-entity-row"
+            secondary_info: "[[ switch.power_strip_2.attributes.load_power ]] Wh"
+          - entity: switch.power_strip_3
+            type: "custom:secondaryinfo-entity-row"
+            secondary_info: "[[ switch.power_strip_3.attributes.load_power ]] Wh"
+          - entity: switch.power_strip_4
+            type: "custom:secondaryinfo-entity-row"
+            secondary_info: "[[ switch.power_strip_4.attributes.load_power ]] Wh"
+          - entity: switch.power_strip_5
+            type: "custom:secondaryinfo-entity-row"
+            secondary_info: "[[ switch.power_strip_5.attributes.load_power ]] Wh"
+
+
       # - type: custom:logbook-card
       #   title: Entrance door
       #   entity: binary_sensor.door_window_sensor_158d00024367c8

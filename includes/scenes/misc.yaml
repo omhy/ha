@@ -3,12 +3,14 @@
     light.garland: true
     light.fire_lamp: true
     light.standalone_switch: true
+    light.window_stars: true
 
 - name: cosiness_off
   entities:
     light.garland: false
     light.fire_lamp: false
     light.standalone_switch: false
+    light.window_stars: false
 
 - name: good_morning
   entities:
@@ -22,6 +24,7 @@
     light.corner_lamp: false
     light.standalone_switch: false
     light.small_torch: false
+    light.window_stars: false
 
 - name: departed
   entities:
@@ -32,6 +35,7 @@
     light.small_torch: false
     light.bathroom: false
     light.corridor: false
+    light.window_stars: false
 
 - name: arrived
   entities:
@@ -40,3 +44,4 @@
     light.big_torch: true
     light.corner_lamp: true
     light.standalone_switch: true
+    light.window_stars: true
