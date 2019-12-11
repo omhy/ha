@@ -35,3 +35,16 @@
           {% endif %}
         inline_keyboard:
           - "\U0000267B Dismiss:/dismiss"
+
+- alias: "kitchen_power_switched_off"
+  trigger:
+    - platform: state
+      entity_id: switch.power_strip_2
+      to: "off"
+  action:
+    - service: telegram_bot.send_message
+      data_template:
+        target: !secret tg_chat_dima
+        message: {{ states.sensor.now_hm.state }} {{ '\U000026a1' }} Kitchen power strip is off!
+        inline_keyboard:
+          - "\U0001F4A4 Turn on:/power_strip_2_on, \U0000267B Dismiss:/dismiss"

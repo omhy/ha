@@ -247,3 +247,17 @@
       entity_id: input_number.computer_today_allowed
       data_template:
         value: "{{ (states.input_number.computer_today_allowed.state | int) + 30 }}"
+
+- alias: "telegram_handle_clb_power_strip_2_on"
+  trigger:
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: "/power_strip_2_on"
+  action:
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: "{{ trigger.event.data.id }}"
+        message: "Roger {{ trigger.event.data.data }}"
+    - service: switch.turn_on
+      entity_id: switch.power_strip_2
