@@ -19,6 +19,6 @@
   host: !secret power_strip_5_ip
   token: !secret power_strip_5_token
 
-- platform: wake_on_lan
-  name: wol_computer
-  mac_address: "D0-50-99-3E-70-DA"
+# - platform: wake_on_lan
+#   name: wol_computer
+#   mac_address: "D0-50-99-3E-70-DA"

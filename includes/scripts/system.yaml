@@ -51,10 +51,10 @@ rmt_computer_sleep:
 rmt_laptop_sleep:
   sequence:
       - service: shell_command.sleep_laptop
-rmt_computer_wakeup:
-  sequence:
-    - service: switch.turn_on
-      entity_id: switch.wol_computer
+# rmt_computer_wakeup:
+#   sequence:
+#     - service: switch.turn_on
+#       entity_id: switch.wol_computer
 
 alarm_door:
   sequence:
