@@ -22,24 +22,24 @@
   entities:
     light.small_torch:
       state: true
-      hs_color: [ 100, 100 ]
+      hs_color: [ 80, 100 ]
     light.big_torch:
       state: true
-      hs_color: [ 100, 100 ]
+      hs_color: [ 80, 100 ]
     light.corner_lamp:
       state: true
-      hs_color: [ 100, 100 ]
+      hs_color: [ 80, 100 ]
 - name: workday_ready_2
   entities:
     light.small_torch:
       state: true
-      hs_color: [ 60, 100 ]
+      hs_color: [ 50, 100 ]
     light.big_torch:
       state: true
-      hs_color: [ 60, 100 ]
+      hs_color: [ 50, 100 ]
     light.corner_lamp:
       state: true
-      hs_color: [ 60, 100 ]
+      hs_color: [ 50, 100 ]
 - name: workday_steady
   entities:
     light.small_torch:

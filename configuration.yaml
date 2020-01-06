@@ -86,9 +86,9 @@ google:
   client_secret: !secret google_cal_int_client_secret
   track_new_calendar: true
 
-calendarific:
-  api_key: !secret calendarific_key
-  country: LV
+# calendarific:
+#   api_key: !secret calendarific_key
+#   country: LV
 
 input_number: !include includes/input_number.yaml
 input_boolean: !include includes/input_boolean.yaml
