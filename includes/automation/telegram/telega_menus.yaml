@@ -21,6 +21,28 @@
           - "\U000026C5 Environment:/environment, \U0001F30D People:/people"
           - "\U0001F6A7 Tech:/tech, \U0000267B Dismiss:/dismiss"
 
+- alias: "telegram_handle_cmd_log"
+  trigger:
+    - platform: event
+      event_type: telegram_text
+      event_data:
+        text: "l"
+    - platform: event
+      event_type: telegram_text
+      event_data:
+        text: "L"
+    - platform: event
+      event_type: telegram_text
+      event_data:
+        text: "д"
+  action:
+    - service: telegram_bot.send_document
+      data_template:
+        target: "{{ trigger.event.data.user_id }}"
+        file: "/config/home-assistant.log"
+        inline_keyboard:
+          - "\U0001F504 Refresh:{{ trigger.event.data.data }}, \U0000267B Dismiss:/dismiss"
+
 - alias: "telegram_handle_clb_menu"
   trigger:
     - platform: event

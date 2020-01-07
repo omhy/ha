@@ -50,9 +50,10 @@ logger:
     homeassistant.components.script: error
     homeassistant.components.influxdb.sensor: error
     homeassistant.components.sensor: error
-    homeassistant.helpers.entity: error
     homeassistant.components.androidtv.media_player: fatal
     homeassistant.components.template.sensor: error
+    homeassistant.components.webhook: error
+    homeassistant.helpers.entity: error
     androidtv.adb_manager: error
     pychromecast.socket_client: error
     pychromecast.controllers: error
