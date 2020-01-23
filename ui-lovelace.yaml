@@ -267,6 +267,12 @@ views:
             entity: media_player.surround
             artwork: cover
 
+      - type: vertical-stack
+        cards:
+          - type: custom:mini-media-player
+            entity: media_player.androidbox
+            artwork: cover
+
           - type: custom:mini-media-player
             entity: media_player.spotify
             artwork: full-cover
