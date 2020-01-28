@@ -18,7 +18,6 @@ sun:
 config:
 system_health:
 person:
-config_check:
 mobile_app:
 
 wwlln:
