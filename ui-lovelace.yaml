@@ -150,7 +150,6 @@ views:
               - domain: media_player
             exclude:
               - entity_id: media_player.spotify
-              - entity_id: media_player.androidbox
               - state: "off"
               - state: "idle"
               - state: "unavailable"
