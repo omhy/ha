@@ -2,23 +2,23 @@ ha_set_defaults:
   sequence:
     - service: input_number.set_value
       entity_id: input_number.doorbell_volume
-      data_template:
+      data:
         value: 13
     - service: input_number.set_value
       entity_id: input_number.doorbell_melody
-      data_template:
+      data:
         value: 10
     - service: input_number.set_value
       entity_id: input_number.flow_transition
-      data_template:
+      data:
         value: 3
     - service: input_number.set_value
       entity_id: input_number.flow_brightness
-      data_template:
+      data:
         value: 250
     - service: input_number.set_value
       entity_id: input_number.flow_saturation
-      data_template:
+      data:
         value: 90
 
 ha_snapshot_full_create:
@@ -27,34 +27,14 @@ ha_snapshot_full_create:
       data_template:
         name: "backup_{{ states.sensor.now_ymdhms.state }}"
 
-ha_check_config:
-  sequence:
-    - service: config_check.run
-
-###  AQARA
-aqara_stop_ringtone:
-  sequence:
-    - service: xiaomi_aqara.stop_ringtone
-      data_template:
-        gw_mac: !secret gw_mac
-
-aqara_add_device:
-  sequence:
-    - service: xiaomi_aqara.add_device
-      data_template:
-        gw_mac: !secret gw_mac
-
 ### MISC
 rmt_computer_sleep:
   sequence:
     - service: shell_command.sleep_computer
+
 rmt_laptop_sleep:
   sequence:
-      - service: shell_command.sleep_laptop
-# rmt_computer_wakeup:
-#   sequence:
-#     - service: switch.turn_on
-#       entity_id: switch.wol_computer
+    - service: shell_command.sleep_laptop
 
 alarm_door:
   sequence:
@@ -66,34 +46,3 @@ alarm_door:
     - service: notify.telegram_all
       data_template:
         message: "{{ states.sensor.now_hm.state }} \U0001F6A8 Door opened for a while"
-
-remove_file:
-  sequence:
-    - service: shell_command.remove_file
-      data:
-        rtsp: !secret cam1_stream
-        filename: "/share/cam1.mp4"
-        duration: "10"
-
-camera_room_stream:
-  sequence:
-    - service: camera.play_stream
-      data:
-        entity_id: camera.cam1
-        media_player: media_player.kitchen_display
-
-camera_room_stream_ch:
-  sequence:
-    - service: camera.play_stream
-      data:
-        entity_id: camera.cam1
-        media_player: media_player.chromecast
-
-camera_record:
-  sequence:
-    - service: camera.record
-      data_template:
-        entity_id: "{{ entity_id }}"
-        filename: "{{ filename }}"
-        duration: 10
-        lookback: 2

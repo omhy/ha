@@ -1,0 +1,59 @@
+cosiness_on:
+  sequence:
+    - service: light.turn_on
+      entity_id:
+        - light.garland
+        - light.fire_lamp
+        - light.standalone_switch
+        - light.window_stars
+
+cosiness_off:
+  sequence:
+    - service: light.turn_off
+      entity_id:
+        - light.garland
+        - light.fire_lamp
+        - light.standalone_switch
+        - light.window_stars
+
+good_morning:
+  sequence:
+    - service: light.turn_off
+      entity_id: light.standalone_switch
+
+good_night:
+  sequence:
+    - service: light.turn_off
+      entity_id:
+      - light.garland
+      - light.fire_lamp
+      - light.big_torch
+      - light.corner_lamp
+      - light.standalone_switch
+      - light.small_torch
+      - light.window_stars
+
+departed:
+  sequence:
+    - service: light.turn_on
+      entity_id: light.fire_lamp
+    - service: light.turn_off
+      entity_id:
+        - light.garland
+        - light.big_torch
+        - light.corner_lamp
+        - light.small_torch
+        - light.bathroom
+        - light.corridor
+        - light.window_stars
+
+arrived:
+  sequence:
+    - service: light.turn_off
+      entity_id:
+        - light.garland
+        - light.fire_lamp
+        - light.big_torch
+        - light.corner_lamp
+        - light.standalone_switch
+        - light.window_stars

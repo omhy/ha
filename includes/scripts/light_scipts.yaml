@@ -13,8 +13,8 @@ flow_idx_update:
 light_flow_next:
   sequence:
     - service: input_select.select_option
+      entity_id: input_select.living_room_flow
       data_template:
-        entity_id: input_select.living_room_flow
         option: >
           {% set flows = {
             'custom' : 'random',
@@ -38,5 +38,5 @@ light_turn_on_hs:
 
 living_room_random_flow_on:
   sequence:
-    - service: scene.turn_on
-      entity_id: scene.living_room_random_flow_on
+    - service: script.turn_on
+      entity_id: script.living_room_random_flow_on

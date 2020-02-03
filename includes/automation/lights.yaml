@@ -30,8 +30,8 @@
     entity_id: light.small_torch
     state: "off"
   action:
-    - service: scene.turn_on
-      entity_id: scene.small_torch_on_full
+    - service: script.turn_on
+      entity_id: script.small_torch_on_full
 
 - alias: "standalone_left_when_small_torch_off"
   trigger:
@@ -45,8 +45,8 @@
     entity_id: light.small_torch
     state: "off"
   action:
-    - service: scene.turn_on
-      entity_id: scene.small_torch_on_low
+    - service: script.turn_on
+      entity_id: script.small_torch_on_low
 
 - alias: "light_button_single_when_light_is_on"
   trigger:
@@ -60,8 +60,8 @@
       entity_id: light.group_livroom_ambient
       state: "on"
   action:
-    - service: scene.turn_on
-      entity_id: scene.living_room_light_off
+    - service: script.turn_on
+      entity_id: script.living_room_light_off
 
 - alias: "light_button_single_when_light_is_off"
   trigger:
@@ -75,8 +75,8 @@
       entity_id: light.group_livroom_ambient
       state: "off"
   action:
-    - service: scene.turn_on
-      entity_id: scene.living_room_light_on_from_btn
+    - service: script.turn_on
+      entity_id: script.living_room_light_on_from_btn
 
 - alias: "light_button_double"
   trigger:
