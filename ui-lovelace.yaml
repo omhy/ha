@@ -1060,7 +1060,7 @@ views:
           - sensor.cast_version_loud_speaker
           - sensor.cast_version_black_speaker
           - sensor.cast_version_yuri_speaker
-          # - sensor.cast_version_chromecast
+          - sensor.cast_version_chromecast
 
       - type: entities
         title: Power switches
