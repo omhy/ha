@@ -1,0 +1,11 @@
+aqara_stop_ringtone:
+  sequence:
+    - service: xiaomi_aqara.stop_ringtone
+      data_template:
+        gw_mac: !secret gw_mac
+
+aqara_add_device:
+  sequence:
+    - service: xiaomi_aqara.add_device
+      data_template:
+        gw_mac: !secret gw_mac

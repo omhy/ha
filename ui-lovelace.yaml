@@ -262,9 +262,9 @@ views:
             entity: media_player.surround
             artwork: cover
 
-          - type: custom:mini-media-player
-            entity: media_player.chromecast
-            artwork: cover
+          # - type: custom:mini-media-player
+          #   entity: media_player.chromecast
+          #   artwork: cover
 
       - type: vertical-stack
         cards:
@@ -1058,9 +1058,9 @@ views:
         entities:
           - sensor.cast_version_kitchen_display
           - sensor.cast_version_loud_speaker
-          - sensor.cast_version_chromecast
           - sensor.cast_version_black_speaker
           - sensor.cast_version_yuri_speaker
+          # - sensor.cast_version_chromecast
 
       - type: entities
         title: Power switches

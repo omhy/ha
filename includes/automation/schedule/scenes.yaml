@@ -3,8 +3,8 @@
     - platform: time
       at: "06:45:00"
   action:
-    - service: scene.turn_on
-      entity_id: scene.good_morning
+    - service: script.turn_on
+      entity_id: script.good_morning
 
 - alias: "light_cosiness_on"
   trigger:
@@ -13,13 +13,13 @@
     - platform: sun
       event: sunset
   action:
-    - service: scene.turn_on
-      entity_id: scene.cosiness_on
+    - service: script.turn_on
+      entity_id: script.cosiness_on
 
 - alias: "light_cosiness_off"
   trigger:
     - platform: time
       at: "23:59:00"
   action:
-    - service: scene.turn_on
-      entity_id: scene.cosiness_off
+    - service: script.turn_on
+      entity_id: script.cosiness_off

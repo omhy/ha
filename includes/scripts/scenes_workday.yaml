@@ -1,0 +1,68 @@
+workday_init:
+  sequence:
+    - service: light.turn_on
+      entity_id: light.fire_lamp
+    - service: light.turn_on
+      entity_id: light.small_torch
+      data:
+        transition: 10
+        brightness: 1
+        hs_color: [ 0, 100 ]
+    - service: light.turn_on
+      entity_id: 
+        - light.big_torch
+        - light.corner_lamp
+      data:
+        transition: 10
+        brightness: 1
+        color_temp: 500
+
+workday_ready_1:
+  sequence:
+    - service: light.turn_on
+      entity_id: 
+        - light.small_torch
+        - light.big_torch
+        - light.corner_lamp
+      data:
+        hs_color: [ 80, 100 ]
+
+workday_ready_2:
+  sequence:
+    - service: light.turn_on
+      entity_id: 
+        - light.small_torch
+        - light.big_torch
+        - light.corner_lamp
+      data:
+        hs_color: [ 50, 100 ]
+
+workday_steady:
+  sequence:
+    - service: light.turn_on
+      entity_id: 
+        - light.small_torch
+        - light.big_torch
+        - light.corner_lamp
+      data:
+        hs_color: [ 30, 100 ]
+
+workday_go:
+  sequence:
+    - service: light.turn_on
+      entity_id: 
+        - light.small_torch
+        - light.big_torch
+        - light.corner_lamp
+      data:
+        hs_color: [ 5, 100 ]
+
+workday_terminate:
+  sequence:
+    - service: light.turn_off
+      entity_id: 
+        - light.garland
+        - light.fire_lamp
+        - light.small_torch
+        - light.big_torch
+        - light.corner_lamp

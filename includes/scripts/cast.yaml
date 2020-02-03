@@ -1,41 +1,41 @@
 cast_main:
   sequence:
     - service: cast.show_lovelace_view
-      data_template:
-        entity_id: media_player.kitchen_display
+      entity_id: media_player.kitchen_display
+      data:
         view_path: main
 
 cast_music:
   sequence:
     - service: cast.show_lovelace_view
-      data_template:
-        entity_id: media_player.kitchen_display
+      entity_id: media_player.kitchen_display
+      data:
         view_path: music
 
 cast_forecast:
   sequence:
     - service: cast.show_lovelace_view
-      data_template:
-        entity_id: media_player.kitchen_display
+      entity_id: media_player.kitchen_display
+      data:
         view_path: forecast
 
 cast_climate:
   sequence:
     - service: cast.show_lovelace_view
-      data_template:
-        entity_id: media_player.kitchen_display
+      entity_id: media_player.kitchen_display
+      data:
         view_path: climate
 
 cast_activity:
   sequence:
     - service: cast.show_lovelace_view
-      data_template:
-        entity_id: media_player.kitchen_display
+      entity_id: media_player.kitchen_display
+      data:
         view_path: activity
 
 cast_sys:
   sequence:
     - service: cast.show_lovelace_view
-      data_template:
-        entity_id: media_player.kitchen_display
+      entity_id: media_player.kitchen_display
+      data:
         view_path: sys

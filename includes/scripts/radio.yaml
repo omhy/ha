@@ -76,12 +76,11 @@ media_radio_play_moskvafm:
 media_player_stop_all:
   sequence:
     - service: media_player.media_stop
-      data_template:
-        entity_id:
-          - media_player.black_speaker
-          - media_player.kitchen_display
-          - media_player.loud_speaker
-          - media_player.yury_speaker
-          - media_player.chromecast
-          - media_player.speakers
-          - media_player.surround
+      entity_id:
+        - media_player.black_speaker
+        - media_player.kitchen_display
+        - media_player.loud_speaker
+        - media_player.yury_speaker
+        - media_player.chromecast
+        - media_player.speakers
+        - media_player.surround

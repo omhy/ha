@@ -45,10 +45,10 @@
     - platform: state
       entity_id:
         - sensor.cast_version_black_speaker
-        - sensor.cast_version_chromecast
         - sensor.cast_version_kitchen_display
         - sensor.cast_version_loud_speaker
         - sensor.cast_version_yuri_speaker
+        # - sensor.cast_version_chromecast
   action:
     - service: telegram_bot.send_message
       data_template:

@@ -84,8 +84,8 @@
         action_type: free_fall
   action:
     - service: script.rmt_computer_sleep
-    - service: scene.turn_on
-      entity_id: scene.good_night
+    - service: script.turn_on
+      entity_id: script.good_night
     - service: media_player.turn_off
       entity_id: all
 
@@ -97,8 +97,8 @@
         entity_id: binary_sensor.cube_158d00028776ae
         action_type: shake_air
   action:
-    - service: scene.turn_on
-      entity_id: scene.living_room_light_on_low
+    - service: script.turn_on
+      entity_id: script.living_room_light_on_low
 
 #   action_type: move
 #   action_type: swing

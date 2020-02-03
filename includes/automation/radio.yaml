@@ -11,7 +11,6 @@
           {% elif is_state("input_select.radio_cast", "Loud speaker") %} media_player.loud_speaker
           {% elif is_state("input_select.radio_cast", "Yuri speaker") %} media_player.yury_speaker
           {% elif is_state("input_select.radio_cast", "Black speaker") %} media_player.black_speaker
-          {% elif is_state("input_select.radio_cast", "Chromecast") %} media_player.chromecast
           {% elif is_state("input_select.radio_cast", "Speakers") %} media_player.speakers
           {% elif is_state("input_select.radio_cast", "Surround") %} media_player.surround
           {% endif %}
