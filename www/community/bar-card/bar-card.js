@@ -1,9 +1,18 @@
+console.info(
+  `%cBAR-CARD\n%cVersion: 1.7.0`,
+  "color: green; font-weight: bold;",
+  ""
+);
+
 class BarCard extends HTMLElement {
   constructor () {
     super()
     this.attachShadow({ mode: 'open' })
   }
   setConfig (config) {
+    while(this.shadowRoot.lastChild)
+      this.shadowRoot.removeChild(this.shadowRoot.lastChild);
+
     // Default Card variables
     const initialConfig = Object.assign({}, config)
 
@@ -693,6 +702,11 @@ class BarCard extends HTMLElement {
     let color
     sections.forEach(section => {
       let actualValue = this._valueEntityCheck(section.value, hass)
+      if (isNaN(actualValue)) {
+        if (actualValue == stateValue && !color) {
+          color = section.color
+        }
+      }
       if (numberValue <= actualValue && !color) {
         color = section.color
       }
@@ -706,6 +720,11 @@ class BarCard extends HTMLElement {
     let icon
     sections.forEach(section => {
       let actualValue = this._valueEntityCheck(section.value, hass)
+      if (isNaN(actualValue)) {
+        if (actualValue == stateValue && !icon) {
+          icon = section.icon
+        }
+      }
       if (numberValue <= actualValue && !icon) {
         icon = section.icon
       }
@@ -727,7 +746,7 @@ class BarCard extends HTMLElement {
           return attribute
         }
       } else {
-        if (this._hass.states[value] == undefined) throw new Error('Invalid target, min or max entity')
+        if (this._hass.states[value] == undefined) return value
         else return hass.states[value].state
       }
     } else {
@@ -1000,7 +1019,7 @@ class BarCard extends HTMLElement {
       }
       return
     }
-    
+
     // Define config
     const config = this._configAttributeCheck(entity, index)
 
@@ -1027,7 +1046,7 @@ class BarCard extends HTMLElement {
       } else {
         entityState = entityObject.state
       }
-      
+
       if(!isNaN(entityState)){
         entityState = Number(entityState)
       }
@@ -1036,7 +1055,7 @@ class BarCard extends HTMLElement {
         entityState = Math.min(entityState, configMax)
         entityState = Math.max(entityState, configMin)
       }
-      
+
       if (config.decimal !== false) {
         entityState = entityState.toFixed(config.decimal)
       }
@@ -1221,9 +1240,3 @@ class BarCard extends HTMLElement {
 }
 
 customElements.define('bar-card', BarCard)
-
-console.info(
-  `%cBAR-CARD\n%cVersion: 1.6.1`,
-  "color: green; font-weight: bold;",
-  ""
-);
