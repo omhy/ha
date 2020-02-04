@@ -35,8 +35,3 @@ light_turn_on_hs:
         hs_color: [ "{{ hue | int }}", "{{ sat | int }}" ]
         brightness: "{{ brightness | int }}"
         transition: "{{ transition | int }}"
-
-living_room_random_flow_on:
-  sequence:
-    - service: script.turn_on
-      entity_id: script.living_room_random_flow_on

@@ -1,7 +1,6 @@
 we_are_leaving:
   sequence:
-    - service: script.turn_on
-      entity_id: script.departed
+    - service: script.departed
     - service: script.media_player_stop_all
     - service: script.rmt_computer_sleep
     - service: script.rmt_laptop_sleep
@@ -9,8 +8,7 @@ we_are_leaving:
 
 we_are_arriving:
   sequence:
-    - service: script.turn_on
-      entity_id: script.arrived
+    - service: script.arrived
     - service: script.media_radio_play_param_cast
       data_template:
         entity_id: media_player.loud_speaker

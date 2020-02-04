@@ -61,14 +61,6 @@ entity_config:
     name: Laptop sleep
     expose: true
     room: Speaker
-  script.living_room_random_flow_on:
-    name: Random flow
-    expose: true
-    room: Speaker
-  script.camera_room_stream:
-    name: Stream room
-    expose: true
-    room: Speaker
 
 #Scripts tts
   script.tts_summary:
