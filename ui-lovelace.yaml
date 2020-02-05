@@ -46,6 +46,8 @@ views:
             secondary_info: last-changed
           - entity: binary_sensor.door_window_sensor_158d00024367c8
             secondary_info: last-changed
+          - entity: binary_sensor.vibration_158d0002c4e568
+            secondary_info: last-changed
           - entity: person.dima
             secondary_info: last-changed
           - entity: person.alyona
