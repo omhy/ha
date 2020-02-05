@@ -4,7 +4,7 @@
       entity_id: binary_sensor.door_window_sensor_158d00024367c8
       to: "on"
       for:
-        minutes: 2
+        minutes: 3
   action:
     - service: script.alarm_door
 

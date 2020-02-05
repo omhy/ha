@@ -9,15 +9,6 @@
       data_template:
         target: !secret tg_chat_dima
 
-- alias: "telegram_send_weather_now"
-  trigger:
-    - platform: time
-      at: "07:30:00"
-  action:
-    - service: script.telegram_send_weather_now
-      data_template:
-        target: !secret tg_chat_alyona
-
 - alias: "telegram_send_electro"
   trigger:
     - platform: time

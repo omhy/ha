@@ -16,11 +16,6 @@ cosiness_off:
         - light.standalone_switch
         - light.window_stars
 
-good_morning:
-  sequence:
-    - service: light.turn_off
-      entity_id: light.standalone_switch
-
 good_night:
   sequence:
     - service: light.turn_off

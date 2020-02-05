@@ -5,20 +5,3 @@
   action:
     - service: counter.reset
       entity_id: counter.yuriroom_motions_watch
-
-- alias: "schedule_daily_sets"
-  trigger:
-    - platform: time
-      at: "00:00:05"
-  action:
-    - service: input_boolean.turn_on
-      entity_id: input_boolean.computer_today_limit
-    - service: input_number.set_value
-      entity_id: input_number.computer_today_allowed
-      data_template:
-        value: >
-          {% if is_state('binary_sensor.is_workday', 'on') %}
-            300
-          {% else %}
-            500
-          {% endif %}

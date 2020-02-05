@@ -218,36 +218,6 @@
         message: "Roger {{ trigger.event.data.data }}"
     - service: script.rmt_laptop_sleep
 
-- alias: "telegram_handle_clb_computer_limit_disable"
-  trigger:
-    - platform: event
-      event_type: telegram_callback
-      event_data:
-        data: "/rmt_computer_limit_disable"
-  action:
-    - service: telegram_bot.answer_callback_query
-      data_template:
-        callback_query_id: "{{ trigger.event.data.id }}"
-        message: "Roger {{ trigger.event.data.data }}"
-    - service: input_boolean.turn_off
-      entity_id: input_boolean.computer_today_limit
-
-- alias: "telegram_handle_clb_computer_limit_extend"
-  trigger:
-    - platform: event
-      event_type: telegram_callback
-      event_data:
-        data: "/rmt_computer_limit_extend"
-  action:
-    - service: telegram_bot.answer_callback_query
-      data_template:
-        callback_query_id: "{{ trigger.event.data.id }}"
-        message: "Roger {{ trigger.event.data.data }}"
-    - service: input_number.set_value
-      entity_id: input_number.computer_today_allowed
-      data_template:
-        value: "{{ (states.input_number.computer_today_allowed.state | int) + 30 }}"
-
 - alias: "telegram_handle_clb_power_strip_2_on"
   trigger:
     - platform: event

@@ -353,8 +353,6 @@ binary_sensor.door_window_sensor_158d00024367c8:
   friendly_name: Door
 binary_sensor.vibration_158d0002c4e568:
   friendly_name: Seat
-sensor.state_change_seat_ago_min:
-  friendly_name: Seat
 
 #ILLUMINATION
 sensor.illumination_158d0001e52779:

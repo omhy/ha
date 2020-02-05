@@ -7,8 +7,7 @@
       entity_id: binary_sensor.is_morning_activity
       state: "on"
   action:
-    - service: script.turn_on
-      entity_id: script.workday_init
+    - service: script.workday_init
     - service: media_player.volume_set
       data_template:
         entity_id: media_player.kitchen_display
@@ -27,10 +26,7 @@
       entity_id: binary_sensor.is_morning_activity
       state: "on"
   action:
-    - service: script.turn_on
-      entity_id: script.workday_ready_1
-
-    # - service: script.tts_summary
+    - service: script.workday_ready_1
 
 - alias: "working_day_scene_ready_2"
   trigger:
@@ -41,8 +37,7 @@
       entity_id: binary_sensor.is_morning_activity
       state: "on"
   action:
-    - service: script.turn_on
-      entity_id: script.workday_ready_2
+    - service: script.workday_ready_2
 
 - alias: "working_day_scene_at_steady"
   trigger:
@@ -53,8 +48,7 @@
       entity_id: binary_sensor.is_morning_activity
       state: "on"
   action:
-    - service: script.turn_on
-      entity_id: script.workday_steady
+    - service: script.workday_steady
 
 - alias: "working_day_computer_off"
   trigger:
@@ -76,8 +70,7 @@
       entity_id: binary_sensor.is_morning_activity
       state: "on"
   action:
-    - service: script.turn_on
-      entity_id: script.workday_go
+    - service: script.workday_go
 
 - alias: "working_day_scene_terminate"
   trigger:
@@ -88,5 +81,4 @@
       entity_id: binary_sensor.is_morning_activity
       state: "on"
   action:
-    - service: script.turn_on
-      entity_id: script.workday_terminate
+    - service: script.workday_terminate

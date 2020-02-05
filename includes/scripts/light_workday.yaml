@@ -1,7 +1,9 @@
 workday_init:
   sequence:
     - service: light.turn_on
-      entity_id: light.fire_lamp
+      entity_id:
+        - light.fire_lamp
+        - light.garland
     - service: light.turn_on
       entity_id: light.small_torch
       data:

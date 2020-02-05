@@ -126,12 +126,6 @@
       value_template: "{{ states.media_player.androidbox.attributes.app_id.split('.')[-1] }}"
       entity_id: media_player.androidbox
 #STATE_CH_TIME
-    state_change_seat_ago_min:
-      value_template: "{{ ((now() - strptime(states.input_text.state_change_seat.state, '%Y%m%d%H%M%S').astimezone()).seconds / 60) | round(2) }}"
-      unit_of_measurement: "minutes"
-      entity_id:
-        - sensor.time
-        - input_text.state_change_seat
     now_hm:
       value_template: "{{ now().strftime('%H:%M') }}"
       entity_id: sensor.time

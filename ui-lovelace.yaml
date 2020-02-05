@@ -46,7 +46,6 @@ views:
             secondary_info: last-changed
           - entity: binary_sensor.door_window_sensor_158d00024367c8
             secondary_info: last-changed
-          - sensor.state_change_seat_ago_min
           - entity: person.dima
             secondary_info: last-changed
           - entity: person.alyona
@@ -560,11 +559,10 @@ views:
 
       - type: entities
         show_header_toggle: false
-        title: Computer limit
+        title: Computers Today
         entities:
-          - input_boolean.computer_today_limit
           - sensor.computer_on_today_min
-          - input_number.computer_today_allowed
+          - sensor.laptop_on_today_minutes
 
       - type: history-graph
         title: Living room power 1h

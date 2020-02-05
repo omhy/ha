@@ -1,9 +1,3 @@
-computer_today_allowed:
-  name: Allowed
-  icon: mdi:lock-clock
-  min: 0
-  max: 1440
-
 doorbell_volume:
   min: 1
   max: 30
