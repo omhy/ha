@@ -1,5 +1,5 @@
 ### COMMON
-"*telegram*":
+"*telega*":
   icon: mdi:telegram
 "*dropbox*":
   icon: mdi:dropbox
@@ -37,6 +37,8 @@
   icon: mdi:laptop
 "*aqara*":
   icon: mdi:hubspot
+"*workday*":
+  icon: mdi:worker
 
 ### SPECIFIC
 "light.*":
@@ -59,8 +61,6 @@
   initial_state: "on"
 "automation.zone*":
   icon: mdi:map-marker
-"automation.working_day*":
-  icon: mdi:worker
 "automation.cube*":
   icon: mdi:cube
 "automation.light*":
@@ -71,7 +71,7 @@
   icon: mdi:clock-outline
 
 ### HA
-"*.ha*":
+"*.ha_*":
   icon: mdi:home-assistant
 
 ### SENSORS

@@ -1,4 +1,4 @@
-- alias: "telegram_send_weather_today"
+- alias: "telega_send_weather_today"
   trigger:
     - platform: time
       at: "06:55:00"
@@ -9,7 +9,7 @@
       data_template:
         target: !secret tg_chat_dima
 
-- alias: "telegram_send_electro"
+- alias: "telega_send_electro"
   trigger:
     - platform: time
       at: "23:59:00"
@@ -18,7 +18,7 @@
       data_template:
         target: !secret tg_chat_dima
 
-- alias: "telegram_send_fit"
+- alias: "telega_send_fit"
   trigger:
     - platform: time
       at: "23:59:00"

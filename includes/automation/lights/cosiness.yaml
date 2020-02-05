@@ -1,15 +1,15 @@
-- alias: "light_cosiness_on"
+- alias: "light_light_cosiness_on"
   trigger:
 #    - platform: time
 #      at: "17:00:00"
     - platform: sun
       event: sunset
   action:
-    - service: script.cosiness_on
+    - service: script.light_cosiness_on
 
-- alias: "light_cosiness_off"
+- alias: "light_light_cosiness_off"
   trigger:
     - platform: time
       at: "23:59:00"
   action:
-    - service: script.cosiness_off
+    - service: script.light_cosiness_off

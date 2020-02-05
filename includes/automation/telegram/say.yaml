@@ -1,0 +1,21 @@
+- alias: "telega_command_say"
+  trigger:
+    - platform: event
+      event_type: telegram_command
+      event_data:
+        command: "/say"
+  action:
+    - service: script.tts_say_kitchen
+      data_template:
+        message: "{{ trigger.event.data.args }}"
+
+- alias: "telega_command_sayall"
+  trigger:
+    - platform: event
+      event_type: telegram_command
+      event_data:
+        command: "/sayall"
+  action:
+    - service: script.tts_say_surround
+      data_template:
+        message: "{{ trigger.event.data.args }}"

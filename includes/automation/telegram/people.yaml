@@ -1,4 +1,4 @@
-- alias: "telegram_handle_clb_people"
+- alias: "telega_callback_people"
   trigger:
     - platform: event
       event_type: telegram_callback
@@ -18,7 +18,7 @@
           - "\U0001F466 Yury:/tracker google_maps_117454969161947422882, \U0001F467 Elisa:/tracker elisa"
           - "\U0000267B Dismiss:/dismiss"
 
-- alias: "telegram_handle_prefix_tracker"
+- alias: "telega_handle_prefix_tracker"
   trigger:
     - platform: event
       event_type: telegram_callback
@@ -44,7 +44,7 @@
         inline_keyboard:
           - "\U0001F5FA Map:/map {{ trigger.event.data.data.split(' ', 1)[1] }}, \U0001F504 Refresh:{{ trigger.event.data.data }}, \U0000267B Dismiss:/dismiss"
 
-- alias: "telegram_handle_prefix_map"
+- alias: "telega_handle_prefix_map"
   trigger:
     - platform: event
       event_type: telegram_callback

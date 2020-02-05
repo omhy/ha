@@ -1,0 +1,55 @@
+- alias: "telega_text_m"
+  trigger:
+    - platform: event
+      event_type: telegram_text
+      event_data:
+        text: "m"
+    - platform: event
+      event_type: telegram_text
+      event_data:
+        text: "M"
+    - platform: event
+      event_type: telegram_text
+      event_data:
+        text: "ь"
+  action:
+    - service: telegram_bot.send_message
+      data_template:
+        target: "{{ trigger.event.data.user_id }}"
+        message: "Main menu"
+        inline_keyboard:
+          - "\U000026C5 Environment:/environment, \U0001F30D People:/people"
+          - "\U0001F6A7 Tech:/tech, \U0000267B Dismiss:/dismiss"
+
+- alias: "telega_text_l"
+  trigger:
+    - platform: event
+      event_type: telegram_text
+      event_data:
+        text: "l"
+    - platform: event
+      event_type: telegram_text
+      event_data:
+        text: "L"
+    - platform: event
+      event_type: telegram_text
+      event_data:
+        text: "д"
+  action:
+    - service: telegram_bot.send_document
+      data_template:
+        target: "{{ trigger.event.data.user_id }}"
+        file: "/config/home-assistant.log"
+        inline_keyboard:
+          - "\U0000267B Dismiss:/dismiss"
+
+- alias: "telega_text_fit"
+  trigger:
+    - platform: event
+      event_type: telegram_text
+      event_data:
+        text: "fit"
+  action:
+    - service: script.telegram_send_fit
+      data_template:
+        target: "{{ trigger.event.data.user_id }}"

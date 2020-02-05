@@ -35,13 +35,13 @@
   retain: false
 
 - platform: group
-  name: group_livroom_ambient
+  name: livingroom
   entities:
   - light.big_torch
   - light.corner_lamp
 
 - platform: group
-  name: group_christmas
+  name: christmas
   entities:
   - light.tree_lamp
   - light.window_stars

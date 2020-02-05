@@ -9,15 +9,3 @@
   origin: zone.work
   destination: zone.home
   region: "EU"
-
-#- platform: waze_travel_time
-#  name: waze_current_home
-#  origin: device_tracker.google_maps_111683533988744565132
-#  destination: zone.home
-#  region: "EU"
-#
-#- platform: waze_travel_time
-#  name: waze_current_work
-#  origin: device_tracker.google_maps_111683533988744565132
-#  destination: zone.work
-#  region: "EU"

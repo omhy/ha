@@ -1,0 +1,34 @@
+- alias: "telega_callback_menu"
+  trigger:
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: "/menu"
+  action:
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: "{{ trigger.event.data.id }}"
+        message: "Roger {{ trigger.event.data.data }}"
+    - service: telegram_bot.send_message
+      data_template:
+        target: "{{ trigger.event.data.user_id }}"
+        message: "Main menu"
+        inline_keyboard:
+          - "\U000026C5 Environment:/environment, \U0001F30D People:/people"
+          - "\U0001F6A7 Tech:/tech, \U0000267B Dismiss:/dismiss"
+
+- alias: "telega_callback_dismiss"
+  trigger:
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: "/dismiss"
+  action:
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: "{{ trigger.event.data.id }}"
+        message: "Roger {{ trigger.event.data.data }}"
+    - service: telegram_bot.delete_message
+      data_template:
+        chat_id: "{{ trigger.event.data.chat_id }}"
+        message_id: "{{ trigger.event.data.message.message_id }}"

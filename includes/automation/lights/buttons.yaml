@@ -1,0 +1,90 @@
+- alias: "light_small_torch_turn_off"
+  trigger:
+    - platform: event
+      event_type: xiaomi_aqara.click
+      event_data:
+        entity_id: binary_sensor.wall_switch_left_158d00026b96c1
+        click_type: single
+    - platform: event
+      event_type: xiaomi_aqara.click
+      event_data:
+        entity_id: binary_sensor.wall_switch_right_158d00026b96c1
+        click_type: single
+  condition:
+    condition: state
+    entity_id: light.small_torch
+    state: "on"
+  action:
+    - service: light.turn_off
+      entity_id: light.small_torch
+
+- alias: "light_small_torch_turn_on_max"
+  trigger:
+    - platform: event
+      event_type: xiaomi_aqara.click
+      event_data:
+        entity_id: binary_sensor.wall_switch_right_158d00026b96c1
+        click_type: single
+  condition:
+    condition: state
+    entity_id: light.small_torch
+    state: "off"
+  action:
+    - service: script.turn_on
+      entity_id: script.light_small_torch_turn_on_max
+
+- alias: "light_small_torch_turn_on_min"
+  trigger:
+    - platform: event
+      event_type: xiaomi_aqara.click
+      event_data:
+        entity_id: binary_sensor.wall_switch_left_158d00026b96c1
+        click_type: single
+  condition:
+    condition: state
+    entity_id: light.small_torch
+    state: "off"
+  action:
+    - service: script.turn_on
+      entity_id: script.light_small_torch_turn_on_min
+
+- alias: "light_livingroom_turn_off"
+  trigger:
+    - platform: event
+      event_type: xiaomi_aqara.click
+      event_data:
+        entity_id: binary_sensor.switch_158d0002136276
+        click_type: single
+  condition:
+    - condition: state
+      entity_id: light.livingroom
+      state: "on"
+  action:
+    - service: script.turn_on
+      entity_id: script.light_livingroom_turn_off
+
+- alias: "light_livingroom_turn_on"
+  trigger:
+    - platform: event
+      event_type: xiaomi_aqara.click
+      event_data:
+        entity_id: binary_sensor.switch_158d0002136276
+        click_type: single
+  condition:
+    - condition: state
+      entity_id: light.livingroom
+      state: "off"
+  action:
+    - service: script.turn_on
+      entity_id: script.light_livingroom_turn_on_default
+
+- alias: "light_livroom_garland_toggle"
+  trigger:
+  - platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_158d0002136276
+      click_type: double
+  action:
+    - service: light.toggle
+      entity_id: light.standalone_switch

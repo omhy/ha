@@ -7,10 +7,10 @@
         action_type: rotate
   action:
     - service: light.turn_on
-      entity_id: light.group_livroom_ambient
+      entity_id: light.livingroom
       data_template:
         brightness: >
-          {% set current = states.light.group_livroom_ambient.attributes.brightness | int %}
+          {% set current = states.light.livingroom.attributes.brightness | int %}
           {% set min = 1 | int %}
           {% set max = 255 | int %}
           {% set step = 50 | int %}
@@ -38,10 +38,10 @@
         action_type: flip90
   action:
     - service: light.turn_on
-      entity_id: light.group_livroom_ambient
+      entity_id: light.livingroom
       data_template:
         color_temp: >
-          {% set current = states.light.group_livroom_ambient.attributes.color_temp | int %}
+          {% set current = states.light.livingroom.attributes.color_temp | int %}
           {% set min = 153 | int %}
           {% set max = 588 | int %}
           {% set step = 80 | int %}
@@ -61,10 +61,10 @@
         action_type: flip180
   action:
     - service: light.turn_on
-      entity_id: light.group_livroom_ambient
+      entity_id: light.livingroom
       data_template:
         color_temp: >
-          {% set current = states.light.group_livroom_ambient.attributes.color_temp | int %}
+          {% set current = states.light.livingroom.attributes.color_temp | int %}
           {% set min = 153 | int %}
           {% set max = 588 | int %}
           {% set step = 80 | int %}
@@ -85,7 +85,7 @@
   action:
     - service: script.rmt_computer_sleep
     - service: script.turn_on
-      entity_id: script.good_night
+      entity_id: script.light_good_night
     - service: media_player.turn_off
       entity_id: all
 
@@ -98,7 +98,7 @@
         action_type: shake_air
   action:
     - service: script.turn_on
-      entity_id: script.living_room_light_on_low
+      entity_id: script.light_livingroom_turn_on_min
 
 #   action_type: move
 #   action_type: swing

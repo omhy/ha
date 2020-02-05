@@ -1,4 +1,4 @@
-- alias: "alert_entrance_door_opened_too_long"
+- alias: "door_entrance_opened_too_long"
   trigger:
     - platform: state
       entity_id: binary_sensor.door_window_sensor_158d00024367c8
@@ -8,27 +8,25 @@
   action:
     - service: script.alarm_door
 
-- alias: "entrance_door_opened"
+- alias: "door_entrance_opened"
   trigger:
     - platform: state
       entity_id: binary_sensor.door_window_sensor_158d00024367c8
       to: "on"
   action:
+    - service: script.aqara_stop_ringtone
     - service: notify.telegram_dima
       data_template:
         message: "{{ states.sensor.now_hm.state }} \U0001F513 Door is opened ({{ states.sensor.state_change_door_ago_min.state_with_unit }})"
     - service: script.state_change_update_door
 
-- alias: "entrance_door_closed"
+- alias: "door_entrance_closed"
   trigger:
     - platform: state
       entity_id: binary_sensor.door_window_sensor_158d00024367c8
       to: "off"
   action:
     - service: script.aqara_stop_ringtone
-    - service: automation.turn_off
-      entity_id:
-      - automation.entrance_door_opened_too_long_alarm
     - service: notify.telegram_dima
       data_template:
         message: "{{ states.sensor.now_hm.state }} \U0001F512 Door is closed ({{ states.sensor.state_change_door_ago_sec.state_with_unit }})"

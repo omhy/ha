@@ -1,4 +1,4 @@
-cosiness_on:
+light_cosiness_on:
   sequence:
     - service: light.turn_on
       entity_id:
@@ -7,7 +7,7 @@ cosiness_on:
         - light.standalone_switch
         - light.window_stars
 
-cosiness_off:
+light_cosiness_off:
   sequence:
     - service: light.turn_off
       entity_id:
@@ -16,7 +16,7 @@ cosiness_off:
         - light.standalone_switch
         - light.window_stars
 
-good_night:
+light_good_night:
   sequence:
     - service: light.turn_off
       entity_id:
@@ -28,7 +28,7 @@ good_night:
       - light.small_torch
       - light.window_stars
 
-departed:
+light_departed:
   sequence:
     - service: light.turn_on
       entity_id: light.fire_lamp
@@ -42,7 +42,7 @@ departed:
         - light.corridor
         - light.window_stars
 
-arrived:
+light_arrived:
   sequence:
     - service: light.turn_off
       entity_id:

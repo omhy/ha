@@ -20,7 +20,7 @@ entity_config:
     name: Corner lamp
     expose: true
     room: Living Room
-  light.group_livroom_ambient:
+  light.livingroom:
     name: Ambient
     expose: true
     room: Living Room

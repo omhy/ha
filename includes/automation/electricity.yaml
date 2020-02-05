@@ -1,4 +1,4 @@
-- alias: "schedule_computer_power_strip_off"
+- alias: "computer_power_strip_off"
   trigger:
     - platform: time
       at: "02:00:00"
@@ -6,7 +6,7 @@
     - service: switch.turn_off
       entity_id: switch.power_strip_1
 
-- alias: "schedule_computer_power_strip_on"
+- alias: "computer_power_strip_on"
   trigger:
     - platform: time
       at: "06:50:00"
@@ -14,7 +14,7 @@
     - service: switch.turn_on
       entity_id: switch.power_strip_1
 
-- alias: "state_computer_turned_off"
+- alias: "computer_turned_off"
   trigger:
     - platform: state
       entity_id: binary_sensor.ping_computer
@@ -27,20 +27,20 @@
       data_template:
         message: "{{ states.sensor.now_hm.state }} \U0001F5A5 is turned off ({{ states.sensor.computer_on_today_min.state | int }})"
 
-- alias: "state_computer_turned_on"
+- alias: "computer_turned_on"
   trigger:
     - platform: state
       entity_id: binary_sensor.ping_computer
       from: "off"
       to: "on"
       for:
-        minutes: 1
+        minutes: 2
   action:
     - service: notify.telegram_dima
       data_template:
         message: "{{ states.sensor.now_hm.state }} \U0001F5A5 is turned on ({{ states.sensor.computer_on_today_min.state | int }})"
 
-- alias: "state_laptop_turned_off"
+- alias: "laptop_turned_off"
   trigger:
     - platform: state
       entity_id: binary_sensor.ping_laptop
@@ -53,14 +53,14 @@
       data_template:
         message: "{{ states.sensor.now_hm.state }} \U0001F4BB is turned off ({{ states.sensor.laptop_on_today_minutes.state | int }})"
 
-- alias: "state_laptop_turned_on"
+- alias: "laptop_turned_on"
   trigger:
     - platform: state
       entity_id: binary_sensor.ping_laptop
       from: "off"
       to: "on"
       for:
-        minutes: 1
+        minutes: 2
   action:
     - service: notify.telegram_dima
       data_template:

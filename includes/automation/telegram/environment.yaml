@@ -1,0 +1,79 @@
+- alias: "telega_callback_environment"
+  trigger:
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: "/environment"
+  action:
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: "{{ trigger.event.data.id }}"
+        message: "Roger {{ trigger.event.data.data }}"
+    - service: telegram_bot.send_message
+      data_template:
+        target: "{{ trigger.event.data.user_id }}"
+        message: "Weather menu"
+        inline_keyboard:
+          - "\U0001F9E9 Today:/weather_today, \U00002601 Now:/weather_now"
+          - "\U0001F3D8 Rooms:/rooms, \U0001F308 Forecast:/forecast"
+          - "\U0000267B Dismiss:/dismiss"
+
+- alias: "telega_callback_weather_today"
+  trigger:
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: "/weather_today"
+  action:
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: "{{ trigger.event.data.id }}"
+        message: "Roger {{ trigger.event.data.data }}"
+    - service: script.telegram_send_weather_today
+      data_template:
+        target: "{{ trigger.event.data.user_id }}"
+
+- alias: "telega_callback_weather_now"
+  trigger:
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: "/weather_now"
+  action:
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: "{{ trigger.event.data.id }}"
+        message: "Roger {{ trigger.event.data.data }}"
+    - service: script.telegram_send_weather_now
+      data_template:
+        target: "{{ trigger.event.data.user_id }}"
+
+- alias: "telega_callback_rooms"
+  trigger:
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: "/rooms"
+  action:
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: "{{ trigger.event.data.id }}"
+        message: "Roger {{ trigger.event.data.data }}"
+    - service: script.telegram_send_rooms
+      data_template:
+        target: "{{ trigger.event.data.user_id }}"
+
+- alias: "telega_callback_forecast"
+  trigger:
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: "/forecast"
+  action:
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: "{{ trigger.event.data.id }}"
+        message: "Roger {{ trigger.event.data.data }}"
+    - service: script.telegram_send_weather_forecast
+      data_template:
+        target: "{{ trigger.event.data.user_id }}"

@@ -5,18 +5,17 @@
   action:
     - service: script.ha_set_defaults
     - service: automation.trigger
-      data_template:
-        entity_id:
-          - automation.update_input_text_radio_cast
+      data:
+        entity_id: automation.update_input_text_radio_cast
     - service: homeassistant.update_entity
-      data_template:
+      data:
         entity_id:
           - binary_sensor.is_holiday
           - binary_sensor.is_workday
           - binary_sensor.is_morning_activity
           - binary_sensor.is_backup_day
 
-- alias: "rpi_power_tracker"
+- alias: "ha_rpi_power_tracker"
   trigger:
     - platform: numeric_state
       entity_id: sensor.rpi_power_status
@@ -33,7 +32,7 @@
       data_template:
         message: "{{ states.sensor.now_hm.state }} \U0001f56f RPI Power reported {{ states.sensor.rpi_power_status.state }}. The state had changed from {{ trigger.from_state.state }}"
 
-- alias: "hacs_updates"
+- alias: "ha_hacs_updates"
   trigger:
     - platform: numeric_state
       entity_id: sensor.hacs
@@ -42,3 +41,33 @@
     - service: notify.telegram_dima
       data_template:
         message: "{{ states.sensor.now_hm.state }} \U0000269c HASC updated available: {{states.sensor.hacs.state}}"
+
+- alias: "ha_midnight_daily_refresh"
+  trigger:
+    - platform: time
+      at: "00:00:01"
+  action:
+    - service: counter.reset
+      entity_id: counter.yuriroom_motions_watch
+
+- alias: "ha_snapshot_create"
+  condition:
+    - condition: state
+      entity_id: binary_sensor.is_backup_day
+      state: "on"
+  trigger:
+    - platform: time
+      at: "01:15:00"
+  action:
+    - service: script.ha_snapshot_full_create
+
+- alias: "ha_snapshot_to_gdrive"
+  condition:
+    - condition: state
+      entity_id: binary_sensor.is_backup_day
+      state: "on"
+  trigger:
+    - platform: time
+      at: "03:30:00"
+  action:
+    - service: rest_command.google_backup

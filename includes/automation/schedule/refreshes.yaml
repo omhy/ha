@@ -1,7 +1,0 @@
-- alias: "schedule_daily_refresh"
-  trigger:
-    - platform: time
-      at: "00:00:01"
-  action:
-    - service: counter.reset
-      entity_id: counter.yuriroom_motions_watch

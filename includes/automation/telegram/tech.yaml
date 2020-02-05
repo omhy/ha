@@ -1,0 +1,129 @@
+- alias: "telega_callback_tech"
+  trigger:
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: "/tech"
+  action:
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: "{{ trigger.event.data.id }}"
+        message: "Roger {{ trigger.event.data.data }}"
+    - service: telegram_bot.send_message
+      data_template:
+        target: "{{ trigger.event.data.user_id }}"
+        message: "Tech menu"
+        inline_keyboard:
+          - "\U0001F5A5 Computer:/computer, \U0001F4BB Laptop:/laptop"
+          - "\U0001F4CB Log:/ha_getlog, \U0001F528 Restart:/ha_restart"
+          - "\U0001F50C Electro:/electro, \U0000267B Dismiss:/dismiss"
+
+- alias: "telega_callback_ha_restart"
+  trigger:
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: "/ha_restart"
+  action:
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: "{{ trigger.event.data.id }}"
+        message: "Roger {{ trigger.event.data.data }}"
+    - service: homeassistant.restart
+
+- alias: "telega_callback_ha_getlog"
+  trigger:
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: "/ha_getlog"
+  action:
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: "{{ trigger.event.data.id }}"
+        message: "Roger {{ trigger.event.data.data }}"
+    - service: telegram_bot.send_document
+      data_template:
+        target: "{{ trigger.event.data.user_id }}"
+        file: "/config/home-assistant.log"
+        inline_keyboard:
+          - "\U0001F504 Refresh:{{ trigger.event.data.data }}, \U0000267B Dismiss:/dismiss"
+
+- alias: "telega_callback_electro"
+  trigger:
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: "/electro"
+  action:
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: "{{ trigger.event.data.id }}"
+        message: "Roger {{ trigger.event.data.data }}"
+    - service: script.telegram_send_electro
+      data_template:
+        target: "{{ trigger.event.data.user_id }}"
+
+- alias: "telega_callback_computer"
+  trigger:
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: "/computer"
+  action:
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: "{{ trigger.event.data.id }}"
+        message: "Roger {{ trigger.event.data.data }}"
+    - service: telegram_bot.send_message
+      data_template:
+        target: "{{ trigger.event.data.user_id }}"
+        message: "Computer"
+        inline_keyboard:
+          - "\U0001F5A5 \U0001F4A4 Sleep:/rmt_computer_sleep"
+          - "\U0000267B Dismiss:/dismiss"
+
+- alias: "telega_callback_laptop"
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: "/laptop"
+  action:
+  - service: telegram_bot.answer_callback_query
+    data_template:
+      callback_query_id: "{{ trigger.event.data.id }}"
+      message: "Roger {{ trigger.event.data.data }}"
+  - service: telegram_bot.send_message
+    data_template:
+      target: "{{ trigger.event.data.user_id }}"
+      message: "Laptop"
+      inline_keyboard:
+        - "\U0001F4BB \U0001F4A4 Sleep:/rmt_laptop_sleep"
+        - "\U0000267B Dismiss:/dismiss"
+
+- alias: "telega_callback_computer_sleep"
+  trigger:
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: "/rmt_computer_sleep"
+  action:
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: "{{ trigger.event.data.id }}"
+        message: "Roger {{ trigger.event.data.data }}"
+    - service: script.rmt_computer_sleep
+
+- alias: "telega_callback_laptop_sleep"
+  trigger:
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: "/rmt_laptop_sleep"
+  action:
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: "{{ trigger.event.data.id }}"
+        message: "Roger {{ trigger.event.data.data }}"
+    - service: script.rmt_laptop_sleep

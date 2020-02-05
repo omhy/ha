@@ -36,6 +36,29 @@
         inline_keyboard:
           - "\U0000267B Dismiss:/dismiss"
 
+- alias: "weather_meteo_alert"
+  trigger:
+    - platform: state
+      entity_id: 
+        - binary_sensor.lv_kurzeme
+        - binary_sensor.lv_vidzeme
+        - binary_sensor.lv_zemgale
+        - binary_sensor.lv_latgale
+  action:
+    - service: telegram_bot.send_message
+      data_template:
+        target: !secret tg_chat_dima
+        message: >
+          {{ states.sensor.now_hm.state }} {{ '\U00002139' }} {{ trigger.to_state.attributes.friendly_name }}
+          {% if trigger.to_state.state == 'on' %}
+          `{{ trigger.to_state.attributes.event }} ({{ trigger.to_state.attributes.certainty }})`
+          {{ trigger.to_state.attributes.description }}
+          {% else %}
+          {{ '\U00002705' }} Safe!
+          {% endif %}
+        inline_keyboard:
+          - "\U0000267B Dismiss:/dismiss"
+
 - alias: "kitchen_power_switched_off"
   trigger:
     - platform: state
@@ -47,4 +70,18 @@
         target: !secret tg_chat_dima
         message: "{{ states.sensor.now_hm.state }} {{ '\U000026a1' }} Kitchen power strip is off!"
         inline_keyboard:
-          - "\U0001F4A4 Turn on:/power_strip_2_on, \U0000267B Dismiss:/dismiss"
+          - "\U0001F4A4 Turn on:/kitchen_is_off, \U0000267B Dismiss:/dismiss"
+
+- alias: "telega_callback_kitchen_is_off"
+  trigger:
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: "/kitchen_is_off"
+  action:
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: "{{ trigger.event.data.id }}"
+        message: "Roger {{ trigger.event.data.data }}"
+    - service: switch.turn_on
+      entity_id: switch.power_strip_2
