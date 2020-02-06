@@ -220,12 +220,18 @@ sensor.androidbox_on_today:
 sensor.outpark_temp_min:
   friendly_name: Park min
   icon: mdi:minus-box
+  unit_of_measurement: "°C"
+  device_class: temperature
 sensor.outpark_temp_max:
   friendly_name: Park max
   icon: mdi:plus-box
+  unit_of_measurement: "°C"
+  device_class: temperature
 sensor.outpark_temp_diff:
   friendly_name: Park diff
   icon: mdi:poll-box
+  unit_of_measurement: "°C"
+
 sensor.outpark_temp_min_at:
   friendly_name: Minimal @
   icon: mdi:clock
@@ -236,12 +242,18 @@ sensor.outpark_temp_max_at:
 sensor.outyard_temp_min:
   friendly_name: Yard min
   icon: mdi:minus-box
+  unit_of_measurement: "°C"
+  device_class: temperature
 sensor.outyard_temp_max:
   friendly_name: Yard max
   icon: mdi:plus-box
+  unit_of_measurement: "°C"
+  device_class: temperature
 sensor.outyard_temp_diff:
   friendly_name: Yard diff
   icon: mdi:poll-box
+  unit_of_measurement: "°C"
+
 sensor.outyard_temp_min_at:
   friendly_name: Minimal @
   icon: mdi:clock
@@ -261,7 +273,6 @@ sensor.androidbox_launcher_today:
 sensor.androidbox_hdvideo_today:
   friendly_name: HD Video
   icon: mdi:video-vintage
-
 
 sensor.days_in_month:
   friendly_name: Days in month
