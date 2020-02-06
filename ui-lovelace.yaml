@@ -52,6 +52,7 @@ views:
             secondary_info: last-changed
           - entity: person.alyona
             secondary_info: last-changed
+            
       - type: entities
         title: Adjustible lights
         show_header_toggle: false
@@ -97,7 +98,9 @@ views:
             - domain: light
               state: "on"
           exclude:
-            - entity_id: light.group_*
+            - entity_id: 
+                - light.livingroom
+                - light.christmas
 
 # CONDITIONAL OFF
       - type: vertical-stack

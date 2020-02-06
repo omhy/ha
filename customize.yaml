@@ -6,7 +6,7 @@ light.big_torch:
   icon: mdi:floor-lamp
 light.garland:
   friendly_name: Garland
-  icon: mdi:dots-horizontal
+  icon: mdi:string-lights
 light.window_stars:
   friendly_name: Stars
   icon: mdi:key-star
@@ -28,6 +28,12 @@ light.corridor:
 light.standalone_switch:
   friendly_name: Chain lamp
   icon: mdi:track-light
+light.livingroom:
+  friendly_name: Living room lights
+  icon: mdi:lightbulb-group
+light.livingroom:
+  friendly_name: Christmas lights
+  icon: mdi:pine-tree
 
 switch.wall_plug_158d0002013f1e:
   friendly_name: Standalone switch
