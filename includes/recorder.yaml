@@ -16,7 +16,6 @@ include:
     - binary_sensor.ping_laptop
     - binary_sensor.ping_tv
     - binary_sensor.door_window_sensor_158d00024367c8
-    - binary_sensor.vibration_158d0002c4e568
     - binary_sensor.motion_sensor_158d0001e52779
     - binary_sensor.motion_sensor_158d0001fa3dc0
     - binary_sensor.motion_sensor_158d0002d43d7d

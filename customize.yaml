@@ -353,7 +353,11 @@ binary_sensor.motion_sensor_158d0002d43d7d:
   friendly_name: Yuri room
 binary_sensor.door_window_sensor_158d00024367c8:
   friendly_name: Door
+
+#seat
 binary_sensor.vibration_158d0002c4e568:
+  friendly_name: Seat
+sensor.coordination_158d0002c4e568:
   friendly_name: Seat
 
 #ILLUMINATION
