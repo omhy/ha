@@ -113,15 +113,7 @@
     state_change_alyona_ago:
       value_template: "{{ ((now() - strptime(states.input_text.state_change_alyona.state, '%Y%m%d%H%M%S').astimezone()).seconds / 60) | round(0) }}"
       unit_of_measurement: "minutes"
-#MISC
-    computer_on_today_min:
-      value_template: "{{ ((states.sensor.computer_on_today.state | float) * 60) | int }}"
-      entity_id: sensor.computer_on_today
-      unit_of_measurement: "minutes"
-    laptop_on_today_minutes:
-      value_template: "{{ ((states.sensor.laptop_on_today.state | float) * 60) | int }}"
-      entity_id: sensor.laptop_on_today
-      unit_of_measurement: "minutes"
+#ABOX
     androidbox_app:
       value_template: "{{ states.media_player.androidbox.attributes.app_id.split('.')[-1] }}"
       entity_id: media_player.androidbox

@@ -55,10 +55,6 @@ sensor.disk_use_percent_home:
 sensor.swap_use_percent:
   friendly_name: Swap
 
-sensor.google_fit_sleep_minutes:
-  friendly_name: Google Fit sleep
-  icon: mdi:clock
-
 #WAZE
 #sensor.waze_current_home:
 #  friendly_name: To home
@@ -395,17 +391,9 @@ sensor.ha_version_current:
 sensor.computer_on_today:
   friendly_name: Computer
   icon: mdi:desktop-classic
-sensor.computer_on_today_min:
-  friendly_name: Computer (minutes)
-  icon: mdi:desktop-classic
-  unit_of_measurement: "minutes"
 sensor.laptop_on_today:
   friendly_name: Laptop
   icon: mdi:laptop
-sensor.laptop_on_today_min:
-  friendly_name: Laptop (minutes)
-  icon: mdi:laptop
-  unit_of_measurement: "minutes"
 sensor.tv_on_today:
   friendly_name: TV
   icon: mdi:television

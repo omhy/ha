@@ -563,8 +563,9 @@ views:
         show_header_toggle: false
         title: Computers Today
         entities:
-          - sensor.computer_on_today_min
-          - sensor.laptop_on_today_minutes
+          - sensor.computer_on_today
+          - sensor.laptop_on_today
+          - sensor.tv_on_today
 
       - type: history-graph
         title: Living room power 1h
@@ -1018,7 +1019,6 @@ views:
           - sensor.google_fit_weight
           - sensor.google_fit_heartrate
           - sensor.google_fit_sleep
-          - sensor.google_fit_sleep_minutes
 
       - type: vertical-stack
         cards:
