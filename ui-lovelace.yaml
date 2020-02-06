@@ -100,9 +100,8 @@ views:
             - domain: light
               state: "on"
           exclude:
-            - entity_id: 
-                - light.livingroom
-                - light.christmas
+            - entity_id: light.livingroom
+            - entity_id: light.christmas
 
 # CONDITIONAL OFF
       - type: vertical-stack
@@ -163,9 +162,6 @@ views:
 # EO CONDITIONAL OFF
       - type: custom:weather-card
         entity: weather.smhi_home
-
-      # - type: custom:weather-card
-      #   entity: weather.home
 
       - type: custom:calendar-card
         title: Events
@@ -427,20 +423,19 @@ views:
               - binary_sensor.ping_tv
               - binary_sensor.ping_androidbox
           - type: glance
+            title: Android box
+            entities:
+              - sensor.androidbox_app
+              - sensor.androidbox_youtube_today
+              - sensor.androidbox_perfectplayer_today
+              - sensor.androidbox_hdvideo_today
+          - type: glance
             title: Is on Today
             entities:
               - sensor.computer_on_today
               - sensor.laptop_on_today
               - sensor.tv_on_today
               - sensor.androidbox_on_today
-          - type: glance
-            title: androidbox usage
-            entities:
-#              - sensor.androidbox_launcher_today
-              - sensor.androidbox_app
-              - sensor.androidbox_youtube_today
-              - sensor.androidbox_perfectplayer_today
-              - sensor.androidbox_hdvideo_today
 
       - type: history-graph
         title: Movements 1h
@@ -477,7 +472,6 @@ views:
         image: /local/hue.png
       - type: glance
         title: Flow
-        show_header_toggle: false
         entities:
           - entity: input_boolean.livingroom_torch_use
             tap_action:
@@ -485,7 +479,7 @@ views:
           - entity: input_boolean.livingroom_corner_use
             tap_action:
               action: toggle
-          - input_select.living_room_flow
+          - entity: input_select.living_room_flow
       - type: entities
         title: Common settings
         show_header_toggle: false
@@ -522,55 +516,43 @@ views:
       - type: glance
         title: Computer
         entities:
-          - sensor.power_strip_1_load_power
-          - sensor.power_strip_1_utility_h
-          - sensor.power_strip_1_utility_d
-          - sensor.power_strip_1_utility_w
-          - sensor.power_strip_1_utility_m
+          - entity: sensor.power_strip_1_load_power
+          - entity: sensor.power_strip_1_utility_h
+          - entity: sensor.power_strip_1_utility_d
+          - entity: sensor.power_strip_1_utility_w
+          - entity: sensor.power_strip_1_utility_m
       - type: glance
         title: TV
-        show_header_toggle: true
         entities:
-          - sensor.power_strip_4_load_power
-          - sensor.power_strip_4_utility_h
-          - sensor.power_strip_4_utility_d
-          - sensor.power_strip_4_utility_w
-          - sensor.power_strip_4_utility_m
+          - entity: sensor.power_strip_4_load_power
+          - entity: sensor.power_strip_4_utility_h
+          - entity: sensor.power_strip_4_utility_d
+          - entity: sensor.power_strip_4_utility_w
+          - entity: sensor.power_strip_4_utility_m
       - type: glance
         title: Router
-        show_header_toggle: true
         entities:
-          - sensor.power_strip_3_load_power
-          - sensor.power_strip_3_utility_h
-          - sensor.power_strip_3_utility_d
-          - sensor.power_strip_3_utility_w
-          - sensor.power_strip_3_utility_m
+          - entity: sensor.power_strip_3_load_power
+          - entity: sensor.power_strip_3_utility_h
+          - entity: sensor.power_strip_3_utility_d
+          - entity: sensor.power_strip_3_utility_w
+          - entity: sensor.power_strip_3_utility_m
       - type: glance
         title: Kitchen
-        show_header_toggle: true
         entities:
-          - sensor.power_strip_2_load_power
-          - sensor.power_strip_2_utility_h
-          - sensor.power_strip_2_utility_d
-          - sensor.power_strip_2_utility_w
-          - sensor.power_strip_2_utility_m
+          - entity: sensor.power_strip_2_load_power
+          - entity: sensor.power_strip_2_utility_h
+          - entity: sensor.power_strip_2_utility_d
+          - entity: sensor.power_strip_2_utility_w
+          - entity: sensor.power_strip_2_utility_m
       - type: glance
         title: Fridge
-        show_header_toggle: true
         entities:
-          - sensor.power_strip_5_load_power
-          - sensor.power_strip_5_utility_h
-          - sensor.power_strip_5_utility_d
-          - sensor.power_strip_5_utility_w
-          - sensor.power_strip_5_utility_m
-
-      - type: entities
-        show_header_toggle: false
-        title: Computers Today
-        entities:
-          - sensor.computer_on_today
-          - sensor.laptop_on_today
-          - sensor.tv_on_today
+          - entity: sensor.power_strip_5_load_power
+          - entity: sensor.power_strip_5_utility_h
+          - entity: sensor.power_strip_5_utility_d
+          - entity: sensor.power_strip_5_utility_w
+          - entity: sensor.power_strip_5_utility_m
 
       - type: history-graph
         title: Living room power 1h
@@ -579,7 +561,6 @@ views:
           - sensor.power_strip_1_load_power
           - sensor.power_strip_3_load_power
           - sensor.power_strip_4_load_power
-
 
 ##############   FORECAST
   - title: Forecast
@@ -592,13 +573,6 @@ views:
         columns: 3
         height: 100px
         max: 40
-        # severity:
-        #   - value: 0
-        #     color: !secret green
-        #   - value: 20
-        #     color: !secret sand
-        #   - value: 30
-        #     color: !secret red
         entities:
           - sensor.temperature_158d00022c7cf2
           - sensor.temperature_158d0002323783
@@ -627,6 +601,7 @@ views:
           title_position: "off"
           columns: 8
           height: 80px
+          min: -10
           max: 40
           severity:
             - value: 10
@@ -731,6 +706,7 @@ views:
           columns: 4
           height: 80px
           max: 40
+          min: -10
           severity:
             - value: 10
               color: !secret blue
@@ -1009,9 +985,9 @@ views:
       - type: glance
         title: Dates
         entities:
-          - sensor.days_in_month
-          - sensor.date
-          - sensor.time
+          - entity: sensor.days_in_month
+          - entity: sensor.date
+          - entity: sensor.time
 
       - type: entities
         title: Dima
