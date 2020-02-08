@@ -1,0 +1,17 @@
+- alias: "ikea_switch_1_on"
+  trigger:
+    - platform: state
+      entity_id: sensor.0xec1bbdfffea090e5_click
+      to: "on"
+  action:
+    - service: light.toggle
+      entity_id: light.0xec1bbdfffe4d16eb_light
+
+- alias: "ikea_switch_1_off"
+  trigger:
+    - platform: state
+      entity_id: sensor.0xec1bbdfffea090e5_click
+      to: "off"
+  action:
+    - service: light.toggle
+      entity_id: light.standalone_switch

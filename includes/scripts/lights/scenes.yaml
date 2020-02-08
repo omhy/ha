@@ -27,6 +27,7 @@ light_good_night:
       - light.standalone_switch
       - light.small_torch
       - light.window_stars
+      - light.0xec1bbdfffe4d16eb_light
 
 light_departed:
   sequence:
@@ -41,6 +42,7 @@ light_departed:
         - light.bathroom
         - light.corridor
         - light.window_stars
+        - light.0xec1bbdfffe4d16eb_light
 
 light_arrived:
   sequence:

@@ -31,7 +31,7 @@ light.standalone_switch:
 light.livingroom:
   friendly_name: Living room lights
   icon: mdi:lightbulb-group
-light.livingroom:
+light.christmas:
   friendly_name: Christmas lights
   icon: mdi:pine-tree
 
@@ -152,7 +152,7 @@ media_player.surround:
   friendly_name: Surround
   icon: mdi:surround-sound
 #MEDIA_PLAYERS MISC
-media_player.spotify:
+media_player.spotify_dmitry:
   friendly_name: Spotify
   icon: mdi:spotify
 media_player.chromecast:
@@ -418,3 +418,13 @@ sensor.laptop_on_today:
 sensor.tv_on_today:
   friendly_name: TV
   icon: mdi:television
+
+#ZIGBEE
+#0xec1bbdfffe4d16eb IKEA BULB 1 | LED1836G9 - https://www.zigbee2mqtt.io/devices/LED1836G9.html
+light.0xec1bbdfffe4d16eb_light:
+  friendly_name: Pendant
+  icon: mdi:coach-lamp
+
+#0xec1bbdfffea090e5 IKEA BTN 1 | E1743 - https://www.zigbee2mqtt.io/devices/E1743.html
+sensor.0xec1bbdfffea090e5_click:
+  friendly_name: Ikea switch 1

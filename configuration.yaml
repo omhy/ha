@@ -62,6 +62,10 @@ http:
   # login_attempts_threshold: 5
   base_url: !secret http_base_url_no_port
 
+spotify:
+  client_id: !secret spotify_client_id
+  client_secret: !secret spotify_client_secret
+
 tts:
 - platform: google_translate
   service_name: google_say

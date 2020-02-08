@@ -23,6 +23,8 @@ include:
     - sensor.rpi_power_status
     - sensor.moon
     - sensor.processor_use
+    - sensor.cpu_mean
+    - sensor.cpu_derivative
     - sensor.memory_use_percent
     - sensor.disk_use_percent_home
     - sensor.swap_use_percent
@@ -112,13 +114,8 @@ include:
     - sensor.wt24_pressure
     - sensor.wt72_pressure
     - sensor.wt48_pressure
-    - power_strip_1_integral
-    - power_strip_2_integral
-    - power_strip_3_integral
-    - power_strip_4_integral
-    - power_strip_5_integral
-    - power_strip_1_derivative
-    - power_strip_2_derivative
-    - power_strip_3_derivative
-    - power_strip_4_derivative
-    - power_strip_5_derivative
+    - sensor.power_strip_1_derivative
+    - sensor.power_strip_2_derivative
+    - sensor.power_strip_3_derivative
+    - sensor.power_strip_4_derivative
+    - sensor.power_strip_5_derivative

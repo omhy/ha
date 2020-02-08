@@ -1,8 +1,0 @@
-- platform: statistics
-  entity_id: sensor.temperature_158d0002323783
-- platform: statistics
-  entity_id: sensor.temperature_158d00022c7cf2
-- platform: statistics
-  entity_id: sensor.processor_use
-- platform: statistics
-  entity_id: sensor.memory_use_percent

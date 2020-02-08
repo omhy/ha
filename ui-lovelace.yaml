@@ -46,8 +46,6 @@ views:
             secondary_info: last-changed
           - entity: binary_sensor.door_window_sensor_158d00024367c8
             secondary_info: last-changed
-          - entity: binary_sensor.vibration_158d0002c4e568
-            secondary_info: last-changed
           - entity: sensor.coordination_158d0002c4e568
             secondary_info: last-changed
           - entity: person.dima
@@ -67,6 +65,9 @@ views:
               toggle: true
             - type: custom:slider-entity-row
               entity: light.small_torch
+              toggle: true
+            - type: custom:slider-entity-row
+              entity: light.0xec1bbdfffe4d16eb_light
               toggle: true
 
       - type: glance
@@ -154,7 +155,7 @@ views:
             include:
               - domain: media_player
             exclude:
-              - entity_id: media_player.spotify
+              - entity_id: media_player.spotify_dmitry
               - state: "off"
               - state: "idle"
               - state: "unavailable"
@@ -275,7 +276,7 @@ views:
             artwork: cover
 
           - type: custom:mini-media-player
-            entity: media_player.spotify
+            entity: media_player.spotify_dmitry
             artwork: full-cover
 
     ##################   CLIMATE
@@ -867,7 +868,19 @@ views:
             name: Chromecast API
             url: http://192.168.1.33:8008/setup/eureka_info
             icon: mdi:google-chrome
-            
+
+  ##################   LAB
+  - title: Lab
+    path: lab
+    icon: mdi:radioactive
+    cards:
+      - type: entities
+        title: Computer PS 2h
+        entities:
+          - sensor.power_strip_1_load_power
+          - sensor.power_strip_1_derivative
+
+
   ##################   SYSTEM
   - title: System
     path: sys
@@ -976,6 +989,14 @@ views:
           - sensor.memory_use_percent
           - sensor.disk_use_percent_home
           - sensor.temperature
+
+      - type: entities
+        title: Zigbee
+        show_header_toggle: false
+        entities:
+          - input_boolean.zigbee_permit_join
+          - timer.zigbee_permit_join
+          - sensor.bridge_state
 
   ##################   DETAILS
   - title: Misc
