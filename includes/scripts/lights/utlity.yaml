@@ -1,0 +1,36 @@
+light_adjust_brightness:
+  sequence:
+    - service: light.turn_on
+      data_template:
+        entity_id: "{{ entity_id }}"
+        brightness: >
+          {% set current = state_attr(entity_id, 'brightness') | int %}
+          {% set min = 1 | int %}
+          {% set max = 255 | int %}
+          {% set current = current + step | int %}
+          {% if current < min %}
+            {% set current = min %}
+          {% endif %}
+          {% if current > max %}
+            {% set current = max %}
+          {% endif %}
+          {{ current }}
+
+light_adjust_color_temp:
+  sequence:
+    - service: light.turn_on
+      data_template:
+        entity_id: "{{ entity_id }}"
+        color_temp: >
+          {% set current = state_attr(entity_id, 'color_temp') | int %}
+          {% set min = 153 | int %}
+          {% set max = 588 | int %}
+          {% set current = current + step | int %}
+          {% if current < min %}
+            {% set current = min %}
+          {% endif %}
+          {% if current > max %}
+            {% set current = max %}
+          {% endif %}
+          {{ current }}
+

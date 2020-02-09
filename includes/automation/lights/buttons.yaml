@@ -57,7 +57,7 @@
         click_type: single
   condition:
     - condition: state
-      entity_id: light.livingroom
+      entity_id: light.livingroom_color
       state: "on"
   action:
     - service: script.turn_on
@@ -72,13 +72,13 @@
         click_type: single
   condition:
     - condition: state
-      entity_id: light.livingroom
+      entity_id: light.livingroom_color
       state: "off"
   action:
     - service: script.turn_on
       entity_id: script.light_livingroom_turn_on_default
 
-- alias: "light_livroom_garland_toggle"
+- alias: "light_livroom_color_flow"
   trigger:
   - platform: event
     event_type: xiaomi_aqara.click
@@ -86,5 +86,4 @@
       entity_id: binary_sensor.switch_158d0002136276
       click_type: double
   action:
-    - service: light.toggle
-      entity_id: light.standalone_switch
+    - service: script.light_livingroom_color_flow

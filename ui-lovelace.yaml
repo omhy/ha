@@ -100,8 +100,9 @@ views:
           include:
             - domain: light
               state: "on"
-          exclude:
+          exclude: #groups
             - entity_id: light.livingroom
+            - entity_id: light.livingroom_color
             - entity_id: light.christmas
 
 # CONDITIONAL OFF

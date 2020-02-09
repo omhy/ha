@@ -28,8 +28,13 @@ light.corridor:
 light.standalone_switch:
   friendly_name: Chain lamp
   icon: mdi:track-light
+
+#LIGHT_GROUPS
 light.livingroom:
   friendly_name: Living room lights
+  icon: mdi:lightbulb-group
+light.livingroom_color:
+  friendly_name: Living room color lights
   icon: mdi:lightbulb-group
 light.christmas:
   friendly_name: Christmas lights

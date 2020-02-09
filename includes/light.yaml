@@ -42,6 +42,12 @@
   - light.0xec1bbdfffe4d16eb_light
 
 - platform: group
+  name: livingroom_color
+  entities:
+  - light.big_torch
+  - light.corner_lamp
+
+- platform: group
   name: christmas
   entities:
   - light.tree_lamp
