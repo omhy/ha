@@ -50,11 +50,9 @@
 
 - alias: "light_livingroom_turn_off"
   trigger:
-    - platform: event
-      event_type: xiaomi_aqara.click
-      event_data:
-        entity_id: binary_sensor.switch_158d0002136276
-        click_type: single
+    - platform: state
+      entity_id: sensor.0x00158d0002136276_click
+      to: "single"
   condition:
     - condition: state
       entity_id: light.livingroom_color
@@ -65,11 +63,9 @@
 
 - alias: "light_livingroom_turn_on"
   trigger:
-    - platform: event
-      event_type: xiaomi_aqara.click
-      event_data:
-        entity_id: binary_sensor.switch_158d0002136276
-        click_type: single
+    - platform: state
+      entity_id: sensor.0x00158d0002136276_click
+      to: "single"
   condition:
     - condition: state
       entity_id: light.livingroom_color
@@ -80,10 +76,8 @@
 
 - alias: "light_livroom_color_flow"
   trigger:
-  - platform: event
-    event_type: xiaomi_aqara.click
-    event_data:
-      entity_id: binary_sensor.switch_158d0002136276
-      click_type: double
+    - platform: state
+      entity_id: sensor.0x00158d0002136276_click
+      to: "double"
   action:
     - service: script.light_livingroom_color_flow

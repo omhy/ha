@@ -1,7 +1,7 @@
 - alias: "yuriroom_movement"
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_sensor_158d0002d43d7d
+      entity_id: binary_sensor.0x00158d0002d43d7d_occupancy
       to: "on"
   condition:
     - condition: time

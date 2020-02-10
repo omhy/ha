@@ -1,35 +1,35 @@
 ### COUNTERS
-- platform: history_stats
-  name: count_opened_door
-  entity_id: binary_sensor.door_window_sensor_158d00024367c8
-  type: "count"
-  state: "on"
-  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
-  end: "{{ now() }}"
+# - platform: history_stats
+#   name: count_opened_door
+#   entity_id: binary_sensor.door_window_sensor_158d00024367c8
+#   type: "count"
+#   state: "on"
+#   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+#   end: "{{ now() }}"
 
-- platform: history_stats
-  name: count_motions_bathroom
-  entity_id: binary_sensor.motion_sensor_158d0001e52779
-  type: "count"
-  state: "on"
-  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
-  end: "{{ now() }}"
+# - platform: history_stats
+#   name: count_motions_bathroom
+#   entity_id: binary_sensor.motion_sensor_158d0001e52779
+#   type: "count"
+#   state: "on"
+#   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+#   end: "{{ now() }}"
 
-- platform: history_stats
-  name: count_motions_yury_room
-  entity_id: binary_sensor.motion_sensor_158d0002d43d7d
-  type: "count"
-  state: "on"
-  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
-  end: "{{ now() }}"
+# - platform: history_stats
+#   name: count_motions_yury_room
+#   entity_id: binary_sensor.0x00158d0002d43d7d_occupancy
+#   type: "count"
+#   state: "on"
+#   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+#   end: "{{ now() }}"
 
-- platform: history_stats
-  name: count_motions_living_room
-  entity_id: binary_sensor.motion_sensor_158d0001fa3dc0
-  type: "count"
-  state: "on"
-  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
-  end: "{{ now() }}"
+# - platform: history_stats
+#   name: count_motions_living_room
+#   entity_id: binary_sensor.0x00158d0001fa3dc0_occupancy
+#   type: "count"
+#   state: "on"
+#   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+#   end: "{{ now() }}"
 ### TIMERS
 - platform: history_stats
   name: computer_on_today

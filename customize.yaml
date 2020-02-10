@@ -363,9 +363,9 @@ binary_sensor.switch_158d00021329e3:
 #motion
 binary_sensor.motion_sensor_158d0001e52779:
   friendly_name: Bathroom
-binary_sensor.motion_sensor_158d0001fa3dc0:
-  friendly_name: Living room
-binary_sensor.motion_sensor_158d0002d43d7d:
+binary_sensor.0x00158d0001fa3dc0_occupancy:
+  friendly_name: Living room (zb)
+binary_sensor.0x00158d0002d43d7d_occupancy:
   friendly_name: Yuri room
 binary_sensor.door_window_sensor_158d00024367c8:
   friendly_name: Door
@@ -379,9 +379,9 @@ sensor.coordination_158d0002c4e568:
 #ILLUMINATION
 sensor.illumination_158d0001e52779:
   friendly_name: Bathroom
-sensor.illumination_158d0001fa3dc0:
+sensor.0x00158d0001fa3dc0_illuminance:
   friendly_name: Livingroom
-sensor.illumination_158d0002d43d7d:
+sensor.0x00158d0002d43d7d_illuminance:
   friendly_name: Yuri room
 sensor.illumination_7811dcb36cee:
   friendly_name: Gateway
