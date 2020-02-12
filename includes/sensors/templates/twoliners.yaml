@@ -32,10 +32,10 @@
       value_template: "{{ states.binary_sensor.switch_158d00021350ee.attributes.battery_level | float }}"
       entity_id: binary_sensor.switch_158d00021350ee
       friendly_name: Doorbell
-    pass_button_battery_level:
-      value_template: "{{ states.binary_sensor.switch_158d00021329e3.attributes.battery_level | float }}"
-      entity_id: binary_sensor.switch_158d00021329e3
-      friendly_name: Entrance button
+    # pass_button_battery_level:
+    #   value_template: "{{ states.binary_sensor.switch_158d00021329e3.attributes.battery_level | float }}"
+    #   entity_id: binary_sensor.switch_158d00021329e3
+    #   friendly_name: Entrance button
 #motion
     motion1_battery_level:
       value_template: "{{ states.binary_sensor.motion_sensor_158d0001e52779.attributes.battery_level | float }}"
