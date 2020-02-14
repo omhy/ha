@@ -11,12 +11,6 @@ include:
   entities:
     - binary_sensor.0x00158d0001fa3dc0_occupancy #zigbee
     - binary_sensor.0x00158d0002d43d7d_occupancy
-    - sensor.0xec1bbdfffea090e5_linkquality
-    - sensor.0xec1bbdfffe4d16eb_linkquality
-    - sensor.0x00158d0001fa3dc0_linkquality
-    - sensor.0x00158d0002d43d7d_linkquality
-    - sensor.0x00158d0002136276_linkquality
-
     - sensor.adguard_rules_count
     - sensor.adguard_average_processing_speed
     - binary_sensor.ping_computer

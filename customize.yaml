@@ -364,9 +364,9 @@ binary_sensor.switch_158d00021350ee:
 binary_sensor.motion_sensor_158d0001e52779:
   friendly_name: Bathroom
 binary_sensor.0x00158d0001fa3dc0_occupancy:
-  friendly_name: Living room (zb)
+  friendly_name: Living room [z]
 binary_sensor.0x00158d0002d43d7d_occupancy:
-  friendly_name: Yuri room
+  friendly_name: Yuri room [z]
 binary_sensor.door_window_sensor_158d00024367c8:
   friendly_name: Door
 

@@ -1006,15 +1006,6 @@ views:
 
       - type: custom:auto-entities
         card:
-          type: history-graph
-          title: Link quality (3h)
-          hours_to_show: 3
-        filter:
-          include:
-            - entity_id: "*.0*_linkquality"
-
-      - type: custom:auto-entities
-        card:
           type: entities
           title: Link quality
           show_header_toggle: false
