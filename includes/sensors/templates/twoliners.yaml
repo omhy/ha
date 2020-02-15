@@ -89,6 +89,9 @@
     now_ymdhms:
       value_template: "{{ now().strftime('%Y%m%d%H%M%S') }}"
       entity_id: sensor.time
+    now_ymd:
+      value_template: "{{ now().strftime('%Y-%m-%d') }}"
+      entity_id: sensor.time
 #RPI
     rpi:
       value_template: "{{states.sensor.processor_use.state_with_unit}} / {{states.sensor.memory_use_percent.state_with_unit}} / {{states.sensor.temperature.state_with_unit}}"

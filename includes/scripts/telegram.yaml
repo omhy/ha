@@ -3,7 +3,7 @@ telegram_send_weather_today:
     - service: telegram_bot.send_message
       data_template:
         target: "{{ target }}"
-        title: "#EnvToday {{ now().strftime('%Y-%m-%d') }}"
+        title: "#EnvToday {{ states('sensor.now_ymd') }}"
         message: >
           {% set frm3 = "%8s | %-8s" %}
           ```
@@ -29,7 +29,7 @@ telegram_send_weather_now:
     - service: telegram_bot.send_message
       data_template:
         target: "{{ target }}"
-        title: "#EnvNow {{ now().strftime('%Y-%m-%d') }}"
+        title: "#EnvNow {{ states('sensor.now_ymd') }}"
         message: >
           {{ '\U0001F333' }} `Park: {{ states['sensor.temperature_158d00022c7cf2'].state_with_unit }}, {{ states['sensor.humidity_158d00022c7cf2'].state_with_unit }}`
 
@@ -71,7 +71,7 @@ telegram_send_electro:
     - service: telegram_bot.send_message
       data_template:
         target: "{{ target }}"
-        title: "#Consumption {{ now().strftime('%Y-%m-%d') }} - {{ states['sensor.consumption_today'].state_with_unit }}"
+        title: "#Consumption {{ states('sensor.now_ymd') }} - {{ states['sensor.consumption_today'].state_with_unit }}"
         message: >
           {% set frm = "%-4s | %-5s | %-6s" %}
 
@@ -98,7 +98,7 @@ telegram_send_fit:
     - service: telegram_bot.send_message
       data_template:
         target: "{{ target }}"
-        title: "#Fit {{ now().strftime('%Y-%m-%d') }}"
+        title: "#Fit {{ states('sensor.now_ymd') }}"
         message: >
           {{ '\U0001f463' }} {{states['sensor.google_fit_steps'].state_with_unit }}
           
