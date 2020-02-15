@@ -878,11 +878,6 @@ views:
     path: lab
     icon: mdi:radioactive
     cards:
-      - type: entities
-        title: Computer PS 2h
-        entities:
-          - sensor.power_strip_1_load_power
-          - sensor.power_strip_1_derivative
 
   ##################   SYSTEM
   - title: System
