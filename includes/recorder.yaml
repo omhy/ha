@@ -20,7 +20,7 @@ include:
     - binary_sensor.ping_androidbox
     - binary_sensor.ping_laptop
     - binary_sensor.ping_tv
-    - binary_sensor.door_window_sensor_158d00024367c8
+    - binary_sensor.0x00158d00024367c8_contact #entrance door
     - binary_sensor.0x00158d0001e52779_occupancy #bathroom
     - binary_sensor.smoke_sensor_158d0003537bf0
     - sensor.rpi_power_status
@@ -40,6 +40,7 @@ include:
     - sensor.google_fit_weight
     - sensor.google_fit_heartrate
     - sensor.androidbox_app
+    - sensor.androidbox_app_full
     - sensor.power_strip_1_load_power
     - sensor.power_strip_2_load_power
     - sensor.power_strip_3_load_power
@@ -53,19 +54,19 @@ include:
     - sensor.temperature_158d0002271609
     - sensor.temperature_158d00022c7cf2
     - sensor.temperature_158d0002323783
-    - sensor.temperature_158d000234816a
+    - sensor.0x00158d000234816a_temperature
     - sensor.temperature_158d00032308dd
     - sensor.humidity_158d0001f23cbe
     - sensor.humidity_158d0002271609
     - sensor.humidity_158d00022c7cf2
     - sensor.humidity_158d0002323783
-    - sensor.humidity_158d000234816a
+    - sensor.0x00158d000234816a_humidity
     - sensor.humidity_158d00032308dd
     - sensor.pressure_158d0001f23cbe
     - sensor.pressure_158d0002271609
     - sensor.pressure_158d00022c7cf2
     - sensor.pressure_158d0002323783
-    - sensor.pressure_158d000234816a
+    - sensor.0x00158d000234816a_pressure
     - sensor.pressure_158d00032308dd
     - sensor.wt00_temperature
     - sensor.wt01_temperature

@@ -179,11 +179,11 @@ sensor.temperature_158d0001f23cbe:
   friendly_name: Bedroom
 sensor.pressure_158d0001f23cbe:
   friendly_name: Bedroom
-sensor.humidity_158d000234816a:
+sensor.0x00158d000234816a_humidity:
   friendly_name: Living room
-sensor.temperature_158d000234816a:
+sensor.0x00158d000234816a_temperature:
   friendly_name: Living room
-sensor.pressure_158d000234816a:
+sensor.0x00158d000234816a_pressure:
   friendly_name: Living room
 sensor.humidity_158d00032308dd:
   friendly_name: Kitchen
@@ -339,12 +339,8 @@ sensor.0x00158d00028776ae_action:
   icon: mdi:cube-outline
 
 #wall-logic
-binary_sensor.wall_switch_left_158d00026b96c1:
-  friendly_name: standalone/one/left
-binary_sensor.wall_switch_right_158d00026b96c1:
-  friendly_name: standalone/one/right
-binary_sensor.wall_switch_both_158d00026b96c1:
-  friendly_name: standalone/one/both
+sensor.0x00158d00026b96c1_click:
+  friendly_name: Wireless switch
 
 #wall-real
 switch.wall_switch_left_158d00022391ec:
@@ -367,12 +363,13 @@ binary_sensor.0x00158d0001fa3dc0_occupancy:
   friendly_name: Living room [z]
 binary_sensor.0x00158d0002d43d7d_occupancy:
   friendly_name: Yuri room [z]
-binary_sensor.door_window_sensor_158d00024367c8:
-  friendly_name: Door
+binary_sensor.0x00158d00024367c8_contact:
+  friendly_name: Door [z]
 
 #seat
 sensor.0x00158d0002c4e568_action:
   friendly_name: Seat action
+  icon: mdi:seat
 sensor.0x00158d0002c4e568_sensitivity:
   friendly_name: Seat sensitivity
 sensor.0x00158d0002c4e568_strength:

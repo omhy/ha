@@ -25,7 +25,7 @@ ha_snapshot_full_create:
   sequence:
     - service: hassio.snapshot_full
       data_template:
-        name: "backup_{{ states.sensor.now_ymdhms.state }}"
+        name: "backup_{{ states['sensor.now_ymdhms'].state }}"
 
 ### MISC
 rmt_computer_sleep:
@@ -45,4 +45,4 @@ alarm_door:
         ringtone_vol: "10"
     - service: notify.telegram_all
       data_template:
-        message: "{{ states.sensor.now_hm.state }} \U0001F6A8 Door opened for a while"
+        message: "{{ states['sensor.now_hm'].state }} \U0001F6A8 Door opened for a while"

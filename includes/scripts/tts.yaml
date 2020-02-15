@@ -4,13 +4,13 @@ tts_summary:
       data_template:
         message: >
           Привет!
-          До работы ехать {{ states.sensor.waze_home_work.state }} минут.
-          В парке температура - {{ states.sensor.temperature_158d00022c7cf2.state | round(0) }} градусов.
-          Во дворе температура - {{ states.sensor.temperature_158d0002323783.state | round(0) }} градусов.
-          ветер - {{ states.sensor.wt00_wind_speed.state | round(0) }} метров в секунду.
-          осадки - {{ states.sensor.wt00_precipitation.state | round(0) }} миллиметров.
-          Минимальная температура в парке {{ states.sensor.outpark_temp_min.state | round(0) }} была в {{ states.sensor.outpark_temp_min_at.state }}.
-          Минимальная температура во дворе {{ states.sensor.outyard_temp_min.state | round(0) }} была в {{ states.sensor.outyard_temp_min_at.state }}.
+          До работы ехать {{ states('sensor.waze_home_work') }} минут.
+          В парке температура - {{ states('sensor.temperature_158d00022c7cf2') | round(0) }} градусов.
+          Во дворе температура - {{ states('sensor.temperature_158d0002323783') | round(0) }} градусов.
+          ветер - {{ states('sensor.wt00_wind_speed') | round(0) }} метров в секунду.
+          осадки - {{ states('sensor.wt00_precipitation') | round(0) }} миллиметров.
+          Минимальная температура в парке {{ states('sensor.outpark_temp_min') | round(0) }} была в {{ states('sensor.outpark_temp_min_at') }}.
+          Минимальная температура во дворе {{ states('sensor.outyard_temp_min') | round(0) }} была в {{ states('sensor.outyard_temp_min_at') }}.
           Удачи вам, ребята!!!
 
 tts_rooms:
@@ -19,19 +19,19 @@ tts_rooms:
       data_template:
         message: >
           Температура.
-          Парк - {{ states.sensor.temperature_158d00022c7cf2.state | round(0) }}.
-          Двор - {{ states.sensor.temperature_158d0002323783.state | round(0) }}.
-          Гостинная - {{ states.sensor.temperature_158d000234816a.state | round(0) }}.
-          Кухня - {{ states.sensor.temperature_158d00032308dd.state | round(0) }}.
-          Юркина - {{ states.sensor.temperature_158d0002271609.state | round(0) }}.
-          Спальня - {{ states.sensor.temperature_158d0001f23cbe.state | round(0) }}.
+          Парк - {{ states('sensor.temperature_158d00022c7cf2') | round(0) }}.
+          Двор - {{ states('sensor.temperature_158d0002323783') | round(0) }}.
+          Гостинная - {{ states('sensor.0x00158d000234816a_temperature') | round(0) }}.
+          Кухня - {{ states('sensor.temperature_158d00032308dd') | round(0) }}.
+          Юркина - {{ states('sensor.temperature_158d0002271609') | round(0) }}.
+          Спальня - {{ states('sensor.temperature_158d0001f23cbe') | round(0) }}.
           Влажность.
-          Парк - {{ states.sensor.humidity_158d00022c7cf2.state | round(0) }}.
-          Двор - {{ states.sensor.humidity_158d0002323783.state | round(0) }}.
-          Гостинная - {{ states.sensor.humidity_158d000234816a.state | round(0) }}.
-          Кухня - {{ states.sensor.humidity_158d00032308dd.state | round(0) }}.
-          Юркина - {{ states.sensor.humidity_158d0002271609.state | round(0) }}.
-          Спальня - {{ states.sensor.humidity_158d0001f23cbe.state | round(0) }}.
+          Парк - {{ states('sensor.humidity_158d00022c7cf2') | round(0) }}.
+          Двор - {{ states('sensor.humidity_158d0002323783') | round(0) }}.
+          Гостинная - {{ states('sensor.0x00158d000234816a_humidity') | round(0) }}.
+          Кухня - {{ states('sensor.humidity_158d00032308dd') | round(0) }}.
+          Юркина - {{ states('sensor.humidity_158d0002271609') | round(0) }}.
+          Спальня - {{ states('sensor.humidity_158d0001f23cbe') | round(0) }}.
 
 tts_outside:
   sequence:
@@ -39,19 +39,19 @@ tts_outside:
       data_template:
         message: >
           Сейчас на улице.
-          Ветер - {{ states.sensor.wt00_wind_speed.state | round(0) }} метров в секунду.
-          Осадки - {{ states.sensor.wt00_precipitation.state | round(0) }} миллиметров.
+          Ветер - {{ states('sensor.wt00_wind_speed') | round(0) }} метров в секунду.
+          Осадки - {{ states('sensor.wt00_precipitation') | round(0) }} миллиметров.
           В парке.
-          Температура {{ states.sensor.temperature_158d00022c7cf2.state | round(0) }}.
-          Влажность {{ states.sensor.humidity_158d00022c7cf2.state | round(0) }}.
+          Температура {{ states('sensor.temperature_158d00022c7cf2') | round(0) }}.
+          Влажность {{ states('sensor.humidity_158d00022c7cf2') | round(0) }}.
           Во дворе.
-          Температура {{ states.sensor.temperature_158d0002323783.state | round(0) }}.
-          Влажность {{ states.sensor.humidity_158d0002323783.state | round(0) }}.
+          Температура {{ states('sensor.temperature_158d0002323783') | round(0) }}.
+          Влажность {{ states('sensor.humidity_158d0002323783') | round(0) }}.
           Через час.
-          Температура {{ states.sensor.wt01_temperature.state | round(0) }}.
-          Влажность {{ states.sensor.wt01_humidity.state | round(0) }}.
-          Ветер - {{ states.sensor.wt01_wind_speed.state | round(0) }} метров в секунду.
-          Осадки - {{ states.sensor.wt01_precipitation.state | round(0) }} миллиметров.
+          Температура {{ states('sensor.wt01_temperature') | round(0) }}.
+          Влажность {{ states('sensor.wt01_humidity') | round(0) }}.
+          Ветер - {{ states('sensor.wt01_wind_speed') | round(0) }} метров в секунду.
+          Осадки - {{ states('sensor.wt01_precipitation') | round(0) }} миллиметров.
 
 tts_say_kitchen:
   sequence:

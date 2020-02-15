@@ -44,7 +44,7 @@ views:
             secondary_info: last-changed
           - entity: binary_sensor.0x00158d0002d43d7d_occupancy
             secondary_info: last-changed
-          - entity: binary_sensor.door_window_sensor_158d00024367c8
+          - entity: binary_sensor.0x00158d00024367c8_contact
             secondary_info: last-changed
           - entity: sensor.0x00158d0002c4e568_action
             secondary_info: last-changed
@@ -304,7 +304,7 @@ views:
             entities:
               - sensor.temperature_158d00022c7cf2
               - sensor.temperature_158d0002323783
-              - sensor.temperature_158d000234816a
+              - sensor.0x00158d000234816a_temperature
               - sensor.temperature_158d0001f23cbe
               - sensor.temperature_158d0002271609
               - sensor.temperature_158d00032308dd
@@ -324,7 +324,7 @@ views:
             entities:
               - sensor.humidity_158d00022c7cf2
               - sensor.humidity_158d0002323783
-              - sensor.humidity_158d000234816a
+              - sensor.0x00158d000234816a_humidity
               - sensor.humidity_158d0001f23cbe
               - sensor.humidity_158d0002271609
               - sensor.humidity_158d00032308dd
@@ -338,7 +338,7 @@ views:
             entities:
               - sensor.pressure_158d00022c7cf2
               - sensor.pressure_158d0002323783
-              - sensor.pressure_158d000234816a
+              - sensor.0x00158d000234816a_pressure
               - sensor.pressure_158d0001f23cbe
               - sensor.pressure_158d0002271609
               - sensor.pressure_158d00032308dd
@@ -375,7 +375,7 @@ views:
             title: Rooms t 24h
             hours_to_show: 24
             entities:
-              - sensor.temperature_158d000234816a
+              - sensor.0x00158d000234816a_temperature
               - sensor.temperature_158d0001f23cbe
               - sensor.temperature_158d0002271609
               - sensor.temperature_158d00032308dd

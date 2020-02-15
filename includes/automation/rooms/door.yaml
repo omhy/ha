@@ -1,7 +1,7 @@
 - alias: "door_entrance_opened_too_long"
   trigger:
     - platform: state
-      entity_id: binary_sensor.door_window_sensor_158d00024367c8
+      entity_id: binary_sensor.0x00158d00024367c8_contact
       to: "on"
       for:
         minutes: 3
@@ -11,7 +11,7 @@
 - alias: "door_entrance_opened"
   trigger:
     - platform: state
-      entity_id: binary_sensor.door_window_sensor_158d00024367c8
+      entity_id: binary_sensor.0x00158d00024367c8_contact
       to: "on"
   action:
     - service: script.aqara_stop_ringtone
@@ -23,7 +23,7 @@
 - alias: "door_entrance_closed"
   trigger:
     - platform: state
-      entity_id: binary_sensor.door_window_sensor_158d00024367c8
+      entity_id: binary_sensor.0x00158d00024367c8_contact
       to: "off"
   action:
     - service: script.aqara_stop_ringtone

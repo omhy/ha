@@ -4,10 +4,10 @@ flow_idx_update:
       entity_id: input_number.flow_idx
       data_template:
         value: >
-          {% if states.input_number.flow_idx.state | int >= 4 %}
+          {% if states['input_number.flow_idx'].state | int >= 4 %}
             1
           {% else %}
-            {{ states.input_number.flow_idx.state | int + 1 }}
+            {{ states['input_number.flow_idx'].state | int + 1 }}
           {% endif %}
 
 light_flow_next:
@@ -25,7 +25,7 @@ light_flow_next:
             'green' : 'blue',
             'blue' : 'custom'
           } %}
-          {{ flows[states.input_select.living_room_flow.state] }}
+          {{ flows[states['input_select.living_room_flow'].state] }}
 
 light_turn_on_hs:
   sequence:

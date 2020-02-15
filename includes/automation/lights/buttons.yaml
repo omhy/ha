@@ -1,15 +1,11 @@
 - alias: "light_small_torch_turn_off"
   trigger:
-    - platform: event
-      event_type: xiaomi_aqara.click
-      event_data:
-        entity_id: binary_sensor.wall_switch_left_158d00026b96c1
-        click_type: single
-    - platform: event
-      event_type: xiaomi_aqara.click
-      event_data:
-        entity_id: binary_sensor.wall_switch_right_158d00026b96c1
-        click_type: single
+    - platform: state
+      entity_id: sensor.0x00158d00026b96c1_click
+      to: "left"
+    - platform: state
+      entity_id: sensor.0x00158d00026b96c1_click
+      to: "right"
   condition:
     condition: state
     entity_id: light.small_torch
@@ -20,11 +16,9 @@
 
 - alias: "light_small_torch_turn_on_max"
   trigger:
-    - platform: event
-      event_type: xiaomi_aqara.click
-      event_data:
-        entity_id: binary_sensor.wall_switch_right_158d00026b96c1
-        click_type: single
+    - platform: state
+      entity_id: sensor.0x00158d00026b96c1_click
+      to: "right"
   condition:
     condition: state
     entity_id: light.small_torch
@@ -35,11 +29,9 @@
 
 - alias: "light_small_torch_turn_on_min"
   trigger:
-    - platform: event
-      event_type: xiaomi_aqara.click
-      event_data:
-        entity_id: binary_sensor.wall_switch_left_158d00026b96c1
-        click_type: single
+    - platform: state
+      entity_id: sensor.0x00158d00026b96c1_click
+      to: "left"
   condition:
     condition: state
     entity_id: light.small_torch

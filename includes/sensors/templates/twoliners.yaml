@@ -14,10 +14,6 @@
       value_template: "{{ states.sensor.temperature_158d00022c7cf2.attributes.battery_level | float }}"
       entity_id: sensor.temperature_158d00022c7cf2
       friendly_name: Park climate sensor
-    t4_battery_level:
-      value_template: "{{ states.sensor.temperature_158d000234816a.attributes.battery_level | float }}"
-      entity_id: sensor.temperature_158d000234816a
-      friendly_name: Living room climate sensor
     t5_battery_level:
       value_template: "{{ states.sensor.temperature_158d0002323783.attributes.battery_level | float }}"
       entity_id: sensor.temperature_158d0002323783
@@ -32,19 +28,6 @@
       value_template: "{{ states.binary_sensor.switch_158d00021350ee.attributes.battery_level | float }}"
       entity_id: binary_sensor.switch_158d00021350ee
       friendly_name: Doorbell
-#misc
-    door_sensor_battery_level:
-      value_template: "{{ states.binary_sensor.door_window_sensor_158d00024367c8.attributes.battery_level | float }}"
-      entity_id: binary_sensor.door_window_sensor_158d00024367c8
-      friendly_name: Entrance door sensor
-    sw1_standalone_battery_level:
-      entity_id: binary_sensor.wall_switch_both_158d00026b96c1
-      value_template: "{{ states.binary_sensor.wall_switch_both_158d00026b96c1.attributes.battery_level | float }}"
-      friendly_name: Standalone switch 1
-    # cube_battery_level:
-    #   value_template: "{{ states.binary_sensor.cube_158d00028776ae.attributes.battery_level | float }}"
-    #   entity_id: binary_sensor.cube_158d00028776ae
-    #   friendly_name: Cube
 #LOAD POWERS
     power_strip_1_load_power:
       value_template: "{{ states.switch.power_strip_1.attributes.load_power | float }}"
@@ -79,11 +62,11 @@
 #STATE_CH
     state_change_door_ago_min:
       value_template: "{{ ((now() - strptime(states.input_text.state_change_door.state, '%Y%m%d%H%M%S').astimezone()).seconds / 60) | round(0) }}"
-      entity_id: binary_sensor.door_window_sensor_158d00024367c8
+      entity_id: binary_sensor.0x00158d00024367c8_contact
       unit_of_measurement: "minutes"
     state_change_door_ago_sec:
       value_template: "{{ ((now() - strptime(states.input_text.state_change_door.state, '%Y%m%d%H%M%S').astimezone()).seconds) | round(0) }}"
-      entity_id: binary_sensor.door_window_sensor_158d00024367c8
+      entity_id: binary_sensor.0x00158d00024367c8_contact
       unit_of_measurement: "sec"
 #STATE_CH_MANUAL
     state_change_dima_ago:
@@ -95,6 +78,9 @@
 #ABOX
     androidbox_app:
       value_template: "{{ states.media_player.androidbox.attributes.app_id.split('.')[-1] }}"
+      entity_id: media_player.androidbox
+    androidbox_app_full:
+      value_template: "{{ states.media_player.androidbox.attributes.app_id }}"
       entity_id: media_player.androidbox
 #STATE_CH_TIME
     now_hm:

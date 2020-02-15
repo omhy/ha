@@ -20,7 +20,7 @@ media_radio_play_selected_cast:
   sequence:
     - service: script.media_radio_play_param_cast
       data_template:
-        entity_id: "{{ states.input_text.radio_cast.state }}"
+        entity_id: "{{ states['input_text.radio_cast'].state }}"
         media_content_id: "{{ media_content_id }}"
 media_radio_play_soma_illstreet:
   sequence:
