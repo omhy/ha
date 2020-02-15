@@ -10,6 +10,7 @@
   adb_server_port: 5037
   apps:
     com.google.android.youtube: "Youtube"
+    com.google.android.apps.youtube.music: "Youtube Music"
     com.teslacoilsw.launcher: "Nova"
     com.niklabs.pp: "PerfectPlayer"
     dkc.video.hdbox: "HDVideobox"
