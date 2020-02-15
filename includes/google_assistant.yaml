@@ -28,6 +28,10 @@ entity_config:
     name: Chain lamp
     expose: true
     room: Living Room
+  light.0xec1bbdfffe4d16eb_light:
+    name: Pendant
+    expose: true
+    room: Living Room
 
 #Yuri room
   light.small_torch:
@@ -52,10 +56,6 @@ entity_config:
     name: Computer sleep
     expose: true
     room: Speaker
-  script.rmt_computer_wakeup:
-    name: Computer wake
-    expose: true
-    room: Speaker
   script.rmt_laptop_sleep:
     name: Laptop sleep
     expose: true
@@ -72,34 +72,5 @@ entity_config:
     room: Speaker
   script.tts_outside:
     name: Say outside
-    expose: true
-    room: Speaker
-  script.tts_consumption:
-    name: Say consumption
-    expose: true
-    room: Speaker
-
-  script.cast_main:
-    name: Cast main
-    expose: true
-    room: Speaker
-  script.cast_music:
-    name: Cast music
-    expose: true
-    room: Speaker
-  script.cast_forecast:
-    name: Cast forecast
-    expose: true
-    room: Speaker
-  script.cast_climate:
-    name: Cast climate
-    expose: true
-    room: Speaker
-  script.cast_activity:
-    name: Cast activity
-    expose: true
-    room: Speaker
-  script.cast_sys:
-    name: Cast systme
     expose: true
     room: Speaker
