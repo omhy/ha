@@ -46,7 +46,7 @@ views:
             secondary_info: last-changed
           - entity: binary_sensor.door_window_sensor_158d00024367c8
             secondary_info: last-changed
-          - entity: sensor.coordination_158d0002c4e568
+          - entity: sensor.0x00158d0002c4e568_action
             secondary_info: last-changed
           - entity: person.dima
             secondary_info: last-changed
@@ -447,6 +447,8 @@ views:
           - binary_sensor.0x00158d0001fa3dc0_occupancy
           - binary_sensor.motion_sensor_158d0001e52779
           - binary_sensor.0x00158d0002d43d7d_occupancy
+          - sensor.0x00158d0002c4e568_action #vibro
+          - sensor.0x00158d00028776ae_action #cube
 
       - type: history-graph
         title: Android box 1h
@@ -1022,6 +1024,23 @@ views:
           include:
             - entity_id: "*.0*_battery"
 
+      - type: custom:auto-entities
+        card:
+          type: entities
+          title: Cube
+          show_header_toggle: false
+        filter:
+          include:
+            - entity_id: "*158d00028776ae*"
+
+
+      - type: entities
+        title: Vibration
+        show_header_toggle: false
+        entities:
+          - sensor.0x00158d0002c4e568_action
+          - sensor.0x00158d0002c4e568_sensitivity
+          - sensor.0x00158d0002c4e568_strength
 
   ##################   DETAILS
   - title: Misc

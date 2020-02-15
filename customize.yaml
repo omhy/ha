@@ -334,8 +334,8 @@ person.yuri:
   entity_picture: /local/persons/yuri.jpg
 
 #cube
-binary_sensor.cube_158d00028776ae:
-  friendly_name: cube
+sensor.0x00158d00028776ae_action:
+  friendly_name: Cube
   icon: mdi:cube-outline
 
 #wall-logic
@@ -371,10 +371,12 @@ binary_sensor.door_window_sensor_158d00024367c8:
   friendly_name: Door
 
 #seat
-binary_sensor.vibration_158d0002c4e568:
-  friendly_name: Seat
-sensor.coordination_158d0002c4e568:
-  friendly_name: Seat
+sensor.0x00158d0002c4e568_action:
+  friendly_name: Seat action
+sensor.0x00158d0002c4e568_sensitivity:
+  friendly_name: Seat sensitivity
+sensor.0x00158d0002c4e568_strength:
+  friendly_name: Seat strength
 
 #ILLUMINATION
 sensor.illumination_158d0001e52779:

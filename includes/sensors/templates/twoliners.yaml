@@ -50,10 +50,10 @@
       entity_id: binary_sensor.wall_switch_both_158d00026b96c1
       value_template: "{{ states.binary_sensor.wall_switch_both_158d00026b96c1.attributes.battery_level | float }}"
       friendly_name: Standalone switch 1
-    cube_battery_level:
-      value_template: "{{ states.binary_sensor.cube_158d00028776ae.attributes.battery_level | float }}"
-      entity_id: binary_sensor.cube_158d00028776ae
-      friendly_name: Cube
+    # cube_battery_level:
+    #   value_template: "{{ states.binary_sensor.cube_158d00028776ae.attributes.battery_level | float }}"
+    #   entity_id: binary_sensor.cube_158d00028776ae
+    #   friendly_name: Cube
 #LOAD POWERS
     power_strip_1_load_power:
       value_template: "{{ states.switch.power_strip_1.attributes.load_power | float }}"
@@ -112,7 +112,7 @@
     now_ymdhms:
       value_template: "{{ now().strftime('%Y%m%d%H%M%S') }}"
       entity_id: sensor.time
-#PRI
+#RPI
     rpi:
       value_template: "{{states.sensor.processor_use.state_with_unit}} / {{states.sensor.memory_use_percent.state_with_unit}} / {{states.sensor.temperature.state_with_unit}}"
       entity_id:
