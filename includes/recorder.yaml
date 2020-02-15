@@ -21,7 +21,7 @@ include:
     - binary_sensor.ping_laptop
     - binary_sensor.ping_tv
     - binary_sensor.door_window_sensor_158d00024367c8
-    - binary_sensor.motion_sensor_158d0001e52779
+    - binary_sensor.0x00158d0001e52779_occupancy #bathroom
     - binary_sensor.smoke_sensor_158d0003537bf0
     - sensor.rpi_power_status
     - sensor.moon

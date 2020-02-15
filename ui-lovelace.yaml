@@ -40,7 +40,7 @@ views:
         entities:
           - entity: binary_sensor.0x00158d0001fa3dc0_occupancy
             secondary_info: last-changed
-          - entity: binary_sensor.motion_sensor_158d0001e52779
+          - entity: binary_sensor.0x00158d0001e52779_occupancy
             secondary_info: last-changed
           - entity: binary_sensor.0x00158d0002d43d7d_occupancy
             secondary_info: last-changed
@@ -445,7 +445,7 @@ views:
         hours_to_show: 1
         entities:
           - binary_sensor.0x00158d0001fa3dc0_occupancy
-          - binary_sensor.motion_sensor_158d0001e52779
+          - binary_sensor.0x00158d0001e52779_occupancy
           - binary_sensor.0x00158d0002d43d7d_occupancy
           - sensor.0x00158d0002c4e568_action #vibro
           - sensor.0x00158d00028776ae_action #cube

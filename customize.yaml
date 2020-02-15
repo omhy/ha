@@ -361,8 +361,8 @@ binary_sensor.switch_158d00021350ee:
   friendly_name: Doorbell button
 
 #motion
-binary_sensor.motion_sensor_158d0001e52779:
-  friendly_name: Bathroom
+binary_sensor.0x00158d0001e52779_occupancy:
+  friendly_name: Bathroom [z]
 binary_sensor.0x00158d0001fa3dc0_occupancy:
   friendly_name: Living room [z]
 binary_sensor.0x00158d0002d43d7d_occupancy:
@@ -379,12 +379,13 @@ sensor.0x00158d0002c4e568_strength:
   friendly_name: Seat strength
 
 #ILLUMINATION
-sensor.illumination_158d0001e52779:
+sensor.0x00158d0001e52779_illuminance:
   friendly_name: Bathroom
 sensor.0x00158d0001fa3dc0_illuminance:
   friendly_name: Livingroom
 sensor.0x00158d0002d43d7d_illuminance:
   friendly_name: Yuri room
+
 sensor.illumination_7811dcb36cee:
   friendly_name: Gateway
 

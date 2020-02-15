@@ -1,7 +1,7 @@
 - alias: "light_bathroom_turn_on"
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_sensor_158d0001e52779
+      entity_id: binary_sensor.0x00158d0001e52779_occupancy
       to: "on"
   action:
     - service: switch.turn_on
@@ -10,7 +10,7 @@
 - alias: "light_bathroom_turn_off"
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_sensor_158d0001e52779
+      entity_id: binary_sensor.0x00158d0001e52779_occupancy
       to: "off"
       for:
         minutes: 10
