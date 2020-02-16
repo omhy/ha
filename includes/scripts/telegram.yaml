@@ -9,7 +9,7 @@ telegram_send_weather_today:
           ```
           .           {{ '\U0001F333' }} | {{ '\U0001F3D8' }}
 
-          {{ '\U0001f321' }} now {{ frm3 | format(states['sensor.temperature_158d00022c7cf2'].state_with_unit, states['sensor.temperature_158d0002323783'].state_with_unit) }}
+          {{ '\U0001f321' }} now {{ frm3 | format(states['sensor.temperature_158d00022c7cf2'].state_with_unit, states['sensor.0x00158d0002323783_temperature'].state_with_unit) }}
 
           {{ '\U0001f976' }} min {{ frm3 | format(states['sensor.outpark_temp_min'].state_with_unit, states['sensor.outyard_temp_min'].state_with_unit) }}
 
@@ -33,7 +33,7 @@ telegram_send_weather_now:
         message: >
           {{ '\U0001F333' }} `Park: {{ states['sensor.temperature_158d00022c7cf2'].state_with_unit }}, {{ states['sensor.humidity_158d00022c7cf2'].state_with_unit }}`
 
-          {{ '\U0001F3D8' }} `Yard: {{ states['sensor.temperature_158d0002323783'].state_with_unit }}, {{ states['sensor.humidity_158d0002323783'].state_with_unit }}`
+          {{ '\U0001F3D8' }} `Yard: {{ states['sensor.0x00158d0002323783_temperature'].state_with_unit }}, {{ states['sensor.0x00158d0002323783_humidity'].state_with_unit }}`
 
           {{ '\U0001F32C' }} `Wind: {{ states['sensor.wt00_wind_speed'].state_with_unit }}`
 
@@ -54,7 +54,7 @@ telegram_send_rooms:
 
           {{ '\U00002601' }}` park {{ frm | format(states['sensor.temperature_158d00022c7cf2'].state_with_unit, states['sensor.humidity_158d00022c7cf2'].state_with_unit) }}`
 
-          {{ '\U0001F37D' }}` yard {{ frm | format(states['sensor.temperature_158d0002323783'].state_with_unit, states['sensor.humidity_158d0002323783'].state_with_unit) }}`
+          {{ '\U0001F37D' }}` yard {{ frm | format(states['sensor.0x00158d0002323783_temperature'].state_with_unit, states['sensor.0x00158d0002323783_humidity'].state_with_unit) }}`
 
           {{ '\U0001F6CB' }}` lvg  {{ frm | format(states['sensor.0x00158d000234816a_temperature'].state_with_unit, states['sensor.0x00158d000234816a_humidity'].state_with_unit) }}`
 

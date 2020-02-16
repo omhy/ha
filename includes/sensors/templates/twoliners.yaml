@@ -1,28 +1,5 @@
 - platform: template
   sensors:
-#BATTERIES
-#env sensors
-    t1_battery_level:
-      value_template: "{{ states.sensor.temperature_158d0002271609.attributes.battery_level | float }}"
-      entity_id: sensor.temperature_158d0002271609
-      friendly_name: Yuri room climate sensor
-    t2_battery_level:
-      value_template: "{{ states.sensor.temperature_158d0001f23cbe.attributes.battery_level | float }}"
-      entity_id: sensor.temperature_158d0001f23cbe
-      friendly_name: Bedroom climate sensor
-    t3_battery_level:
-      value_template: "{{ states.sensor.temperature_158d00022c7cf2.attributes.battery_level | float }}"
-      entity_id: sensor.temperature_158d00022c7cf2
-      friendly_name: Park climate sensor
-    t5_battery_level:
-      value_template: "{{ states.sensor.temperature_158d0002323783.attributes.battery_level | float }}"
-      entity_id: sensor.temperature_158d0002323783
-      friendly_name: Yard climate sensor
-    t6_battery_level:
-      value_template: "{{ states.sensor.temperature_158d00032308dd.attributes.battery_level | float }}"
-      entity_id: sensor.temperature_158d00032308dd
-      friendly_name: Kitchen climate sensor
-
 #LOAD POWERS
     power_strip_1_load_power:
       value_template: "{{ states.switch.power_strip_1.attributes.load_power | float }}"

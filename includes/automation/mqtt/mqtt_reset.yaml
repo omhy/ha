@@ -6,7 +6,7 @@
     - service: mqtt.publish
       data_template:
         topic: "outpark/temperature/min"
-        payload: "{{ states.sensor.temperature_158d00022c7cf2.state }}"
+        payload: "{{ states('sensor.temperature_158d00022c7cf2') }}"
         retain: true
     - service: mqtt.publish
       data_template:
@@ -16,7 +16,7 @@
     - service: mqtt.publish
       data_template:
         topic: "outpark/temperature/max"
-        payload: "{{ states.sensor.temperature_158d00022c7cf2.state }}"
+        payload: "{{ states('sensor.temperature_158d00022c7cf2') }}"
         retain: true
     - service: mqtt.publish
       data_template:
@@ -26,7 +26,7 @@
     - service: mqtt.publish
       data_template:
         topic: "outyard/temperature/min"
-        payload: "{{ states.sensor.temperature_158d0002323783.state }}"
+        payload: "{{ states('sensor.0x00158d0002323783_temperature') }}"
         retain: true
     - service: mqtt.publish
       data_template:
@@ -36,7 +36,7 @@
     - service: mqtt.publish
       data_template:
         topic: "outyard/temperature/max"
-        payload: "{{ states.sensor.temperature_158d0002323783.state }}"
+        payload: "{{ states('sensor.0x00158d0002323783_temperature') }}"
         retain: true
     - service: mqtt.publish
       data_template:

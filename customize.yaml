@@ -191,11 +191,11 @@ sensor.temperature_158d00032308dd:
   friendly_name: Kitchen
 sensor.pressure_158d00032308dd:
   friendly_name: Kitchen
-sensor.humidity_158d0002323783:
+sensor.0x00158d0002323783_humidity:
   friendly_name: Yard
-sensor.temperature_158d0002323783:
+sensor.0x00158d0002323783_temperature:
   friendly_name: Yard
-sensor.pressure_158d0002323783:
+sensor.0x00158d0002323783_pressure:
   friendly_name: Yard
 sensor.humidity_158d00022c7cf2:
   friendly_name: Park

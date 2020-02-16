@@ -53,19 +53,19 @@ include:
     - sensor.temperature_158d0001f23cbe
     - sensor.temperature_158d0002271609
     - sensor.temperature_158d00022c7cf2
-    - sensor.temperature_158d0002323783
+    - sensor.0x00158d0002323783_temperature
     - sensor.0x00158d000234816a_temperature
     - sensor.temperature_158d00032308dd
     - sensor.humidity_158d0001f23cbe
     - sensor.humidity_158d0002271609
     - sensor.humidity_158d00022c7cf2
-    - sensor.humidity_158d0002323783
+    - sensor.0x00158d0002323783_humidity
     - sensor.0x00158d000234816a_humidity
     - sensor.humidity_158d00032308dd
     - sensor.pressure_158d0001f23cbe
     - sensor.pressure_158d0002271609
     - sensor.pressure_158d00022c7cf2
-    - sensor.pressure_158d0002323783
+    - sensor.0x00158d0002323783_pressure
     - sensor.0x00158d000234816a_pressure
     - sensor.pressure_158d00032308dd
     - sensor.wt00_temperature
@@ -118,8 +118,3 @@ include:
     - sensor.wt24_pressure
     - sensor.wt72_pressure
     - sensor.wt48_pressure
-    - sensor.power_strip_1_derivative
-    - sensor.power_strip_2_derivative
-    - sensor.power_strip_3_derivative
-    - sensor.power_strip_4_derivative
-    - sensor.power_strip_5_derivative

@@ -1,6 +1,6 @@
-- platform: derivative
-  source: sensor.temperature_158d00022c7cf2
-  name: park_temperature_derivative
-- platform: derivative
-  source: sensor.temperature_158d0002323783
-  name: park_temperature_derivative
+# - platform: derivative
+#   source: sensor.temperature_158d00022c7cf2
+#   name: park_temperature_derivative
+# - platform: derivative
+#   source: sensor.0x00158d0002323783_temperature
+#   name: park_temperature_derivative

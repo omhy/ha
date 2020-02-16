@@ -29,7 +29,7 @@ views:
     badges:
       - sensor.wt00_symbol
       - sensor.temperature_158d00022c7cf2
-      - sensor.temperature_158d0002323783
+      - sensor.0x00158d0002323783_temperature
       - sensor.wt00_precipitation
       - sensor.wt00_wind_speed
       - sun.sun
@@ -303,7 +303,7 @@ views:
                 color: !secret red
             entities:
               - sensor.temperature_158d00022c7cf2
-              - sensor.temperature_158d0002323783
+              - sensor.0x00158d0002323783_temperature
               - sensor.0x00158d000234816a_temperature
               - sensor.temperature_158d0001f23cbe
               - sensor.temperature_158d0002271609
@@ -323,7 +323,7 @@ views:
                 color: !secret red
             entities:
               - sensor.humidity_158d00022c7cf2
-              - sensor.humidity_158d0002323783
+              - sensor.0x00158d0002323783_humidity
               - sensor.0x00158d000234816a_humidity
               - sensor.humidity_158d0001f23cbe
               - sensor.humidity_158d0002271609
@@ -337,7 +337,7 @@ views:
             max: 1050
             entities:
               - sensor.pressure_158d00022c7cf2
-              - sensor.pressure_158d0002323783
+              - sensor.0x00158d0002323783_pressure
               - sensor.0x00158d000234816a_pressure
               - sensor.pressure_158d0001f23cbe
               - sensor.pressure_158d0002271609
@@ -384,7 +384,7 @@ views:
             hours_to_show: 24
             entities:
               - sensor.temperature_158d00022c7cf2
-              - sensor.temperature_158d0002323783
+              - sensor.0x00158d0002323783_temperature
 
   ##################   ACTIVITY
   - title: Activity
@@ -580,7 +580,7 @@ views:
         max: 40
         entities:
           - sensor.temperature_158d00022c7cf2
-          - sensor.temperature_158d0002323783
+          - sensor.0x00158d0002323783_temperature
           - sensor.wt00_temperature
 # TEMPS    
       - type: vertical-stack
@@ -1019,24 +1019,6 @@ views:
           include:
             - entity_id: "*.0*_battery"
 
-      - type: custom:auto-entities
-        card:
-          type: entities
-          title: Cube
-          show_header_toggle: false
-        filter:
-          include:
-            - entity_id: "*158d00028776ae*"
-
-
-      - type: entities
-        title: Vibration
-        show_header_toggle: false
-        entities:
-          - sensor.0x00158d0002c4e568_action
-          - sensor.0x00158d0002c4e568_sensitivity
-          - sensor.0x00158d0002c4e568_strength
-
   ##################   DETAILS
   - title: Misc
     path: misc
@@ -1081,17 +1063,6 @@ views:
         entities:
           - input_number.doorbell_volume
           - input_number.doorbell_melody
-
-      - type: custom:auto-entities
-        show_empty: false
-        card:
-          type: entities
-          title: Low batteries
-          show_header_toggle: false
-        filter:
-          include:
-            - entity_id: sensor.*_battery_level
-              state: "< 25"
 
       - type: entities
         title: Google casts
