@@ -9,7 +9,7 @@ telegram_send_weather_today:
           ```
           .           {{ '\U0001F333' }} | {{ '\U0001F3D8' }}
 
-          {{ '\U0001f321' }} now {{ frm3 | format(states['sensor.temperature_158d00022c7cf2'].state_with_unit, states['sensor.0x00158d0002323783_temperature'].state_with_unit) }}
+          {{ '\U0001f321' }} now {{ frm3 | format(states['sensor.0x00158d00022c7cf2_temperature'].state_with_unit, states['sensor.0x00158d0002323783_temperature'].state_with_unit) }}
 
           {{ '\U0001f976' }} min {{ frm3 | format(states['sensor.outpark_temp_min'].state_with_unit, states['sensor.outyard_temp_min'].state_with_unit) }}
 
@@ -31,7 +31,7 @@ telegram_send_weather_now:
         target: "{{ target }}"
         title: "#EnvNow {{ states('sensor.now_ymd') }}"
         message: >
-          {{ '\U0001F333' }} `Park: {{ states['sensor.temperature_158d00022c7cf2'].state_with_unit }}, {{ states['sensor.humidity_158d00022c7cf2'].state_with_unit }}`
+          {{ '\U0001F333' }} `Park: {{ states['sensor.0x00158d00022c7cf2_temperature'].state_with_unit }}, {{ states['sensor.0x00158d00022c7cf2_humidity'].state_with_unit }}`
 
           {{ '\U0001F3D8' }} `Yard: {{ states['sensor.0x00158d0002323783_temperature'].state_with_unit }}, {{ states['sensor.0x00158d0002323783_humidity'].state_with_unit }}`
 
@@ -52,15 +52,15 @@ telegram_send_rooms:
 
           {{ '\U0001F3D8' }}`      {{ frm | format("temp", "hmdt") }}`
 
-          {{ '\U00002601' }}` park {{ frm | format(states['sensor.temperature_158d00022c7cf2'].state_with_unit, states['sensor.humidity_158d00022c7cf2'].state_with_unit) }}`
+          {{ '\U00002601' }}` park {{ frm | format(states['sensor.0x00158d00022c7cf2_temperature'].state_with_unit, states['sensor.0x00158d00022c7cf2_humidity'].state_with_unit) }}`
 
           {{ '\U0001F37D' }}` yard {{ frm | format(states['sensor.0x00158d0002323783_temperature'].state_with_unit, states['sensor.0x00158d0002323783_humidity'].state_with_unit) }}`
 
           {{ '\U0001F6CB' }}` lvg  {{ frm | format(states['sensor.0x00158d000234816a_temperature'].state_with_unit, states['sensor.0x00158d000234816a_humidity'].state_with_unit) }}`
 
-          {{ '\U0001F4D0' }}` chd  {{ frm | format(states['sensor.temperature_158d0002271609'].state_with_unit, states['sensor.humidity_158d0002271609'].state_with_unit) }}`
+          {{ '\U0001F4D0' }}` chd  {{ frm | format(states['sensor.0x00158d0002271609_temperature'].state_with_unit, states['sensor.0x00158d0002271609_humidity'].state_with_unit) }}`
 
-          {{ '\U0001F6CF' }}` bdr  {{ frm | format(states['sensor.temperature_158d0001f23cbe'].state_with_unit, states['sensor.humidity_158d0001f23cbe'].state_with_unit) }}`
+          {{ '\U0001F6CF' }}` bdr  {{ frm | format(states['sensor.0x00158d0001f23cbe_temperature'].state_with_unit, states['sensor.0x00158d0001f23cbe_humidity'].state_with_unit) }}`
 
           {{ '\U0001F6CF' }}` ktc  {{ frm | format(states['sensor.0x00158d00032308dd_temperature'].state_with_unit, states['sensor.0x00158d00032308dd_humidity'].state_with_unit) }}`
         inline_keyboard:

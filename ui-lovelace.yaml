@@ -28,7 +28,7 @@ views:
     icon: mdi:floor-plan
     badges:
       - sensor.wt00_symbol
-      - sensor.temperature_158d00022c7cf2
+      - sensor.0x00158d00022c7cf2_temperature
       - sensor.0x00158d0002323783_temperature
       - sensor.wt00_precipitation
       - sensor.wt00_wind_speed
@@ -302,11 +302,11 @@ views:
               - value: 30
                 color: !secret red
             entities:
-              - sensor.temperature_158d00022c7cf2
+              - sensor.0x00158d00022c7cf2_temperature
               - sensor.0x00158d0002323783_temperature
               - sensor.0x00158d000234816a_temperature
-              - sensor.temperature_158d0001f23cbe
-              - sensor.temperature_158d0002271609
+              - sensor.0x00158d0001f23cbe_temperature
+              - sensor.0x00158d0002271609_temperature
               - sensor.0x00158d00032308dd_temperature
           - type: custom:bar-card
             direction: up
@@ -322,11 +322,11 @@ views:
               - value: 100
                 color: !secret red
             entities:
-              - sensor.humidity_158d00022c7cf2
+              - sensor.0x00158d00022c7cf2_humidity
               - sensor.0x00158d0002323783_humidity
               - sensor.0x00158d000234816a_humidity
-              - sensor.humidity_158d0001f23cbe
-              - sensor.humidity_158d0002271609
+              - sensor.0x00158d0001f23cbe_humidity
+              - sensor.0x00158d0002271609_humidity
               - sensor.0x00158d00032308dd_humidity
           - type: custom:bar-card
             direction: up
@@ -336,11 +336,11 @@ views:
             min: 950
             max: 1050
             entities:
-              - sensor.pressure_158d00022c7cf2
+              - sensor.0x00158d00022c7cf2_pressure
               - sensor.0x00158d0002323783_pressure
               - sensor.0x00158d000234816a_pressure
-              - sensor.pressure_158d0001f23cbe
-              - sensor.pressure_158d0002271609
+              - sensor.0x00158d0001f23cbe_pressure
+              - sensor.0x00158d0002271609_pressure
               - sensor.0x00158d00032308dd_pressure
 
       - type: vertical-stack
@@ -376,14 +376,14 @@ views:
             hours_to_show: 24
             entities:
               - sensor.0x00158d000234816a_temperature
-              - sensor.temperature_158d0001f23cbe
-              - sensor.temperature_158d0002271609
+              - sensor.0x00158d0001f23cbe_temperature
+              - sensor.0x00158d0002271609_temperature
               - sensor.0x00158d00032308dd_temperature
           - type: history-graph
             title: Outdoor t 24h
             hours_to_show: 24
             entities:
-              - sensor.temperature_158d00022c7cf2
+              - sensor.0x00158d00022c7cf2_temperature
               - sensor.0x00158d0002323783_temperature
 
   ##################   ACTIVITY
@@ -579,7 +579,7 @@ views:
         height: 100px
         max: 40
         entities:
-          - sensor.temperature_158d00022c7cf2
+          - sensor.0x00158d00022c7cf2_temperature
           - sensor.0x00158d0002323783_temperature
           - sensor.wt00_temperature
 # TEMPS    

@@ -167,17 +167,17 @@ media_player.chromecast:
 #SENSORS
 sensor.home_assistant_v2_db:
   friendly_name: Log size
-sensor.humidity_158d0002271609:
+sensor.0x00158d0002271609_humidity:
   friendly_name: Yuri's
-sensor.pressure_158d0002271609:
+sensor.0x00158d0002271609_pressure:
   friendly_name: Yuri's
-sensor.temperature_158d0002271609:
+sensor.0x00158d0002271609_temperature:
   friendly_name: Yuri's
-sensor.humidity_158d0001f23cbe:
+sensor.0x00158d0001f23cbe_humidity:
   friendly_name: Bedroom
-sensor.temperature_158d0001f23cbe:
+sensor.0x00158d0001f23cbe_temperature:
   friendly_name: Bedroom
-sensor.pressure_158d0001f23cbe:
+sensor.0x00158d0001f23cbe_pressure:
   friendly_name: Bedroom
 sensor.0x00158d000234816a_humidity:
   friendly_name: Living room
@@ -197,11 +197,11 @@ sensor.0x00158d0002323783_temperature:
   friendly_name: Yard
 sensor.0x00158d0002323783_pressure:
   friendly_name: Yard
-sensor.humidity_158d00022c7cf2:
+sensor.0x00158d00022c7cf2_humidity:
   friendly_name: Park
-sensor.temperature_158d00022c7cf2:
+sensor.0x00158d00022c7cf2_temperature:
   friendly_name: Park
-sensor.pressure_158d00022c7cf2:
+sensor.0x00158d00022c7cf2_pressure:
   friendly_name: Park
 
 sensor.current_uv_level:

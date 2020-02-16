@@ -13,7 +13,6 @@ include:
     - binary_sensor.0x00158d0002d43d7d_occupancy #yuri room
     - sensor.0x00158d0002c4e568_action #vibro
     - sensor.0x00158d00028776ae_action #cube action
-    - binary_sensor.cube_158d00028776ae #cube state
     - sensor.adguard_rules_count
     - sensor.adguard_average_processing_speed
     - binary_sensor.ping_computer
@@ -50,24 +49,24 @@ include:
     - sensor.current_uv_index
     - sensor.max_uv_index
     - sensor.current_ozone_level
-    - sensor.temperature_158d0001f23cbe
-    - sensor.temperature_158d0002271609
-    - sensor.temperature_158d00022c7cf2
+    - sensor.0x00158d0001f23cbe_temperature
+    - sensor.0x00158d0002271609_temperature
+    - sensor.0x00158d00022c7cf2_temperature
     - sensor.0x00158d0002323783_temperature
     - sensor.0x00158d000234816a_temperature
     - sensor.0x00158d00032308dd_temperature
-    - sensor.humidity_158d0001f23cbe
-    - sensor.humidity_158d0002271609
-    - sensor.humidity_158d00022c7cf2
+    - sensor.0x00158d0001f23cbe_humidity
+    - sensor.0x00158d0002271609_humidity
+    - sensor.0x00158d00022c7cf2_humidity
     - sensor.0x00158d0002323783_humidity
     - sensor.0x00158d000234816a_humidity
     - sensor.0x00158d00032308dd_humidity
-    - sensor.pressure_158d0001f23cbe
-    - sensor.pressure_158d0002271609
-    - sensor.pressure_158d00022c7cf2
+    - sensor.0x00158d0001f23cbe_pressure
+    - sensor.0x00158d0002271609_pressure
+    - sensor.0x00158d00022c7cf2_pressure
     - sensor.0x00158d0002323783_pressure
     - sensor.0x00158d000234816a_pressure
-    - sensor.pressure_158d00032308dd
+    - sensor.0x00158d00032308dd_pressure
     - sensor.wt00_temperature
     - sensor.wt01_temperature
     - sensor.wt02_temperature
