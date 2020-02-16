@@ -22,14 +22,14 @@ tts_rooms:
           Парк - {{ states('sensor.temperature_158d00022c7cf2') | round(0) }}.
           Двор - {{ states('sensor.0x00158d0002323783_temperature') | round(0) }}.
           Гостинная - {{ states('sensor.0x00158d000234816a_temperature') | round(0) }}.
-          Кухня - {{ states('sensor.temperature_158d00032308dd') | round(0) }}.
+          Кухня - {{ states('sensor.0x00158d00032308dd_temperature') | round(0) }}.
           Юркина - {{ states('sensor.temperature_158d0002271609') | round(0) }}.
           Спальня - {{ states('sensor.temperature_158d0001f23cbe') | round(0) }}.
           Влажность.
           Парк - {{ states('sensor.humidity_158d00022c7cf2') | round(0) }}.
           Двор - {{ states('sensor.0x00158d0002323783_humidity') | round(0) }}.
           Гостинная - {{ states('sensor.0x00158d000234816a_humidity') | round(0) }}.
-          Кухня - {{ states('sensor.humidity_158d00032308dd') | round(0) }}.
+          Кухня - {{ states('sensor.0x00158d00032308dd_humidity') | round(0) }}.
           Юркина - {{ states('sensor.humidity_158d0002271609') | round(0) }}.
           Спальня - {{ states('sensor.humidity_158d0001f23cbe') | round(0) }}.
 

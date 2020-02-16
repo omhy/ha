@@ -58,7 +58,7 @@
   entity_id: switch.0x00158d0002013f1e_switch
 - platform: switch
   name: corridor
-  entity_id: switch.wall_switch_left_158d00022391ec
+  entity_id: switch.0x00158d00022391ec_switch_left
 - platform: switch
   name: bathroom
-  entity_id: switch.wall_switch_right_158d00022391ec
+  entity_id: switch.0x00158d00022391ec_switch_right

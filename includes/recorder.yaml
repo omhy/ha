@@ -55,13 +55,13 @@ include:
     - sensor.temperature_158d00022c7cf2
     - sensor.0x00158d0002323783_temperature
     - sensor.0x00158d000234816a_temperature
-    - sensor.temperature_158d00032308dd
+    - sensor.0x00158d00032308dd_temperature
     - sensor.humidity_158d0001f23cbe
     - sensor.humidity_158d0002271609
     - sensor.humidity_158d00022c7cf2
     - sensor.0x00158d0002323783_humidity
     - sensor.0x00158d000234816a_humidity
-    - sensor.humidity_158d00032308dd
+    - sensor.0x00158d00032308dd_humidity
     - sensor.pressure_158d0001f23cbe
     - sensor.pressure_158d0002271609
     - sensor.pressure_158d00022c7cf2

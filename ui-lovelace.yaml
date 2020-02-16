@@ -307,7 +307,7 @@ views:
               - sensor.0x00158d000234816a_temperature
               - sensor.temperature_158d0001f23cbe
               - sensor.temperature_158d0002271609
-              - sensor.temperature_158d00032308dd
+              - sensor.0x00158d00032308dd_temperature
           - type: custom:bar-card
             direction: up
             title_position: inside
@@ -327,7 +327,7 @@ views:
               - sensor.0x00158d000234816a_humidity
               - sensor.humidity_158d0001f23cbe
               - sensor.humidity_158d0002271609
-              - sensor.humidity_158d00032308dd
+              - sensor.0x00158d00032308dd_humidity
           - type: custom:bar-card
             direction: up
             title_position: inside
@@ -341,7 +341,7 @@ views:
               - sensor.0x00158d000234816a_pressure
               - sensor.pressure_158d0001f23cbe
               - sensor.pressure_158d0002271609
-              - sensor.pressure_158d00032308dd
+              - sensor.0x00158d00032308dd_pressure
 
       - type: vertical-stack
         cards:
@@ -378,7 +378,7 @@ views:
               - sensor.0x00158d000234816a_temperature
               - sensor.temperature_158d0001f23cbe
               - sensor.temperature_158d0002271609
-              - sensor.temperature_158d00032308dd
+              - sensor.0x00158d00032308dd_temperature
           - type: history-graph
             title: Outdoor t 24h
             hours_to_show: 24

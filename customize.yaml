@@ -185,11 +185,11 @@ sensor.0x00158d000234816a_temperature:
   friendly_name: Living room
 sensor.0x00158d000234816a_pressure:
   friendly_name: Living room
-sensor.humidity_158d00032308dd:
+sensor.0x00158d00032308dd_humidity:
   friendly_name: Kitchen
-sensor.temperature_158d00032308dd:
+sensor.0x00158d00032308dd_temperature:
   friendly_name: Kitchen
-sensor.pressure_158d00032308dd:
+sensor.0x00158d00032308dd_pressure:
   friendly_name: Kitchen
 sensor.0x00158d0002323783_humidity:
   friendly_name: Yard
@@ -343,9 +343,9 @@ sensor.0x00158d00026b96c1_click:
   friendly_name: Wireless switch
 
 #wall-real
-switch.wall_switch_left_158d00022391ec:
+switch.0x00158d00022391ec_switch_left:
   friendly_name: Corridor
-switch.wall_switch_right_158d00022391ec:
+switch.0x00158d00022391ec_switch_right:
   friendly_name: Bathroom
 
 #buttons
