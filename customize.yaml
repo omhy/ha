@@ -358,13 +358,13 @@ binary_sensor.switch_0x00158d00021350ee_click:
 
 #motion
 binary_sensor.0x00158d0001e52779_occupancy:
-  friendly_name: Bathroom [z]
+  friendly_name: Bathroom
 binary_sensor.0x00158d0001fa3dc0_occupancy:
-  friendly_name: Living room [z]
+  friendly_name: Living room
 binary_sensor.0x00158d0002d43d7d_occupancy:
-  friendly_name: Yuri room [z]
+  friendly_name: Yuri room
 binary_sensor.0x00158d00024367c8_contact:
-  friendly_name: Door [z]
+  friendly_name: Door
 
 #seat
 sensor.0x00158d0002c4e568_action:
