@@ -55,7 +55,7 @@
 
 - platform: switch
   name: standalone_switch
-  entity_id: switch.wall_plug_158d0002013f1e
+  entity_id: switch.0x00158d0002013f1e_switch
 - platform: switch
   name: corridor
   entity_id: switch.wall_switch_left_158d00022391ec

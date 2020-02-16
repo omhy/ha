@@ -40,7 +40,7 @@ light.christmas:
   friendly_name: Christmas lights
   icon: mdi:pine-tree
 
-switch.wall_plug_158d0002013f1e:
+switch.0x00158d0002013f1e_switch:
   friendly_name: Standalone switch
 
 #MISC
