@@ -1,7 +1,7 @@
 - alias: "smoke_detected"
   trigger:
     - platform: state
-      entity_id: binary_sensor.smoke_sensor_158d0003537bf0
+      entity_id: binary_sensor.0x00158d0003537bf0_smoke
       to: "on"
   action:
     - service: notify.telegram_all
