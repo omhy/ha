@@ -353,7 +353,7 @@ binary_sensor.switch_0x00158d0002136276_click:
   friendly_name: Light button
 binary_sensor.switch_0x00158d00021329e3_click:
   friendly_name: Entrance button
-binary_sensor.switch_158d00021350ee:
+binary_sensor.switch_0x00158d00021350ee_click:
   friendly_name: Doorbell button
 
 #motion

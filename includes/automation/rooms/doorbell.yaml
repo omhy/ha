@@ -1,10 +1,8 @@
 - alias: "doorbell_single_click"
   trigger:
-    - platform: event
-      event_type: xiaomi_aqara.click
-      event_data:
-        entity_id: binary_sensor.switch_158d00021350ee
-        click_type: single
+    - platform: state
+      entity_id: sensor.0x00158d00021350ee_click
+      to: "single"
   action:
     - service: xiaomi_aqara.play_ringtone
       data_template:
@@ -17,11 +15,9 @@
 
 - alias: "doorbell_double_click"
   trigger:
-    - platform: event
-      event_type: xiaomi_aqara.click
-      event_data:
-        entity_id: binary_sensor.switch_158d00021350ee
-        click_type: double
+    - platform: state
+      entity_id: sensor.0x00158d00021350ee_click
+      to: "double"
   action:
     - service: xiaomi_aqara.play_ringtone
       data_template:
