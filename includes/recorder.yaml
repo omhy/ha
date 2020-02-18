@@ -20,6 +20,7 @@ include:
     - binary_sensor.ping_laptop
     - binary_sensor.ping_tv
     - binary_sensor.0x00158d00024367c8_contact #entrance door
+    - binary_sensor.0x00158d000446fa53_contact #storage door
     - binary_sensor.0x00158d0001e52779_occupancy #bathroom
     - binary_sensor.0x00158d0003537bf0_smoke
     - sensor.0x00158d0003537bf0_smoke_density

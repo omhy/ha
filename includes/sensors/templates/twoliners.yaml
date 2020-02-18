@@ -33,11 +33,11 @@
       entity_id: device_tracker.google_maps_117454969161947422882
 #STATE_CH
     state_change_door_ago_min:
-      value_template: "{{ ((now() - strptime(states.input_text.state_change_door.state, '%Y%m%d%H%M%S').astimezone()).seconds / 60) | round(0) }}"
+      value_template: "{{ ((now() - strptime(states.input_text.state_change_entrance_door.state, '%Y%m%d%H%M%S').astimezone()).seconds / 60) | round(0) }}"
       entity_id: binary_sensor.0x00158d00024367c8_contact
       unit_of_measurement: "minutes"
     state_change_door_ago_sec:
-      value_template: "{{ ((now() - strptime(states.input_text.state_change_door.state, '%Y%m%d%H%M%S').astimezone()).seconds) | round(0) }}"
+      value_template: "{{ ((now() - strptime(states.input_text.state_change_entrance_door.state, '%Y%m%d%H%M%S').astimezone()).seconds) | round(0) }}"
       entity_id: binary_sensor.0x00158d00024367c8_contact
       unit_of_measurement: "sec"
 #STATE_CH_MANUAL

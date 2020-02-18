@@ -367,7 +367,9 @@ binary_sensor.0x00158d0001fa3dc0_occupancy:
 binary_sensor.0x00158d0002d43d7d_occupancy:
   friendly_name: Yuri room
 binary_sensor.0x00158d00024367c8_contact:
-  friendly_name: Door
+  friendly_name: Entrance door
+binary_sensor.0x00158d000446fa53_contact:
+  friendly_name: Storage door
 
 #seat
 sensor.0x00158d0002c4e568_action:

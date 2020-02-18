@@ -5,31 +5,31 @@ input_text_set_now:
         entity_id: "{{ entity_id }}"
         value: "{{ states['sensor.now_ymdhms'].state }}"
 
-state_change_update_door:
+state_change_entrance_door_set_now:
   sequence:
     - service: script.input_text_set_now
       data_template:
-        entity_id: input_text.state_change_door
+        entity_id: input_text.state_change_entrance_door
 
-state_change_update_dima:
+state_change_dima_set_now:
   sequence:
     - service: script.input_text_set_now
       data_template:
         entity_id: input_text.state_change_dima
 
-state_change_update_alyona:
+state_change_alyona_set_now:
   sequence:
     - service: script.input_text_set_now
       data_template:
         entity_id: input_text.state_change_alyona
 
 #NO ENTITY_ID IN TEMPLATE, UPDATE ONLY MANUALLY
-state_change_update_dima_ago:
+state_change_dima_ago_update:
   sequence:
     - service: homeassistant.update_entity
       entity_id: sensor.state_change_dima_ago
 
-state_change_update_alyona_ago:
+state_change_alyona_ago_update:
   sequence:
     - service: homeassistant.update_entity
       entity_id: sensor.state_change_alyona_ago

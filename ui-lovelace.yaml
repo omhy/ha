@@ -46,6 +46,8 @@ views:
             secondary_info: last-changed
           - entity: binary_sensor.0x00158d00024367c8_contact
             secondary_info: last-changed
+          - entity: binary_sensor.0x00158d000446fa53_contact
+            secondary_info: last-changed
           - entity: sensor.0x00158d0002c4e568_action
             secondary_info: last-changed
           - entity: person.dima
@@ -1003,20 +1005,30 @@ views:
       - type: custom:auto-entities
         card:
           type: entities
+          title: Weak link
+          show_header_toggle: false
+        filter:
+          include:
+            - entity_id: "*.0*_linkquality"
+              state: "<40"
+
+      - type: custom:auto-entities
+        card:
+          type: entities
           title: Link quality
           show_header_toggle: false
         filter:
           include:
             - entity_id: "*.0*_linkquality"
 
-      - type: custom:auto-entities
-        card:
-          type: entities
-          title: Batteries
-          show_header_toggle: false
-        filter:
-          include:
-            - entity_id: "*.0*_battery"
+      # - type: custom:auto-entities
+      #   card:
+      #     type: entities
+      #     title: Batteries
+      #     show_header_toggle: false
+      #   filter:
+      #     include:
+      #       - entity_id: "*.0*_battery"
 
   ##################   DETAILS
   - title: Misc
