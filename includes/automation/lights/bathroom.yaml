@@ -5,7 +5,7 @@
       to: "on"
   action:
     - service: switch.turn_on
-      entity_id: switch.wall_switch_right_158d00022391ec
+      entity_id: switch.0x00158d00022391ec_switch_right
 
 - alias: "light_bathroom_turn_off"
   trigger:
@@ -16,4 +16,4 @@
         minutes: 10
   action:
     - service: switch.turn_off
-      entity_id: switch.wall_switch_right_158d00022391ec
+      entity_id: switch.0x00158d00022391ec_switch_right

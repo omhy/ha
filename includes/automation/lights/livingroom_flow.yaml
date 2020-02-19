@@ -1,3 +1,11 @@
+- alias: "light_livroom_color_flow"
+  trigger:
+    - platform: state
+      entity_id: sensor.0x00158d0002136276_click
+      to: "double"
+  action:
+    - service: script.light_livingroom_color_flow
+
 - alias: "light_livingroom_flow_timer"
   trigger:
   - platform: time_pattern

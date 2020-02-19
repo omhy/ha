@@ -1,4 +1,30 @@
-- alias: "ikea_switch_1_on"
+- alias: "light_livingroom_turn_off"
+  trigger:
+    - platform: state
+      entity_id: sensor.0x00158d0002136276_click
+      to: "single"
+  condition:
+    - condition: state
+      entity_id: light.livingroom_color
+      state: "on"
+  action:
+    - service: script.turn_on
+      entity_id: script.light_livingroom_turn_off
+
+- alias: "light_livingroom_turn_on"
+  trigger:
+    - platform: state
+      entity_id: sensor.0x00158d0002136276_click
+      to: "single"
+  condition:
+    - condition: state
+      entity_id: light.livingroom_color
+      state: "off"
+  action:
+    - service: script.turn_on
+      entity_id: script.light_livingroom_turn_on_default
+
+- alias: "ikea_switch_1_click_on"
   trigger:
     - platform: state
       entity_id: sensor.0xec1bbdfffea090e5_click
@@ -7,7 +33,7 @@
     - service: light.toggle
       entity_id: light.0xec1bbdfffe4d16eb_light
 
-- alias: "ikea_switch_1_off"
+- alias: "ikea_switch_1_click_off"
   trigger:
     - platform: state
       entity_id: sensor.0xec1bbdfffea090e5_click
