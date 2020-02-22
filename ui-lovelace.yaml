@@ -69,6 +69,9 @@ views:
               entity: light.small_torch
               toggle: true
             - type: custom:slider-entity-row
+              entity: light.bulb_s
+              toggle: true
+            - type: custom:slider-entity-row
               entity: light.0xec1bbdfffe4d16eb_light
               toggle: true
 

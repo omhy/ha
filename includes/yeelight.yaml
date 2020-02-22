@@ -11,3 +11,7 @@ devices:
     name: small_torch
     model: color2
     transition: 400
+  192.168.1.134:
+    name: bulb_s
+    # model: color2
+    transition: 400
