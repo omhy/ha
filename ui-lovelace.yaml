@@ -390,6 +390,12 @@ views:
             entities:
               - sensor.0x00158d00022c7cf2_temperature
               - sensor.0x00158d0002323783_temperature
+      # - type: sensor
+      #   entity: sensor.0x00158d000234816a_temperature
+      #   name: Living room
+      #   graph: line
+      #   detail: 2
+
 
   ##################   ACTIVITY
   - title: Activity
