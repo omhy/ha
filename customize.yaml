@@ -121,14 +121,19 @@ sensor.uptime:
 script.media_player_stop_all:
   friendly_name: Stop cast
   icon: mdi:stop
+script.androidbox_key_home:
+  friendly_name: Home
+  icon: mdi:home-circle
 script.androidbox_key_sleep:
   friendly_name: Sleep
+  icon: mdi:power-sleep
 script.androidbox_key_vol_up:
   friendly_name: Volume up
   icon: mdi:volume-plus
 script.androidbox_key_vol_dn:
   friendly_name: Volume down
   icon: mdi:volume-minus
+
 script.rmt_computer_sleep:
   friendly_name: Sleep computer
 script.rmt_laptop_sleep:

@@ -134,6 +134,7 @@ views:
               - script.androidbox_key_sleep
               - script.androidbox_key_vol_dn
               - script.androidbox_key_vol_up
+              - script.androidbox_key_home
 # COMP
         - type: conditional
           conditions:
