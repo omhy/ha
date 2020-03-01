@@ -1,23 +1,23 @@
 resources:
-  - url: /community_plugin/mini-media-player/mini-media-player.js
+  - url: /hacsfiles/mini-media-player/mini-media-player.js
     type: module
-  - url: /community_plugin/calendar-card/calendar-card.js
+  - url: /hacsfiles/calendar-card/calendar-card.js
     type: js
-  - url: /community_plugin/bar-card/bar-card.js
+  - url: /hacsfiles/bar-card/bar-card.js
     type: js
-  - url: /community_plugin/secondaryinfo-entity-row/secondaryinfo-entity-row.js
+  - url: /hacsfiles/secondaryinfo-entity-row/secondaryinfo-entity-row.js
     type: js
-  - url: /community_plugin/lovelace-card-tools/card-tools.js
+  - url: /hacsfiles/lovelace-card-tools/card-tools.js
     type: js
-  - url: /community_plugin/weather-card/weather-card.js
+  - url: /hacsfiles/weather-card/weather-card.js
     type: module
-  - url: /community_plugin/lovelace-slider-entity-row/slider-entity-row.js
+  - url: /hacsfiles/lovelace-slider-entity-row/slider-entity-row.js
     type: js
-  - url: /community_plugin/lovelace-auto-entities/auto-entities.js
+  - url: /hacsfiles/lovelace-auto-entities/auto-entities.js
     type: js
-  - url: /community_plugin/lovelace-weather-card-chart/weather-card-chart.js
+  - url: /hacsfiles/lovelace-weather-card-chart/weather-card-chart.js
     type: module
-  - url: /community_plugin/lovelace-swipe-navigation/swipe-navigation.js
+  - url: /hacsfiles/lovelace-swipe-navigation/swipe-navigation.js
     type: js
 
 title: Home
@@ -471,7 +471,6 @@ views:
           - binary_sensor.0x00158d0001fa3dc0_occupancy
           - binary_sensor.0x00158d0001e52779_occupancy
           - binary_sensor.0x00158d0002d43d7d_occupancy
-          - sensor.0x00158d0003537bf0_smoke_density
 
       - type: history-graph
         title: Android box 1h

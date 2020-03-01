@@ -10,10 +10,10 @@
     - platform: time_pattern
       minutes: "/5"
   condition:
-    - condtion: state
+    - condition: state
       entity_id: binary_sensor.ping_computer
       state: "on"
-    - condtion: numeric_state
+    - condition: numeric_state
       entity_id: sensor.seat_inactive
       above: 3600
   action:
