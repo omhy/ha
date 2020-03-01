@@ -11,6 +11,12 @@ state_change_entrance_door_set_now:
       data_template:
         entity_id: input_text.state_change_entrance_door
 
+state_change_seat_set_now:
+  sequence:
+    - service: script.input_text_set_now
+      data_template:
+        entity_id: input_text.state_change_seat
+
 state_change_dima_set_now:
   sequence:
     - service: script.input_text_set_now

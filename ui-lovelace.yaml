@@ -111,6 +111,7 @@ views:
             - entity_id: light.livingroom_color
             - entity_id: light.christmas
 
+
 # CONDITIONAL OFF
       - type: vertical-stack
         cards:
@@ -135,6 +136,17 @@ views:
               - script.androidbox_key_vol_dn
               - script.androidbox_key_vol_up
               - script.androidbox_key_home
+            # type: horizontal-stack
+            # cards:
+            #   - type: button
+            #     entity: script.androidbox_key_vol_dn
+            #   - type: button
+            #     entity: script.androidbox_key_vol_up
+            #   - type: button
+            #     entity: script.androidbox_key_sleep
+            #   - type: button
+            #     entity: script.androidbox_key_home
+
 # COMP
         - type: conditional
           conditions:

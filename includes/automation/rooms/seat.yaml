@@ -1,0 +1,20 @@
+- alias: "seat_moved"
+  trigger:
+    - platform: state
+      entity_id: sensor.0x00158d0002c4e568_action
+  action:
+    - service: script.state_change_seat_set_now
+
+- alias: "seat_inactive"
+  trigger:
+    - platform: time_pattern
+      minutes: "/5"
+  condition:
+    - condtion: state
+      entity_id: binary_sensor.ping_computer
+      state: "on"
+    - condtion: numeric_state
+      entity_id: sensor.seat_inactive
+      above: 3600
+  action:
+    - service: script.rmt_computer_sleep

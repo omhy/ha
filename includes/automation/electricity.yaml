@@ -39,6 +39,7 @@
     - service: notify.telegram_dima
       data_template:
         message: "{{ states.sensor.now_hm.state }} \U0001F5A5 is turned on ({{ states.sensor.computer_on_today.state_with_unit }})"
+    - service: script.state_change_seat_set_now
 
 - alias: "laptop_turned_off"
   trigger:
