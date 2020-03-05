@@ -12,7 +12,7 @@ workday_init:
         hs_color: [ 0, 100 ]
     - service: light.turn_on
       entity_id: 
-        - light.big_torch
+        # - light.big_torch
         - light.corner_lamp
       data:
         transition: 10
@@ -24,7 +24,7 @@ workday_ready_1:
     - service: light.turn_on
       entity_id: 
         - light.small_torch
-        - light.big_torch
+        # - light.big_torch
         - light.corner_lamp
       data:
         hs_color: [ 80, 100 ]
@@ -34,7 +34,7 @@ workday_ready_2:
     - service: light.turn_on
       entity_id: 
         - light.small_torch
-        - light.big_torch
+        # - light.big_torch
         - light.corner_lamp
       data:
         hs_color: [ 50, 100 ]
@@ -44,7 +44,7 @@ workday_steady:
     - service: light.turn_on
       entity_id: 
         - light.small_torch
-        - light.big_torch
+        # - light.big_torch
         - light.corner_lamp
       data:
         hs_color: [ 30, 100 ]
@@ -54,7 +54,7 @@ workday_go:
     - service: light.turn_on
       entity_id: 
         - light.small_torch
-        - light.big_torch
+        # - light.big_torch
         - light.corner_lamp
       data:
         hs_color: [ 5, 100 ]
@@ -66,5 +66,5 @@ workday_terminate:
         - light.garland
         - light.fire_lamp
         - light.small_torch
-        - light.big_torch
+        # - light.big_torch
         - light.corner_lamp
