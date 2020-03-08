@@ -14,6 +14,9 @@
           - binary_sensor.is_workday
           - binary_sensor.is_morning_activity
           - binary_sensor.is_backup_day
+    - service: hassio.addon_restart
+      data:
+        addon: 7ad98f9c_zigbee2mqtt
 
 - alias: "ha_rpi_power_tracker"
   trigger:

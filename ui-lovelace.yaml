@@ -909,6 +909,7 @@ views:
       - sensor.uptime
       - sensor.db_size_maria
       - sensor.db_size_influx
+      - sensor.start_time
 
     cards:
       - type: history-graph
