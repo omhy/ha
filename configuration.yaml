@@ -12,35 +12,18 @@ homeassistant:
   - /tmp
   - /share
 
+default_config:
 hassio:
-map:
-sun:
-config:
-system_health:
-person:
-mobile_app:
-uilogs:
+frontend:
+  themes: !include_dir_merge_named themes
 
-wwlln:
-  window: 30
+uilogs:
 
 system_log:
   max_entries: 20
 
-hacs:
-  token: !secret github_access_token
-
-frontend:
-  themes: !include_dir_merge_named themes
-  javascript_version: latest
-
-lovelace:
-  mode: yaml
-
 influxdb: !include includes/influxdb.yaml
 recorder: !include includes/recorder.yaml
-history:
-logbook:
 
 logger:
   default: warning
