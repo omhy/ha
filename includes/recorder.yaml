@@ -24,7 +24,9 @@ include:
     - binary_sensor.0x00158d0001e52779_occupancy #bathroom
     - binary_sensor.0x00158d0003537bf0_smoke
     - sensor.0x00158d0003537bf0_smoke_density
-    # - sensor.start_time
+    - sensor.u_s_air_quality_index
+    - sensor.u_s_air_pollution_level
+    - sensor.u_s_main_pollutant
     - sensor.rpi_power_status
     - sensor.moon
     - sensor.processor_use

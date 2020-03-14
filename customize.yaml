@@ -38,7 +38,7 @@ light.livingroom:
   icon: mdi:lightbulb-group
 light.livingroom_color:
   friendly_name: Living room color lights
-  icon: mdi:lightbulb-group
+  icon: mdi:lightbulb-group-outline
 light.christmas:
   friendly_name: Christmas lights
   icon: mdi:pine-tree

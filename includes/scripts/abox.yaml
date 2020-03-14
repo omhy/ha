@@ -25,3 +25,10 @@ androidbox_key_vol_up:
       entity_id: media_player.androidbox
       data:
         command: "VOLUME_UP"
+
+# androidbox_start_youtube:
+#   sequence:
+#     - service: androidtv.adb_command
+#       entity_id: media_player.androidbox
+#       data:
+#         command: "am start -a android.intent.action.VIEW -d -n com.google.android.youtube.tv/com.google.android.apps.youtube.tv.activity.ShellActivity"
