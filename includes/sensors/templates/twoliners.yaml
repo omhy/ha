@@ -74,7 +74,12 @@
 #SEAT
     seat_inactive:
       value_template: "{{ ((now() - strptime(states.input_text.state_change_seat.state, '%Y%m%d%H%M%S').astimezone()).seconds) }}"
-      entity_id: 
+      entity_id:
         - sensor.0x00158d0002c4e568_action
         - sensor.time
       unit_of_measurement: "seconds"
+#CIGS
+    cigarettes:
+      value_template: "{{ states['counter.balcony_sessions'].state }}"
+      entity_id: counter.balcony_sessions
+      unit_of_measurement: "cigarette"
