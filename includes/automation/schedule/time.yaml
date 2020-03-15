@@ -1,0 +1,7 @@
+- alias: "reset_counters"
+  trigger:
+    - platform: time
+      at: "23:59:00"
+  action:
+    - service: counter.reset
+      entity_id: counter.balcony_sessions
