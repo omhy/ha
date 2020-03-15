@@ -16,7 +16,7 @@
     - service: telegram_bot.send_message
       data_template:
         target: !secret tg_chat_dima
-        message: "{{ states.sensor.now_hm.state }} \U0001F4A5 Movement in Yuri' room ({{ states.counter.yuriroom_motions_watch.state }})"
+        message: "{{ states['sensor.now_hm'].state }} \U0001F4A5 Movement in Yuri' room ({{ states.counter.yuriroom_motions_watch.state }})"
         inline_keyboard:
           - "\U0000267B Dismiss:/dismiss"
 

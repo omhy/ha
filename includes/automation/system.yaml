@@ -33,7 +33,7 @@
         message: "RPI Power reported {{ states.sensor.rpi_power_status.state }}. The state had changed from {{ trigger.from_state.state }}"
     - service: notify.telegram_dima
       data_template:
-        message: "{{ states.sensor.now_hm.state }} \U0001f56f RPI Power reported {{ states.sensor.rpi_power_status.state }}. The state had changed from {{ trigger.from_state.state }}"
+        message: "{{ states['sensor.now_hm'].state }} \U0001f56f RPI Power reported {{ states.sensor.rpi_power_status.state }}. The state had changed from {{ trigger.from_state.state }}"
 
 - alias: "ha_hacs_updates"
   trigger:
@@ -43,7 +43,7 @@
   action:
     - service: notify.telegram_dima
       data_template:
-        message: "{{ states.sensor.now_hm.state }} \U0000269c HASC updated available: {{states.sensor.hacs.state}}"
+        message: "{{ states['sensor.now_hm'].state }} \U0000269c HASC updated available: {{states.sensor.hacs.state}}"
 
 - alias: "ha_midnight_daily_refresh"
   trigger:

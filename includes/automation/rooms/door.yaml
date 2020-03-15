@@ -17,7 +17,7 @@
     - service: script.aqara_stop_ringtone
     - service: notify.telegram_dima
       data_template:
-        message: "{{ states.sensor.now_hm.state }} \U0001F513 Door is opened ({{ states.sensor.state_change_door_ago_min.state_with_unit }})"
+        message: "{{ states['sensor.now_hm'].state }} \U0001F513 Door is opened ({{ states['sensor.state_change_door_ago_min'].state_with_unit }})"
     - service: script.state_change_entrance_door_set_now
 
 - alias: "door_entrance_closed"
@@ -29,5 +29,26 @@
     - service: script.aqara_stop_ringtone
     - service: notify.telegram_dima
       data_template:
-        message: "{{ states.sensor.now_hm.state }} \U0001F512 Door is closed ({{ states.sensor.state_change_door_ago_sec.state_with_unit }})"
+        message: "{{ states['sensor.now_hm'].state }} \U0001F512 Door is closed ({{ states['sensor.state_change_door_ago_sec'].state_with_unit }})"
     - service: script.state_change_entrance_door_set_now
+
+- alias: "door_balcony_opened_timer_idle"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.0x00158d000446fa53_contact
+      to: "on"
+  condition:
+    - condition: state
+      entity_id: timer.balcony_session
+      state: "idle"
+  action:
+    - service: timer.start
+      entity_id: timer.balcony_session
+    - service: counter.increment
+      entity_id: counter.balcony_sessions
+    - service: telegram_bot.send_message
+      data_template:
+        target: !secret tg_chat_dima
+        message: "{{ states['sensor.now_hm'].state }} \U0001f6ad Session started. Today: {{ states['counter.balcony_sessions'].state }}"
+        inline_keyboard:
+          - "\U000026d4 Noooooo:/no_balcony_session, \U0000267B Dismiss:/dismiss"

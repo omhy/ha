@@ -1,3 +1,6 @@
 yuriroom_motions_watch:
   initial: 3
   step: 1
+
+balcony_sessions:
+  initial: 0

@@ -11,7 +11,7 @@
         ringtone_vol: "{{ states.input_number.doorbell_volume.state | int }}"
     - service: notify.telegram_dima
       data_template:
-        message: "{{ states.sensor.now_hm.state }} \U0001F514 Doorbell single click"
+        message: "{{ states['sensor.now_hm'].state }} \U0001F514 Doorbell single click"
 
 - alias: "doorbell_double_click"
   trigger:
@@ -26,4 +26,4 @@
         ringtone_vol: "{{ states.input_number.doorbell_volume.state | int }}"
     - service: notify.telegram_dima
       data_template:
-        message: "{{ states.sensor.now_hm.state }} \U0001F514 Doorbell double click"
+        message: "{{ states['sensor.now_hm'].state }} \U0001F514 Doorbell double click"

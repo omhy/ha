@@ -377,7 +377,7 @@ binary_sensor.0x00158d0002d43d7d_occupancy:
 binary_sensor.0x00158d00024367c8_contact:
   friendly_name: Entrance door
 binary_sensor.0x00158d000446fa53_contact:
-  friendly_name: Storage door
+  friendly_name: Balcony door
 
 #seat
 sensor.0x00158d0002c4e568_action:
@@ -446,3 +446,8 @@ light.0xec1bbdfffe4d16eb_light:
 #0xec1bbdfffea090e5 IKEA BTN 1 | E1743 - https://www.zigbee2mqtt.io/devices/E1743.html
 sensor.0xec1bbdfffea090e5_click:
   friendly_name: Ikea switch 1
+
+#Counter
+counter.balcony_sessions:
+  friendly_name: Smokes
+  icon: mdi:smoking

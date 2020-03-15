@@ -6,4 +6,4 @@
   action:
     - service: notify.telegram_all
       data_template:
-        message: "{{ states.sensor.now_hm.state }} \U0001f525 Smoke detected!!!"
+        message: "{{ states['sensor.now_hm'].state }} \U0001f525 Smoke detected!!!"

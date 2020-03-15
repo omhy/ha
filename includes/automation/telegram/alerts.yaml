@@ -11,7 +11,7 @@
       data_template:
         target: !secret tg_chat_dima
         message: >
-          {{ states.sensor.now_hm.state }} {{ '\U00002139' }} {{ trigger.to_state.attributes.friendly_name }}
+          {{ states['sensor.now_hm'].state }} {{ '\U00002139' }} {{ trigger.to_state.attributes.friendly_name }}
           {% if trigger.to_state.state == 'on' %}
           `{{ trigger.to_state.attributes.event }} ({{ trigger.to_state.attributes.certainty }})`
           {{ trigger.to_state.attributes.description }}
@@ -30,7 +30,7 @@
     - service: telegram_bot.send_message
       data_template:
         target: !secret tg_chat_dima
-        message: "{{ states.sensor.now_hm.state }} {{ '\U000026a1' }} Kitchen power strip is off!"
+        message: "{{ states['sensor.now_hm'].state }} {{ '\U000026a1' }} Kitchen power strip is off!"
         inline_keyboard:
           - "\U0001F4A4 Turn on:/kitchen_is_off, \U0000267B Dismiss:/dismiss"
 
