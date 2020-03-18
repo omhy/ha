@@ -2,6 +2,7 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.0x00158d00024367c8_contact
+      from: "off"
       to: "on"
       for:
         minutes: 3
@@ -12,6 +13,7 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.0x00158d00024367c8_contact
+      from: "off"
       to: "on"
   action:
     - service: script.aqara_stop_ringtone
@@ -24,6 +26,7 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.0x00158d00024367c8_contact
+      from: "on"
       to: "off"
   action:
     - service: script.aqara_stop_ringtone
@@ -36,6 +39,7 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.0x00158d000446fa53_contact
+      from: "off"
       to: "on"
   condition:
     - condition: state

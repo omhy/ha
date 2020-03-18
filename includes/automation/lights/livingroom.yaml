@@ -24,7 +24,7 @@
     - service: script.turn_on
       entity_id: script.light_livingroom_turn_on_default
 
-- alias: "ikea_switch_1_click_on"
+- alias: "pendant_switch_click_on"
   trigger:
     - platform: state
       entity_id: sensor.0xec1bbdfffea090e5_click
@@ -33,7 +33,7 @@
     - service: light.toggle
       entity_id: light.0xec1bbdfffe4d16eb_light
 
-- alias: "ikea_switch_1_click_off"
+- alias: "pendant_switch_click_off"
   trigger:
     - platform: state
       entity_id: sensor.0xec1bbdfffea090e5_click
@@ -42,7 +42,7 @@
     - service: light.toggle
       entity_id: light.standalone_switch
 
-- alias: "ikea_switch_1_brightness_up"
+- alias: "pendant_switch_brightness_up"
   trigger:
     - platform: state
       entity_id: sensor.0xec1bbdfffea090e5_click
@@ -53,7 +53,7 @@
         entity_id: light.0xec1bbdfffe4d16eb_light
         step: 51
 
-- alias: "ikea_switch_1_brightness_down"
+- alias: "pendant_switch_brightness_down"
   trigger:
     - platform: state
       entity_id: sensor.0xec1bbdfffea090e5_click

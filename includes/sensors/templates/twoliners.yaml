@@ -35,18 +35,18 @@
     state_change_door_ago_min:
       value_template: "{{ ((now() - strptime(states.input_text.state_change_entrance_door.state, '%Y%m%d%H%M%S').astimezone()).seconds / 60) | round(0) }}"
       entity_id: binary_sensor.0x00158d00024367c8_contact
-      unit_of_measurement: "minutes"
+      unit_of_measurement: "min"
     state_change_door_ago_sec:
       value_template: "{{ ((now() - strptime(states.input_text.state_change_entrance_door.state, '%Y%m%d%H%M%S').astimezone()).seconds) | round(0) }}"
       entity_id: binary_sensor.0x00158d00024367c8_contact
-      unit_of_measurement: "seconds"
+      unit_of_measurement: "s"
 #STATE_CH_MANUAL
     state_change_dima_ago:
       value_template: "{{ ((now() - strptime(states.input_text.state_change_dima.state, '%Y%m%d%H%M%S').astimezone()).seconds / 60) | round(0) }}"
-      unit_of_measurement: "minutes"
+      unit_of_measurement: "min"
     state_change_alyona_ago:
       value_template: "{{ ((now() - strptime(states.input_text.state_change_alyona.state, '%Y%m%d%H%M%S').astimezone()).seconds / 60) | round(0) }}"
-      unit_of_measurement: "minutes"
+      unit_of_measurement: "min"
 #ABOX
     androidbox_app:
       value_template: "{{ states.media_player.androidbox.attributes.app_id.split('.')[-1] }}"
@@ -77,7 +77,7 @@
       entity_id:
         - sensor.0x00158d0002c4e568_action
         - sensor.time
-      unit_of_measurement: "seconds"
+      unit_of_measurement: "s"
 #CIGS
     cigarettes:
       value_template: "{{ states['counter.balcony_sessions'].state }}"

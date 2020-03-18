@@ -2,7 +2,7 @@
   sensors:
     # google_fit_sleep_minutes:
     #   entity_id: sensor.google_fit_sleep
-    #   unit_of_measurement: "minutes"
+    #   unit_of_measurement: "min"
     #   value_template: >
     #     {% set parts = states.sensor.google_fit_sleep.state.split(':') %}
     #     {% set h = parts[0] | int %}

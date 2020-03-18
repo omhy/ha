@@ -30,7 +30,7 @@ light.standalone_switch:
   icon: mdi:track-light
 light.bulb_s:
   friendly_name: Balloon lamp
-  icon: mdi:balloon
+  icon: mdi:globe-light
 
 #LIGHT_GROUPS
 light.livingroom:
@@ -438,14 +438,19 @@ sensor.tv_on_today:
   icon: mdi:television
 
 #ZIGBEE
-#0xec1bbdfffe4d16eb IKEA BULB 1 | LED1836G9 - https://www.zigbee2mqtt.io/devices/LED1836G9.html
+#IKEA BULBS | LED1836G9 - https://www.zigbee2mqtt.io/devices/LED1836G9.html
 light.0xec1bbdfffe4d16eb_light:
   friendly_name: Pendant
-  icon: mdi:coach-lamp
+  icon: mdi:ceiling-light
+light.0x14b457fffe4dc1c2_light:
+  friendly_name: Storage bulb
+  icon: mdi:package
 
 #0xec1bbdfffea090e5 IKEA BTN 1 | E1743 - https://www.zigbee2mqtt.io/devices/E1743.html
 sensor.0xec1bbdfffea090e5_click:
-  friendly_name: Ikea switch 1
+  friendly_name: Pendant switch
+sensor.0x14b457fffe8085df_click:
+  friendly_name: Storage switch
 
 #Counter
 counter.balcony_sessions:

@@ -1,0 +1,33 @@
+- alias: "storage_switch_clicks"
+  trigger:
+    - platform: state
+      entity_id: sensor.0x14b457fffe8085df_click
+      to: "on"
+    - platform: state
+      entity_id: sensor.0x14b457fffe8085df_click
+      to: "off"
+  action:
+    - service: light.toggle
+      entity_id: light.0x14b457fffe4dc1c2_light
+
+- alias: "storage_switch_brightness_up"
+  trigger:
+    - platform: state
+      entity_id: sensor.0x14b457fffe8085df_click
+      to: "brightness_up"
+  action:
+    - service: script.light_adjust_brightness
+      data_template:
+        entity_id: light.0x14b457fffe4dc1c2_light
+        step: 51
+
+- alias: "storage_switch_brightness_down"
+  trigger:
+    - platform: state
+      entity_id: sensor.0x14b457fffe8085df_click
+      to: "brightness_down"
+  action:
+    - service: script.light_adjust_brightness
+      data_template:
+        entity_id: light.0x14b457fffe4dc1c2_light
+        step: -51
