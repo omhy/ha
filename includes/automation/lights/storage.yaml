@@ -31,3 +31,14 @@
       data_template:
         entity_id: light.0x14b457fffe4dc1c2_light
         step: -51
+
+- alias: "storage_turn_off_light"
+  trigger:
+    - platform: state
+      entity_id: light.0x14b457fffe4dc1c2_light
+      to: "on"
+      for:
+        minutes: 15
+  action:
+    - service: light.turn_off
+      entity_id: light.0x14b457fffe4dc1c2_light
