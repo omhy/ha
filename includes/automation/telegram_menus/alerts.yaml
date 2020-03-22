@@ -1,0 +1,13 @@
+- alias: "telega_callback_kitchen_is_off"
+  trigger:
+    - platform: event
+      event_type: telegram_callback
+      event_data:
+        data: "/kitchen_is_off"
+  action:
+    - service: telegram_bot.answer_callback_query
+      data_template:
+        callback_query_id: "{{ trigger.event.data.id }}"
+        message: "Roger {{ trigger.event.data.data }}"
+    - service: switch.turn_on
+      entity_id: switch.power_strip_2

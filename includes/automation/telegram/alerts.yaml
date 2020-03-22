@@ -1,7 +1,7 @@
 - alias: "weather_meteo_alert"
   trigger:
     - platform: state
-      entity_id: 
+      entity_id:
         - binary_sensor.lv_kurzeme
         - binary_sensor.lv_vidzeme
         - binary_sensor.lv_zemgale
@@ -21,6 +21,25 @@
         inline_keyboard:
           - "\U0000267B Dismiss:/dismiss"
 
+- alias: "airvisual_alert"
+  trigger:
+    - platform: state
+      entity_id: 
+        - sensor.u_s_air_pollution_level
+        - sensor.chinese_air_pollution_level
+  action:
+    - service: telegram_bot.send_message
+      data_template:
+        target: !secret tg_chat_dima
+        message: >
+          {{ states['sensor.now_hm'].state }} {{ '\U00001f32c' }} {{ trigger.from_state.attributes.friendly_name }}: {{ trigger.from_state.state }} -> {{ trigger.to_state.state }}.
+
+          US: {{ states['sensor.u_s_air_pollution_level'].state_with_unit}}, {{ states['sensor.u_s_air_quality_index'].state_with_unit}}, {{ states['sensor.u_s_main_pollutant'].state_with_unit}}
+
+          CN: {{ states['sensor.chinese_air_pollution_level'].state_with_unit}}, {{ states['sensor.chinese_air_quality_index'].state_with_unit}}, {{ states['sensor.chinese_main_pollutant'].state_with_unit}}
+        inline_keyboard:
+          - "\U0000267B Dismiss:/dismiss"
+
 - alias: "kitchen_power_switched_off"
   trigger:
     - platform: state
@@ -33,17 +52,3 @@
         message: "{{ states['sensor.now_hm'].state }} {{ '\U000026a1' }} Kitchen power strip is off!"
         inline_keyboard:
           - "\U0001F4A4 Turn on:/kitchen_is_off, \U0000267B Dismiss:/dismiss"
-
-- alias: "telega_callback_kitchen_is_off"
-  trigger:
-    - platform: event
-      event_type: telegram_callback
-      event_data:
-        data: "/kitchen_is_off"
-  action:
-    - service: telegram_bot.answer_callback_query
-      data_template:
-        callback_query_id: "{{ trigger.event.data.id }}"
-        message: "Roger {{ trigger.event.data.data }}"
-    - service: switch.turn_on
-      entity_id: switch.power_strip_2
