@@ -4,11 +4,7 @@
       entity_id: sensor.0x00158d00021350ee_click
       to: "single"
   action:
-    - service: xiaomi_aqara.play_ringtone
-      data_template:
-        gw_mac: !secret gw_mac
-        ringtone_id: "{{ states.input_number.doorbell_melody.state | int }}"
-        ringtone_vol: "{{ states.input_number.doorbell_volume.state | int }}"
+    - service: script.doorbell_single
     - service: notify.telegram_dima
       data_template:
         message: "{{ states['sensor.now_hm'].state }} \U0001F514 Doorbell single click"
@@ -19,11 +15,7 @@
       entity_id: sensor.0x00158d00021350ee_click
       to: "double"
   action:
-    - service: xiaomi_aqara.play_ringtone
-      data_template:
-        gw_mac: !secret gw_mac
-        ringtone_id: "10002"
-        ringtone_vol: "{{ states.input_number.doorbell_volume.state | int }}"
+    - service: script.doorbell_double
     - service: notify.telegram_dima
       data_template:
         message: "{{ states['sensor.now_hm'].state }} \U0001F514 Doorbell double click"

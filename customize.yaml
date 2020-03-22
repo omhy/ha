@@ -295,12 +295,12 @@ sensor.days_in_month:
   icon: mdi:calendar-search
 
 #INPUT
-input_number.doorbell_volume:
-  friendly_name: Volume
-  icon: mdi:volume-high
-input_number.doorbell_melody:
-  friendly_name: Melody
-  icon: mdi:music-box
+# input_number.doorbell_volume:
+#   friendly_name: Volume
+#   icon: mdi:volume-high
+# input_number.doorbell_melody:
+#   friendly_name: Melody
+#   icon: mdi:music-box
 input_boolean.livingroom_torch_use:
   friendly_name: Use torch
 input_boolean.livingroom_corner_use:

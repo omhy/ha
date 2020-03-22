@@ -54,10 +54,10 @@ tts:
   service_name: google_say
   language: ru
 
-xiaomi_aqara:
-  discovery_retry: 5
-  gateways:
-    key: !secret gw_key
+# xiaomi_aqara:
+#   discovery_retry: 5
+#   gateways:
+#     key: !secret gw_key
 
 telegram_bot:
   platform: polling
