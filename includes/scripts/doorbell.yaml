@@ -7,7 +7,7 @@ doorbell_single:
     - service: media_player.play_media
       entity_id: media_player.loud_speaker
       data:
-        media_content_id: http://localhost:8123/local/doorbell/01.mp3
+        media_content_id: http://192.168.1.10:8123/local/doorbell/01.mp3
         media_content_type: audio/mp3
 
 doorbell_double:
@@ -19,5 +19,5 @@ doorbell_double:
     - service: media_player.play_media
       entity_id: media_player.loud_speaker
       data:
-        media_content_id: http://localhost:8123/local/doorbell/02.mp3
+        media_content_id: http://192.168.1.10:8123/local/doorbell/02.mp3
         media_content_type: audio/mp3

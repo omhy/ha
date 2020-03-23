@@ -32,7 +32,7 @@
       data_template:
         target: !secret tg_chat_dima
         message: >
-          {{ states['sensor.now_hm'].state }} {{ '\U00001f32c' }} {{ trigger.from_state.attributes.friendly_name }}: {{ trigger.from_state.state }} -> {{ trigger.to_state.state }}.
+          {{ states['sensor.now_hm'].state }} {{ '\U0001f32c' }} {{ trigger.from_state.attributes.friendly_name }}: {{ trigger.from_state.state }} -> {{ trigger.to_state.state }}.
 
           US: {{ states['sensor.u_s_air_pollution_level'].state_with_unit}}, {{ states['sensor.u_s_air_quality_index'].state_with_unit}}, {{ states['sensor.u_s_main_pollutant'].state_with_unit}}
 
