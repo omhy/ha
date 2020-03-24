@@ -54,10 +54,17 @@ tts:
   service_name: google_say
   language: ru
 
-# xiaomi_aqara:
-#   discovery_retry: 5
-#   gateways:
-#     key: !secret gw_key
+# asuswrt:
+#   host: !secret asuswrt_host
+#   username: !secret asuswrt_username
+#   password: !secret asuswrt_password
+#   interface: 'eth0'
+#   dnsmasq: /tmp
+#   sensors:
+#     - upload
+#     - download
+#     - upload_speed
+#     - download_speed
 
 telegram_bot:
   platform: polling

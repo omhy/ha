@@ -24,19 +24,13 @@
 - alias: "airvisual_alert"
   trigger:
     - platform: state
-      entity_id: 
-        - sensor.u_s_air_pollution_level
-        - sensor.chinese_air_pollution_level
+      entity_id: sensor.u_s_air_pollution_level
   action:
     - service: telegram_bot.send_message
       data_template:
         target: !secret tg_chat_dima
         message: >
-          {{ states['sensor.now_hm'].state }} {{ '\U0001f32c' }} {{ trigger.from_state.attributes.friendly_name }}: {{ trigger.from_state.state }} -> {{ trigger.to_state.state }}.
-
-          US: {{ states['sensor.u_s_air_pollution_level'].state_with_unit}}, {{ states['sensor.u_s_air_quality_index'].state_with_unit}}, {{ states['sensor.u_s_main_pollutant'].state_with_unit}}
-
-          CN: {{ states['sensor.chinese_air_pollution_level'].state_with_unit}}, {{ states['sensor.chinese_air_quality_index'].state_with_unit}}, {{ states['sensor.chinese_main_pollutant'].state_with_unit}}
+          {{ states['sensor.now_hm'].state }} {{ '\U0001f32c' }} {{ trigger.from_state.state }} -> {{ trigger.to_state.state }}: {{ states['sensor.u_s_air_quality_index'].state_with_unit}}, {{ states['sensor.u_s_main_pollutant'].state_with_unit}}
         inline_keyboard:
           - "\U0000267B Dismiss:/dismiss"
 
