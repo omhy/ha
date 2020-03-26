@@ -16,7 +16,6 @@
       from: "off"
       to: "on"
   action:
-    - service: script.aqara_stop_ringtone
     - service: notify.telegram_dima
       data_template:
         message: "{{ states['sensor.now_hm'].state }} \U0001F513 Door is opened ({{ states['sensor.state_change_door_ago_min'].state_with_unit }})"
@@ -29,7 +28,6 @@
       from: "on"
       to: "off"
   action:
-    - service: script.aqara_stop_ringtone
     - service: notify.telegram_dima
       data_template:
         message: "{{ states['sensor.now_hm'].state }} \U0001F512 Door is closed ({{ states['sensor.state_change_door_ago_sec'].state_with_unit }})"

@@ -36,13 +36,9 @@ rmt_laptop_sleep:
   sequence:
     - service: shell_command.sleep_laptop
 
+# add wooof-woof
 alarm_door:
   sequence:
-    - service: xiaomi_aqara.play_ringtone
-      data_template:
-        gw_mac: !secret gw_mac
-        ringtone_id: "8"
-        ringtone_vol: "10"
     - service: notify.telegram_all
       data_template:
         message: "{{ states['sensor.now_hm'].state }} \U0001F6A8 Door opened for a while"

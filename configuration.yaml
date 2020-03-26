@@ -58,7 +58,7 @@ tts:
 #   host: !secret asuswrt_host
 #   username: !secret asuswrt_username
 #   password: !secret asuswrt_password
-#   interface: 'eth0'
+#   interface: 'eth3'
 #   dnsmasq: /tmp
 #   sensors:
 #     - upload
