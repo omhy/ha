@@ -4,74 +4,68 @@ include:
   domains:
     - sun
     - device_tracker
-    - light
     - media_player
-    - calendar
     - person
   entities:
+    - binary_sensor.0x00158d0001e52779_occupancy #bathroom
     - binary_sensor.0x00158d0001fa3dc0_occupancy #living room
+    - binary_sensor.0x00158d00024367c8_contact #entrance door
     - binary_sensor.0x00158d0002d43d7d_occupancy #yuri room
-    # - sensor.0x00158d0002c4e568_action #vibro
-    # - sensor.0x00158d00028776ae_action #cube action
-    - sensor.adguard_rules_count
-    - sensor.adguard_average_processing_speed
-    - binary_sensor.ping_computer
+    - binary_sensor.0x00158d0003537bf0_smoke
+    - binary_sensor.0x00158d000446fa53_contact #storage door
     - binary_sensor.ping_androidbox
+    - binary_sensor.ping_computer
     - binary_sensor.ping_laptop
     - binary_sensor.ping_tv
-    - binary_sensor.0x00158d00024367c8_contact #entrance door
-    - binary_sensor.0x00158d000446fa53_contact #storage door
-    - binary_sensor.0x00158d0001e52779_occupancy #bathroom
-    - binary_sensor.0x00158d0003537bf0_smoke
+    - sensor.0x00158d0001f23cbe_humidity
+    - sensor.0x00158d0001f23cbe_pressure
+    - sensor.0x00158d0001f23cbe_temperature
+    - sensor.0x00158d0002271609_humidity
+    - sensor.0x00158d0002271609_pressure
+    - sensor.0x00158d0002271609_temperature
+    - sensor.0x00158d00022c7cf2_humidity
+    - sensor.0x00158d00022c7cf2_pressure
+    - sensor.0x00158d00022c7cf2_temperature
+    - sensor.0x00158d0002323783_humidity
+    - sensor.0x00158d0002323783_pressure
+    - sensor.0x00158d0002323783_temperature
+    - sensor.0x00158d000234816a_humidity
+    - sensor.0x00158d000234816a_pressure
+    - sensor.0x00158d000234816a_temperature
+    - sensor.0x00158d00032308dd_humidity
+    - sensor.0x00158d00032308dd_pressure
+    - sensor.0x00158d00032308dd_temperature
     - sensor.0x00158d0003537bf0_smoke_density
-    - sensor.u_s_air_quality_index
-    - sensor.u_s_air_pollution_level
-    - sensor.u_s_main_pollutant
-    - sensor.rpi_power_status
-    - sensor.moon
-    - sensor.processor_use
-    - sensor.cpu_mean
-    - sensor.cpu_derivative
-    - sensor.memory_use_percent
+    - sensor.adguard_average_processing_speed
+    - sensor.adguard_rules_count
+    - sensor.androidbox_app
+    - sensor.androidbox_app_full
+    - sensor.current_ozone_level
+    - sensor.current_uv_index
+    - sensor.current_uv_level
     - sensor.disk_use_percent_home
-    - sensor.swap_use_percent
-    - sensor.temperature
     - sensor.google_fit_calories
     - sensor.google_fit_distance
+    - sensor.google_fit_heartrate
     - sensor.google_fit_move_time
     - sensor.google_fit_sleep
     - sensor.google_fit_steps
     - sensor.google_fit_weight
-    - sensor.google_fit_heartrate
-    - sensor.androidbox_app
-    - sensor.androidbox_app_full
+    - sensor.max_uv_index
+    - sensor.memory_use_percent
+    - sensor.moon
     - sensor.power_strip_1_load_power
     - sensor.power_strip_2_load_power
     - sensor.power_strip_3_load_power
     - sensor.power_strip_4_load_power
     - sensor.power_strip_5_load_power
-    - sensor.current_uv_level
-    - sensor.current_uv_index
-    - sensor.max_uv_index
-    - sensor.current_ozone_level
-    - sensor.0x00158d0001f23cbe_temperature
-    - sensor.0x00158d0002271609_temperature
-    - sensor.0x00158d00022c7cf2_temperature
-    - sensor.0x00158d0002323783_temperature
-    - sensor.0x00158d000234816a_temperature
-    - sensor.0x00158d00032308dd_temperature
-    - sensor.0x00158d0001f23cbe_humidity
-    - sensor.0x00158d0002271609_humidity
-    - sensor.0x00158d00022c7cf2_humidity
-    - sensor.0x00158d0002323783_humidity
-    - sensor.0x00158d000234816a_humidity
-    - sensor.0x00158d00032308dd_humidity
-    - sensor.0x00158d0001f23cbe_pressure
-    - sensor.0x00158d0002271609_pressure
-    - sensor.0x00158d00022c7cf2_pressure
-    - sensor.0x00158d0002323783_pressure
-    - sensor.0x00158d000234816a_pressure
-    - sensor.0x00158d00032308dd_pressure
+    - sensor.processor_use
+    - sensor.rpi_power_status
+    - sensor.swap_use_percent
+    - sensor.temperature
+    - sensor.u_s_air_pollution_level
+    - sensor.u_s_air_quality_index
+    - sensor.u_s_main_pollutant
     - sensor.wt00_temperature
     - sensor.wt01_temperature
     - sensor.wt02_temperature
