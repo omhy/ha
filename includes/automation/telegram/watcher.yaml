@@ -1,0 +1,14 @@
+- alias: "state_watcher"
+  trigger:
+    - platform: state
+      entity_id:
+        - sensor.latvia_coronavirus_confirmed
+        - sensor.estonia_coronavirus_confirmed
+        - sensor.lithuania_coronavirus_confirmed
+  action:
+    - service: telegram_bot.send_message
+      data_template:
+        target: !secret tg_chat_dima
+        message: "{{ states['sensor.now_hm'].state }} \U00002139 `{{ trigger.from_state.attributes.friendly_name }}`: {{ trigger.from_state.state }} -> {{ trigger.to_state.state }}"
+        inline_keyboard:
+          - "\U0000267B Dismiss:/dismiss"
