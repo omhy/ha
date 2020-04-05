@@ -21,18 +21,19 @@
         - sensor.estonia_coronavirus_current
         - sensor.lithuania_coronavirus_current
         - sensor.sweden_coronavirus_current
-        - sensor.worldwide_coronavirus_current
-        - sensor.us_coronavirus_current
   action:
     - service: telegram_bot.send_message
       data_template:
         target: !secret tg_chat_dima
         message: >
-          {% set from = trigger.to_state.state|int %}
+          {% set name = trigger.from_state.attributes.friendly_name %}
+          {% set cntr = name.split()[0] %}
+          {% set cntru = cntr|upper %}
+          {% set from = trigger.from_state.state|int %}
           {% set to = trigger.to_state.state|int %}
           {% set chg = to - from %}
           {% set prc = (chg / from * 100)|round(2) %}
-          "{{ states['sensor.now_hm'].state }} \U00002139 `{{ trigger.from_state.attributes.friendly_name }}:` {{ from }} -> {{ to }} | {{ chg }} | {{ prc }} %"
+          {{ states['sensor.now_hm'].state }} {{ '\U00002139' }} `{{ cntr }}:` {{ from }} -> {{ to }} | {{ chg }} | {{ prc }} %
         inline_keyboard:
           - "\U0000267B Dismiss:/dismiss"
 

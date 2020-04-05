@@ -1,10 +1,11 @@
+# До работы ехать {{ states('sensor.waze_home_work') }} минут.
+
 tts_summary:
   sequence:
     - service: script.tts_say_kitchen
       data_template:
         message: >
           Привет!
-          До работы ехать {{ states('sensor.waze_home_work') }} минут.
           В парке температура - {{ states('sensor.0x00158d00022c7cf2_temperature') | round(0) }} градусов.
           Во дворе температура - {{ states('sensor.0x00158d0002323783_temperature') | round(0) }} градусов.
           ветер - {{ states('sensor.wt00_wind_speed') | round(0) }} метров в секунду.

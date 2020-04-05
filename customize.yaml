@@ -77,10 +77,10 @@ sensor.swap_use_percent:
 #  friendly_name: To home
 #sensor.waze_current_work:
 #  friendly_name: To work
-sensor.waze_home_work:
-  friendly_name: Home to work
-sensor.waze_work_home:
-  friendly_name: Work to home
+# sensor.waze_home_work:
+#   friendly_name: Home to work
+# sensor.waze_work_home:
+#   friendly_name: Work to home
 # sensor.next_dusk:
 #   friendly_name: Next dusk
 #   icon: mdi:weather-sunset-down
