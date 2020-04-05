@@ -54,7 +54,7 @@ tts:
   service_name: google_say
   language: ru
 
-#telegram_bot:
+telegram_bot:
   platform: polling
   api_key: !secret tg_api_bot_key
   allowed_chat_ids:
