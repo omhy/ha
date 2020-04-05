@@ -54,19 +54,7 @@ tts:
   service_name: google_say
   language: ru
 
-# asuswrt:
-#   host: !secret asuswrt_host
-#   username: !secret asuswrt_username
-#   password: !secret asuswrt_password
-#   interface: 'eth3'
-#   dnsmasq: /tmp
-#   sensors:
-#     - upload
-#     - download
-#     - upload_speed
-#     - download_speed
-
-telegram_bot:
+#telegram_bot:
   platform: polling
   api_key: !secret tg_api_bot_key
   allowed_chat_ids:

@@ -295,12 +295,6 @@ sensor.days_in_month:
   icon: mdi:calendar-search
 
 #INPUT
-# input_number.doorbell_volume:
-#   friendly_name: Volume
-#   icon: mdi:volume-high
-# input_number.doorbell_melody:
-#   friendly_name: Melody
-#   icon: mdi:music-box
 input_boolean.livingroom_torch_use:
   friendly_name: Use torch
 input_boolean.livingroom_corner_use:
@@ -446,7 +440,7 @@ light.0x14b457fffe4dc1c2_light:
   friendly_name: Storage bulb
   icon: mdi:package
 
-#0xec1bbdfffea090e5 IKEA BTN 1 | E1743 - https://www.zigbee2mqtt.io/devices/E1743.html
+#IKEA BTNS | E1743 - https://www.zigbee2mqtt.io/devices/E1743.html
 sensor.0xec1bbdfffea090e5_click:
   friendly_name: Pendant switch
 sensor.0x14b457fffe8085df_click:

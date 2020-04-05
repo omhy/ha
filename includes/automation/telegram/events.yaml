@@ -2,9 +2,7 @@
 #   trigger:
 #     - platform: state
 #       entity_id:
-#         - sensor.latvia_coronavirus_confirmed
-#         - sensor.estonia_coronavirus_confirmed
-#         - sensor.lithuania_coronavirus_confirmed
+#         - sensor.xxxx
 #   action:
 #     - service: telegram_bot.send_message
 #       data_template:
@@ -34,8 +32,8 @@
           {% set chg = to - from %}
           {% set prc = (chg / from * 100)|round(2) %}
           {{ states['sensor.now_hm'].state }} {{ '\U00002139' }} `{{ cntr }}:` {{ from }} -> {{ to }} | {{ chg }} | {{ prc }} %
-        inline_keyboard:
-          - "\U0000267B Dismiss:/dismiss"
+        # inline_keyboard:
+        #   - "\U0000267B Dismiss:/dismiss"
 
 - alias: "ha_bad_login"
   trigger:
