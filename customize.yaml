@@ -1,4 +1,3 @@
-#LIGHTS
 light.gateway_light_7811dcb36cee:
   friendly_name: Gateway light
 light.big_torch:
@@ -31,8 +30,6 @@ light.standalone_switch:
 light.bulb_s:
   friendly_name: Balloon lamp
   icon: mdi:globe-light
-
-#LIGHT_GROUPS
 light.livingroom:
   friendly_name: Living room lights
   icon: mdi:lightbulb-group
@@ -42,11 +39,8 @@ light.livingroom_color:
 light.christmas:
   friendly_name: Christmas lights
   icon: mdi:pine-tree
-
 switch.0x00158d0002013f1e_switch:
   friendly_name: Standalone switch
-
-#MISC
 binary_sensor.is_workday:
   friendly_name: Workday?
   icon: mdi:briefcase
@@ -62,7 +56,6 @@ binary_sensor.0x00158d0003537bf0_smoke:
 binary_sensor.0x00158d0003537bf0_smoke_density:
   friendly_name: Smoke density
   icon: mdi:smoke-detector
-
 sensor.processor_use:
   friendly_name: CPU
 sensor.memory_use_percent:
@@ -71,23 +64,6 @@ sensor.disk_use_percent_home:
   friendly_name: Disk
 sensor.swap_use_percent:
   friendly_name: Swap
-
-#WAZE
-#sensor.waze_current_home:
-#  friendly_name: To home
-#sensor.waze_current_work:
-#  friendly_name: To work
-# sensor.waze_home_work:
-#   friendly_name: Home to work
-# sensor.waze_work_home:
-#   friendly_name: Work to home
-# sensor.next_dusk:
-#   friendly_name: Next dusk
-#   icon: mdi:weather-sunset-down
-# sensor.next_dawn:
-#   friendly_name: Next dawn
-#   icon: mdi:weather-sunset-up
-
 sensor.livingroom_motions:
   friendly_name: Today
   icon: mdi:sigma
@@ -100,27 +76,20 @@ sensor.yuriroom_motions:
 sensor.androidbox_app:
   friendly_name: Abox app
   icon: mdi:android-debug-bridge
-
 sensor.consumption_today:
   friendly_name: Today
   icon: mdi:power-plug
 sensor.consumption_now:
   friendly_name: Now
   icon: mdi:power-plug
-
-#DEVICES
 device_tracker.google_maps_111683533988744565132:
   friendly_name: Dima
 device_tracker.google_maps_117454969161947422882:
   friendly_name: Yury
 device_tracker.google_maps_115914092349482836896:
   friendly_name: Alyona
-
-#HW
 sensor.uptime:
   friendly_name: HA uptime
-
-#SCRIPTS
 script.media_player_stop_all:
   friendly_name: Stop cast
   icon: mdi:stop
@@ -136,15 +105,12 @@ script.androidbox_key_vol_up:
 script.androidbox_key_vol_dn:
   friendly_name: Volume down
   icon: mdi:volume-minus
-
 script.rmt_computer_sleep:
   friendly_name: Sleep computer
 script.rmt_laptop_sleep:
   friendly_name: Sleep laptop
 script.ha_check_config:
   friendly_name: Check configuration
-
-#GOOGLE HOME
 media_player.kitchen_display:
   friendly_name: Kitchen display
   icon: mdi:monitor
@@ -160,22 +126,18 @@ media_player.yury_speaker:
 media_player.black_speaker:
   friendly_name: Black speaker
   icon: mdi:dots-horizontal-circle
-#GOOGLE HOME GROUPS
 media_player.speakers:
   friendly_name: Speakers
   icon: mdi:speaker
 media_player.surround:
   friendly_name: Surround
   icon: mdi:surround-sound
-#MEDIA_PLAYERS MISC
 media_player.spotify_dmitry:
   friendly_name: Spotify
   icon: mdi:spotify
 media_player.chromecast:
   friendly_name: Chromecast
   icon: mdi:google-chrome
-
-#SENSORS
 sensor.home_assistant_v2_db:
   friendly_name: Log size
 sensor.0x00158d0002271609_humidity:
@@ -214,7 +176,6 @@ sensor.0x00158d00022c7cf2_temperature:
   friendly_name: Park
 sensor.0x00158d00022c7cf2_pressure:
   friendly_name: Park
-
 sensor.current_uv_level:
   friendly_name: UV
 sensor.current_uv_index:
@@ -232,51 +193,46 @@ sensor.db_size_influx:
 sensor.androidbox_on_today:
   friendly_name: Android box
   icon: mdi:android
-
 sensor.outpark_temp_min:
   friendly_name: Park min
   icon: mdi:minus-box
-  unit_of_measurement: "°C"
+  unit_of_measurement: °C
   device_class: temperature
 sensor.outpark_temp_max:
   friendly_name: Park max
   icon: mdi:plus-box
-  unit_of_measurement: "°C"
+  unit_of_measurement: °C
   device_class: temperature
 sensor.outpark_temp_diff:
   friendly_name: Park diff
   icon: mdi:poll-box
-  unit_of_measurement: "°C"
-
+  unit_of_measurement: °C
 sensor.outpark_temp_min_at:
   friendly_name: Minimal @
   icon: mdi:clock
 sensor.outpark_temp_max_at:
   friendly_name: Maximal @
   icon: mdi:clock
-  
 sensor.outyard_temp_min:
   friendly_name: Yard min
   icon: mdi:minus-box
-  unit_of_measurement: "°C"
+  unit_of_measurement: °C
   device_class: temperature
 sensor.outyard_temp_max:
   friendly_name: Yard max
   icon: mdi:plus-box
-  unit_of_measurement: "°C"
+  unit_of_measurement: °C
   device_class: temperature
 sensor.outyard_temp_diff:
   friendly_name: Yard diff
   icon: mdi:poll-box
-  unit_of_measurement: "°C"
-
+  unit_of_measurement: °C
 sensor.outyard_temp_min_at:
   friendly_name: Minimal @
   icon: mdi:clock
 sensor.outyard_temp_max_at:
   friendly_name: Maximal @
   icon: mdi:clock
-
 sensor.androidbox_youtube_today:
   friendly_name: Youtube
   icon: mdi:youtube
@@ -289,20 +245,15 @@ sensor.androidbox_launcher_today:
 sensor.androidbox_hdvideo_today:
   friendly_name: HD Video
   icon: mdi:video-vintage
-
 sensor.days_in_month:
   friendly_name: Days in month
   icon: mdi:calendar-search
-
-#INPUT
 input_boolean.livingroom_torch_use:
   friendly_name: Use torch
 input_boolean.livingroom_corner_use:
   friendly_name: Use corner
 input_select.living_room_flow:
   friendly_name: Flow type
-
-#BINARY SENSORS
 binary_sensor.ping_computer:
   friendly_name: Computer
 binary_sensor.ping_laptop:
@@ -315,11 +266,9 @@ binary_sensor.ping_androidbox:
   friendly_name: Abox state
   icon: mdi:android
   device_class: connectivity
-
 binary_sensor.people_home:
   friendly_name: Someone home
   icon: mdi:account-multiple-check
-
 binary_sensor.lv_kurzeme:
   friendly_name: Kurzeme
 binary_sensor.lv_zemgale:
@@ -328,40 +277,27 @@ binary_sensor.lv_vidzeme:
   friendly_name: Vidzeme
 binary_sensor.lv_latgale:
   friendly_name: Latgale
-
-
-#persons
 person.dima:
   entity_picture: /local/persons/dima.jpg
 person.alyona:
   entity_picture: /local/persons/alyona.jpg
 person.yuri:
   entity_picture: /local/persons/yuri.jpg
-
-#cube
 sensor.0x00158d00028776ae_action:
   friendly_name: Cube
   icon: mdi:cube-outline
-
-#wall-logic
 sensor.0x00158d00026b96c1_click:
   friendly_name: Wireless switch
-
-#wall-real
 switch.0x00158d00022391ec_switch_left:
   friendly_name: Corridor
 switch.0x00158d00022391ec_switch_right:
   friendly_name: Bathroom
-
-#buttons
 binary_sensor.switch_0x00158d0002136276_click:
   friendly_name: Light button
 binary_sensor.switch_0x00158d00021329e3_click:
   friendly_name: Entrance button
 binary_sensor.switch_0x00158d00021350ee_click:
   friendly_name: Doorbell button
-
-#motion
 binary_sensor.0x00158d0001e52779_occupancy:
   friendly_name: Bathroom
 binary_sensor.0x00158d0001fa3dc0_occupancy:
@@ -372,8 +308,6 @@ binary_sensor.0x00158d00024367c8_contact:
   friendly_name: Entrance door
 binary_sensor.0x00158d000446fa53_contact:
   friendly_name: Balcony door
-
-#seat
 sensor.0x00158d0002c4e568_action:
   friendly_name: Seat action
   icon: mdi:seat
@@ -381,19 +315,14 @@ sensor.0x00158d0002c4e568_sensitivity:
   friendly_name: Seat sensitivity
 sensor.0x00158d0002c4e568_strength:
   friendly_name: Seat strength
-
-#ILLUMINATION
 sensor.0x00158d0001e52779_illuminance:
   friendly_name: Bathroom
 sensor.0x00158d0001fa3dc0_illuminance:
   friendly_name: Livingroom
 sensor.0x00158d0002d43d7d_illuminance:
   friendly_name: Yuri room
-
 sensor.illumination_7811dcb36cee:
   friendly_name: Gateway
-
-#SWITCHES
 switch.power_strip_1:
   friendly_name: Computer
 switch.power_strip_2:
@@ -406,7 +335,6 @@ switch.power_strip_5:
   friendly_name: Fridge
 switch.circadian_lighting_circadian_lighting:
   icon: mdi:vector-circle
-
 sensor.power_strip_1_load_power:
   friendly_name: Computer
 sensor.power_strip_2_load_power:
@@ -417,10 +345,8 @@ sensor.power_strip_4_load_power:
   friendly_name: TV
 sensor.power_strip_5_load_power:
   friendly_name: Fridge
-
 sensor.ha_version_current:
   friendly_name: Installed
-
 sensor.computer_on_today:
   friendly_name: Computer
   icon: mdi:desktop-classic
@@ -430,23 +356,18 @@ sensor.laptop_on_today:
 sensor.tv_on_today:
   friendly_name: TV
   icon: mdi:television
-
-#ZIGBEE
-#IKEA BULBS | LED1836G9 - https://www.zigbee2mqtt.io/devices/LED1836G9.html
 light.0xec1bbdfffe4d16eb_light:
   friendly_name: Pendant
   icon: mdi:ceiling-light
 light.0x14b457fffe4dc1c2_light:
   friendly_name: Storage bulb
   icon: mdi:package
-
-#IKEA BTNS | E1743 - https://www.zigbee2mqtt.io/devices/E1743.html
 sensor.0xec1bbdfffea090e5_click:
   friendly_name: Pendant switch
 sensor.0x14b457fffe8085df_click:
   friendly_name: Storage switch
-
-#Counter
 counter.balcony_sessions:
   friendly_name: Smokes
   icon: mdi:smoking
+zone.home:
+  radius: 30

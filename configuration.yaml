@@ -1,10 +1,4 @@
 homeassistant:
-  name: Home
-  latitude: !secret latitude
-  longitude: !secret longitude
-  elevation: 5
-  unit_system: metric
-  time_zone: !secret timezone
   customize: !include customize.yaml
   customize_glob: !include customize_glob.yaml
   whitelist_external_dirs:
@@ -12,12 +6,26 @@ homeassistant:
   - /tmp
   - /share
 
-default_config:
+# default_config:
+history:
+# logbook:
+# map:
+mobile_app:
+person:
+sun:
+system_health:
+updater:
+config:
+
+# zeroconf:
+# ssdp:
+
 hassio:
 frontend:
   themes: !include_dir_merge_named themes
 
 uilogs:
+start_time:
 
 system_log:
   max_entries: 20
@@ -77,7 +85,6 @@ utility_meter: !include includes/utility_meter.yaml
 light: !include includes/light.yaml
 yeelight: !include includes/yeelight.yaml
 google_assistant: !include includes/google_assistant.yaml
-zone: !include includes/zone.yaml
 device_tracker: !include includes/device_tracker.yaml
 media_player: !include includes/media_player.yaml
 notify: !include includes/notify.yaml

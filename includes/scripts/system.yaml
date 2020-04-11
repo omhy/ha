@@ -42,3 +42,19 @@ alarm_door:
     - service: notify.telegram_all
       data_template:
         message: "{{ states['sensor.now_hm'].state }} \U0001F6A8 Door opened for a while"
+
+ha_do_backup:
+  sequence:
+    - service: hassio.addon_stop
+      data:
+        addon: core_mariadb
+    - delay: '00:01'
+    - service: hassio.snapshot_full
+      data_template:
+        name: "backup_{{ states['sensor.now_ymdhms'].state }}"
+    - delay: '00:01'
+    - service: hassio.addon_start
+      data:
+        addon: core_mariadb
+    - delay: '00:01'
+    - service: rest_command.google_backup
