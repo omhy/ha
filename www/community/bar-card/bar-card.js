@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 console.info(`%cBAR-CARD\n%cVersion: 3.0.9`, 'color: #4788d4; font-weight: bold;', '');
+=======
+console.info(`%cBAR-CARD\n%cVersion: 3.0.5`, 'color: #4788d4; font-weight: bold;', '');
+>>>>>>> 06cb9c9e77ba349a6024fee88179c77679278903
 class BarCard extends HTMLElement {
     constructor() {
         super();
@@ -12,10 +16,16 @@ class BarCard extends HTMLElement {
             animation: {
                 state: 'off',
                 delay: 5000,
+<<<<<<< HEAD
                 speed: 1000,
             },
             color: 'var(--bar-card-color, var(--primary-color))',
             columns: false,
+=======
+                speed: 1000
+            },
+            color: 'var(--bar-card-color, var(--primary-color))',
+>>>>>>> 06cb9c9e77ba349a6024fee88179c77679278903
             decimal: false,
             direction: 'right',
             height: '40px',
@@ -30,7 +40,11 @@ class BarCard extends HTMLElement {
                 indicator: 'outside',
                 title: 'inside',
                 minmax: 'off',
+<<<<<<< HEAD
                 value: 'inside',
+=======
+                value: 'inside'
+>>>>>>> 06cb9c9e77ba349a6024fee88179c77679278903
             },
             severity: false,
             service_options: false,
@@ -38,7 +52,11 @@ class BarCard extends HTMLElement {
             tap_action: 'info',
             target: false,
             title: false,
+<<<<<<< HEAD
             unit_of_measurement: false,
+=======
+            unit_of_measurement: false
+>>>>>>> 06cb9c9e77ba349a6024fee88179c77679278903
         };
         let defaultConfigPositions = defaultConfig.positions;
         let configPositions = config.positions;
@@ -77,6 +95,7 @@ class BarCard extends HTMLElement {
         header.classList.add('card-header');
         const name = document.createElement('div');
         name.classList.add('name');
+<<<<<<< HEAD
         this._configArray = [];
         if (config.columns) {
             config.stack = 'horizontal';
@@ -124,6 +143,51 @@ class BarCard extends HTMLElement {
                         haCard.appendChild(this._cardElements(this._configArray[i], entityName[0] + '_' + entityName[1] + '_' + i, config.entities[i].entity));
                         break;
                 }
+=======
+        const haCardStyle = document.createElement('style');
+        let direction;
+        switch (config.stack) {
+            case 'horizontal':
+                direction = 'row';
+                break;
+            case 'vertical':
+                direction = 'column';
+        }
+        switch (config.entity_row) {
+            case false:
+                haCardStyle.textContent = `
+        ha-card {
+          display: flex;
+          align-items: stretch;
+          flex-direction: column;
+        }
+      `;
+                break;
+            case true:
+                haCardStyle.textContent = `
+        ha-card {
+          display: flex;
+          align-items: stretch;
+          flex-direction: ${direction};
+          background: #0000;
+          box-shadow: none;
+        }
+      `;
+                break;
+        }
+        this._configArray = [];
+        for (let i = 0; i <= config.entities.length - 1; i++) {
+            const entityName = config.entities[i].entity.split('.');
+            const duplicatedConfig = Object.assign({}, config);
+            this._configArray[i] = Object.assign(duplicatedConfig, config.entities[i]);
+            switch (config.entity_row) {
+                case false:
+                    states.appendChild(this._cardElements(this._configArray[i], entityName[0] + '_' + entityName[1] + '_' + i, config.entities[i].entity));
+                    break;
+                case true:
+                    haCard.appendChild(this._cardElements(this._configArray[i], entityName[0] + '_' + entityName[1] + '_' + i, config.entities[i].entity));
+                    break;
+>>>>>>> 06cb9c9e77ba349a6024fee88179c77679278903
             }
         }
         if (config.title && config.entity_row == false) {
@@ -136,8 +200,13 @@ class BarCard extends HTMLElement {
                 haCard.appendChild(states);
                 break;
         }
+<<<<<<< HEAD
         haCard.appendChild(this._styleElements(config));
         this.shadowRoot.appendChild(haCard);
+=======
+        this.shadowRoot.appendChild(haCard);
+        this.shadowRoot.appendChild(haCardStyle);
+>>>>>>> 06cb9c9e77ba349a6024fee88179c77679278903
         if (this._hass) {
             for (let i = 0; i <= config.entities.length - 1; i++) {
                 const entityName = config.entities[i].entity.split('.');
@@ -174,7 +243,11 @@ class BarCard extends HTMLElement {
         const minValue = document.createElement('bar-card-minvalue');
         minValue.id = 'minValue_' + id;
         const divider = document.createElement('bar-card-divider');
+<<<<<<< HEAD
         divider.id = 'divider_' + id;
+=======
+        divider.id = 'divider' + id;
+>>>>>>> 06cb9c9e77ba349a6024fee88179c77679278903
         divider.textContent = `/`;
         const maxValue = document.createElement('bar-card-maxvalue');
         maxValue.id = 'maxValue_' + id;
@@ -220,8 +293,15 @@ class BarCard extends HTMLElement {
             card.appendChild(divider);
             card.appendChild(maxValue);
         }
+<<<<<<< HEAD
         if (config.positions.value == 'outside')
             card.appendChild(value);
+=======
+        ;
+        if (config.positions.value == 'outside')
+            card.appendChild(value);
+        card.appendChild(this._styleElements(config));
+>>>>>>> 06cb9c9e77ba349a6024fee88179c77679278903
         switch (config.tap_action) {
             case 'info':
                 card.addEventListener('click', (event) => {
@@ -259,6 +339,7 @@ class BarCard extends HTMLElement {
         let titleDisplay;
         let titleMargin;
         let valueMargin;
+<<<<<<< HEAD
         let haCardStyle;
         let direction;
         switch (config.stack) {
@@ -269,6 +350,8 @@ class BarCard extends HTMLElement {
                 direction = 'column';
                 break;
         }
+=======
+>>>>>>> 06cb9c9e77ba349a6024fee88179c77679278903
         if (config.width) {
             backgroundWidth = `width: ${config.width};`;
             barFlexGrow = '0';
@@ -281,13 +364,17 @@ class BarCard extends HTMLElement {
         }
         switch (config.stack) {
             case 'horizontal':
+<<<<<<< HEAD
                 if (config.columns)
                     statesDirection = 'column';
+=======
+>>>>>>> 06cb9c9e77ba349a6024fee88179c77679278903
                 switch (config.entity_row) {
                     case true:
                         barCardMargin = 'margin: 0px 8px 0px 0px;';
                         break;
                     case false:
+<<<<<<< HEAD
                         if (config.columns)
                             barCardMargin = 'margin: 0px 8px 0px 0px;';
                         else
@@ -313,14 +400,35 @@ class BarCard extends HTMLElement {
             }
           `;
                 }
+=======
+                        barCardMargin = 'margin: 8px 8px 8px 0px;';
+                        break;
+                }
+                barCardMarginLast = 'margin-right: 0px;';
+                statesStyle = `
+        #states > * {
+          margin-top: 8px;
+        }
+        #states {
+          display: flex;
+          flex-direction: ${statesDirection};
+        }
+        `;
+>>>>>>> 06cb9c9e77ba349a6024fee88179c77679278903
                 break;
             case 'vertical':
                 barCardMargin = 'margin-bottom: 8px;';
                 barCardMarginLast = 'margin-bottom: 0px;';
                 statesStyle = `
+<<<<<<< HEAD
           #states > * {
               margin: 8px 0px;
             }
+=======
+        #states > * {
+            margin: 8px 0px;
+          }
+>>>>>>> 06cb9c9e77ba349a6024fee88179c77679278903
         `;
         }
         switch (config.positions.minmax) {
@@ -414,10 +522,15 @@ class BarCard extends HTMLElement {
                 contentBarDirection = 'column';
                 titleMargin = 'margin-bottom: auto;';
                 barCardDirection = 'column-reverse';
+<<<<<<< HEAD
+=======
+                statesDirection = 'row';
+>>>>>>> 06cb9c9e77ba349a6024fee88179c77679278903
                 break;
             case 'left':
             case 'right':
                 titleMargin = 'margin-left: 4px;';
+<<<<<<< HEAD
                 contentBarDirection = 'row';
                 barCardDirection = 'row';
         }
@@ -472,6 +585,13 @@ class BarCard extends HTMLElement {
         }
         style.textContent = `
       ${haCardStyle}
+=======
+                statesDirection = 'column';
+                contentBarDirection = 'row';
+                barCardDirection = 'row';
+        }
+        style.textContent = `
+>>>>>>> 06cb9c9e77ba349a6024fee88179c77679278903
       ${statesStyle}
       bar-card-card {
         ${barCardMargin}
@@ -592,6 +712,7 @@ class BarCard extends HTMLElement {
     }
     _mapRange(num, in_min, in_max, out_min, out_max) {
         return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
+<<<<<<< HEAD
     }
     _computeBarColor(config, entityState) {
         let barColor;
@@ -601,6 +722,17 @@ class BarCard extends HTMLElement {
             barColor = config.color;
         return barColor;
     }
+=======
+    }
+    _computeBarColor(config, entityState) {
+        let barColor;
+        if (config.severity)
+            barColor = this._computeSeverity(entityState, config.severity, config);
+        else
+            barColor = config.color;
+        return barColor;
+    }
+>>>>>>> 06cb9c9e77ba349a6024fee88179c77679278903
     _computePercent(value, min, max, index, entity) {
         const config = this._configAttributeCheck(entity, index);
         switch (config.direction) {
@@ -616,7 +748,11 @@ class BarCard extends HTMLElement {
     _computeSeverity(stateValue, sections, config) {
         const numberValue = Number(stateValue);
         let color;
+<<<<<<< HEAD
         sections.forEach((section) => {
+=======
+        sections.forEach(section => {
+>>>>>>> 06cb9c9e77ba349a6024fee88179c77679278903
             if (isNaN(section.value)) {
                 if (section.value == stateValue && color == undefined) {
                     color = section.color;
@@ -633,7 +769,11 @@ class BarCard extends HTMLElement {
     _computeSeverityIcon(stateValue, sections) {
         let numberValue = Number(stateValue);
         let icon;
+<<<<<<< HEAD
         sections.forEach((section) => {
+=======
+        sections.forEach(section => {
+>>>>>>> 06cb9c9e77ba349a6024fee88179c77679278903
             if (isNaN(section.value)) {
                 if (section.value == stateValue && icon == undefined) {
                     icon = section.icon;
@@ -681,7 +821,11 @@ class BarCard extends HTMLElement {
         const config = Object.assign({}, this._configArray[index]);
         const entityAttributes = hass.states[entity].attributes;
         if (config.entity_config == true) {
+<<<<<<< HEAD
             Object.keys(config).forEach((section) => {
+=======
+            Object.keys(config).forEach(section => {
+>>>>>>> 06cb9c9e77ba349a6024fee88179c77679278903
                 if (entityAttributes[section]) {
                     if (section == 'severity' && typeof entityAttributes[section] == 'string')
                         config[section] = JSON.parse(entityAttributes[section]);
@@ -827,7 +971,11 @@ class BarCard extends HTMLElement {
             while (container.lastChild)
                 container.removeChild(container.lastChild);
             const warning = document.createElement('hui-warning');
+<<<<<<< HEAD
             warning.setAttribute('style', 'width: 100%;');
+=======
+            warning.setAttribute("style", "width: 100%;");
+>>>>>>> 06cb9c9e77ba349a6024fee88179c77679278903
             warning.textContent = `Entity not available: ${entity}`;
             root.getElementById('card_' + id).appendChild(warning);
             return;
@@ -850,10 +998,17 @@ class BarCard extends HTMLElement {
         }
         else {
             entityState = entityObject.state;
+<<<<<<< HEAD
         }
         if (!isNaN(entityState)) {
             entityState = Number(entityState);
         }
+=======
+        }
+        if (!isNaN(entityState)) {
+            entityState = Number(entityState);
+        }
+>>>>>>> 06cb9c9e77ba349a6024fee88179c77679278903
         if (config.limit_value) {
             entityState = Math.min(entityState, configMax);
             entityState = Math.max(entityState, configMin);
@@ -980,7 +1135,14 @@ class BarCard extends HTMLElement {
         this._entityState[id] = entityState;
     }
     getCardSize() {
+<<<<<<< HEAD
         return 3;
+=======
+        if (this._config.entity_row == true)
+            return 1;
+        else
+            return 2;
+>>>>>>> 06cb9c9e77ba349a6024fee88179c77679278903
     }
 }
 customElements.define('bar-card', BarCard);
