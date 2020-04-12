@@ -53,24 +53,13 @@
     - service: counter.reset
       entity_id: counter.yuriroom_motions_watch
 
-- alias: "ha_snapshot_create"
+- alias: "ha_do_backup"
   condition:
     - condition: state
       entity_id: binary_sensor.is_backup_day
       state: "on"
   trigger:
     - platform: time
-      at: "01:15:00"
+      at: "02:00:00"
   action:
     - service: script.ha_do_backup
-
-# - alias: "ha_snapshot_to_gdrive"
-#   condition:
-#     - condition: state
-#       entity_id: binary_sensor.is_backup_day
-#       state: "on"
-#   trigger:
-#     - platform: time
-#       at: "03:30:00"
-#   action:
-#     - service: rest_command.google_backup
