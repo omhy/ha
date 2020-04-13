@@ -31,7 +31,7 @@
           {% set to = trigger.to_state.state|int %}
           {% set chg = to - from %}
           {% set prc = (chg / from * 100)|round(2) %}
-          {{ states['sensor.now_hm'].state }} {{ '\U00002139' }} `{{ cntr }}:` {{ from }} -> {{ to }} | {{ chg }} | {{ prc }} %
+          {{ states['sensor.now_hm'].state }} {{ '\U00002139' }} `{{ cntr }}:` {{ from }} -> {{ to }} | {{ chg }} | {{ prc }} % | #covid
         # inline_keyboard:
         #   - "\U0000267B Dismiss:/dismiss"
 
