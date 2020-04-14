@@ -176,6 +176,12 @@ sensor.0x00158d00022c7cf2_temperature:
   friendly_name: Park
 sensor.0x00158d00022c7cf2_pressure:
   friendly_name: Park
+sensor.outdoor_temperature:
+  friendly_name: Outdoor
+sensor.outdoor_humidity:
+  friendly_name: Outdoor
+sensor.feels_like_temperature:
+  friendly_name: Feels like
 sensor.current_uv_level:
   friendly_name: UV
 sensor.current_uv_index:

@@ -17,6 +17,9 @@ include:
     - binary_sensor.ping_computer
     - binary_sensor.ping_laptop
     - binary_sensor.ping_tv
+    - sensor.outdoor_temperature
+    - sensor.outdoor_humidity
+    - sensor.feels_like_temperature
     - sensor.0x00158d0001f23cbe_humidity
     - sensor.0x00158d0001f23cbe_pressure
     - sensor.0x00158d0001f23cbe_temperature
