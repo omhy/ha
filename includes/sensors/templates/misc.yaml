@@ -85,5 +85,5 @@
         {% set HI_C = (HI - 32) / 1.8 %}
         {{- HI_C|round(1) -}}
       entity_id:
-        - outdoor_temperature
-        - outdoor_humidity
+        - sensor.outdoor_temperature
+        - sensor.outdoor_humidity
