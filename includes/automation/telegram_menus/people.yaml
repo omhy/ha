@@ -14,8 +14,8 @@
         target: "{{ trigger.event.data.user_id }}"
         message: "Select person to check"
         inline_keyboard:
-          - "\U0001F468 Dima:/tracker google_maps_111683533988744565132, \U0001F469 Alyona:/tracker google_maps_115914092349482836896"
-          - "\U0001F466 Yury:/tracker google_maps_117454969161947422882, \U0001F467 Elisa:/tracker elisa"
+          - "\U0001F468 Dima:/tracker dima, \U0001F469 Alyona:/tracker alyona"
+          - "\U0001F466 Yury:/tracker yury, \U0001F467 Elisa:/tracker elisa"
           - "\U0000267B Dismiss:/dismiss"
 
 - alias: "telega_handle_prefix_tracker"
@@ -35,12 +35,9 @@
         target: "{{ trigger.event.data.user_id }}"
         message: >
           {% set id = trigger.event.data.data.split(' ', 1)[1] %}
-          {{ states.device_tracker[id].attributes.full_name }}
-          {{ ((now() - states.device_tracker[id].attributes.last_seen.astimezone()).seconds / 60) | round(0) }}
-          minutes ago was `{{ states.device_tracker[id].state }}`
-          with GPS accuracy {{ states.device_tracker[id].attributes.gps_accuracy }}.
-
-          `{{ states.device_tracker[id].attributes.address }}`
+          {{ states.person[id].attributes.friendly_name }} is `{{ states.person[id].state }}` with GPS accuracy {{ states.person[id].attributes.gps_accuracy }}.
+          
+          `{{ states.sensor[id + '_geocoded_location'].state }}`
         inline_keyboard:
           - "\U0001F5FA Map:/map {{ trigger.event.data.data.split(' ', 1)[1] }}, \U0001F504 Refresh:{{ trigger.event.data.data }}, \U0000267B Dismiss:/dismiss"
 
@@ -59,7 +56,7 @@
     - service: telegram_bot.send_location
       data_template:
         target: "{{ trigger.event.data.user_id }}"
-        latitude: "{{ states.device_tracker[trigger.event.data.data.split(' ', 1)[1]].attributes.latitude }}"
-        longitude: "{{ states.device_tracker[trigger.event.data.data.split(' ', 1)[1]].attributes.longitude }}"
+        latitude: "{{ states.person[trigger.event.data.data.split(' ', 1)[1]].attributes.latitude }}"
+        longitude: "{{ states.person[trigger.event.data.data.split(' ', 1)[1]].attributes.longitude }}"
         inline_keyboard:
           - "\U0001F504 Refresh:{{ trigger.event.data.data }}, \U0000267B Dismiss:/dismiss"

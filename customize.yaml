@@ -70,7 +70,7 @@ sensor.livingroom_motions:
 sensor.bathroom_motions:
   friendly_name: Today
   icon: mdi:sigma
-sensor.yuriroom_motions:
+sensor.yuryroom_motions:
   friendly_name: Today
   icon: mdi:sigma
 sensor.androidbox_app:
@@ -82,12 +82,6 @@ sensor.consumption_today:
 sensor.consumption_now:
   friendly_name: Now
   icon: mdi:power-plug
-device_tracker.google_maps_111683533988744565132:
-  friendly_name: Dima
-device_tracker.google_maps_117454969161947422882:
-  friendly_name: Yury
-device_tracker.google_maps_115914092349482836896:
-  friendly_name: Alyona
 sensor.uptime:
   friendly_name: HA uptime
 script.media_player_stop_all:
@@ -121,7 +115,7 @@ media_player.loud_speaker:
   friendly_name: Loud speaker
   icon: mdi:google-home
 media_player.yury_speaker:
-  friendly_name: Yuri speaker
+  friendly_name: Yury speaker
   icon: mdi:dots-horizontal-circle-outline
 media_player.black_speaker:
   friendly_name: Black speaker
@@ -141,11 +135,11 @@ media_player.chromecast:
 sensor.home_assistant_v2_db:
   friendly_name: Log size
 sensor.0x00158d0002271609_humidity:
-  friendly_name: Yuri's
+  friendly_name: Yury's
 sensor.0x00158d0002271609_pressure:
-  friendly_name: Yuri's
+  friendly_name: Yury's
 sensor.0x00158d0002271609_temperature:
-  friendly_name: Yuri's
+  friendly_name: Yury's
 sensor.0x00158d0001f23cbe_humidity:
   friendly_name: Bedroom
 sensor.0x00158d0001f23cbe_temperature:
@@ -287,8 +281,8 @@ person.dima:
   entity_picture: /local/persons/dima.jpg
 person.alyona:
   entity_picture: /local/persons/alyona.jpg
-person.yuri:
-  entity_picture: /local/persons/yuri.jpg
+person.yury:
+  entity_picture: /local/persons/yury.jpg
 sensor.0x00158d00028776ae_action:
   friendly_name: Cube
   icon: mdi:cube-outline
@@ -309,7 +303,7 @@ binary_sensor.0x00158d0001e52779_occupancy:
 binary_sensor.0x00158d0001fa3dc0_occupancy:
   friendly_name: Living room
 binary_sensor.0x00158d0002d43d7d_occupancy:
-  friendly_name: Yuri room
+  friendly_name: Yury room
 binary_sensor.0x00158d00024367c8_contact:
   friendly_name: Entrance door
 binary_sensor.0x00158d000446fa53_contact:
@@ -326,7 +320,7 @@ sensor.0x00158d0001e52779_illuminance:
 sensor.0x00158d0001fa3dc0_illuminance:
   friendly_name: Livingroom
 sensor.0x00158d0002d43d7d_illuminance:
-  friendly_name: Yuri room
+  friendly_name: Yury room
 sensor.illumination_7811dcb36cee:
   friendly_name: Gateway
 switch.power_strip_1:

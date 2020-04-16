@@ -51,7 +51,7 @@
       at: "00:00:01"
   action:
     - service: counter.reset
-      entity_id: counter.yuriroom_motions_watch
+      entity_id: counter.yuryroom_motions_watch
 
 - alias: "ha_do_backup"
   condition:

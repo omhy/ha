@@ -1,5 +1,5 @@
 - platform: rest
-  name: "cast_version_yuri_speaker"
+  name: "cast_version_yury_speaker"
   resource: http://192.168.1.30:8008/setup/eureka_info
   value_template: "{{ value_json.cast_build_revision }}"
   scan_interval: 86400

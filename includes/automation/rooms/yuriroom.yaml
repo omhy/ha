@@ -1,4 +1,4 @@
-- alias: "yuriroom_movement"
+- alias: "yuryroom_movement"
   trigger:
     - platform: state
       entity_id: binary_sensor.0x00158d0002d43d7d_occupancy
@@ -8,15 +8,15 @@
       after: '05:00:00'
       before: '08:00:00'
     - condition: numeric_state
-      entity_id: counter.yuriroom_motions_watch
+      entity_id: counter.yuryroom_motions_watch
       above: 0
   action:
     - service: counter.decrement
-      entity_id: counter.yuriroom_motions_watch
+      entity_id: counter.yuryroom_motions_watch
     - service: telegram_bot.send_message
       data_template:
         target: !secret tg_chat_dima
-        message: "{{ states['sensor.now_hm'].state }} \U0001F4A5 Movement in Yuri' room ({{ states.counter.yuriroom_motions_watch.state }})"
+        message: "{{ states['sensor.now_hm'].state }} \U0001F4A5 Movement in Yury' room ({{ states.counter.yuryroom_motions_watch.state }})"
         inline_keyboard:
           - "\U0000267B Dismiss:/dismiss"
 

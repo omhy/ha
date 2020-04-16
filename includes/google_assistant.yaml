@@ -32,11 +32,11 @@ entity_config:
     name: Pendant
     expose: true
     room: Living Room
-#Yuri Room
+#Yury Room
   light.small_torch:
     name: Small torch
     expose: true
-    room: Yuri Room
+    room: Yury Room
 #Bedroom
   light.bulb_s:
     name: Balloon lamp
