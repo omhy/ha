@@ -176,6 +176,8 @@ sensor.outdoor_humidity:
   friendly_name: Outdoor
 sensor.feels_like_temperature:
   friendly_name: Feels like
+sensor.feels_like_temperature_lowpass:
+  friendly_name: Feels like
 sensor.current_uv_level:
   friendly_name: UV
 sensor.current_uv_index:

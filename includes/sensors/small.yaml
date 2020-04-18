@@ -51,3 +51,9 @@
   entity_ids:
     - sensor.0x00158d00022c7cf2_humidity
     - sensor.0x00158d0002323783_humidity
+
+- platform: filter
+  name: feels_like_temperature_lowpass
+  entity_id: sensor.feels_like_temperature
+  filters:
+    - filter: lowpass
