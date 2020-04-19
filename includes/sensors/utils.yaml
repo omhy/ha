@@ -1,0 +1,42 @@
+- platform: min_max
+  type: min
+  name: outdoor_temperature
+  entity_ids:
+    - sensor.0x00158d00022c7cf2_temperature
+    - sensor.0x00158d0002323783_temperature
+
+- platform: min_max
+  type: max
+  name: outdoor_humidity
+  entity_ids:
+    - sensor.0x00158d00022c7cf2_humidity
+    - sensor.0x00158d0002323783_humidity
+
+- platform: min_max
+  type: max
+  name: outdoor_pressure
+  entity_ids:
+    - sensor.0x00158d00022c7cf2_pressure
+    - sensor.0x00158d0002323783_pressure
+
+#####
+
+- platform: filter
+  name: feels_like_temperature_lowpass
+  entity_id: sensor.feels_like_temperature
+  filters:
+    - filter: lowpass
+
+#####
+
+- platform: derivative
+  source: sensor.outdoor_temperature
+  name: outdoor_temp_derivative
+
+- platform: derivative
+  source: sensor.outdoor_humidity
+  name: outdoor_hum_derivative
+
+- platform: derivative
+  source: sensor.outdoor_pressure
+  name: outdoor_press_derivative

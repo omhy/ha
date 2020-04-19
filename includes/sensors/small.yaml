@@ -19,8 +19,8 @@
 
 - platform: time_date
   display_options:
-  - "time"
-  - "date"
+  - time
+  - date
 
 - platform: random
   name: flow_random_hue
@@ -37,23 +37,3 @@
   name: Google Fit
   client_id: !secret google_cal_int_client_id
   client_secret: !secret google_cal_int_client_secret
-
-- platform: min_max
-  type: min
-  name: outdoor_temperature
-  entity_ids:
-    - sensor.0x00158d00022c7cf2_temperature
-    - sensor.0x00158d0002323783_temperature
-
-- platform: min_max
-  type: max
-  name: outdoor_humidity
-  entity_ids:
-    - sensor.0x00158d00022c7cf2_humidity
-    - sensor.0x00158d0002323783_humidity
-
-- platform: filter
-  name: feels_like_temperature_lowpass
-  entity_id: sensor.feels_like_temperature
-  filters:
-    - filter: lowpass

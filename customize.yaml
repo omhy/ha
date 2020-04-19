@@ -373,3 +373,13 @@ counter.balcony_sessions:
   icon: mdi:smoking
 zone.home:
   radius: 30
+
+sensor.outdoor_temp_derivative:
+  friendly_name: Temperature change
+  unit_of_measurement: "%"
+sensor.outdoor_press_derivative:
+  friendly_name: Pressure change
+  unit_of_measurement: "%"
+sensor.outdoor_hum_derivative:
+  friendly_name: Humidity change
+  unit_of_measurement: "%"
