@@ -3,12 +3,8 @@
   icon: mdi:telegram
 "*dropbox*":
   icon: mdi:dropbox
-"*door*":
-  icon: mdi:door
 "*seat*":
   icon: mdi:seat
-"*doorbell*":
-  icon: mdi:bell-ring
 "*mqtt*":
   icon: mdi:chip
 "*light*":
@@ -39,6 +35,12 @@
   icon: mdi:hubspot
 "*workday*":
   icon: mdi:worker
+
+### NOT TOO COMMON
+"door*":
+  icon: mdi:door
+"doorbell*":
+  icon: mdi:bell-ring
 
 ### SPECIFIC
 "light.*":

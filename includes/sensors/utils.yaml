@@ -31,12 +31,12 @@
 
 - platform: derivative
   source: sensor.outdoor_temperature
-  name: outdoor_temp_derivative
+  name: outdoor_derivative_t
 
 - platform: derivative
   source: sensor.outdoor_humidity
-  name: outdoor_hum_derivative
+  name: outdoor_derivative_h
 
 - platform: derivative
   source: sensor.outdoor_pressure
-  name: outdoor_press_derivative
+  name: outdoor_derivative_p
