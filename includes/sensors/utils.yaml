@@ -21,14 +21,6 @@
 
 #####
 
-- platform: filter
-  name: feels_like_temperature_lowpass
-  entity_id: sensor.feels_like_temperature
-  filters:
-    - filter: lowpass
-
-#####
-
 - platform: derivative
   source: sensor.outdoor_temperature
   name: outdoor_derivative_t

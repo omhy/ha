@@ -1,0 +1,11 @@
+mobile_notify_dima_outdoor:
+  sequence:
+    - service: notify.mobile_app_sm_g973f
+      data:
+        message: "{{states['sensor.outdoor_temperature'].state_with_unit}} | {{states['sensor.outdoor_humidity'].state_with_unit}}"
+
+mobile_notify_alyona_outdoor:
+  sequence:
+    - service: notify.mobile_app_mi_a2
+      data:
+        message: "{{states['sensor.outdoor_temperature'].state_with_unit}} | {{states['sensor.outdoor_humidity'].state_with_unit}}"        
