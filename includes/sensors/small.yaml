@@ -37,3 +37,6 @@
   name: Google Fit
   client_id: !secret google_cal_int_client_id
   client_secret: !secret google_cal_int_client_secret
+
+- platform: openhardwaremonitor
+  host: 192.168.1.101

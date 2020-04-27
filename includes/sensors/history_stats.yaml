@@ -31,35 +31,43 @@
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
   end: "{{ now() }}"
 
+- platform: history_stats
+  name: androidbox_play_today
+  entity_id: media_player.androidbox
+  type: "time"
+  state: "playing"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
 ### androidbox APPS
-- platform: history_stats
-  name: androidbox_youtube_today
-  entity_id: sensor.androidbox_app
-  type: "time"
-  state: "youtube"
-  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
-  end: "{{ now() }}"
+# - platform: history_stats
+#   name: androidbox_youtube_today
+#   entity_id: sensor.androidbox_app
+#   type: "time"
+#   state: "youtube"
+#   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+#   end: "{{ now() }}"
 
-- platform: history_stats
-  name: androidbox_perfectplayer_today
-  entity_id: sensor.androidbox_app
-  type: "time"
-  state: "pp"
-  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
-  end: "{{ now() }}"
+# - platform: history_stats
+#   name: androidbox_perfectplayer_today
+#   entity_id: sensor.androidbox_app
+#   type: "time"
+#   state: "pp"
+#   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+#   end: "{{ now() }}"
 
-- platform: history_stats
-  name: androidbox_launcher_today
-  entity_id: sensor.androidbox_app
-  type: "time"
-  state: "launcher"
-  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
-  end: "{{ now() }}"
+# - platform: history_stats
+#   name: androidbox_launcher_today
+#   entity_id: sensor.androidbox_app
+#   type: "time"
+#   state: "launcher"
+#   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+#   end: "{{ now() }}"
 
-- platform: history_stats
-  name: androidbox_hdvideo_today
-  entity_id: sensor.androidbox_app
-  type: "time"
-  state: "hdbox"
-  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
-  end: "{{ now() }}"
+# - platform: history_stats
+#   name: androidbox_hdvideo_today
+#   entity_id: sensor.androidbox_app
+#   type: "time"
+#   state: "hdbox"
+#   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+#   end: "{{ now() }}"

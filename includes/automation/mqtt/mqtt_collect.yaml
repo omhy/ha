@@ -3,8 +3,12 @@
     - platform: state
       entity_id: sensor.0x00158d00022c7cf2_temperature
   condition:
-    - condition: template
-      value_template: "{{ (trigger.to_state.state | default('0') | float) < (states.sensor.outpark_temp_min.state | default('0') | float) }}"
+    condition: and
+    conditions:
+      - condition: template
+        value_template: "{{ (trigger.to_state.state | default('0') | float) < (states['sensor.outpark_temp_min'].state | default('0') | float) }}"
+      - condition: template
+        value_template: "{{ states['sensor.0x00158d00022c7cf2_temperature'].state != 'unavalable' }}"
   action:
     - service: mqtt.publish
       data_template:
@@ -22,8 +26,12 @@
     - platform: state
       entity_id: sensor.0x00158d00022c7cf2_temperature
   condition:
-    - condition: template
-      value_template: "{{ (trigger.to_state.state | default('0') | float) > (states.sensor.outpark_temp_max.state | default('0') | float) }}"
+    condition: and
+    conditions:
+      - condition: template
+        value_template: "{{ (trigger.to_state.state | default('0') | float) > (states['sensor.outpark_temp_max'].state | default('0') | float) }}"
+      - condition: template
+        value_template: "{{ states['sensor.0x00158d00022c7cf2_temperature'].state != 'unavalable' }}"
   action:
     - service: mqtt.publish
       data_template:
@@ -41,8 +49,12 @@
     - platform: state
       entity_id: sensor.0x00158d0002323783_temperature
   condition:
-    - condition: template
-      value_template: "{{ (trigger.to_state.state | default('0') | float) < (states.sensor.outyard_temp_min.state | default('0') | float) }}"
+    condition: and
+    conditions:
+      - condition: template
+        value_template: "{{ (trigger.to_state.state | default('0') | float) < (states['sensor.outyard_temp_min'].state | default('0') | float) }}"
+      - condition: template
+        value_template: "{{ states['sensor.0x00158d0002323783_temperature'].state != 'unavalable' }}"
   action:
     - service: mqtt.publish
       data_template:
@@ -60,8 +72,12 @@
     - platform: state
       entity_id: sensor.0x00158d0002323783_temperature
   condition:
-    - condition: template
-      value_template: "{{ (trigger.to_state.state | default('0') | float) > (states.sensor.outyard_temp_max.state | default('0') | float) }}"
+    condition: and
+    conditions:
+      - condition: template
+        value_template: "{{ (trigger.to_state.state | default('0') | float) > (states['sensor.outyard_temp_max'].state | default('0') | float) }}"
+      - condition: template
+        value_template: "{{ states['sensor.0x00158d0002323783_temperature'].state != 'unavalable' }}"
   action:
     - service: mqtt.publish
       data_template:

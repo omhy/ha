@@ -73,9 +73,6 @@ sensor.bathroom_motions:
 sensor.yuryroom_motions:
   friendly_name: Today
   icon: mdi:sigma
-sensor.androidbox_app:
-  friendly_name: Abox app
-  icon: mdi:android-debug-bridge
 sensor.consumption_today:
   friendly_name: Today
   icon: mdi:power-plug
@@ -108,9 +105,6 @@ script.ha_check_config:
 media_player.kitchen_display:
   friendly_name: Kitchen display
   icon: mdi:monitor
-media_player.androidbox:
-  friendly_name: Android box
-  icon: mdi:android
 media_player.loud_speaker:
   friendly_name: Loud speaker
   icon: mdi:google-home
@@ -190,9 +184,6 @@ sensor.db_size_maria:
 sensor.db_size_influx:
   friendly_name: InfluxDb size
   icon: mdi:database
-sensor.androidbox_on_today:
-  friendly_name: Android box
-  icon: mdi:android
 sensor.outpark_temp_min:
   friendly_name: Park min
   icon: mdi:minus-box
@@ -233,18 +224,6 @@ sensor.outyard_temp_min_at:
 sensor.outyard_temp_max_at:
   friendly_name: Maximal @
   icon: mdi:clock
-sensor.androidbox_youtube_today:
-  friendly_name: Youtube
-  icon: mdi:youtube
-sensor.androidbox_perfectplayer_today:
-  friendly_name: Perfect player
-  icon: mdi:television-box
-sensor.androidbox_launcher_today:
-  friendly_name: Launcher
-  icon: mdi:rocket
-sensor.androidbox_hdvideo_today:
-  friendly_name: HD Video
-  icon: mdi:video-vintage
 sensor.days_in_month:
   friendly_name: Days in month
   icon: mdi:calendar-search
@@ -261,10 +240,6 @@ binary_sensor.ping_laptop:
 binary_sensor.ping_tv:
   friendly_name: TV
   icon: mdi:television
-  device_class: connectivity
-binary_sensor.ping_androidbox:
-  friendly_name: Abox state
-  icon: mdi:android
   device_class: connectivity
 binary_sensor.people_home:
   friendly_name: Someone home
@@ -378,3 +353,44 @@ sensor.outdoor_derivative_p:
   friendly_name: Pressure change
 sensor.outdoor_derivative_h:
   friendly_name: Humidity change
+
+media_player.androidbox:
+  friendly_name: Abox media
+  icon: mdi:android
+binary_sensor.ping_androidbox:
+  friendly_name: Abox ping
+  icon: mdi:android
+  device_class: connectivity
+sensor.androidbox_app:
+  friendly_name: Abox app
+  icon: mdi:android-debug-bridge
+sensor.androidbox_app_full:
+  friendly_name: Abox app full
+  icon: mdi:android-debug-bridge
+sensor.androidbox_on_today:
+  friendly_name: Abox ping
+  icon: mdi:android
+sensor.androidbox_play_today:
+  friendly_name: Abox play
+  icon: mdi:android
+
+sensor.desktop_ehjmac7_intel_core_i5_4690k_load_cpu_total:
+  friendly_name: CPU Load
+sensor.desktop_ehjmac7_intel_core_i5_4690k_temperatures_cpu_package:
+  friendly_name: CPU temp
+sensor.desktop_ehjmac7_nvidia_geforce_gtx_1060_3gb_load_gpu_core:
+  friendly_name: GPU core load
+sensor.desktop_ehjmac7_nvidia_geforce_gtx_1060_3gb_load_gpu_memory:
+  friendly_name: GPU mem load
+sensor.desktop_ehjmac7_nvidia_geforce_gtx_1060_3gb_temperatures_gpu_core:
+  friendly_name: GPU core temp
+sensor.desktop_ehjmac7_generic_memory_load_memory:
+  friendly_name: MEM load
+sensor.desktop_ehjmac7_crucial_ct128mx100ssd1_load_used_space:
+  friendly_name: Crucial ct128mx100
+sensor.desktop_ehjmac7_kingston_sa400s37480g_load_used_space:
+  friendly_name: Kingston sa400
+sensor.desktop_ehjmac7_samsung_ssd_850_evo_250gb_load_used_space:
+  friendly_name: Samsung_ssd_850_evo
+sensor.desktop_ehjmac7_wdc_wd5000aaks_65yga0_load_used_space:
+  friendly_name: WDC wd5000aaks
