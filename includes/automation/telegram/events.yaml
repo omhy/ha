@@ -2,7 +2,8 @@
 #   trigger:
 #     - platform: state
 #       entity_id:
-#         - sensor.xxxx
+#         - sensor.0x00158d00022c7cf2_temperature
+#         - sensor.0x00158d0002323783_temperature
 #   action:
 #     - service: telegram_bot.send_message
 #       data_template:

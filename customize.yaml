@@ -391,6 +391,21 @@ sensor.desktop_ehjmac7_crucial_ct128mx100ssd1_load_used_space:
 sensor.desktop_ehjmac7_kingston_sa400s37480g_load_used_space:
   friendly_name: Kingston sa400
 sensor.desktop_ehjmac7_samsung_ssd_850_evo_250gb_load_used_space:
-  friendly_name: Samsung_ssd_850_evo
+  friendly_name: Samsung ssd 850 evo
 sensor.desktop_ehjmac7_wdc_wd5000aaks_65yga0_load_used_space:
   friendly_name: WDC wd5000aaks
+
+sensor.desktop_ehjmac7_asrock_z97m_pro4_nuvoton_nct6776f_temperatures_temperature_1:
+  friendly_name: MB1 temp
+sensor.desktop_ehjmac7_asrock_z97m_pro4_nuvoton_nct6776f_temperatures_temperature_2:
+  friendly_name: MB2 temp
+sensor.desktop_ehjmac7_asrock_z97m_pro4_nuvoton_nct6776f_temperatures_temperature_3:
+  friendly_name: MB3 temp
+sensor.desktop_ehjmac7_intel_core_i5_4690k_temperatures_cpu_core_1:
+  friendly_name: CPU1 temp
+sensor.desktop_ehjmac7_intel_core_i5_4690k_temperatures_cpu_core_2:
+  friendly_name: CPU2 temp
+sensor.desktop_ehjmac7_intel_core_i5_4690k_temperatures_cpu_core_3:
+  friendly_name: CPU3 temp
+sensor.desktop_ehjmac7_intel_core_i5_4690k_temperatures_cpu_core_4:
+  friendly_name: CPU4 temp
