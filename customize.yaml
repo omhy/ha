@@ -194,10 +194,6 @@ sensor.outpark_temp_max:
   icon: mdi:plus-box
   unit_of_measurement: °C
   device_class: temperature
-sensor.outpark_temp_diff:
-  friendly_name: Park diff
-  icon: mdi:poll-box
-  unit_of_measurement: °C
 sensor.outpark_temp_min_at:
   friendly_name: Minimal @
   icon: mdi:clock
@@ -214,10 +210,6 @@ sensor.outyard_temp_max:
   icon: mdi:plus-box
   unit_of_measurement: °C
   device_class: temperature
-sensor.outyard_temp_diff:
-  friendly_name: Yard diff
-  icon: mdi:poll-box
-  unit_of_measurement: °C
 sensor.outyard_temp_min_at:
   friendly_name: Minimal @
   icon: mdi:clock

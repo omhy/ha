@@ -18,8 +18,6 @@ telegram_send_weather_today:
           {{ '\U0001f975' }} max {{ frm3 | format(states['sensor.outpark_temp_max'].state_with_unit, states['sensor.outyard_temp_max'].state_with_unit) }}
 
           {{ '\U0001f975' }} at  {{ frm3 | format(states['sensor.outpark_temp_max_at'].state, states['sensor.outyard_temp_max_at'].state) }}
-
-          {{ '\U00002753' }} dif {{ frm3 | format(states['sensor.outpark_temp_diff'].state_with_unit, states['sensor.outyard_temp_diff'].state_with_unit) }}
           ```
         inline_keyboard:
           - "\U0001F504 Refresh:/weather_today, \U0000267B Dismiss:/dismiss"

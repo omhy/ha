@@ -5,9 +5,6 @@
 - platform: mqtt
   state_topic: "outpark/temperature/max"
   name: outpark_temp_max
-- platform: mqtt
-  state_topic: "outpark/temperature/diff"
-  name: outpark_temp_diff
 
 - platform: mqtt
   state_topic: "outpark/temperature/min/at"
@@ -22,9 +19,6 @@
 - platform: mqtt
   state_topic: "outyard/temperature/max"
   name: outyard_temp_max
-- platform: mqtt
-  state_topic: "outyard/temperature/diff"
-  name: outyard_temp_diff
 
 - platform: mqtt
   state_topic: "outyard/temperature/min/at"
