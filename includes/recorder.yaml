@@ -17,6 +17,8 @@ include:
     - binary_sensor.ping_computer
     - binary_sensor.ping_laptop
     - binary_sensor.ping_tv
+    - sensor.dima_dt_speed
+    - sensor.alyona_dt_speed
     - sensor.outdoor_temperature
     - sensor.outdoor_humidity
     - sensor.outdoor_pressure

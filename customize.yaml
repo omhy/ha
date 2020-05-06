@@ -366,6 +366,13 @@ sensor.androidbox_play_today:
   friendly_name: Abox play
   icon: mdi:android
 
+sensor.dima_dt_speed:
+  friendly_name: Dima
+  icon: mdi:speedometer
+sensor.alyona_dt_speed:
+  friendly_name: Alyona
+  icon: mdi:speedometer
+
 sensor.desktop_ehjmac7_intel_core_i5_4690k_load_cpu_total:
   friendly_name: CPU Load
 sensor.desktop_ehjmac7_intel_core_i5_4690k_temperatures_cpu_package:
