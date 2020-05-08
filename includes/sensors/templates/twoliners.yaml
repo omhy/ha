@@ -21,13 +21,6 @@
       value_template: "{{ states['switch.power_strip_5'].attributes.load_power | float }}"
       unit_of_measurement: "W"
       entity_id: switch.power_strip_5
-#LOCATION
-    dima_dt_speed:
-      value_template: "{{ states['device_tracker.dima'].attributes.speed | float }}"
-      entity_id: device_tracker.dima
-    alyona_dt_speed:
-      value_template: "{{ states['device_tracker.alyona'].attributes.speed | float }}"
-      entity_id: device_tracker.alyona
 #STATE_CH
     state_change_door_ago_min:
       value_template: "{{ ((now() - strptime(states['input_text.state_change_entrance_door'].state, '%Y%m%d%H%M%S').astimezone()).seconds / 60) | round(0) }}"

@@ -1,15 +1,15 @@
-- alias: "watcher_state"
-  trigger:
-    - platform: state
-      entity_id:
-        - sensor.dima_dt_speed
-  action:
-    - service: telegram_bot.send_message
-      data_template:
-        target: !secret tg_chat_dima
-        message: "{{ states['sensor.now_hm'].state }} \U00002139 `{{ trigger.from_state.attributes.friendly_name }}`: {{ trigger.from_state.state }} -> {{ trigger.to_state.state }}"
-        inline_keyboard:
-          - "\U0000267B Dismiss:/dismiss"
+# - alias: "watcher_state"
+#   trigger:
+#     - platform: state
+#       entity_id:
+#         - sensor.dima_dt_speed
+#   action:
+#     - service: telegram_bot.send_message
+#       data_template:
+#         target: !secret tg_chat_dima
+#         message: "{{ states['sensor.now_hm'].state }} \U00002139 `{{ trigger.from_state.attributes.friendly_name }}`: {{ trigger.from_state.state }} -> {{ trigger.to_state.state }}"
+#         inline_keyboard:
+#           - "\U0000267B Dismiss:/dismiss"
 
 - alias: "watcher_coronavirus"
   trigger:
