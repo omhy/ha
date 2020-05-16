@@ -21,3 +21,4 @@ google_calendars.yaml
 /www/persons
 .*
 !/.gitignore
+esphome
