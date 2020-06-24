@@ -13,5 +13,5 @@ devices:
     transition: 400
   192.168.1.134:
     name: bulb_s
-    # model: color2
+    model: color2
     transition: 2000

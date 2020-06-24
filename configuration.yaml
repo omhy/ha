@@ -51,7 +51,7 @@ logger:
 http:
   # ip_ban_enabled: true
   # login_attempts_threshold: 5
-  base_url: !secret http_base_url_no_port
+  # base_url: !secret http_base_url_no_port
 
 spotify:
   client_id: !secret spotify_client_id

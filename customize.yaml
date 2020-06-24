@@ -1,5 +1,3 @@
-light.gateway_light_7811dcb36cee:
-  friendly_name: Gateway light
 light.big_torch:
   friendly_name: Big torch
   icon: mdi:floor-lamp
@@ -39,8 +37,6 @@ light.livingroom_color:
 light.christmas:
   friendly_name: Christmas lights
   icon: mdi:pine-tree
-switch.0x00158d0002013f1e_switch:
-  friendly_name: Standalone switch
 binary_sensor.is_workday:
   friendly_name: Workday?
   icon: mdi:briefcase
@@ -50,12 +46,6 @@ binary_sensor.is_holiday:
 binary_sensor.is_morning_activity:
   friendly_name: Morning
   icon: mdi:penguin
-binary_sensor.0x00158d0003537bf0_smoke:
-  friendly_name: Smoke
-  icon: mdi:smoke-detector
-binary_sensor.0x00158d0003537bf0_smoke_density:
-  friendly_name: Smoke density
-  icon: mdi:smoke-detector
 sensor.processor_use:
   friendly_name: CPU
 sensor.memory_use_percent:
@@ -128,42 +118,6 @@ media_player.chromecast:
   icon: mdi:google-chrome
 sensor.home_assistant_v2_db:
   friendly_name: Log size
-sensor.0x00158d0002271609_humidity:
-  friendly_name: Yury's
-sensor.0x00158d0002271609_pressure:
-  friendly_name: Yury's
-sensor.0x00158d0002271609_temperature:
-  friendly_name: Yury's
-sensor.0x00158d0001f23cbe_humidity:
-  friendly_name: Bedroom
-sensor.0x00158d0001f23cbe_temperature:
-  friendly_name: Bedroom
-sensor.0x00158d0001f23cbe_pressure:
-  friendly_name: Bedroom
-sensor.0x00158d000234816a_humidity:
-  friendly_name: Living room
-sensor.0x00158d000234816a_temperature:
-  friendly_name: Living room
-sensor.0x00158d000234816a_pressure:
-  friendly_name: Living room
-sensor.0x00158d00032308dd_humidity:
-  friendly_name: Kitchen
-sensor.0x00158d00032308dd_temperature:
-  friendly_name: Kitchen
-sensor.0x00158d00032308dd_pressure:
-  friendly_name: Kitchen
-sensor.0x00158d0002323783_humidity:
-  friendly_name: Yard
-sensor.0x00158d0002323783_temperature:
-  friendly_name: Yard
-sensor.0x00158d0002323783_pressure:
-  friendly_name: Yard
-sensor.0x00158d00022c7cf2_humidity:
-  friendly_name: Park
-sensor.0x00158d00022c7cf2_temperature:
-  friendly_name: Park
-sensor.0x00158d00022c7cf2_pressure:
-  friendly_name: Park
 sensor.outdoor_temperature:
   friendly_name: Outdoor t
 sensor.outdoor_humidity:
@@ -250,44 +204,6 @@ person.alyona:
   entity_picture: /local/persons/alyona.jpg
 person.yury:
   entity_picture: /local/persons/yury.jpg
-sensor.0x00158d00028776ae_action:
-  friendly_name: Cube
-  icon: mdi:cube-outline
-sensor.0x00158d00026b96c1_click:
-  friendly_name: Wireless switch
-switch.0x00158d00022391ec_switch_left:
-  friendly_name: Corridor
-switch.0x00158d00022391ec_switch_right:
-  friendly_name: Bathroom
-binary_sensor.switch_0x00158d0002136276_click:
-  friendly_name: Light button
-binary_sensor.switch_0x00158d00021329e3_click:
-  friendly_name: Entrance button
-binary_sensor.switch_0x00158d00021350ee_click:
-  friendly_name: Doorbell button
-binary_sensor.0x00158d0001e52779_occupancy:
-  friendly_name: Bathroom
-binary_sensor.0x00158d0001fa3dc0_occupancy:
-  friendly_name: Living room
-binary_sensor.0x00158d0002d43d7d_occupancy:
-  friendly_name: Yury room
-binary_sensor.0x00158d00024367c8_contact:
-  friendly_name: Entrance door
-binary_sensor.0x00158d000446fa53_contact:
-  friendly_name: Balcony door
-sensor.0x00158d0002c4e568_action:
-  friendly_name: Seat action
-  icon: mdi:seat
-sensor.0x00158d0002c4e568_sensitivity:
-  friendly_name: Seat sensitivity
-sensor.0x00158d0002c4e568_strength:
-  friendly_name: Seat strength
-sensor.0x00158d0001e52779_illuminance:
-  friendly_name: Bathroom
-sensor.0x00158d0001fa3dc0_illuminance:
-  friendly_name: Livingroom
-sensor.0x00158d0002d43d7d_illuminance:
-  friendly_name: Yury room
 sensor.illumination_7811dcb36cee:
   friendly_name: Gateway
 switch.power_strip_1:
@@ -323,16 +239,6 @@ sensor.laptop_on_today:
 sensor.tv_on_today:
   friendly_name: TV
   icon: mdi:television
-light.0xec1bbdfffe4d16eb_light:
-  friendly_name: Pendant
-  icon: mdi:ceiling-light
-light.0x14b457fffe4dc1c2_light:
-  friendly_name: Storage bulb
-  icon: mdi:package
-sensor.0xec1bbdfffea090e5_click:
-  friendly_name: Pendant switch
-sensor.0x14b457fffe8085df_click:
-  friendly_name: Storage switch
 counter.balcony_sessions:
   friendly_name: Smokes
   icon: mdi:smoking
@@ -373,38 +279,8 @@ sensor.alyona_dt_speed:
   friendly_name: Alyona
   icon: mdi:speedometer
 
-sensor.desktop_ehjmac7_intel_core_i5_4690k_load_cpu_total:
-  friendly_name: CPU Load
-sensor.desktop_ehjmac7_intel_core_i5_4690k_temperatures_cpu_package:
-  friendly_name: CPU temp
-sensor.desktop_ehjmac7_nvidia_geforce_gtx_1060_3gb_load_gpu_core:
-  friendly_name: GPU core load
-sensor.desktop_ehjmac7_nvidia_geforce_gtx_1060_3gb_load_gpu_memory:
-  friendly_name: GPU mem load
-sensor.desktop_ehjmac7_nvidia_geforce_gtx_1060_3gb_temperatures_gpu_core:
-  friendly_name: GPU core temp
-sensor.desktop_ehjmac7_generic_memory_load_memory:
-  friendly_name: MEM load
-sensor.desktop_ehjmac7_crucial_ct128mx100ssd1_load_used_space:
-  friendly_name: Crucial ct128mx100
-sensor.desktop_ehjmac7_kingston_sa400s37480g_load_used_space:
-  friendly_name: Kingston sa400
-sensor.desktop_ehjmac7_samsung_ssd_850_evo_250gb_load_used_space:
-  friendly_name: Samsung ssd 850 evo
-sensor.desktop_ehjmac7_wdc_wd5000aaks_65yga0_load_used_space:
-  friendly_name: WDC wd5000aaks
-
-sensor.desktop_ehjmac7_asrock_z97m_pro4_nuvoton_nct6776f_temperatures_temperature_1:
-  friendly_name: MB1 temp
-sensor.desktop_ehjmac7_asrock_z97m_pro4_nuvoton_nct6776f_temperatures_temperature_2:
-  friendly_name: MB2 temp
-sensor.desktop_ehjmac7_asrock_z97m_pro4_nuvoton_nct6776f_temperatures_temperature_3:
-  friendly_name: MB3 temp
-sensor.desktop_ehjmac7_intel_core_i5_4690k_temperatures_cpu_core_1:
-  friendly_name: CPU1 temp
-sensor.desktop_ehjmac7_intel_core_i5_4690k_temperatures_cpu_core_2:
-  friendly_name: CPU2 temp
-sensor.desktop_ehjmac7_intel_core_i5_4690k_temperatures_cpu_core_3:
-  friendly_name: CPU3 temp
-sensor.desktop_ehjmac7_intel_core_i5_4690k_temperatures_cpu_core_4:
-  friendly_name: CPU4 temp
+# Z2M
+switch.0x00158d00022391ec_switch_left:
+  friendly_name: Corridor
+switch.0x00158d00022391ec_switch_right:
+  friendly_name: Bathroom

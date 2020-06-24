@@ -28,10 +28,10 @@ entity_config:
     name: Chain lamp
     expose: true
     room: Living Room
-  light.0xec1bbdfffe4d16eb_light:
-    name: Pendant
-    expose: true
-    room: Living Room
+  # light.0xec1bbdfffe4d16eb_light:
+  #   name: Pendant
+  #   expose: true
+  #   room: Living Room
 #Yury Room
   light.small_torch:
     name: Small torch

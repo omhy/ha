@@ -36,6 +36,60 @@
 "*workday*":
   icon: mdi:worker
 
+### Z2M
+"*0x00158d0002013f1e*":
+  friendly_name: Standalone switch
+"*0xec1bbdfffe4d16eb*":
+  friendly_name: Pendant
+"*0x14b457fffe4dc1c2*":
+  friendly_name: Storage bulb
+  icon: mdi:package
+"*0xec1bbdfffea090e5*":
+  friendly_name: Pendant switch
+"*0x14b457fffe8085df*":
+  friendly_name: Storage switch
+"*0x00158d00028776ae*":
+  friendly_name: Cube
+  icon: mdi:cube-outline
+"0x00158d00026b96c1*":
+  friendly_name: Wireless switch
+"*0x00158d00022391ec*":
+  friendly_name: Bathroom + corridor
+"*0x00158d0001e52779*":
+  friendly_name: Bathroom
+"*0x00158d0001fa3dc0*":
+  friendly_name: Living room
+"*0x00158d0002d43d7d*":
+  friendly_name: Yury room
+"*0x00158d00024367c8*":
+  friendly_name: Entrance door
+"*0x00158d000446fa53*":
+  friendly_name: Balcony door
+"*0x00158d0002c4e568*":
+  friendly_name: Seat
+  icon: mdi:seat
+"*0x00158d0003537bf0*":
+  friendly_name: Smoke
+  icon: mdi:smoke-detector
+"*0x00158d0002271609*":
+  friendly_name: Yury's
+"*0x00158d0001f23cbe*":
+  friendly_name: Bedroom
+"*0x00158d000234816a*":
+  friendly_name: Living room
+"*0x00158d00032308dd*":
+  friendly_name: Kitchen
+"*0x00158d0002323783*":
+  friendly_name: Yard
+"*0x00158d00022c7cf2*":
+  friendly_name: Park
+"*0x00158d00021329e3*":
+  friendly_name: Entrance button
+"*0x00158d00021350ee*":
+  friendly_name: Doorbell
+"*0x00158d0002136276*":
+  friendly_name: Light button
+
 ### NOT TOO COMMON
 "door*":
   icon: mdi:door
