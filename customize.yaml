@@ -245,13 +245,6 @@ counter.balcony_sessions:
 zone.home:
   radius: 30
 
-sensor.outdoor_derivative_t:
-  friendly_name: Temperature change
-sensor.outdoor_derivative_p:
-  friendly_name: Pressure change
-sensor.outdoor_derivative_h:
-  friendly_name: Humidity change
-
 media_player.androidbox:
   friendly_name: Abox media
   icon: mdi:android
@@ -271,13 +264,6 @@ sensor.androidbox_on_today:
 sensor.androidbox_play_today:
   friendly_name: Abox play
   icon: mdi:android
-
-sensor.dima_dt_speed:
-  friendly_name: Dima
-  icon: mdi:speedometer
-sensor.alyona_dt_speed:
-  friendly_name: Alyona
-  icon: mdi:speedometer
 
 # Z2M
 switch.0x00158d00022391ec_switch_left:

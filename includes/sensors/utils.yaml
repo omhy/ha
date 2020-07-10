@@ -18,17 +18,3 @@
   entity_ids:
     - sensor.0x00158d00022c7cf2_pressure
     - sensor.0x00158d0002323783_pressure
-
-#####
-
-- platform: derivative
-  source: sensor.outdoor_temperature
-  name: outdoor_derivative_t
-
-- platform: derivative
-  source: sensor.outdoor_humidity
-  name: outdoor_derivative_h
-
-- platform: derivative
-  source: sensor.outdoor_pressure
-  name: outdoor_derivative_p
