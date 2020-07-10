@@ -8,7 +8,7 @@ homeassistant:
 
 # default_config:
 history:
-# logbook:
+logbook:
 # map:
 mobile_app:
 person:

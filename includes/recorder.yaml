@@ -13,6 +13,8 @@ include:
     - binary_sensor.0x00158d0002d43d7d_occupancy #yury room
     - binary_sensor.0x00158d0003537bf0_smoke
     - binary_sensor.0x00158d000446fa53_contact #storage door
+    - sensor.0x00158d00028776ae_action #cube
+    - sensor.0x00158d0002c4e568_action #vibr
     - binary_sensor.ping_androidbox
     - binary_sensor.ping_computer
     - binary_sensor.ping_laptop
@@ -124,14 +126,8 @@ include:
     - sensor.wt24_pressure
     - sensor.wt72_pressure
     - sensor.wt48_pressure
-    - sensor.desktop_ehjmac7_intel_core_i5_4690k_load_cpu_total
-    - sensor.desktop_ehjmac7_intel_core_i5_4690k_temperatures_cpu_package
-    - sensor.desktop_ehjmac7_nvidia_geforce_gtx_1060_3gb_load_gpu_core
-    - sensor.desktop_ehjmac7_nvidia_geforce_gtx_1060_3gb_load_gpu_memory
-    - sensor.desktop_ehjmac7_nvidia_geforce_gtx_1060_3gb_temperatures_gpu_core
-    - sensor.desktop_ehjmac7_generic_memory_load_memory
-    - sensor.desktop_ehjmac7_crucial_ct128mx100ssd1_load_used_space
-    - sensor.desktop_ehjmac7_kingston_sa400s37480g_load_used_space
-    - sensor.desktop_ehjmac7_samsung_ssd_850_evo_250gb_load_used_space
-    - sensor.desktop_ehjmac7_wdc_wd5000aaks_65yga0_load_used_space
-
+    - sensor.solar_azimuth
+    - sensor.solar_elevation
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - sensor.speedtest_ping
