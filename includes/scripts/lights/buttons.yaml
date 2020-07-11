@@ -1,6 +1,5 @@
 light_livingroom_turn_on_default:
   sequence:
-    - service: script.livingroom_color_flow_off
     - service: light.turn_on
       entity_id: light.big_torch
       data:
@@ -14,7 +13,6 @@ light_livingroom_turn_on_default:
 
 light_livingroom_turn_on_min:
   sequence:
-    - service: script.livingroom_color_flow_off
     - service: light.turn_on
       entity_id: light.livingroom
       data:
@@ -22,15 +20,8 @@ light_livingroom_turn_on_min:
 
 light_livingroom_turn_off:
   sequence:
-    - service: script.livingroom_color_flow_off
     - service: light.turn_off
       entity_id: light.livingroom
-
-light_livingroom_color_flow:
-  sequence:
-    - service: script.livingroom_color_flow_on
-    - service: light.turn_on
-      entity_id: light.livingroom_color
 
 light_small_torch_turn_on_max:
   sequence:
@@ -47,17 +38,3 @@ light_small_torch_turn_on_min:
       data:
         brightness: 1
         color_temp: 580
-
-livingroom_color_flow_on:
-  sequence:
-    - service: input_boolean.turn_on
-      entity_id: 
-        - input_boolean.livingroom_torch_use
-        - input_boolean.livingroom_corner_use
-
-livingroom_color_flow_off:
-  sequence:
-    - service: input_boolean.turn_off
-      entity_id: 
-        - input_boolean.livingroom_torch_use
-        - input_boolean.livingroom_corner_use

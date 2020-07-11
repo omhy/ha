@@ -1,13 +1,3 @@
-living_room_flow:
-  icon: mdi:palette
-  options:
-    - custom
-    - purple
-    - red
-    - yellow
-    - green
-    - blue
-    - random
 radio_cast:
   name: Play radio on
   icon: mdi:cast

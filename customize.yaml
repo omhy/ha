@@ -173,12 +173,6 @@ sensor.outyard_temp_max_at:
 sensor.days_in_month:
   friendly_name: Days in month
   icon: mdi:calendar-search
-input_boolean.livingroom_torch_use:
-  friendly_name: Use torch
-input_boolean.livingroom_corner_use:
-  friendly_name: Use corner
-input_select.living_room_flow:
-  friendly_name: Flow type
 binary_sensor.ping_computer:
   friendly_name: Computer
 binary_sensor.ping_laptop:

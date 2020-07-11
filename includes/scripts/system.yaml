@@ -1,26 +1,3 @@
-ha_set_defaults:
-  sequence:
-    # - service: input_number.set_value
-    #   entity_id: input_number.doorbell_volume
-    #   data:
-    #     value: 13
-    # - service: input_number.set_value
-    #   entity_id: input_number.doorbell_melody
-    #   data:
-    #     value: 10
-    - service: input_number.set_value
-      entity_id: input_number.flow_transition
-      data:
-        value: 3
-    - service: input_number.set_value
-      entity_id: input_number.flow_brightness
-      data:
-        value: 250
-    - service: input_number.set_value
-      entity_id: input_number.flow_saturation
-      data:
-        value: 90
-
 ha_snapshot_full_create:
   sequence:
     - service: hassio.snapshot_full

@@ -1,10 +1,3 @@
-livingroom_torch_use:
-  initial: off
-  icon: mdi:toggle-switch
-livingroom_corner_use:
-  initial: off
-  icon: mdi:toggle-switch
-
 zigbee_permit_join:
   name: Allow devices to join
   initial: off
@@ -15,4 +8,4 @@ is_vacation:
   icon: mdi:beach
 is_school:
   name: School?
-  icon: mdi:school  
+  icon: mdi:school

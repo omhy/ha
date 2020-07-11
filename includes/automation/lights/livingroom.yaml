@@ -24,24 +24,31 @@
     - service: script.turn_on
       entity_id: script.light_livingroom_turn_on_default
 
+# - alias: "light_livroom_double"
+#   trigger:
+#     - platform: state
+#       entity_id: sensor.0x00158d0002136276_click
+#       to: "double"
+#   action:
+#     - service: light.toggle
+
 - alias: "pendant_switch_click_on"
   trigger:
     - platform: state
       entity_id: sensor.0xec1bbdfffea090e5_click
-      to: "on"
+      # to: "on"
   action:
     - service: light.toggle
-      # entity_id: light.0xec1bbdfffe4d16eb_light
       entity_id: light.standalone_switch
 
-- alias: "pendant_switch_click_off"
-  trigger:
-    - platform: state
-      entity_id: sensor.0xec1bbdfffea090e5_click
-      to: "off"
-  action:
-    - service: light.toggle
-      entity_id: light.standalone_switch
+# - alias: "pendant_switch_click_off"
+#   trigger:
+#     - platform: state
+#       entity_id: sensor.0xec1bbdfffea090e5_click
+#       to: "off"
+#   action:
+#     - service: light.toggle
+#       entity_id: light.standalone_switch
 
 # - alias: "pendant_switch_brightness_up"
 #   trigger:
