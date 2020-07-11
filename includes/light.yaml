@@ -10,12 +10,11 @@
   payload_not_available: "Offline"
   retain: false
 
-# - platform: group
-#   name: livingroom
-#   entities:
-#   - light.big_torch
-#   - light.corner_lamp
-#   - light.0xec1bbdfffe4d16eb_light
+- platform: group
+  name: livingroom
+  entities:
+  - light.big_torch
+  - light.corner_lamp
 
 - platform: group
   name: livingroom_color
