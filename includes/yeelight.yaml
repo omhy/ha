@@ -12,6 +12,6 @@ devices:
     model: color2
     transition: 400
   192.168.1.134:
-    name: bulb_s
+    name: balloon
     model: color2
     transition: 2000

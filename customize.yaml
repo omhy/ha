@@ -25,7 +25,7 @@ light.corridor:
 light.standalone_switch:
   friendly_name: Chain lamp
   icon: mdi:track-light
-light.bulb_s:
+light.balloon:
   friendly_name: Balloon lamp
   icon: mdi:globe-light
 light.livingroom:

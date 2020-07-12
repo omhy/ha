@@ -1,15 +1,16 @@
-light_livingroom_turn_on_default:
+#LIVINGROOM
+light_livingroom_turn_on_def:
   sequence:
     - service: light.turn_on
       entity_id: light.big_torch
       data:
-        brightness: 250
-        color_temp: 420
+        brightness: 150
+        color_temp: 370
     - service: light.turn_on
       entity_id: light.corner_lamp
       data:
-        brightness: 200
-        color_temp: 500
+        brightness: 100
+        color_temp: 370
 
 light_livingroom_turn_on_min:
   sequence:
@@ -17,19 +18,29 @@ light_livingroom_turn_on_min:
       entity_id: light.livingroom
       data:
         brightness: 1
+        color_temp: 370
+
+light_livingroom_turn_on_max:
+  sequence:
+    - service: light.turn_on
+      entity_id: light.livingroom
+      data:
+        brightness: 255
+        color_temp: 370
 
 light_livingroom_turn_off:
   sequence:
     - service: light.turn_off
       entity_id: light.livingroom
 
+#YURY
 light_small_torch_turn_on_max:
   sequence:
     - service: light.turn_on
       entity_id: light.small_torch
       data:
         brightness: 255
-        color_temp: 420
+        color_temp: 370
 
 light_small_torch_turn_on_min:
   sequence:
@@ -37,4 +48,13 @@ light_small_torch_turn_on_min:
       entity_id: light.small_torch
       data:
         brightness: 1
-        color_temp: 580
+        color_temp: 370
+
+#BEDROOM
+light_balloon_night:
+  sequence:
+    - service: light.turn_on
+      entity_id: light.balloon
+      data:
+        brightness: 1
+        rgb_color: [255,0,0]

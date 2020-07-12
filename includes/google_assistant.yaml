@@ -38,7 +38,7 @@ entity_config:
     expose: true
     room: Yury Room
 #Bedroom
-  light.bulb_s:
+  light.balloon:
     name: Balloon lamp
     expose: true
     room: Bedroom
