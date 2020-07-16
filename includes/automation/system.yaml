@@ -3,7 +3,6 @@
     - platform: homeassistant
       event: start
   action:
-    - service: script.ha_set_defaults
     - service: automation.trigger
       data:
         entity_id: automation.update_input_text_radio_cast
