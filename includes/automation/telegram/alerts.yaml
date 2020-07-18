@@ -18,8 +18,6 @@
           {% else %}
           {{ '\U00002705' }} Safe!
           {% endif %}
-        inline_keyboard:
-          - "\U0000267B Dismiss:/dismiss"
 
 - alias: "airvisual_alert"
   trigger:
@@ -31,8 +29,6 @@
         target: !secret tg_chat_dima
         message: >
           {{ states['sensor.now_hm'].state }} {{ '\U0001f32c' }} {{ trigger.from_state.state }} -> {{ trigger.to_state.state }}: {{ states['sensor.u_s_air_quality_index'].state_with_unit}}, {{ states['sensor.u_s_main_pollutant'].state_with_unit}} | #air
-        inline_keyboard:
-          - "\U0000267B Dismiss:/dismiss"
 
 - alias: "kitchen_power_switched_off"
   trigger:
@@ -58,8 +54,6 @@
         target: !secret tg_chat_dima
         message: >
           {{ states['sensor.now_hm'].state }} {{ '\U0001f305' }} {{ states['sensor.solar_elevation'].state_with_unit}}, {{ states['sensor.solar_azimuth'].state_with_unit}} #sun #sunrise
-        inline_keyboard:
-          - "\U0000267B Dismiss:/dismiss"
 
 - alias: "sunset"
   trigger:
@@ -72,5 +66,3 @@
         target: !secret tg_chat_dima
         message: >
           {{ states['sensor.now_hm'].state }} {{ '\U0001f307' }} {{ states['sensor.solar_elevation'].state_with_unit}}, {{ states['sensor.solar_azimuth'].state_with_unit}} #sun #sunset
-        inline_keyboard:
-          - "\U0000267B Dismiss:/dismiss"

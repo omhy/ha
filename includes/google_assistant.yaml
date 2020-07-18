@@ -1,4 +1,5 @@
 project_id: !secret google_actions_project_id
+service_account: !include sa.json
 expose_by_default: false
 entity_config:
 #Entrance
@@ -78,3 +79,13 @@ entity_config:
     name: Say outside
     expose: true
     room: Speaker
+
+#Sensord
+  sensor.outdoor_temperature:
+    name: Outdoor temperature
+    expose: true
+    room: Outdoor
+  sensor.outdoor_humidity:
+    name: Outdoor humidity
+    expose: true
+    room: Outdoor
