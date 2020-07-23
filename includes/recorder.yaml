@@ -126,3 +126,5 @@ include:
     - sensor.speedtest_download
     - sensor.speedtest_upload
     - sensor.speedtest_ping
+    - sensor.solar_elevation_max
+    - sensor.solar_elevation_min

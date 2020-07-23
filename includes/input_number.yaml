@@ -1,0 +1,8 @@
+solar_elevation_max:
+  min: -180
+  max: 180
+  step: 0.01
+solar_elevation_min:
+  min: -180
+  max: 180
+  step: 0.01

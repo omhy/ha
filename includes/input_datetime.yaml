@@ -1,0 +1,4 @@
+sunrise:
+  has_time: true
+sunset:
+  has_time: true

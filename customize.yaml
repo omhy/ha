@@ -37,6 +37,7 @@ light.livingroom_color:
 light.christmas:
   friendly_name: Christmas lights
   icon: mdi:pine-tree
+
 binary_sensor.is_workday:
   friendly_name: Workday?
   icon: mdi:briefcase
@@ -46,6 +47,9 @@ binary_sensor.is_holiday:
 binary_sensor.is_morning_activity:
   friendly_name: Morning
   icon: mdi:penguin
+binary_sensor.is_backup_day:
+  friendly_name: Backup?
+  icon: mdi:cloud-upload-outline
 sensor.processor_use:
   friendly_name: CPU
 sensor.memory_use_percent:
@@ -120,8 +124,10 @@ sensor.home_assistant_v2_db:
   friendly_name: Log size
 sensor.outdoor_temperature:
   friendly_name: Outdoor t
+  device_class: temperature
 sensor.outdoor_humidity:
   friendly_name: Outdoor h
+  device_class: humidity
 sensor.outdoor_pressure:
   friendly_name: Outdoor p
 sensor.current_uv_level:
@@ -210,8 +216,6 @@ switch.power_strip_4:
   friendly_name: TV
 switch.power_strip_5:
   friendly_name: Fridge
-switch.circadian_lighting_circadian_lighting:
-  icon: mdi:vector-circle
 sensor.power_strip_1_load_power:
   friendly_name: Computer
 sensor.power_strip_2_load_power:
@@ -264,3 +268,19 @@ switch.0x00158d00022391ec_switch_left:
   friendly_name: Corridor
 switch.0x00158d00022391ec_switch_right:
   friendly_name: Bathroom
+
+input_datetime.sunrise:
+  friendly_name: Sunrise
+  icon: mdi:weather-sunset-up
+input_datetime.sunset:
+  friendly_name: Sunset
+  icon: mdi:weather-sunset-down
+sensor.solar_elevation_max:
+  friendly_name: Max elevation
+  icon: mdi:weather-sunset-up
+sensor.solar_elevation_min:
+  friendly_name: Min elevation
+  icon: mdi:weather-sunset-down
+sensor.solar_elevation:
+  friendly_name: Now elevation
+  icon: mdi:weather-sunny

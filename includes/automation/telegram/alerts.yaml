@@ -42,27 +42,3 @@
         message: "{{ states['sensor.now_hm'].state }} {{ '\U000026a1' }} Kitchen power strip is off!"
         inline_keyboard:
           - "\U0001F4A4 Turn on:/kitchen_is_off, \U0000267B Dismiss:/dismiss"
-
-- alias: "sunrise"
-  trigger:
-    - platform: state
-      entity_id: sun.sun
-      to: "above_horizon"
-  action:
-    - service: telegram_bot.send_message
-      data_template:
-        target: !secret tg_chat_dima
-        message: >
-          {{ states['sensor.now_hm'].state }} {{ '\U0001f305' }} {{ states['sensor.solar_elevation'].state_with_unit}}, {{ states['sensor.solar_azimuth'].state_with_unit}} #sun #sunrise
-
-- alias: "sunset"
-  trigger:
-    - platform: state
-      entity_id: sun.sun
-      to: "below_horizon"
-  action:
-    - service: telegram_bot.send_message
-      data_template:
-        target: !secret tg_chat_dima
-        message: >
-          {{ states['sensor.now_hm'].state }} {{ '\U0001f307' }} {{ states['sensor.solar_elevation'].state_with_unit}}, {{ states['sensor.solar_azimuth'].state_with_unit}} #sun #sunset

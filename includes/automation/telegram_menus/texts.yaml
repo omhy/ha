@@ -1,4 +1,4 @@
-- alias: "telega_text_m"
+- alias: "telega_text_M"
   trigger:
     - platform: event
       event_type: telegram_text
@@ -21,7 +21,7 @@
           - "\U000026C5 Environment:/environment, \U0001F30D People:/people"
           - "\U0001F6A7 Tech:/tech, \U0000267B Dismiss:/dismiss"
 
-- alias: "telega_text_l"
+- alias: "telega_text_L"
   trigger:
     - platform: event
       event_type: telegram_text
@@ -43,13 +43,19 @@
         inline_keyboard:
           - "\U0000267B Dismiss:/dismiss"
 
-- alias: "telega_text_fit"
+- alias: "telega_text_R"
   trigger:
     - platform: event
       event_type: telegram_text
       event_data:
-        text: "fit"
+        text: "r"
+    - platform: event
+      event_type: telegram_text
+      event_data:
+        text: "R"
+    - platform: event
+      event_type: telegram_text
+      event_data:
+        text: "к"
   action:
-    - service: script.telegram_send_fit
-      data_template:
-        target: "{{ trigger.event.data.user_id }}"
+    - service: homeassistant.restart

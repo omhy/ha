@@ -1,0 +1,61 @@
+- alias: "sunrise"
+  trigger:
+    - platform: state
+      entity_id: sun.sun
+      to: "above_horizon"
+  action:
+    - service: telegram_bot.send_message
+      data_template:
+        target: !secret tg_chat_dima
+        message: >
+          {{ states['sensor.now_hm'].state }} {{ '\U0001f305' }} {{ states['sensor.solar_elevation'].state_with_unit}}, {{ states['sensor.solar_azimuth'].state_with_unit}} #sun #sunrise
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.solar_elevation_max
+        value: 0
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.sunrise
+        time: '{{ (as_timestamp(now()) | timestamp_custom("%H:%M:%S", true)) }}'
+
+- alias: "sunset"
+  trigger:
+    - platform: state
+      entity_id: sun.sun
+      to: "below_horizon"
+  action:
+    - service: telegram_bot.send_message
+      data_template:
+        target: !secret tg_chat_dima
+        message: >
+          {{ states['sensor.now_hm'].state }} {{ '\U0001f307' }} {{ states['sensor.solar_elevation'].state_with_unit}}, {{ states['sensor.solar_azimuth'].state_with_unit}} #sun #sunset
+    - service: input_number.set_value
+      data:
+        value: 0
+        entity_id: input_number.solar_elevation_min
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.sunset
+        time: '{{ (as_timestamp(now()) | timestamp_custom("%H:%M:%S", true)) }}'
+
+- alias: "sun_elevation_update_max_input_number"
+  trigger:
+    - platform: state
+      entity_id: sensor.solar_elevation_max
+  action:
+    - service: input_number.set_value
+      data_template:
+        value: "{{ states['sensor.solar_elevation_max'].state }}"
+        entity_id:
+          - input_number.solar_elevation_max
+
+- alias: "sun_elevation_update_min_input_number"
+  trigger:
+    - platform: state
+      entity_id: sensor.solar_elevation_min
+  action:
+    - service: input_number.set_value
+      data_template:
+        value: "{{ states['sensor.solar_elevation_min'].state }}"
+        entity_id:
+          - input_number.solar_elevation_min
