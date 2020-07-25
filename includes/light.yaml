@@ -37,3 +37,6 @@
 - platform: switch
   name: bathroom
   entity_id: switch.0x00158d00022391ec_switch_right
+
+- platform: hyperion
+  host: 192.168.1.11

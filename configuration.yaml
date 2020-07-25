@@ -17,6 +17,9 @@ system_health:
 updater:
 config:
 
+circadian_lighting:
+  # max_colortemp: 4000
+
 # zeroconf:
 # ssdp:
 

@@ -269,18 +269,17 @@ switch.0x00158d00022391ec_switch_left:
 switch.0x00158d00022391ec_switch_right:
   friendly_name: Bathroom
 
+binary_sensor.sun_is_rising:
+  friendly_name: Sun is rising?
+  icon: mdi:white-balance-sunny
+sensor.solar_elevation:
+  friendly_name: Sun elevation
+  icon: mdi:weather-sunny
 input_datetime.sunrise:
   friendly_name: Sunrise
   icon: mdi:weather-sunset-up
 input_datetime.sunset:
   friendly_name: Sunset
   icon: mdi:weather-sunset-down
-sensor.solar_elevation_max:
-  friendly_name: Max elevation
-  icon: mdi:weather-sunset-up
-sensor.solar_elevation_min:
-  friendly_name: Min elevation
-  icon: mdi:weather-sunset-down
-sensor.solar_elevation:
-  friendly_name: Now elevation
-  icon: mdi:weather-sunny
+switch.circadian_lighting_circadian_lighting:
+  icon: mdi:graphql

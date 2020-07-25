@@ -2,3 +2,7 @@ sunrise:
   has_time: true
 sunset:
   has_time: true
+zenith:
+  has_time: true
+nadir:
+  has_time: true

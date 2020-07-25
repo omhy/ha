@@ -69,14 +69,11 @@
         - sensor.time
       unit_of_measurement: "s"
 
-    # zero_float:
-    #   value_template: "{{ 0 | float }}"
-
-    solar_elevation_max:
-      value_template: "{{ (states['input_number.solar_elevation_max'].state | float, states['sensor.solar_elevation'].state | float) | max }}"
-      entity_id: sensor.solar_elevation
+    zenith:
+      value_template: "{{ states['input_number.zenith'].state | float }}"
+      entity_id: input_number.zenith
       unit_of_measurement: "°"
-    solar_elevation_min:
-      value_template: "{{ (states['input_number.solar_elevation_min'].state | float, states['sensor.solar_elevation'].state | float) | min }}"
-      entity_id: sensor.solar_elevation
+    nadir:
+      value_template: "{{ states['input_number.nadir'].state | float }}"
+      entity_id: input_number.nadir
       unit_of_measurement: "°"

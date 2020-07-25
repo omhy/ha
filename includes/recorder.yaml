@@ -19,6 +19,7 @@ include:
     - binary_sensor.ping_computer
     - binary_sensor.ping_laptop
     - binary_sensor.ping_tv
+    - binary_sensor.sun_is_rising
     - sensor.outdoor_temperature
     - sensor.outdoor_humidity
     - sensor.outdoor_pressure
@@ -126,5 +127,10 @@ include:
     - sensor.speedtest_download
     - sensor.speedtest_upload
     - sensor.speedtest_ping
-    - sensor.solar_elevation_max
-    - sensor.solar_elevation_min
+    - sensor.zenith
+    - sensor.nadir
+    - input_datetime.sunrise
+    - input_datetime.zenith
+    - input_datetime.nadir
+    - input_datetime.sunset
+    - sensor.circadian_values

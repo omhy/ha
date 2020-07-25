@@ -23,8 +23,7 @@
         {% else %}
           false
         {% endif %}
-      entity_id: 
-        - sensor.date
+      entity_id: sensor.date
 
     is_workday:
       value_template: >
@@ -55,8 +54,7 @@
     is_backup_day:
       value_template: >
         {{now().weekday() == 1 or now().weekday() == 3 or now().weekday() == 6}}
-      entity_id: 
-        - sensor.date
+      entity_id: sensor.date
 
     ping_tv:
       value_template: "{{ states.sensor.power_strip_4_load_power.state | float > 70 }}"
@@ -115,3 +113,7 @@
         - media_player.kitchen_display
         - media_player.surround
         - media_player.speakers
+
+    sun_is_rising:
+      value_template: "{{ state_attr('sun.sun', 'rising') }}"
+      entity_id: sun.sun

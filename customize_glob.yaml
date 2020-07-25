@@ -35,6 +35,13 @@
   icon: mdi:hubspot
 "*workday*":
   icon: mdi:worker
+"*zenith*":
+  friendly_name: Zenith
+  icon: mdi:weather-sunset-up
+"*nadir*":
+  friendly_name: Nadir
+  icon: mdi:weather-sunset-down
+
 
 ### Z2M
 "*0x00158d0002013f1e*":
