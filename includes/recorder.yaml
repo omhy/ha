@@ -124,9 +124,6 @@ include:
     - sensor.wt48_pressure
     - sensor.solar_azimuth
     - sensor.solar_elevation
-    - sensor.speedtest_download
-    - sensor.speedtest_upload
-    - sensor.speedtest_ping
     - sensor.zenith
     - sensor.nadir
     - input_datetime.sunrise

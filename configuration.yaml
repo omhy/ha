@@ -18,7 +18,7 @@ updater:
 config:
 
 circadian_lighting:
-  # max_colortemp: 4000
+  max_colortemp: 5000
 
 # zeroconf:
 # ssdp:

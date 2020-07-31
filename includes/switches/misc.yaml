@@ -24,7 +24,7 @@
 #   mac_address: "D0-50-99-3E-70-DA"
 
 - platform: circadian_lighting
-  # max_brightness: 80
+  max_brightness: 80
   lights_ct:
     - light.big_torch
     - light.corner_lamp
