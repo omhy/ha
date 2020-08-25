@@ -5,7 +5,7 @@
       to: "single"
   action:
     - service: script.doorbell_single
-    - service: notify.telegram_dima
+    - service: notify.telegram_parents
       data_template:
         message: "{{ states['sensor.now_hm'].state }} \U0001F514 Doorbell single click"
 
@@ -16,6 +16,6 @@
       to: "double"
   action:
     - service: script.doorbell_double
-    - service: notify.telegram_dima
+    - service: notify.telegram_parents
       data_template:
         message: "{{ states['sensor.now_hm'].state }} \U0001F514 Doorbell double click"

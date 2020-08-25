@@ -52,9 +52,12 @@
         - input_boolean.is_school
 
     is_backup_day:
-      value_template: >
-        {{now().weekday() == 1 or now().weekday() == 3 or now().weekday() == 6}}
+      value_template: "{{now().weekday() == 1 or now().weekday() == 3 or now().weekday() == 6}}"
       entity_id: sensor.date
+
+    is_hallway_ceiling_high_brightness:
+      value_template: "{{ state_attr('light.hallway_ceiling', 'brightness') > 240 }}"
+      entity_id: light.hallway_ceiling
 
     ping_tv:
       value_template: "{{ states.sensor.power_strip_4_load_power.state | float > 70 }}"

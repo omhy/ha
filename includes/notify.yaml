@@ -1,13 +1,3 @@
-- name: telegram_dima
-  platform: telegram
-  chat_id: !secret tg_chat_dima
-- name: telegram_yury
-  platform: telegram
-  chat_id: !secret tg_chat_yury
-- name: telegram_alyona
-  platform: telegram
-  chat_id: !secret tg_chat_alyona
-
 - name: telegram_all
   platform: group
   services:

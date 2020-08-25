@@ -20,6 +20,20 @@ light_livingroom_turn_on_min:
         brightness: 1
         color_temp: 370
 
+light_hallway_ceiling_turn_on_min:
+  sequence:
+    - service: light.turn_on
+      entity_id: light.hallway_ceiling
+      data:
+        brightness: 20
+
+light_hallway_ceiling_turn_on_max:
+  sequence:
+    - service: light.turn_on
+      entity_id: light.hallway_ceiling
+      data:
+        brightness: 255
+
 light_livingroom_turn_on_max:
   sequence:
     - service: light.turn_on

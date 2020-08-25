@@ -91,28 +91,6 @@ telegram_send_electro:
         inline_keyboard:
           - "\U0001F504 Refresh:/electro, \U0000267B Dismiss:/dismiss"
 
-telegram_send_fit:
-  sequence:
-    - service: telegram_bot.send_message
-      data_template:
-        target: "{{ target }}"
-        title: "#Fit {{ states('sensor.now_ymd') }}"
-        message: >
-          {{ '\U0001f463' }} {{states['sensor.google_fit_steps'].state_with_unit }}
-          
-          {{ '\U0001f6b6' }} {{states['sensor.google_fit_distance'].state_with_unit }}
-          
-          {{ '\U000023f1' }} {{states['sensor.google_fit_move_time'].state_with_unit }}
-          
-          {{ '\U0001f354' }} {{states['sensor.google_fit_calories'].state_with_unit }}
-
-          {{ '\U0001f4a4' }} {{states['sensor.google_fit_sleep'].state_with_unit }}
-
-          {{ '\U0001f493' }} {{states['sensor.google_fit_heartrate'].state_with_unit }}
-
-        inline_keyboard:
-          - "\U0000267B Dismiss:/dismiss"
-
 telegram_send_weather_forecast:
   sequence:
     - service: telegram_bot.send_message

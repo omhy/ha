@@ -4,8 +4,9 @@
     - platform: state
       entity_id: person.dima
   action:
-    - service: notify.telegram_dima
+    - service: telegram_bot.send_message
       data_template:
+        target: !secret tg_chat_dima
         message: "{{ states['sensor.now_hm'].state }} \U0001f9ed {{ trigger.from_state.attributes.friendly_name }} moves from `{{ trigger.from_state.state }}` to `{{ trigger.to_state.state }}`"
 
 - alias: "zone_dima_enters_work"
@@ -16,8 +17,9 @@
       event: enter
   action:
     - service: script.state_change_dima_ago_update
-    - service: notify.telegram_dima
+    - service: telegram_bot.send_message
       data_template:
+        target: !secret tg_chat_dima
         message: "{{ states['sensor.now_hm'].state }} \U0001F4BC Dima enters ({{ states['sensor.state_change_dima_ago'].state_with_unit }})"
     - service: script.state_change_dima_set_now
 
@@ -29,8 +31,9 @@
       event: leave
   action:
     - service: script.state_change_dima_ago_update
-    - service: notify.telegram_dima
+    - service: telegram_bot.send_message
       data_template:
+        target: !secret tg_chat_dima
         message: "{{ states['sensor.now_hm'].state }} \U0001F4BC Dima leaves ({{ states['sensor.state_change_dima_ago'].state_with_unit }})"
     - service: script.state_change_dima_set_now
 
@@ -42,8 +45,9 @@
       event: enter
   action:
     - service: script.state_change_dima_ago_update
-    - service: notify.telegram_dima
+    - service: telegram_bot.send_message
       data_template:
+        target: !secret tg_chat_dima
         message: "{{ states['sensor.now_hm'].state }} \U0001F3E0 Dima enters ({{ states['sensor.state_change_dima_ago'].state_with_unit }})"
     - service: script.state_change_dima_set_now
 
@@ -55,9 +59,15 @@
       event: leave
   action:
     - service: script.state_change_dima_ago_update
-    - service: notify.telegram_dima
+    - service: telegram_bot.send_message
       data_template:
-        message: "{{ states['sensor.now_hm'].state }} \U0001F3E0 Dima leaves ({{ states['sensor.state_change_dima_ago'].state_with_unit }})"
+        target: !secret tg_chat_dima
+        message: "{{ states['sensor.now_hm'].state }} {{ '\U0001F3E0' }} Dima leaves ({{ states['sensor.state_change_dima_ago'].state_with_unit }})"
+    - service: telegram_bot.send_location
+      data_template:
+        target: !secret tg_chat_dima
+        latitude: "{{ states['person.dima'].attributes.latitude }}"
+        longitude: "{{ states['person.dima'].attributes.longitude }}"
     - service: script.state_change_dima_set_now
 
 - alias: "zone_dima_enters_school"
@@ -68,8 +78,9 @@
       event: enter
   action:
     - service: script.state_change_dima_ago_update
-    - service: notify.telegram_dima
+    - service: telegram_bot.send_message
       data_template:
+        target: !secret tg_chat_dima
         message: "{{ states['sensor.now_hm'].state }} \U0001F3EB Dima enters ({{ states['sensor.state_change_dima_ago'].state_with_unit }})"
     - service: script.state_change_dima_set_now
 
@@ -81,8 +92,9 @@
       event: leave
   action:
     - service: script.state_change_dima_ago_update
-    - service: notify.telegram_dima
+    - service: telegram_bot.send_message
       data_template:
+        target: !secret tg_chat_dima
         message: "{{ states['sensor.now_hm'].state }} \U0001F3EB Dima leaves ({{ states['sensor.state_change_dima_ago'].state_with_unit }})"
     - service: script.state_change_dima_set_now
 
@@ -95,8 +107,9 @@
       event: enter
   action:
     - service: script.state_change_alyona_ago_update
-    - service: notify.telegram_dima
+    - service: telegram_bot.send_message
       data_template:
+        target: !secret tg_chat_dima
         message: "{{ states['sensor.now_hm'].state }} \U0001F3EB Alyona enters ({{ states.sensor.state_change_alyona_ago.state_with_unit }})"
     - service: script.state_change_alyona_set_now
 
@@ -108,7 +121,8 @@
       event: leave
   action:
     - service: script.state_change_alyona_ago_update
-    - service: notify.telegram_dima
+    - service: telegram_bot.send_message
       data_template:
+        target: !secret tg_chat_dima
         message: "{{ states['sensor.now_hm'].state }} \U0001F3EB Alyona leaves ({{ states.sensor.state_change_alyona_ago.state_with_unit }})"
     - service: script.state_change_alyona_set_now

@@ -47,12 +47,18 @@
 "*0x00158d0002013f1e*":
   friendly_name: Standalone switch
 "*0xec1bbdfffe4d16eb*":
-  friendly_name: Pendant
+  friendly_name: Hallway balcony #light
+  icon: mdi:globe-light
+"*0xec1bbdfffe18a191*":
+  friendly_name: Hallway door #light
+  icon: mdi:globe-light
+"*0xccccccfffef03bac*":
+  friendly_name: Hallway switch #Btn
 "*0x14b457fffe4dc1c2*":
   friendly_name: Storage bulb
   icon: mdi:package
 "*0xec1bbdfffea090e5*":
-  friendly_name: Pendant switch
+  friendly_name: Chain lamp switch #Btn
 "*0x14b457fffe8085df*":
   friendly_name: Storage switch
 "*0x00158d00028776ae*":

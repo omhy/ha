@@ -16,8 +16,9 @@
       from: "off"
       to: "on"
   action:
-    - service: notify.telegram_dima
+    - service: telegram_bot.send_message
       data_template:
+        target: !secret tg_chat_dima
         message: "{{ states['sensor.now_hm'].state }} \U0001F513 Door is opened ({{ states['sensor.state_change_door_ago_min'].state_with_unit }})"
     - service: script.state_change_entrance_door_set_now
 
@@ -28,8 +29,9 @@
       from: "on"
       to: "off"
   action:
-    - service: notify.telegram_dima
+    - service: telegram_bot.send_message
       data_template:
+        target: !secret tg_chat_dima
         message: "{{ states['sensor.now_hm'].state }} \U0001F512 Door is closed ({{ states['sensor.state_change_door_ago_sec'].state_with_unit }})"
     - service: script.state_change_entrance_door_set_now
 

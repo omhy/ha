@@ -28,15 +28,32 @@ light.standalone_switch:
 light.balloon:
   friendly_name: Balloon lamp
   icon: mdi:globe-light
+
+light.0xec1bbdfffe18a191_light:
+  friendly_name: Hallway door
+  icon: mdi:globe-light
+light.0xec1bbdfffe4d16eb_light:
+  friendly_name: Hallway balcony
+  icon: mdi:globe-light
+
 light.livingroom:
   friendly_name: Living room lights
   icon: mdi:lightbulb-group
-light.livingroom_color:
-  friendly_name: Living room color lights
-  icon: mdi:lightbulb-group-outline
+light.livingroom_adjustable:
+  friendly_name: Living room adjustable
+  icon: mdi:lightbulb-multiple
 light.christmas:
   friendly_name: Christmas lights
   icon: mdi:pine-tree
+light.hallway:
+  friendly_name: Hallway
+  icon: mdi:lightbulb-group
+light.hallway_ceiling:
+  friendly_name: Hallway ceiling
+  icon: mdi:lightbulb-multiple
+
+
+
 
 binary_sensor.is_workday:
   friendly_name: Workday?

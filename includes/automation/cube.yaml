@@ -6,7 +6,7 @@
   action:
     - service: script.light_adjust_brightness
       data_template:
-        entity_id: light.livingroom_color
+        entity_id: light.livingroom_adjustable
         step: 50
 
 - alias: "cube_action_rotate_left"
@@ -17,7 +17,7 @@
   action:
     - service: script.light_adjust_brightness
       data_template:
-        entity_id: light.livingroom_color
+        entity_id: light.livingroom_adjustable
         step: -50
 
 - alias: "cube_action_flip90"
@@ -28,7 +28,7 @@
   action:
     - service: script.light_adjust_color_temp
       data_template:
-        entity_id: light.livingroom_color
+        entity_id: light.livingroom_adjustable
         step: 80
 
 - alias: "cube_action_flip180"
@@ -39,7 +39,7 @@
   action:
     - service: script.light_adjust_color_temp
       data_template:
-        entity_id: light.livingroom_color
+        entity_id: light.livingroom_adjustable
         step: -80
 
 - alias: "cube_action_fall"

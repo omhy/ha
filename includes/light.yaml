@@ -11,13 +11,26 @@
   retain: false
 
 - platform: group
-  name: livingroom
+  name: hallway_ceiling
   entities:
-  - light.big_torch
-  - light.corner_lamp
+  - light.0xec1bbdfffe4d16eb_light
+  - light.0xec1bbdfffe18a191_light
 
 - platform: group
-  name: livingroom_color
+  name: hallway
+  entities:
+  - light.hallway_ceiling
+  - light.fire_lamp
+  - light.garland
+
+- platform: group
+  name: livingroom
+  entities:
+  - light.livingroom_adjustable
+  - light.standalone_switch
+
+- platform: group
+  name: livingroom_adjustable
   entities:
   - light.big_torch
   - light.corner_lamp

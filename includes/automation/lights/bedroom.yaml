@@ -1,10 +1,15 @@
 - alias: "light_ball_on"
   trigger:
+    - platform: sun
+      event: sunset
     - platform: time
       at: "19:00:00"
   action:
     - service: light.turn_on
       entity_id: light.balloon
+      data:
+        brightness: 70
+        color_temp: 370
 
 # - alias: "light_ball_off"
 #   trigger:
