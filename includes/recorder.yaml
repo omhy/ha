@@ -126,4 +126,16 @@ include:
     - input_datetime.sunset
     - sensor.circadian_values
     - sensor.dima_phone_state
+    - sensor.dima_battery_level
+    - sensor.dima_battery_level_derivative
+    - sensor.dima_detected_activity
+    - sensor.dima_battery_state
+    - sensor.dima_battery_state_charger_type
     - sensor.alyona_phone_state
+    - sensor.alyona_battery_level
+    - sensor.alyona_detected_activity
+    - sensor.alyona_battery_state
+    - sensor.yury_phone_state
+    - sensor.yury_battery_level
+    - sensor.yury_detected_activity
+    - sensor.yury_battery_state

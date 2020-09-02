@@ -4,8 +4,6 @@ radio_cast:
 
 state_change_entrance_door:
   name: state_change_entrance_door
-state_change_seat:
-  name: state_change_seat
 state_change_dima:
   name: state_change_dima
 state_change_alyona:

@@ -5,10 +5,10 @@
       to: "single"
   condition:
     - condition: state
-      entity_id: light.livingroom
+      entity_id: light.livingroom_adjustable
       state: "on"
   action:
-    - service: script.light_livingroom_turn_off
+    - service: script.light_livingroom_adj_turn_off
 
 - alias: "light_livingroom_turn_on"
   trigger:
@@ -17,12 +17,12 @@
       to: "single"
   condition:
     - condition: state
-      entity_id: light.livingroom
+      entity_id: light.livingroom_adjustable
       state: "off"
   action:
     - service: switch.turn_off
       entity_id: switch.circadian_lighting_circadian_lighting
-    - service: script.light_livingroom_turn_on_def
+    - service: script.light_livingroom_adj_turn_on_def
 
 - alias: "light_livroom_double"
   trigger:
@@ -32,7 +32,7 @@
   action:
     - service: switch.turn_on
       entity_id: switch.circadian_lighting_circadian_lighting
-    - service: script.light_livingroom_turn_on_min
+    - service: script.light_livingroom_adj_turn_on_min
 
 - alias: "pendant_switch_click_on"
   trigger:

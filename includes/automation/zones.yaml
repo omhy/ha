@@ -1,14 +1,4 @@
 ################## DIMA
-- alias: "dt_dima_watcher"
-  trigger:
-    - platform: state
-      entity_id: person.dima
-  action:
-    - service: telegram_bot.send_message
-      data_template:
-        target: !secret tg_chat_dima
-        message: "{{ states['sensor.now_hm'].state }} \U0001f9ed {{ trigger.from_state.attributes.friendly_name }} moves from `{{ trigger.from_state.state }}` to `{{ trigger.to_state.state }}`"
-
 - alias: "zone_dima_enters_work"
   trigger:
     - platform: zone

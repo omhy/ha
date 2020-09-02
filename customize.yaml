@@ -300,3 +300,6 @@ input_datetime.sunset:
   icon: mdi:weather-sunset-down
 switch.circadian_lighting_circadian_lighting:
   icon: mdi:graphql
+
+sensor.dima_battery_state_charger_type:
+  friendly_name: SM-G973F Battery Charger Type

@@ -61,14 +61,7 @@
         - sensor.processor_use
         - sensor.memory_use_percent
         - sensor.temperature
-#SEAT
-    seat_inactive:
-      value_template: "{{ ((now() - strptime(states['input_text.state_change_seat'].state, '%Y%m%d%H%M%S').astimezone()).seconds) }}"
-      entity_id:
-        - sensor.0x00158d0002c4e568_action
-        - sensor.time
-      unit_of_measurement: "s"
-
+#SUN
     zenith:
       value_template: "{{ states['input_number.zenith'].state | float }}"
       entity_id: input_number.zenith
@@ -77,3 +70,9 @@
       value_template: "{{ states['input_number.nadir'].state | float }}"
       entity_id: input_number.nadir
       unit_of_measurement: "°"
+
+#PH
+    dima_battery_state_charger_type:
+      value_template: "{{ states['sensor.dima_battery_state'].attributes.charger_type }}"
+      entity_id: sensor.dima_battery_state
+

@@ -28,5 +28,6 @@
 - platform: rpi_power
   text_state: true
 
-# - platform: openhardwaremonitor
-#   host: 192.168.1.101
+- platform: derivative
+  source: sensor.dima_battery_level
+  name: dima_battery_level_derivative

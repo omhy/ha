@@ -61,4 +61,4 @@
       to: "shake"
   action:
     - service: script.turn_on
-      entity_id: script.light_livingroom_turn_on_min
+      entity_id: script.light_livingroom_adj_turn_on_min

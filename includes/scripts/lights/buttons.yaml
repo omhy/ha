@@ -1,5 +1,5 @@
 #LIVINGROOM
-light_livingroom_turn_on_def:
+light_livingroom_adj_turn_on_def:
   sequence:
     - service: light.turn_on
       entity_id: light.big_torch
@@ -12,14 +12,33 @@ light_livingroom_turn_on_def:
         brightness: 100
         color_temp: 370
 
-light_livingroom_turn_on_min:
+light_livingroom_adj_turn_on_min:
   sequence:
     - service: light.turn_on
-      entity_id: light.livingroom
+      entity_id: light.livingroom_adjustable
       data:
         brightness: 1
         color_temp: 370
 
+light_livingroom_adj_turn_on_max:
+  sequence:
+    - service: light.turn_on
+      entity_id: light.livingroom_adjustable
+      data:
+        brightness: 255
+        color_temp: 370
+
+light_livingroom_adj_turn_off:
+  sequence:
+    - service: light.turn_off
+      entity_id: light.livingroom_adjustable
+
+light_livingroom_turn_off:
+  sequence:
+    - service: light.turn_off
+      entity_id: light.livingroom
+
+#HALLWAY
 light_hallway_ceiling_turn_on_min:
   sequence:
     - service: light.turn_on
@@ -33,19 +52,6 @@ light_hallway_ceiling_turn_on_max:
       entity_id: light.hallway_ceiling
       data:
         brightness: 255
-
-light_livingroom_turn_on_max:
-  sequence:
-    - service: light.turn_on
-      entity_id: light.livingroom
-      data:
-        brightness: 255
-        color_temp: 370
-
-light_livingroom_turn_off:
-  sequence:
-    - service: light.turn_off
-      entity_id: light.livingroom
 
 #YURY
 light_small_torch_turn_on_max:
