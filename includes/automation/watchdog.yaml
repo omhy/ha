@@ -1,0 +1,19 @@
+- alias: "watchdog_status_update"
+  trigger:
+    - platform: state
+      entity_id:
+        - sensor.0x00158d0001f23cbe_temperature
+        - sensor.0x00158d00022c7cf2_temperature
+        - sensor.0x00158d0002271609_temperature
+        - sensor.0x00158d0002323783_temperature
+        - sensor.0x00158d000234816a_temperature
+        - sensor.0x00158d00032308dd_temperature
+  action:
+    # - service: telegram_bot.send_message
+    #   data:
+    #     target: !secret tg_chat_dima
+    #     message: "`{{ trigger.to_state.object_id }}`"
+    - service: input_number.set_value
+      data:
+        entity_id: "input_number.{{ trigger.to_state.object_id }}"
+        value: "{{ trigger.to_state.state | float }}"

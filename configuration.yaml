@@ -20,8 +20,8 @@ config:
 circadian_lighting:
   max_colortemp: 5000
 
-# zeroconf:
-# ssdp:
+zeroconf:
+ssdp:
 
 hassio:
 frontend:
@@ -29,6 +29,7 @@ frontend:
 
 #uilogs:
 start_time:
+# z2m_light_admin:
 
 system_log:
   max_entries: 20

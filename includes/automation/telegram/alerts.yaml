@@ -8,7 +8,7 @@
         - binary_sensor.lv_latgale
   action:
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: !secret tg_chat_dima
         message: >
           {{ states['sensor.now_hm'].state }} {{ '\U00002139' }} {{ trigger.to_state.attributes.friendly_name }}
@@ -25,7 +25,7 @@
       entity_id: sensor.u_s_air_pollution_level
   action:
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: !secret tg_chat_dima
         message: >
           {{ states['sensor.now_hm'].state }} {{ '\U0001f32c' }} {{ trigger.from_state.state }} -> {{ trigger.to_state.state }}: {{ states['sensor.u_s_air_quality_index'].state_with_unit}}, {{ states['sensor.u_s_main_pollutant'].state_with_unit}} | #air
@@ -37,7 +37,7 @@
       to: "off"
   action:
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: !secret tg_chat_dima
         message: "{{ states['sensor.now_hm'].state }} {{ '\U000026a1' }} Kitchen power strip is off!"
         inline_keyboard:

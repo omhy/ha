@@ -17,7 +17,7 @@
       to: "brightness_up"
   action:
     - service: script.light_adjust_brightness
-      data_template:
+      data:
         entity_id: light.0x14b457fffe4dc1c2_light
         step: 51
 
@@ -28,7 +28,7 @@
       to: "brightness_down"
   action:
     - service: script.light_adjust_brightness
-      data_template:
+      data:
         entity_id: light.0x14b457fffe4dc1c2_light
         step: -51
 

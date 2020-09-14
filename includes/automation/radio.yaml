@@ -4,7 +4,7 @@
       entity_id: input_select.radio_cast
   action:
     - service: input_text.set_value
-      data_template:
+      data:
         entity_id: input_text.radio_cast
         value: >
           {% if is_state("input_select.radio_cast", "Kitchen speaker") %} media_player.kitchen_display

@@ -1,7 +1,7 @@
 light_adjust_brightness:
   sequence:
     - service: light.turn_on
-      data_template:
+      data:
         entity_id: "{{ entity_id }}"
         brightness: >
           {% set current = state_attr(entity_id, 'brightness') | int %}
@@ -19,7 +19,7 @@ light_adjust_brightness:
 light_adjust_color_temp:
   sequence:
     - service: light.turn_on
-      data_template:
+      data:
         entity_id: "{{ entity_id }}"
         color_temp: >
           {% set current = state_attr(entity_id, 'color_temp') | int %}

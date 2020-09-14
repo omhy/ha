@@ -24,7 +24,7 @@
         minutes: 1
   action:
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: !secret tg_chat_dima
         message: "{{ states['sensor.now_hm'].state }} \U0001F5A5 is turned off ({{ states.sensor.computer_on_today.state_with_unit }})"
 
@@ -38,7 +38,7 @@
         minutes: 2
   action:
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: !secret tg_chat_dima
         message: "{{ states['sensor.now_hm'].state }} \U0001F5A5 is turned on ({{ states.sensor.computer_on_today.state_with_unit }})"
 
@@ -52,7 +52,7 @@
         minutes: 1
   action:
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: !secret tg_chat_dima
         message: "{{ states['sensor.now_hm'].state }} \U0001F4BB is turned off ({{ states.sensor.laptop_on_today.state_with_unit }})"
 
@@ -66,6 +66,6 @@
         minutes: 2
   action:
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: !secret tg_chat_dima
         message: "{{ states['sensor.now_hm'].state }} \U0001F4BB is turned on ({{ states.sensor.laptop_on_today.state_with_unit }})"

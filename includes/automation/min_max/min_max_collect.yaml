@@ -1,0 +1,101 @@
+# OUTDOOR
+
+- alias: "min_max_publish_outdoor_temperature_min"
+  trigger:
+    - platform: state
+      entity_id: sensor.outdoor_temperature
+  condition:
+    - condition: template
+      value_template: "{{ (trigger.to_state.state | default('0') | float) < (states['input_number.outdoor_temperature_min'].state | default('0') | float) }}"
+  action:
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.outdoor_temperature_min
+        value: "{{ trigger.to_state.state | float }}"
+    - service: script.input_datetime_set_now
+      data:
+        entity_id: input_datetime.outdoor_temperature_min_at
+
+- alias: "min_max_publish_outdoor_temperature_max"
+  trigger:
+    - platform: state
+      entity_id: sensor.outdoor_temperature
+  condition:
+    - condition: template
+      value_template: "{{ (trigger.to_state.state | default('0') | float) > (states['input_number.outdoor_temperature_max'].state | default('0') | float) }}"
+  action:
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.outdoor_temperature_max
+        value: "{{ trigger.to_state.state | float }}"
+    - service: script.input_datetime_set_now
+      data:
+        entity_id: input_datetime.outdoor_temperature_max_at
+
+# PARK
+
+- alias: "min_max_publish_outpark_temperature_min"
+  trigger:
+    - platform: state
+      entity_id: sensor.0x00158d00022c7cf2_temperature
+  condition:
+    - condition: template
+      value_template: "{{ (trigger.to_state.state | default('0') | float) < (states['input_number.outpark_temperature_min'].state | default('0') | float) }}"
+  action:
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.outpark_temperature_min
+        value: "{{ trigger.to_state.state | float }}"
+    - service: script.input_datetime_set_now
+      data:
+        entity_id: input_datetime.outpark_temperature_min_at
+
+- alias: "min_max_publish_outpark_temperature_max"
+  trigger:
+    - platform: state
+      entity_id: sensor.0x00158d00022c7cf2_temperature
+  condition:
+    - condition: template
+      value_template: "{{ (trigger.to_state.state | default('0') | float) > (states['input_number.outpark_temperature_max'].state | default('0') | float) }}"
+  action:
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.outpark_temperature_max
+        value: "{{ trigger.to_state.state | float }}"
+    - service: script.input_datetime_set_now
+      data:
+        entity_id: input_datetime.outpark_temperature_max_at
+
+# YARD
+
+- alias: "min_max_publish_outyard_temperature_min"
+  trigger:
+    - platform: state
+      entity_id: sensor.0x00158d0002323783_temperature
+  condition:
+    - condition: template
+      value_template: "{{ (trigger.to_state.state | default('0') | float) < (states['input_number.outyard_temperature_min'].state | default('0') | float) }}"
+  action:
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.outyard_temperature_min
+        value: "{{ trigger.to_state.state | float }}"
+    - service: script.input_datetime_set_now
+      data:
+        entity_id: input_datetime.outyard_temperature_min_at
+
+- alias: "min_max_publish_outyard_temperature_max"
+  trigger:
+    - platform: state
+      entity_id: sensor.0x00158d0002323783_temperature
+  condition:
+    - condition: template
+      value_template: "{{ (trigger.to_state.state | default('0') | float) > (states['input_number.outyard_temperature_max'].state | default('0') | float) }}"
+  action:
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.outyard_temperature_max
+        value: "{{ trigger.to_state.state | float }}"
+    - service: script.input_datetime_set_now
+      data:
+        entity_id: input_datetime.outyard_temperature_max_at

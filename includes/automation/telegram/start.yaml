@@ -4,7 +4,7 @@
       event: start
   action:
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: !secret tg_chat_dima
         message: "{{ states['sensor.now_hm'].state }} \U0001F916 {{ states['sensor.ha_version_current'].state }} #HA is back online in {{ states['sensor.start_time'].state_with_unit }}. ({{ states['sensor.rpi'].state }})"
         inline_keyboard:
@@ -16,7 +16,7 @@
       event: shutdown
   action:
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: !secret tg_chat_dima
         message: "{{ states['sensor.now_hm'].state }} \U0001F6D1 {{ states['sensor.ha_version_current'].state }} #HA goes offline (uptime {{ (24 * states['sensor.uptime'].state | float) | round(2) }} h). ({{ states['sensor.rpi'].state }})"
         inline_keyboard:

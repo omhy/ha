@@ -6,11 +6,11 @@
         data: "/menu"
   action:
     - service: telegram_bot.answer_callback_query
-      data_template:
+      data:
         callback_query_id: "{{ trigger.event.data.id }}"
         message: "Roger {{ trigger.event.data.data }}"
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: "{{ trigger.event.data.user_id }}"
         message: "Main menu"
         inline_keyboard:
@@ -25,10 +25,10 @@
         data: "/dismiss"
   action:
     - service: telegram_bot.answer_callback_query
-      data_template:
+      data:
         callback_query_id: "{{ trigger.event.data.id }}"
         message: "Roger {{ trigger.event.data.data }}"
     - service: telegram_bot.delete_message
-      data_template:
+      data:
         chat_id: "{{ trigger.event.data.chat_id }}"
         message_id: "{{ trigger.event.data.message.message_id }}"

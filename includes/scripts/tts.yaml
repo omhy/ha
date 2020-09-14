@@ -3,7 +3,7 @@
 tts_summary:
   sequence:
     - service: script.tts_say_kitchen
-      data_template:
+      data:
         message: >
           Привет!
           В парке температура - {{ states('sensor.0x00158d00022c7cf2_temperature') | round(0) }} градусов.
@@ -17,7 +17,7 @@ tts_summary:
 tts_rooms:
   sequence:
     - service: script.tts_say_kitchen
-      data_template:
+      data:
         message: >
           Температура.
           Парк - {{ states('sensor.0x00158d00022c7cf2_temperature') | round(0) }}.
@@ -37,7 +37,7 @@ tts_rooms:
 tts_outside:
   sequence:
     - service: script.tts_say_kitchen
-      data_template:
+      data:
         message: >
           Сейчас на улице.
           Ветер - {{ states('sensor.wt00_wind_speed') | round(0) }} метров в секунду.
@@ -58,7 +58,7 @@ tts_say_kitchen:
   sequence:
     - service: tts.google_say
       entity_id: media_player.kitchen_display
-      data_template:
+      data:
         message:  "{{ message }}"
         language: "ru"
         cache: false
@@ -67,7 +67,7 @@ tts_say_surround:
   sequence:
     - service: tts.google_say
       entity_id: media_player.surround
-      data_template:
+      data:
         message:  "{{ message }}"
         language: "ru"
         cache: false

@@ -161,38 +161,22 @@ sensor.db_size_maria:
 sensor.db_size_influx:
   friendly_name: InfluxDb size
   icon: mdi:database
-sensor.outpark_temp_min:
+
+input_number.outpark_temperature_min:
   friendly_name: Park min
-  icon: mdi:minus-box
-  unit_of_measurement: °C
-  device_class: temperature
-sensor.outpark_temp_max:
+input_number.outpark_temperature_max:
   friendly_name: Park max
-  icon: mdi:plus-box
-  unit_of_measurement: °C
-  device_class: temperature
-sensor.outpark_temp_min_at:
-  friendly_name: Minimal @
-  icon: mdi:clock
-sensor.outpark_temp_max_at:
-  friendly_name: Maximal @
-  icon: mdi:clock
-sensor.outyard_temp_min:
+
+input_number.outyard_temperature_min:
   friendly_name: Yard min
-  icon: mdi:minus-box
-  unit_of_measurement: °C
-  device_class: temperature
-sensor.outyard_temp_max:
+input_number.outyard_temperature_max:
   friendly_name: Yard max
-  icon: mdi:plus-box
-  unit_of_measurement: °C
-  device_class: temperature
-sensor.outyard_temp_min_at:
-  friendly_name: Minimal @
-  icon: mdi:clock
-sensor.outyard_temp_max_at:
-  friendly_name: Maximal @
-  icon: mdi:clock
+
+input_number.outdoor_temperature_min:
+  friendly_name: Outdoor min
+input_number.outdoor_temperature_max:
+  friendly_name: Outdoor max
+
 sensor.days_in_month:
   friendly_name: Days in month
   icon: mdi:calendar-search
@@ -261,10 +245,10 @@ zone.home:
   radius: 30
 
 media_player.androidbox:
-  friendly_name: Abox media
+  friendly_name: Android
   icon: mdi:android
 binary_sensor.ping_androidbox:
-  friendly_name: Abox ping
+  friendly_name: Android
   icon: mdi:android
   device_class: connectivity
 sensor.androidbox_app:
@@ -273,12 +257,6 @@ sensor.androidbox_app:
 sensor.androidbox_app_full:
   friendly_name: Abox app full
   icon: mdi:android-debug-bridge
-sensor.androidbox_on_today:
-  friendly_name: Abox ping
-  icon: mdi:android
-sensor.androidbox_play_today:
-  friendly_name: Abox play
-  icon: mdi:android
 
 # Z2M
 switch.0x00158d00022391ec_switch_left:
@@ -301,5 +279,26 @@ input_datetime.sunset:
 switch.circadian_lighting_circadian_lighting:
   icon: mdi:graphql
 
-sensor.dima_battery_state_charger_type:
-  friendly_name: SM-G973F Battery Charger Type
+switch.hyperion:
+  friendly_name: Hyperion
+binary_sensor.hyperion_leddevice:
+  friendly_name: Hyperion LED
+binary_sensor.hyperion_v4l:
+  friendly_name: Hyperion V4L
+binary_sensor.hyperion_is_on:
+  friendly_name: Hyperion
+  icon: mdi:alpha-h-box
+
+sensor.dima_interactive:
+  friendly_name: Dima screen on
+sensor.yury_interactive:
+  friendly_name: Yury screen on
+sensor.alyona_interactive:
+  friendly_name: Alyona screen on
+
+input_datetime.evening_on:
+  friendly_name: Evening started
+  icon: mdi:home-heart
+input_datetime.evening_off:
+  friendly_name: Evening finished
+  icon: mdi:home-remove

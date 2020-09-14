@@ -6,7 +6,7 @@
         data: "/kitchen_is_off"
   action:
     - service: telegram_bot.answer_callback_query
-      data_template:
+      data:
         callback_query_id: "{{ trigger.event.data.id }}"
         message: "Roger {{ trigger.event.data.data }}"
     - service: switch.turn_on

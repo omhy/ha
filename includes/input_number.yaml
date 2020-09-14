@@ -6,3 +6,43 @@ nadir:
   min: -180
   max: 180
   step: 0.01
+
+outdoor_temperature_min:
+  min: -50
+  max: 50
+outdoor_temperature_max:
+  min: -50
+  max: 50
+
+outyard_temperature_min:
+  min: -50
+  max: 50
+outyard_temperature_max:
+  min: -50
+  max: 50
+
+outpark_temperature_min:
+  min: -50
+  max: 50
+outpark_temperature_max:
+  min: -50
+  max: 50
+
+0x00158d0001f23cbe_temperature:
+  min: -50
+  max: 50
+0x00158d00022c7cf2_temperature:
+  min: -50
+  max: 50
+0x00158d0002271609_temperature:
+  min: -50
+  max: 50
+0x00158d0002323783_temperature:
+  min: -50
+  max: 50
+0x00158d000234816a_temperature:
+  min: -50
+  max: 50
+0x00158d00032308dd_temperature:
+  min: -50
+  max: 50

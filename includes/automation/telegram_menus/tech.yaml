@@ -6,11 +6,11 @@
         data: "/tech"
   action:
     - service: telegram_bot.answer_callback_query
-      data_template:
+      data:
         callback_query_id: "{{ trigger.event.data.id }}"
         message: "Roger {{ trigger.event.data.data }}"
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: "{{ trigger.event.data.user_id }}"
         message: "Tech menu"
         inline_keyboard:
@@ -26,7 +26,7 @@
         data: "/ha_restart"
   action:
     - service: telegram_bot.answer_callback_query
-      data_template:
+      data:
         callback_query_id: "{{ trigger.event.data.id }}"
         message: "Roger {{ trigger.event.data.data }}"
     - service: homeassistant.restart
@@ -39,11 +39,11 @@
         data: "/ha_getlog"
   action:
     - service: telegram_bot.answer_callback_query
-      data_template:
+      data:
         callback_query_id: "{{ trigger.event.data.id }}"
         message: "Roger {{ trigger.event.data.data }}"
     - service: telegram_bot.send_document
-      data_template:
+      data:
         target: "{{ trigger.event.data.user_id }}"
         file: "/config/home-assistant.log"
         inline_keyboard:
@@ -57,11 +57,11 @@
         data: "/electro"
   action:
     - service: telegram_bot.answer_callback_query
-      data_template:
+      data:
         callback_query_id: "{{ trigger.event.data.id }}"
         message: "Roger {{ trigger.event.data.data }}"
     - service: script.telegram_send_electro
-      data_template:
+      data:
         target: "{{ trigger.event.data.user_id }}"
 
 - alias: "telega_callback_computer"
@@ -72,11 +72,11 @@
         data: "/computer"
   action:
     - service: telegram_bot.answer_callback_query
-      data_template:
+      data:
         callback_query_id: "{{ trigger.event.data.id }}"
         message: "Roger {{ trigger.event.data.data }}"
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: "{{ trigger.event.data.user_id }}"
         message: "Computer"
         inline_keyboard:
@@ -91,11 +91,11 @@
       data: "/laptop"
   action:
   - service: telegram_bot.answer_callback_query
-    data_template:
+    data:
       callback_query_id: "{{ trigger.event.data.id }}"
       message: "Roger {{ trigger.event.data.data }}"
   - service: telegram_bot.send_message
-    data_template:
+    data:
       target: "{{ trigger.event.data.user_id }}"
       message: "Laptop"
       inline_keyboard:
@@ -110,7 +110,7 @@
         data: "/rmt_computer_sleep"
   action:
     - service: telegram_bot.answer_callback_query
-      data_template:
+      data:
         callback_query_id: "{{ trigger.event.data.id }}"
         message: "Roger {{ trigger.event.data.data }}"
     - service: script.rmt_computer_sleep
@@ -123,7 +123,7 @@
         data: "/rmt_laptop_sleep"
   action:
     - service: telegram_bot.answer_callback_query
-      data_template:
+      data:
         callback_query_id: "{{ trigger.event.data.id }}"
         message: "Roger {{ trigger.event.data.data }}"
     - service: script.rmt_laptop_sleep

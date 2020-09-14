@@ -17,10 +17,13 @@
       to: "on"
   action:
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: !secret tg_chat_dima
-        message: "{{ states['sensor.now_hm'].state }} \U0001F513 Door is opened ({{ states['sensor.state_change_door_ago_min'].state_with_unit }})"
-    - service: script.state_change_entrance_door_set_now
+        message: >
+          {{ states['sensor.now_hm'].state }} 
+          {{ '\U0001F512'}} Door is opened
+          ({{ (((as_timestamp(now()) - as_timestamp(states['input_datetime.door'].state)) / 60) | int) }} minutes)
+    - service: script.input_datetime_set_now_door
 
 - alias: "door_entrance_closed"
   trigger:
@@ -30,10 +33,13 @@
       to: "off"
   action:
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: !secret tg_chat_dima
-        message: "{{ states['sensor.now_hm'].state }} \U0001F512 Door is closed ({{ states['sensor.state_change_door_ago_sec'].state_with_unit }})"
-    - service: script.state_change_entrance_door_set_now
+        message: >
+          {{ states['sensor.now_hm'].state }} 
+          {{ '\U0001F512' }} Door is closed
+          ({{ ((as_timestamp(now()) - as_timestamp(states['input_datetime.door'].state)) | int) }} seconds) 
+    - service: script.input_datetime_set_now_door
 
 - alias: "door_balcony_opened_timer_idle"
   trigger:
@@ -51,7 +57,7 @@
     - service: counter.increment
       entity_id: counter.balcony_sessions
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: !secret tg_chat_dima
         message: "{{ states['sensor.now_hm'].state }} \U0001f6ad Session started. Today: {{ states['counter.balcony_sessions'].state }}"
         inline_keyboard:

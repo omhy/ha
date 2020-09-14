@@ -6,7 +6,7 @@
         command: "/say"
   action:
     - service: script.tts_say_kitchen
-      data_template:
+      data:
         message: "{{ trigger.event.data.args }}"
 
 - alias: "telega_command_sayall"
@@ -17,5 +17,5 @@
         command: "/sayall"
   action:
     - service: script.tts_say_surround
-      data_template:
+      data:
         message: "{{ trigger.event.data.args }}"

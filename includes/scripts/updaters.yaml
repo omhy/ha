@@ -1,35 +1,24 @@
-input_text_set_now:
+input_datetime_set_now:
   sequence:
-    - service: input_text.set_value
-      data_template:
+    - service: input_datetime.set_datetime
+      data:
         entity_id: "{{ entity_id }}"
-        value: "{{ states['sensor.now_ymdhms'].state }}"
+        timestamp: "{{ as_timestamp(now()) }}"
 
-state_change_entrance_door_set_now:
+input_datetime_set_now_door:
   sequence:
-    - service: script.input_text_set_now
-      data_template:
-        entity_id: input_text.state_change_entrance_door
+    - service: script.input_datetime_set_now
+      data:
+        entity_id: input_datetime.door
 
-state_change_dima_set_now:
+input_datetime_set_now_dima:
   sequence:
-    - service: script.input_text_set_now
-      data_template:
-        entity_id: input_text.state_change_dima
+    - service: script.input_datetime_set_now
+      data:
+        entity_id: input_datetime.dima
 
-state_change_alyona_set_now:
+input_datetime_set_now_alyona:
   sequence:
-    - service: script.input_text_set_now
-      data_template:
-        entity_id: input_text.state_change_alyona
-
-#NO ENTITY_ID IN TEMPLATE, UPDATE ONLY MANUALLY
-state_change_dima_ago_update:
-  sequence:
-    - service: homeassistant.update_entity
-      entity_id: sensor.state_change_dima_ago
-
-state_change_alyona_ago_update:
-  sequence:
-    - service: homeassistant.update_entity
-      entity_id: sensor.state_change_alyona_ago
+    - service: script.input_datetime_set_now
+      data:
+        entity_id: input_datetime.alyona

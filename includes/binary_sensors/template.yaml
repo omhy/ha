@@ -23,7 +23,6 @@
         {% else %}
           false
         {% endif %}
-      entity_id: sensor.date
 
     is_workday:
       value_template: >
@@ -32,9 +31,6 @@
         {% else %}
           {{ now().weekday() >= 0 and now().weekday() <= 4 }}
         {% endif %}
-      entity_id: 
-        - sensor.date
-        - binary_sensor.is_holiday
 
     is_morning_activity:
       value_template: >
@@ -45,23 +41,23 @@
           and
           is_state('input_boolean.is_school', 'on')
         }}
-      entity_id:
-        - sensor.date
-        - binary_sensor.is_workday
-        - input_boolean.is_vacation
-        - input_boolean.is_school
 
     is_backup_day:
       value_template: "{{now().weekday() == 1 or now().weekday() == 3 or now().weekday() == 6}}"
-      entity_id: sensor.date
 
     is_hallway_ceiling_high_brightness:
       value_template: "{{ state_attr('light.hallway_ceiling', 'brightness') > 240 }}"
-      entity_id: light.hallway_ceiling
+
+    hyperion_is_on:
+      value_template: >
+        {{
+          is_state('binary_sensor.hyperion_v4l', 'on')
+          and
+          is_state('binary_sensor.hyperion_leddevice', 'on')
+        }}
 
     ping_tv:
       value_template: "{{ states.sensor.power_strip_4_load_power.state | float > 70 }}"
-      entity_id: sensor.power_strip_4_load_power
 
     people_home:
       value_template: >
@@ -75,15 +71,6 @@
         is_state('media_player.loud_speaker', 'playing') or
         is_state('media_player.yury_speaker', 'playing')
         }}
-      entity_id:
-        - light.big_torch
-        - light.corner_lamp
-        - binary_sensor.ping_computer
-        - binary_sensor.ping_laptop
-        - binary_sensor.ping_tv
-        - media_player.kitchen_display
-        - media_player.loud_speaker
-        - media_player.yury_speaker
 
     ping_androidbox:
       value_template: >
@@ -93,9 +80,6 @@
         is_state('sensor.androidbox_app', 'unknown')
         )
         }}
-      entity_id:
-        - sensor.androidbox_app
-        - media_player.androidbox
 
     some_casting:
       value_template: >
@@ -109,14 +93,6 @@
         is_state('media_player.speakers', 'playing')
         )
         }}
-      entity_id:
-        - media_player.loud_speaker
-        - media_player.black_speaker
-        - media_player.yury_speaker
-        - media_player.kitchen_display
-        - media_player.surround
-        - media_player.speakers
 
     sun_is_rising:
       value_template: "{{ state_attr('sun.sun', 'rising') }}"
-      entity_id: sun.sun

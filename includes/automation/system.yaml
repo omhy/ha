@@ -6,16 +6,16 @@
     - service: automation.trigger
       data:
         entity_id: automation.update_input_text_radio_cast
-    - service: homeassistant.update_entity
-      data:
-        entity_id:
-          - binary_sensor.is_holiday
-          - binary_sensor.is_workday
-          - binary_sensor.is_morning_activity
-          - binary_sensor.is_backup_day
-    - service: hassio.addon_restart
-      data:
-        addon: 7ad98f9c_zigbee2mqtt
+    # - service: homeassistant.update_entity
+    #   data:
+    #     entity_id:
+    #       - binary_sensor.is_holiday
+    #       - binary_sensor.is_workday
+    #       - binary_sensor.is_morning_activity
+    #       - binary_sensor.is_backup_day
+    # - service: hassio.addon_restart
+    #   data:
+    #     addon: 7ad98f9c_zigbee2mqtt
 
 - alias: "ha_rpi_power_tracker"
   trigger:
@@ -27,11 +27,11 @@
         minutes: 10
   action:
     - service: persistent_notification.create
-      data_template:
+      data:
         title: "Power Supply Issue"
         message: "RPI Power reported {{ states.sensor.rpi_power_status.state }}. The state had changed from {{ trigger.from_state.state }}"
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: !secret tg_chat_dima
         message: "{{ states['sensor.now_hm'].state }} \U0001f56f RPI Power reported {{ states.sensor.rpi_power_status.state }}. The state had changed from {{ trigger.from_state.state }}"
 
@@ -42,7 +42,7 @@
       above: 0
   action:
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: !secret tg_chat_dima
         message: "{{ states['sensor.now_hm'].state }} \U0000269c HASC updated available: {{states.sensor.hacs.state}}"
 

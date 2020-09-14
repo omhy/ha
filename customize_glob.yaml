@@ -1,47 +1,31 @@
 ### COMMON
 "*telega*":
   icon: mdi:telegram
-"*dropbox*":
-  icon: mdi:dropbox
 "*seat*":
   icon: mdi:seat
 "*mqtt*":
   icon: mdi:chip
 "*light*":
   icon: mdi:ceiling-light
-"*idx*":
-  icon: mdi:counter
 "*debug*":
   icon: mdi:bug
 "*brightness*":
   icon: mdi:brightness-5
   friendly_name: Brightness
-"*saturation*":
-  icon: mdi:invert-colors
-"*mired*":
-  icon: mdi:thermometer
-  friendly_name: Mireds
-"*hue*":
-  icon: mdi:format-color-fill
-"*transition*":
-  icon: mdi:av-timer
 "*zigbee*":
   icon: mdi:zigbee
 "*computer*":
   icon: mdi:desktop-classic
 "*laptop*":
   icon: mdi:laptop
-"*aqara*":
-  icon: mdi:hubspot
 "*workday*":
-  icon: mdi:worker
+  icon: mdi:briefcase
 "*zenith*":
   friendly_name: Zenith
   icon: mdi:weather-sunset-up
 "*nadir*":
   friendly_name: Nadir
   icon: mdi:weather-sunset-down
-
 
 ### Z2M
 "*0x00158d0002013f1e*":
@@ -188,26 +172,20 @@
 
 "sensor.cast_version_*":
   icon: mdi:cast
-"sensor.build_version_*":
-  icon: mdi:wrench
 
-"sensor.wt00*":
-  friendly_name: Now
-"sensor.wt01*":
-  friendly_name: 1h
-"sensor.wt02*":
-  friendly_name: 2h
-"sensor.wt03*":
-  friendly_name: 3h
-"sensor.wt06*":
-  friendly_name: 6h
-"sensor.wt09*":
-  friendly_name: 9h
-"sensor.wt12*":
-  friendly_name: 12h
-"sensor.wt24*":
-  friendly_name: 1d
-"sensor.wt48*":
-  friendly_name: 2d
-"sensor.wt72*":
-  friendly_name: 3d
+"input_datetime.*_temperature_min_at":
+  friendly_name: Minimal @
+  icon: mdi:clock
+"input_datetime.*_temperature_max_at":
+  friendly_name: Maximal @
+  icon: mdi:clock
+
+"input_number.*_temperature_min":
+  icon: mdi:minus-box
+  unit_of_measurement: °C
+  device_class: temperature
+"input_number.*_temperature_max":
+  icon: mdi:plus-box
+  unit_of_measurement: °C
+  device_class: temperature
+

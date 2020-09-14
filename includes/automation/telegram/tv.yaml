@@ -1,0 +1,18 @@
+- alias: "tv_is_off"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.ping_tv
+      to: "off"
+      for:
+        minutes: 1
+  action:
+    - service: script.androidbox_key_home
+    - service: script.hyperion_off
+
+- alias: "tv_is_off"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.ping_tv
+      to: "on"
+  action:
+    - service: script.hyperion_on

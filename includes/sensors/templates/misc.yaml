@@ -11,8 +11,8 @@
       value_template: "{{ state_attr('sun.sun', 'azimuth') }}"
 
     days_in_month:
-      entity_id: now.month
       value_template: >
+        {% set x = states('sensor.date') %}
         {% set days = {
         1 : 31,
         2 : 28,
@@ -39,12 +39,6 @@
         states.sensor.power_strip_5_utility_d.state | float
         ) | round(2)
         }}
-      entity_id:
-        - sensor.power_strip_1_utility_d
-        - sensor.power_strip_2_utility_d
-        - sensor.power_strip_3_utility_d
-        - sensor.power_strip_4_utility_d
-        - sensor.power_strip_5_utility_d
       unit_of_measurement: "kW"
 
     consumption_now:
@@ -57,10 +51,4 @@
         states.sensor.power_strip_5_load_power.state | float
         ) | round(2)
         }}
-      entity_id:
-        - sensor.power_strip_1_load_power
-        - sensor.power_strip_2_load_power
-        - sensor.power_strip_3_load_power
-        - sensor.power_strip_4_load_power
-        - sensor.power_strip_5_load_power
       unit_of_measurement: "W"

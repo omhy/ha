@@ -6,11 +6,11 @@
         data: "/people"
   action:
     - service: telegram_bot.answer_callback_query
-      data_template:
+      data:
         callback_query_id: "{{ trigger.event.data.id }}"
         message: "Roger {{ trigger.event.data.data }}"
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: "{{ trigger.event.data.user_id }}"
         message: "Select person to check"
         inline_keyboard:
@@ -22,16 +22,14 @@
   trigger:
     - platform: event
       event_type: telegram_callback
-  condition:
-    - condition: template
-      value_template: "{{ trigger.event.data.data.startswith('/tracker ') }}"
+  condition: "{{ trigger.event.data.data.startswith('/tracker ') }}"
   action:
     - service: telegram_bot.answer_callback_query
-      data_template:
+      data:
         callback_query_id: "{{ trigger.event.data.id }}"
         message: "Roger {{ trigger.event.data.data }}"
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: "{{ trigger.event.data.user_id }}"
         message: >
           {% set id = trigger.event.data.data.split(' ', 1)[1] %}
@@ -45,16 +43,14 @@
   trigger:
     - platform: event
       event_type: telegram_callback
-  condition:
-    - condition: template
-      value_template: "{{ trigger.event.data.data.startswith('/map ') }}"
+  condition: "{{ trigger.event.data.data.startswith('/map ') }}"
   action:
     - service: telegram_bot.answer_callback_query
-      data_template:
+      data:
         callback_query_id: "{{ trigger.event.data.id }}"
         message: "Roger {{ trigger.event.data.data }}"
     - service: telegram_bot.send_location
-      data_template:
+      data:
         target: "{{ trigger.event.data.user_id }}"
         latitude: "{{ states.person[trigger.event.data.data.split(' ', 1)[1]].attributes.latitude }}"
         longitude: "{{ states.person[trigger.event.data.data.split(' ', 1)[1]].attributes.longitude }}"

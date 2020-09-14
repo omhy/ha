@@ -24,24 +24,8 @@
   end: "{{ now() }}"
 
 - platform: history_stats
-  name: androidbox_on_today
-  entity_id: binary_sensor.ping_androidbox
-  type: "time"
-  state: "on"
-  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
-  end: "{{ now() }}"
-
-- platform: history_stats
-  name: androidbox_play_today
-  entity_id: media_player.androidbox
-  type: "time"
-  state: "playing"
-  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
-  end: "{{ now() }}"
-
-- platform: history_stats
   name: dima_detected_activity_on_bicycle
-  entity_id: sensor.dima_detected_activity
+  entity_id: sensor.sm_g973f_detected_activity
   type: "time"
   state: "on_bicycle"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
@@ -49,7 +33,7 @@
 
 - platform: history_stats
   name: dima_detected_activity_still
-  entity_id: sensor.dima_detected_activity
+  entity_id: sensor.sm_g973f_detected_activity
   type: "time"
   state: "still"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
@@ -57,7 +41,7 @@
 
 - platform: history_stats
   name: dima_detected_activity_in_vehicle
-  entity_id: sensor.dima_detected_activity
+  entity_id: sensor.sm_g973f_detected_activity
   type: "time"
   state: "in_vehicle"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
@@ -65,7 +49,7 @@
 
 - platform: history_stats
   name: dima_detected_activity_on_foot
-  entity_id: sensor.dima_detected_activity
+  entity_id: sensor.sm_g973f_detected_activity
   type: "time"
   state: "on_foot"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
@@ -73,7 +57,7 @@
 
 - platform: history_stats
   name: dima_detected_activity_running
-  entity_id: sensor.dima_detected_activity
+  entity_id: sensor.sm_g973f_detected_activity
   type: "time"
   state: "running"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
@@ -81,7 +65,7 @@
 
 - platform: history_stats
   name: dima_detected_activity_walking
-  entity_id: sensor.dima_detected_activity
+  entity_id: sensor.sm_g973f_detected_activity
   type: "time"
   state: "walking"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
@@ -89,7 +73,7 @@
 
 - platform: history_stats
   name: dima_detected_activity_tilting
-  entity_id: sensor.dima_detected_activity
+  entity_id: sensor.sm_g973f_detected_activity
   type: "time"
   state: "tilting"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
@@ -97,33 +81,56 @@
 
 - platform: history_stats
   name: dima_detected_activity_unknown
-  entity_id: sensor.dima_detected_activity
+  entity_id: sensor.sm_g973f_detected_activity
   type: "time"
   state: "unknown"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
   end: "{{ now() }}"
 
 - platform: history_stats
-  name: dima_battery_state_charger_type_ac
-  entity_id: sensor.dima_battery_state_charger_type
+  name: dima_charger_type_ac
+  entity_id: sensor.sm_g973f_charger_type
   type: "time"
   state: "ac"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
   end: "{{ now() }}"
 
 - platform: history_stats
-  name: dima_battery_state_charger_type_usb
-  entity_id: sensor.dima_battery_state_charger_type
+  name: dima_charger_type_usb
+  entity_id: sensor.sm_g973f_charger_type
   type: "time"
   state: "usb"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
   end: "{{ now() }}"
 
 - platform: history_stats
-  name: dima_battery_state_charger_type_wireless
-  entity_id: sensor.dima_battery_state_charger_type
+  name: dima_charger_type_wireless
+  entity_id: sensor.sm_g973f_charger_type
   type: "time"
   state: "wireless"
   start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
   end: "{{ now() }}"
 
+- platform: history_stats
+  name: dima_interactive
+  entity_id: binary_sensor.sm_g973f_interactive
+  type: "time"
+  state: "on"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  name: yury_interactive
+  entity_id: binary_sensor.redmi_note_9_pro_interactive
+  type: "time"
+  state: "on"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  name: alyona_interactive
+  entity_id: binary_sensor.mi_a2_interactive
+  type: "time"
+  state: "on"
+  start: "{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}"
+  end: "{{ now() }}"

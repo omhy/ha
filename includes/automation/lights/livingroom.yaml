@@ -38,38 +38,32 @@
   trigger:
     - platform: state
       entity_id: sensor.0xec1bbdfffea090e5_click
-      # to: "on"
+      to: "on"
   action:
     - service: light.toggle
       entity_id: light.standalone_switch
 
-# - alias: "pendant_switch_click_off"
-#   trigger:
-#     - platform: state
-#       entity_id: sensor.0xec1bbdfffea090e5_click
-#       to: "off"
-#   action:
-#     - service: light.toggle
-#       entity_id: light.standalone_switch
+- alias: "pendant_switch_click_off"
+  trigger:
+    - platform: state
+      entity_id: sensor.0xec1bbdfffea090e5_click
+      to: "off"
+  action:
+    - service: light.toggle
+      entity_id: light.standalone_switch
 
-# - alias: "pendant_switch_brightness_up"
-#   trigger:
-#     - platform: state
-#       entity_id: sensor.0xec1bbdfffea090e5_click
-#       to: "brightness_up"
-#   action:
-#     - service: script.light_adjust_brightness
-#       data_template:
-#         entity_id: light.0xec1bbdfffe4d16eb_light
-#         step: 51
+- alias: "pendant_switch_brightness_up"
+  trigger:
+    - platform: state
+      entity_id: sensor.0xec1bbdfffea090e5_click
+      to: "brightness_up"
+  action:
+    - service: script.hyperion_on
 
-# - alias: "pendant_switch_brightness_down"
-#   trigger:
-#     - platform: state
-#       entity_id: sensor.0xec1bbdfffea090e5_click
-#       to: "brightness_down"
-#   action:
-#     - service: script.light_adjust_brightness
-#       data_template:
-#         entity_id: light.0xec1bbdfffe4d16eb_light
-#         step: -51
+- alias: "pendant_switch_brightness_down"
+  trigger:
+    - platform: state
+      entity_id: sensor.0xec1bbdfffea090e5_click
+      to: "brightness_down"
+  action:
+    - service: script.hyperion_off

@@ -1,33 +1,4 @@
-# temperatures
-- platform: mqtt
-  state_topic: "outpark/temperature/min"
-  name: outpark_temp_min
-- platform: mqtt
-  state_topic: "outpark/temperature/max"
-  name: outpark_temp_max
-
-- platform: mqtt
-  state_topic: "outpark/temperature/min/at"
-  name: outpark_temp_min_at
-- platform: mqtt
-  state_topic: "outpark/temperature/max/at"
-  name: outpark_temp_max_at
-
-- platform: mqtt
-  state_topic: "outyard/temperature/min"
-  name: outyard_temp_min
-- platform: mqtt
-  state_topic: "outyard/temperature/max"
-  name: outyard_temp_max
-
-- platform: mqtt
-  state_topic: "outyard/temperature/min/at"
-  name: outyard_temp_min_at
-- platform: mqtt
-  state_topic: "outyard/temperature/max/at"
-  name: outyard_temp_max_at
-
-# zigbee2mqtt  
+# zigbee2mqtt
 - platform: mqtt
   name: bridge_state
   state_topic: "zigbee2mqtt/bridge/state"

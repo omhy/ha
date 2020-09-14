@@ -14,7 +14,7 @@
     - service: counter.decrement
       entity_id: counter.yuryroom_motions_watch
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: !secret tg_chat_dima
         message: "{{ states['sensor.now_hm'].state }} \U0001F4A5 Movement in Yury' room ({{ states.counter.yuryroom_motions_watch.state }})"
         inline_keyboard:

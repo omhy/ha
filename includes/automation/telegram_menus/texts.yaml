@@ -14,7 +14,7 @@
         text: "ь"
   action:
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: "{{ trigger.event.data.user_id }}"
         message: "Main menu"
         inline_keyboard:
@@ -37,7 +37,7 @@
         text: "д"
   action:
     - service: telegram_bot.send_document
-      data_template:
+      data:
         target: "{{ trigger.event.data.user_id }}"
         file: "/config/home-assistant.log"
         inline_keyboard:

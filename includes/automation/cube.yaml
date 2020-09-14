@@ -5,7 +5,7 @@
       to: "rotate_right"
   action:
     - service: script.light_adjust_brightness
-      data_template:
+      data:
         entity_id: light.livingroom_adjustable
         step: 50
 
@@ -16,7 +16,7 @@
       to: "rotate_left"
   action:
     - service: script.light_adjust_brightness
-      data_template:
+      data:
         entity_id: light.livingroom_adjustable
         step: -50
 
@@ -27,7 +27,7 @@
       to: "flip90"
   action:
     - service: script.light_adjust_color_temp
-      data_template:
+      data:
         entity_id: light.livingroom_adjustable
         step: 80
 
@@ -38,7 +38,7 @@
       to: "flip180"
   action:
     - service: script.light_adjust_color_temp
-      data_template:
+      data:
         entity_id: light.livingroom_adjustable
         step: -80
 
@@ -48,11 +48,12 @@
       entity_id: sensor.0x00158d00028776ae_action
       to: "fall"
   action:
+    - service: script.light_good_night
     - service: script.rmt_computer_sleep
-    - service: script.turn_on
-      entity_id: script.light_good_night
-    - service: media_player.turn_off
-      entity_id: all
+    - service: script.hyperion_off
+    # - service: media_player.turn_off
+    #   entity_id: all
+
 
 - alias: "cube_action_shake"
   trigger:
@@ -60,5 +61,4 @@
       entity_id: sensor.0x00158d00028776ae_action
       to: "shake"
   action:
-    - service: script.turn_on
-      entity_id: script.light_livingroom_adj_turn_on_min
+    - service: script.light_livingroom_adj_turn_on_min

@@ -6,7 +6,7 @@
       at: "23:55:00"
   action:
     - service: script.telegram_send_weather_today
-      data_template:
+      data:
         target: !secret tg_chat_dima
 
 - alias: "telega_send_electro"
@@ -15,5 +15,5 @@
       at: "23:59:00"
   action:
     - service: script.telegram_send_electro
-      data_template:
+      data:
         target: !secret tg_chat_dima

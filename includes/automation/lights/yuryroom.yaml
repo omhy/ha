@@ -24,8 +24,7 @@
     entity_id: light.small_torch
     state: "off"
   action:
-    - service: script.turn_on
-      entity_id: script.light_small_torch_turn_on_max
+    - service: script.light_small_torch_turn_on_max
 
 - alias: "light_small_torch_turn_on_min"
   trigger:
@@ -37,5 +36,4 @@
     entity_id: light.small_torch
     state: "off"
   action:
-    - service: script.turn_on
-      entity_id: script.light_small_torch_turn_on_min
+    - service: script.light_small_torch_turn_on_min

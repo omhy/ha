@@ -6,11 +6,11 @@
         data: "/environment"
   action:
     - service: telegram_bot.answer_callback_query
-      data_template:
+      data:
         callback_query_id: "{{ trigger.event.data.id }}"
         message: "Roger {{ trigger.event.data.data }}"
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: "{{ trigger.event.data.user_id }}"
         message: "Weather menu"
         inline_keyboard:
@@ -26,11 +26,11 @@
         data: "/weather_today"
   action:
     - service: telegram_bot.answer_callback_query
-      data_template:
+      data:
         callback_query_id: "{{ trigger.event.data.id }}"
         message: "Roger {{ trigger.event.data.data }}"
     - service: script.telegram_send_weather_today
-      data_template:
+      data:
         target: "{{ trigger.event.data.user_id }}"
 
 - alias: "telega_callback_weather_now"
@@ -41,11 +41,11 @@
         data: "/weather_now"
   action:
     - service: telegram_bot.answer_callback_query
-      data_template:
+      data:
         callback_query_id: "{{ trigger.event.data.id }}"
         message: "Roger {{ trigger.event.data.data }}"
     - service: script.telegram_send_weather_now
-      data_template:
+      data:
         target: "{{ trigger.event.data.user_id }}"
 
 - alias: "telega_callback_rooms"
@@ -56,11 +56,11 @@
         data: "/rooms"
   action:
     - service: telegram_bot.answer_callback_query
-      data_template:
+      data:
         callback_query_id: "{{ trigger.event.data.id }}"
         message: "Roger {{ trigger.event.data.data }}"
     - service: script.telegram_send_rooms
-      data_template:
+      data:
         target: "{{ trigger.event.data.user_id }}"
 
 - alias: "telega_callback_forecast"
@@ -71,9 +71,9 @@
         data: "/forecast"
   action:
     - service: telegram_bot.answer_callback_query
-      data_template:
+      data:
         callback_query_id: "{{ trigger.event.data.id }}"
         message: "Roger {{ trigger.event.data.data }}"
     - service: script.telegram_send_weather_forecast
-      data_template:
+      data:
         target: "{{ trigger.event.data.user_id }}"

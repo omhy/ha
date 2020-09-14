@@ -1,7 +1,7 @@
 telegram_send_weather_today:
   sequence:
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: "{{ target }}"
         title: "#EnvToday {{ states('sensor.now_ymd') }}"
         message: >
@@ -11,13 +11,13 @@ telegram_send_weather_today:
 
           {{ '\U0001f321' }} now {{ frm3 | format(states['sensor.0x00158d00022c7cf2_temperature'].state_with_unit, states['sensor.0x00158d0002323783_temperature'].state_with_unit) }}
 
-          {{ '\U0001f976' }} min {{ frm3 | format(states['sensor.outpark_temp_min'].state_with_unit, states['sensor.outyard_temp_min'].state_with_unit) }}
+          {{ '\U0001f976' }} min {{ frm3 | format(states['input_number.outpark_temperature_min'].state_with_unit, states['input_number.outyard_temperature_min'].state_with_unit) }}
 
-          {{ '\U0001f976' }} at  {{ frm3 | format(states['sensor.outpark_temp_min_at'].state, states['sensor.outyard_temp_min_at'].state) }}
+          {{ '\U0001f976' }} at  {{ frm3 | format(states['input_datetime.outpark_temperature_min_at'].state, states['input_datetime.outyard_temperature_min_at'].state) }}
 
-          {{ '\U0001f975' }} max {{ frm3 | format(states['sensor.outpark_temp_max'].state_with_unit, states['sensor.outyard_temp_max'].state_with_unit) }}
+          {{ '\U0001f975' }} max {{ frm3 | format(states['input_number.outpark_temperature_max'].state_with_unit, states['input_number.outyard_temperature_max'].state_with_unit) }}
 
-          {{ '\U0001f975' }} at  {{ frm3 | format(states['sensor.outpark_temp_max_at'].state, states['sensor.outyard_temp_max_at'].state) }}
+          {{ '\U0001f975' }} at  {{ frm3 | format(states['input_datetime.outpark_temperature_max_at'].state, states['input_datetime.outyard_temperature_max_at'].state) }}
           ```
         inline_keyboard:
           - "\U0001F504 Refresh:/weather_today, \U0000267B Dismiss:/dismiss"
@@ -25,7 +25,7 @@ telegram_send_weather_today:
 telegram_send_weather_now:
   sequence:
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: "{{ target }}"
         title: "#EnvNow {{ states('sensor.now_ymd') }}"
         message: >
@@ -42,7 +42,7 @@ telegram_send_weather_now:
 telegram_send_rooms:
   sequence:
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: "{{ target }}"
         title: "Rooms climate"
         message: >
@@ -67,7 +67,7 @@ telegram_send_rooms:
 telegram_send_electro:
   sequence:
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: "{{ target }}"
         title: "#Consumption {{ states('sensor.now_ymd') }} - {{ states['sensor.consumption_today'].state_with_unit }}"
         message: >
@@ -94,7 +94,7 @@ telegram_send_electro:
 telegram_send_weather_forecast:
   sequence:
     - service: telegram_bot.send_message
-      data_template:
+      data:
         target: "{{ target }}"
         message: >
           {% set icons = {

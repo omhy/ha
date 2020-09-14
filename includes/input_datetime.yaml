@@ -1,3 +1,18 @@
+door:
+  has_date: true
+  has_time: true
+dima:
+  has_date: true
+  has_time: true
+alyona:
+  has_date: true
+  has_time: true
+
+evening_on:
+  has_time: true
+evening_off:
+  has_time: true
+
 sunrise:
   has_time: true
 sunset:
@@ -5,4 +20,19 @@ sunset:
 zenith:
   has_time: true
 nadir:
+  has_time: true
+
+outdoor_temperature_min_at:
+  has_time: true
+outdoor_temperature_max_at:
+  has_time: true
+
+outyard_temperature_min_at:
+  has_time: true
+outyard_temperature_max_at:
+  has_time: true
+
+outpark_temperature_min_at:
+  has_time: true
+outpark_temperature_max_at:
   has_time: true

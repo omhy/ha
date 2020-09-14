@@ -10,6 +10,6 @@ we_are_arriving:
   sequence:
     - service: script.light_arrived
     - service: script.media_radio_play_param_cast
-      data_template:
+      data:
         entity_id: media_player.loud_speaker
         media_content_id: "http://ice1.somafm.com/illstreet-128-mp3"

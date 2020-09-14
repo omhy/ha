@@ -73,7 +73,7 @@
       to: "brightness_up"
   action:
     - service: script.light_adjust_brightness
-      data_template:
+      data:
         entity_id: light.hallway_ceiling
         step: 51
 
@@ -84,6 +84,6 @@
       to: "brightness_down"
   action:
     - service: script.light_adjust_brightness
-      data_template:
+      data:
         entity_id: light.hallway_ceiling
         step: -51

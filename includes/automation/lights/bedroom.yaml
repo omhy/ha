@@ -3,7 +3,7 @@
     - platform: sun
       event: sunset
     - platform: time
-      at: "19:00:00"
+      at: input_datetime.evening_on
   action:
     - service: light.turn_on
       entity_id: light.balloon

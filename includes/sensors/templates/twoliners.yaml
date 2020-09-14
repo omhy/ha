@@ -4,75 +4,40 @@
     power_strip_1_load_power:
       value_template: "{{ states['switch.power_strip_1'].attributes.load_power | float }}"
       unit_of_measurement: "W"
-      entity_id: switch.power_strip_1
     power_strip_2_load_power:
       value_template: "{{ states['switch.power_strip_2'].attributes.load_power | float }}"
       unit_of_measurement: "W"
-      entity_id: switch.power_strip_2
     power_strip_3_load_power:
       value_template: "{{ states['switch.power_strip_3'].attributes.load_power | float }}"
       unit_of_measurement: "W"
-      entity_id: switch.power_strip_3
     power_strip_4_load_power:
       value_template: "{{ states['switch.power_strip_4'].attributes.load_power | float }}"
       unit_of_measurement: "W"
-      entity_id: switch.power_strip_4
     power_strip_5_load_power:
       value_template: "{{ states['switch.power_strip_5'].attributes.load_power | float }}"
       unit_of_measurement: "W"
-      entity_id: switch.power_strip_5
-#STATE_CH
-    state_change_door_ago_min:
-      value_template: "{{ ((now() - strptime(states['input_text.state_change_entrance_door'].state, '%Y%m%d%H%M%S').astimezone()).seconds / 60) | round(0) }}"
-      entity_id: binary_sensor.0x00158d00024367c8_contact
-      unit_of_measurement: "min"
-    state_change_door_ago_sec:
-      value_template: "{{ ((now() - strptime(states['input_text.state_change_entrance_door'].state, '%Y%m%d%H%M%S').astimezone()).seconds) | round(0) }}"
-      entity_id: binary_sensor.0x00158d00024367c8_contact
-      unit_of_measurement: "s"
-#STATE_CH_MANUAL
-    state_change_dima_ago:
-      value_template: "{{ ((now() - strptime(states['input_text.state_change_dima'].state, '%Y%m%d%H%M%S').astimezone()).seconds / 60) | round(0) }}"
-      unit_of_measurement: "min"
-    state_change_alyona_ago:
-      value_template: "{{ ((now() - strptime(states['input_text.state_change_alyona'].state, '%Y%m%d%H%M%S').astimezone()).seconds / 60) | round(0) }}"
-      unit_of_measurement: "min"
 #ABOX
     androidbox_app:
       value_template: "{{ states['media_player.androidbox'].attributes.app_id.split('.')[-1] }}"
-      entity_id: media_player.androidbox
     androidbox_app_full:
       value_template: "{{ states['media_player.androidbox'].attributes.app_id }}"
-      entity_id: media_player.androidbox
 #STATE_CH_TIME
     now_hm:
-      value_template: "{{ now().strftime('%H:%M') }}"
-      entity_id: sensor.time
-    now_ymdhms:
-      value_template: "{{ now().strftime('%Y%m%d%H%M%S') }}"
-      entity_id: sensor.time
+      value_template: >
+        {% set x = states('sensor.time') %}
+        {{ now().strftime('%H:%M') }}
     now_ymd:
-      value_template: "{{ now().strftime('%Y-%m-%d') }}"
-      entity_id: sensor.time
+      value_template: >
+        {% set x = states('sensor.date') %}
+        {{ now().strftime('%Y-%m-%d') }}
+
 #RPI
     rpi:
       value_template: "{{states['sensor.processor_use'].state_with_unit}} / {{states['sensor.memory_use_percent'].state_with_unit}} / {{states['sensor.temperature'].state_with_unit}}"
-      entity_id:
-        - sensor.processor_use
-        - sensor.memory_use_percent
-        - sensor.temperature
 #SUN
     zenith:
       value_template: "{{ states['input_number.zenith'].state | float }}"
-      entity_id: input_number.zenith
       unit_of_measurement: "°"
     nadir:
       value_template: "{{ states['input_number.nadir'].state | float }}"
-      entity_id: input_number.nadir
       unit_of_measurement: "°"
-
-#PH
-    dima_battery_state_charger_type:
-      value_template: "{{ states['sensor.dima_battery_state'].attributes.charger_type }}"
-      entity_id: sensor.dima_battery_state
-

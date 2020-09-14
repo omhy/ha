@@ -66,56 +66,6 @@ include:
     - sensor.u_s_air_pollution_level
     - sensor.u_s_air_quality_index
     - sensor.u_s_main_pollutant
-    - sensor.wt00_temperature
-    - sensor.wt01_temperature
-    - sensor.wt02_temperature
-    - sensor.wt03_temperature
-    - sensor.wt06_temperature
-    - sensor.wt09_temperature
-    - sensor.wt12_temperature
-    - sensor.wt24_temperature
-    - sensor.wt72_temperature
-    - sensor.wt48_temperature
-    - sensor.wt00_precipitation
-    - sensor.wt01_precipitation
-    - sensor.wt02_precipitation
-    - sensor.wt03_precipitation
-    - sensor.wt06_precipitation
-    - sensor.wt09_precipitation
-    - sensor.wt12_precipitation
-    - sensor.wt24_precipitation
-    - sensor.wt72_precipitation
-    - sensor.wt48_precipitation
-    - sensor.wt00_humidity
-    - sensor.wt01_humidity
-    - sensor.wt02_humidity
-    - sensor.wt03_humidity
-    - sensor.wt06_humidity
-    - sensor.wt09_humidity
-    - sensor.wt12_humidity
-    - sensor.wt24_humidity
-    - sensor.wt72_humidity
-    - sensor.wt48_humidity
-    - sensor.wt00_wind_speed
-    - sensor.wt01_wind_speed
-    - sensor.wt02_wind_speed
-    - sensor.wt03_wind_speed
-    - sensor.wt06_wind_speed
-    - sensor.wt09_wind_speed
-    - sensor.wt12_wind_speed
-    - sensor.wt24_wind_speed
-    - sensor.wt72_wind_speed
-    - sensor.wt48_wind_speed
-    - sensor.wt00_pressure
-    - sensor.wt01_pressure
-    - sensor.wt02_pressure
-    - sensor.wt03_pressure
-    - sensor.wt06_pressure
-    - sensor.wt09_pressure
-    - sensor.wt12_pressure
-    - sensor.wt24_pressure
-    - sensor.wt72_pressure
-    - sensor.wt48_pressure
     - sensor.solar_azimuth
     - sensor.solar_elevation
     - sensor.zenith
@@ -125,17 +75,30 @@ include:
     - input_datetime.nadir
     - input_datetime.sunset
     - sensor.circadian_values
-    - sensor.dima_phone_state
-    - sensor.dima_battery_level
-    - sensor.dima_battery_level_derivative
-    - sensor.dima_detected_activity
-    - sensor.dima_battery_state
-    - sensor.dima_battery_state_charger_type
-    - sensor.alyona_phone_state
-    - sensor.alyona_battery_level
-    - sensor.alyona_detected_activity
-    - sensor.alyona_battery_state
-    - sensor.yury_phone_state
-    - sensor.yury_battery_level
-    - sensor.yury_detected_activity
-    - sensor.yury_battery_state
+    - sensor.sm_g973f_phone_state
+    - sensor.sm_g973f_battery_level
+    - sensor.sm_g973f_detected_activity
+    - sensor.sm_g973f_battery_state
+    - sensor.sm_g973f_charger_type
+    - sensor.sm_g973f_wifi_connection
+    - sensor.sm_g973f_wifi_bssid
+    - sensor.sm_g973f_wifi_ip_address
+    - sensor.sm_g973f_public_ip_address
+    - binary_sensor.sm_g973f_interactive
+    - binary_sensor.sm_g973f_doze_mode
+    - binary_sensor.sm_g973f_power_save
+    - sensor.mi_a2_phone_state
+    - sensor.mi_a2_battery_level
+    - sensor.mi_a2_detected_activity
+    - sensor.mi_a2_battery_state
+    - binary_sensor.mi_a2_interactive
+    - binary_sensor.mi_a2_doze_mode
+    - binary_sensor.mi_a2_power_save
+    - sensor.redmi_note_9_pro_phone_state
+    - sensor.redmi_note_9_pro_battery_level
+    - sensor.redmi_note_9_pro_detected_activity
+    - sensor.redmi_note_9_pro_battery_state
+    - binary_sensor.redmi_note_9_pro_interactive
+    - binary_sensor.redmi_note_9_pro_doze_mode
+    - binary_sensor.redmi_note_9_pro_power_save
+    - binary_sensor.hyperion_is_on

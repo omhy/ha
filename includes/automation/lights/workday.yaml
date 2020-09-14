@@ -9,11 +9,11 @@
   action:
     - service: script.workday_init
     - service: media_player.volume_set
-      data_template:
+      data:
         entity_id: media_player.kitchen_display
         volume_level: 0.2
     - service: script.media_radio_play_param_cast
-      data_template:
+      data:
         entity_id: media_player.kitchen_display
         media_content_id: "http://icecast.vgtrk.cdnvideo.ru/moscowfm128"
 
