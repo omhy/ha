@@ -20,6 +20,7 @@
       data:
         entity_id: input_number.outpark_temperature_max
         value: "{{ states['sensor.0x00158d00022c7cf2_temperature'].state | float }}"
+
     - service: input_number.set_value
       data:
         entity_id: input_number.outyard_temperature_min
@@ -31,10 +32,18 @@
 
     - service: script.input_datetime_set_now
       data:
+        entity_id: input_datetime.outdoor_temperature_min_at
+    - service: script.input_datetime_set_now
+      data:
+        entity_id: input_datetime.outdoor_temperature_max_at
+
+    - service: script.input_datetime_set_now
+      data:
         entity_id: input_datetime.outpark_temperature_min_at
     - service: script.input_datetime_set_now
       data:
         entity_id: input_datetime.outpark_temperature_max_at
+
     - service: script.input_datetime_set_now
       data:
         entity_id: input_datetime.outyard_temperature_min_at

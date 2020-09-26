@@ -48,7 +48,7 @@
 "*0x00158d00028776ae*":
   friendly_name: Cube
   icon: mdi:cube-outline
-"0x00158d00026b96c1*":
+"*0x00158d00026b96c1*":
   friendly_name: Wireless switch
 "*0x00158d00022391ec*":
   friendly_name: Bathroom + corridor

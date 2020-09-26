@@ -8,13 +8,13 @@
     - condition: template
       value_template: "{{ (trigger.to_state.state | default('0') | float) < (states['input_number.outdoor_temperature_min'].state | default('0') | float) }}"
   action:
+    - service: script.input_datetime_set_now
+      data:
+        entity_id: input_datetime.outdoor_temperature_min_at
     - service: input_number.set_value
       data:
         entity_id: input_number.outdoor_temperature_min
         value: "{{ trigger.to_state.state | float }}"
-    - service: script.input_datetime_set_now
-      data:
-        entity_id: input_datetime.outdoor_temperature_min_at
 
 - alias: "min_max_publish_outdoor_temperature_max"
   trigger:
@@ -24,13 +24,13 @@
     - condition: template
       value_template: "{{ (trigger.to_state.state | default('0') | float) > (states['input_number.outdoor_temperature_max'].state | default('0') | float) }}"
   action:
+    - service: script.input_datetime_set_now
+      data:
+        entity_id: input_datetime.outdoor_temperature_max_at
     - service: input_number.set_value
       data:
         entity_id: input_number.outdoor_temperature_max
         value: "{{ trigger.to_state.state | float }}"
-    - service: script.input_datetime_set_now
-      data:
-        entity_id: input_datetime.outdoor_temperature_max_at
 
 # PARK
 

@@ -1,11 +1,11 @@
 - alias: "light_small_torch_turn_off"
   trigger:
     - platform: state
-      entity_id: sensor.0x00158d00026b96c1_click
-      to: "left"
+      entity_id: sensor.0x00158d00026b96c1_action
+      to: "single_left"
     - platform: state
-      entity_id: sensor.0x00158d00026b96c1_click
-      to: "right"
+      entity_id: sensor.0x00158d00026b96c1_action
+      to: "single_right"
   condition:
     condition: state
     entity_id: light.small_torch
@@ -17,8 +17,8 @@
 - alias: "light_small_torch_turn_on_max"
   trigger:
     - platform: state
-      entity_id: sensor.0x00158d00026b96c1_click
-      to: "right"
+      entity_id: sensor.0x00158d00026b96c1_action
+      to: "single_right"
   condition:
     condition: state
     entity_id: light.small_torch
@@ -29,8 +29,8 @@
 - alias: "light_small_torch_turn_on_min"
   trigger:
     - platform: state
-      entity_id: sensor.0x00158d00026b96c1_click
-      to: "left"
+      entity_id: sensor.0x00158d00026b96c1_action
+      to: "single_left"
   condition:
     condition: state
     entity_id: light.small_torch

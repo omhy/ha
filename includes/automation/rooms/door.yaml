@@ -22,7 +22,7 @@
         message: >
           {{ states['sensor.now_hm'].state }} 
           {{ '\U0001F512'}} Door is opened
-          ({{ (((as_timestamp(now()) - as_timestamp(states['input_datetime.door'].state)) / 60) | int) }} minutes)
+          ({{ (((as_timestamp(now()) - as_timestamp(states['input_datetime.door'].state)) / 60) | int) }} min)
     - service: script.input_datetime_set_now_door
 
 - alias: "door_entrance_closed"
@@ -38,7 +38,7 @@
         message: >
           {{ states['sensor.now_hm'].state }} 
           {{ '\U0001F512' }} Door is closed
-          ({{ ((as_timestamp(now()) - as_timestamp(states['input_datetime.door'].state)) | int) }} seconds) 
+          ({{ ((as_timestamp(now()) - as_timestamp(states['input_datetime.door'].state)) | int) }} sec) 
     - service: script.input_datetime_set_now_door
 
 - alias: "door_balcony_opened_timer_idle"

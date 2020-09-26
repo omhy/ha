@@ -1,7 +1,7 @@
 - alias: "light_livingroom_turn_off"
   trigger:
     - platform: state
-      entity_id: sensor.0x00158d0002136276_click
+      entity_id: sensor.0x00158d0002136276_action
       to: "single"
   condition:
     - condition: state
@@ -13,7 +13,7 @@
 - alias: "light_livingroom_turn_on"
   trigger:
     - platform: state
-      entity_id: sensor.0x00158d0002136276_click
+      entity_id: sensor.0x00158d0002136276_action
       to: "single"
   condition:
     - condition: state
@@ -27,26 +27,26 @@
 - alias: "light_livroom_double"
   trigger:
     - platform: state
-      entity_id: sensor.0x00158d0002136276_click
+      entity_id: sensor.0x00158d0002136276_action
       to: "double"
   action:
     - service: switch.turn_on
       entity_id: switch.circadian_lighting_circadian_lighting
     - service: script.light_livingroom_adj_turn_on_min
 
-- alias: "pendant_switch_click_on"
+- alias: "pendant_switch_action_on"
   trigger:
     - platform: state
-      entity_id: sensor.0xec1bbdfffea090e5_click
+      entity_id: sensor.0xec1bbdfffea090e5_action
       to: "on"
   action:
     - service: light.toggle
       entity_id: light.standalone_switch
 
-- alias: "pendant_switch_click_off"
+- alias: "pendant_switch_action_off"
   trigger:
     - platform: state
-      entity_id: sensor.0xec1bbdfffea090e5_click
+      entity_id: sensor.0xec1bbdfffea090e5_action
       to: "off"
   action:
     - service: light.toggle
@@ -55,7 +55,7 @@
 - alias: "pendant_switch_brightness_up"
   trigger:
     - platform: state
-      entity_id: sensor.0xec1bbdfffea090e5_click
+      entity_id: sensor.0xec1bbdfffea090e5_action
       to: "brightness_up"
   action:
     - service: script.hyperion_on
@@ -63,7 +63,7 @@
 - alias: "pendant_switch_brightness_down"
   trigger:
     - platform: state
-      entity_id: sensor.0xec1bbdfffea090e5_click
+      entity_id: sensor.0xec1bbdfffea090e5_action
       to: "brightness_down"
   action:
     - service: script.hyperion_off

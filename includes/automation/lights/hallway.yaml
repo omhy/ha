@@ -1,7 +1,7 @@
-- alias: "hallway_switch_click_on_if_light_is_off"
+- alias: "hallway_switch_action_on_if_light_is_off"
   trigger:
     - platform: state
-      entity_id: sensor.0xccccccfffef03bac_click
+      entity_id: sensor.0xccccccfffef03bac_action
       to: "on"
   condition:
     - condition: state
@@ -10,10 +10,10 @@
   action:
     - service: script.light_hallway_ceiling_turn_on_max
 
-- alias: "hallway_switch_click_on_if_light_is_on_but_not_high"
+- alias: "hallway_switch_action_on_if_light_is_on_but_not_high"
   trigger:
     - platform: state
-      entity_id: sensor.0xccccccfffef03bac_click
+      entity_id: sensor.0xccccccfffef03bac_action
       to: "on"
   condition:
     - condition: state
@@ -25,10 +25,10 @@
   action:
     - service: script.light_hallway_ceiling_turn_on_max
 
-- alias: "hallway_switch_click_on_if_light_is_on_high"
+- alias: "hallway_switch_action_on_if_light_is_on_high"
   trigger:
     - platform: state
-      entity_id: sensor.0xccccccfffef03bac_click
+      entity_id: sensor.0xccccccfffef03bac_action
       to: "on"
   condition:
     - condition: state
@@ -41,10 +41,10 @@
     - service: light.turn_off
       entity_id: light.hallway_ceiling
 
-- alias: "hallway_switch_click_off_if_light_is_on"
+- alias: "hallway_switch_action_off_if_light_is_on"
   trigger:
     - platform: state
-      entity_id: sensor.0xccccccfffef03bac_click
+      entity_id: sensor.0xccccccfffef03bac_action
       to: "off"
   condition:
     - condition: state
@@ -54,10 +54,10 @@
     - service: light.turn_off
       entity_id: light.hallway_ceiling
 
-- alias: "hallway_switch_click_off_if_light_is_off"
+- alias: "hallway_switch_action_off_if_light_is_off"
   trigger:
     - platform: state
-      entity_id: sensor.0xccccccfffef03bac_click
+      entity_id: sensor.0xccccccfffef03bac_action
       to: "off"
   condition:
     - condition: state
@@ -66,10 +66,10 @@
   action:
     - service: script.light_hallway_ceiling_turn_on_min
 
-- alias: "hallway_switch_click_brightness_up"
+- alias: "hallway_switch_action_brightness_up"
   trigger:
     - platform: state
-      entity_id: sensor.0xccccccfffef03bac_click
+      entity_id: sensor.0xccccccfffef03bac_action
       to: "brightness_up"
   action:
     - service: script.light_adjust_brightness
@@ -77,10 +77,10 @@
         entity_id: light.hallway_ceiling
         step: 51
 
-- alias: "hallway_switch_click_brightness_down"
+- alias: "hallway_switch_action_brightness_down"
   trigger:
     - platform: state
-      entity_id: sensor.0xccccccfffef03bac_click
+      entity_id: sensor.0xccccccfffef03bac_action
       to: "brightness_down"
   action:
     - service: script.light_adjust_brightness

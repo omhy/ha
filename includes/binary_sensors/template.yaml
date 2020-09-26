@@ -46,7 +46,7 @@
       value_template: "{{now().weekday() == 1 or now().weekday() == 3 or now().weekday() == 6}}"
 
     is_hallway_ceiling_high_brightness:
-      value_template: "{{ state_attr('light.hallway_ceiling', 'brightness') > 240 }}"
+      value_template: "{{ (state_attr('light.hallway_ceiling', 'brightness') | int) > 240 }}"
 
     hyperion_is_on:
       value_template: >

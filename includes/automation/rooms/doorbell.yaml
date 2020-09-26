@@ -1,7 +1,7 @@
-- alias: "doorbell_single_click"
+- alias: "doorbell_single_action"
   trigger:
     - platform: state
-      entity_id: sensor.0x00158d00021350ee_click
+      entity_id: sensor.0x00158d00021350ee_action
       to: "single"
   action:
     - service: script.doorbell_single
@@ -9,10 +9,10 @@
       data:
         message: "{{ states['sensor.now_hm'].state }} \U0001F514 Doorbell single click"
 
-- alias: "doorbell_double_click"
+- alias: "doorbell_double_action"
   trigger:
     - platform: state
-      entity_id: sensor.0x00158d00021350ee_click
+      entity_id: sensor.0x00158d00021350ee_action
       to: "double"
   action:
     - service: script.doorbell_double

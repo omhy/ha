@@ -9,12 +9,10 @@ include:
   entities:
     - binary_sensor.0x00158d0001e52779_occupancy #bathroom
     - binary_sensor.0x00158d0001fa3dc0_occupancy #living room
-    - binary_sensor.0x00158d00024367c8_contact #entrance door
     - binary_sensor.0x00158d0002d43d7d_occupancy #yury room
     - binary_sensor.0x00158d0003537bf0_smoke
+    - binary_sensor.0x00158d00024367c8_contact #entrance door
     - binary_sensor.0x00158d000446fa53_contact #storage door
-    - sensor.0x00158d00028776ae_action #cube
-    - sensor.0x00158d0002c4e568_action #vibr
     - binary_sensor.ping_androidbox
     - binary_sensor.ping_computer
     - binary_sensor.ping_laptop
@@ -102,3 +100,14 @@ include:
     - binary_sensor.redmi_note_9_pro_doze_mode
     - binary_sensor.redmi_note_9_pro_power_save
     - binary_sensor.hyperion_is_on
+    - sensor.0x00158d0002136276_action
+    - sensor.0x00158d00021329e3_action
+    - sensor.0x00158d00021350ee_action
+    - sensor.0x00158d00026b96c1_action
+    - sensor.0x00158d00022391ec_action
+    - sensor.0x00158d00028776ae_action #cube
+    - sensor.0x00158d0002c4e568_action #vibr
+    - sensor.0xec1bbdfffea090e5_action
+    - sensor.0xccccccfffef03bac_action
+    - sensor.0x14b457fffe8085df_action
+    - sensor.0x00158d00021350ee_action

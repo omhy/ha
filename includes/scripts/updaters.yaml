@@ -3,7 +3,8 @@ input_datetime_set_now:
     - service: input_datetime.set_datetime
       data:
         entity_id: "{{ entity_id }}"
-        timestamp: "{{ as_timestamp(now()) }}"
+        datetime: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
+        # timestamp: "{{ as_timestamp(now()) }}"
 
 input_datetime_set_now_door:
   sequence:
