@@ -180,14 +180,23 @@ input_number.outdoor_temperature_max:
 sensor.days_in_month:
   friendly_name: Days in month
   icon: mdi:calendar-search
+
 binary_sensor.ping_computer:
   friendly_name: Computer
 binary_sensor.ping_laptop:
   friendly_name: Laptop
+binary_sensor.ping_abox:
+  friendly_name: Abox
+  icon: mdi:android-debug-bridge
+binary_sensor.ping_rpi3:
+  friendly_name: RPI
+  icon: mdi:raspberry-pi
 binary_sensor.ping_tv:
   friendly_name: TV
   icon: mdi:television
   device_class: connectivity
+
+
 binary_sensor.people_home:
   friendly_name: Someone home
   icon: mdi:account-multiple-check
@@ -247,7 +256,7 @@ zone.home:
 media_player.androidbox:
   friendly_name: Android
   icon: mdi:android
-binary_sensor.ping_androidbox:
+binary_sensor.androidbox_in_use:
   friendly_name: Android
   icon: mdi:android
   device_class: connectivity
@@ -276,16 +285,8 @@ input_datetime.sunrise:
 input_datetime.sunset:
   friendly_name: Sunset
   icon: mdi:weather-sunset-down
-switch.circadian_lighting_circadian_lighting:
-  icon: mdi:graphql
 
-switch.hyperion:
-  friendly_name: Hyperion
-binary_sensor.hyperion_leddevice:
-  friendly_name: Hyperion LED
-binary_sensor.hyperion_v4l:
-  friendly_name: Hyperion V4L
-binary_sensor.hyperion_is_on:
+light.hyperion:
   friendly_name: Hyperion
   icon: mdi:alpha-h-box
 
@@ -302,3 +303,6 @@ input_datetime.evening_on:
 input_datetime.evening_off:
   friendly_name: Evening finished
   icon: mdi:home-remove
+switch.adaptive_lighting_default:
+  friendly_name: Adaptive lightning
+  icon: mdi:clock-digital

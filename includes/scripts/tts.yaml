@@ -8,8 +8,6 @@ tts_summary:
           Привет!
           В парке температура - {{ states('sensor.0x00158d00022c7cf2_temperature') | round(0) }} градусов.
           Во дворе температура - {{ states('sensor.0x00158d0002323783_temperature') | round(0) }} градусов.
-          ветер - {{ states('sensor.wt00_wind_speed') | round(0) }} метров в секунду.
-          осадки - {{ states('sensor.wt00_precipitation') | round(0) }} миллиметров.
           Минимальная температура в парке {{ states('sensor.outpark_temp_min') | round(0) }} была в {{ states('sensor.outpark_temp_min_at') }}.
           Минимальная температура во дворе {{ states('sensor.outyard_temp_min') | round(0) }} была в {{ states('sensor.outyard_temp_min_at') }}.
           Удачи вам, ребята!!!
@@ -39,20 +37,12 @@ tts_outside:
     - service: script.tts_say_kitchen
       data:
         message: >
-          Сейчас на улице.
-          Ветер - {{ states('sensor.wt00_wind_speed') | round(0) }} метров в секунду.
-          Осадки - {{ states('sensor.wt00_precipitation') | round(0) }} миллиметров.
           В парке.
           Температура {{ states('sensor.0x00158d00022c7cf2_temperature') | round(0) }}.
           Влажность {{ states('sensor.0x00158d00022c7cf2_humidity') | round(0) }}.
           Во дворе.
           Температура {{ states('sensor.0x00158d0002323783_temperature') | round(0) }}.
           Влажность {{ states('sensor.0x00158d0002323783_humidity') | round(0) }}.
-          Через час.
-          Температура {{ states('sensor.wt01_temperature') | round(0) }}.
-          Влажность {{ states('sensor.wt01_humidity') | round(0) }}.
-          Ветер - {{ states('sensor.wt01_wind_speed') | round(0) }} метров в секунду.
-          Осадки - {{ states('sensor.wt01_precipitation') | round(0) }} миллиметров.
 
 tts_say_kitchen:
   sequence:

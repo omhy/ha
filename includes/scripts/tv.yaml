@@ -1,17 +1,9 @@
 hyperion_on:
   sequence:
-    - service: rest_command.hyperion_grabber_on
-    - service: rest_command.hyperion_led_on
-    - service: homeassistant.update_entity
-      entity_id: binary_sensor.hyperion_v4l
-    - service: homeassistant.update_entity
-      entity_id: binary_sensor.hyperion_leddevice
+    - service: light.turn_on
+      entity_id: light.hyperion
 
 hyperion_off:
   sequence:
-    - service: rest_command.hyperion_led_off
-    - service: rest_command.hyperion_grabber_off
-    - service: homeassistant.update_entity
-      entity_id: binary_sensor.hyperion_v4l
-    - service: homeassistant.update_entity
-      entity_id: binary_sensor.hyperion_leddevice
+    - service: light.turn_off
+      entity_id: light.hyperion

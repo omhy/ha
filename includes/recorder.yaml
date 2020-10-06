@@ -7,16 +7,19 @@ include:
     - media_player
     - person
   entities:
+    - light.hyperion
     - binary_sensor.0x00158d0001e52779_occupancy #bathroom
     - binary_sensor.0x00158d0001fa3dc0_occupancy #living room
     - binary_sensor.0x00158d0002d43d7d_occupancy #yury room
     - binary_sensor.0x00158d0003537bf0_smoke
     - binary_sensor.0x00158d00024367c8_contact #entrance door
     - binary_sensor.0x00158d000446fa53_contact #storage door
-    - binary_sensor.ping_androidbox
+    - binary_sensor.androidbox_in_use
     - binary_sensor.ping_computer
     - binary_sensor.ping_laptop
     - binary_sensor.ping_tv
+    - binary_sensor.ping_abox
+    - binary_sensor.ping_rpi3
     - binary_sensor.sun_is_rising
     - sensor.outdoor_temperature
     - sensor.outdoor_humidity
@@ -58,7 +61,6 @@ include:
     - sensor.power_strip_4_load_power
     - sensor.power_strip_5_load_power
     - sensor.processor_use
-    - sensor.rpi_power_status
     - sensor.swap_use_percent
     - sensor.temperature
     - sensor.u_s_air_pollution_level
@@ -72,7 +74,7 @@ include:
     - input_datetime.zenith
     - input_datetime.nadir
     - input_datetime.sunset
-    - sensor.circadian_values
+    - binary_sensor.rpi_power_status
     - sensor.sm_g973f_phone_state
     - sensor.sm_g973f_battery_level
     - sensor.sm_g973f_detected_activity
@@ -82,6 +84,7 @@ include:
     - sensor.sm_g973f_wifi_bssid
     - sensor.sm_g973f_wifi_ip_address
     - sensor.sm_g973f_public_ip_address
+    - sensor.sm_g973f_call_number
     - binary_sensor.sm_g973f_interactive
     - binary_sensor.sm_g973f_doze_mode
     - binary_sensor.sm_g973f_power_save
@@ -99,7 +102,6 @@ include:
     - binary_sensor.redmi_note_9_pro_interactive
     - binary_sensor.redmi_note_9_pro_doze_mode
     - binary_sensor.redmi_note_9_pro_power_save
-    - binary_sensor.hyperion_is_on
     - sensor.0x00158d0002136276_action
     - sensor.0x00158d00021329e3_action
     - sensor.0x00158d00021350ee_action

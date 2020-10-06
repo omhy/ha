@@ -24,10 +24,3 @@
 
 - platform: version
   name: ha_version_current
-
-- platform: rpi_power
-  text_state: true
-
-- platform: derivative
-  source: sensor.dima_battery_level
-  name: dima_battery_level_derivative

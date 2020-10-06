@@ -48,14 +48,6 @@
     is_hallway_ceiling_high_brightness:
       value_template: "{{ (state_attr('light.hallway_ceiling', 'brightness') | int) > 240 }}"
 
-    hyperion_is_on:
-      value_template: >
-        {{
-          is_state('binary_sensor.hyperion_v4l', 'on')
-          and
-          is_state('binary_sensor.hyperion_leddevice', 'on')
-        }}
-
     ping_tv:
       value_template: "{{ states.sensor.power_strip_4_load_power.state | float > 70 }}"
 
@@ -72,7 +64,7 @@
         is_state('media_player.yury_speaker', 'playing')
         }}
 
-    ping_androidbox:
+    androidbox_in_use:
       value_template: >
         {{
         not(

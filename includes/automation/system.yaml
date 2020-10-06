@@ -19,21 +19,16 @@
 
 - alias: "ha_rpi_power_tracker"
   trigger:
-    - platform: numeric_state
-      entity_id: sensor.rpi_power_status
-      value_template: '{{ state.attributes.value }}'
-      above: 0
+    - platform: state
+      entity_id: binary_sensor.rpi_power_status
+      to: "off"
       for:
         minutes: 10
   action:
-    - service: persistent_notification.create
-      data:
-        title: "Power Supply Issue"
-        message: "RPI Power reported {{ states.sensor.rpi_power_status.state }}. The state had changed from {{ trigger.from_state.state }}"
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states['sensor.now_hm'].state }} \U0001f56f RPI Power reported {{ states.sensor.rpi_power_status.state }}. The state had changed from {{ trigger.from_state.state }}"
+        message: "{{ states['sensor.now_hm'].state }} \U0001f56f RPI Power issues"
 
 - alias: "ha_hacs_updates"
   trigger:

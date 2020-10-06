@@ -17,9 +17,6 @@ system_health:
 updater:
 config:
 
-circadian_lighting:
-  max_colortemp: 5000
-
 zeroconf:
 ssdp:
 
@@ -27,9 +24,7 @@ hassio:
 frontend:
   themes: !include_dir_merge_named themes
 
-#uilogs:
 start_time:
-# z2m_light_admin:
 
 system_log:
   max_entries: 20
@@ -88,7 +83,7 @@ input_text: !include includes/input_text.yaml
 counter: !include includes/counter.yaml
 utility_meter: !include includes/utility_meter.yaml
 light: !include includes/light.yaml
-yeelight: !include includes/yeelight.yaml
+# yeelight: !include includes/yeelight.yaml
 google_assistant: !include includes/google_assistant.yaml
 device_tracker: !include includes/device_tracker.yaml
 media_player: !include includes/media_player.yaml

@@ -18,23 +18,3 @@
   name: power_strip_5
   host: !secret power_strip_5_ip
   token: !secret power_strip_5_token
-
-# - platform: wake_on_lan
-#   name: wol_computer
-#   mac_address: "D0-50-99-3E-70-DA"
-
-- platform: circadian_lighting
-  max_brightness: 80
-  lights_ct:
-    - light.big_torch
-    - light.corner_lamp
-
-- platform: template
-  switches:
-    hyperion:
-      friendly_name: "hyperion"
-      value_template: "{{ is_state('binary_sensor.hyperion_is_on', 'on') }}"
-      turn_on:
-        service: script.hyperion_on
-      turn_off:
-        service: script.hyperion_off

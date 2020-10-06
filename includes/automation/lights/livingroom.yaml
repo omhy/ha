@@ -21,7 +21,7 @@
       state: "off"
   action:
     - service: switch.turn_off
-      entity_id: switch.circadian_lighting_circadian_lighting
+      entity_id: switch.adaptive_lighting_default
     - service: script.light_livingroom_adj_turn_on_def
 
 - alias: "light_livroom_double"
@@ -31,7 +31,7 @@
       to: "double"
   action:
     - service: switch.turn_on
-      entity_id: switch.circadian_lighting_circadian_lighting
+      entity_id: switch.adaptive_lighting_default
     - service: script.light_livingroom_adj_turn_on_min
 
 - alias: "pendant_switch_action_on"

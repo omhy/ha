@@ -86,6 +86,9 @@
   friendly_name: Doorbell
 "*0x00158d0002136276*":
   friendly_name: Light button
+"*0x00124b0014d9d8a3*":
+  friendly_name: Z2M Router
+  icon: mdi:router
 
 ### NOT TOO COMMON
 "door*":
