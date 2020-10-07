@@ -306,3 +306,22 @@ input_datetime.evening_off:
 switch.adaptive_lighting_default:
   friendly_name: Adaptive lightning
   icon: mdi:clock-digital
+
+script.hyperion_off:
+  friendly_name: Turn off
+script.hyperion_on_candle:
+  friendly_name: Candle
+script.hyperion_on_collision:
+  friendly_name: Collision
+script.hyperion_on_fire:
+  friendly_name: Fire
+script.hyperion_on_color_traces:
+  friendly_name: Color traces
+script.hyperion_on_pac_man:
+  friendly_name: PacMan
+script.hyperion_on_snake:
+  friendly_name: Snake
+script.hyperion_on_sparks:
+  friendly_name: Sparks
+script.hyperion_on_v4l:
+  friendly_name: V4L

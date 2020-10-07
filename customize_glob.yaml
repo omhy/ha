@@ -18,6 +18,9 @@
   icon: mdi:desktop-classic
 "*laptop*":
   icon: mdi:laptop
+"*hyperion*":
+  icon: mdi:border-outside
+
 "*workday*":
   icon: mdi:briefcase
 "*zenith*":

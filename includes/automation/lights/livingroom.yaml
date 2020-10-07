@@ -58,7 +58,7 @@
       entity_id: sensor.0xec1bbdfffea090e5_action
       to: "brightness_up"
   action:
-    - service: script.hyperion_on
+    - service: script.hyperion_on_v4l
 
 - alias: "pendant_switch_brightness_down"
   trigger:

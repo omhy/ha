@@ -1,9 +1,60 @@
-hyperion_on:
-  sequence:
-    - service: light.turn_on
-      entity_id: light.hyperion
-
 hyperion_off:
   sequence:
     - service: light.turn_off
       entity_id: light.hyperion
+
+hyperion_on_v4l:
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.hyperion
+        effect: "V4L"
+
+hyperion_on_candle:
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.hyperion
+        effect: "Candle"
+
+hyperion_on_snake:
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.hyperion
+        effect: "Snake"
+
+hyperion_on_collision:
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.hyperion
+        effect: "Collision"
+
+hyperion_on_color_traces:
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.hyperion
+        effect: "Color traces"
+
+hyperion_on_fire:
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.hyperion
+        effect: "Fire"
+
+hyperion_on_pac_man:
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.hyperion
+        effect: "Pac-Man"
+
+hyperion_on_sparks:
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: light.hyperion
+        effect: "Sparks"

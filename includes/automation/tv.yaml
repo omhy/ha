@@ -15,4 +15,4 @@
       entity_id: binary_sensor.ping_tv
       to: "on"
   action:
-    - service: script.hyperion_on
+    - service: script.hyperion_on_v4l
