@@ -8,7 +8,7 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states['sensor.now_hm'].state }} \U00002139 `{{ trigger.from_state.attributes.friendly_name }}:` {{ trigger.from_state.state }} `->` {{ trigger.to_state.state }}"
+        message: "{{ states('sensor.now_hm') }} \U00002139 `{{ trigger.from_state.attributes.friendly_name }}:` {{ trigger.from_state.state }} `->` {{ trigger.to_state.state }}"
 
 - alias: "watcher_coronavirus"
   trigger:
@@ -30,25 +30,9 @@
           {% set to = trigger.to_state.state|int %}
           {% set chg = to - from %}
           {% set prc = (chg / from * 100)|round(2) %}
-          {{ states['sensor.now_hm'].state }} {{ '\U00002139' }} `{{ cntr }}:` {{ from }} -> {{ to }} | {{ chg }} | {{ prc }} % | #covid
+          {{ states('sensor.now_hm') }} {{ '\U00002139' }} `{{ cntr }}:` {{ from }} -> {{ to }} | {{ chg }} | {{ prc }} % | #covid
         # inline_keyboard:
         #   - "\U0000267B Dismiss:/dismiss"
-
-- alias: "ha_bad_login"
-  trigger:
-    - platform: state
-      entity_id: persistent_notification.httplogin
-  condition: "{{ trigger.to_state.state == 'notifying' }}"
-  action:
-    - service: telegram_bot.send_message
-      data:
-        target: !secret tg_chat_dima
-        message: "{{ states['sensor.now_hm'].state }} \U00002620 {{ states.persistent_notification.httplogin.attributes.message }}"
-        inline_keyboard:
-          - "\U0000267B Dismiss:/dismiss"
-    - service: persistent_notification.dismiss
-      data:
-        notification_id: "httplogin"
 
 - alias: "google_cast_updated"
   trigger:
@@ -63,6 +47,6 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states['sensor.now_hm'].state }} \U00002B06 `{{ trigger.from_state.attributes.friendly_name }}` updated {{ trigger.from_state.state }} -> {{ trigger.to_state.state }}"
+        message: "{{ states('sensor.now_hm') }} \U00002B06 `{{ trigger.from_state.attributes.friendly_name }}` updated {{ trigger.from_state.state }} -> {{ trigger.to_state.state }}"
         inline_keyboard:
           - "\U0000267B Dismiss:/dismiss"

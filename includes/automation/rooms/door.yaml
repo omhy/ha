@@ -20,7 +20,7 @@
       data:
         target: !secret tg_chat_dima
         message: >
-          {{ states['sensor.now_hm'].state }} 
+          {{ states('sensor.now_hm') }} 
           {{ '\U0001F512'}} Door is opened
           ({{ (((as_timestamp(now()) - as_timestamp(states['input_datetime.door'].state)) / 60) | int) }} min)
     - service: script.input_datetime_set_now_door
@@ -36,7 +36,7 @@
       data:
         target: !secret tg_chat_dima
         message: >
-          {{ states['sensor.now_hm'].state }} 
+          {{ states('sensor.now_hm') }} 
           {{ '\U0001F512' }} Door is closed
           ({{ ((as_timestamp(now()) - as_timestamp(states['input_datetime.door'].state)) | int) }} sec) 
     - service: script.input_datetime_set_now_door
@@ -59,6 +59,6 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states['sensor.now_hm'].state }} \U0001f6ad Session started. Today: {{ states['counter.balcony_sessions'].state }}"
+        message: "{{ states('sensor.now_hm') }} \U0001f6ad Session started. Today: {{ states['counter.balcony_sessions'].state }}"
         inline_keyboard:
           - "\U000026d4 Noooooo:/no_balcony_session, \U0000267B Dismiss:/dismiss"

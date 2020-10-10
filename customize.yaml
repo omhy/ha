@@ -303,6 +303,20 @@ input_datetime.evening_on:
 input_datetime.evening_off:
   friendly_name: Evening finished
   icon: mdi:home-remove
+
+input_datetime.workday_morning_wakeup:
+  friendly_name: Wake up
+  icon: mdi:alarm
+input_datetime.workday_morning_ready:
+  friendly_name: Ready
+  icon: mdi:clock-check
+input_datetime.workday_morning_go:
+  friendly_name: Go
+  icon: mdi:clock-alert
+input_datetime.workday_morning_gone:
+  friendly_name: Gone
+  icon: mdi:walk
+
 switch.adaptive_lighting_default:
   friendly_name: Adaptive lightning
   icon: mdi:clock-digital

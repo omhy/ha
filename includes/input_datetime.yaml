@@ -13,6 +13,16 @@ evening_on:
 evening_off:
   has_time: true
 
+workday_morning_wakeup:
+  has_time: true
+workday_morning_ready:
+  has_time: true
+workday_morning_go:
+  has_time: true
+workday_morning_gone:
+  has_time: true
+
+
 sunrise:
   has_time: true
 sunset:

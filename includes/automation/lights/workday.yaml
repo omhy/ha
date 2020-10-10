@@ -1,13 +1,13 @@
-- alias: "workday_init"
+- alias: "workday_wakeup"
   trigger:
     - platform: time
-      at: "06:55:00"
+      at: input_datetime.workday_morning_wakeup
   condition:
     - condition: state
       entity_id: binary_sensor.is_morning_activity
       state: "on"
   action:
-    - service: script.workday_init
+    - service: script.workday_wakeup
     - service: media_player.volume_set
       data:
         entity_id: media_player.kitchen_display
@@ -17,43 +17,21 @@
         entity_id: media_player.kitchen_display
         media_content_id: "http://icecast.vgtrk.cdnvideo.ru/moscowfm128"
 
-- alias: "workday_ready_1"
+- alias: "workday_ready"
   trigger:
     - platform: time
-      at: "07:25:00"
+      at: input_datetime.workday_morning_ready
   condition:
     - condition: state
       entity_id: binary_sensor.is_morning_activity
       state: "on"
   action:
-    - service: script.workday_ready_1
+    - service: script.workday_ready
 
-- alias: "workday_ready_2"
+- alias: "workday_go"
   trigger:
     - platform: time
-      at: "07:27:30"
-  condition:
-    - condition: state
-      entity_id: binary_sensor.is_morning_activity
-      state: "on"
-  action:
-    - service: script.workday_ready_2
-
-- alias: "workday_steady"
-  trigger:
-    - platform: time
-      at: "07:30:00"
-  condition:
-    - condition: state
-      entity_id: binary_sensor.is_morning_activity
-      state: "on"
-  action:
-    - service: script.workday_steady
-
-- alias: "workday_scene_go"
-  trigger:
-    - platform: time
-      at: "07:35:00"
+      at: input_datetime.workday_morning_go
   condition:
     - condition: state
       entity_id: binary_sensor.is_morning_activity
@@ -61,16 +39,16 @@
   action:
     - service: script.workday_go
 
-- alias: "workday_scene_terminate"
+- alias: "workday_gone"
   trigger:
     - platform: time
-      at: "07:45:00"
+      at: input_datetime.workday_morning_gone
   condition:
     - condition: state
       entity_id: binary_sensor.is_morning_activity
       state: "on"
   action:
-    - service: script.workday_terminate
+    - service: script.workday_gone
 
 - alias: "workday_computer_off"
   trigger:

@@ -10,7 +10,7 @@
       data:
         target: !secret tg_chat_dima
         message: >
-          {{ states['sensor.now_hm'].state }}
+          {{ states('sensor.now_hm') }}
           {{ '\U0001F4BC' }} Dima enters
           ({{ (((as_timestamp(now()) - as_timestamp(states['input_datetime.dima'].state)) / 60) | int) }} minutes)
     - service: script.input_datetime_set_now_dima
@@ -26,7 +26,7 @@
       data:
         target: !secret tg_chat_dima
         message: >
-          {{ states['sensor.now_hm'].state }}
+          {{ states('sensor.now_hm') }}
           {{ '\U0001F4BC' }} Dima leaves
           ({{ (((as_timestamp(now()) - as_timestamp(states['input_datetime.dima'].state)) / 60) | int) }} minutes)
     - service: script.input_datetime_set_now_dima
@@ -42,7 +42,7 @@
       data:
         target: !secret tg_chat_dima
         message: >
-          {{ states['sensor.now_hm'].state }} 
+          {{ states('sensor.now_hm') }} 
           {{ '\U0001F3E0' }} Dima enters 
           ({{ (((as_timestamp(now()) - as_timestamp(states['input_datetime.dima'].state)) / 60) | int) }} minutes)
     - service: script.input_datetime_set_now_dima
@@ -58,7 +58,7 @@
       data:
         target: !secret tg_chat_dima
         message: >
-          {{ states['sensor.now_hm'].state }}
+          {{ states('sensor.now_hm') }}
           {{ '\U0001F3E0' }} Dima leaves
           ({{ (((as_timestamp(now()) - as_timestamp(states['input_datetime.dima'].state)) / 60) | int) }} minutes)
     - service: telegram_bot.send_location
@@ -79,7 +79,7 @@
       data:
         target: !secret tg_chat_dima
         message: >
-          {{ states['sensor.now_hm'].state }}
+          {{ states('sensor.now_hm') }}
           {{ '\U0001F3EB' }} Dima enters
           ({{ (((as_timestamp(now()) - as_timestamp(states['input_datetime.dima'].state)) / 60) | int) }} minutes)
     - service: script.input_datetime_set_now_dima
@@ -95,7 +95,7 @@
       data:
         target: !secret tg_chat_dima
         message: >
-          {{ states['sensor.now_hm'].state }}
+          {{ states('sensor.now_hm') }}
           {{ '\U0001F3EB' }} Dima leaves
           ({{ (((as_timestamp(now()) - as_timestamp(states['input_datetime.dima'].state)) / 60) | int) }} minutes)
     - service: script.input_datetime_set_now_dima
@@ -112,7 +112,7 @@
       data:
         target: !secret tg_chat_dima
         message: >
-          {{ states['sensor.now_hm'].state }}
+          {{ states('sensor.now_hm') }}
           {{ '\U0001F3EB' }} Alyona enters
           ({{ (((as_timestamp(now()) - as_timestamp(states['input_datetime.alyona'].state)) / 60) | int) }} minutes)
     - service: script.input_datetime_set_now_alyona
@@ -128,7 +128,7 @@
       data:
         target: !secret tg_chat_dima
         message: >
-          {{ states['sensor.now_hm'].state }}
+          {{ states('sensor.now_hm') }}
           {{ '\U0001F3EB' }} Alyona leaves
           ({{ (((as_timestamp(now()) - as_timestamp(states['input_datetime.alyona'].state)) / 60) | int) }} minutes)
     - service: script.input_datetime_set_now_alyona

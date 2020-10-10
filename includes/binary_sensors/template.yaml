@@ -2,22 +2,23 @@
   sensors:
     is_holiday:
       value_template: >
+        {% set x = states('sensor.date') %}
         {% if 
-          states.sensor.date.state.endswith('01-01') or
-          states.sensor.date.state.endswith('05-01') or
-          states.sensor.date.state.endswith('05-04') or
-          states.sensor.date.state.endswith('06-23') or
-          states.sensor.date.state.endswith('06-24') or
-          states.sensor.date.state.endswith('11-18') or
-          states.sensor.date.state.endswith('12-24') or
-          states.sensor.date.state.endswith('12-25') or
-          states.sensor.date.state.endswith('12-26') or
-          states.sensor.date.state.endswith('12-31')
+          states('sensor.date').endswith('01-01') or
+          states('sensor.date').endswith('05-01') or
+          states('sensor.date').endswith('05-04') or
+          states('sensor.date').endswith('06-23') or
+          states('sensor.date').endswith('06-24') or
+          states('sensor.date').endswith('11-18') or
+          states('sensor.date').endswith('12-24') or
+          states('sensor.date').endswith('12-25') or
+          states('sensor.date').endswith('12-26') or
+          states('sensor.date').endswith('12-31')
         %}
           true
         {% elif 
-          states.sensor.date.state.endswith('2020-04-10') or
-          states.sensor.date.state.endswith('2020-04-13')
+          states('sensor.date').endswith('2020-04-10') or
+          states('sensor.date').endswith('2020-04-13')
         %}
           true
         {% else %}
@@ -49,7 +50,7 @@
       value_template: "{{ (state_attr('light.hallway_ceiling', 'brightness') | int) > 240 }}"
 
     ping_tv:
-      value_template: "{{ states.sensor.power_strip_4_load_power.state | float > 70 }}"
+      value_template: "{{ states('sensor.power_strip_4_load_power') | float > 70 }}"
 
     people_home:
       value_template: >

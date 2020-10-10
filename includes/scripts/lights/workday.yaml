@@ -1,70 +1,38 @@
-workday_init:
+workday_wakeup:
   sequence:
+    - service: script.hyperion_on_candle
     - service: light.turn_on
       entity_id:
         - light.fire_lamp
         - light.garland
+        - light.standalone_switch
     - service: light.turn_on
       entity_id: light.small_torch
       data:
         transition: 10
         brightness: 1
-        hs_color: [ 0, 100 ]
-    # - service: light.turn_on
-    #   entity_id: 
-    #     - light.big_torch
-    #     - light.corner_lamp
-    #   data:
-    #     transition: 10
-    #     brightness: 1
-    #     color_temp: 500
-
-workday_ready_1:
-  sequence:
-    - service: light.turn_on
-      entity_id: 
-        - light.small_torch
-        # - light.big_torch
-        # - light.corner_lamp
-      data:
-        hs_color: [ 80, 100 ]
-
-workday_ready_2:
-  sequence:
-    - service: light.turn_on
-      entity_id: 
-        - light.small_torch
-        # - light.big_torch
-        # - light.corner_lamp
-      data:
-        hs_color: [ 50, 100 ]
-
-workday_steady:
-  sequence:
-    - service: light.turn_on
-      entity_id: 
-        - light.small_torch
-        # - light.big_torch
-        # - light.corner_lamp
-      data:
         hs_color: [ 30, 100 ]
+
+workday_ready:
+  sequence:
+    - service: light.turn_on
+      entity_id: light.small_torch
+      data:
+        hs_color: [ 60, 100 ]
 
 workday_go:
   sequence:
     - service: light.turn_on
-      entity_id: 
-        - light.small_torch
-        # - light.big_torch
-        # - light.corner_lamp
+      entity_id: light.small_torch
       data:
-        hs_color: [ 5, 100 ]
+        hs_color: [ 20, 100 ]
 
-workday_terminate:
+workday_gone:
   sequence:
+    - service: script.hyperion_off
     - service: light.turn_off
       entity_id: 
         - light.garland
         - light.fire_lamp
         - light.small_torch
-        # - light.big_torch
-        # - light.corner_lamp
+        - light.standalone_switch
