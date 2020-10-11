@@ -1,0 +1,27 @@
+mobile_dima_dnd_off:
+  sequence:
+    - service: notify.mobile_app_sm_g973f
+      data:
+        message: command_dnd
+        title: "off"
+
+mobile_dima_dnd_alarms_only:
+  sequence:
+    - service: notify.mobile_app_sm_g973f
+      data:
+        message: command_dnd
+        title: alarms_only
+
+mobile_dima_dnd_priority_only:
+  sequence:
+    - service: notify.mobile_app_sm_g973f
+      data:
+        message: command_dnd
+        title: priority_only
+
+mobile_dima_dnd_total_silence:
+  sequence:
+    - service: notify.mobile_app_sm_g973f
+      data:
+        message: command_dnd
+        title: total_silence
