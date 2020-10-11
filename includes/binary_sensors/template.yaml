@@ -27,6 +27,7 @@
 
     is_workday:
       value_template: >
+        {% set x = states('sensor.date') %}
         {% if is_state('binary_sensor.is_holiday', 'on') %}
           false
         {% else %}
@@ -44,7 +45,9 @@
         }}
 
     is_backup_day:
-      value_template: "{{now().weekday() == 1 or now().weekday() == 3 or now().weekday() == 6}}"
+      value_template: >
+        {% set x = states('sensor.date') %}
+        {{ now().weekday() == 1 or now().weekday() == 3 or now().weekday() == 6 }}
 
     is_hallway_ceiling_high_brightness:
       value_template: "{{ (state_attr('light.hallway_ceiling', 'brightness') | int) > 240 }}"
