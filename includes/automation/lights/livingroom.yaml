@@ -50,13 +50,13 @@
       to: "off"
   action:
     - service: light.toggle
-      entity_id: light.standalone_switch
+      entity_id: light.hyperion
 
 - alias: "pendant_switch_brightness_up"
   trigger:
     - platform: state
       entity_id: sensor.0xec1bbdfffea090e5_action
-      to: "brightness_up"
+      to: "brightness_move_up"
   action:
     - service: script.hyperion_on_v4l
 
@@ -64,6 +64,7 @@
   trigger:
     - platform: state
       entity_id: sensor.0xec1bbdfffea090e5_action
-      to: "brightness_down"
+      to: "brightness_move_down"
   action:
-    - service: script.hyperion_off
+    - service: script.hyperion_on_candle
+

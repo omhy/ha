@@ -70,7 +70,7 @@
   trigger:
     - platform: state
       entity_id: sensor.0xccccccfffef03bac_action
-      to: "brightness_up"
+      to: "brightness_move_up"
   action:
     - service: script.light_adjust_brightness
       data:
@@ -81,7 +81,7 @@
   trigger:
     - platform: state
       entity_id: sensor.0xccccccfffef03bac_action
-      to: "brightness_down"
+      to: "brightness_move_down"
   action:
     - service: script.light_adjust_brightness
       data:

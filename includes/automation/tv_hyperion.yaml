@@ -6,8 +6,8 @@
       for:
         minutes: 1
   action:
-    - service: script.androidbox_key_home
     - service: script.hyperion_off
+    - service: script.androidbox_key_home
 
 - alias: "tv_is_on"
   trigger:
@@ -16,3 +16,11 @@
       to: "on"
   action:
     - service: script.hyperion_on_v4l
+
+- alias: "hyperion_rpi_on"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.ping_rpi3
+      to: "on"
+  action:
+    - service: script.hyperion_off

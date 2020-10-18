@@ -2,3 +2,28 @@ google_backup:
   url: "http://localhost:8055/gb/doBackup"
   method: GET
   timeout: 300
+
+hyperion_v4l_off:
+  url: "http://192.168.1.11:8090/json-rpc"
+  method: POST
+  content_type: "application/json"
+  payload: >
+    {
+      "command":"componentstate",
+      "componentstate":{
+        "component":"V4L",
+        "state":false
+      }
+    }
+hyperion_v4l_on:
+  url: "http://192.168.1.11:8090/json-rpc"
+  method: POST
+  content_type: "application/json"
+  payload: >
+    {
+      "command":"componentstate",
+      "componentstate":{
+        "component":"V4L",
+        "state":true
+      }
+    }

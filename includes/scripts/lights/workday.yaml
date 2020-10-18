@@ -6,26 +6,26 @@ workday_wakeup:
         - light.fire_lamp
         - light.garland
         - light.standalone_switch
-    - service: light.turn_on
-      entity_id: light.small_torch
-      data:
-        transition: 10
-        brightness: 1
-        hs_color: [ 30, 100 ]
+    # - service: light.turn_on
+    #   entity_id: light.small_torch
+    #   data:
+    #     transition: 10
+    #     brightness: 1
+    #     hs_color: [ 30, 100 ]
 
 workday_ready:
   sequence:
-    - service: light.turn_on
-      entity_id: light.small_torch
-      data:
-        hs_color: [ 60, 100 ]
+    # - service: light.turn_on
+    #   entity_id: light.small_torch
+    #   data:
+    #     hs_color: [ 60, 100 ]
 
 workday_go:
   sequence:
-    - service: light.turn_on
-      entity_id: light.small_torch
-      data:
-        hs_color: [ 20, 100 ]
+    # - service: light.turn_on
+    #   entity_id: light.small_torch
+    #   data:
+    #     hs_color: [ 20, 100 ]
 
 workday_gone:
   sequence:

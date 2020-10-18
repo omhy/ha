@@ -10,6 +10,12 @@ hyperion_on_v4l:
         entity_id: light.hyperion
         effect: "V4L"
 
+hyperion_restart_v4l:
+  sequence:
+    - service: rest_command.hyperion_v4l_off
+    - delay: 1
+    - service: rest_command.hyperion_v4l_on
+
 hyperion_on_candle:
   sequence:
     - service: light.turn_on
