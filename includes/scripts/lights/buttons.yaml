@@ -71,10 +71,10 @@ light_small_torch_turn_on_min:
         color_temp: 370
 
 #BEDROOM
-light_balloon_night:
-  sequence:
-    - service: light.toggle
-      entity_id: light.balloon
-      data:
-        brightness: 1
-        rgb_color: [255,0,0]
+# light_balloon_night:
+#   sequence:
+#     - service: light.toggle
+#       entity_id: light.balloon
+#       data:
+#         brightness: 1
+#         rgb_color: [255,0,0]

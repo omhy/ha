@@ -25,9 +25,9 @@ light.corridor:
 light.standalone_switch:
   friendly_name: Chain lamp
   icon: mdi:track-light
-light.balloon:
-  friendly_name: Balloon lamp
-  icon: mdi:globe-light
+# light.balloon:
+#   friendly_name: Balloon lamp
+#   icon: mdi:globe-light
 
 light.0xec1bbdfffe18a191_light:
   friendly_name: Hallway door
@@ -299,21 +299,28 @@ sensor.alyona_interactive:
 
 input_datetime.evening_on:
   friendly_name: Evening started
-  icon: mdi:home-heart
+  icon: mdi:clock-time-eight
 input_datetime.evening_off:
   friendly_name: Evening finished
-  icon: mdi:home-remove
+  icon: mdi:clock-time-one
 
-input_datetime.workday_morning_wakeup:
+input_datetime.morning_on:
+  friendly_name: Morning started
+  icon: mdi:clock-time-eight-outline
+input_datetime.morning_off:
+  friendly_name: Morning finished
+  icon: mdi:clock-time-eleven-outline
+
+input_datetime.morning_wd_wakeup:
   friendly_name: Wake up
   icon: mdi:alarm
-input_datetime.workday_morning_ready:
+input_datetime.morning_wd_ready:
   friendly_name: Ready
   icon: mdi:clock-check
-input_datetime.workday_morning_go:
+input_datetime.morning_wd_go:
   friendly_name: Go
   icon: mdi:clock-alert
-input_datetime.workday_morning_gone:
+input_datetime.morning_wd_gone:
   friendly_name: Gone
   icon: mdi:walk
 

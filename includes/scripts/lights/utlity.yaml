@@ -33,4 +33,3 @@ light_adjust_color_temp:
             {% set current = max %}
           {% endif %}
           {{ current }}
-

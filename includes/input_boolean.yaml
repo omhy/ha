@@ -9,3 +9,27 @@ is_vacation:
 is_school:
   name: School?
   icon: mdi:school
+
+morning_big_torch:
+morning_corner_lamp:
+morning_fire_lamp:
+morning_garland:
+morning_hyperion:
+morning_small_torch:
+morning_standalone_switch:
+
+morning_wd_big_torch:
+morning_wd_corner_lamp:
+morning_wd_fire_lamp:
+morning_wd_garland:
+morning_wd_hyperion:
+morning_wd_small_torch:
+morning_wd_standalone_switch:
+
+evening_big_torch:
+evening_corner_lamp:
+evening_fire_lamp:
+evening_garland:
+evening_hyperion:
+evening_small_torch:
+evening_standalone_switch:

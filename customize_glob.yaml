@@ -195,3 +195,24 @@
   unit_of_measurement: °C
   device_class: temperature
 
+"input_boolean.*_fire_lamp":
+  friendly_name: Fire lamp
+  icon: mdi:fire
+"input_boolean.*_garland":
+  friendly_name: Garland
+  icon: mdi:string-lights
+"input_boolean.*_big_torch":
+  friendly_name: Big torchene
+  icon: mdi:floor-lamp
+"input_boolean.*_corner_lamp":
+  friendly_name: Corner lamp
+  icon: mdi:lamp
+"input_boolean.*_standalone_switch":
+  friendly_name: Chain lamp
+  icon: mdi:track-light
+"input_boolean.*_hyperion":
+  friendly_name: Hyperion
+  icon: mdi:border-outside
+"input_boolean.*_small_torch":
+  friendly_name: Small torch
+  icon: mdi:lava-lamp

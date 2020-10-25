@@ -1,0 +1,68 @@
+- platform: template
+  sensors:
+    morning_lights:
+      value_template: >
+        {% if is_state('input_boolean.morning_big_torch', 'on') %}
+            {% set l1 = 'light.big_torch' %}
+        {% endif %}
+        {% if is_state('input_boolean.morning_corner_lamp', 'on') %}
+            {% set l2 = 'light.corner_lamp' %}
+        {% endif %}
+        {% if is_state('input_boolean.morning_hyperion', 'on') %}
+            {% set l3 = 'light.hyperion' %}
+        {% endif %}
+        {% if is_state('input_boolean.morning_standalone_switch', 'on') %}
+            {% set l4 = 'light.standalone_switch' %}
+        {% endif %}
+        {% if is_state('input_boolean.morning_garland', 'on') %}
+            {% set l5 = 'light.garland' %}
+        {% endif %}
+        {% if is_state('input_boolean.morning_fire_lamp', 'on') %}
+            {% set l6 = 'light.fire_lamp' %}
+        {% endif %}
+        {% set all = (l1, l2, l3, l4, l5, l6) %}
+        {{ all | reject("==", Undefined) | list }}
+    morning_wd_lights:
+      value_template: >
+        {% if is_state('input_boolean.morning_wd_big_torch', 'on') %}
+            {% set l1 = 'light.big_torch' %}
+        {% endif %}
+        {% if is_state('input_boolean.morning_wd_corner_lamp', 'on') %}
+            {% set l2 = 'light.corner_lamp' %}
+        {% endif %}
+        {% if is_state('input_boolean.morning_wd_hyperion', 'on') %}
+            {% set l3 = 'light.hyperion' %}
+        {% endif %}
+        {% if is_state('input_boolean.morning_wd_standalone_switch', 'on') %}
+            {% set l4 = 'light.standalone_switch' %}
+        {% endif %}
+        {% if is_state('input_boolean.morning_wd_garland', 'on') %}
+            {% set l5 = 'light.garland' %}
+        {% endif %}
+        {% if is_state('input_boolean.morning_wd_fire_lamp', 'on') %}
+            {% set l6 = 'light.fire_lamp' %}
+        {% endif %}
+        {% set all = (l1, l2, l3, l4, l5, l6) %}
+        {{ all | reject("==", Undefined) | list }}
+    evening_lights:
+      value_template: >
+        {% if is_state('input_boolean.evening_big_torch', 'on') %}
+            {% set l1 = 'light.big_torch' %}
+        {% endif %}
+        {% if is_state('input_boolean.evening_corner_lamp', 'on') %}
+            {% set l2 = 'light.corner_lamp' %}
+        {% endif %}
+        {% if is_state('input_boolean.evening_hyperion', 'on') %}
+            {% set l3 = 'light.hyperion' %}
+        {% endif %}
+        {% if is_state('input_boolean.evening_standalone_switch', 'on') %}
+            {% set l4 = 'light.standalone_switch' %}
+        {% endif %}
+        {% if is_state('input_boolean.evening_garland', 'on') %}
+            {% set l5 = 'light.garland' %}
+        {% endif %}
+        {% if is_state('input_boolean.evening_fire_lamp', 'on') %}
+            {% set l6 = 'light.fire_lamp' %}
+        {% endif %}
+        {% set all = (l1, l2, l3, l4, l5, l6) %}
+        {{ all | reject("==", Undefined) | list }}

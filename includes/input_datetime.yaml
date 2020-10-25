@@ -13,15 +13,19 @@ evening_on:
 evening_off:
   has_time: true
 
-workday_morning_wakeup:
+morning_on:
   has_time: true
-workday_morning_ready:
-  has_time: true
-workday_morning_go:
-  has_time: true
-workday_morning_gone:
+morning_off:
   has_time: true
 
+morning_wd_wakeup:
+  has_time: true
+morning_wd_ready:
+  has_time: true
+morning_wd_go:
+  has_time: true
+morning_wd_gone:
+  has_time: true
 
 sunrise:
   has_time: true

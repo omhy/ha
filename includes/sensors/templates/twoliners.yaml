@@ -24,11 +24,9 @@
 #STATE_CH_TIME
     now_hm:
       value_template: >
-        {% set x = states('sensor.time') %}
         {{ now().strftime('%H:%M') }}
     now_ymd:
       value_template: >
-        {% set x = states('sensor.date') %}
         {{ now().strftime('%Y-%m-%d') }}
 
 #RPI

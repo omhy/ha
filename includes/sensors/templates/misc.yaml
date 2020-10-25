@@ -12,7 +12,6 @@
 
     days_in_month:
       value_template: >
-        {% set x = states('sensor.date') %}
         {% set days = {
         1 : 31,
         2 : 28,

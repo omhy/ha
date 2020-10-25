@@ -1,0 +1,113 @@
+### WORKDAY ###
+
+- alias: "schedule_workday_wakeup"
+  trigger:
+    - platform: time
+      at: input_datetime.morning_wd_wakeup
+  condition:
+    - "{{ (states('sensor.morning_wd_lights') != '[]' ) }}"
+    - "{{ is_state('binary_sensor.is_morning_activity', 'on') }}"
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: "{{ states('sensor.morning_wd_lights') }}"
+        effect: "Candle" #hyperion only
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.kitchen_display
+        volume_level: 0.2
+    - service: script.media_radio_play_param_cast
+      data:
+        entity_id: media_player.kitchen_display
+        media_content_id: "http://icecast.vgtrk.cdnvideo.ru/moscowfm128"
+
+- alias: "schedule_workday_ready"
+  trigger:
+    - platform: time
+      at: input_datetime.morning_wd_ready
+  condition:
+    - "{{ (states('sensor.morning_wd_lights') != '[]' ) }}"
+    - "{{ is_state('binary_sensor.is_morning_activity', 'on') }}"
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: "{{ states('sensor.morning_wd_lights') }}"
+
+- alias: "schedule_workday_go"
+  trigger:
+    - platform: time
+      at: input_datetime.morning_wd_go
+  condition:
+    - "{{ (states('sensor.morning_wd_lights') != '[]' ) }}"
+    - "{{ is_state('binary_sensor.is_morning_activity', 'on') }}"
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: "{{ states('sensor.morning_wd_lights') }}"
+
+- alias: "schedule_workday_gone"
+  trigger:
+    - platform: time
+      at: input_datetime.morning_wd_gone
+  condition:
+    - "{{ (states('sensor.morning_wd_lights') != '[]' ) }}"
+    - "{{ is_state('binary_sensor.is_morning_activity', 'on') }}"
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: "{{ states('sensor.morning_wd_lights') }}"
+
+### MORNING ###
+
+- alias: "schedule_morning_on"
+  trigger:
+    - platform: sun
+      event: sunset
+    - platform: time
+      at: input_datetime.morning_on
+  condition:
+    - "{{ (states('sensor.morning_lights') != '[]' ) }}"
+    - "{{ is_state('binary_sensor.is_morning_activity', 'off') }}"
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: "{{ states('sensor.morning_lights') }}"
+        effect: "Candle" #hyperion only
+
+- alias: "schedule_morning_off"
+  trigger:
+    - platform: time
+      at: input_datetime.morning_off
+  condition:
+    - "{{ (states('sensor.morning_lights') != '[]' ) }}"
+    - "{{ is_state('binary_sensor.is_morning_activity', 'off') }}"
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: "{{ states('sensor.morning_lights') }}"
+
+### EVENING ###
+
+- alias: "schedule_evening_on"
+  trigger:
+    - platform: sun
+      event: sunset
+    - platform: time
+      at: input_datetime.evening_on
+  condition:
+    - "{{ (states('sensor.evening_lights') != '[]' ) }}"
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: "{{ states('sensor.evening_lights') }}"
+
+- alias: "schedule_evening_off"
+  trigger:
+    - platform: time
+      at: input_datetime.evening_off
+  condition:
+    - "{{ (states('sensor.evening_lights') != '[]' ) }}"
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: "{{ states('sensor.evening_lights') }}"
