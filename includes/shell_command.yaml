@@ -1,3 +1,4 @@
 sleep_computer: "/usr/bin/curl -X GET http://192.168.1.101:8585/?cmd=sleep"
 sleep_laptop: "/usr/bin/curl -X GET http://192.168.1.102:8585/?cmd=sleep"
 remove_file: "rm -f {{ file }}"
+reboot_hyperion: "/usr/bin/ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no pi@192.168.1.11 'sudo reboot'"

@@ -100,6 +100,7 @@
     - service: light.turn_on
       data:
         entity_id: "{{ states('sensor.evening_lights') }}"
+        effect: "Candle" #hyperion only
 
 - alias: "schedule_evening_off"
   trigger:

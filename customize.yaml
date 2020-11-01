@@ -251,7 +251,7 @@ counter.balcony_sessions:
   friendly_name: Smokes
   icon: mdi:smoking
 zone.home:
-  radius: 30
+  radius: 100
 
 media_player.androidbox:
   friendly_name: Android

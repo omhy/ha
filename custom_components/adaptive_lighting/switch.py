@@ -35,6 +35,7 @@ from homeassistant.components.light import (
     SUPPORT_COLOR,
     SUPPORT_COLOR_TEMP,
     SUPPORT_TRANSITION,
+    SUPPORT_WHITE_VALUE,
     VALID_TRANSITION,
     is_on,
 )
@@ -45,6 +46,7 @@ from homeassistant.const import (
     ATTR_ENTITY_ID,
     ATTR_SERVICE,
     ATTR_SERVICE_DATA,
+    ATTR_SUPPORTED_FEATURES,
     CONF_NAME,
     EVENT_CALL_SERVICE,
     EVENT_HOMEASSISTANT_STARTED,
@@ -98,6 +100,7 @@ from .const import (
     CONF_MIN_COLOR_TEMP,
     CONF_ONLY_ONCE,
     CONF_PREFER_RGB_COLOR,
+    CONF_SEPARATE_TURN_ON_COMMANDS,
     CONF_SLEEP_BRIGHTNESS,
     CONF_SLEEP_COLOR_TEMP,
     CONF_SUNRISE_OFFSET,
@@ -122,6 +125,7 @@ from .const import (
 
 _SUPPORT_OPTS = {
     "brightness": SUPPORT_BRIGHTNESS,
+    "white_value": SUPPORT_WHITE_VALUE,
     "color_temp": SUPPORT_COLOR_TEMP,
     "color": SUPPORT_COLOR,
     "transition": SUPPORT_TRANSITION,
@@ -145,12 +149,12 @@ COLOR_ATTRS = {  # Should ATTR_PROFILE be in here?
     ATTR_HS_COLOR,
     ATTR_KELVIN,
     ATTR_RGB_COLOR,
-    ATTR_WHITE_VALUE,  # Should this be here?
     ATTR_XY_COLOR,
 }
 
 BRIGHTNESS_ATTRS = {
     ATTR_BRIGHTNESS,
+    ATTR_WHITE_VALUE,
     ATTR_BRIGHTNESS_PCT,
     ATTR_BRIGHTNESS_STEP,
     ATTR_BRIGHTNESS_STEP_PCT,
@@ -180,6 +184,28 @@ def is_our_context(context: Optional[Context]) -> bool:
     return context.id.startswith(_DOMAIN_SHORT)
 
 
+def _copy_and_pop(dct, keys):
+    """Copy a dictionary and remove 'keys' if they exist."""
+    copy = dct.copy()
+    for key in keys:
+        copy.pop(key, None)
+    return copy
+
+
+def _split_service_data(service_data, adapt_brightness, adapt_color):
+    """Split service_data into two dictionaries (for color and brightness)."""
+    service_datas = []
+    if adapt_color:
+        service_datas.append(
+            _copy_and_pop(service_data, (ATTR_WHITE_VALUE, ATTR_BRIGHTNESS))
+        )
+    if adapt_brightness:
+        service_datas.append(
+            _copy_and_pop(service_data, (ATTR_RGB_COLOR, ATTR_COLOR_TEMP))
+        )
+    return service_datas
+
+
 async def handle_apply(switch: AdaptiveSwitch, service_call: ServiceCall):
     """Handle the entity service apply."""
     hass = switch.hass
@@ -201,7 +227,11 @@ async def handle_apply(switch: AdaptiveSwitch, service_call: ServiceCall):
 
 async def handle_set_manual_control(switch: AdaptiveSwitch, service_call: ServiceCall):
     """Set or unset lights as 'manually controlled'."""
-    all_lights = _expand_light_groups(switch.hass, service_call.data[CONF_LIGHTS])
+    lights = service_call.data[CONF_LIGHTS]
+    if not lights:
+        all_lights = switch._lights  # pylint: disable=protected-access
+    else:
+        all_lights = _expand_light_groups(switch.hass, lights)
     _LOGGER.debug(
         "Called 'adaptive_lighting.set_manual_control' service with '%s'",
         service_call.data,
@@ -284,7 +314,7 @@ async def async_setup_entry(
     platform.async_register_entity_service(
         SERVICE_SET_MANUAL_CONTROL,
         {
-            vol.Required(CONF_LIGHTS): cv.entity_ids,
+            vol.Optional(CONF_LIGHTS, default=[]): cv.entity_ids,
             vol.Optional(CONF_MANUAL_CONTROL, default=True): cv.boolean,
         },
         handle_set_manual_control,
@@ -337,7 +367,7 @@ def _expand_light_groups(hass: HomeAssistant, lights: List[str]) -> List[str]:
 
 def _supported_features(hass: HomeAssistant, light: str):
     state = hass.states.get(light)
-    supported_features = state.attributes["supported_features"]
+    supported_features = state.attributes[ATTR_SUPPORTED_FEATURES]
     return {key for key, value in _SUPPORT_OPTS.items() if supported_features & value}
 
 
@@ -382,6 +412,24 @@ def _attributes_have_changed(
                 light,
                 last_brightness,
                 current_brightness,
+                context.id,
+            )
+            return True
+
+    if (
+        adapt_brightness
+        and ATTR_WHITE_VALUE in old_attributes
+        and ATTR_WHITE_VALUE in new_attributes
+    ):
+        last_white_value = old_attributes[ATTR_WHITE_VALUE]
+        current_white_value = new_attributes[ATTR_WHITE_VALUE]
+        if abs(current_white_value - last_white_value) > BRIGHTNESS_CHANGE:
+            _LOGGER.debug(
+                "White Value of '%s' significantly changed from %s to %s with"
+                " context.id='%s'",
+                light,
+                last_white_value,
+                current_white_value,
                 context.id,
             )
             return True
@@ -467,6 +515,7 @@ class AdaptiveSwitch(SwitchEntity, RestoreEntity):
         self._interval = data[CONF_INTERVAL]
         self._only_once = data[CONF_ONLY_ONCE]
         self._prefer_rgb_color = data[CONF_PREFER_RGB_COLOR]
+        self._separate_turn_on_commands = data[CONF_SEPARATE_TURN_ON_COMMANDS]
         self._take_over_control = data[CONF_TAKE_OVER_CONTROL]
         self._transition = min(
             data[CONF_TRANSITION], self._interval.total_seconds() // 2
@@ -684,6 +733,10 @@ class AdaptiveSwitch(SwitchEntity, RestoreEntity):
             brightness = round(255 * self._settings["brightness_pct"] / 100)
             service_data[ATTR_BRIGHTNESS] = brightness
 
+        if "white_value" in features and adapt_brightness:
+            white_value = round(255 * self._settings["brightness_pct"] / 100)
+            service_data[ATTR_WHITE_VALUE] = white_value
+
         if (
             "color_temp" in features
             and adapt_color
@@ -710,20 +763,26 @@ class AdaptiveSwitch(SwitchEntity, RestoreEntity):
             )
         ):
             return
-        _LOGGER.debug(
-            "%s: Scheduling 'light.turn_on' with the following 'service_data': %s"
-            " with context.id='%s'",
-            self._name,
-            service_data,
-            context.id,
-        )
         self.turn_on_off_listener.last_service_data[light] = service_data
-        await self.hass.services.async_call(
-            LIGHT_DOMAIN,
-            SERVICE_TURN_ON,
-            service_data,
-            context=context,
+        service_datas = (
+            _split_service_data(service_data, adapt_brightness, adapt_color)
+            if self._separate_turn_on_commands
+            else [service_data]
         )
+        for service_data in service_datas:
+            _LOGGER.debug(
+                "%s: Scheduling 'light.turn_on' with the following 'service_data': %s"
+                " with context.id='%s'",
+                self._name,
+                service_data,
+                context.id,
+            )
+            await self.hass.services.async_call(
+                LIGHT_DOMAIN,
+                SERVICE_TURN_ON,
+                service_data,
+                context=context,
+            )
 
     async def _update_attrs_and_maybe_adapt_lights(
         self,

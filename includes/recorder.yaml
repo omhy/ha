@@ -6,8 +6,8 @@ include:
     - device_tracker
     - media_player
     - person
+    - light
   entities:
-    - light.hyperion
     - binary_sensor.0x00158d0001e52779_occupancy #bathroom
     - binary_sensor.0x00158d0001fa3dc0_occupancy #living room
     - binary_sensor.0x00158d0002d43d7d_occupancy #yury room
