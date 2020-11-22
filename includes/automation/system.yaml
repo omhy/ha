@@ -4,18 +4,8 @@
       event: start
   action:
     - service: automation.trigger
-      data:
-        entity_id: automation.update_input_text_radio_cast
-    # - service: homeassistant.update_entity
-    #   data:
-    #     entity_id:
-    #       - binary_sensor.is_holiday
-    #       - binary_sensor.is_workday
-    #       - binary_sensor.is_morning_activity
-    #       - binary_sensor.is_backup_day
-    # - service: hassio.addon_restart
-    #   data:
-    #     addon: 7ad98f9c_zigbee2mqtt
+      entity_id: automation.update_input_text_radio_cast
+    - service: script.androidbox_refresh_temp
 
 - alias: "ha_rpi_power_tracker"
   trigger:

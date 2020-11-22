@@ -3,7 +3,7 @@ google_backup:
   method: GET
   timeout: 300
 
-hyperion_v4l_off:
+hyperion_on:
   url: "http://192.168.1.11:8090/json-rpc"
   method: POST
   content_type: "application/json"
@@ -11,11 +11,25 @@ hyperion_v4l_off:
     {
       "command":"componentstate",
       "componentstate":{
-        "component":"V4L",
-        "state":false
+        "component":"ALL",
+        "state":true
       }
     }
-hyperion_v4l_on:
+
+hyperion_on_leddevice:
+  url: "http://192.168.1.11:8090/json-rpc"
+  method: POST
+  content_type: "application/json"
+  payload: >
+    {
+      "command":"componentstate",
+      "componentstate":{
+        "component":"LEDDEVICE",
+        "state":true
+      }
+    }
+
+hyperion_on_v4l:
   url: "http://192.168.1.11:8090/json-rpc"
   method: POST
   content_type: "application/json"
@@ -27,3 +41,34 @@ hyperion_v4l_on:
         "state":true
       }
     }
+
+hyperion_off:
+  url: "http://192.168.1.11:8090/json-rpc"
+  method: POST
+  content_type: "application/json"
+  payload: >
+    {
+      "command":"componentstate",
+      "componentstate":{
+        "component":"ALL",
+        "state":false
+      }
+    }
+
+assistant_broadcast:
+  url: http://192.168.1.10:3001/assistant
+  method: POST
+  content_type: 'application/json'
+  payload: '{"command":"{{ command }}", "user":"ga_relay_2", "broadcast":true}'
+  
+assistant_converse:
+  url: http://192.168.1.10:3001/assistant
+  method: POST
+  content_type: 'application/json'
+  payload: '{"command":"{{ command }}", "user":"ga_relay_2", "converse":true}'
+
+assistant_relay:
+  url: http://192.168.1.10:3001/assistant
+  method: POST
+  content_type: 'application/json'
+  payload: '{"command":"{{ command }}", "user":"ga_relay_2"}'

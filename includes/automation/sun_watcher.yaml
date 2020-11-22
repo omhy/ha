@@ -38,7 +38,7 @@
         entity_id: input_datetime.zenith
     - service: input_number.set_value
       data:
-        value: "{{ states['sensor.solar_elevation'].state }}"
+        value: "{{ states('sensor.solar_elevation') }}"
         entity_id: input_number.zenith
     - service: telegram_bot.send_message
       data:
@@ -57,7 +57,7 @@
         entity_id: input_datetime.nadir
     - service: input_number.set_value
       data:
-        value: "{{ states['sensor.solar_elevation'].state }}"
+        value: "{{ states('sensor.solar_elevation') }}"
         entity_id: input_number.nadir
     - service: telegram_bot.send_message
       data:

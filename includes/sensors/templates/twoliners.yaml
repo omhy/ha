@@ -2,40 +2,53 @@
   sensors:
 #LOAD POWERS
     power_strip_1_load_power:
-      value_template: "{{ states['switch.power_strip_1'].attributes.load_power | float }}"
+      value_template: "{{ state_attr('switch.power_strip_1', 'load_power') | float }}"
       unit_of_measurement: "W"
     power_strip_2_load_power:
-      value_template: "{{ states['switch.power_strip_2'].attributes.load_power | float }}"
+      value_template: "{{ state_attr('switch.power_strip_2', 'load_power') | float }}"
       unit_of_measurement: "W"
     power_strip_3_load_power:
-      value_template: "{{ states['switch.power_strip_3'].attributes.load_power | float }}"
+      value_template: "{{ state_attr('switch.power_strip_3', 'load_power') | float }}"
       unit_of_measurement: "W"
     power_strip_4_load_power:
-      value_template: "{{ states['switch.power_strip_4'].attributes.load_power | float }}"
+      value_template: "{{ state_attr('switch.power_strip_4', 'load_power') | float }}"
       unit_of_measurement: "W"
     power_strip_5_load_power:
-      value_template: "{{ states['switch.power_strip_5'].attributes.load_power | float }}"
+      value_template: "{{ state_attr('switch.power_strip_5', 'load_power') | float }}"
       unit_of_measurement: "W"
 #ABOX
     androidbox_app:
-      value_template: "{{ states['media_player.androidbox'].attributes.app_id.split('.')[-1] }}"
+      value_template: "{{ states('sensor.androidbox_app_full').split('.')[-1] }}"
     androidbox_app_full:
-      value_template: "{{ states['media_player.androidbox'].attributes.app_id }}"
+      value_template: "{{ state_attr('media_player.androidbox', 'app_id') }}"
+    androidbox_temp:
+      value_template: "{{ ((state_attr('media_player.androidbox', 'adb_response') | default('0') | float) / 1000) | float }}"
+
+#HYPE
+    hyperion_effect:
+      value_template: "{{ state_attr('light.hyperion', 'effect') }}"
+
 #STATE_CH_TIME
     now_hm:
-      value_template: >
-        {{ now().strftime('%H:%M') }}
+      value_template: "{{ now().strftime('%H:%M') }}"
     now_ymd:
-      value_template: >
-        {{ now().strftime('%Y-%m-%d') }}
+      value_template: "{{ now().strftime('%Y-%m-%d') }}"
+    door_tms:
+      value_template: "{{ as_timestamp(states('input_datetime.door')) | int }}"
+    door_duration_sec:
+      value_template: "{{ (as_timestamp(now()) | int ) - states('sensor.door_tms') | int }}"
+      unit_of_measurement: "second"
+    door_duration_min:
+      value_template: "{{ (states('sensor.door_duration_sec') | int / 60) | int }}"
+      unit_of_measurement: "minute"
 
 #RPI
     rpi:
       value_template: "{{states['sensor.processor_use'].state_with_unit}} / {{states['sensor.memory_use_percent'].state_with_unit}} / {{states['sensor.temperature'].state_with_unit}}"
 #SUN
     zenith:
-      value_template: "{{ states['input_number.zenith'].state | float }}"
+      value_template: "{{ states('input_number.zenith') | float }}"
       unit_of_measurement: "°"
     nadir:
-      value_template: "{{ states['input_number.nadir'].state | float }}"
+      value_template: "{{ states('input_number.nadir') | float }}"
       unit_of_measurement: "°"

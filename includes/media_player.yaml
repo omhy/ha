@@ -8,6 +8,7 @@
   device_class: androidtv
   adb_server_ip: 127.0.0.1
   adb_server_port: 5037
+  exclude_unnamed_apps: true
   apps:
     com.google.android.youtube: "Youtube"
     com.google.android.apps.youtube.music: "Youtube Music"
@@ -17,3 +18,4 @@
     com.mxtech.videoplayer.ad: "MX Player"
     org.mozilla.firefox: "Firefox"
     org.schabi.newpipe: "NewPipe"
+    com.spotify.music: "Spotify"

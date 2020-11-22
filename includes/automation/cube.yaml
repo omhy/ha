@@ -51,9 +51,6 @@
     - service: script.light_good_night
     - service: script.rmt_computer_sleep
     - service: script.hyperion_off
-    # - service: media_player.turn_off
-    #   entity_id: all
-
 
 - alias: "cube_action_shake"
   trigger:

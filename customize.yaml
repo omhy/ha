@@ -266,6 +266,11 @@ sensor.androidbox_app:
 sensor.androidbox_app_full:
   friendly_name: Abox app full
   icon: mdi:android-debug-bridge
+sensor.androidbox_temp:
+  friendly_name: Abox temp
+  icon: mdi:android
+  unit_of_measurement: '°C'
+  device_class: temperature
 
 # Z2M
 switch.0x00158d00022391ec_switch_left:
@@ -328,8 +333,8 @@ switch.adaptive_lighting_default:
   friendly_name: Adaptive lightning
   icon: mdi:clock-digital
 
-script.hyperion_restart_v4l:
-  friendly_name: Restart V4L
+script.hyperion_restart:
+  friendly_name: Restart 
   icon: mdi:restart
 script.hyperion_off:
   friendly_name: Turn off
@@ -349,3 +354,5 @@ script.hyperion_on_sparks:
   friendly_name: Sparks
 script.hyperion_on_v4l:
   friendly_name: V4L
+sensor.hyperion_effect:
+  friendly_name: Effect

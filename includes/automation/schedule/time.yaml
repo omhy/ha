@@ -5,3 +5,10 @@
   action:
     - service: counter.reset
       entity_id: counter.balcony_sessions
+
+- alias: "refresh_abox_temp"
+  trigger:
+    - platform: time_pattern
+      minutes: "/5"
+  action:
+    - service: script.androidbox_refresh_temp

@@ -32,3 +32,12 @@ androidbox_key_vol_up:
 #       entity_id: media_player.androidbox
 #       data:
 #         command: "am start -a android.intent.action.VIEW -d -n com.google.android.youtube.tv/com.google.android.apps.youtube.tv.activity.ShellActivity"
+
+androidbox_refresh_temp:
+  sequence:
+    - service: androidtv.adb_command
+      entity_id: media_player.androidbox
+      data:
+        command: "cat sys/class/thermal/thermal_zone0/temp"
+    - service: homeassistant.update_entity
+      entity_id: sensor.androidbox_temp

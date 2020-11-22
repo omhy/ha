@@ -27,3 +27,4 @@
   resource: http://192.168.1.33:8008/setup/eureka_info
   value_template: "{{ value_json.cast_build_revision }}"
   scan_interval: 86400
+

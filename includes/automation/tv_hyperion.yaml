@@ -9,14 +9,13 @@
     - service: script.androidbox_key_home
     - service: script.hyperion_off
 
-
 - alias: "tv_on"
   trigger:
     - platform: state
       entity_id: binary_sensor.ping_tv
       to: "on"
   action:
-    - service: script.hyperion_on_v4l
+    - service: script.hyperion_on
 
 - alias: "hyperion_rpi_on"
   trigger:
@@ -24,4 +23,10 @@
       entity_id: binary_sensor.ping_rpi3
       to: "on"
   action:
-    - service: script.hyperion_off
+    - choose:
+      - conditions: "{{ is_state('binary_sensor.ping_tv', 'on') }}"
+        sequence:
+          - service: script.hyperion_on
+      - conditions: "{{ is_state('binary_sensor.ping_tv', 'off') }}"
+        sequence:
+          - service: script.hyperion_off

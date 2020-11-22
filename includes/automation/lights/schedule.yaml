@@ -73,6 +73,7 @@
       data:
         entity_id: "{{ states('sensor.morning_lights') }}"
         effect: "Candle" #hyperion only
+        brightness: 2
 
 - alias: "schedule_morning_off"
   trigger:

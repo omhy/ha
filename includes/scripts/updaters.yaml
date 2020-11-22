@@ -1,10 +1,11 @@
 input_datetime_set_now:
+  mode: parallel
   sequence:
     - service: input_datetime.set_datetime
       data:
         entity_id: "{{ entity_id }}"
-        datetime: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
-        # timestamp: "{{ as_timestamp(now()) }}"
+        # datetime: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
+        timestamp: "{{ (as_timestamp(now()) | int) }}"
 
 input_datetime_set_now_door:
   sequence:

@@ -8,6 +8,9 @@ include:
     - person
     - light
   entities:
+    - binary_sensor.is_holiday
+    - binary_sensor.is_workday
+    - binary_sensor.is_morning_activity
     - binary_sensor.0x00158d0001e52779_occupancy #bathroom
     - binary_sensor.0x00158d0001fa3dc0_occupancy #living room
     - binary_sensor.0x00158d0002d43d7d_occupancy #yury room
@@ -21,6 +24,7 @@ include:
     - binary_sensor.ping_abox
     - binary_sensor.ping_rpi3
     - binary_sensor.sun_is_rising
+    - sensor.hyperion_effect
     - sensor.outdoor_temperature
     - sensor.outdoor_humidity
     - sensor.outdoor_pressure
@@ -48,6 +52,7 @@ include:
     - sensor.adguard_rules_count
     - sensor.androidbox_app
     - sensor.androidbox_app_full
+    - sensor.androidbox_temp
     - sensor.current_ozone_level
     - sensor.current_uv_index
     - sensor.current_uv_level

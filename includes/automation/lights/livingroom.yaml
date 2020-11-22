@@ -1,30 +1,20 @@
-- alias: "light_livingroom_turn_off"
+- alias: "light_btn_livingroom_single"
   trigger:
     - platform: state
       entity_id: sensor.0x00158d0002136276_action
       to: "single"
-  condition:
-    - condition: state
-      entity_id: light.livingroom_adjustable
-      state: "on"
   action:
-    - service: script.light_livingroom_adj_turn_off
+    - choose:
+      - conditions: "{{ is_state('light.livingroom_adjustable', 'on') }}"
+        sequence:
+          - service: script.light_livingroom_adj_turn_off
+      - conditions: "{{ is_state('light.livingroom_adjustable', 'off') }}"
+        sequence:
+          - service: switch.turn_off
+            entity_id: switch.adaptive_lighting_default
+          - service: script.light_livingroom_adj_turn_on_def
 
-- alias: "light_livingroom_turn_on"
-  trigger:
-    - platform: state
-      entity_id: sensor.0x00158d0002136276_action
-      to: "single"
-  condition:
-    - condition: state
-      entity_id: light.livingroom_adjustable
-      state: "off"
-  action:
-    - service: switch.turn_off
-      entity_id: switch.adaptive_lighting_default
-    - service: script.light_livingroom_adj_turn_on_def
-
-- alias: "light_livroom_double"
+- alias: "light_btn_livingroom_double"
   trigger:
     - platform: state
       entity_id: sensor.0x00158d0002136276_action
@@ -34,6 +24,71 @@
       entity_id: switch.adaptive_lighting_default
     - service: script.light_livingroom_adj_turn_on_min
 
+#HYPERION
+#off
+- alias: "pendant_switch_actions_off"
+  trigger:
+    - platform: state
+      entity_id: sensor.0xec1bbdfffea090e5_action
+      to: "off"
+  action:
+    - choose:
+      - conditions: "{{ state_attr('light.hyperion', 'effect') == 'Candle' }}"
+        sequence:
+          - service: script.hyperion_off
+      - conditions: "{{ state_attr('light.hyperion', 'effect') != 'Candle' }}"
+        sequence:
+          - service: script.hyperion_on_candle
+      - conditions: "{{ is_state('light.hyperion', 'off') }}"
+        sequence:
+          - service: script.hyperion_on_candle
+
+#brightness_move_down
+- alias: "pendant_switch_action_brightness_move_down"
+  trigger:
+    - platform: state
+      entity_id: sensor.0xec1bbdfffea090e5_action
+      to: "brightness_move_down"
+  action:
+    - choose:
+      - conditions: "{{ state_attr('light.hyperion', 'effect') == 'V4L' }}"
+        sequence:
+          - service: script.hyperion_off
+      - conditions: "{{ state_attr('light.hyperion', 'effect') != 'V4L' }}"
+        sequence:
+          - service: script.hyperion_on_v4l
+      - conditions: "{{ is_state('light.hyperion', 'off') }}"
+        sequence:
+          - service: script.hyperion_on_v4l
+
+#brightness_move_up
+- alias: "pendant_switch_action_brightness_move_up"
+  trigger:
+    - platform: state
+      entity_id: sensor.0xec1bbdfffea090e5_action
+      to: "brightness_move_up"
+  action:
+    - choose:
+      - conditions: "{{ state_attr('light.hyperion', 'brightness') >= 130 }}"
+        sequence:
+          - service: light.turn_on
+            data:
+              entity_id: light.hyperion
+              brightness: 5
+      - conditions: "{{ state_attr('light.hyperion', 'brightness') < 130 }}"
+        sequence:
+          - service: light.turn_on
+            data:
+              entity_id: light.hyperion
+              brightness: 250
+      - conditions: "{{ is_state('light.hyperion', 'off') }}"
+        sequence:
+          - service: light.turn_on
+            data:
+              entity_id: light.hyperion
+              effect: "System Shutdown"
+
+#STANDALONE
 - alias: "pendant_switch_action_on"
   trigger:
     - platform: state
@@ -42,31 +97,4 @@
   action:
     - service: light.toggle
       entity_id: light.standalone_switch
-
-- alias: "pendant_switch_action_off"
-  trigger:
-    - platform: state
-      entity_id: sensor.0xec1bbdfffea090e5_action
-      to: "off"
-  action:
-    - service: script.hyperion_on_candle
-
-- alias: "pendant_switch_action_brightness_move_up"
-  trigger:
-    - platform: state
-      entity_id: sensor.0xec1bbdfffea090e5_action
-      to: "brightness_move_up"
-  action:
-    - service: light.toggle
-      entity_id: light.hyperion
-
-- alias: "pendant_switch_action_brightness_move_down"
-  trigger:
-    - platform: state
-      entity_id: sensor.0xec1bbdfffea090e5_action
-      to: "brightness_move_down"
-  action:
-    - service: script.hyperion_on_v4l
-
-
 
