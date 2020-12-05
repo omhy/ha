@@ -17,6 +17,8 @@ morning_garland:
 morning_hyperion:
 morning_small_torch:
 morning_standalone_switch:
+morning_stars:
+morning_night_star:
 
 morning_wd_big_torch:
 morning_wd_corner_lamp:
@@ -25,6 +27,8 @@ morning_wd_garland:
 morning_wd_hyperion:
 morning_wd_small_torch:
 morning_wd_standalone_switch:
+morning_wd_stars:
+morning_wd_night_star:
 
 evening_big_torch:
 evening_corner_lamp:
@@ -33,3 +37,5 @@ evening_garland:
 evening_hyperion:
 evening_small_torch:
 evening_standalone_switch:
+evening_stars:
+evening_night_star:

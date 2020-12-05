@@ -1,15 +1,3 @@
-- platform: mqtt
-  name: window_stars
-  state_topic: "stat/sonoff_window_stars/POWER"
-  command_topic: "cmnd/sonoff_window_stars/POWER"
-  availability_topic: "tele/sonoff_window_stars/LWT"
-  qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  retain: false
-
 - platform: group
   name: hallway_ceiling
   entities:
@@ -39,17 +27,17 @@
   name: christmas
   entities:
   - light.tree_lamp
-  - light.window_stars
+  - light.stars
 
 - platform: switch
   name: standalone_switch
-  entity_id: switch.0x00158d0002013f1e_switch
+  entity_id: switch.0x00158d0002013f1e_switch #standalone
+- platform: switch
+  name: night_star
+  entity_id: switch.0x00124b00222546a1 #sonoff basic
 - platform: switch
   name: corridor
   entity_id: switch.0x00158d00022391ec_switch_left
 - platform: switch
   name: bathroom
   entity_id: switch.0x00158d00022391ec_switch_right
-
-- platform: hyperion
-  host: 192.168.1.11

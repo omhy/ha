@@ -16,10 +16,11 @@
       from: "off"
       to: "on"
   action:
+    - service: script.refresh_durations
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U0001F512 Door is opened {{ states['sensor.door_duration_min'].state_with_unit }}"
+        message: "{{ states('sensor.now_hm') }} \U0001F512 Door is opened ({{ states['sensor.door_duration_min'].state_with_unit }})"
     - service: script.input_datetime_set_now_door
 
 - alias: "door_entrance_closed"
@@ -29,10 +30,11 @@
       from: "on"
       to: "off"
   action:
+    - service: script.refresh_durations
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U0001F512 Door is closed {{ states['sensor.door_duration_sec'].state_with_unit }}"
+        message: "{{ states('sensor.now_hm') }} \U0001F512 Door is closed ({{ states['sensor.door_duration_sec'].state_with_unit }})"
     - service: script.input_datetime_set_now_door
 
 - alias: "door_balcony_opened_timer_idle"

@@ -1,9 +1,8 @@
 ### WORKDAY ###
-
-- alias: "schedule_workday_wakeup"
+- alias: "schedule_morning_wd_on"
   trigger:
     - platform: time
-      at: input_datetime.morning_wd_wakeup
+      at: input_datetime.morning_wd_on
   condition:
     - "{{ (states('sensor.morning_wd_lights') != '[]' ) }}"
     - "{{ is_state('binary_sensor.is_morning_activity', 'on') }}"
@@ -12,6 +11,7 @@
       data:
         entity_id: "{{ states('sensor.morning_wd_lights') }}"
         effect: "Candle" #hyperion only
+        brightness: 2
     - service: media_player.volume_set
       data:
         entity_id: media_player.kitchen_display
@@ -21,34 +21,10 @@
         entity_id: media_player.kitchen_display
         media_content_id: "http://icecast.vgtrk.cdnvideo.ru/moscowfm128"
 
-- alias: "schedule_workday_ready"
+- alias: "schedule_morning_wd_off"
   trigger:
     - platform: time
-      at: input_datetime.morning_wd_ready
-  condition:
-    - "{{ (states('sensor.morning_wd_lights') != '[]' ) }}"
-    - "{{ is_state('binary_sensor.is_morning_activity', 'on') }}"
-  action:
-    - service: light.turn_on
-      data:
-        entity_id: "{{ states('sensor.morning_wd_lights') }}"
-
-- alias: "schedule_workday_go"
-  trigger:
-    - platform: time
-      at: input_datetime.morning_wd_go
-  condition:
-    - "{{ (states('sensor.morning_wd_lights') != '[]' ) }}"
-    - "{{ is_state('binary_sensor.is_morning_activity', 'on') }}"
-  action:
-    - service: light.turn_on
-      data:
-        entity_id: "{{ states('sensor.morning_wd_lights') }}"
-
-- alias: "schedule_workday_gone"
-  trigger:
-    - platform: time
-      at: input_datetime.morning_wd_gone
+      at: input_datetime.morning_wd_off
   condition:
     - "{{ (states('sensor.morning_wd_lights') != '[]' ) }}"
     - "{{ is_state('binary_sensor.is_morning_activity', 'on') }}"
@@ -58,7 +34,6 @@
         entity_id: "{{ states('sensor.morning_wd_lights') }}"
 
 ### MORNING ###
-
 - alias: "schedule_morning_on"
   trigger:
     - platform: sun
@@ -88,7 +63,6 @@
         entity_id: "{{ states('sensor.morning_lights') }}"
 
 ### EVENING ###
-
 - alias: "schedule_evening_on"
   trigger:
     - platform: sun

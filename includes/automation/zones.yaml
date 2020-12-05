@@ -6,13 +6,11 @@
       zone: zone.work
       event: enter
   action:
+    - service: script.refresh_durations
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: >
-          {{ states('sensor.now_hm') }}
-          {{ '\U0001F4BC' }} Dima enters
-          ({{ (((as_timestamp(now()) - as_timestamp(states['input_datetime.dima'].state)) / 60) | int) }} minutes)
+        message: "{{ states('sensor.now_hm') }} \U0001F4BC Dima enters ({{ states['sensor.dima_duration_min'].state_with_unit }})"
     - service: script.input_datetime_set_now_dima
 
 - alias: "zone_dima_leaves_work"
@@ -22,13 +20,11 @@
       zone: zone.work
       event: leave
   action:
+    - service: script.refresh_durations
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: >
-          {{ states('sensor.now_hm') }}
-          {{ '\U0001F4BC' }} Dima leaves
-          ({{ (((as_timestamp(now()) - as_timestamp(states['input_datetime.dima'].state)) / 60) | int) }} minutes)
+        message: "{{ states('sensor.now_hm') }} \U0001F4BC Dima leaves ({{ states['sensor.dima_duration_min'].state_with_unit }})"
     - service: script.input_datetime_set_now_dima
 
 - alias: "zone_dima_enters_home"
@@ -38,13 +34,11 @@
       zone: zone.home
       event: enter
   action:
+    - service: script.refresh_durations
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: >
-          {{ states('sensor.now_hm') }} 
-          {{ '\U0001F3E0' }} Dima enters 
-          ({{ (((as_timestamp(now()) - as_timestamp(states['input_datetime.dima'].state)) / 60) | int) }} minutes)
+        message: "{{ states('sensor.now_hm') }} \U0001F3E0 Dima enters ({{ states['sensor.dima_duration_min'].state_with_unit }})"
     - service: script.input_datetime_set_now_dima
 
 - alias: "zone_dima_leaves_home"
@@ -54,13 +48,11 @@
       zone: zone.home
       event: leave
   action:
+    - service: script.refresh_durations
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: >
-          {{ states('sensor.now_hm') }}
-          {{ '\U0001F3E0' }} Dima leaves
-          ({{ (((as_timestamp(now()) - as_timestamp(states['input_datetime.dima'].state)) / 60) | int) }} minutes)
+        message: "{{ states('sensor.now_hm') }} \U0001F3E0 Dima leaves ({{ states['sensor.dima_duration_min'].state_with_unit }})"
     - service: telegram_bot.send_location
       data:
         target: !secret tg_chat_dima
@@ -75,13 +67,11 @@
       zone: zone.school
       event: enter
   action:
+    - service: script.refresh_durations
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: >
-          {{ states('sensor.now_hm') }}
-          {{ '\U0001F3EB' }} Dima enters
-          ({{ (((as_timestamp(now()) - as_timestamp(states['input_datetime.dima'].state)) / 60) | int) }} minutes)
+        message: "{{ states('sensor.now_hm') }} \U0001F3EB Dima enters ({{ states['sensor.dima_duration_min'].state_with_unit }})"
     - service: script.input_datetime_set_now_dima
 
 - alias: "zone_dima_leaves_school"
@@ -91,44 +81,9 @@
       zone: zone.school
       event: leave
   action:
+    - service: script.refresh_durations
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: >
-          {{ states('sensor.now_hm') }}
-          {{ '\U0001F3EB' }} Dima leaves
-          ({{ (((as_timestamp(now()) - as_timestamp(states['input_datetime.dima'].state)) / 60) | int) }} minutes)
+        message: "{{ states('sensor.now_hm') }} \U0001F3EB Dima leaves ({{ states['sensor.dima_duration_min'].state_with_unit }})"
     - service: script.input_datetime_set_now_dima
-
-################## ALYONA
-- alias: "zone_alyona_enters_school"
-  trigger:
-    - platform: zone
-      entity_id: person.alyona
-      zone: zone.school
-      event: enter
-  action:
-    - service: telegram_bot.send_message
-      data:
-        target: !secret tg_chat_dima
-        message: >
-          {{ states('sensor.now_hm') }}
-          {{ '\U0001F3EB' }} Alyona enters
-          ({{ (((as_timestamp(now()) - as_timestamp(states['input_datetime.alyona'].state)) / 60) | int) }} minutes)
-    - service: script.input_datetime_set_now_alyona
-
-- alias: "zone_alyona_leaves_school"
-  trigger:
-    - platform: zone
-      entity_id: person.alyona
-      zone: zone.school
-      event: leave
-  action:
-    - service: telegram_bot.send_message
-      data:
-        target: !secret tg_chat_dima
-        message: >
-          {{ states('sensor.now_hm') }}
-          {{ '\U0001F3EB' }} Alyona leaves
-          ({{ (((as_timestamp(now()) - as_timestamp(states['input_datetime.alyona'].state)) / 60) | int) }} minutes)
-    - service: script.input_datetime_set_now_alyona

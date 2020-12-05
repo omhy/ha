@@ -4,9 +4,12 @@ light.big_torch:
 light.garland:
   friendly_name: Garland
   icon: mdi:string-lights
-light.window_stars:
+light.stars:
   friendly_name: Stars
-  icon: mdi:key-star
+  icon: mdi:flare
+light.night_star:
+  friendly_name: Night star
+  icon: mdi:star
 light.corner_lamp:
   friendly_name: Corner lamp
   icon: mdi:lamp
@@ -304,34 +307,28 @@ sensor.alyona_interactive:
 
 input_datetime.evening_on:
   friendly_name: Evening started
-  icon: mdi:clock-time-eight
+  icon: mdi:sofa-outline
 input_datetime.evening_off:
   friendly_name: Evening finished
-  icon: mdi:clock-time-one
+  icon: mdi:sleep
 
 input_datetime.morning_on:
   friendly_name: Morning started
-  icon: mdi:clock-time-eight-outline
+  icon: mdi:alarm-check
 input_datetime.morning_off:
   friendly_name: Morning finished
-  icon: mdi:clock-time-eleven-outline
+  icon: mdi:bike
 
-input_datetime.morning_wd_wakeup:
+input_datetime.morning_wd_on:
   friendly_name: Wake up
   icon: mdi:alarm
-input_datetime.morning_wd_ready:
-  friendly_name: Ready
-  icon: mdi:clock-check
-input_datetime.morning_wd_go:
-  friendly_name: Go
-  icon: mdi:clock-alert
-input_datetime.morning_wd_gone:
+input_datetime.morning_wd_off:
   friendly_name: Gone
   icon: mdi:walk
 
 switch.adaptive_lighting_default:
   friendly_name: Adaptive lightning
-  icon: mdi:clock-digital
+  icon: mdi:theme-light-dark
 
 script.hyperion_restart:
   friendly_name: Restart 

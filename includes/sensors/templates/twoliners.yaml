@@ -33,14 +33,12 @@
       value_template: "{{ now().strftime('%H:%M') }}"
     now_ymd:
       value_template: "{{ now().strftime('%Y-%m-%d') }}"
-    door_tms:
-      value_template: "{{ as_timestamp(states('input_datetime.door')) | int }}"
     door_duration_sec:
-      value_template: "{{ (as_timestamp(now()) | int ) - states('sensor.door_tms') | int }}"
-      unit_of_measurement: "second"
+      value_template: "{{ (as_timestamp(now()) - as_timestamp(states('input_datetime.door'))) | int }}"
     door_duration_min:
-      value_template: "{{ (states('sensor.door_duration_sec') | int / 60) | int }}"
-      unit_of_measurement: "minute"
+      value_template: "{{ ((as_timestamp(now()) - as_timestamp(states('input_datetime.door')))) | int // 60 }}"
+    dima_duration_min:
+      value_template: "{{ ((as_timestamp(now()) - as_timestamp(states('input_datetime.dima')))) | int // 60 }}"
 
 #RPI
     rpi:
@@ -52,3 +50,18 @@
     nadir:
       value_template: "{{ states('input_number.nadir') | float }}"
       unit_of_measurement: "°"
+#SCALE
+    dmitry_bmi:
+      value_template: "{{ state_attr('sensor.dmitry_weight', 'bmi') }}"
+    dmitry_body_type:
+      value_template: "{{ state_attr('sensor.dmitry_weight', 'body_type') }}"
+    dmitry_muscle_mass:
+      value_template: "{{ state_attr('sensor.dmitry_weight', 'muscle_mass') }}"
+    dmitry_bone_mass:
+      value_template: "{{ state_attr('sensor.dmitry_weight', 'bone_mass') }}"
+    dmitry_visceral_fat:
+      value_template: "{{ state_attr('sensor.dmitry_weight', 'visceral_fat') }}"
+    dmitry_body_fat:
+      value_template: "{{ state_attr('sensor.dmitry_weight', 'body_fat') }}"
+    dmitry_water:
+      value_template: "{{ state_attr('sensor.dmitry_weight', 'water') }}"

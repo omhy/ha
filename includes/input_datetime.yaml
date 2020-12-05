@@ -4,9 +4,6 @@ door:
 dima:
   has_date: true
   has_time: true
-alyona:
-  has_date: true
-  has_time: true
 
 evening_on:
   has_time: true
@@ -18,13 +15,9 @@ morning_on:
 morning_off:
   has_time: true
 
-morning_wd_wakeup:
+morning_wd_on:
   has_time: true
-morning_wd_ready:
-  has_time: true
-morning_wd_go:
-  has_time: true
-morning_wd_gone:
+morning_wd_off:
   has_time: true
 
 sunrise:

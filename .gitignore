@@ -22,3 +22,8 @@ google_calendars.yaml
 .*
 !/.gitignore
 esphome
+blueprints
+glances
+custom_components
+themes
+www

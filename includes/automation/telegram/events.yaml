@@ -2,7 +2,7 @@
   trigger:
     - platform: state
       entity_id:
-        - sensor.0xec1bbdfffea090e5_action
+        - sensor.dmitry_weight
   condition: "{{ trigger.from_state.state != trigger.to_state.state }}"
   action:
     - service: telegram_bot.send_message
@@ -34,7 +34,7 @@
         # inline_keyboard:
         #   - "\U0000267B Dismiss:/dismiss"
 
-- alias: "google_cast_updated"
+- alias: "watcher_google_cast_updated"
   trigger:
     - platform: state
       entity_id:
@@ -50,3 +50,32 @@
         message: "{{ states('sensor.now_hm') }} \U00002B06 `{{ trigger.from_state.attributes.friendly_name }}` updated {{ trigger.from_state.state }} -> {{ trigger.to_state.state }}"
         inline_keyboard:
           - "\U0000267B Dismiss:/dismiss"
+
+- alias: "watcher_weight_dima"
+  trigger:
+    - platform: state
+      entity_id:
+        - sensor.dmitry_weight
+  # condition: "{{ trigger.from_state.state != trigger.to_state.state }}"
+  action:
+    - service: telegram_bot.send_message
+      data:
+        target: !secret tg_chat_dima
+        message: >
+          {{ states('sensor.now_hm') }} {{ '\U0001F57A' }} {{ states['sensor.dmitry_weight'].state_with_unit }}
+
+          `{{ state_attr('sensor.dmitry_bmi', 'friendly_name') }}:` {{ states['sensor.dmitry_bmi'].state_with_unit }}
+
+          `{{ state_attr('sensor.dmitry_body_fat', 'friendly_name') }}:` {{ states['sensor.dmitry_body_fat'].state_with_unit }}
+
+          `{{ state_attr('sensor.dmitry_bone_mass', 'friendly_name') }}:` {{ states['sensor.dmitry_bone_mass'].state_with_unit }}
+
+          `{{ state_attr('sensor.dmitry_muscle_mass', 'friendly_name') }}:` {{ states['sensor.dmitry_muscle_mass'].state_with_unit }}
+
+          `{{ state_attr('sensor.dmitry_visceral_fat', 'friendly_name') }}:` {{ states['sensor.dmitry_visceral_fat'].state_with_unit }}
+
+          `{{ state_attr('sensor.dmitry_water', 'friendly_name') }}:` {{ states['sensor.dmitry_water'].state_with_unit }}
+
+          `{{ states('sensor.dmitry_body_type') }}`
+
+          #WeightDima

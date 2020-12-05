@@ -59,3 +59,27 @@
         text: "к"
   action:
     - service: homeassistant.restart
+
+- alias: "telega_text_P"
+  trigger:
+    - platform: event
+      event_type: telegram_text
+      event_data:
+        text: "p"
+    - platform: event
+      event_type: telegram_text
+      event_data:
+        text: "P"
+    - platform: event
+      event_type: telegram_text
+      event_data:
+        text: "з"
+  action:
+    - service: telegram_bot.send_message
+      data:
+        target: "{{ trigger.event.data.user_id }}"
+        message: "Select person to check"
+        inline_keyboard:
+          - "\U0001F468 Dima:/tracker dima, \U0001F469 Alyona:/tracker alyona"
+          - "\U0001F466 Yury:/tracker yury, \U0001F467 Elisa:/tracker elisa"
+          - "\U0000267B Dismiss:/dismiss"

@@ -179,6 +179,38 @@
 "sensor.cast_version_*":
   icon: mdi:cast
 
+"sensor.now_*":
+  icon: mdi:clock-digital
+"sensor.*_duration_min":
+  icon: mdi:timer-sand-full
+  unit_of_measurement: "min"
+"sensor.*_duration_sec":
+  icon: mdi:timer-sand-empty
+  unit_of_measurement: "sec"
+
+"sensor.*_weight":
+  friendly_name: Weight
+  unit_of_measurement: "kg"
+"sensor.*_bmi":
+  friendly_name: BMI
+"sensor.*_body_type":
+  friendly_name: Body type
+"sensor.*_muscle_mass":
+  friendly_name: Muscle mass
+  unit_of_measurement: "kg"
+"sensor.*_bone_mass":
+  friendly_name: Bone mass
+  unit_of_measurement: "kg"
+"sensor.*_visceral_fat":
+  friendly_name: Visceral fat
+  unit_of_measurement: "kg"
+"sensor.*_body_fat":
+  friendly_name: Body fat
+  unit_of_measurement: "%"
+"sensor.*_water":
+  friendly_name: Water
+  unit_of_measurement: "%"
+
 "input_datetime.*_temperature_min_at":
   friendly_name: Minimal @
   icon: mdi:clock
@@ -216,3 +248,9 @@
 "input_boolean.*_small_torch":
   friendly_name: Small torch
   icon: mdi:lava-lamp
+"input_boolean.*_stars":
+  friendly_name: Stars
+  icon: mdi:flare
+"input_boolean.*_night_star":
+  friendly_name: Night star
+  icon: mdi:star

@@ -5,7 +5,7 @@ light_good_night:
       - light.livingroom
       - light.hallway
       - light.small_torch
-      # - light.window_stars
+      # - light.stars
 
 light_departed:
   sequence:
@@ -18,7 +18,7 @@ light_departed:
         - light.small_torch
         - light.bathroom
         - light.corridor
-        # - light.window_stars
+        # - light.stars
 
 light_arrived:
   sequence:
@@ -26,4 +26,4 @@ light_arrived:
       entity_id:
         - light.livingroom
         - light.hallway
-        # - light.window_stars
+        # - light.stars

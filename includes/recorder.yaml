@@ -80,33 +80,6 @@ include:
     - input_datetime.nadir
     - input_datetime.sunset
     - binary_sensor.rpi_power_status
-    - sensor.sm_g973f_phone_state
-    - sensor.sm_g973f_battery_level
-    - sensor.sm_g973f_detected_activity
-    - sensor.sm_g973f_battery_state
-    - sensor.sm_g973f_charger_type
-    - sensor.sm_g973f_wifi_connection
-    - sensor.sm_g973f_wifi_bssid
-    - sensor.sm_g973f_wifi_ip_address
-    - sensor.sm_g973f_public_ip_address
-    - sensor.sm_g973f_call_number
-    - binary_sensor.sm_g973f_interactive
-    - binary_sensor.sm_g973f_doze_mode
-    - binary_sensor.sm_g973f_power_save
-    - sensor.mi_a2_phone_state
-    - sensor.mi_a2_battery_level
-    - sensor.mi_a2_detected_activity
-    - sensor.mi_a2_battery_state
-    - binary_sensor.mi_a2_interactive
-    - binary_sensor.mi_a2_doze_mode
-    - binary_sensor.mi_a2_power_save
-    - sensor.redmi_note_9_pro_phone_state
-    - sensor.redmi_note_9_pro_battery_level
-    - sensor.redmi_note_9_pro_detected_activity
-    - sensor.redmi_note_9_pro_battery_state
-    - binary_sensor.redmi_note_9_pro_interactive
-    - binary_sensor.redmi_note_9_pro_doze_mode
-    - binary_sensor.redmi_note_9_pro_power_save
     - sensor.0x00158d0002136276_action
     - sensor.0x00158d00021329e3_action
     - sensor.0x00158d00021350ee_action
@@ -118,3 +91,32 @@ include:
     - sensor.0xccccccfffef03bac_action
     - sensor.0x14b457fffe8085df_action
     - sensor.0x00158d00021350ee_action
+    - sensor.sm_g973f_battery_level
+    - sensor.sm_g973f_detected_activity
+    - sensor.sm_g973f_battery_state
+    - sensor.sm_g973f_charger_type
+    - sensor.sm_g973f_wifi_connection
+    - sensor.sm_g973f_wifi_bssid
+    - sensor.sm_g973f_wifi_ip_address
+    - sensor.sm_g973f_public_ip_address
+    - sensor.sm_g973f_app_standby_bucket
+    - binary_sensor.sm_g973f_interactive
+    - binary_sensor.sm_g973f_app_inactive
+    - sensor.mi_a2_battery_level
+    - sensor.mi_a2_detected_activity
+    - sensor.mi_a2_battery_state
+    - binary_sensor.mi_a2_interactive
+    - sensor.redmi_note_9_pro_battery_level
+    - sensor.redmi_note_9_pro_detected_activity
+    - sensor.redmi_note_9_pro_battery_state
+    - binary_sensor.redmi_note_9_pro_interactive
+    - sensor.alyona_weight
+    - sensor.dmitry_weight
+    - sensor.dmitry_bmi
+    - sensor.dmitry_body_type
+    - sensor.dmitry_muscle_mass
+    - sensor.dmitry_bone_mass
+    - sensor.dmitry_visceral_fat
+    - sensor.dmitry_body_fat
+    - sensor.dmitry_water
+    - sensor.yury_weight

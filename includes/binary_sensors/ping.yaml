@@ -20,4 +20,4 @@
   name: "ping_rpi3"
   host: 192.168.1.11
   count: 2
-  scan_interval: 39
+  scan_interval: 44

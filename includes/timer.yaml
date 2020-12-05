@@ -4,4 +4,4 @@ zigbee_permit_join:
 
 balcony_session:
   name: Balcony session
-  duration: 1200
+  duration: 1800

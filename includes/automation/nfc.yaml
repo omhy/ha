@@ -1,0 +1,9 @@
+- alias: "nfc_purple_tag"
+  trigger:
+    - platform: event
+      event_type: tag_scanned
+      event_data:
+        device_id: 12991b0209f0fe36
+        tag_id: 3d44c76d-1995-4eba-97e3-1f8576ac38f0
+  action:
+    - service: script.tts_outside

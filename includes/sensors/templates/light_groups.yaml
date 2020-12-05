@@ -23,7 +23,13 @@
         {% if is_state('input_boolean.morning_small_torch', 'on') %}
             {% set l7 = 'light.small_torch' %}
         {% endif %}
-        {% set all = (l1, l2, l3, l4, l5, l6, l7) %}
+        {% if is_state('input_boolean.morning_stars', 'on') %}
+            {% set l8 = 'light.stars' %}
+        {% endif %}
+        {% if is_state('input_boolean.morning_morning_night_star', 'on') %}
+            {% set l9 = 'light.night_star' %}
+        {% endif %}
+        {% set all = (l1, l2, l3, l4, l5, l6, l7, l8, l9) %}
         {{ all | reject("==", Undefined) | list }}
     morning_wd_lights:
       value_template: >
@@ -48,7 +54,13 @@
         {% if is_state('input_boolean.morning_wd_small_torch', 'on') %}
             {% set l7 = 'light.small_torch' %}
         {% endif %}
-        {% set all = (l1, l2, l3, l4, l5, l6, l7) %}
+        {% if is_state('input_boolean.morning_wd_stars', 'on') %}
+            {% set l8 = 'light.stars' %}
+        {% endif %}
+        {% if is_state('input_boolean.morning_wd_night_star', 'on') %}
+            {% set l9 = 'light.night_star' %}
+        {% endif %}
+        {% set all = (l1, l2, l3, l4, l5, l6, l7, l8, l9) %}
         {{ all | reject("==", Undefined) | list }}
     evening_lights:
       value_template: >
@@ -70,8 +82,11 @@
         {% if is_state('input_boolean.evening_fire_lamp', 'on') %}
             {% set l6 = 'light.fire_lamp' %}
         {% endif %}
-        {% if is_state('input_boolean.evening_small_torch', 'on') %}
-            {% set l7 = 'light.small_torch' %}
+        {% if is_state('input_boolean.evening_stars', 'on') %}
+            {% set l8 = 'light.stars' %}
         {% endif %}
-        {% set all = (l1, l2, l3, l4, l5, l6, l7) %}
+        {% if is_state('input_boolean.evening_wd_night_star', 'on') %}
+            {% set l9 = 'light.night_star' %}
+        {% endif %}
+        {% set all = (l1, l2, l3, l4, l5, l6, l7, l8, l9) %}
         {{ all | reject("==", Undefined) | list }}

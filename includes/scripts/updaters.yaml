@@ -19,8 +19,12 @@ input_datetime_set_now_dima:
       data:
         entity_id: input_datetime.dima
 
-input_datetime_set_now_alyona:
+refresh_durations:
   sequence:
-    - service: script.input_datetime_set_now
+    - service: homeassistant.update_entity
       data:
-        entity_id: input_datetime.alyona
+        entity_id: 
+          - sensor.door_duration_sec
+          - sensor.door_duration_min
+          - sensor.dima_duration_min
+
