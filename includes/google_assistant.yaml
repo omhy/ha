@@ -21,26 +21,22 @@ entity_config:
     name: Corner lamp
     expose: true
     room: Living Room
-  light.livingroom:
-    name: Ambient
-    expose: true
-    room: Living Room
   light.standalone_switch:
     name: Chain lamp
     expose: true
     room: Living Room
-  # light.0xec1bbdfffe4d16eb_light:
-  #   name: Pendant
-  #   expose: true
-  #   room: Living Room
+  light.stars:
+    name: Stars
+    expose: true
+    room: Living Room
 #Yury Room
   light.small_torch:
     name: Small torch
     expose: true
     room: Yury Room
 #Bedroom
-  light.balloon:
-    name: Balloon lamp
+  light.night_star:
+    name: Night star
     expose: true
     room: Bedroom
 

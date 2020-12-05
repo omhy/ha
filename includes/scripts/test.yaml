@@ -1,0 +1,26 @@
+cast_youtube_test:
+  sequence:
+    - service: script.cast_youtube
+      data:
+        media_id: "dQw4w9WgXcQ"
+
+cast_youtube:
+  sequence:
+    - service: media_player.play_media
+      data:
+        entity_id: media_player.kitchen_display
+        media_content_type: cast
+        media_content_id: '
+          {
+            "app_name": "youtube",
+            "media_id": "{{ media_id }}"
+          }'
+
+
+cast_ha:
+  sequence:
+    - service: cast.show_lovelace_view
+      data:
+        entity_id: media_player.kitchen_display
+        dashboard_path: Overview
+        view_path: Main

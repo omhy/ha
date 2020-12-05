@@ -1,0 +1,32 @@
+- alias: "mobile_nfc_purple_tag_dima"
+  trigger:
+    - platform: event
+      event_type: tag_scanned
+      event_data:
+        device_id: 12991b0209f0fe36 #!secret device_id_dima
+        tag_id: 3d44c76d-1995-4eba-97e3-1f8576ac38f0
+  action:
+    - service: script.tts_outside
+
+- alias: "mobile_share_youtube_link"
+  trigger:
+    - platform: event
+      event_type: mobile_app.share
+  action:
+    - choose:
+      - conditions: "{{ 'youtu' in trigger.event.data.url }}"
+        sequence:
+          # - service: telegram_bot.send_message
+          #   data:
+          #     target: !secret tg_chat_dima
+          #     message: "{{ states('sensor.now_hm') }} MobAppShare `{{ trigger.event.data.url.split('/')[-1] | regex_replace('watch\\?v=', '') | regex_replace('&t=.*', '') }}`"
+          - service: script.cast_youtube
+            data:
+              media_id: "{{ trigger.event.data.url.split('/')[-1] | regex_replace('watch\\?v=', '') | regex_replace('&t=.*', '') }}"
+
+
+
+
+  # condition: "{{ trigger.event.data.caller = 'android-app://com.google.android.youtube' }}"
+  # condition: "{{ trigger.event.data.caller = 'android-app://org.schabi.newpipe' }}"
+
