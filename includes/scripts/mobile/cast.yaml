@@ -1,9 +1,3 @@
-cast_youtube_test:
-  sequence:
-    - service: script.cast_youtube
-      data:
-        media_id: "dQw4w9WgXcQ"
-
 cast_youtube:
   sequence:
     - service: media_player.play_media
