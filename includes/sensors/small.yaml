@@ -24,3 +24,18 @@
 
 - platform: version
   name: ha_version_current
+
+#to find channel ID: https://www.youtube.com/feeds/videos.xml?user=
+
+- platform: youtube
+  channel_id: UCq7JZ8ATgQWeu6sDM1czjhg #SG
+- platform: youtube
+  channel_id: UC101o-vQ2iOj9vr00JUlyKw #vrlmv
+- platform: youtube
+  channel_id: UCFuBWNNWrvnW99mxDzAHdrw #hfa
+- platform: youtube
+  channel_id: UCsKiNBoIWLpIxU6vsAv3v3w #lbdv
+- platform: youtube
+  channel_id: UC9PBzalIcEQCsiIkq36PyUA #DF
+- platform: youtube
+  channel_id: UCvQXaJTjA3jRucTKN4CGiwg #Sbch

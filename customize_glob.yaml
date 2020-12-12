@@ -20,6 +20,8 @@
   icon: mdi:laptop
 "*hyperion*":
   icon: mdi:border-outside
+"*youtube*":
+  icon: mdi:youtube
 
 "*workday*":
   icon: mdi:briefcase
@@ -128,6 +130,8 @@
   icon: mdi:run-fast
 "automation.schedule*":
   icon: mdi:clock-outline
+"automation.autoupdate*":
+  icon: mdi:robot
 
 ### HA
 "*.ha_*":

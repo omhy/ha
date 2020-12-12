@@ -16,16 +16,12 @@
     - choose:
       - conditions: "{{ 'youtu' in trigger.event.data.url }}"
         sequence:
-          - service: script.cast_youtube
+          - service: script.cast_youtube_url
             data:
-              media_id: "{{ trigger.event.data.url.split('/')[-1] | regex_replace('watch\\?v=', '') | regex_replace('&t=.*', '') }}"
+              url: "{{ trigger.event.data.url }}"
       default:
           - service: telegram_bot.send_message
             data:
               target: !secret tg_chat_dima
               message: "{{ states('sensor.now_hm') }} MobAppShare `{{ trigger.event }}`"
-
-
-  # condition: "{{ trigger.event.data.caller = 'android-app://com.google.android.youtube' }}"
-  # condition: "{{ trigger.event.data.caller = 'android-app://org.schabi.newpipe' }}"
 

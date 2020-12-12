@@ -1,0 +1,63 @@
+### UTILS
+cast_youtube:
+  sequence:
+    - service: media_player.play_media
+      data:
+        entity_id: media_player.kitchen_display
+        media_content_type: cast
+        media_content_id: '
+          {
+            "app_name": "youtube",
+            "media_id": "{{ media_id }}"
+          }'
+
+cast_youtube_id:
+  sequence:
+    - service: script.cast_youtube
+      data:
+        media_id: "{{ states('input_text.youtube_id') }}"
+
+cast_youtube_url:
+  sequence:
+    - service: input_text.set_value
+      data:
+        entity_id: input_text.youtube_url #automation.autoupdate_youtube_media_id
+        value: "{{ url }}"
+    - service: script.cast_youtube_id
+
+### CHANNELS
+cast_youtube_stopgame:
+  sequence:
+    - service: script.cast_youtube_url
+      data:
+        url: "{{ state_attr('sensor.stopgame_ru', 'url') }}"
+
+cast_youtube_varlamov:
+  sequence:
+    - service: script.cast_youtube_url
+      data:
+        url: "{{ state_attr('sensor.varlamov', 'url') }}"
+
+cast_youtube_lebedev:
+  sequence:
+    - service: script.cast_youtube_url
+      data:
+        url: "{{ state_attr('sensor.artemii_lebedev', 'url') }}"
+
+cast_youtube_hfa:
+  sequence:
+    - service: script.cast_youtube_url
+      data:
+        url: "{{ state_attr('sensor.hfa', 'url') }}"
+
+cast_youtube_digitalfoundry:
+  sequence:
+    - service: script.cast_youtube_url
+      data:
+        url: "{{ state_attr('sensor.digital_foundry', 'url') }}"
+
+cast_youtube_sobchak:
+  sequence:
+    - service: script.cast_youtube_url
+      data:
+        url: "{{ state_attr('sensor.kseniia_sobchak', 'url') }}"

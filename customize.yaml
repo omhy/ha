@@ -55,8 +55,10 @@ light.hallway_ceiling:
   friendly_name: Hallway ceiling
   icon: mdi:lightbulb-multiple
 
-
-
+sensor.system_uptime:
+  friendly_name: Uptime
+  icon: mdi:chip
+  unit_of_measurement: "hrs"
 
 binary_sensor.is_workday:
   friendly_name: Workday?
@@ -93,8 +95,6 @@ sensor.consumption_today:
 sensor.consumption_now:
   friendly_name: Now
   icon: mdi:power-plug
-sensor.uptime:
-  friendly_name: HA uptime
 script.media_player_stop_all:
   friendly_name: Stop cast
   icon: mdi:stop
@@ -199,7 +199,6 @@ binary_sensor.ping_tv:
   icon: mdi:television
   device_class: connectivity
 
-
 binary_sensor.people_home:
   friendly_name: Someone home
   icon: mdi:account-multiple-check
@@ -272,7 +271,7 @@ sensor.androidbox_app_full:
 sensor.androidbox_temp:
   friendly_name: Abox temp
   icon: mdi:android
-  unit_of_measurement: '°C'
+  unit_of_measurement: "°C"
   device_class: temperature
 
 # Z2M
@@ -353,3 +352,14 @@ script.hyperion_on_v4l:
   friendly_name: V4L
 sensor.hyperion_effect:
   friendly_name: Effect
+
+input_text.youtube_url:
+  friendly_name: Youtube URL
+input_text.youtube_id:
+  friendly_name: Youtube ID
+script.cast_youtube:
+  friendly_name: Cast youtube core
+script.cast_youtube_id:
+  friendly_name: Cast youtube by ID
+script.cast_youtube_url:
+  friendly_name: Cast youtube by URL

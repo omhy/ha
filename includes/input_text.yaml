@@ -1,3 +1,6 @@
 radio_cast:
   name: radio_cast
   initial: ""
+
+youtube_url:
+youtube_id:

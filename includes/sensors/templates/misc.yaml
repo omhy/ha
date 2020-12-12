@@ -2,12 +2,12 @@
   sensors:
     solar_elevation:
       friendly_name: "Elevation"
-      unit_of_measurement: '°'
+      unit_of_measurement: "°C"
       value_template: "{{ state_attr('sun.sun', 'elevation') }}"
 
     solar_azimuth:
       friendly_name: "Azimut"
-      unit_of_measurement: '°'
+      unit_of_measurement: "°C"
       value_template: "{{ state_attr('sun.sun', 'azimuth') }}"
 
     days_in_month:

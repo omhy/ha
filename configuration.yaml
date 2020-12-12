@@ -17,14 +17,19 @@ sun:
 system_health:
 updater:
 config:
-zodiac:
-
+# media_source:
+# media_extractor:
 zeroconf:
 ssdp:
+
+zodiac:
 
 hassio:
 frontend:
   themes: !include_dir_merge_named themes
+
+bessarabov:
+  token: !secret bessarabov_token
 
 start_time:
 
@@ -85,7 +90,6 @@ input_text: !include includes/input_text.yaml
 counter: !include includes/counter.yaml
 utility_meter: !include includes/utility_meter.yaml
 light: !include includes/light.yaml
-# yeelight: !include includes/yeelight.yaml
 google_assistant: !include includes/google_assistant.yaml
 device_tracker: !include includes/device_tracker.yaml
 media_player: !include includes/media_player.yaml
@@ -94,7 +98,6 @@ shell_command: !include includes/shell_command.yaml
 timer: !include includes/timer.yaml
 rest_command: !include includes/rest_command.yaml
 
-scene: !include_dir_merge_list includes/scenes
 sensor: !include_dir_merge_list includes/sensors
 binary_sensor: !include_dir_merge_list includes/binary_sensors
 switch: !include_dir_merge_list includes/switches

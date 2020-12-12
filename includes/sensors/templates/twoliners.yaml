@@ -28,11 +28,13 @@
     hyperion_effect:
       value_template: "{{ state_attr('light.hyperion', 'effect') }}"
 
-#STATE_CH_TIME
+#TIME
     now_hm:
       value_template: "{{ now().strftime('%H:%M') }}"
     now_ymd:
       value_template: "{{ now().strftime('%Y-%m-%d') }}"
+    system_uptime:
+      value_template: "{{ ((as_timestamp(now()) - as_timestamp(states('sensor.uptime'))) | int / 3600) | round(2) }}"
     door_duration_sec:
       value_template: "{{ (as_timestamp(now()) - as_timestamp(states('input_datetime.door'))) | int }}"
     door_duration_min:
@@ -46,10 +48,10 @@
 #SUN
     zenith:
       value_template: "{{ states('input_number.zenith') | float }}"
-      unit_of_measurement: "°"
+      unit_of_measurement: "°C"
     nadir:
       value_template: "{{ states('input_number.nadir') | float }}"
-      unit_of_measurement: "°"
+      unit_of_measurement: "°C"
 #SCALE
     dmitry_bmi:
       value_template: "{{ state_attr('sensor.dmitry_weight', 'bmi') }}"

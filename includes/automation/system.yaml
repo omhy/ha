@@ -4,7 +4,7 @@
       event: start
   action:
     - service: automation.trigger
-      entity_id: automation.update_input_text_radio_cast
+      entity_id: automation.autoupdate_radio_cast_entity
     - service: script.androidbox_refresh_temp
 
 - alias: "ha_rpi_power_tracker"

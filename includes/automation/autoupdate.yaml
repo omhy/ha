@@ -1,4 +1,4 @@
-- alias: "update_input_text_radio_cast"
+- alias: "autoupdate_radio_cast_entity"
   trigger:
     - platform: state
       entity_id: input_select.radio_cast
@@ -14,3 +14,13 @@
           {% elif is_state("input_select.radio_cast", "Speakers") %} media_player.speakers
           {% elif is_state("input_select.radio_cast", "Surround") %} media_player.surround
           {% endif %}
+
+- alias: "autoupdate_youtube_media_id"
+  trigger:
+    - platform: state
+      entity_id: input_text.youtube_url
+  action:
+    - service: input_text.set_value
+      data:
+        entity_id: input_text.youtube_id
+        value: "{{ states('input_text.youtube_url').split('/')[-1] | regex_replace('watch\\?v=', '') | regex_replace('&t=.*', '') }}"
