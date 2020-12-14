@@ -3,7 +3,7 @@
     - platform: event
       event_type: tag_scanned
       event_data:
-        device_id: 12991b0209f0fe36 #!secret device_id_dima
+        device_id: !secret device_id_dima
         tag_id: 3d44c76d-1995-4eba-97e3-1f8576ac38f0
   action:
     - service: script.tts_outside
@@ -25,3 +25,37 @@
               target: !secret tg_chat_dima
               message: "{{ states('sensor.now_hm') }} MobAppShare `{{ trigger.event }}`"
 
+- alias: "yury_phone_is_on"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.redmi_note_9_pro_interactive
+      from: "off"
+      to: "on"
+      for:
+        seconds: 10
+  condition: "{{ is_state('binary_sensor.is_yury_phone_overdue', 'on') }}"
+  action:
+    - service: notify.telegram_parents
+      data:
+        message: "{{ states('sensor.now_hm') }} \U0001f4f1 Yury's phone is on. Today: {{ states['sensor.yury_interactive'].state_with_unit }}"
+    - service: notify.mobile_app_redmi_note_9_pro
+      data:
+        title: "Юрец, положи телефон"
+        message: "Хватит на сегодня. Использовал: {{ states['sensor.yury_interactive'].state_with_unit }}"
+
+- alias: "yury_phone_is_on_and_overdue"
+  trigger:
+    - platform: time_pattern
+      minutes: "/1"
+  condition: 
+    - "{{ is_state('binary_sensor.redmi_note_9_pro_interactive', 'on') }}"
+    - "{{ is_state('binary_sensor.is_yury_phone_overdue', 'on') }}"
+  action:
+    - service: telegram_bot.send_message
+      data:
+        target: !secret tg_chat_dima
+        message: "{{ states('sensor.now_hm') }} \U000026d4 Yury's phone STILL on. Today: {{ states['sensor.yury_interactive'].state_with_unit }}"
+    - service: notify.mobile_app_redmi_note_9_pro
+      data:
+        title: "Юрец, положи телефон сейчас же!"
+        message: "Ты уже перебрал по времени. Использовал: {{ states['sensor.yury_interactive'].state_with_unit }}"

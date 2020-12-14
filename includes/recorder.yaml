@@ -48,8 +48,6 @@ include:
     - sensor.0x00158d00032308dd_pressure
     - sensor.0x00158d00032308dd_temperature
     - sensor.0x00158d0003537bf0_smoke_density
-    - sensor.adguard_average_processing_speed
-    - sensor.adguard_rules_count
     - sensor.androidbox_app
     - sensor.androidbox_app_full
     - sensor.androidbox_temp
@@ -120,3 +118,21 @@ include:
     - sensor.dmitry_body_fat
     - sensor.dmitry_water
     - sensor.yury_weight
+    - sensor.cast_version_kitchen_display
+    - sensor.cast_version_loud_speaker
+    - sensor.cast_version_black_speaker
+    - sensor.cast_version_yury_speaker
+    - sensor.cast_version_chromecast
+#temp
+    - input_number.outdoor_temperature_min
+    - input_number.outdoor_temperature_max
+    - input_datetime.outdoor_temperature_min
+    - input_datetime.outdoor_temperature_max
+    - sensor.outdoor_temperature_min
+    - sensor.outdoor_temperature_max
+    - input_number.park_temperature_min
+    - input_number.park_temperature_max
+    - input_datetime.park_temperature_min
+    - input_datetime.park_temperature_max
+    - sensor.park_temperature_min
+    - sensor.park_temperature_max

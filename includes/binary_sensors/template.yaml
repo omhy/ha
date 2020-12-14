@@ -44,11 +44,16 @@
         }}
 
     is_backup_day:
-      value_template: >
-        {{ now().weekday() == 1 or now().weekday() == 3 or now().weekday() == 6 }}
+      value_template: "{{ now().weekday() == 1 or now().weekday() == 3 or now().weekday() == 6 }}"
+
+    is_month_last_day:
+      value_template: "{{ (as_timestamp(now()) + 86400) | timestamp_custom('%d', true) == 01 }}"
 
     is_hallway_ceiling_high_brightness:
       value_template: "{{ (state_attr('light.hallway_ceiling', 'brightness') | int) > 240 }}"
+
+    is_yury_phone_overdue:
+      value_template: "{{ (states('sensor.yury_interactive') | float * 60) >= states('input_number.yury_phone_allowed') | float }}"
 
     ping_tv:
       value_template: "{{ states('sensor.power_strip_4_load_power') | float > 70 }}"

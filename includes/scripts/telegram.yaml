@@ -5,19 +5,12 @@ telegram_send_weather_today:
         target: "{{ target }}"
         title: "#EnvToday {{ states('sensor.now_ymd') }}"
         message: >
-          {% set frm3 = "%8s | %-8s" %}
           ```
-          .           {{ '\U0001F333' }} | {{ '\U0001F3D8' }}
+          {{ '\U0001f321' }} now {{ states['sensor.outdoor_temperature'].state_with_unit }}
 
-          {{ '\U0001f321' }} now {{ frm3 | format(states['sensor.0x00158d00022c7cf2_temperature'].state_with_unit, states['sensor.0x00158d0002323783_temperature'].state_with_unit) }}
+          {{ '\U0001f976' }} min {{ states['sensor.outdoor_temperature_min'].state_with_unit }} at {{ states('input_datetime.outdoor_temperature_min') }}
 
-          {{ '\U0001f976' }} min {{ frm3 | format(states['input_number.outpark_temperature_min'].state_with_unit, states['input_number.outyard_temperature_min'].state_with_unit) }}
-
-          {{ '\U0001f976' }} at  {{ frm3 | format(states['input_datetime.outpark_temperature_min_at'].state, states['input_datetime.outyard_temperature_min_at'].state) }}
-
-          {{ '\U0001f975' }} max {{ frm3 | format(states['input_number.outpark_temperature_max'].state_with_unit, states['input_number.outyard_temperature_max'].state_with_unit) }}
-
-          {{ '\U0001f975' }} at  {{ frm3 | format(states['input_datetime.outpark_temperature_max_at'].state, states['input_datetime.outyard_temperature_max_at'].state) }}
+          {{ '\U0001f975' }} max {{ states['sensor.outdoor_temperature_max'].state_with_unit }} at {{ states('input_datetime.outdoor_temperature_max') }}
           ```
         inline_keyboard:
           - "\U0001F504 Refresh:/weather_today, \U0000267B Dismiss:/dismiss"

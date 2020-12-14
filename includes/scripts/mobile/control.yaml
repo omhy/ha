@@ -46,3 +46,14 @@ mobile_dima_ringer_silent:
       data:
         message: command_ringer_mode
         title: silent
+
+mobile_yury_notify_relax:
+  sequence:
+    - service: notify.mobile_app_redmi_note_9_pro
+      data:
+        title: "Yury, relax!"
+        message: "TTS"
+        data:
+          ttl: 0
+          priority: high
+          channel: alarm_stream

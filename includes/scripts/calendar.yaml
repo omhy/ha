@@ -1,0 +1,60 @@
+calendar_add_event_time:
+  sequence:
+    - service: google.add_event
+      data:
+        calendar_id: !secret calendar_id_ha
+        summary: "{{ summary }}"
+        description: "{{ description }}"
+        start_date_time: "{{ states('sensor.now_ymd') }} {{start_time}}:00:00"
+        end_date_time: "{{ states('sensor.now_ymd') }} {{end_time}}:00:00"
+
+calendar_add_event_date:
+  sequence:
+    - service: google.add_event
+      data:
+        calendar_id: !secret calendar_id_ha
+        summary: "{{ summary }}"
+        description: "{{ description }}"
+        start_date: "{{ states('sensor.now_ymd') }}"
+        end_date: "{{ states('sensor.now_ymd') }}"
+
+calendar_add_consumption:
+  sequence:
+    - service: script.calendar_add_event_date
+      data:
+        summary: "🔌 {{ states['sensor.consumption_today'].state_with_unit }}"
+        description: >
+          Computer: {{ states['sensor.power_strip_1_utility_d'].state_with_unit }}
+
+          TV: {{ states['sensor.power_strip_2_utility_d'].state_with_unit }}
+          
+          Router: {{ states['sensor.power_strip_3_utility_d'].state_with_unit }}
+          
+          Kitchen: {{ states['sensor.power_strip_4_utility_d'].state_with_unit }}
+          
+          Fridge: {{ states['sensor.power_strip_5_utility_d'].state_with_unit }}
+
+calendar_add_activity_dima:
+  sequence:
+    - service: script.calendar_add_event_date
+      data:
+        summary: "🚶‍♂️ {{ states('sensor.dima_detected_activity_walking') }}, 🚲 {{ states('sensor.dima_detected_activity_on_bicycle') }}, 🚗 {{ states('sensor.dima_detected_activity_in_vehicle') }}"
+        description: >
+          🚶‍♂️ Walking: {{ states['sensor.dima_detected_activity_walking'].state_with_unit }}
+
+          🚲 Bicycle: {{ states['sensor.dima_detected_activity_on_bicycle'].state_with_unit }}
+
+          🚗 Vehicle: {{ states['sensor.dima_detected_activity_in_vehicle'].state_with_unit }}
+
+          🏃‍♂️ Running: {{ states['sensor.dima_detected_activity_running'].state_with_unit }}
+
+calendar_add_outdoor:
+  sequence:
+    - service: script.calendar_add_event_date
+      data:
+        summary: "🥶 {{ states['sensor.outdoor_temperature_min'].state_with_unit }}, 🥵 {{ states['sensor.outdoor_temperature_max'].state_with_unit }}"
+        description: >
+          🥶 Minimum: {{ states['sensor.outdoor_temperature_min'].state_with_unit }} at {{ states('input_datetime.outdoor_temperature_min') }}
+
+          🥵 Maximum: {{ states['sensor.outdoor_temperature_max'].state_with_unit }} at {{ states('input_datetime.outdoor_temperature_max') }}
+

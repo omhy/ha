@@ -1,87 +1,81 @@
-# OUTDOOR
-
-- alias: "min_max_publish_outdoor_temperature_min"
+# UPDATE NUMBERS
+- alias: "update_outdoor_temperature_min_number"
   trigger:
     - platform: state
-      entity_id: sensor.outdoor_temperature
-  condition: "{{ (trigger.to_state.state | default('0') | float) < (states('input_number.outdoor_temperature_min') | default('0') | float) }}"
+      entity_id: sensor.outdoor_temperature_min
+  condition: "{{ trigger.from_state.state != trigger.to_state.state }}"
   action:
-    - service: script.input_datetime_set_now
-      data:
-        entity_id: input_datetime.outdoor_temperature_min_at
     - service: input_number.set_value
       data:
         entity_id: input_number.outdoor_temperature_min
         value: "{{ trigger.to_state.state | float }}"
 
-- alias: "min_max_publish_outdoor_temperature_max"
+- alias: "update_outdoor_temperature_max_number"
   trigger:
     - platform: state
-      entity_id: sensor.outdoor_temperature
-  condition: "{{ (trigger.to_state.state | default('0') | float) > (states('input_number.outdoor_temperature_max') | default('0') | float) }}"
+      entity_id: sensor.outdoor_temperature_max
+  condition: "{{ trigger.from_state.state != trigger.to_state.state }}"
   action:
-    - service: script.input_datetime_set_now
-      data:
-        entity_id: input_datetime.outdoor_temperature_max_at
     - service: input_number.set_value
       data:
         entity_id: input_number.outdoor_temperature_max
         value: "{{ trigger.to_state.state | float }}"
 
-# PARK
-- alias: "min_max_publish_outpark_temperature_min"
+- alias: "update_park_temperature_min_number"
   trigger:
     - platform: state
-      entity_id: sensor.0x00158d00022c7cf2_temperature
-  condition: "{{ (trigger.to_state.state | default('0') | float) < (states('input_number.outpark_temperature_min') | default('0') | float) }}"
+      entity_id: sensor.park_temperature_min
+  condition: "{{ trigger.from_state.state != trigger.to_state.state }}"
   action:
     - service: input_number.set_value
       data:
-        entity_id: input_number.outpark_temperature_min
+        entity_id: input_number.park_temperature_min
         value: "{{ trigger.to_state.state | float }}"
-    - service: script.input_datetime_set_now
-      data:
-        entity_id: input_datetime.outpark_temperature_min_at
 
-- alias: "min_max_publish_outpark_temperature_max"
+- alias: "update_park_temperature_max_number"
   trigger:
     - platform: state
-      entity_id: sensor.0x00158d00022c7cf2_temperature
-  condition: "{{ (trigger.to_state.state | default('0') | float) > (states('input_number.outpark_temperature_max') | default('0') | float) }}"
+      entity_id: sensor.park_temperature_max
+  condition: "{{ trigger.from_state.state != trigger.to_state.state }}"
   action:
     - service: input_number.set_value
       data:
-        entity_id: input_number.outpark_temperature_max
+        entity_id: input_number.park_temperature_max
         value: "{{ trigger.to_state.state | float }}"
-    - service: script.input_datetime_set_now
-      data:
-        entity_id: input_datetime.outpark_temperature_max_at
 
-# YARD
-- alias: "min_max_publish_outyard_temperature_min"
+#UPDATE DT BY NUMBERS
+- alias: "update_outdoor_temperature_min_dt"
   trigger:
     - platform: state
-      entity_id: sensor.0x00158d0002323783_temperature
-  condition: "{{ (trigger.to_state.state | default('0') | float) < (states('input_number.outyard_temperature_min') | default('0') | float) }}"
+      entity_id: input_number.outdoor_temperature_min
   action:
-    - service: input_number.set_value
-      data:
-        entity_id: input_number.outyard_temperature_min
-        value: "{{ trigger.to_state.state | float }}"
     - service: script.input_datetime_set_now
       data:
-        entity_id: input_datetime.outyard_temperature_min_at
+        entity_id: input_datetime.outdoor_temperature_min
 
-- alias: "min_max_publish_outyard_temperature_max"
+- alias: "update_outdoor_temperature_max_dt"
   trigger:
     - platform: state
-      entity_id: sensor.0x00158d0002323783_temperature
-  condition: "{{ (trigger.to_state.state | default('0') | float) > (states('input_number.outyard_temperature_max') | default('0') | float) }}"
+      entity_id: input_number.outdoor_temperature_max
   action:
-    - service: input_number.set_value
-      data:
-        entity_id: input_number.outyard_temperature_max
-        value: "{{ trigger.to_state.state | float }}"
     - service: script.input_datetime_set_now
       data:
-        entity_id: input_datetime.outyard_temperature_max_at
+        entity_id: input_datetime.outdoor_temperature_max
+
+- alias: "update_park_temperature_min_dt"
+  trigger:
+    - platform: state
+      entity_id: input_number.park_temperature_min
+  action:
+    - service: script.input_datetime_set_now
+      data:
+        entity_id: input_datetime.park_temperature_min
+
+- alias: "update_park_temperature_max_dt"
+  trigger:
+    - platform: state
+      entity_id: input_number.park_temperature_max
+  action:
+    - service: script.input_datetime_set_now
+      data:
+        entity_id: input_datetime.park_temperature_max

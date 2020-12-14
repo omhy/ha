@@ -14,35 +14,13 @@ outdoor_temperature_max:
   min: -50
   max: 50
 
-outyard_temperature_min:
+park_temperature_min:
   min: -50
   max: 50
-outyard_temperature_max:
-  min: -50
-  max: 50
-
-outpark_temperature_min:
-  min: -50
-  max: 50
-outpark_temperature_max:
+park_temperature_max:
   min: -50
   max: 50
 
-0x00158d0001f23cbe_temperature:
-  min: -50
-  max: 50
-0x00158d00022c7cf2_temperature:
-  min: -50
-  max: 50
-0x00158d0002271609_temperature:
-  min: -50
-  max: 50
-0x00158d0002323783_temperature:
-  min: -50
-  max: 50
-0x00158d000234816a_temperature:
-  min: -50
-  max: 50
-0x00158d00032308dd_temperature:
-  min: -50
-  max: 50
+yury_phone_allowed:
+  min: 0
+  max: 180

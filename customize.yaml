@@ -72,6 +72,8 @@ binary_sensor.is_morning_activity:
 binary_sensor.is_backup_day:
   friendly_name: Backup?
   icon: mdi:cloud-upload-outline
+binary_sensor.is_month_last_day:
+  friendly_name: Last day?
 sensor.processor_use:
   friendly_name: CPU
 sensor.memory_use_percent:
@@ -297,13 +299,6 @@ light.hyperion:
   friendly_name: Hyperion
   icon: mdi:alpha-h-box
 
-sensor.dima_interactive:
-  friendly_name: Dima screen on
-sensor.yury_interactive:
-  friendly_name: Yury screen on
-sensor.alyona_interactive:
-  friendly_name: Alyona screen on
-
 input_datetime.evening_on:
   friendly_name: Evening started
   icon: mdi:sofa-outline
@@ -363,3 +358,36 @@ script.cast_youtube_id:
   friendly_name: Cast youtube by ID
 script.cast_youtube_url:
   friendly_name: Cast youtube by URL
+
+input_number.park_temperature_min:
+  friendly_name: num min
+input_number.park_temperature_max:
+  friendly_name: num max
+input_datetime.park_temperature_min:
+  friendly_name: dt min
+input_datetime.park_temperature_max:
+  friendly_name: dt max
+sensor.park_temperature_min:
+  friendly_name: park min
+sensor.park_temperature_max:
+  friendly_name: park max
+
+#PH
+sensor.dima_interactive:
+  friendly_name: Dima screen on
+  icon: mdi:cellphone-play
+sensor.yury_interactive:
+  friendly_name: Yury screen on
+  icon: mdi:cellphone-play
+sensor.alyona_interactive:
+  friendly_name: Alyona screen on
+  icon: mdi:cellphone-play
+input_number.yury_phone_allowed:
+  friendly_name: Allowed
+  icon: mdi:cellphone-key
+  unit_of_measurement: "min"
+binary_sensor.is_yury_phone_overdue:
+  friendly_name: Overdue?
+  icon: mdi:cellphone-key
+script.mobile_yury_notify_relax:
+  friendly_name: Notify

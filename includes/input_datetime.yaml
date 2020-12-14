@@ -29,17 +29,16 @@ zenith:
 nadir:
   has_time: true
 
-outdoor_temperature_min_at:
+outdoor_temperature_min:
+  has_date: true
   has_time: true
-outdoor_temperature_max_at:
-  has_time: true
-
-outyard_temperature_min_at:
-  has_time: true
-outyard_temperature_max_at:
+outdoor_temperature_max:
+  has_date: true
   has_time: true
 
-outpark_temperature_min_at:
+park_temperature_min:
+  has_date: true
   has_time: true
-outpark_temperature_max_at:
+park_temperature_max:
+  has_date: true
   has_time: true

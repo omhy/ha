@@ -94,6 +94,8 @@
 "*0x00124b0014d9d8a3*":
   friendly_name: Z2M Router
   icon: mdi:router
+"*0x00124b00222546a1*":
+  friendly_name: Night star
 
 ### NOT TOO COMMON
 "door*":
