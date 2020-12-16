@@ -8,7 +8,7 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U00002139 `{{ trigger.from_state.attributes.friendly_name }}: {{ trigger.from_state.state }} -> {{ trigger.to_state.state }}`"
+        message: "{{ states('sensor.now_hm') }} 🔵 `{{ trigger.from_state.attributes.friendly_name }}: {{ trigger.from_state.state }} -> {{ trigger.to_state.state }}`"
 
 - alias: "watcher_coronavirus"
   trigger:
@@ -30,9 +30,9 @@
           {% set to = trigger.to_state.state|int %}
           {% set chg = to - from %}
           {% set prc = (chg / from * 100)|round(2) %}
-          {{ states('sensor.now_hm') }} {{ '\U00002139' }} `{{ cntr }}:` {{ from }} -> {{ to }} | {{ chg }} | {{ prc }} % | #covid
+          {{ states('sensor.now_hm') }} 📊 `{{ cntr }}:` {{ from }} -> {{ to }} | {{ chg }} | {{ prc }} % | #covid
         # inline_keyboard:
-        #   - "\U0000267B Dismiss:/dismiss"
+        #   - "♻️ Dismiss:/dismiss"
 
 - alias: "watcher_google_cast_updated"
   trigger:
@@ -47,9 +47,9 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U00002B06 `{{ trigger.from_state.attributes.friendly_name }}` updated {{ trigger.from_state.state }} -> {{ trigger.to_state.state }}"
+        message: "{{ states('sensor.now_hm') }} ⬆️ `{{ trigger.from_state.attributes.friendly_name }}` updated {{ trigger.from_state.state }} -> {{ trigger.to_state.state }}"
         inline_keyboard:
-          - "\U0000267B Dismiss:/dismiss"
+          - "♻️ Dismiss:/dismiss"
 
 - alias: "watcher_weight_dima"
   trigger:
@@ -62,7 +62,7 @@
       data:
         target: !secret tg_chat_dima
         message: >
-          {{ states('sensor.now_hm') }} {{ '\U0001F57A' }} {{ states['sensor.dmitry_weight'].state_with_unit }}
+          {{ states('sensor.now_hm') }} ⚖️ {{ states['sensor.dmitry_weight'].state_with_unit }}
 
           `{{ state_attr('sensor.dmitry_bmi', 'friendly_name') }}:` {{ states['sensor.dmitry_bmi'].state_with_unit }}
 

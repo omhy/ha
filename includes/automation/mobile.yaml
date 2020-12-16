@@ -32,21 +32,17 @@
       from: "off"
       to: "on"
       for:
-        seconds: 10
+        seconds: 60
   condition: "{{ is_state('binary_sensor.is_yury_phone_overdue', 'on') }}"
   action:
     - service: notify.telegram_parents
       data:
-        message: "{{ states('sensor.now_hm') }} \U0001f4f1 Yury's phone is on. Today: {{ states['sensor.yury_interactive'].state_with_unit }}"
-    - service: notify.mobile_app_redmi_note_9_pro
-      data:
-        title: "Юрец, положи телефон"
-        message: "Хватит на сегодня. Использовал: {{ states['sensor.yury_interactive'].state_with_unit }}"
+        message: "{{ states('sensor.now_hm') }} ☎️ Yury's is on. Today: {{ states['sensor.yury_interactive'].state_with_unit }}"
 
 - alias: "yury_phone_is_on_and_overdue"
   trigger:
     - platform: time_pattern
-      minutes: "/1"
+      minutes: "/5"
   condition: 
     - "{{ is_state('binary_sensor.redmi_note_9_pro_interactive', 'on') }}"
     - "{{ is_state('binary_sensor.is_yury_phone_overdue', 'on') }}"
@@ -54,8 +50,4 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U000026d4 Yury's phone STILL on. Today: {{ states['sensor.yury_interactive'].state_with_unit }}"
-    - service: notify.mobile_app_redmi_note_9_pro
-      data:
-        title: "Юрец, положи телефон сейчас же!"
-        message: "Ты уже перебрал по времени. Использовал: {{ states['sensor.yury_interactive'].state_with_unit }}"
+        message: "{{ states('sensor.now_hm') }} 📵 Yury's STILL on. Today: {{ states['sensor.yury_interactive'].state_with_unit }}"

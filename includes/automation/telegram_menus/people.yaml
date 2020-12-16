@@ -14,9 +14,9 @@
         target: "{{ trigger.event.data.user_id }}"
         message: "Select person to check"
         inline_keyboard:
-          - "\U0001F468 Dima:/tracker dima, \U0001F469 Alyona:/tracker alyona"
-          - "\U0001F466 Yury:/tracker yury, \U0001F467 Elisa:/tracker elisa"
-          - "\U0000267B Dismiss:/dismiss"
+          - "👨 Dima:/tracker dima, 👩 Alyona:/tracker alyona"
+          - "👦 Yury:/tracker yury, 👧 Elisa:/tracker elisa"
+          - "♻️ Dismiss:/dismiss"
 
 - alias: "telega_handle_prefix_tracker"
   trigger:
@@ -37,7 +37,7 @@
 
           `{{ (states.sensor[id + '_geocoded_location'].state) | replace("\n", ", ")}}`
         inline_keyboard:
-          - "\U0001F5FA Map:/map {{ trigger.event.data.data.split(' ', 1)[1] }}, \U0001F504 Refresh:{{ trigger.event.data.data }}, \U0000267B Dismiss:/dismiss"
+          - "🗺 Map:/map {{ trigger.event.data.data.split(' ', 1)[1] }}, 🔄 Refresh:{{ trigger.event.data.data }}, ♻️ Dismiss:/dismiss"
 
 - alias: "telega_handle_prefix_map"
   trigger:
@@ -55,4 +55,4 @@
         latitude: "{{ states.person[trigger.event.data.data.split(' ', 1)[1]].attributes.latitude }}"
         longitude: "{{ states.person[trigger.event.data.data.split(' ', 1)[1]].attributes.longitude }}"
         inline_keyboard:
-          - "\U0001F504 Refresh:{{ trigger.event.data.data }}, \U0000267B Dismiss:/dismiss"
+          - "🔄 Refresh:{{ trigger.event.data.data }}, ♻️ Dismiss:/dismiss"

@@ -18,7 +18,7 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U0001f56f RPI Power issues"
+        message: "{{ states('sensor.now_hm') }} 🔋 RPI Power issues"
 
 - alias: "ha_hacs_updates"
   trigger:
@@ -29,7 +29,7 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U0000269c HASC updated available: {{ states('sensor.hacs') }}"
+        message: "{{ states('sensor.now_hm') }} ⚜️ HASC updated available: {{ states('sensor.hacs') }}"
 
 - alias: "ha_midnight_daily_refresh"
   trigger:

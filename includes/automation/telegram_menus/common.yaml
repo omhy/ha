@@ -14,8 +14,8 @@
         target: "{{ trigger.event.data.user_id }}"
         message: "Main menu"
         inline_keyboard:
-          - "\U000026C5 Environment:/environment, \U0001F30D People:/people"
-          - "\U0001F6A7 Tech:/tech, \U0000267B Dismiss:/dismiss"
+          - "🌤️ Environment:/environment, 👪 People:/people"
+          - "🚧 Tech:/tech, ♻️ Dismiss:/dismiss"
 
 - alias: "telega_callback_dismiss"
   trigger:

@@ -61,3 +61,21 @@ cast_youtube_sobchak:
     - service: script.cast_youtube_url
       data:
         url: "{{ state_attr('sensor.kseniia_sobchak', 'url') }}"
+
+cast_youtube_skyships:
+  sequence:
+    - service: script.cast_youtube_url
+      data:
+        url: "{{ state_attr('sensor.skyships', 'url') }}"
+
+cast_youtube_mkbhd:
+  sequence:
+    - service: script.cast_youtube_url
+      data:
+        url: "{{ state_attr('sensor.marques_brownlee', 'url') }}"
+
+cast_youtube_dr:
+  sequence:
+    - service: script.cast_youtube_url
+      data:
+        url: "{{ state_attr('sensor.davaite_razbiratsia', 'url') }}"

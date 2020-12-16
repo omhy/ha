@@ -10,17 +10,13 @@ nadir:
 outdoor_temperature_min:
   min: -50
   max: 50
+  step: 0.01
 outdoor_temperature_max:
   min: -50
   max: 50
-
-park_temperature_min:
-  min: -50
-  max: 50
-park_temperature_max:
-  min: -50
-  max: 50
-
+  step: 0.01
+  
 yury_phone_allowed:
   min: 0
-  max: 180
+  max: 300
+  step: 1

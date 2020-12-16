@@ -20,7 +20,7 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U0001F512 Door is opened ({{ states['sensor.door_duration_min'].state_with_unit }})"
+        message: "{{ states('sensor.now_hm') }} 🔓 Door is opened ({{ states['sensor.door_duration_min'].state_with_unit }})"
     - service: script.input_datetime_set_now_door
 
 - alias: "door_entrance_closed"
@@ -34,7 +34,7 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U0001F512 Door is closed ({{ states['sensor.door_duration_sec'].state_with_unit }})"
+        message: "{{ states('sensor.now_hm') }} 🔒 Door is closed ({{ states['sensor.door_duration_sec'].state_with_unit }})"
     - service: script.input_datetime_set_now_door
 
 - alias: "door_balcony_opened_timer_idle"
@@ -55,6 +55,6 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U0001f6ad Session started. Today: {{ states['counter.balcony_sessions'].state }}"
+        message: "{{ states('sensor.now_hm') }} 🚬 Started. Today: {{ states['counter.balcony_sessions'].state }}"
         inline_keyboard:
-          - "\U000026d4 Noooooo:/no_balcony_session, \U0000267B Dismiss:/dismiss"
+          - "⚠️ Noooooo:/no_balcony_session, ♻️ Dismiss:/dismiss"

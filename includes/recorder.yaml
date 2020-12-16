@@ -48,13 +48,13 @@ include:
     - sensor.0x00158d00032308dd_pressure
     - sensor.0x00158d00032308dd_temperature
     - sensor.0x00158d0003537bf0_smoke_density
-    - sensor.androidbox_app
-    - sensor.androidbox_app_full
-    - sensor.androidbox_temp
+    - sensor.abox_app
+    - sensor.abox_app_full
+    - sensor.abox_temp
+    - sensor.abox_temp_filtered
     - sensor.current_ozone_level
     - sensor.current_uv_index
     - sensor.current_uv_level
-    - sensor.disk_use_percent_home
     - sensor.max_uv_index
     - sensor.memory_use_percent
     - sensor.moon
@@ -128,11 +128,3 @@ include:
     - input_number.outdoor_temperature_max
     - input_datetime.outdoor_temperature_min
     - input_datetime.outdoor_temperature_max
-    - sensor.outdoor_temperature_min
-    - sensor.outdoor_temperature_max
-    - input_number.park_temperature_min
-    - input_number.park_temperature_max
-    - input_datetime.park_temperature_min
-    - input_datetime.park_temperature_max
-    - sensor.park_temperature_min
-    - sensor.park_temperature_max

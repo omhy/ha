@@ -72,8 +72,12 @@ binary_sensor.is_morning_activity:
 binary_sensor.is_backup_day:
   friendly_name: Backup?
   icon: mdi:cloud-upload-outline
-binary_sensor.is_month_last_day:
-  friendly_name: Last day?
+binary_sensor.is_month_end:
+  friendly_name: Month end?
+  icon: mdi:calendar-refresh
+binary_sensor.is_year_end:
+  friendly_name: Year end?
+  icon: mdi:calendar-sync
 sensor.processor_use:
   friendly_name: CPU
 sensor.memory_use_percent:
@@ -264,14 +268,22 @@ binary_sensor.androidbox_in_use:
   friendly_name: Android
   icon: mdi:android
   device_class: connectivity
-sensor.androidbox_app:
+sensor.abox_app:
   friendly_name: Abox app
   icon: mdi:android-debug-bridge
-sensor.androidbox_app_full:
+sensor.abox_app_full:
   friendly_name: Abox app full
   icon: mdi:android-debug-bridge
-sensor.androidbox_temp:
+sensor.abox_temp:
   friendly_name: Abox temp
+  icon: mdi:android
+  unit_of_measurement: "°C"
+  device_class: temperature
+sensor.abox_temp_filtered:
+  friendly_name: Abox temp
+  icon: mdi:android
+sensor.temperature:
+  friendly_name: HA temp
   icon: mdi:android
   unit_of_measurement: "°C"
   device_class: temperature
@@ -379,6 +391,10 @@ sensor.dima_interactive:
 sensor.yury_interactive:
   friendly_name: Yury screen on
   icon: mdi:cellphone-play
+sensor.yury_interactive_mins:
+  friendly_name: Yury screen on
+  icon: mdi:cellphone-play
+  unit_of_measurement: "min"
 sensor.alyona_interactive:
   friendly_name: Alyona screen on
   icon: mdi:cellphone-play

@@ -30,15 +30,6 @@ nadir:
   has_time: true
 
 outdoor_temperature_min:
-  has_date: true
   has_time: true
 outdoor_temperature_max:
-  has_date: true
-  has_time: true
-
-park_temperature_min:
-  has_date: true
-  has_time: true
-park_temperature_max:
-  has_date: true
   has_time: true

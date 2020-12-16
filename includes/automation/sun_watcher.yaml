@@ -10,7 +10,7 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U0001f305 {{ states['sensor.solar_elevation'].state_with_unit}}, {{ states['sensor.solar_azimuth'].state_with_unit}} #sun #sunrise"
+        message: "{{ states('sensor.now_hm') }} 🌅 {{ states['sensor.solar_elevation'].state_with_unit}}, {{ states['sensor.solar_azimuth'].state_with_unit}} #sun #sunrise"
 
 - alias: "sun_sunset"
   trigger:
@@ -24,7 +24,7 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U0001f307 {{ states['sensor.solar_elevation'].state_with_unit}}, {{ states['sensor.solar_azimuth'].state_with_unit}} #sun #sunset"
+        message: "{{ states('sensor.now_hm') }} 🌇 {{ states['sensor.solar_elevation'].state_with_unit}}, {{ states['sensor.solar_azimuth'].state_with_unit}} #sun #sunset"
 
 - alias: "sun_zenith"
   trigger:
@@ -43,7 +43,7 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U0001f31e {{ states['sensor.solar_elevation'].state_with_unit}}, {{ states['sensor.solar_azimuth'].state_with_unit}} #sun #zenith"
+        message: "{{ states('sensor.now_hm') }} 🌞 {{ states['sensor.solar_elevation'].state_with_unit}}, {{ states['sensor.solar_azimuth'].state_with_unit}} #sun #zenith"
 
 - alias: "sun_nadir"
   trigger:
@@ -62,4 +62,4 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U0001f303 {{ states['sensor.solar_elevation'].state_with_unit}}, {{ states['sensor.solar_azimuth'].state_with_unit}} #sun #nadir"
+        message: "{{ states('sensor.now_hm') }} 🌃 {{ states['sensor.solar_elevation'].state_with_unit}}, {{ states['sensor.solar_azimuth'].state_with_unit}} #sun #nadir"

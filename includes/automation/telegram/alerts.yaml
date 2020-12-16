@@ -11,12 +11,12 @@
       data:
         target: !secret tg_chat_dima
         message: >
-          {{ states('sensor.now_hm') }} {{ '\U00002139' }} {{ trigger.to_state.attributes.friendly_name }}
+          {{ states('sensor.now_hm') }} 🔊 {{ trigger.to_state.attributes.friendly_name }}
           {% if trigger.to_state.state == 'on' %}
           `{{ trigger.to_state.attributes.event }} ({{ trigger.to_state.attributes.certainty }})`
           {{ trigger.to_state.attributes.description }}
           {% else %}
-          {{ '\U00002705' }} Safe!
+          ✅ Safe!
           {% endif %}
 
 - alias: "airvisual_alert"
@@ -28,7 +28,7 @@
       data:
         target: !secret tg_chat_dima
         message: >
-          {{ states('sensor.now_hm') }} {{ '\U0001f32c' }} {{ trigger.from_state.state }} -> {{ trigger.to_state.state }}: {{ states['sensor.u_s_air_quality_index'].state_with_unit}}, {{ states['sensor.u_s_main_pollutant'].state_with_unit}} | #air
+          {{ states('sensor.now_hm') }} 🌬️ {{ trigger.from_state.state }} -> {{ trigger.to_state.state }}: {{ states['sensor.u_s_air_quality_index'].state_with_unit}}, {{ states['sensor.u_s_main_pollutant'].state_with_unit}} | #air
 
 - alias: "kitchen_power_switched_off"
   trigger:
@@ -39,6 +39,6 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} {{ '\U000026a1' }} Kitchen power strip is off!"
+        message: "{{ states('sensor.now_hm') }} ⚡️ Kitchen power strip is off!"
         inline_keyboard:
-          - "\U0001F4A4 Turn on:/kitchen_is_off, \U0000267B Dismiss:/dismiss"
+          - "👍 Turn on:/kitchen_is_off, ♻️ Dismiss:/dismiss"

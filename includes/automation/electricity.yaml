@@ -26,7 +26,7 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U0001F5A5 is turned off ({{ states['sensor.computer_on_today'].state_with_unit }})"
+        message: "{{ states('sensor.now_hm') }} 🖥️ is turned off ({{ states['sensor.computer_on_today'].state_with_unit }})"
 
 - alias: "computer_turned_on"
   trigger:
@@ -40,7 +40,7 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U0001F5A5 is turned on ({{ states['sensor.computer_on_today'].state_with_unit }})"
+        message: "{{ states('sensor.now_hm') }} 🖥️ is turned on ({{ states['sensor.computer_on_today'].state_with_unit }})"
 
 - alias: "laptop_turned_off"
   trigger:
@@ -54,7 +54,7 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U0001F4BB is turned off ({{ states['sensor.laptop_on_today'].state_with_unit }})"
+        message: "{{ states('sensor.now_hm') }} 💻 is turned off ({{ states['sensor.laptop_on_today'].state_with_unit }})"
 
 - alias: "laptop_turned_on"
   trigger:
@@ -68,4 +68,4 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U0001F4BB is turned on ({{ states['sensor.laptop_on_today'].state_with_unit }})"
+        message: "{{ states('sensor.now_hm') }} 💻 is turned on ({{ states['sensor.laptop_on_today'].state_with_unit }})"

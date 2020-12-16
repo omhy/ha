@@ -46,14 +46,15 @@
     is_backup_day:
       value_template: "{{ now().weekday() == 1 or now().weekday() == 3 or now().weekday() == 6 }}"
 
-    is_month_last_day:
+    is_month_end:
       value_template: "{{ (as_timestamp(now()) + 86400) | timestamp_custom('%d', true) == 01 }}"
-
+    is_year_end:
+      value_template: "{{ ((as_timestamp(now()) + 86400) | timestamp_custom('%Y', true)) != ((as_timestamp(now())) | timestamp_custom('%Y', true)) }}"
     is_hallway_ceiling_high_brightness:
       value_template: "{{ (state_attr('light.hallway_ceiling', 'brightness') | int) > 240 }}"
 
     is_yury_phone_overdue:
-      value_template: "{{ (states('sensor.yury_interactive') | float * 60) >= states('input_number.yury_phone_allowed') | float }}"
+      value_template: "{{ (states('sensor.yury_interactive_mins') | int ) >= states('input_number.yury_phone_allowed') | int }}"
 
     ping_tv:
       value_template: "{{ states('sensor.power_strip_4_load_power') | float > 70 }}"
@@ -75,8 +76,8 @@
       value_template: >
         {{
         not(
-        is_state('sensor.androidbox_app', 'launcher') or
-        is_state('sensor.androidbox_app', 'unknown')
+        is_state('sensor.abox_app', 'launcher') or
+        is_state('sensor.abox_app', 'unknown')
         )
         }}
 

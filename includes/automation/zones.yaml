@@ -10,7 +10,7 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U0001F4BC Dima enters ({{ states['sensor.dima_duration_min'].state_with_unit }})"
+        message: "{{ states('sensor.now_hm') }} 💼 Dima enters ({{ states['sensor.dima_duration_min'].state_with_unit }})"
     - service: script.input_datetime_set_now_dima
 
 - alias: "zone_dima_leaves_work"
@@ -24,7 +24,7 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U0001F4BC Dima leaves ({{ states['sensor.dima_duration_min'].state_with_unit }})"
+        message: "{{ states('sensor.now_hm') }} 💼 Dima leaves ({{ states['sensor.dima_duration_min'].state_with_unit }})"
     - service: script.input_datetime_set_now_dima
 
 - alias: "zone_dima_enters_home"
@@ -38,7 +38,7 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U0001F3E0 Dima enters ({{ states['sensor.dima_duration_min'].state_with_unit }})"
+        message: "{{ states('sensor.now_hm') }} 🏠 Dima enters ({{ states['sensor.dima_duration_min'].state_with_unit }})"
     - service: script.input_datetime_set_now_dima
 
 - alias: "zone_dima_leaves_home"
@@ -52,7 +52,7 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U0001F3E0 Dima leaves ({{ states['sensor.dima_duration_min'].state_with_unit }})"
+        message: "{{ states('sensor.now_hm') }} 🏠 Dima leaves ({{ states['sensor.dima_duration_min'].state_with_unit }})"
     - service: telegram_bot.send_location
       data:
         target: !secret tg_chat_dima
@@ -71,7 +71,7 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U0001F3EB Dima enters ({{ states['sensor.dima_duration_min'].state_with_unit }})"
+        message: "{{ states('sensor.now_hm') }} 🏫 Dima enters ({{ states['sensor.dima_duration_min'].state_with_unit }})"
     - service: script.input_datetime_set_now_dima
 
 - alias: "zone_dima_leaves_school"
@@ -85,5 +85,18 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U0001F3EB Dima leaves ({{ states['sensor.dima_duration_min'].state_with_unit }})"
+        message: "{{ states('sensor.now_hm') }} 🏫 Dima leaves ({{ states['sensor.dima_duration_min'].state_with_unit }})"
     - service: script.input_datetime_set_now_dima
+
+- alias: "zone_dima_at_gym"
+  trigger:
+    - platform: state
+      entity_id: person.dima
+      to: "MyFitnessDzelzava"
+      for: "00:20:00"
+  action:
+    - service: script.calendar_gym_add_training
+    - service: telegram_bot.send_message
+      data:
+        target: !secret tg_chat_dima
+        message: "{{ states('sensor.now_hm') }} 🏋️ detected!"

@@ -7,7 +7,7 @@
     - service: script.doorbell_single
     - service: notify.telegram_all
       data:
-        message: "{{ states('sensor.now_hm') }} \U0001F514 Doorbell single click"
+        message: "{{ states('sensor.now_hm') }} 🔔 Doorbell single click"
 
 - alias: "doorbell_double_action"
   trigger:
@@ -18,4 +18,4 @@
     - service: script.doorbell_double
     - service: notify.telegram_all
       data:
-        message: "{{ states('sensor.now_hm') }} \U0001F514 Doorbell double click"
+        message: "{{ states('sensor.now_hm') }} 🔔 Doorbell double click"

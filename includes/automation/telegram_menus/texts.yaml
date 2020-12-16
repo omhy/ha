@@ -18,8 +18,8 @@
         target: "{{ trigger.event.data.user_id }}"
         message: "Main menu"
         inline_keyboard:
-          - "\U000026C5 Environment:/environment, \U0001F30D People:/people"
-          - "\U0001F6A7 Tech:/tech, \U0000267B Dismiss:/dismiss"
+          - "🌤️ Environment:/environment, 👪 People:/people"
+          - "🚧 Tech:/tech, ♻️ Dismiss:/dismiss"
 
 - alias: "telega_text_L"
   trigger:
@@ -41,7 +41,7 @@
         target: "{{ trigger.event.data.user_id }}"
         file: "/config/home-assistant.log"
         inline_keyboard:
-          - "\U0000267B Dismiss:/dismiss"
+          - "♻️ Dismiss:/dismiss"
 
 - alias: "telega_text_R"
   trigger:
@@ -80,6 +80,6 @@
         target: "{{ trigger.event.data.user_id }}"
         message: "Select person to check"
         inline_keyboard:
-          - "\U0001F468 Dima:/tracker dima, \U0001F469 Alyona:/tracker alyona"
-          - "\U0001F466 Yury:/tracker yury, \U0001F467 Elisa:/tracker elisa"
-          - "\U0000267B Dismiss:/dismiss"
+          - "👨 Dima:/tracker dima, 👩 Alyona:/tracker alyona"
+          - "👦 Yury:/tracker yury, 👧 Elisa:/tracker elisa"
+          - "♻️ Dismiss:/dismiss"

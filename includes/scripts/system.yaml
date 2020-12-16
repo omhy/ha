@@ -12,7 +12,7 @@ alarm_door:
   sequence:
     - service: notify.telegram_all
       data:
-        message: "{{ states('sensor.now_hm') }} \U0001F6A8 Door opened for a while"
+        message: "{{ states('sensor.now_hm') }} 🚨 Door opened for a while"
 
 ha_do_backup:
   sequence:

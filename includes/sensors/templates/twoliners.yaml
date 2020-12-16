@@ -17,11 +17,11 @@
       value_template: "{{ state_attr('switch.power_strip_5', 'load_power') | float }}"
       unit_of_measurement: "W"
 #ABOX
-    androidbox_app:
-      value_template: "{{ states('sensor.androidbox_app_full').split('.')[-1] }}"
-    androidbox_app_full:
+    abox_app:
+      value_template: "{{ states('sensor.abox_app_full').split('.')[-1] }}"
+    abox_app_full:
       value_template: "{{ state_attr('media_player.androidbox', 'app_id') }}"
-    androidbox_temp:
+    abox_temp:
       value_template: "{{ ((state_attr('media_player.androidbox', 'adb_response') | default('0') | float) / 1000) | float }}"
 
 #HYPE
@@ -67,3 +67,6 @@
       value_template: "{{ state_attr('sensor.dmitry_weight', 'body_fat') }}"
     dmitry_water:
       value_template: "{{ state_attr('sensor.dmitry_weight', 'water') }}"
+    
+    yury_interactive_mins:
+      value_template: "{{ (states('sensor.yury_interactive') | float * 60) | int }}"

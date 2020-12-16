@@ -6,9 +6,9 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U0001F916 {{ states('sensor.ha_version_current') }} #HA is back online in {{ states['sensor.start_time'].state_with_unit }}. ({{ states('sensor.rpi') }})"
+        message: "{{ states('sensor.now_hm') }} 🤖 {{ states('sensor.ha_version_current') }} #HA is back online in {{ states['sensor.start_time'].state_with_unit }}. ({{ states('sensor.rpi') }})"
         inline_keyboard:
-          - "\U0001F532 Menu:/menu, \U0000267B Dismiss:/dismiss"
+          - "🔲 Menu:/menu, ♻️ Dismiss:/dismiss"
 
 - alias: "ha_shutdown"
   trigger:
@@ -18,6 +18,6 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} \U0001F6D1 {{ states('sensor.ha_version_current') }} #HA goes offline (uptime {{ states['sensor.system_uptime'].state_with_unit }}). ({{ states('sensor.rpi') }})"
+        message: "{{ states('sensor.now_hm') }} 🛑 {{ states('sensor.ha_version_current') }} #HA goes offline (uptime {{ states['sensor.system_uptime'].state_with_unit }}). ({{ states('sensor.rpi') }})"
         inline_keyboard:
-          - "\U0000267B Dismiss:/dismiss"
+          - "♻️ Dismiss:/dismiss"

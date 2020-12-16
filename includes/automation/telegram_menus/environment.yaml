@@ -14,8 +14,8 @@
         target: "{{ trigger.event.data.user_id }}"
         message: "Weather menu"
         inline_keyboard:
-          - "\U0001F9E9 Today:/weather_today, \U00002601 Now:/weather_now"
-          - "\U0001F3D8 Rooms:/rooms, \U0000267B Dismiss:/dismiss"
+          - "🌄Today:/weather_today, ⛅ Now:/weather_now"
+          - "🏠 Rooms:/rooms, ♻️ Dismiss:/dismiss"
 
 - alias: "telega_callback_weather_today"
   trigger:

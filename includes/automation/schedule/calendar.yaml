@@ -3,6 +3,6 @@
     - platform: time
       at: "23:59:30"
   action:
-    - service: script.calendar_add_consumption
-    - service: script.calendar_add_activity_dima
-    - service: script.calendar_add_outdoor
+    - service: script.calendar_ha_add_consumption
+    - service: script.calendar_ha_add_activity_dima
+    - service: script.calendar_ha_add_outdoor

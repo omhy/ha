@@ -6,14 +6,15 @@ telegram_send_weather_today:
         title: "#EnvToday {{ states('sensor.now_ymd') }}"
         message: >
           ```
-          {{ '\U0001f321' }} now {{ states['sensor.outdoor_temperature'].state_with_unit }}
+          
+          🌡️ now {{ states['sensor.outdoor_temperature'].state_with_unit }}
 
-          {{ '\U0001f976' }} min {{ states['sensor.outdoor_temperature_min'].state_with_unit }} at {{ states('input_datetime.outdoor_temperature_min') }}
+          🥶 min {{ states['input_number.outdoor_temperature_min'].state_with_unit }} at {{ states('input_datetime.outdoor_temperature_min') }}
 
-          {{ '\U0001f975' }} max {{ states['sensor.outdoor_temperature_max'].state_with_unit }} at {{ states('input_datetime.outdoor_temperature_max') }}
+          🥵 max {{ states['input_number.outdoor_temperature_max'].state_with_unit }} at {{ states('input_datetime.outdoor_temperature_max') }}
           ```
         inline_keyboard:
-          - "\U0001F504 Refresh:/weather_today, \U0000267B Dismiss:/dismiss"
+          - "🔄 Refresh:/weather_today, ♻️ Dismiss:/dismiss"
 
 telegram_send_weather_now:
   sequence:
@@ -22,11 +23,11 @@ telegram_send_weather_now:
         target: "{{ target }}"
         title: "#EnvNow {{ states('sensor.now_ymd') }}"
         message: >
-          {{ '\U0001F333' }} `Park: {{ states['sensor.0x00158d00022c7cf2_temperature'].state_with_unit }}, {{ states['sensor.0x00158d00022c7cf2_humidity'].state_with_unit }}`
+          🏡 `Park: {{ states['sensor.0x00158d00022c7cf2_temperature'].state_with_unit }}, {{ states['sensor.0x00158d00022c7cf2_humidity'].state_with_unit }}`
 
-          {{ '\U0001F3D8' }} `Yard: {{ states['sensor.0x00158d0002323783_temperature'].state_with_unit }}, {{ states['sensor.0x00158d0002323783_humidity'].state_with_unit }}`
+          🏠 `Yard: {{ states['sensor.0x00158d0002323783_temperature'].state_with_unit }}, {{ states['sensor.0x00158d0002323783_humidity'].state_with_unit }}`
         inline_keyboard:
-          - "\U0001F504 Refresh:/weather_now, \U0000267B Dismiss:/dismiss"
+          - "🔄 Refresh:/weather_now, ♻️ Dismiss:/dismiss"
 
 telegram_send_rooms:
   sequence:
@@ -37,21 +38,21 @@ telegram_send_rooms:
         message: >
           {% set frm = "%-8s | %-8s" %}
 
-          {{ '\U0001F3D8' }}`      {{ frm | format("temp", "hmdt") }}`
+          🌡️`      {{ frm | format("temp", "hmdt") }}`
 
-          {{ '\U00002601' }}` park {{ frm | format(states['sensor.0x00158d00022c7cf2_temperature'].state_with_unit, states['sensor.0x00158d00022c7cf2_humidity'].state_with_unit) }}`
+          🏡` park {{ frm | format(states['sensor.0x00158d00022c7cf2_temperature'].state_with_unit, states['sensor.0x00158d00022c7cf2_humidity'].state_with_unit) }}`
 
-          {{ '\U0001F37D' }}` yard {{ frm | format(states['sensor.0x00158d0002323783_temperature'].state_with_unit, states['sensor.0x00158d0002323783_humidity'].state_with_unit) }}`
+          🏠` yard {{ frm | format(states['sensor.0x00158d0002323783_temperature'].state_with_unit, states['sensor.0x00158d0002323783_humidity'].state_with_unit) }}`
 
-          {{ '\U0001F6CB' }}` lvg  {{ frm | format(states['sensor.0x00158d000234816a_temperature'].state_with_unit, states['sensor.0x00158d000234816a_humidity'].state_with_unit) }}`
+          📺` lvg  {{ frm | format(states['sensor.0x00158d000234816a_temperature'].state_with_unit, states['sensor.0x00158d000234816a_humidity'].state_with_unit) }}`
 
-          {{ '\U0001F4D0' }}` chd  {{ frm | format(states['sensor.0x00158d0002271609_temperature'].state_with_unit, states['sensor.0x00158d0002271609_humidity'].state_with_unit) }}`
+          🧸` chd  {{ frm | format(states['sensor.0x00158d0002271609_temperature'].state_with_unit, states['sensor.0x00158d0002271609_humidity'].state_with_unit) }}`
 
-          {{ '\U0001F6CF' }}` bdr  {{ frm | format(states['sensor.0x00158d0001f23cbe_temperature'].state_with_unit, states['sensor.0x00158d0001f23cbe_humidity'].state_with_unit) }}`
+          🛏️` bdr  {{ frm | format(states['sensor.0x00158d0001f23cbe_temperature'].state_with_unit, states['sensor.0x00158d0001f23cbe_humidity'].state_with_unit) }}`
 
-          {{ '\U0001F6CF' }}` ktc  {{ frm | format(states['sensor.0x00158d00032308dd_temperature'].state_with_unit, states['sensor.0x00158d00032308dd_humidity'].state_with_unit) }}`
+          🍲` ktc  {{ frm | format(states['sensor.0x00158d00032308dd_temperature'].state_with_unit, states['sensor.0x00158d00032308dd_humidity'].state_with_unit) }}`
         inline_keyboard:
-          - "\U0001F504 Refresh:/rooms, \U0000267B Dismiss:/dismiss"
+          - "🔄 Refresh:/rooms, ♻️ Dismiss:/dismiss"
 
 telegram_send_electro:
   sequence:
@@ -62,20 +63,20 @@ telegram_send_electro:
         message: >
           {% set frm = "%-4s | %-5s | %-6s" %}
 
-          {{ '\U0001F50C' }}` kW  {{ frm | format("day", "month", "curr") }}`
+          🔌` kW  {{ frm | format("day", "month", "curr") }}`
 
-          {{ '\U0001F5A5' }}` cmp {{ frm | format(states['sensor.power_strip_1_utility_d'].state | round(2), states['sensor.power_strip_1_utility_m'].state | round(2), states['sensor.power_strip_1_load_power'].state | round(2)) }}`
+          🖥️` cmp {{ frm | format(states['sensor.power_strip_1_utility_d'].state | round(2), states['sensor.power_strip_1_utility_m'].state | round(2), states['sensor.power_strip_1_load_power'].state | round(2)) }}`
 
-          {{ '\U0001F4FA' }}` tv  {{ frm | format(states['sensor.power_strip_4_utility_d'].state | round(2), states['sensor.power_strip_4_utility_m'].state | round(2), states['sensor.power_strip_4_load_power'].state | round(2)) }}`
+          📺` tv  {{ frm | format(states['sensor.power_strip_4_utility_d'].state | round(2), states['sensor.power_strip_4_utility_m'].state | round(2), states['sensor.power_strip_4_load_power'].state | round(2)) }}`
 
-          {{ '\U0001F6E1' }}` ntw {{ frm | format(states['sensor.power_strip_3_utility_d'].state | round(2), states['sensor.power_strip_3_utility_m'].state | round(2), states['sensor.power_strip_3_load_power'].state | round(2)) }}`
+          📡` ntw {{ frm | format(states['sensor.power_strip_3_utility_d'].state | round(2), states['sensor.power_strip_3_utility_m'].state | round(2), states['sensor.power_strip_3_load_power'].state | round(2)) }}`
 
-          {{ '\U0001F37D' }}` ktc {{ frm | format(states['sensor.power_strip_2_utility_d'].state | round(2), states['sensor.power_strip_2_utility_m'].state | round(2), states['sensor.power_strip_2_load_power'].state | round(2)) }}`
+          🍲` ktc {{ frm | format(states['sensor.power_strip_2_utility_d'].state | round(2), states['sensor.power_strip_2_utility_m'].state | round(2), states['sensor.power_strip_2_load_power'].state | round(2)) }}`
 
-          {{ '\U0001F969' }}` frg {{ frm | format(states['sensor.power_strip_5_utility_d'].state | round(2), states['sensor.power_strip_5_utility_m'].state | round(2), states['sensor.power_strip_5_load_power'].state | round(2)) }}`
+          🥩` frg {{ frm | format(states['sensor.power_strip_5_utility_d'].state | round(2), states['sensor.power_strip_5_utility_m'].state | round(2), states['sensor.power_strip_5_load_power'].state | round(2)) }}`
 
           `----------------------------`
 
-          `{{ '\U0001F5A5' }} {{ states['sensor.computer_on_today'].attributes.value }}, {{ '\U0001F4FA' }} {{ states['sensor.tv_on_today'].attributes.value }}`
+          `🖥️ {{ states['sensor.computer_on_today'].attributes.value }}, 📺 {{ states['sensor.tv_on_today'].attributes.value }}`
         inline_keyboard:
-          - "\U0001F504 Refresh:/electro, \U0000267B Dismiss:/dismiss"
+          - "🔄 Refresh:/electro, ♻️ Dismiss:/dismiss"

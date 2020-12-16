@@ -40,4 +40,4 @@ androidbox_refresh_temp:
       data:
         command: "cat sys/class/thermal/thermal_zone0/temp"
     - service: homeassistant.update_entity
-      entity_id: sensor.androidbox_temp
+      entity_id: sensor.abox_temp
