@@ -50,7 +50,6 @@ include:
     - sensor.0x00158d0003537bf0_smoke_density
     - sensor.abox_app
     - sensor.abox_app_full
-    - sensor.abox_temp
     - sensor.abox_temp_filtered
     - sensor.current_ozone_level
     - sensor.current_uv_index

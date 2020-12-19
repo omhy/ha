@@ -5,9 +5,8 @@
         - sensor.dmitry_weight
   condition: "{{ trigger.from_state.state != trigger.to_state.state }}"
   action:
-    - service: telegram_bot.send_message
+    - service: notify.telegram_dima
       data:
-        target: !secret tg_chat_dima
         message: "{{ states('sensor.now_hm') }} 🔵 `{{ trigger.from_state.attributes.friendly_name }}: {{ trigger.from_state.state }} -> {{ trigger.to_state.state }}`"
 
 - alias: "watcher_coronavirus"
@@ -19,9 +18,8 @@
         - sensor.lithuania_coronavirus_current
         - sensor.sweden_coronavirus_current
   action:
-    - service: telegram_bot.send_message
+    - service: notify.telegram_dima
       data:
-        target: !secret tg_chat_dima
         message: >
           {% set name = trigger.from_state.attributes.friendly_name %}
           {% set cntr = name.split()[0] %}
@@ -31,8 +29,6 @@
           {% set chg = to - from %}
           {% set prc = (chg / from * 100)|round(2) %}
           {{ states('sensor.now_hm') }} 📊 `{{ cntr }}:` {{ from }} -> {{ to }} | {{ chg }} | {{ prc }} % | #covid
-        # inline_keyboard:
-        #   - "♻️ Dismiss:/dismiss"
 
 - alias: "watcher_google_cast_updated"
   trigger:
@@ -56,11 +52,9 @@
     - platform: state
       entity_id:
         - sensor.dmitry_weight
-  # condition: "{{ trigger.from_state.state != trigger.to_state.state }}"
   action:
-    - service: telegram_bot.send_message
+    - service: notify.telegram_dima
       data:
-        target: !secret tg_chat_dima
         message: >
           {{ states('sensor.now_hm') }} ⚖️ {{ states['sensor.dmitry_weight'].state_with_unit }}
 

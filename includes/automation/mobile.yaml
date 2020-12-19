@@ -20,9 +20,8 @@
             data:
               url: "{{ trigger.event.data.url }}"
       default:
-          - service: telegram_bot.send_message
+          - service: notify.telegram_dima
             data:
-              target: !secret tg_chat_dima
               message: "{{ states('sensor.now_hm') }} MobAppShare `{{ trigger.event }}`"
 
 - alias: "yury_phone_is_on"
@@ -47,7 +46,6 @@
     - "{{ is_state('binary_sensor.redmi_note_9_pro_interactive', 'on') }}"
     - "{{ is_state('binary_sensor.is_yury_phone_overdue', 'on') }}"
   action:
-    - service: telegram_bot.send_message
+    - service: notify.telegram_dima
       data:
-        target: !secret tg_chat_dima
         message: "{{ states('sensor.now_hm') }} 📵 Yury's STILL on. Today: {{ states['sensor.yury_interactive'].state_with_unit }}"

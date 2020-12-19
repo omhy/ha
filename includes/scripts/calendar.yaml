@@ -8,6 +8,16 @@ calendar_add_event_this_hour:
         start_date_time: "{{ states('sensor.now_ymd') }} {{ as_timestamp(now()) | timestamp_custom('%H', true) }}:00:00"
         end_date_time: "{{ states('sensor.now_ymd') }} {{ (as_timestamp(now()) + 3600) | timestamp_custom('%H', true) }}:00:00"
 
+calendar_add_event_time:
+  sequence:
+    - service: google.add_event
+      data:
+        calendar_id: "{{ calendar_id }}"
+        summary: "{{ summary }}"
+        description: "{{ description }}"
+        start_date_time: "{{ states('sensor.now_ymd') }} {{ start_hh }}:{{ start_mm }}:00"
+        end_date_time: "{{ states('sensor.now_ymd') }} {{ end_hh }}:{{ end_mm }}:00"
+
 calendar_add_event_date:
   sequence:
     - service: google.add_event
@@ -20,8 +30,12 @@ calendar_add_event_date:
 
 calendar_ha_add_consumption:
   sequence:
-    - service: script.calendar_add_event_date
+    - service: script.calendar_add_event_time
       data:
+        start_hh: "22"
+        start_mm: "00"
+        end_hh: "22"
+        end_mm: "30"
         calendar_id: !secret calendar_id_ha
         summary: "🔌 {{ states['sensor.consumption_today'].state_with_unit }}"
         description: >
@@ -37,8 +51,12 @@ calendar_ha_add_consumption:
 
 calendar_ha_add_activity_dima:
   sequence:
-    - service: script.calendar_add_event_date
+    - service: script.calendar_add_event_time
       data:
+        start_hh: "22"
+        start_mm: "30"
+        end_hh: "23"
+        end_mm: "00"
         calendar_id: !secret calendar_id_ha
         summary: "🚶‍♂️ {{ states('sensor.dima_detected_activity_walking') }}, 🚲 {{ states('sensor.dima_detected_activity_on_bicycle') }}, 🚗 {{ states('sensor.dima_detected_activity_in_vehicle') }}"
         description: >
@@ -52,8 +70,12 @@ calendar_ha_add_activity_dima:
 
 calendar_ha_add_outdoor:
   sequence:
-    - service: script.calendar_add_event_date
+    - service: script.calendar_add_event_time
       data:
+        start_hh: "23"
+        start_mm: "00"
+        end_hh: "23"
+        end_mm: "30"
         calendar_id: !secret calendar_id_ha
         summary: "🥶 {{ states['input_number.outdoor_temperature_min'].state_with_unit }}, 🥵 {{ states['input_number.outdoor_temperature_max'].state_with_unit }}"
         description: >

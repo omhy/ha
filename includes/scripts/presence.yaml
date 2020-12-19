@@ -4,12 +4,11 @@ we_are_leaving:
     - service: script.media_player_stop_all
     - service: script.rmt_computer_sleep
     - service: script.rmt_laptop_sleep
-    # - service: script.androidbox_key_sleep
 
 we_are_arriving:
   sequence:
     - service: script.light_arrived
-    - service: script.media_radio_play_param_cast
+    - service: script.media_radio_play_by_param
       data:
         entity_id: media_player.loud_speaker
         media_content_id: "http://ice1.somafm.com/illstreet-128-mp3"

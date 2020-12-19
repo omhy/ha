@@ -102,8 +102,7 @@ sensor.consumption_now:
   friendly_name: Now
   icon: mdi:power-plug
 script.media_player_stop_all:
-  friendly_name: Stop cast
-  icon: mdi:stop
+  friendly_name: Stop
 script.androidbox_key_home:
   friendly_name: Home
   icon: mdi:home-circle

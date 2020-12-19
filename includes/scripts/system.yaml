@@ -3,6 +3,12 @@ rmt_computer_sleep:
   sequence:
     - service: shell_command.sleep_computer
 
+rmt_computer_wol:
+  sequence:
+    - service: wake_on_lan.send_magic_packet
+      data:
+        mac: !secret mac_bb
+
 rmt_laptop_sleep:
   sequence:
     - service: shell_command.sleep_laptop

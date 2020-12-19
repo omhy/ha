@@ -22,6 +22,12 @@
   icon: mdi:border-outside
 "*youtube*":
   icon: mdi:youtube
+"*cast*":
+  icon: mdi:cast
+"*radio*":
+  icon: mdi:radio
+"*stop*":
+  icon: mdi:octagon
 
 "*workday*":
   icon: mdi:briefcase
@@ -86,7 +92,7 @@
 "*0x00158d00022c7cf2*":
   friendly_name: Park
 "*0x00158d00021329e3*":
-  friendly_name: Entrance button
+  friendly_name: Computer button
 "*0x00158d00021350ee*":
   friendly_name: Doorbell
 "*0x00158d0002136276*":
@@ -181,9 +187,6 @@
 "sensor.power_*_utility_m":
   friendly_name: Month
   icon: mdi:calendar-text
-
-"sensor.cast_version_*":
-  icon: mdi:cast
 
 "sensor.now_*":
   icon: mdi:clock-digital

@@ -16,7 +16,7 @@
       data:
         entity_id: media_player.kitchen_display
         volume_level: 0.2
-    - service: script.media_radio_play_param_cast
+    - service: script.media_radio_play_by_param
       data:
         entity_id: media_player.kitchen_display
         media_content_id: "http://icecast.vgtrk.cdnvideo.ru/moscowfm128"

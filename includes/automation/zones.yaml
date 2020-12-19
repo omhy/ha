@@ -7,9 +7,8 @@
       event: enter
   action:
     - service: script.refresh_durations
-    - service: telegram_bot.send_message
+    - service: notify.telegram_dima
       data:
-        target: !secret tg_chat_dima
         message: "{{ states('sensor.now_hm') }} 💼 Dima enters ({{ states['sensor.dima_duration_min'].state_with_unit }})"
     - service: script.input_datetime_set_now_dima
 
@@ -21,9 +20,8 @@
       event: leave
   action:
     - service: script.refresh_durations
-    - service: telegram_bot.send_message
+    - service: notify.telegram_dima
       data:
-        target: !secret tg_chat_dima
         message: "{{ states('sensor.now_hm') }} 💼 Dima leaves ({{ states['sensor.dima_duration_min'].state_with_unit }})"
     - service: script.input_datetime_set_now_dima
 
@@ -35,9 +33,8 @@
       event: enter
   action:
     - service: script.refresh_durations
-    - service: telegram_bot.send_message
+    - service: notify.telegram_dima
       data:
-        target: !secret tg_chat_dima
         message: "{{ states('sensor.now_hm') }} 🏠 Dima enters ({{ states['sensor.dima_duration_min'].state_with_unit }})"
     - service: script.input_datetime_set_now_dima
 
@@ -49,9 +46,8 @@
       event: leave
   action:
     - service: script.refresh_durations
-    - service: telegram_bot.send_message
+    - service: notify.telegram_dima
       data:
-        target: !secret tg_chat_dima
         message: "{{ states('sensor.now_hm') }} 🏠 Dima leaves ({{ states['sensor.dima_duration_min'].state_with_unit }})"
     - service: telegram_bot.send_location
       data:
@@ -68,9 +64,8 @@
       event: enter
   action:
     - service: script.refresh_durations
-    - service: telegram_bot.send_message
+    - service: notify.telegram_dima
       data:
-        target: !secret tg_chat_dima
         message: "{{ states('sensor.now_hm') }} 🏫 Dima enters ({{ states['sensor.dima_duration_min'].state_with_unit }})"
     - service: script.input_datetime_set_now_dima
 
@@ -82,9 +77,8 @@
       event: leave
   action:
     - service: script.refresh_durations
-    - service: telegram_bot.send_message
+    - service: notify.telegram_dima
       data:
-        target: !secret tg_chat_dima
         message: "{{ states('sensor.now_hm') }} 🏫 Dima leaves ({{ states['sensor.dima_duration_min'].state_with_unit }})"
     - service: script.input_datetime_set_now_dima
 
@@ -96,7 +90,6 @@
       for: "00:20:00"
   action:
     - service: script.calendar_gym_add_training
-    - service: telegram_bot.send_message
+    - service: notify.telegram_dima
       data:
-        target: !secret tg_chat_dima
         message: "{{ states('sensor.now_hm') }} 🏋️ detected!"

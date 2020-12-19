@@ -3,8 +3,8 @@
     - platform: homeassistant
       event: start
   action:
-    - service: automation.trigger
-      entity_id: automation.autoupdate_radio_cast_entity
+    # - service: automation.trigger
+    #   entity_id: automation.autoupdate_radio_cast_entity
     - service: script.androidbox_refresh_temp
 
 - alias: "ha_rpi_power_tracker"
@@ -15,9 +15,8 @@
       for:
         minutes: 10
   action:
-    - service: telegram_bot.send_message
+    - service: notify.telegram_dima
       data:
-        target: !secret tg_chat_dima
         message: "{{ states('sensor.now_hm') }} 🔋 RPI Power issues"
 
 - alias: "ha_hacs_updates"
@@ -26,9 +25,8 @@
       entity_id: sensor.hacs
       above: 0
   action:
-    - service: telegram_bot.send_message
+    - service: notify.telegram_dima
       data:
-        target: !secret tg_chat_dima
         message: "{{ states('sensor.now_hm') }} ⚜️ HASC updated available: {{ states('sensor.hacs') }}"
 
 - alias: "ha_midnight_daily_refresh"

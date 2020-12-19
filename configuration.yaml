@@ -23,6 +23,7 @@ zeroconf:
 ssdp:
 
 zodiac:
+wake_on_lan:
 
 hassio:
 frontend:

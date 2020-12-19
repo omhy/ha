@@ -7,9 +7,8 @@
     - service: script.input_datetime_set_now
       data:
         entity_id: input_datetime.sunrise
-    - service: telegram_bot.send_message
+    - service: notify.telegram_dima
       data:
-        target: !secret tg_chat_dima
         message: "{{ states('sensor.now_hm') }} 🌅 {{ states['sensor.solar_elevation'].state_with_unit}}, {{ states['sensor.solar_azimuth'].state_with_unit}} #sun #sunrise"
 
 - alias: "sun_sunset"
@@ -21,9 +20,8 @@
     - service: script.input_datetime_set_now
       data:
         entity_id: input_datetime.sunset
-    - service: telegram_bot.send_message
+    - service: notify.telegram_dima
       data:
-        target: !secret tg_chat_dima
         message: "{{ states('sensor.now_hm') }} 🌇 {{ states['sensor.solar_elevation'].state_with_unit}}, {{ states['sensor.solar_azimuth'].state_with_unit}} #sun #sunset"
 
 - alias: "sun_zenith"
@@ -40,9 +38,8 @@
       data:
         value: "{{ states('sensor.solar_elevation') }}"
         entity_id: input_number.zenith
-    - service: telegram_bot.send_message
+    - service: notify.telegram_dima
       data:
-        target: !secret tg_chat_dima
         message: "{{ states('sensor.now_hm') }} 🌞 {{ states['sensor.solar_elevation'].state_with_unit}}, {{ states['sensor.solar_azimuth'].state_with_unit}} #sun #zenith"
 
 - alias: "sun_nadir"
@@ -59,7 +56,6 @@
       data:
         value: "{{ states('sensor.solar_elevation') }}"
         entity_id: input_number.nadir
-    - service: telegram_bot.send_message
+    - service: notify.telegram_dima
       data:
-        target: !secret tg_chat_dima
         message: "{{ states('sensor.now_hm') }} 🌃 {{ states['sensor.solar_elevation'].state_with_unit}}, {{ states['sensor.solar_azimuth'].state_with_unit}} #sun #nadir"

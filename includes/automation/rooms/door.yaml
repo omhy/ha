@@ -17,9 +17,8 @@
       to: "on"
   action:
     - service: script.refresh_durations
-    - service: telegram_bot.send_message
+    - service: notify.telegram_dima
       data:
-        target: !secret tg_chat_dima
         message: "{{ states('sensor.now_hm') }} 🔓 Door is opened ({{ states['sensor.door_duration_min'].state_with_unit }})"
     - service: script.input_datetime_set_now_door
 
@@ -31,9 +30,8 @@
       to: "off"
   action:
     - service: script.refresh_durations
-    - service: telegram_bot.send_message
+    - service: notify.telegram_dima
       data:
-        target: !secret tg_chat_dima
         message: "{{ states('sensor.now_hm') }} 🔒 Door is closed ({{ states['sensor.door_duration_sec'].state_with_unit }})"
     - service: script.input_datetime_set_now_door
 

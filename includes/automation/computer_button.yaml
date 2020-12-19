@@ -1,0 +1,19 @@
+- alias: "computer_button_single"
+  trigger:
+    - platform: state
+      entity_id: sensor.0x00158d00021329e3_action
+      to: "single"
+  action:
+    - service: script.rmt_computer_sleep
+
+# - alias: "entrance_button_single_if_people_home_off"
+#   trigger:
+#     - platform: state
+#       entity_id: sensor.0x00158d00021329e3_action
+#       to: "single"
+#   condition:
+#     - condition: state
+#       entity_id: binary_sensor.people_home
+#       state: "off"
+#   action:
+#     - service: script.we_are_arriving

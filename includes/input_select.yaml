@@ -1,6 +1,5 @@
 radio_cast:
   name: Play radio on
-  icon: mdi:cast
   options:
     - Kitchen speaker
     - Loud speaker
