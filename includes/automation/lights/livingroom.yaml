@@ -36,9 +36,12 @@
       - conditions: "{{ state_attr('light.hyperion', 'effect') == 'Candle' }}"
         sequence:
           - service: script.hyperion_off
-      - conditions: "{{ state_attr('light.hyperion', 'effect') != 'Candle' }}"
+      - conditions: "{{ (state_attr('light.hyperion', 'effect') != 'Candle') and is_state('binary_sensor.tod_morning', 'on') }}"
         sequence:
-          - service: script.hyperion_on_candle
+          - service: script.hyperion_on_candle_min
+      - conditions: "{{ (state_attr('light.hyperion', 'effect') != 'Candle') and is_state('binary_sensor.tod_morning', 'off') }}"
+        sequence:
+          - service: script.hyperion_on_candle_max
       - conditions: "{{ is_state('light.hyperion', 'off') }}"
         sequence:
           - service: script.hyperion_on_candle

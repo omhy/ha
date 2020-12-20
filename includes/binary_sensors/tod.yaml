@@ -1,0 +1,19 @@
+- platform: tod
+  name: tod_morning
+  after: "06:00"
+  before: '11:00'
+
+- platform: tod
+  name: tod_afternoon
+  after: "11:00"
+  before: "18:00"
+
+- platform: tod
+  name: tod_evening
+  after: "18:00"
+  before: "00:00"
+
+- platform: tod
+  name: tod_night
+  after: "00:00"
+  before: "06:00"
