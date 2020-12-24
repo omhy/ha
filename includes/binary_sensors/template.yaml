@@ -69,7 +69,7 @@
         is_state('binary_sensor.ping_tv', 'on') or
         is_state('media_player.kitchen_display', 'playing') or
         is_state('media_player.loud_speaker', 'playing') or
-        is_state('media_player.yury_speaker', 'playing')
+        is_state('media_player.tele2_speaker', 'playing')
         }}
 
     androidbox_in_use:
@@ -86,8 +86,9 @@
         {{
         (
         is_state('media_player.loud_speaker', 'playing') or
+        is_state('media_player.tele2_speaker', 'playing') or
         is_state('media_player.black_speaker', 'playing') or
-        is_state('media_player.yury_speaker', 'playing') or
+        is_state('media_player.bathroom_speaker', 'playing') or
         is_state('media_player.kitchen_display', 'playing') or
         is_state('media_player.surround', 'playing') or
         is_state('media_player.speakers', 'playing')

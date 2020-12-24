@@ -9,7 +9,8 @@
         value: >
           {% if is_state("input_select.radio_cast", "Kitchen speaker") %} media_player.kitchen_display
           {% elif is_state("input_select.radio_cast", "Loud speaker") %} media_player.loud_speaker
-          {% elif is_state("input_select.radio_cast", "Yury speaker") %} media_player.yury_speaker
+          {% elif is_state("input_select.radio_cast", "Tele2 speaker") %} media_player.tele2_speaker
+          {% elif is_state("input_select.radio_cast", "Bathroom speaker") %} media_player.bathroom_speaker
           {% elif is_state("input_select.radio_cast", "Black speaker") %} media_player.black_speaker
           {% elif is_state("input_select.radio_cast", "Speakers") %} media_player.speakers
           {% elif is_state("input_select.radio_cast", "Surround") %} media_player.surround

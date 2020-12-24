@@ -1,5 +1,5 @@
 - platform: rest
-  name: "cast_version_yury_speaker"
+  name: "cast_version_bathroom_speaker"
   resource: http://192.168.1.30:8008/setup/eureka_info
   value_template: "{{ value_json.cast_build_revision }}"
   scan_interval: 86400
@@ -13,6 +13,12 @@
 - platform: rest
   name: "cast_version_loud_speaker"
   resource: http://192.168.1.31:8008/setup/eureka_info
+  value_template: "{{ value_json.cast_build_revision }}"
+  scan_interval: 86400
+
+- platform: rest
+  name: "cast_version_tele2_speaker"
+  resource: http://192.168.1.35:8008/setup/eureka_info
   value_template: "{{ value_json.cast_build_revision }}"
   scan_interval: 86400
 

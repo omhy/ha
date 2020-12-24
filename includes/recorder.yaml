@@ -119,8 +119,9 @@ include:
     - sensor.yury_weight
     - sensor.cast_version_kitchen_display
     - sensor.cast_version_loud_speaker
+    - sensor.cast_version_tele2_speaker
     - sensor.cast_version_black_speaker
-    - sensor.cast_version_yury_speaker
+    - sensor.cast_version_bathroom_speaker
     - sensor.cast_version_chromecast
 #temp
     - input_number.outdoor_temperature_min

@@ -127,8 +127,11 @@ media_player.kitchen_display:
 media_player.loud_speaker:
   friendly_name: Loud speaker
   icon: mdi:google-home
-media_player.yury_speaker:
-  friendly_name: Yury speaker
+media_player.tele2_speaker:
+  friendly_name: Tele2 speaker
+  icon: mdi:google-home
+media_player.bathroom_speaker:
+  friendly_name: Bathroom speaker
   icon: mdi:dots-horizontal-circle-outline
 media_player.black_speaker:
   friendly_name: Black speaker
@@ -184,6 +187,10 @@ input_number.outdoor_temperature_min:
   friendly_name: Outdoor min
 input_number.outdoor_temperature_max:
   friendly_name: Outdoor max
+input_datetime.outdoor_temperature_min:
+  friendly_name: Min @
+input_datetime.outdoor_temperature_max:
+  friendly_name: Max @
 
 sensor.days_in_month:
   friendly_name: Days in month
