@@ -16,7 +16,7 @@ cast_youtube_id:
     - service: script.cast_youtube
       data:
         media_id: "{{ states('input_text.youtube_id') }}"
-
+    
 cast_youtube_url:
   sequence:
     - service: input_text.set_value

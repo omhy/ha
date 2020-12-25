@@ -25,7 +25,7 @@
   action:
     - service: notify.telegram_dima
       data:
-        message: "{{ states('sensor.now_hm') }} 🖥️ is turned off ({{ states['sensor.computer_on_today'].state_with_unit }})"
+        message: "{{ states('sensor.now_hm') }} 🖥️ is 🔴 ({{ states['sensor.computer_on_today'].state_with_unit }})"
 
 - alias: "computer_turned_on"
   trigger:
@@ -38,7 +38,7 @@
   action:
     - service: notify.telegram_dima
       data:
-        message: "{{ states('sensor.now_hm') }} 🖥️ is turned on ({{ states['sensor.computer_on_today'].state_with_unit }})"
+        message: "{{ states('sensor.now_hm') }} 🖥️ is 🟢 ({{ states['sensor.computer_on_today'].state_with_unit }})"
 
 - alias: "laptop_turned_off"
   trigger:
@@ -51,7 +51,7 @@
   action:
     - service: notify.telegram_dima
       data:
-        message: "{{ states('sensor.now_hm') }} 💻 is turned off ({{ states['sensor.laptop_on_today'].state_with_unit }})"
+        message: "{{ states('sensor.now_hm') }} 💻 is 🔴 ({{ states['sensor.laptop_on_today'].state_with_unit }})"
 
 - alias: "laptop_turned_on"
   trigger:
@@ -64,4 +64,30 @@
   action:
     - service: notify.telegram_dima
       data:
-        message: "{{ states('sensor.now_hm') }} 💻 is turned on ({{ states['sensor.laptop_on_today'].state_with_unit }})"
+        message: "{{ states('sensor.now_hm') }} 💻 is 🟢 ({{ states['sensor.laptop_on_today'].state_with_unit }})"
+
+- alias: "tv_turned_off"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.ping_tv
+      from: "on"
+      to: "off"
+      for:
+        minutes: 1
+  action:
+    - service: notify.telegram_dima
+      data:
+        message: "{{ states('sensor.now_hm') }} 📺 is 🔴 ({{ states['sensor.tv_on_today'].state_with_unit }})"
+
+- alias: "tv_turned_on"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.ping_tv
+      from: "off"
+      to: "on"
+      for:
+        minutes: 2
+  action:
+    - service: notify.telegram_dima
+      data:
+        message: "{{ states('sensor.now_hm') }} 📺 is 🟢 ({{ states['sensor.tv_on_today'].state_with_unit }})"

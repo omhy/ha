@@ -31,7 +31,7 @@
 
 - platform: switch
   name: standalone_switch
-  entity_id: switch.0x00158d0002013f1e_switch #standalone
+  entity_id: switch.0x00158d0002013f1e #standalone
 - platform: switch
   name: night_star
   entity_id: switch.0x00124b00222546a1 #sonoff basic zb
