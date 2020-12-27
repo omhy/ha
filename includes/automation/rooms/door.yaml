@@ -53,6 +53,6 @@
     - service: telegram_bot.send_message
       data:
         target: !secret tg_chat_dima
-        message: "{{ states('sensor.now_hm') }} 🚬 Started. Today: {{ states['counter.balcony_sessions'].state }}"
+        message: "{{ states('sensor.now_hm') }} 🚬 Started. Today: {{ states('counter.balcony_sessions') }}"
         inline_keyboard:
           - "⚠️ Noooooo:/no_balcony_session, ♻️ Dismiss:/dismiss"

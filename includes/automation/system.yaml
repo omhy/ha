@@ -3,8 +3,6 @@
     - platform: homeassistant
       event: start
   action:
-    # - service: automation.trigger
-    #   entity_id: automation.autoupdate_radio_cast_entity
     - service: script.androidbox_refresh_temp
 
 - alias: "ha_rpi_power_tracker"
@@ -28,14 +26,6 @@
     - service: notify.telegram_dima
       data:
         message: "{{ states('sensor.now_hm') }} ⚜️ HASC updated available: {{ states('sensor.hacs') }}"
-
-- alias: "ha_midnight_daily_refresh"
-  trigger:
-    - platform: time
-      at: "00:00:01"
-  action:
-    - service: counter.reset
-      entity_id: counter.yuryroom_motions_watch
 
 - alias: "ha_do_backup"
   condition:

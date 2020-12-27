@@ -7,74 +7,161 @@ media_radio_play_by_param:
         media_content_id: "{{ media_content_id }}"
         media_content_type: "audio/mp4"
 
-# MORNING
-media_radio_play_at_morning:
+
+# SPEC
+radio_kitchen_morning:
   sequence:
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.kitchen_display
+        volume_level: 0.2
     - service: script.media_radio_play_by_param
       data:
         entity_id: media_player.kitchen_display
-        media_content_id: "http://ice.stream.frequence3.net/frequence3-128.mp3"
+        media_content_id: "http://icecast.vgtrk.cdnvideo.ru/moscowfm128"
+
+radio_bathroom_start:
+  sequence:
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.bathroom_speaker
+        volume_level: 0.1
+    - service: script.media_radio_play_by_param
+      data:
+        entity_id: media_player.bathroom_speaker
+        media_content_id: "http://ice1.somafm.com/7soul-128-mp3"
+
+radio_bathroom_stop:
+  sequence:
+    - service: media_player.media_stop
+      entity_id: media_player.bathroom_speaker
 
 # PLAY ON SELECTTED
-media_radio_play_on_selected:
+media_radio_play_input_texts:
   sequence:
     - service: script.media_radio_play_by_param
       data:
-        entity_id: "{{ states('input_text.radio_cast') }}"
-        media_content_id: "{{ media_content_id }}"
+        entity_id: "{{ states('input_text.radio_cast_device') }}"
+        media_content_id: "{{ states('input_text.radio_cast_station_url') }}"
+
+radio_set_station_name:
+  sequence:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.radio_cast_station
+        option: "{{ station_name }}"
+    - service: script.media_radio_play_input_texts
 
 media_radio_play_soma_illstreet:
   sequence:
-    - service: script.media_radio_play_on_selected
+    - service: script.radio_set_station_name
       data:
-        media_content_id: "http://ice1.somafm.com/illstreet-128-mp3"
+        station_name: "Illinois lounge"
 media_radio_play_soma_seventies:
   sequence:
-    - service: script.media_radio_play_on_selected
+    - service: script.radio_set_station_name
       data:
-        media_content_id: "http://ice1.somafm.com/seventies-320-mp3"
+        station_name: "Seventies"
 media_radio_play_soma_thistle:
   sequence:
-    - service: script.media_radio_play_on_selected
+    - service: script.radio_set_station_name
       data:
-        media_content_id: "http://ice1.somafm.com/thistle-128-mp3"
+        station_name: "Thistle radio"
 media_radio_play_soma_groovesalad:
   sequence:
-    - service: script.media_radio_play_on_selected
+    - service: script.radio_set_station_name
       data:
-        media_content_id: "http://ice1.somafm.com/groovesalad-256-mp3"
+        station_name: "Groove salad"
 media_radio_play_soma_deepspaceone:
   sequence:
-    - service: script.media_radio_play_on_selected
+    - service: script.radio_set_station_name
       data:
-        media_content_id: "http://ice1.somafm.com/deepspaceone-128-mp3"
+        station_name: "Deep space one"
 media_radio_play_soma_covers:
   sequence:
-    - service: script.media_radio_play_on_selected
+    - service: script.radio_set_station_name
       data:
-        media_content_id: "http://ice1.somafm.com/covers-128-mp3"
+        station_name: "Covers"
 media_radio_play_soma_secretagent:
   sequence:
-    - service: script.media_radio_play_on_selected
+    - service: script.radio_set_station_name
       data:
-        media_content_id: "http://ice1.somafm.com/secretagent-128-mp3"
+        station_name: "Secret agent"
 media_radio_play_soma_beatblender:
   sequence:
-    - service: script.media_radio_play_on_selected
+    - service: script.radio_set_station_name
       data:
-        media_content_id: "http://ice1.somafm.com/beatblender-128-mp3"
+        station_name: "Beat blender"
+media_radio_play_soma_vaporwaves:
+  sequence:
+    - service: script.radio_set_station_name
+      data:
+        station_name: "Vaporwaves"
+media_radio_play_soma_spacestation:
+  sequence:
+    - service: script.radio_set_station_name
+      data:
+        station_name: "Space station"
+media_radio_play_soma_dronezone:
+  sequence:
+    - service: script.radio_set_station_name
+      data:
+        station_name: "Drone zone"
+media_radio_play_soma_thetrip:
+  sequence:
+    - service: script.radio_set_station_name
+      data:
+        station_name: "The trip"
+media_radio_play_soma_fluid:
+  sequence:
+    - service: script.radio_set_station_name
+      data:
+        station_name: "Fluid"
+media_radio_play_soma_sonicuniverse:
+  sequence:
+    - service: script.radio_set_station_name
+      data:
+        station_name: "Sonic universe"
+media_radio_play_soma_poptron:
+  sequence:
+    - service: script.radio_set_station_name
+      data:
+        station_name: "Pop tron"
+media_radio_play_soma_bootliquor:
+  sequence:
+    - service: script.radio_set_station_name
+      data:
+        station_name: "Boot liquor"
+media_radio_play_soma_lush:
+  sequence:
+    - service: script.radio_set_station_name
+      data:
+        station_name: "Lush"
+media_radio_play_soma_7soul:
+  sequence:
+    - service: script.radio_set_station_name
+      data:
+        station_name: "7 inch soul"
 media_radio_play_frequence3:
   sequence:
-    - service: script.media_radio_play_on_selected
+    - service: script.radio_set_station_name
       data:
-        media_content_id: "http://ice.stream.frequence3.net/frequence3-128.mp3"
+        station_name: "Frequence3"
 media_radio_play_moskvafm:
   sequence:
-    - service: script.media_radio_play_on_selected
+    - service: script.radio_set_station_name
       data:
-        media_content_id: "http://icecast.vgtrk.cdnvideo.ru/moscowfm128"
+        station_name: "MoskvaFM"
+
 
 media_player_stop_all:
   sequence:
     - service: media_player.media_stop
-      entity_id: all
+      entity_id:
+        - media_player.kitchen_display
+        - media_player.loud_speaker
+        - media_player.tele2_speaker
+        - media_player.bathroom_speaker
+        - media_player.black_speaker
+        - media_player.speakers
+        - media_player.surround

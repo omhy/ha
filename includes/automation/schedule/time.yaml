@@ -1,10 +1,13 @@
 - alias: "reset_counters"
   trigger:
     - platform: time
-      at: "00:00:00"
+      at: "00:00:01"
   action:
     - service: counter.reset
-      entity_id: counter.balcony_sessions
+      entity_id: 
+        - counter.balcony_sessions
+        - counter.doorbell
+        - counter.yuryroom_motions_watch
 
 - alias: "refresh_abox_temp"
   trigger:

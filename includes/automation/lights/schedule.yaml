@@ -12,14 +12,7 @@
         entity_id: "{{ states('sensor.morning_wd_lights') }}"
         effect: "Candle" #hyperion only
         brightness: 2
-    - service: media_player.volume_set
-      data:
-        entity_id: media_player.kitchen_display
-        volume_level: 0.2
-    - service: script.media_radio_play_by_param
-      data:
-        entity_id: media_player.kitchen_display
-        media_content_id: "http://icecast.vgtrk.cdnvideo.ru/moscowfm128"
+    - service: script.radio_kitchen_morning
 
 - alias: "schedule_morning_wd_off"
   trigger:

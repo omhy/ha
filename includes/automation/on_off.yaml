@@ -25,7 +25,7 @@
   action:
     - service: notify.telegram_dima
       data:
-        message: "{{ states('sensor.now_hm') }} 🖥️ is 🔴 ({{ states['sensor.computer_on_today'].state_with_unit }})"
+        message: "{{ states('sensor.now_hm') }} 🖥️ is 🔴 ({{ states['sensor.computer_on_today'].state_with_unit }}) #comp"
 
 - alias: "computer_turned_on"
   trigger:
@@ -38,7 +38,7 @@
   action:
     - service: notify.telegram_dima
       data:
-        message: "{{ states('sensor.now_hm') }} 🖥️ is 🟢 ({{ states['sensor.computer_on_today'].state_with_unit }})"
+        message: "{{ states('sensor.now_hm') }} 🖥️ is 🟢 ({{ states['sensor.computer_on_today'].state_with_unit }}) #comp"
 
 - alias: "laptop_turned_off"
   trigger:
@@ -51,7 +51,7 @@
   action:
     - service: notify.telegram_dima
       data:
-        message: "{{ states('sensor.now_hm') }} 💻 is 🔴 ({{ states['sensor.laptop_on_today'].state_with_unit }})"
+        message: "{{ states('sensor.now_hm') }} 💻 is 🔴 ({{ states['sensor.laptop_on_today'].state_with_unit }}) #ntbk"
 
 - alias: "laptop_turned_on"
   trigger:
@@ -64,7 +64,7 @@
   action:
     - service: notify.telegram_dima
       data:
-        message: "{{ states('sensor.now_hm') }} 💻 is 🟢 ({{ states['sensor.laptop_on_today'].state_with_unit }})"
+        message: "{{ states('sensor.now_hm') }} 💻 is 🟢 ({{ states['sensor.laptop_on_today'].state_with_unit }}) #ntbk"
 
 - alias: "tv_turned_off"
   trigger:
@@ -77,7 +77,7 @@
   action:
     - service: notify.telegram_dima
       data:
-        message: "{{ states('sensor.now_hm') }} 📺 is 🔴 ({{ states['sensor.tv_on_today'].state_with_unit }})"
+        message: "{{ states('sensor.now_hm') }} 📺 is 🔴 ({{ states['sensor.tv_on_today'].state_with_unit }}) #tv"
 
 - alias: "tv_turned_on"
   trigger:
@@ -90,4 +90,4 @@
   action:
     - service: notify.telegram_dima
       data:
-        message: "{{ states('sensor.now_hm') }} 📺 is 🟢 ({{ states['sensor.tv_on_today'].state_with_unit }})"
+        message: "{{ states('sensor.now_hm') }} 📺 is 🟢 ({{ states['sensor.tv_on_today'].state_with_unit }}) #tv"

@@ -17,3 +17,21 @@
   action:
     - service: switch.turn_off
       entity_id: switch.0x00158d00022391ec_switch_right
+
+- alias: "light_bathroom_turn_off_aftermath"
+  trigger:
+    - platform: state
+      entity_id: light.bathroom
+      from: "on"
+      to: "off"
+  action:
+    - service: script.radio_bathroom_stop
+
+- alias: "light_bathroom_turn_on_aftermath"
+  trigger:
+    - platform: state
+      entity_id: light.bathroom
+      from: "off"
+      to: "on"
+  action:
+    - service: script.radio_bathroom_start
