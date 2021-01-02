@@ -8,7 +8,7 @@
       to: "off"
   action:
     - service: light.toggle
-      entity_id: light.0x14b457fffe4dc1c2_light
+      entity_id: light.0x14b457fffe4dc1c2
 
 - alias: "storage_switch_brightness_up"
   trigger:
@@ -18,7 +18,7 @@
   action:
     - service: script.light_adjust_brightness
       data:
-        entity_id: light.0x14b457fffe4dc1c2_light
+        entity_id: light.0x14b457fffe4dc1c2
         step: 51
 
 - alias: "storage_switch_brightness_down"
@@ -29,16 +29,16 @@
   action:
     - service: script.light_adjust_brightness
       data:
-        entity_id: light.0x14b457fffe4dc1c2_light
+        entity_id: light.0x14b457fffe4dc1c2
         step: -51
 
 - alias: "storage_turn_off_light"
   trigger:
     - platform: state
-      entity_id: light.0x14b457fffe4dc1c2_light
+      entity_id: light.0x14b457fffe4dc1c2
       to: "on"
       for:
         minutes: 15
   action:
     - service: light.turn_off
-      entity_id: light.0x14b457fffe4dc1c2_light
+      entity_id: light.0x14b457fffe4dc1c2

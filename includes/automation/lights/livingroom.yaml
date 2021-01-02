@@ -22,7 +22,8 @@
   action:
     - service: switch.turn_on
       entity_id: switch.adaptive_lighting_default
-    - service: script.light_livingroom_adj_turn_on_min
+    - service: light.turn_on
+      entity_id: light.livingroom_adjustable
 
 #HYPERION
 #off

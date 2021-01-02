@@ -32,10 +32,10 @@ light.standalone_switch:
 #   friendly_name: Balloon lamp
 #   icon: mdi:globe-light
 
-light.0xec1bbdfffe18a191_light:
+light.0xec1bbdfffe18a191:
   friendly_name: Hallway door
   icon: mdi:globe-light
-light.0xec1bbdfffe4d16eb_light:
+light.0xec1bbdfffe4d16eb:
   friendly_name: Hallway balcony
   icon: mdi:globe-light
 
@@ -295,9 +295,9 @@ sensor.temperature:
   device_class: temperature
 
 # Z2M
-switch.0x00158d00022391ec_switch_left:
+switch.0x00158d00022391ec_left:
   friendly_name: Corridor
-switch.0x00158d00022391ec_switch_right:
+switch.0x00158d00022391ec_right:
   friendly_name: Bathroom
 
 binary_sensor.sun_is_rising:

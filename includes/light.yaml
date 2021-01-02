@@ -1,8 +1,8 @@
 - platform: group
   name: hallway_ceiling
   entities:
-  - light.0xec1bbdfffe4d16eb_light
-  - light.0xec1bbdfffe18a191_light
+  - light.0xec1bbdfffe4d16eb
+  - light.0xec1bbdfffe18a191
 
 - platform: group
   name: hallway
@@ -37,7 +37,7 @@
   entity_id: switch.0x00124b00222546a1 #sonoff basic zb
 - platform: switch
   name: corridor
-  entity_id: switch.0x00158d00022391ec_switch_left
+  entity_id: switch.0x00158d00022391ec_left
 - platform: switch
   name: bathroom
-  entity_id: switch.0x00158d00022391ec_switch_right
+  entity_id: switch.0x00158d00022391ec_right
