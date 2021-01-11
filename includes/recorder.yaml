@@ -91,14 +91,12 @@ include:
     - sensor.sm_g973f_battery_level
     - sensor.sm_g973f_detected_activity
     - sensor.sm_g973f_battery_state
-    - sensor.sm_g973f_charger_type
     - sensor.sm_g973f_wifi_connection
     - sensor.sm_g973f_wifi_bssid
     - sensor.sm_g973f_wifi_ip_address
     - sensor.sm_g973f_public_ip_address
-    - sensor.sm_g973f_app_standby_bucket
+    - sensor.sm_g973f_app_importance
     - binary_sensor.sm_g973f_interactive
-    - binary_sensor.sm_g973f_app_inactive
     - sensor.mi_a2_battery_level
     - sensor.mi_a2_detected_activity
     - sensor.mi_a2_battery_state

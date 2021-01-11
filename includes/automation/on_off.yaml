@@ -1,18 +1,18 @@
-- alias: "computer_power_strip_off"
-  trigger:
-    - platform: time
-      at: "02:00:00"
-  action:
-    - service: switch.turn_off
-      entity_id: switch.power_strip_1
+# - alias: "computer_power_strip_off"
+#   trigger:
+#     - platform: time
+#       at: "02:00:00"
+#   action:
+#     - service: switch.turn_off
+#       entity_id: switch.power_strip_1
 
-- alias: "computer_power_strip_on"
-  trigger:
-    - platform: time
-      at: "06:50:00"
-  action:
-    - service: switch.turn_on
-      entity_id: switch.power_strip_1
+# - alias: "computer_power_strip_on"
+#   trigger:
+#     - platform: time
+#       at: "06:50:00"
+#   action:
+#     - service: switch.turn_on
+#       entity_id: switch.power_strip_1
 
 - alias: "computer_turned_off"
   trigger:
@@ -21,7 +21,7 @@
       from: "on"
       to: "off"
       for:
-        minutes: 1
+        minutes: 3
   action:
     - service: notify.telegram_dima
       data:
@@ -34,7 +34,7 @@
       from: "off"
       to: "on"
       for:
-        minutes: 2
+        minutes: 3
   action:
     - service: notify.telegram_dima
       data:
@@ -47,7 +47,7 @@
       from: "on"
       to: "off"
       for:
-        minutes: 1
+        minutes: 3
   action:
     - service: notify.telegram_dima
       data:
@@ -60,7 +60,7 @@
       from: "off"
       to: "on"
       for:
-        minutes: 2
+        minutes: 3
   action:
     - service: notify.telegram_dima
       data:
