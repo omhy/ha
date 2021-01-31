@@ -40,8 +40,8 @@
       - conditions: "{{ (state_attr('light.hyperion', 'effect') != 'Candle') and is_state('binary_sensor.tod_morning', 'on') }}"
         sequence:
           - service: script.hyperion_on_candle_min
-          - service: light.turn_on
-            entity_id: light.stars
+          # - service: light.turn_on
+          #   entity_id: light.stars
       - conditions: "{{ (state_attr('light.hyperion', 'effect') != 'Candle') and is_state('binary_sensor.tod_morning', 'off') }}"
         sequence:
           - service: script.hyperion_on_candle_max

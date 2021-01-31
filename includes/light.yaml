@@ -23,11 +23,11 @@
   - light.big_torch
   - light.corner_lamp
 
-- platform: group
-  name: christmas
-  entities:
-  - light.tree_lamp
-  - light.stars
+# - platform: group
+#   name: christmas
+#   entities:
+#   - light.tree_lamp
+#   - light.stars
 
 - platform: switch
   name: standalone_switch

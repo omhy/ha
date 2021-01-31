@@ -28,7 +28,7 @@ radio_bathroom_start:
     - service: script.media_radio_play_by_param
       data:
         entity_id: media_player.bathroom_speaker
-        media_content_id: "http://ice1.somafm.com/fluid-128-mp3"
+        media_content_id: "http://ice1.somafm.com/groovesalad-128-mp3"
 
 radio_bathroom_stop:
   sequence:

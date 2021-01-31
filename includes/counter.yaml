@@ -6,3 +6,4 @@ balcony_sessions:
   initial: 0
 
 doorbell:
+rpi_disconnect:

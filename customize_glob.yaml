@@ -39,6 +39,8 @@
   icon: mdi:weather-sunset-down
 
 ### Z2M
+"*0x04cf8cdf3c7d9bef*":
+  friendly_name: Switch 6 btn
 "*0x00158d0002013f1e*":
   friendly_name: Standalone switch
 "*0xec1bbdfffe4d16eb*":

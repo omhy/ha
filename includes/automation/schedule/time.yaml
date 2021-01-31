@@ -7,6 +7,7 @@
       entity_id: 
         - counter.balcony_sessions
         - counter.doorbell
+        - counter.rpi_disconnect
         - counter.yuryroom_motions_watch
 
 - alias: "refresh_abox_temp"

@@ -1,20 +1,20 @@
 #to find channel ID: https://www.youtube.com/feeds/videos.xml?user=
 
-- platform: youtube
-  channel_id: UCq7JZ8ATgQWeu6sDM1czjhg #SG
-- platform: youtube
-  channel_id: UC101o-vQ2iOj9vr00JUlyKw #vrlmv
-- platform: youtube
-  channel_id: UCFuBWNNWrvnW99mxDzAHdrw #hfa
-- platform: youtube
-  channel_id: UCsKiNBoIWLpIxU6vsAv3v3w #lbdv
-- platform: youtube
-  channel_id: UC9PBzalIcEQCsiIkq36PyUA #DF
-- platform: youtube
-  channel_id: UCvQXaJTjA3jRucTKN4CGiwg #Sbch
-- platform: youtube
-  channel_id: UCI2Tj1A3E2litfptZZ9WfJw #Aviasmotr
-- platform: youtube
-  channel_id: UCBJycsmduvYEL83R_U4JriQ #mkbhd
-- platform: youtube
-  channel_id: UCQU4CouaES6l-t9Llqzzt1A #davaite_razbr
+# - platform: youtube
+#   channel_id: UCq7JZ8ATgQWeu6sDM1czjhg #SG
+# - platform: youtube
+#   channel_id: UC101o-vQ2iOj9vr00JUlyKw #vrlmv
+# - platform: youtube
+#   channel_id: UCFuBWNNWrvnW99mxDzAHdrw #hfa
+# - platform: youtube
+#   channel_id: UCsKiNBoIWLpIxU6vsAv3v3w #lbdv
+# - platform: youtube
+#   channel_id: UC9PBzalIcEQCsiIkq36PyUA #DF
+# - platform: youtube
+#   channel_id: UCvQXaJTjA3jRucTKN4CGiwg #Sbch
+# - platform: youtube
+#   channel_id: UCI2Tj1A3E2litfptZZ9WfJw #Aviasmotr
+# - platform: youtube
+#   channel_id: UCBJycsmduvYEL83R_U4JriQ #mkbhd
+# - platform: youtube
+#   channel_id: UCQU4CouaES6l-t9Llqzzt1A #davaite_razbr

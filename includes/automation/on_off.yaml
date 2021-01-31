@@ -91,3 +91,31 @@
     - service: notify.telegram_dima
       data:
         message: "{{ states('sensor.now_hm') }} 📺 is 🟢 ({{ states['sensor.tv_on_today'].state_with_unit }}) #tv"
+
+- alias: "rpi_ping_off"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.ping_rpi3
+      from: "on"
+      to: "off"
+      for:
+        minutes: 1
+  action:
+    - service: counter.increment
+      entity_id: counter.rpi_disconnect
+    - service: script.mobile_notify_dima
+      data:
+        message: "{{ states('sensor.now_hm') }} 🧮 is 🔴 ({{ states['counter.rpi_disconnect'].state }}) #rpi"
+
+- alias: "rpi_ping_on"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.ping_rpi3
+      from: "off"
+      to: "on"
+      for:
+        minutes: 1
+  action:
+    - service: script.mobile_notify_dima
+      data:
+        message: "{{ states('sensor.now_hm') }} 🧮 is 🟢 ({{ states['counter.rpi_disconnect'].state }}) #rpi"
