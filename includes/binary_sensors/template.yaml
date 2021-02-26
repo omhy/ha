@@ -5,6 +5,8 @@
         {% set x = states('sensor.date') %}
         {% if 
           states('sensor.date').endswith('01-01') or
+          states('sensor.date').endswith('04-02') or
+          states('sensor.date').endswith('04-05') or
           states('sensor.date').endswith('05-01') or
           states('sensor.date').endswith('05-04') or
           states('sensor.date').endswith('06-23') or
@@ -14,11 +16,6 @@
           states('sensor.date').endswith('12-25') or
           states('sensor.date').endswith('12-26') or
           states('sensor.date').endswith('12-31')
-        %}
-          true
-        {% elif 
-          states('sensor.date').endswith('2020-04-10') or
-          states('sensor.date').endswith('2020-04-13')
         %}
           true
         {% else %}

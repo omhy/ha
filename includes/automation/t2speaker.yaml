@@ -84,11 +84,7 @@
     - service: media_player.volume_set
       data:
         entity_id: media_player.tele2_speaker
-        volume_level: "0.0"
-    # - service: media_player.volume_mute
-    #   data:
-    #     entity_id: media_player.tele2_speaker
-    #     is_volume_muted: "{{ state_attr('media_player.tele2_speaker', 'is_volume_muted') != true }}"
+        volume_level: "0.01"
 
 #=== B3
 - alias: "t2speaker_volume_btn3_single"
@@ -120,9 +116,6 @@
       entity_id: sensor.0x04cf8cdf3c7d9bef_action
       to: "button_4_single"
   action:
-    - service: script.mobile_notify_dima
-      data:
-        message: "F3"
     - service: script.media_radio_play_by_param
       data:
         entity_id: media_player.tele2_speaker
@@ -134,9 +127,6 @@
       entity_id: sensor.0x04cf8cdf3c7d9bef_action
       to: "button_4_double"
   action:
-    - service: script.mobile_notify_dima
-      data:
-        message: "Europa+"
     - service: script.media_radio_play_by_param
       data:
         entity_id: media_player.tele2_speaker
@@ -149,9 +139,6 @@
       entity_id: sensor.0x04cf8cdf3c7d9bef_action
       to: "button_5_single"
   action:
-    - service: script.mobile_notify_dima
-      data:
-        message: "Echo"
     - service: script.media_radio_play_by_param
       data:
         entity_id: media_player.tele2_speaker
@@ -163,9 +150,6 @@
       entity_id: sensor.0x04cf8cdf3c7d9bef_action
       to: "button_5_double"
   action:
-    - service: script.mobile_notify_dima
-      data:
-        message: "Kommersant"
     - service: script.media_radio_play_by_param
       data:
         entity_id: media_player.tele2_speaker
@@ -178,13 +162,8 @@
       entity_id: sensor.0x04cf8cdf3c7d9bef_action
       to: "button_6_single"
   action:
-    - service: script.mobile_notify_dima
-      data:
-        message: "MixFm"
-    - service: script.media_radio_play_by_param
-      data:
-        entity_id: media_player.tele2_speaker
-        media_content_id: "https://radio.mixnews.lv/MixFM" #mix
+    - service: media_player.media_play_pause
+      entity_id: media_player.tele2_speaker
 
 - alias: "t2speaker_volume_btn6_hold"
   trigger:
@@ -192,8 +171,5 @@
       entity_id: sensor.0x04cf8cdf3c7d9bef_action
       to: "button_6_hold"
   action:
-    - service: script.mobile_notify_dima
-      data:
-        message: "Turning off"
     - service: media_player.turn_off
       entity_id: media_player.tele2_speaker
